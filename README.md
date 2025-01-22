@@ -1,7 +1,7 @@
-# tori-lesson-plans
+# lesson-plans
 A collection of lesson plans for students on media and digital literacy, and for developers on computer basics, aiming towards the dream of an educational OS.
 
-# Tori's Lesson Plans
+# Lesson Plans
 
 Welcome to my project where I'm hosting lesson plans for:
 
