@@ -11,10 +11,11 @@
 
 /* Reset some basic elements */
 body {
-    margin: 0;
-    padding: 0;
+    padding: 0 2rem;  /* Adds 2rem padding on left and right */
     background-color: var(--background-color);
     color: var(--text-color);
+    max-width: 1200px;  /* Optional: prevents content from getting too wide */
+    margin: 0 auto;  /* Optional: centers the content if max-width is used */
 }
 
 /* Typography */
