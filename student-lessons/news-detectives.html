@@ -52,8 +52,9 @@
             padding-left: 2em;
         }
         li > ul, li > ol {
-            margin-top: 0.5em;
+            margin-top: 0.2em;    /* Reduced from 0.5em */
             margin-bottom: 0;
+            padding-left: 1.5em;  /* Slightly reduced indentation */
         }
         footer {
             text-align: center;
@@ -86,14 +87,15 @@
             opacity: 0.3;
         }
 
-        /* Optional: Subtle card-like background (commented out - uncomment to try) */
-        /* .lesson-content > section {
-            background: var(--bg-color);
-            border-radius: 12px;
-            padding: 1.5em;
-            margin: 1em 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        } */
+        /* Specifically target nested content within lesson steps */
+        .lesson-content li > strong {
+            display: inline-block;
+            margin-bottom: 0.2em;  /* Minimal space after subheaders */
+        }
+
+        .lesson-content li > ul {
+            margin-top: 0.2em;    /* Minimal space after subheaders */
+        }
     </style>
 </head>
 <body>
