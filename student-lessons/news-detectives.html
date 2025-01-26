@@ -13,13 +13,36 @@
     <style>
         /* Keep only specific styles not in main CSS */
         img {
-            max-width: 100%; /* This makes the image responsive */
-            height: auto; /* Keeps aspect ratio */
-            display: block; /* Removes any space below the image */
-            margin: 0 auto 20px; /* This centers the image and adds space below */
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
         }
         .lesson-content {
-            margin: 20px 0;
+            margin: 20px auto;
+            max-width: 800px;  /* Limits content width for better readability */
+            padding: 0 20px;   /* Adds some padding on the sides */
+        }
+        main {
+            text-align: center;  /* Centers the intro content */
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        h1, h2 {
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+        ul, ol {
+            padding-left: 2em;  /* Consistent list indentation */
+        }
+        li {
+            margin-bottom: 0.5em;  /* Adds spacing between list items */
+        }
+        footer {
+            text-align: center;
+            margin-top: 2em;
+            padding: 1em 0;
         }
     </style>
 </head>
