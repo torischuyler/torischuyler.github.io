@@ -115,4 +115,27 @@ footer p {
     font-size: 0.9em;
     max-width: 1200px;  /* Match main content width */
     margin: 0 auto;    /* Center the text */
+}
+
+/* Dark theme colors */
+.dark-theme {
+    --primary-color: #2d5a8e;
+    --secondary-color: #2d7344;
+    --background-color: #1a1a1a;
+    --text-color: #e1e1e1;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: 15px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
 } 
