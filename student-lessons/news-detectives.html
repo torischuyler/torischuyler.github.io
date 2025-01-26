@@ -43,16 +43,17 @@
             margin: 0.5em 0;   /* Add some vertical spacing between lines */
         }
         h2 {
-            margin-top: 1.5em;
-            margin-bottom: 0.8em;
+            margin-top: 2em;
+            margin-bottom: 0.5em;
         }
         ul, ol {
+            margin-top: 0;
+            margin-bottom: 1em;
             padding-left: 2em;
-            text-align: left;
         }
-        li {
-            margin-bottom: 0.5em;
-            text-align: left;
+        li > ul, li > ol {
+            margin-top: 0.5em;
+            margin-bottom: 0;
         }
         footer {
             text-align: center;
@@ -86,13 +87,13 @@
         }
 
         /* Optional: Subtle card-like background (commented out - uncomment to try) */
-        .lesson-content > section {
+        /* .lesson-content > section {
             background: var(--bg-color);
             border-radius: 12px;
             padding: 1.5em;
             margin: 1em 0;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
+        } */
     </style>
 </head>
 <body>
@@ -113,7 +114,7 @@
         </div>
 
         <div class="lesson-content">
-            <h2 data-icon="��">Age Groups:</h2>
+            <h2 data-icon="👥">Age Groups:</h2>
             <ul>
                 <li><strong>Middle School (11-14):</strong> Start with local news, basic fact-checking, and lots of examples.</li>
                 <li><strong>High School (14-18):</strong> Dive into global news, analyze headlines, and discuss personalized news feeds.</li>
