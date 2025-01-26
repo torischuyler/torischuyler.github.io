@@ -16,7 +16,6 @@ body {
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
-    max-width: 1200px;  /* Optional: prevents content from getting too wide */
     line-height: 1.6;
 }
 
@@ -47,7 +46,7 @@ p {
 nav {
     background-color: var(--primary-color);
     padding: 15px;
-    margin: 0 0 30px 0;
+    margin: 0;
     text-align: center;
     width: 100%;
 }
@@ -93,5 +92,7 @@ ul li a:hover {
 
 /* Add this new wrapper for main content */
 main {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 20px;
 } 
