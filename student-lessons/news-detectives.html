@@ -20,24 +20,29 @@
         }
         .lesson-content {
             margin: 20px auto;
-            max-width: 800px;  /* Limits content width for better readability */
-            padding: 0 20px;   /* Adds some padding on the sides */
+            max-width: 800px;
+            padding: 0 20px;
+            text-align: left; /* Ensure content is left-aligned */
         }
         main {
-            text-align: center;  /* Centers the intro content */
             max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+        .page-header {
+            text-align: center; /* Center only the header section */
         }
         h1, h2 {
             margin-top: 1.5em;
             margin-bottom: 0.8em;
         }
         ul, ol {
-            padding-left: 2em;  /* Consistent list indentation */
+            padding-left: 2em;
+            text-align: left;
         }
         li {
-            margin-bottom: 0.5em;  /* Adds spacing between list items */
+            margin-bottom: 0.5em;
+            text-align: left;
         }
         footer {
             text-align: center;
@@ -54,10 +59,12 @@
         <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
     </nav>
     <main>
-        <img src="space.jpeg" alt="A vibrant space scene with planets and stars">
-        <h1>Lesson 1: News Detectives 🕵</h1>
-        <p><strong>Goal:</strong> Teach students to tell facts from opinions, spot bias, and check news accuracy.</p>
-        <p><strong>Duration:</strong> 70 minutes</p>
+        <div class="page-header">
+            <img src="space.jpeg" alt="A vibrant space scene with planets and stars">
+            <h1>Lesson 1: News Detectives 🕵</h1>
+            <p><strong>Goal:</strong> Teach students to tell facts from opinions, spot bias, and check news accuracy.</p>
+            <p><strong>Duration:</strong> 70 minutes</p>
+        </div>
 
         <div class="lesson-content">
             <h2>Age Groups:</h2>
