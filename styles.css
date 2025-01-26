@@ -4,26 +4,29 @@
     font-family: 'Space Grotesk', system-ui, sans-serif;
     
     /* Colors - you can customize these! */
-    --primary-color: #333333;
-    --background-color: #ffffff;
-    --text-color: #333333;
+    --primary-color: #4a90e2;
+    --secondary-color: #50c878;
+    --background-color: #f5f7fa;
+    --text-color: #2c3e50;
 }
 
 /* Reset some basic elements */
 body {
-    padding: 0 2rem;  /* Adds 2rem padding on left and right */
+    padding: 20px;
     background-color: var(--background-color);
     color: var(--text-color);
     max-width: 1200px;  /* Optional: prevents content from getting too wide */
-    margin: 0 auto;  /* Optional: centers the content if max-width is used */
+    margin: 0;
+    line-height: 1.6;
 }
 
 /* Typography */
-h1, h2 {
-    font-family: 'Righteous', system-ui, sans-serif;
-    font-weight: 600;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+h1 {
+    font-family: 'Righteous', cursive;
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
 }
 
 h2 {
@@ -33,20 +36,30 @@ h2 {
 }
 
 p {
-    line-height: 1.6;
-    margin-bottom: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1em;
 }
 
 /* Add more styles as needed */
 
 /* Navigation */
 nav {
+    background-color: var(--primary-color);
+    padding: 15px;
+    margin: -20px -20px 30px -20px;
     text-align: center;
-    margin-bottom: 20px;
 }
 
 nav a {
-    margin: 0 15px;
+    color: white;
     text-decoration: none;
-    color: var(--text-color);  /* Using the variable we defined above */
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--secondary-color);
 } 
