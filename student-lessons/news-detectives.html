@@ -59,6 +59,40 @@
             margin-top: 2em;
             padding: 1em 0;
         }
+
+        /* Add icons to headings using emoji for simplicity */
+        h2::before {
+            content: attr(data-icon);
+            margin-right: 0.5em;
+            font-size: 0.9em;
+        }
+
+        /* Subtle section dividers */
+        .lesson-content > * {
+            position: relative;
+            padding-bottom: 2em;
+        }
+
+        .lesson-content > *:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+            opacity: 0.3;
+        }
+
+        /* Optional: Subtle card-like background (commented out - uncomment to try) */
+        .lesson-content > section {
+            background: var(--bg-color);
+            border-radius: 12px;
+            padding: 1.5em;
+            margin: 1em 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
     </style>
 </head>
 <body>
@@ -79,19 +113,19 @@
         </div>
 
         <div class="lesson-content">
-            <h2>Age Groups:</h2>
+            <h2 data-icon="��">Age Groups:</h2>
             <ul>
                 <li><strong>Middle School (11-14):</strong> Start with local news, basic fact-checking, and lots of examples.</li>
                 <li><strong>High School (14-18):</strong> Dive into global news, analyze headlines, and discuss personalized news feeds.</li>
             </ul>
 
-            <h2>Materials Needed:</h2>
+            <h2 data-icon="🎒">Materials Needed:</h2>
             <ul>
                 <li>News articles/videos from varied sources</li>
                 <li>Internet and note-taking tools</li>
             </ul>
 
-            <h2>Lesson Steps:</h2>
+            <h2 data-icon="📝">Lesson Steps:</h2>
             <ol>
                 <li><strong>Kick-off (2 mins):</strong> Show a sensational headline (e.g., "Chocolate Cures All Diseases!"). Ask, "Is this true? How can we check?"</li>
                 <li><strong>Key Terms (3 mins):</strong>
@@ -114,10 +148,10 @@
                 <li><strong>Think About It (10 mins):</strong> Discuss why news sources vary. Highlight the importance of multiple perspectives.</li>
             </ol>
 
-            <h2>Keep Learning (optional):</h2>
+            <h2 data-icon="🔄">Keep Learning (optional):</h2>
             <p>Set up a regular "news detective" session where students bring in news to analyze.</p>
 
-            <h2>Teacher Tips:</h2>
+            <h2 data-icon="💡">Teacher Tips:</h2>
             <ul>
                 <li>Stay neutral, promote seeing all sides.</li>
                 <li>Teach finding trustworthy sources.</li>
