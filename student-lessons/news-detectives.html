@@ -69,22 +69,22 @@
             font-size: 0.9em;
         }
 
-        /* Subtle section dividers */
+        /* Adjust spacing for lesson content sections */
         .lesson-content > * {
             position: relative;
-            padding-bottom: 2em;
+            padding-bottom: 1em;  /* Reduced from 2em */
         }
 
-        .lesson-content > *:not(:last-child)::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 2px;
-            background: linear-gradient(to right, transparent, var(--accent-color), transparent);
-            opacity: 0.3;
+        /* Add specific spacing for headers */
+        .lesson-content h2 {
+            margin-bottom: 0.5em;  /* Add small space after headers */
+            padding-bottom: 0;     /* Remove padding from headers */
+        }
+
+        /* Remove extra padding from lists that follow headers */
+        .lesson-content h2 + ul,
+        .lesson-content h2 + ol {
+            padding-bottom: 1em;
         }
 
         /* Specifically target nested content within lesson steps */
