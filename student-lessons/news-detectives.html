@@ -11,90 +11,89 @@
     <link rel="stylesheet" href="../styles.css">
     <script src="../script.js" defer></script>
     <style>
-        /* Keep only specific styles not in main CSS */
+        /* Core layout styles */
         img {
             max-width: 100%;
             height: auto;
             display: block;
             margin: 0 auto 20px;
         }
+
         main {
             max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        h1 {
-            text-align: center;
-        }
+
         .lesson-content, .lesson-intro {
-            max-width: 600px;  /* Narrower width for better readability */
-            margin-left: 0;    /* Align to the left instead of center */
+            max-width: 600px;
+            margin-left: 0;
             text-align: left;
         }
+
         .page-header {
             text-align: left;
         }
+
         .page-header h1 {
             text-align: left;
         }
+
         .page-header p {
-            text-align: left;  /* Explicitly set left alignment for header paragraphs */
+            text-align: left;
             max-width: 800px;
-            margin: 0.5em 0;   /* Add some vertical spacing between lines */
+            margin: 0.5em 0;
         }
+
+        /* Typography and spacing */
         h2 {
             margin-top: 2em;
-            margin-bottom: 0.2em;  /* Significantly reduced space after headers */
+            margin-bottom: 0.2em;
         }
+
         ul, ol {
-            margin-top: 0;        /* Remove space above lists */
+            margin-top: 0;
             margin-bottom: 1em;
             padding-left: 2em;
         }
+
         li > ul, li > ol {
-            margin-top: 0.2em;    /* Reduced from 0.5em */
+            margin-top: 0.2em;
             margin-bottom: 0;
-            padding-left: 1.5em;  /* Slightly reduced indentation */
-        }
-        footer {
-            text-align: center;
-            margin-top: 2em;
-            padding: 1em 0;
+            padding-left: 1.5em;
         }
 
-        /* Add icons to headings using emoji for simplicity */
-        h2::before {
+        /* Section headers with icons */
+        h2[data-icon] {
+            margin-top: 1em;
+            margin-bottom: 0.3em;
+            padding-bottom: 0;
+        }
+
+        h2[data-icon]::before {
             content: attr(data-icon);
             margin-right: 0.5em;
             font-size: 0.9em;
         }
 
-        /* Adjust spacing for lesson content sections */
-        .lesson-content > * {
-            position: relative;
-            padding-bottom: 1em;  /* Reduced from 2em */
+        h2[data-icon] + ul {
+            margin-bottom: 1em;
         }
 
-        /* Add specific spacing for headers */
-        .lesson-content h2 {
-            margin-bottom: 0.5em;  /* Add small space after headers */
-            padding-bottom: 0;     /* Remove padding from headers */
-        }
-
-        /* Remove extra padding from lists that follow headers */
-        .lesson-content h2 + ul,
-        .lesson-content h2 + ol {
-            padding-bottom: 1em;
-        }
-
-        /* Specifically target nested content within lesson steps */
+        /* Lesson content specific styles */
         .lesson-content li > strong {
             display: inline-block;
-            margin-bottom: 0.2em;  /* Minimal space after subheaders */
+            margin-bottom: 0.2em;
         }
 
         .lesson-content li > ul {
-            margin-top: 0.2em;    /* Minimal space after subheaders */
+            margin-top: 0.2em;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2em;
+            padding: 1em 0;
         }
     </style>
 </head>
