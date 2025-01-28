@@ -14,4 +14,18 @@ toggle.addEventListener('click', () => {
     toggle.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
     // Save preference
     localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
-}); 
+});
+
+// Load footer component
+async function loadFooter() {
+    try {
+        const response = await fetch('/components/footer.html');
+        const footerHtml = await response.text();
+        document.body.insertAdjacentHTML('beforeend', footerHtml);
+    } catch (error) {
+        console.error('Error loading footer:', error);
+    }
+}
+
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', loadFooter); 
