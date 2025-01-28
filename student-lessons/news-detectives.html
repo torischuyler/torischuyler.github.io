@@ -33,13 +33,15 @@
             font-size: 18px;
         }
 
-        /* Keep these to maintain font sizes */
+        /* Update these selectors to be more specific and override any conflicting styles */
         .lesson-content p,
         .lesson-content li,
-        .lesson-content li > *,
+        .lesson-content li p,
+        .lesson-content li ul,
+        .lesson-content li ol,
         .lesson-content ul,
         .lesson-content ol {
-            font-size: 18px;
+            font-size: 20px !important; /* Using !important to ensure this takes precedence */
         }
 
         .page-header h1 {
@@ -121,7 +123,7 @@
         <div class="lesson-content">
             <h2>🎯 Lesson Goals</h2>
             <ol>
-                <li>Tell the difference between facts, opinions, and bias when reading and watching news clips.</li>
+                <li>Tell the difference between facts, opinions, and bias when reading and watching news.</li>
                 <li>Use AI tools to find and check information.</li>
                 <li>Have respectful conversations with classmates.</li>
             </ol>
@@ -142,8 +144,12 @@
 
             <h2 data-icon="📝">Lesson Steps</h2>
             <ol>
-                <li><strong>Kick-off (2 mins):</strong> Show a sensational headline (e.g., "Chocolate Cures All Diseases!"). Ask, "Is this true? How can we check?"</li>
-                <li><strong>Key Terms (3 mins):</strong>
+                <li>
+                    <strong>Kick-off (2 mins):</strong>
+                    <p>Show a sensational headline (e.g., "Chocolate Cures All Diseases!"). Ask, "Is this true? How can we check?"</p>
+                </li>
+                <li>
+                    <strong>Key Terms (3 mins):</strong>
                     <ul>
                         <li><strong>Fact:</strong> Proven true (e.g., "Earth orbits the Sun").</li>
                         <li><strong>Opinion:</strong> Personal belief (e.g., "Pizza is the best food").</li>
