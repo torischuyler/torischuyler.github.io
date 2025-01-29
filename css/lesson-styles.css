@@ -1,0 +1,82 @@
+/* Core layout */
+.lesson-page img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.lesson-page main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography base sizes */
+.lesson-content {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    text-align: left;
+    margin-top: -3px;
+    font-size: 18px;
+}
+
+/* Content typography */
+.lesson-content p,
+.lesson-content li {
+    font-size: 20px;
+}
+
+/* Header styles */
+.page-header h1 {
+    text-align: center;
+}
+
+.page-header p {
+    text-align: left;
+    width: 100%;
+    margin: 0.5em 0;
+}
+
+/* Section headers */
+.lesson-content h2 {
+    margin-top: 1em;
+    margin-bottom: 0.2em;
+}
+
+/* Icon headers */
+.lesson-content h2[data-icon]::before {
+    content: attr(data-icon);
+    margin-right: 0.5em;
+    font-size: 0.9em;
+}
+
+/* List styling */
+.lesson-content ul,
+.lesson-content ol {
+    padding-left: 40px;
+    margin: 0 0 1em 0;
+}
+
+.lesson-content li {
+    margin-bottom: 1em;
+}
+
+.lesson-content li:last-child {
+    margin-bottom: 0;
+}
+
+.lesson-content li > ul,
+.lesson-content li > ol {
+    padding-left: 30px;
+    margin-top: 0.5em;
+}
+
+/* Footer */
+.lesson-page footer {
+    text-align: center;
+    margin-top: 2em;
+    padding: 1em 0;
+}
