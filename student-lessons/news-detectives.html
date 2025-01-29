@@ -20,13 +20,15 @@
         }
 
         main {
-            max-width: 800px;
+            width: 90%;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
         .lesson-content {
-            max-width: 600px;
+            width: 100%;
+            max-width: none;
             margin-left: 0;
             text-align: left;
             margin-top: -3px;
@@ -50,7 +52,7 @@
 
         .page-header p {
             text-align: left;
-            max-width: 800px;
+            width: 100%;
             margin: 0.5em 0;
         }
 
@@ -63,15 +65,26 @@
         ul, ol {
             margin-top: 0;
             margin-bottom: 1em;
-            padding-left: 2em;
+            padding-left: 1.5em;
             font-size: inherit;
         }
 
         li > ul, li > ol {
             margin-top: 0.2em;
             margin-bottom: 0;
-            padding-left: 1.5em;
+            padding-left: 1.2em;
             font-size: inherit;
+        }
+
+        /* Add specific styling for lesson-content lists */
+        .lesson-content ul,
+        .lesson-content ol {
+            padding-left: 1.2em;
+        }
+
+        .lesson-content li > ul,
+        .lesson-content li > ol {
+            padding-left: 1em;
         }
 
         /* Section headers with icons */
@@ -118,6 +131,27 @@
         .lesson-content li > ul,
         .lesson-content li > ol {
             margin-top: 0.5em;   /* Space between nested lists */
+        }
+
+        /* Adjust list indentation */
+        main .lesson-content ul,
+        main .lesson-content ol,
+        main ul,
+        main ol {
+            padding-left: 40px !important; /* Increased from 20px for a gentle indent */
+            margin-left: 0 !important;
+        }
+
+        main .lesson-content li > ul,
+        main .lesson-content li > ol {
+            padding-left: 30px !important; /* Slightly smaller indent for nested lists */
+            margin-left: 0 !important;
+        }
+
+        /* Target list items directly */
+        main .lesson-content li {
+            margin-left: 0 !important;
+            padding-left: 0 !important;
         }
     </style>
 </head>
