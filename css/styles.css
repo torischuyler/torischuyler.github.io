@@ -28,12 +28,13 @@ body {
     flex-direction: column;   /* stacks page content like pancakes */
 }
 
-/* Typography */
+/* The Starship's Name Badge 📛 (aka page title) */
 h1 {
-    font-family: 'Righteous', cursive;
+    /* If Righteous isn't ready for takeoff, use our trusty Space Grotesk backup crew */
+    font-family: 'Righteous', 'Space Grotesk', system-ui, sans-serif;
     color: var(--primary-color);
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2.5em;   /* using em for responsive sizing */
     margin-bottom: 30px;
 }
 
