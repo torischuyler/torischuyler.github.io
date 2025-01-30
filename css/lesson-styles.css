@@ -27,8 +27,10 @@
 /* Lists */
 .lesson-content ul,
 .lesson-content ol {
+    max-width: 1200px;
     padding-left: 40px;
     margin: 0 0 1em 0;
+
 }
 
 /* List items */
