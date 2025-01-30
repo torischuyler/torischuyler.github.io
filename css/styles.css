@@ -1,26 +1,31 @@
-/* Let's jazz up the whole place - Global Theme Settings */
+/* Let's jazz up the whole place 🎵 - Global Theme Settings */
 :root {
     /* Font family cascade: Space Grotesk → system-ui → sans-serif 
     (bc who needs normal font when u could have cosmic?) */
     font-family: 'Space Grotesk', system-ui, sans-serif;
 
     /* Colors 🎨 - Let's splash some happy little colors on our canvas */
-    --primary-color: #4a90e2;  /* sky is the limit */
-    --secondary-color: #50c878; /* fresh like a new galaxy */
-    --background-color: #f5f7fa; /* a whisper of the moon's glow */
-    --text-color: #2c3e50; /* deep space text */
+    --primary-color: #4a90e2;   /* sky is the limit */
+    --secondary-color: #50c878;   /* fresh like a new galaxy */
+    --background-color: #f5f7fa;   /* a whisper of the moon's glow */
+    --text-color: #2c3e50;   /* deep space text */
 }
 
-/* Reset some basic elements */
+/* Preparing the page for future liftoff 🚀 (aka consistent display across different browsers, screens, devices) */
 body {
+    /* browsers like to do their own thing so u need to reset them */
     margin: 0;
     padding: 0;
+
+    /* Visual Properties - how things look */
     background-color: var(--background-color);
     color: var(--text-color);
-    line-height: 1.6;
-    min-height: 100vh;  /* Make body at least full viewport height */
-    display: flex;
-    flex-direction: column;  /* Stack children vertically */
+    line-height: 1.6;   /* makes it easier on me eyes (said in British accent) */
+
+    /* Layout Properties - how things are arranged */
+    min-height: 100vh;   /* ensures our page always fills the viewport */
+    display: flex;   /* makes the page all stretchy and flexible */
+    flex-direction: column;   /* stacks page content like pancakes */
 }
 
 /* Typography */
@@ -44,7 +49,6 @@ p {
     font-size: 1.1em;
 }
 
-/* Add more styles as needed */
 
 /* Navigation */
 nav {
