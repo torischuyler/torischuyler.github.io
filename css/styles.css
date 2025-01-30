@@ -1,13 +1,14 @@
-/* Base styles */
+/* Let's jazz up the whole place - Global Theme Settings */
 :root {
-    /* Typography */
+    /* Font family cascade: Space Grotesk → system-ui → sans-serif 
+    (bc who needs normal font when u could have cosmic?) */
     font-family: 'Space Grotesk', system-ui, sans-serif;
-    
-    /* Colors - you can customize these! */
-    --primary-color: #4a90e2;
-    --secondary-color: #50c878;
-    --background-color: #f5f7fa;
-    --text-color: #2c3e50;
+
+    /* Colors 🎨 - Let's splash some happy little colors on our canvas */
+    --primary-color: #4a90e2;  /* sky is the limit */
+    --secondary-color: #50c878; /* fresh like a new galaxy */
+    --background-color: #f5f7fa; /* a whisper of the moon's glow */
+    --text-color: #2c3e50; /* deep space text */
 }
 
 /* Reset some basic elements */
