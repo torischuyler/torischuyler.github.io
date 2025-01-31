@@ -59,12 +59,12 @@ nav a:hover {
     background-color: var(--secondary-color);  /* highlight our destination */
 }
 
-/* Add this new wrapper for main content */
-main {
-    max-width: 1200px;
+/* Main content container */
+.lesson-page main {
+    max-width: 80vw;
     margin: 0 auto;
     padding: 0 20px;
-    flex: 1;  /* Take up remaining space */
+    flex: 1;
 }
 
 footer {

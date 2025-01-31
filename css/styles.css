@@ -19,13 +19,6 @@
     --text-color: #e1e1e1;
 }
 
-/* Main content container */
-.lesson-page main {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 /* Image */
 .lesson-page img {
     max-width: 100%;
