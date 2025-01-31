@@ -3,6 +3,7 @@
     /* Font family cascade: Space Grotesk → system-ui → sans-serif 
     (bc who needs normal font when u could have cosmic?) */
     font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-size: 16px;
 
     /* Colors 🎨 - Let's splash some happy little colors on our canvas */
     --primary-color: #4a90e2;   /* sky is the limit */
@@ -28,19 +29,21 @@ body {
     flex-direction: column;   /* stacks page content like pancakes */
 }
 
-/* The Starship's Name Badge 📛 (aka page title) */
+/* The Starship's Name Badge 📛 (aka lesson plan title) */
 h1 {
-    /* If Righteous isn't ready for takeoff, use our trusty Space Grotesk backup crew */
+    /* If Righteous font isn't ready for takeoff, use our trusty Space Grotesk font backup crew */
     font-family: 'Righteous', 'Space Grotesk', system-ui, sans-serif;
     color: var(--primary-color);
     text-align: center;
-    font-size: 2.5em;   /* using em for responsive sizing */
-    margin-bottom: 30px;
+    font-size: 2.5rem;   /* using rem for responsive sizing */
+    margin-bottom: 1.618rem;   /* using the golden ratio for aesthetic harmony */
+                             /* and 6/18 is my bday */
 }
 
+/* Deck Markers to help navigate the ship 🧭 (aka sub-headers to navigate the lesson plan) */
 h2 {
-    font-weight: 500;
-    font-size: 1.5rem;
+    font-weight: 700;   /* bold for clear navigation */
+    font-size: 1.5rem;  
     margin-bottom: 0.8rem;
 }
 
