@@ -89,3 +89,19 @@ footer p {
     max-width: 80vw;   /* Responsive width with comfortable margins */
     margin: 0 auto;
 }
+
+/* Mission Control's Light Switch 🌓 (aka theme toggle button) */
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: 15px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+}

@@ -67,21 +67,6 @@ nav a:hover {
     flex: 1;
 }
 
-#theme-toggle {
-    background: none;
-    border: none;
-    font-size: 1.2em;
-    cursor: pointer;
-    padding: 8px;
-    margin-left: 15px;
-    color: white;
-    transition: transform 0.3s ease;
-}
-
-#theme-toggle:hover {
-    transform: scale(1.1);
-}
-
 ol {
     max-width: 800px;
     margin: 0 auto;
