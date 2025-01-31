@@ -1,26 +1,22 @@
 /* Student Directory Page 📚 - Where future astronauts begin their journey */
 
+/* Lesson Plan Links 🔗 */
 ul {
-    max-width: 800px;
-    margin: 0 auto;
-    padding-left: 2em;  
+    padding-left: 2rem;   /* Indentation for list items */
 }
 
-ul li {
-    margin: 0.625rem 0;  /* converted 10px to rem */
+ul li a {  /* This targets links that are inside list items (<li>) that are inside unordered lists (<ul>) */
+    color: var(--text-color);   /* Uses a CSS variable for consistent text color across the site */
+    text-decoration: underline;   /* Adds underline to the link */
+    padding: 0.3rem 0.625rem;   /* Adds space inside the link */
+    border-radius: 0.25rem;   /* Rounds the corners of the link's background */
+    transition: all 0.3s ease;   /* Makes any changes (like hover effects) animate smoothly over 0.3 seconds */
+    display: inline-block;   /* Makes the link behave like a block while staying in line with text */
 }
 
-ul li a {
-    color: var(--text-color);
-    text-decoration: none;
-    padding: 0.3rem 0.625rem;  /* converted 5px 10px to rem */
-    border-radius: 0.25rem;    /* converted 4px to rem */
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
+/* Lesson Plan Hover Effect ✨ This only applies when someone hovers over the link */
 ul li a:hover {
-    background-color: var(--primary-color);
-    color: white;
-    transform: translateX(0.3rem);  /* converted 5px to rem */
+    background-color: var(--primary-color);   /* Changes background color on hover */
+    color: white;   /* Changes text to white on hover */
+    transform: translateX(0.3rem);   /* Slides the link right by 0.3rem on hover */
 }
