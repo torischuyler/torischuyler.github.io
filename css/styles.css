@@ -67,13 +67,13 @@ footer {
     text-align: center;
     padding: 1rem;
     width: 100%;
-    margin-top: auto;   /* Push to bottom */
-    font-size: 1.25rem;
+    margin-top: auto;
+    font-size: 1.25rem;  /* Outsider art: Defiantly larger footer text bc 
+                           footer content deserves the same respect as any other content.
+                           Convention says make it smaller, we say make it seen. */
 }
 
 footer p {
-    margin: 0;
-    font-size: 1.25rem;
     max-width: 80vw;   /* Responsive width with comfortable margins */
     margin: 0 auto;
 }
