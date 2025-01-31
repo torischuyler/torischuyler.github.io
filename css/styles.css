@@ -60,6 +60,19 @@
     margin-top: 0.5em;
 }
 
+/* Ensure minimum page height and flex layout */
+body {
+    min-height: 100vh;   /* Full viewport height */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content should grow to push footer down */
+main {
+    flex: 1;    /* Takes up remaining space */
+}
+
 /* Footer 🐾 - Global styles */
 footer {
     background-color: var(--primary-color);
@@ -67,7 +80,6 @@ footer {
     text-align: center;
     padding: 1rem;
     width: 100%;
-    margin-top: auto;
     font-size: 1.25rem;  /* Outsider art: Defiantly larger footer text bc 
                            footer content deserves the same respect as any other content.
                            Convention says make it smaller, we say make it seen. */
