@@ -12,6 +12,14 @@
     --text-color: #2c3e50;   /* deep space text */
 }
 
+    /* Dark Mode Palette 🌒 - For when we're cruising through deep space */
+    .dark-theme {
+        --primary-color: #2d5a8e;   /* stars shine softer at night */
+        --secondary-color: #2d7344;   /* space foliage after sunset */
+        --background-color: #1a1a1a;   /* the void between stars */
+        --text-color: #e1e1e1;   /* starlight text */
+    }
+
 /* Preparing the page for future liftoff 🚀 (aka consistent display across different browsers, screens, devices) */
 body {
     /* browsers like to do their own thing so u need to reset them */
@@ -119,14 +127,6 @@ footer p {
     font-size: 0.9em;
     max-width: 1200px;  /* Match main content width */
     margin: 0 auto;    /* Center the text */
-}
-
-/* Dark theme colors */
-.dark-theme {
-    --primary-color: #2d5a8e;
-    --secondary-color: #2d7344;
-    --background-color: #1a1a1a;
-    --text-color: #e1e1e1;
 }
 
 #theme-toggle {
