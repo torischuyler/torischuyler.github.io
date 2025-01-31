@@ -47,13 +47,6 @@ h2 {
     margin-bottom: 0.8rem;
 }
 
-p {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.1em;
-}
-
-
 /* Navigation */
 nav {
     background-color: var(--primary-color);
