@@ -59,32 +59,6 @@ nav a:hover {
     background-color: var(--secondary-color);  /* highlight our destination */
 }
 
-/* Lesson links styling */
-ul {
-    max-width: 800px;
-    margin: 0 auto;
-    padding-left: 2em;
-}
-
-ul li {
-    margin: 10px 0;
-}
-
-ul li a {
-    color: var(--text-color);
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-ul li a:hover {
-    background-color: var(--primary-color);
-    color: white;
-    transform: translateX(5px);
-}
-
 /* Add this new wrapper for main content */
 main {
     max-width: 1200px;
