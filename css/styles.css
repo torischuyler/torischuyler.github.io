@@ -47,26 +47,28 @@ h2 {
     margin-bottom: 0.8rem;
 }
 
-/* Navigation */
+/* Navigation Control Center 🎮 (aka page navigation bar) */
 nav {
     background-color: var(--primary-color);
-    padding: 15px;
+    padding: 1rem;
     margin: 0;
     text-align: center;
-    width: 100%;
+    width: 100%;   /* spans the full width of the page */
 }
 
+/* Where astronauts choose their destination 🌍 (aka navigation links) */
 nav a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 15px;
-    margin: 0 5px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    color: white;   /* white text for visibility */
+    text-decoration: none;   /* no underline */
+    padding: 0.5rem 1rem;   /* padding for spacing */
+    margin: 0 0.3rem;   /* margin for spacing */
+    border-radius: 0.3rem;   /* rounded corners for a friendly feel */
+    transition: background-color 0.3s;   /* smooth transition for hover effect */
 }
 
+/*3...2...1...LIFT OFF! 💥 (aka hover effect) */
 nav a:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color);  /* highlight our destination */
 }
 
 /* Lesson links styling */
