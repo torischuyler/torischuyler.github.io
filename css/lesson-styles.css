@@ -67,22 +67,6 @@ nav a:hover {
     flex: 1;
 }
 
-footer {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 15px;
-    width: 100%;
-    margin-top: auto;  /* Push to bottom */
-}
-
-footer p {
-    margin: 0;
-    font-size: 0.9em;
-    max-width: 1200px;  /* Match main content width */
-    margin: 0 auto;    /* Center the text */
-}
-
 #theme-toggle {
     background: none;
     border: none;
