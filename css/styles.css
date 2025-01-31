@@ -1,151 +1,75 @@
-/* Let's jazz up the whole place 🎵 - Global Theme Settings */
+/* Global Theme Settings - Base styles for the entire site */
 :root {
     /* Font family cascade: Space Grotesk → system-ui → sans-serif 
     (bc who needs normal font when u could have cosmic?) */
     font-family: 'Space Grotesk', system-ui, sans-serif;
-    font-size: 16px;
-
-    /* Colors 🎨 - Let's splash some happy little colors on our canvas */
-    --primary-color: #4a90e2;   /* sky is the limit */
-    --secondary-color: #50c878;   /* fresh like a new galaxy */
-    --background-color: #f5f7fa;   /* a whisper of the moon's glow */
-    --text-color: #2c3e50;   /* deep space text */
+    
+    /* Core color palette 🎨 Let's splash some happy little colors on our canvas */
+    --primary-color: #4a90e2;
+    --secondary-color: #50c878;
+    --background-color: #f5f7fa;
+    --text-color: #2c3e50;
 }
 
-    /* Dark Mode Palette 🌒 - For when we're cruising through deep space */
-    .dark-theme {
-        --primary-color: #2d5a8e;   /* stars shine softer at night */
-        --secondary-color: #2d7344;   /* space foliage after sunset */
-        --background-color: #1a1a1a;   /* the void between stars */
-        --text-color: #e1e1e1;   /* starlight text */
-    }
-
-/* Preparing the page for future liftoff 🚀 (aka consistent display across different browsers, screens, devices) */
-body {
-    /* browsers like to do their own thing so u need to reset them */
-    margin: 0;
-    padding: 0;
-
-    /* Visual Properties - how things look */
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;   /* makes it easier on me eyes (said in British accent) */
-
-    /* Layout Properties - how things are arranged */
-    min-height: 100vh;   /* ensures our page always fills the viewport */
-    display: flex;   /* makes the page all stretchy and flexible */
-    flex-direction: column;   /* stacks page content like pancakes */
+/*  Dark Mode Palette 🌒  */
+.dark-theme {
+    --primary-color: #2d5a8e;
+    --secondary-color: #2d7344;
+    --background-color: #1a1a1a;
+    --text-color: #e1e1e1;
 }
 
-/* The Starship's Name Badge 📛 (aka lesson plan title) */
-h1 {
-    /* If Righteous font isn't ready for takeoff, use our trusty Space Grotesk font backup crew */
-    font-family: 'Righteous', 'Space Grotesk', system-ui, sans-serif;
-    color: var(--primary-color);
-    text-align: center;
-    font-size: 2.5rem;   /* using rem for responsive sizing */
-    margin-bottom: 1.618rem;   /* using the golden ratio for aesthetic harmony */
-                             /* and 6/18 is my bday */
-}
-
-/* Deck Markers to help navigate the ship 🧭 (aka sub-headers to navigate the lesson plan) */
-h2 {
-    font-weight: 700;   /* bold for clear navigation */
-    font-size: 1.5rem;  
-    margin-bottom: 0.8rem;
-}
-
-/* Navigation Control Center 🎮 (aka page navigation bar) */
-nav {
-    background-color: var(--primary-color);
-    padding: 1rem;
-    margin: 0;
-    text-align: center;
-    width: 100%;   /* spans the full width of the page */
-}
-
-/* Where astronauts choose their destination 🌍 (aka navigation links) */
-nav a {
-    color: white;   /* white text for visibility */
-    text-decoration: none;   /* no underline */
-    padding: 0.5rem 1rem;   /* padding for spacing */
-    margin: 0 0.3rem;   /* margin for spacing */
-    border-radius: 0.3rem;   /* rounded corners for a friendly feel */
-    transition: background-color 0.3s;   /* smooth transition for hover effect */
-}
-
-/*3...2...1...LIFT OFF! 💥 (aka hover effect) */
-nav a:hover {
-    background-color: var(--secondary-color);  /* highlight our destination */
-}
-
-/* Lesson links styling */
-ul {
-    max-width: 800px;
-    margin: 0 auto;
-    padding-left: 2em;
-}
-
-ul li {
-    margin: 10px 0;
-}
-
-ul li a {
-    color: var(--text-color);
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-ul li a:hover {
-    background-color: var(--primary-color);
-    color: white;
-    transform: translateX(5px);
-}
-
-/* Add this new wrapper for main content */
-main {
-    max-width: 1200px;
+/* Main content container */
+.lesson-page main {
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
-    flex: 1;  /* Take up remaining space */
 }
 
-footer {
-    background-color: var(--primary-color);
-    color: white;
+/* Image */
+.lesson-page img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* Main tile */
+.page-header h1 {
     text-align: center;
-    padding: 15px;
-    width: 100%;
-    margin-top: auto;  /* Push to bottom */
 }
 
-footer p {
-    margin: 0;
-    font-size: 0.9em;
-    max-width: 1200px;  /* Match main content width */
-    margin: 0 auto;    /* Center the text */
+/* Section headers */
+.lesson-content h2 {
+    margin-top: 2em;
+    margin-bottom: 0.5em;
 }
 
-#theme-toggle {
-    background: none;
-    border: none;
-    font-size: 1.2em;
-    cursor: pointer;
-    padding: 8px;
-    margin-left: 15px;
-    color: white;
-    transition: transform 0.3s ease;
+/* Lists */
+.lesson-content ul,
+.lesson-content ol {
+    max-width: 1200px;
+    padding-left: 40px;
+    margin: 0 0 1em 0;
+
 }
 
-#theme-toggle:hover {
-    transform: scale(1.1);
+/* List items */
+.lesson-content li {
+    font-size: 20px;
+    margin-bottom: 1em;
 }
 
-ol {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.1em;
-} 
+/* Nested lists */
+.lesson-content li > ul,
+.lesson-content li > ol {
+    padding-left: 30px; /* Indents nested lists */
+    margin-top: 0.5em;
+}
+
+/* Footer */
+.lesson-page footer {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 2em;
+}
