@@ -5,16 +5,16 @@ ul {
     padding-left: 2rem;   /* Indentation for list items */
 }
 
-ul li a {  /* This targets links that are inside list items (<li>) that are inside unordered lists (<ul>) */
-    /* Long-form padding (explicit way) */
+ul li a { /* This targets links (<a>) that are inside list items (<li>) that are inside unordered lists (<ul>) */
+    /* Padding in long form (explicit way) - like getting a long ass receipt from CVS 🧾 */
     padding-top: 0.3rem;
     padding-right: 0.625rem;
     padding-bottom: 0.3rem;
     padding-left: 0.625rem;
 
-    /* Same thing but with shorthand! 🪄
+    /* Same thing but with shorthand! 🪄 like an eco-friendly tweet */
     padding: 0.3rem 0.625rem;
-    */
+    
 
     color: var(--text-color);   /* Uses a CSS variable for consistent text color across the site */
     text-decoration: underline;   /* Adds underline to the link */
