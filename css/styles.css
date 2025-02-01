@@ -38,28 +38,6 @@
     margin-bottom: 0.5em;
 }
 
-/* Lists */
-.lesson-content ul,
-.lesson-content ol {
-    max-width: 1200px;
-    padding-left: 40px;
-    margin: 0 0 1em 0;
-
-}
-
-/* List items */
-.lesson-content li {
-    font-size: 20px;
-    margin-bottom: 1em;
-}
-
-/* Nested lists */
-.lesson-content li > ul,
-.lesson-content li > ol {
-    padding-left: 30px; /* Indents nested lists */
-    margin-top: 0.5em;
-}
-
 /* Ensure minimum page height and flex layout */
 body {
     min-height: 100vh;   /* Full viewport height */

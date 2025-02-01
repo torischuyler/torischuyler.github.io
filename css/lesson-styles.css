@@ -67,8 +67,48 @@ nav a:hover {
     flex: 1;
 }
 
+/* Mission Checklist Format 📝 (aka lists for step-by-step instructions) */
 ol {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.1em;
-} 
+    /* Display & Positioning - how it fits in space */
+    display: block; /* Vertical stack formation (default) */
+    
+    /* Box Model - the spacecraft's dimensions */
+    max-width: 80vw;
+    margin: 0 auto;   /* centers our mission checklist in its container */
+    padding-left: 5rem;   /* room for those mission numbers */
+    
+    /* Visual Properties - make it look stellar */
+    list-style-position: outside;   /* keeps numbers neatly aligned */
+}
+
+/* Mission Checklist Format 📝 (aka lists for step-by-step instructions) */
+.lesson-content ul,
+.lesson-content ol {
+    /* Display & Positioning - how it fits in space */
+    display: block;   /* Vertical stack formation (default) */
+    
+    /* Box Model - the spacecraft's dimensions */
+    max-width: 80vw;
+    padding-left: 2.5rem;
+    margin: 0 0 1rem 0;
+
+    /* Visual Properties - make it look stellar */
+    list-style-position: outside;   /* keeps numbers neatly aligned */
+}
+
+/* Mission Crew 🧑‍🚀 (aka list items) */
+.lesson-content li {
+    /* Typography */
+    font-size: 1.125rem;
+    
+    /* Box Model */
+    margin-bottom: 1rem;   /* provides breathing space between crew members */
+}
+
+/* Sub-missions 🛸 (aka nested lists) */
+.lesson-content li > ul,
+.lesson-content li > ol {
+    /* Box Model - Docking Position */
+    padding-left: 1.875rem;   /* navigation clearance for nested missions */
+    margin-top: 0.5rem;   /* creates hierarchy in mission structure */
+}
