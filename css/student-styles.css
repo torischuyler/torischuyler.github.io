@@ -1,11 +1,6 @@
 /* Student Directory Page 📚 - Where future astronauts begin their journey */
 
 /* Lesson Plan Links 🔗 */
-ul {
-    padding-left: 2rem;   /* Indentation for list items */
-}
-
-
 ul li a { /* This targets links (<a>) that are inside list items (<li>) that are inside unordered lists (<ul>) */
     /* Padding in long form (explicit way) - like getting a long ass receipt from CVS 🧾 */
     padding-top: 0.3rem;
