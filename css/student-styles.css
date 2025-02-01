@@ -1,7 +1,24 @@
 /* Student Directory Page 📚 - Where future padawans begin their journey */
 
 /* Lesson Plan Links 🔗 */
-ul li a { /* This targets links (<a>) that are inside list items (<li>) that are inside unordered lists (<ul>) */
+ul li a { 
+    /* This targets unordered lists (🪆<ul>) with list items (🪆<li>) that have links (🪆<a>) inside them. 
+    * It's like Russian dolls (Matryoshka dolls) where each element nests inside another:
+    * 
+    * <ul>                  <!-- The biggest doll: the unordered list -->
+    *   <li>               <!-- The middle doll: list item -->
+    *     <a>Link!</a>     <!-- The smallest doll: the actual link -->
+    *   </li>
+    * </ul>
+    *
+    * When we write 'ul li a' in CSS, we're looking inside the dolls:
+    * - First, we open the biggest doll, the <ul>
+    * - Then, we open the middle doll, the <li> inside it
+    * - Finally, we find the smallest doll, the <a> link inside the <li>
+
+     * So when you see 'ul li a', think: 🪆 → 🪆 → 🪆
+    */
+
     /* Padding in long form (explicit way) - like getting a long ass receipt from CVS 🧾 */
     padding-top: 0.3rem;
     padding-right: 0.625rem;
