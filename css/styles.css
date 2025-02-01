@@ -152,8 +152,10 @@ footer p {
 
 /* Page description 📝 */
 .lesson-directory p {
-    margin: 1.5rem 0 2.5rem 0;
+    margin: 1.5rem auto 2.5rem auto;
     line-height: 1.6;
+    text-align: center;
+    max-width: 50rem;
 }
 
 /* Lesson links list 🔗 */
