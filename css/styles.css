@@ -26,6 +26,7 @@ nav {
     margin: 0;
     text-align: center;
     width: 100%;   /* spans the full width of the page */
+    color: white;
 }
 
 /* Where astronauts choose their destination 🌍 (aka navigation links) */
