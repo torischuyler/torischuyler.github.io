@@ -43,6 +43,17 @@ nav a:hover {
     background-color: var(--secondary-color);  /* highlight our destination */
 }
 
+/* The Starship's Name Badge 📛 (aka lesson plan title) */
+h1 {
+    /* If Righteous font isn't ready for takeoff, use our trusty Space Grotesk font backup crew */
+    font-family: 'Righteous', 'Space Grotesk', system-ui, sans-serif;
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 2.5rem;   /* using rem for responsive sizing */
+    margin-bottom: 1.618rem;   /* using the golden ratio for aesthetic harmony */
+                             /* and 6/18 is my bday */
+}
+
 /* Image */
 .lesson-page img {
     max-width: 100%;
