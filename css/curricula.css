@@ -19,42 +19,19 @@ ul li a {
      * So when you see 'ul li a', think: 🪆 → 🪆 → 🪆
     */
 
-    /* Padding in long form (explicit way) - like getting a long ass receipt from CVS 🧾 */
-    padding-top: 0.3rem;
-    padding-right: 0.625rem;
-    padding-bottom: 0.3rem;
-    padding-left: 0.625rem;
+    display: block;   /* Makes each link take up its own line, like an introvert enjoying their personal space */
 
-    /* Same thing but with shorthand! 🪄 like an eco-friendly tweet */
-    padding: 0.3rem 0.625rem;
+    /* 🔍 Let's break down the padding:
+     * We can write it as individual values: */
+    padding-top: 0.3rem;   /* Space above the link */
+    padding-right: 0.625rem;   /* Space to the right */
+    padding-bottom: 0.3rem;   /* Space below the link */
+    padding-left: 0.625rem;   /* Space to the left */
+    /* 🧑‍💻 Interactive Fun: Change the padding values and watch your personal space grow or shrink! */
 
-    /* 🤔 "Wait... why are both padding styles uncommented?"
-    * 
-    * PLOT TWIST: In CSS, when you have the same property declared twice,
-    * the last one wins! So that shorthand padding above is actually 
-    * overriding our CVS receipt version.
-    *
-    * Is this efficient? Nope! 
-    * Would a linter be crying right now? Absolutely! Because:
-    * - It's redundant to declare the same property twice.
-    * - This can confuse developers reviewing or maintaining the code.
-    * - It increases file size unnecessarily, even if just a tad.
-    * - It might hint at a misunderstanding of how CSS cascades or specificity works.
-
-    * Wondering tf is a linter? (It's a tool that checks your code for 
-    * errors, style issues, and inefficiencies, like an annoying but 
-    * helpful teacher).
-
-    * Is your instructor twitching while purposely leaving inefficient
-    * code uncommented? YOU BET! 
-    * Are AI assistants everywhere struggling with their perfectionist programming? *nervous beep boops*
-    * Are we all doing breathing exercises? Yes, yes we are. 🧘‍♀️
-    *
-    * Consider this your introduction to CSS specificity... and why caring
-    * about quality code is a shared struggle among linters,
-    * instructors, and AI assistants alike 😅
-    *
-    */
+    /* 🪄 Or we can write it in shorthand! 
+     * padding: 0.3rem 0.625rem;    /* First value: top/bottom (0.3rem), Second value: left/right (0.625rem) 
+     */
 }
 
 /* Lesson Plan Hover Effect ✨ This only applies when someone hovers over the link */
