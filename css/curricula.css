@@ -25,14 +25,14 @@
     /* Layout Wizardry 🧙‍♂️ */
     display: block;   /* Makes it so each lesson plan link is on its own line */
 
-    /* 🔍 Let's break down the padding (space around the lesson plan link text)
-     * We can write it as individual values: */
-    padding-top: 0.3rem;   /* Space above the link */
-    padding-right: 0.625rem;   /* Space to the right */
-    padding-bottom: 0.3rem;   /* Space below the link */
-    padding-left: 0.625rem;   /* Space to the left */
+    /* 💃🕺 Let's break down the padding - Cha Cha Slide style! */
+    padding-top: 0.3rem;   /* Take it back now y'all (⬆️) */
+    padding-right: 0.625rem;   /* Slide to the right! (➡️) */
+    padding-bottom: 0.3rem;   /* Get down low (⬇️) */
+    padding-left: 0.625rem;   /* Slide to the left! (⬅️) */
+    /* FREEZE! EVERYBODY CLAP YOUR HANDS! 👏👏👏👏 */
 
-    /* 🪄 Or we can write it in shorthand (much nicer, less words!) */
+/* 🪄 Or we can write it in shorthand (much nicer, less words!) - Wingardium Less-code-iosa! */
     padding: 0.3rem 0.625rem;    /* First value: top/bottom (0.3rem), Second value: left/right (0.625rem) */
 
     /* Smooth, gentle transitions 🕊️ */
