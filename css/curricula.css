@@ -44,8 +44,9 @@
     /* Smooth, gentle transitions 🕊️ */
     transition: all 0.5s ease;
 
-    /* For a more brutalist/digital feel, try:
-    /* transition: all 0.05s steps(2, jump-none); /* Super quick, robotic movement 🤖 */
+    /* For a more brutalist/digital feel, try uncommenting this line: */
+    /* transition: all 0.05s steps(2, jump-none); */
+    /* Super quick, robotic movement 🤖 */
 
     background-color: white;
     margin: -0.2rem -0.4rem -0.2rem 0.2rem;  /* 🏈 Like a football helmet: padding is the soft inside cushioning, 
