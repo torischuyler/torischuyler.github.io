@@ -47,7 +47,18 @@
     /* transition: all 0.05s steps(2, jump-none); /* Super quick, robotic movement 🤖 */
 
     background-color: white;
-    margin: -0.2rem -0.4rem -0.2rem 0.2rem;  /* add comment */
+    margin: -0.2rem -0.4rem -0.2rem 0.2rem;  /* 🏈 Like a football helmet: padding is the soft inside cushioning, 
+                                                margin is like the facemask - it controls the space around
+                                                (margin values, more TRouBLe: Top⬆️ Right➡️ Bottom⬇️ Left⬅️)
+
+                                                          ↕️ margin
+                                                     +--------------+
+                                                     |    ↕️ padding |
+                                                     |    [Link]    |
+                                                     |              |
+                                                     +--------------+
+                                                          ↕️ margin    */
+                                                
     transform-origin: left; /* add comment */
 }
 
