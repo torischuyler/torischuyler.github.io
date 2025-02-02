@@ -22,10 +22,7 @@
      * So when you see the CSS property 'ul li a', think: 🪆 → 🪆 → 🪆
     */
 
-    /* Layout Wizardry 🧙‍♂️ */
-    display: inline-block;   /* Makes it so each lesson plan link is on its own line */
-
-    /* 💃🕺 Let's break down the padding - Cha Cha Slide style! */
+    /* 💃🕺 Now let's break down the padding - Cha Cha Slide style! */
     /* Remember the order: TRouBLe (Top, Right, Bottom, Left) - we're dancing our way into TROUBLE! */
     /* (Ms. Schuyler's best dance move is the robot btw */
     padding-top: 0.2rem;   /* Take it back now y'all (⬆️) */
