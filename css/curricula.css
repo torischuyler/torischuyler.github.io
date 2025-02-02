@@ -39,13 +39,17 @@
     transition: transform 0.3s ease;
 }
 
-/* Lesson Plan Focus Effect ✨ Applies when focusing on lesson plan link */
+/* Interactive Link States 🔗✨ */
+.lesson-directory ul li a:hover {
+    color: var(--secondary-color);
+}
+
 .lesson-directory ul li a:focus {
-    outline: 2px solid blue; /* Remove the default focus outline */
-    box-shadow: 0 0 0 2px var(--primary-color);   /* Adds a subtle shadow around the link */
-    background-color: transparent;   /* Keep the background transparent for a cleaner look */
-    color: var(--primary-color);   /* Change text color to primary for contrast */
-    transform: scale(1.05);   /* Slightly enlarge the link for a different effect */
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-color);
+    background-color: transparent;
+    color: var(--primary-color);
+    transform: scale(1.05);
 }
 
 /* Lesson directory pages (Students & Developers) 📚 */
@@ -78,8 +82,4 @@
     color: var(--text-color);
     text-decoration: underline;
     transition: color 0.3s;
-}
-
-.lesson-directory a:hover {
-    color: var(--secondary-color);
 }
