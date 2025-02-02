@@ -32,7 +32,7 @@
     padding-bottom: 0.3rem;   /* Space below the link */
     padding-left: 0.625rem;   /* Space to the left */
 
-    /* 🪄 Or we can write it in shorthand */
+    /* 🪄 Or we can write it in shorthand (much nicer, less words!) */
     padding: 0.3rem 0.625rem;    /* First value: top/bottom (0.3rem), Second value: left/right (0.625rem) */
 
     /* Smooth, gentle transitions 🕊️ */
