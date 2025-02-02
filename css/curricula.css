@@ -34,7 +34,7 @@
     /* FREEZE! EVERYBODY CLAP YOUR HANDS! 👏👏👏👏 */
 
 /* 🪄 Or we can write it in shorthand (much nicer, less words!) - Wingardium Less-code-iosa! */
-    padding: 0.3rem 0.625rem;    /* First value: top/bottom (0.3rem), Second value: left/right (0.625rem) */
+    padding: 0.3rem 0.625rem;   /* First value: top/bottom (0.3rem), Second value: left/right (0.625rem) */
 
     /* Smooth, gentle transitions 🕊️ */
     transition: all 0.5s ease;
@@ -46,11 +46,7 @@
 }
 
 /* Interactive Link States 🔗✨ */
-.lesson-directory ul li a:hover {
-    color: var(--secondary-color);
-}
-
-/* .lesson-directory ul li a:hover, */
+.lesson-directory ul li a:hover,
 .lesson-directory ul li a:focus {
     outline: none;
     box-shadow: 0 0 0 2px var(--primary-color);
