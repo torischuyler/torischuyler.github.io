@@ -59,7 +59,6 @@
                                                      |              |
                                                      +--------------+
                                                           ↕️ margin    */
-    transform-origin: left; /* add comment */
 }
 
 /* Interactive Link States 🔗✨ */
@@ -69,7 +68,6 @@
     box-shadow: 0 0 0 2px var(--primary-color);
     background-color: transparent;
     color: var(--primary-color);
-    transform: scale(1.05);
 }
 
 /* Lesson directory pages (Students & Developers) 📚 */
