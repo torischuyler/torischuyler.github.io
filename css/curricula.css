@@ -1,7 +1,7 @@
 /* Curricula Page 📚 */
 
 /* Lesson Plan Links 🔗 */
-ul li a { 
+.lesson-directory ul li a { 
     /* The code targets unordered lists (🪆<ul>) with list items (🪆<li>) that have links (🪆<a>) inside them.
     * An unordered list (<ul>) is a collection of items without a specific order, like a bullet-point list. 
     * Here, our unordered list is a bullet-point collection of lesson plan links.
@@ -40,7 +40,7 @@ ul li a {
 }
 
 /* Lesson Plan Focus Effect ✨ Applies when focusing on lesson plan link */
-ul li a:focus {
+.lesson-directory ul li a:focus {
     outline: 2px solid blue; /* Remove the default focus outline */
     box-shadow: 0 0 0 2px var(--primary-color);   /* Adds a subtle shadow around the link */
     background-color: transparent;   /* Keep the background transparent for a cleaner look */
