@@ -23,18 +23,22 @@
     */
 
     /* Layout Wizardry 🧙‍♂️ */
-    display: block;   /* Makes it so each lesson plan link is on its own line */
+    display: inline-block;   /* Makes it so each lesson plan link is on its own line */
 
     /* 💃🕺 Let's break down the padding - Cha Cha Slide style! */
     /* Remember the order: TRouBLe (Top, Right, Bottom, Left) - we're dancing our way into TROUBLE! */
-    padding-top: 0.3rem;   /* Take it back now y'all (⬆️) */
-    padding-right: 0.625rem;   /* Slide to the right! (➡️) */
-    padding-bottom: 0.3rem;   /* Get down low (⬇️) */
-    padding-left: 0.625rem;   /* Slide to the left! (⬅️) */
+    /* (Ms. Schuyler's best dance move is the robot btw */
+    padding-top: 0.2rem;   /* Take it back now y'all (⬆️) */
+    padding-right: 0.4rem;   /* Slide to the right! (➡️) */
+    padding-bottom: 0.2rem;   /* Get down low (⬇️) */
+    padding-left: 0.4rem;   /* Slide to the left! (⬅️) */
     /* FREEZE! EVERYBODY CLAP YOUR HANDS! 👏👏👏👏 */
 
 /* 🪄 Or we can write it in shorthand (much nicer, less words!) - Wingardium Less-code-iosa! */
-    padding: 0.3rem 0.625rem;   /* First value: top/bottom (0.3rem), Second value: left/right (0.625rem) */
+    padding: 0.2rem 0.4rem 0.2rem 0.4rem;   /* Values: top, right, bottom, left (TRouBLe 😈) */
+
+    /* Or we can go galaxy brain meme enlightened mode 🧠✨ */
+    padding: 0.2rem 0.4rem;   /* First value: top/bottom, Second value: right/left */
 
     /* Smooth, gentle transitions 🕊️ */
     transition: all 0.5s ease;
@@ -43,6 +47,8 @@
     /* transition: all 0.05s steps(2, jump-none); /* Super quick, robotic movement 🤖 */
 
     background-color: white;
+    margin: -0.2rem -0.4rem -0.2rem 0.2rem;  /* add comment */
+    transform-origin: left; /* add comment */
 }
 
 /* Interactive Link States 🔗✨ */
