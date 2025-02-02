@@ -1,13 +1,16 @@
-/* Curricula Page 📚 - Where future padawans begin their journey */
+/* Curricula Page 📚 */
 
 /* Lesson Plan Links 🔗 */
 ul li a { 
-    /* This targets unordered lists (🪆<ul>) with list items (🪆<li>) that have links (🪆<a>) inside them. 
-    * It's like Russian dolls (Matryoshka dolls) where each element nests inside another:
+    /* The code targets unordered lists (🪆<ul>) with list items (🪆<li>) that have links (🪆<a>) inside them.
+    * An unordered list (<ul>) is a collection of items without a specific order, like a bullet-point list. 
+    * Here, our unordered list is a bullet-point collection of lesson plan links.
+
+    * Think of it like Russian dolls (🪆Matryoshka dolls) where each element nests inside another:
     * 
-    * <ul>                  <!-- The biggest doll: the unordered list -->
-    *   <li>               <!-- The middle doll: list item -->
-    *     <a>Link!</a>     <!-- The smallest doll: the actual link -->
+    * <ul>                  <!-- The biggest doll: the unordered list (lesson plan list) -->
+    *   <li>               <!-- The middle doll: list item (each lesson plan) -->
+    *     <a>Link!</a>     <!-- The smallest doll: the actual link (lesson plan link) -->
     *   </li>
     * </ul>
     *
@@ -16,29 +19,33 @@ ul li a {
     * - Then, we open the middle doll, the <li> inside it
     * - Finally, we find the smallest doll, the <a> link inside the <li>
 
-     * So when you see 'ul li a', think: 🪆 → 🪆 → 🪆
+     * So when you see the CSS property 'ul li a', think: 🪆 → 🪆 → 🪆
     */
 
-    display: block;   /* Makes each link take up its own line, like an introvert enjoying their personal space */
+    /* Layout Wizardry 🧙‍♂️ */
+    display: block;   /* Makes it so each lesson plan link is on its own line */
 
-    /* 🔍 Let's break down the padding:
+    /* 🔍 Let's break down the padding (space around the lesson plan link text)
      * We can write it as individual values: */
     padding-top: 0.3rem;   /* Space above the link */
     padding-right: 0.625rem;   /* Space to the right */
     padding-bottom: 0.3rem;   /* Space below the link */
     padding-left: 0.625rem;   /* Space to the left */
-    /* 🧑‍💻 Interactive Fun: Change the padding values and watch your personal space grow or shrink! */
 
-    /* 🪄 Or we can write it in shorthand! 
-     * padding: 0.3rem 0.625rem;    /* First value: top/bottom (0.3rem), Second value: left/right (0.625rem) 
-     */
+    /* 🪄 Or we can write it in shorthand */
+    padding: 0.3rem 0.625rem;    /* First value: top/bottom (0.3rem), Second value: left/right (0.625rem) */
+
+    /* Transition magic for smooth movement, preparing for the next focus CSS property (see below) */
+    transition: transform 0.3s ease;
 }
 
-/* Lesson Plan Hover Effect ✨ This only applies when someone hovers over the link */
-ul li a:hover {
-    background-color: var(--primary-color);   /* Changes background color on hover */
-    color: white;   /* Changes text to white on hover */
-    transform: translateX(0.3rem);   /* Slides the link right by 0.3rem on hover */
+/* Lesson Plan Focus Effect ✨ Applies when focusing on lesson plan link */
+ul li a:focus {
+    outline: 2px solid blue; /* Remove the default focus outline */
+    box-shadow: 0 0 0 2px var(--primary-color);   /* Adds a subtle shadow around the link */
+    background-color: transparent;   /* Keep the background transparent for a cleaner look */
+    color: var(--primary-color);   /* Change text color to primary for contrast */
+    transform: scale(1.05);   /* Slightly enlarge the link for a different effect */
 }
 
 /* Lesson directory pages (Students & Developers) 📚 */
