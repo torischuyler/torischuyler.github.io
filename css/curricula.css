@@ -35,8 +35,13 @@
     /* 🪄 Or we can write it in shorthand */
     padding: 0.3rem 0.625rem;    /* First value: top/bottom (0.3rem), Second value: left/right (0.625rem) */
 
-    /* Transition magic for smooth movement, preparing for the next focus CSS property (see below) */
-    transition: transform 0.3s ease;
+    /* Smooth, gentle transitions 🕊️ */
+    transition: all 0.5s ease;
+
+    /* For a more brutalist/digital feel, try:
+    /* transition: all 0.05s steps(2, jump-none); /* Super quick, robotic movement 🤖 */
+
+    background-color: white;
 }
 
 /* Interactive Link States 🔗✨ */
@@ -44,6 +49,7 @@
     color: var(--secondary-color);
 }
 
+/* .lesson-directory ul li a:hover, */
 .lesson-directory ul li a:focus {
     outline: none;
     box-shadow: 0 0 0 2px var(--primary-color);
