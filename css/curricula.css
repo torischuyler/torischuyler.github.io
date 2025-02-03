@@ -81,8 +81,7 @@
                                                           ↕️ margin    */
 }
 
-/* Interactive Link States 🔗✨ */
-.lesson-directory ul li a:hover,
+/* Interactive Focus State 🎧 */
 .lesson-directory ul li a:focus {
     outline: none;
     box-shadow: 0 0 0 2px var(--primary-color);
