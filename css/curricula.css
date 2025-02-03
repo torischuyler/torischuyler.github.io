@@ -62,7 +62,12 @@
     - Time: duration of the animation
     - Flow: how the animation progresses */
 
-    background-color: white;
+    /* Default color - vibrant blooming Poppy */
+    background-color: #FF6B6B;
+
+    /* White - clean like fresh snow ❄️ */
+    /* background-color: white; */
+
     margin: -0.2rem -0.4rem -0.2rem 0.2rem;  /* 🏈 Like a football helmet: padding is the soft inside cushioning, 
                                                 margin is like the facemask - it controls the space around
                                                 (margin values, more TRouBLe: Top⬆️ Right➡️ Bottom⬇️ Left⬅️)
