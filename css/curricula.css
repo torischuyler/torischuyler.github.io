@@ -36,49 +36,31 @@
     /* FREEZE! EVERYBODY CLAP YOUR HANDS! 👏👏👏👏 */
 
     /* 🪄 Or we can write it in shorthand (much nicer, less words!) - Wingardium Less-code-iosa! */
-    padding: 0.2rem 0.4rem 0.2rem 0.4rem;   /* Values: top, right, bottom, left (TRouBLe 😈) */
+    padding: 0.2rem 0.4rem 0.2rem 0.4rem;   /* Values: top, right, bottom, left (TRouBLe) */
 
-    /* Or we can go galaxy brain meme enlightened mode 🧠✨ */
+    /* 🧠 Or we can go galaxy brain meme enlightened mode */
     padding: 0.2rem 0.4rem;   /* First value: top/bottom, Second value: right/left */
 
-    /* Now onto the transitions property. WTF is that u ask? 🚗
-    🌉 Think of a transition like a bridge between 2 animation states.
-    It can be smooth or instant, depending on how you set it up.
-    transition is the car that gets you across that bridge! 🚙
-
-    WTF is actually a great way to remember each part of the transition (car) - 
-    W - WHICH ❓ parts will move (like choosing which parts of the car move - wheels? doors? everything?) 🚘
-    T - TIME ⏱️ how long the journey takes (3 seconds? 5 seconds to cross the bridge?) 
-    F - FLOW 🌊 how the car moves (flooring it? gentle acceleration? stop-and-go?) 🏎️
-
-    Examples in car terms:
-    - transition: all 2s ease
-      (whole car moves 🚗, takes 2 seconds, smooth acceleration)
-    - transition: color 1s linear
-      (just repainting the car 🎨, takes 1 second, constant speed)
-    - transition: transform 3s ease-in
-      (moving the car 🏎️💨, takes 3 seconds, starts slow then zooms!) 
+    /* 🏎️ Transitions - think of it like driving a car across a bridge 
+     Smooth, gentle transitions (All properties change smoothly in 0.5 seconds) 
     */
-    
-    /* Smooth, gentle transitions 🕊️ */
     transition: all 0.5s ease;
 
-    /* Try these different transitions! (uncomment to test) */
+    /* Different transitions to try (uncomment to test) */
 
     /* 🤖 Robot Mode: Sharp & Digital */
     /* transition: background-color 0.05s steps(2, jump-none); */
-    
-    /* 🎢 YEEZY MODE: ABSOLUTELY WILD */
+
+    /* 🎢 Yeezy Mode: Absolutely Wild */
     /* transition: all 4s cubic-bezier(.68,-0.55,.27,1.55); */
-    
-    /* 🐌 SLOOOOOOOW MOTION */
+
+    /* 🐌 Slow Motion */
     /* transition: all 8s ease-in; */
 
     /* Remember transitions with WTF:
-       WHICH property to animate (all, color, etc)
-       TIME how long it takes (0.5s, 2s, etc)
-       FLOW how it moves (ease, linear, steps, etc)
-   */
+    - Which: which properties to animate
+    - Time: duration of the animation
+    - Flow: how the animation progresses */
 
     background-color: white;
     margin: -0.2rem -0.4rem -0.2rem 0.2rem;  /* 🏈 Like a football helmet: padding is the soft inside cushioning, 
