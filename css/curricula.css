@@ -1,7 +1,7 @@
 /* Curricula Page 📚 */
 
 /* Lesson Plan Links 🔗 */
-.lesson-directory ul li a { 
+.curricula ul li a { 
     /* The code targets unordered lists (🪆<ul>) with list items (🪆<li>) that have links (🪆<a>) inside them.
     * An unordered list (<ul>) is a collection of items without a specific order, like a bullet-point list. 
     * Here, our unordered list is a bullet-point collection of lesson plan links.
@@ -82,7 +82,7 @@
 }
 
 /* Interactive Focus State 🎧 */
-.lesson-directory ul li a:focus {
+.curricula ul li a:focus {
     outline: none;
     box-shadow: 0 0 0 2px var(--primary-color);
     background-color: #39FF14; /* Yo dawg, I heard you like neon... 🟢
@@ -92,14 +92,14 @@
 }
 
 /* Lesson directory pages (Students & Developers) 📚 */
-.lesson-directory {
+.curricula {
     max-width: 80vw;
     margin: 0 auto;
     padding: 2rem;
 }
 
 /* Page description 📝 */
-.lesson-directory p {
+.curricula p {
     margin: 1.5rem auto 2.5rem auto;
     line-height: 1.6;
     text-align: center;
@@ -107,17 +107,17 @@
 }
 
 /* Lesson links list 🔗 */
-.lesson-directory ul {
+.curricula ul {
     list-style-type: disc;
     padding-left: 2rem;
     margin-left: 0;
 }
 
-.lesson-directory li {
+.curricula li {
     margin: 0.8rem 0;
 }
 
-.lesson-directory a {
+.curricula a {
     color: var(--text-color);
     text-decoration: underline;
     transition: color 0.3s;
