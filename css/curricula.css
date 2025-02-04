@@ -5,14 +5,27 @@ into a complete visual experience - CSS controls everything from colors and spac
 to animations and overall aesthetic.
 
 This CSS stylesheet serves two purposes:
-  📝 Styles the eOS website's curricula pages
+  😎 Styles the eOS website's curricula pages
   🔧 Acts as an educational tool to explain CSS properties
 
 We'll use simple analogies like dance moves and football helmets for clarity, 
 keeping the explanations straightforward and easy to understand.
 Warning: Some examples contain terrible jokes 😂 (srry about it)
 */
-*/
+
+/* ===== 📝 PARAGRAPH TEXT STYLES ===== 
+ NOTE: The navigation bar (<nav>) and page title (<h1>) are styled in styles.css
+ which contains the shared styles used across all pages on the site.
+ 
+ What's in this section:
+   - Paragraph text formatting
+   - Text alignment and width
+ */
+.curricula p {
+    line-height: 1.6;
+    text-align: center;
+    max-width: 50rem;
+}
 
 /* Lesson Plan Links 🔗 */
 .curricula ul li a { 
@@ -110,14 +123,6 @@ Warning: Some examples contain terrible jokes 😂 (srry about it)
     max-width: 80vw;
     margin: 0 auto;
     padding: 2rem;
-}
-
-/* Page description 📝 */
-.curricula p {
-    margin: 1.5rem auto 2.5rem auto;
-    line-height: 1.6;
-    text-align: center;
-    max-width: 50rem;
 }
 
 /* Lesson links list 🔗 */
