@@ -13,6 +13,13 @@ keeping the explanations straightforward and easy to understand.
 Warning: Some examples contain terrible jokes 😂 (srry about it)
 */
 
+/* Lesson directory pages (Students & Developers) 📚 */
+.curricula {
+    max-width: 80vw;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
 /* ===== 📝 PARAGRAPH TEXT STYLES ===== 
  NOTE: The navigation bar (<nav>) and page title (<h1>) are styled in styles.css
  which contains the shared styles used across all pages on the site.
@@ -25,6 +32,23 @@ Warning: Some examples contain terrible jokes 😂 (srry about it)
     line-height: 1.6;
     text-align: center;
     max-width: 50rem;
+}
+
+/* Lesson links list 🔗 */
+.curricula ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+    margin-left: 0;
+}
+
+.curricula li {
+    margin: 0.8rem 0;
+}
+
+.curricula a {
+    color: var(--text-color);
+    text-decoration: underline;
+    transition: color 0.3s;
 }
 
 /* Lesson Plan Links 🔗 */
@@ -90,10 +114,10 @@ Warning: Some examples contain terrible jokes 😂 (srry about it)
     - Flow: how the animation progresses */
 
     /* Default color - vibrant blooming Poppy */
-    background-color: #FF6B6B;
+    /* background-color: #FF6B6B; */
 
     /* White - clean like fresh snow ❄️ */
-    /* background-color: white; */
+    background-color: white;
 
     margin: -0.2rem -0.4rem -0.2rem 0.2rem;  /* 🏈 Like a football helmet: padding is the soft inside cushioning, 
                                                 margin is like the facemask - it controls the space around
@@ -109,6 +133,7 @@ Warning: Some examples contain terrible jokes 😂 (srry about it)
 }
 
 /* Interactive Focus State 🎧 */
+.curricula ul li a:hover,
 .curricula ul li a:focus {
     outline: none;
     box-shadow: 0 0 0 2px var(--primary-color);
@@ -116,28 +141,4 @@ Warning: Some examples contain terrible jokes 😂 (srry about it)
                                  So we put some electric green in your hover state! 
                                  - Xzibit, probably */
     color: var(--primary-color);
-}
-
-/* Lesson directory pages (Students & Developers) 📚 */
-.curricula {
-    max-width: 80vw;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-/* Lesson links list 🔗 */
-.curricula ul {
-    list-style-type: disc;
-    padding-left: 2rem;
-    margin-left: 0;
-}
-
-.curricula li {
-    margin: 0.8rem 0;
-}
-
-.curricula a {
-    color: var(--text-color);
-    text-decoration: underline;
-    transition: color 0.3s;
 }
