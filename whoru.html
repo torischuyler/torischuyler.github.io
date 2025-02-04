@@ -1,0 +1,40 @@
+<!-- Tells browsers "Hey, this is a modern HTML5 webpage!" -->
+<!DOCTYPE html>
+<!-- Sets the page language to English - helps screen readers, search engines, and spell checkers know what's up -->
+<html lang="en">
+<head>
+    <!-- Character encoding should be first so browser knows how to decode the rest of the page -->
+    <meta charset="UTF-8">
+    <!-- Viewport should be early as it affects page rendering and responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who Are You?</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Preconnect hints tell browser to establish early connections to external domains,
+         improving load time for resources from those domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Stylesheets: local first (faster to load) then third-party.
+         This prevents local styles from being accidentally overridden by third-party CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/whoru.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="whoru-container">
+        <h1>Who Are You?</h1>
+        
+        <section>
+            <p>I am Tori.</p>
+            
+            <p>I'm a software engineer who thinks:</p>
+            <ul>
+                <li>Learning should be playful 🎮</li>
+                <li>Mistakes are just experiments in disguise 🔬</li>
+                <li>Tech is for everyone 💝</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html> 
