@@ -1,0 +1,68 @@
+/* This is the main wrapper that keeps everything neat and centered on the page
+   - max-width keeps content from getting too wide
+   - margin auto centers everything horizontally
+   - padding gives everything some breathing room
+*/
+.whoru-container {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Makes the "Who Are You?" title big and bold
+   - Righteous font (right·eous /ˈrīCHəs/: morally right or justifiable)
+    - Font names only need quotes if they contain spaces
+     (like 'Space Grotesk') or numbers (like '4Righteous')
+     or special characters (like '&Righteous')
+   - 3rem makes it nice and big
+   - margin keeps it from crowding the text below
+*/
+.whoru-container h1 {
+    font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+/* Styles all the main paragraphs of text
+   - Space Grotesk font (gro·tesque /ɡrōˈtesk/: weird, distorted, or bizarre, often in an unsettling way)
+   - 1.2rem is comfortable reading size
+   - line height gives text vertical breathing room
+   - margin spaces paragraphs apart
+*/
+.whoru-container p {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Styles the list that holds our bullet points
+   - matches paragraph text styling
+   - adds space above and below list
+   - padding makes room for bullet points
+*/
+.whoru-container ul {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+
+/* Makes each list item look nice and spaced out
+   - margin keeps items from crowding each other
+*/
+.whoru-container li {
+    margin-bottom: 0.5rem;
+}
+
+/* Visual Hierarchy:
+   
+   .whoru-container        Main wrapper
+   └── h1                  Title
+   └── p                   Paragraphs
+   └── ul                  List container
+       └── li              List items
+
+   CSS follows this top-down, parent-to-child structure
+*/ 
