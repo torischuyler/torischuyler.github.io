@@ -13,36 +13,36 @@
   - Why? Because it needs to be the very first thing in an HTML document for proper rendering
     and validation (browsers can be pretty picky about this).
 
-  And one more lil thing 🔥:
-  -  We're still using HTML5 today. Instead of an HTML6, HTML5 evolves through continuous updates. 
-  It's like a "living standard", always getting better without changing its name.
+  And one more lil(ish) thing 🔥:
+  - We're still using HTML5 today. Instead of an HTML6, HTML5 evolves through continuous updates. 
+    It's like a "living standard", always getting better without changing its name.
 
-  Kind of like we evolve as people - we change, but we keep our first name.
-  (Except if you are like me and had your name changed from Katherine > Victoria 
-  bc there were too many Kates in the 90s. And to add to the complexity I go
-  by the nickname Tori. And I had a phase during childhood where for some 
-  reason I wanted to be called "Ned" and convinced girls on my soccer team to call me that).
-  
-  There are always some exceptions to rules 😂 these are sometimes referred to as 
-  "edge cases" or "corner cases" in software development.
+    Kind of like we evolve as people - we change, but we keep our first name.
+    (Except if you are like me and had your name changed from Katherine > Victoria 
+    bc there were too many Kates in the 90s. And to further complicate the situation,
+    I go by the nickname Tori).
+    
+    So there are always some exceptions to rules 😂 these are sometimes referred to as 
+    "edge cases" or "corner cases" in software development.
 
-  But for the most part, ppl keep their first name.
+    But for the most part, ppl keep their first name.
 
-  Early on my software engineering journey, I was told by smart ppl
-  that naming is one of the hardest things to do in software development.
+    Early on in my software engineering journey, I was told by smart ppl
+    that naming is one of the hardest things to do in software development.
 
-  I think I understand and agree. Picking a name is hard, even for parents!
-  Even for how we name generations of ppl.
-  Choosing a name could change the whole trajectory of a thing...even before it's a thing.
-  Okay, that's enough deep philosophical stuff for now! 😄 But I think is some insight to why naming is hard.
+    I think I understand and agree. Picking a name is hard, even for parents!
+    Even for how we name generations of ppl.
+    Choosing a name could change the whole trajectory of a thing...even before it's a thing.
+    Okay, that's enough deep philosophical stuff for now! 😄 But I think is some insight to why naming is hard.
   
   Optional lil modifications 🧘:
   - If you're into this stuff, check out W3C: https://www.w3.org/
   - If not, that's cool too. You could always come back to it later.
 -->
 
-<!-- Sets the page language to English - helps screen readers, search engines, and spell checkers know what's up -->
+<!-- Sets the page language to English - helps screen readers, search engines, and spell checkers -->
 <html lang="en">
+<!-- The head: where the brain of the HTML lives -->
 <head>
     <!-- Character encoding should be first so browser knows how to decode the rest of the page -->
     <meta charset="UTF-8">
@@ -52,15 +52,20 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
     <!-- Preconnect hints tell browser to establish early connections to external domains,
-         improving load time for resources from those domains -->
+        improving load time for resources from those domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Stylesheets: local first (faster to load) then third-party.
-         This prevents local styles from being accidentally overridden by third-party CSS -->
+        This prevents local styles from being accidentally overridden by third-party CSS -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/whoru.css">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+      <!-- JS last for performance and security
+        Script to toggle dark mode -->
+    
+    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Navigation bar -->
@@ -69,6 +74,7 @@
         <a href="students.html">Students</a> | 
         <a href="developers.html">Developers</a> | 
         <a href="whoru.html" class="active">Who Are You?</a>
+        <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
     </nav>
 
     <div class="whoru-container">
