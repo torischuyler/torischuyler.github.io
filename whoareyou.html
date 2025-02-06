@@ -5,7 +5,7 @@
 <!-- Sets the page language to English - helps screen readers, search engines, and spell checkers. -->
 
 <head>
-<!-- Head contains behind-the-scenes stuff that defines how the page works and looks. -->
+<!-- Head contains "behind-the-scenes" stuff that defines how the page works and looks. -->
 
     <meta charset="UTF-8">
     <!-- Character encoding tells browser how to decode the page. -->
@@ -43,29 +43,52 @@
     -->
 </head>
 <body>
-    <!-- Navigation bar -->
+<!-- Body contains all the visible content of the webpage, 
+ like text, images, and buttons - the "on-stage" part where the action happens. -->
+
     <nav>
+    <!-- Navigation section - like a table of contents for the webpage -->
+
         <a href="index.html">Home</a> | 
         <a href="students.html">Students</a> | 
         <a href="developers.html">Developers</a> | 
         <a href="whoareyou.html" class="active">Who Are You?</a>
+        <!-- Navigation links: Home | Students | Developers | Who Are You? (currently active) -->
+
         <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        <!-- Dark/Light mode toggle button. The 'aria-label' attribute makes this button accessible
+         by providing a description for screen readers, ensuring users with visual impairments
+         can understand and use this control. -->
     </nav>
 
-    <div class="whoru-container">
-        <h1>Who Are You?</h1>
-        
-        <section>
-            <p>I am Tori (sorry to disappoint if you were hoping for Baba O'Reilly).
-            </p>
+    <main>
+    <!-- Main content area - where the primary, unique content of the page lives -->
+
+        <div class="whoareyou-container">
+        <!-- A container div for the 'Who Are You?' section, used for styling and organizing content -->
+
+            <h1>Who Are You?</h1>
+            <!-- Main heading of the page, sets the theme or topic -->
             
-            <p>I'm a software engineer who thinks:</p>
-            <ul>
-                <li>Learning should be playful 🎮</li>
-                <li>Mistakes are just experiments in disguise 🔬</li>
-                <li>Tech is for everyone 💝</li>
-            </ul>
-        </section>
-    </div>
+            <section>
+            <!-- A thematic grouping of content, typically with a heading -->
+
+                <p>I am Tori (sorry to disappoint if you were hoping for Baba O'Reilly).
+                </p>
+                <!-- A paragraph, a block of text -->
+                
+                <p>I'm a software engineer who thinks:</p>
+                <ul>
+                <!-- List of bullet points -->
+
+                    <li>Learning should be playful 🎮</li>
+                     <!-- List item, aka a bullet point -->
+
+                    <li>Mistakes are just experiments in disguise 🔬</li>
+                    <li>Tech is for everyone 💝</li>
+                </ul>
+            </section>
+        </div>
+    </main>
 </body>
-</html> 
+</html>
