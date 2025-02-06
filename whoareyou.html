@@ -1,35 +1,46 @@
 <!DOCTYPE html>
-<!--
-    <!DOCTYPE html> is called DOCTYPE declaration.
-    It essentially tells browsers "Hey, this is an HTML webpage."
--->
+<!-- DOCTYPE declaration, it essentially tells browsers "Hey, this is an HTML webpage." -->
 
-<!-- Sets the page language to English - helps screen readers, search engines, and spell checkers -->
 <html lang="en">
-<!-- The head: where the brain of the HTML lives -->
+<!-- Sets the page language to English - helps screen readers, search engines, and spell checkers. -->
+
 <head>
-    <!-- Character encoding should be first so browser knows how to decode the rest of the page -->
+<!-- Head contains behind-the-scenes stuff that defines how the page works and looks. -->
+
     <meta charset="UTF-8">
-    <!-- Viewport should be early as it affects page rendering and responsiveness -->
+    <!-- Character encoding tells browser how to decode the page. -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Viewport makes sure the page looks good on all devices by adjusting to screen size. 
+     It also affects page rendering and responsiveness. -->
+
     <title>Who Are You?</title>
+    <!-- Page title, visible in browser tabs, bookmarks, and search engine results. -->
+
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Sets the favicon, the little icon you see in browser tabs and bookmarks. -->
     
-    <!-- Preconnect hints tell browser to establish early connections to external domains,
-        improving load time for resources from those domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preconnect hints tell the browser to start early connections to external domains, 
+     speeding up resource loading from those sites.
+      - 'crossorigin' enables secure loading from different domains for fonts.gstatic.com; 
+      Not needed for fonts.googleapis.com since it's just establishing a connection, not loading content.
+     -->
     
-    <!-- Stylesheets: local first (faster to load) then third-party.
-        This prevents local styles from being accidentally overridden by third-party CSS -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/whoareyou.css">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Stylesheets: 
+     - A stylesheet is a file that tells the browser how to style the HTML content.
+     - Local stylesheets (loaded first) for speed, then third-party. 
+     This order prevents local styles from being accidentally overridden by external CSS. -->
 
-      <!-- JS last for performance and security
-        Script to toggle dark mode -->
-    
     <script src="script.js" defer></script>
+    <!-- Script for toggling dark mode - placed last for better page load performance and security.
+     'defer' tells the browser to load the script after the HTML is parsed but before 
+     the DOMContentLoaded event, improving page load times.
+    -->
 </head>
 <body>
     <!-- Navigation bar -->
