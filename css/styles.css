@@ -39,7 +39,7 @@ nav a {
     transition: background-color 0.3s;   /* smooth transition for hover effect */
 }
 
-/*3...2...1...LIFT OFF! 💥 (aka hover effect) */
+/* 3...2...1...LIFT OFF! 💥 (aka hover effect) */
 nav a:hover {
     background-color: var(--secondary-color);  /* highlight our destination */
 }
@@ -47,12 +47,15 @@ nav a:hover {
 /* The Starship's Name Badge 📛 (aka lesson plan title) */
 h1 {
     /* If Righteous font isn't ready for takeoff, use our trusty Space Grotesk font backup crew */
-    font-family: 'Righteous', 'Space Grotesk', system-ui, sans-serif;
+    font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
     color: var(--primary-color);
     text-align: center;
-    font-size: 2.5rem;   /* using rem for responsive sizing */
-    margin-bottom: 1.618rem;   /* using the golden ratio for aesthetic harmony */
-                             /* and 6/18 is my bday */
+
+    /* using rem for responsive sizing */
+    font-size: 2.5rem;
+
+    /* using the golden ratio for aesthetic harmony (and bc 6/18 is my bday 😎) */
+    margin-bottom: 1.618rem;
 }
 
 /* Deck Markers to help navigate the ship 🧭 (aka sub-headers to navigate the lesson plan) */
@@ -91,28 +94,6 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Main content should grow to push footer down */
-main {
-    flex: 1;    /* Takes up remaining space */
-}
-
-/* Footer 🐾 - Global styles */
-footer {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    width: 100%;
-    font-size: 1.25rem;  /* Outsider art: Defiantly larger footer text bc 
-                           footer content deserves the same respect as any other content.
-                           Convention says make it smaller, we say make it seen. */
-}
-
-footer p {
-    max-width: 80vw;   /* Responsive width with comfortable margins */
-    margin: 0 auto;
-}
-
 /* Mission Control's Light Switch 🌓 (aka theme toggle button) */
 #theme-toggle {
     background: none;
@@ -142,4 +123,26 @@ footer p {
     max-width: 50rem;
     margin: 1.5rem auto;
     line-height: 1.6;
+}
+
+/* Footer 🐾 - Global styles */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+
+    /* Outsider art: Defiantly larger footer text bc 
+                           footer content deserves the same respect as any other content.
+                           Convention says make it smaller, we say make it seen. */
+    font-size: 1.25rem;
+
+    /* makes footer stick to bottom of the page */
+    margin-top: auto;
+}
+
+footer p {
+    max-width: 80vw;
+    margin: 0 auto;
 }
