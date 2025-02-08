@@ -39,8 +39,10 @@
         <script src="script.js" defer></script>
         <!-- Script for toggling dark mode - placed last for better page load performance and security.
         'defer' tells the browser to load the script after the HTML is parsed but before 
-        the DOMContentLoaded event, improving page load times.
-        -->
+        the DOMContentLoaded event, improving page load times. -->
+
+        <script src="js/footer.js" defer></script>
+        <!-- Script for updating year in the footer -->
     </head>
 
     <body>
@@ -98,10 +100,6 @@
         <footer aria-label="Page footer">
         <!-- Footer content, like copyright info, contact details, or additional links -->
             <p><span id="year"></span> eOS Lesson Plans | Built with 💙 for education</p>
-            <script>
-                // Automatically updates the year in the footer
-                document.getElementById('year').textContent = new Date().getFullYear();
-            </script>
         </footer>
     </body>
 </html>
