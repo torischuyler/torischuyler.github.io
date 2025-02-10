@@ -1,4 +1,5 @@
 {
+  "//": "This file is like the passport of the project.",
   "devDependencies": {
     "stylelint": "^16.14.1",
     "stylelint-config-standard": "^37.0.0"
