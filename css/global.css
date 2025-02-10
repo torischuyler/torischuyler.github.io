@@ -95,7 +95,7 @@ body {
 }
 
 /* Mission Control's Light Switch 🌓 (aka theme toggle button) */
-#theme-toggle {
+#color-theme-toggle {
     background: none;
     border: none;
     font-size: 1.2em;
@@ -106,7 +106,7 @@ body {
     transition: transform 0.3s ease;
 }
 
-#theme-toggle:hover {
+#color-theme-toggle:hover {
     transform: scale(1.1);
 }
 

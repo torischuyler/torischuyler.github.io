@@ -5,7 +5,7 @@ if (savedTheme === 'dark') {
 }
 
 // Theme toggle functionality
-const toggle = document.getElementById('theme-toggle');
+const toggle = document.getElementById('color-theme-toggle');
 toggle.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
 
 toggle.addEventListener('click', () => {
