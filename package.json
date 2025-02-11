@@ -3,15 +3,20 @@
     "file": "This file is the project's ID card - it defines its identity, dependencies, and configuration.",
     "name": "Name of project",
     "version": "Semantic versioning; Major, Minor, Patch",
+    "type": "Specifies how Node.js treats .js files - 'module' for modern ES modules, default is CommonJS",
     "devDependencies": "Tools needed only during development, not in production",
     "stylelint": "Catches CSS/SCSS mistakes and enforces style rules",
     "stylelint-config-standard": "Popular preset rules for Stylelint - saves time setting up"
   },
-
   "name": "eos-lesson-plans",
   "version": "1.0.0",
+  "type": "module",
   "devDependencies": {
+    "eslint": "^9.20.0",
     "stylelint": "^16.14.1",
     "stylelint-config-standard": "^37.0.0"
+  },
+  "scripts": {
+    "lint": "eslint ."
   }
 }
