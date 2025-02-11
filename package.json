@@ -2,7 +2,7 @@
   "comments": {
     "file": "This file is the project's ID card - it defines its identity, dependencies, and configuration.",
     "name": "Name of project",
-    "version": "Semantic versioning; Major, Minor, Bug",
+    "version": "Semantic versioning; Major, Minor, Patch",
     "devDependencies": "Tools needed only during development, not in production",
     "stylelint": "Catches CSS/SCSS mistakes and enforces style rules",
     "stylelint-config-standard": "Popular preset rules for Stylelint - saves time setting up"
