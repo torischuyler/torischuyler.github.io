@@ -18,6 +18,7 @@ between files.
 This config can be imported in other files using:
 import config from './eslint.config.js'
 */
+
 // Export an array of configurations for ESLint, including the recommended JS rules and custom settings.
 export default [
 
@@ -39,7 +40,7 @@ export default [
             */
             "ecmaVersion": "latest",
             
-            // 'globals': Define global variables available in your environment.
+            // 'globals': specifies a set of global variables that ESLint should recognize for the project.
             "globals": {
     
                 // Since this is a browser-only project, we're setting browser globals to true.
@@ -47,17 +48,17 @@ export default [
             }
         },
     
-        // Rules: where you customize which coding practices ESLint should enforce or warn about in your project.
+        // 'rules': where you customize which coding practices ESLint should enforce or warn about in your project.
         "rules": {
     
             /*
-            This rule is set to "warn" because while console statements are invaluable for
+            'no-console' is set to "warn" because while console statements are invaluable for
             debugging during development, they're often not needed or wanted in production code.
             */ 
             "no-console": "warn",
     
             /*
-            This is set to "error" because unused variables can indicate dead code 
+            'no-unused-vars' is set to "error" because unused variables can indicate dead code 
             or mistakes in logic, leading to clutter. 
             */ 
             "no-unused-vars": "error"
