@@ -51,6 +51,8 @@ export default [
                 Declare 'window' as a global variable to avoid undefined errors in ESLint.
                 'window' is the global object in client-side JavaScript that represents the browser window
                 and contains all global JavaScript objects, functions, and variables.
+
+                🏠 Analogy: It's like the whole house where everything happens.
                 */
                 "window": true,
 
@@ -58,6 +60,8 @@ export default [
                 Declare 'document' as a global variable to avoid undefined errors in ESLint.
                 'document' represents the web page loaded in the window and serves as the
                 entry point to the web page's content (the DOM).
+
+                🛋️ Analogy: Think of it as the living room within the house where you interact with content.
                 */
                 "document": true,
                 
@@ -65,8 +69,10 @@ export default [
                 Declare 'localStorage' as a global variable to avoid undefined errors in ESLint.
                 'localStorage' is part of the Web Storage API that allows storing key-value pairs 
                 persistently in the user's browser.
-                */
 
+                🗄️ Analogy: It's like a locked drawer in your house where you keep notes or reminders; 
+                they stay even if you leave.
+                */
                 "localStorage": true
             }
         },
