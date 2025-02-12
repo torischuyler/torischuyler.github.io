@@ -44,7 +44,10 @@ export default [
             "globals": {
     
                 // Since this is a browser-only project, we're setting browser globals to true.
-                "browser": true 
+                "browser": true,
+                
+                // Declare localStorage as a global variable to avoid undefined errors in ESLint.
+                "localStorage": true
             }
         },
     
