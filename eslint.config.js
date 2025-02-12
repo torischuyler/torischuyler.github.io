@@ -1,5 +1,5 @@
 /*
-ESLint Configuration File
+Configuration File: ESLint
 
 This file sets up ESLint, a tool for:
 - Maintaining code quality in JavaScript (JS).
