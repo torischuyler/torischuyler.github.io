@@ -11,7 +11,8 @@ This file sets up ESLint, a tool for:
 // Import the recommended ESLint configuration for JavaScript.
 import js from '@eslint/js';
 
-/* This file uses ES Modules (ECMAScript Modules), which is the standard JS
+/* 
+This file uses ES Modules (ECMAScript Modules), which is the standard JS
 module system. ES Modules use 'export' and 'import' statements to share code
 between files.
 
@@ -45,12 +46,31 @@ export default [
     
                 // Since this is a browser-only project, we're setting browser globals to true.
                 "browser": true,
+
+                /*
+                Declare 'window' as a global variable to avoid undefined errors in ESLint.
+                'window' is the global object in client-side JavaScript that represents the browser window
+                and contains all global JavaScript objects, functions, and variables.
+                */
+                "window": true,
+
+                /*
+                Declare 'document' as a global variable to avoid undefined errors in ESLint.
+                'document' represents the web page loaded in the window and serves as the
+                entry point to the web page's content (the DOM).
+                */
+                "document": true,
                 
-                // Declare localStorage as a global variable to avoid undefined errors in ESLint.
+                /*
+                Declare 'localStorage' as a global variable to avoid undefined errors in ESLint.
+                'localStorage' is part of the Web Storage API that allows storing key-value pairs 
+                persistently in the user's browser.
+                */
+
                 "localStorage": true
             }
         },
-    
+
         // 'rules': where you customize which coding practices ESLint should enforce or warn about in your project.
         "rules": {
     
