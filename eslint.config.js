@@ -73,7 +73,17 @@ export default [
                 🗄️ Analogy: It's like a locked drawer in your house where you keep notes or reminders; 
                 they stay even if you leave.
                 */
-                "localStorage": true
+                "localStorage": true,
+
+                /*
+                Declare 'console' as a global variable to avoid undefined errors in ESLint.
+                'console' provides access to the browser's debugging console for logging information,
+                warnings, and errors, aiding in development and debugging.
+
+                📝 Analogy: Think of it as your personal notepad where you jot down thoughts or 
+                observations about what's happening in your house.
+                */
+                "console": true
             }
         },
 
@@ -81,10 +91,11 @@ export default [
         "rules": {
     
             /*
-            'no-console' is set to "warn" because while console statements are invaluable for
-            debugging during development, they're often not needed or wanted in production code.
+            We are including "warn" in the rule to apply warnings to console usage in general.
+            We are then excluding "warn" and "error" from those warnings to permit console.warn and console.error, 
+            recognizing their value in both development and production environments.
             */ 
-            "no-console": "warn",
+            "no-console": ["warn", { "allow": ["warn", "error"] }],
     
             /*
             'no-unused-vars' is set to "error" because unused variables can indicate dead code 
