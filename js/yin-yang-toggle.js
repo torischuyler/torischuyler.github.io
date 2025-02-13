@@ -1,5 +1,5 @@
 /*
-Color Theme Toggle: JavaScript
+Yin Yang Toggle: JavaScript
 
 This code creates a light/dark mode toggle for the website. It does three main things:
 1. Checks if you've used the site before and remembers your theme preference (using localStorage).
@@ -32,10 +32,10 @@ if (savedTheme === 'dark') {
 
 /*
 Get reference to the theme toggle button in the DOM.
-This button must have an ID of 'color-theme-toggle' in the HTML.
+This button must have an ID of 'yin-yang-toggle' in the HTML.
 Will return null if element doesn't exist, so ensure HTML includes this element.
 */
-const toggle = document.getElementById('color-theme-toggle');
+const toggle = document.getElementById('yin-yang-toggle');
 
 /**
 Updates all theme-related UI elements:
