@@ -1,9 +1,10 @@
 /*
 Yin Yang Toggle: JavaScript
+Named Yin Yang for the balance of light and dark, visually represented by sun and moon.
 
 This code creates a light/dark mode toggle for the website. It does three main things:
 1. Checks if you've used the site before and remembers your theme preference (using localStorage).
-2. Shows a sun (☀️) or moon (🌙) button that you can click to switch themes.
+2. Shows a sun (🌞) or moon (🌙) button that you can click to switch themes.
 3. Saves your choice for next time you visit.
 */
 
@@ -39,12 +40,12 @@ const toggle = document.getElementById('yin-yang-toggle');
 
 /**
 Updates all theme-related UI elements:
-- Button emoji (☀️ for dark mode, 🌙 for light mode).
+- Button emoji (🌙 for dark mode, 🌞 for light mode).
 - Aria-label for screen readers.
 @param {boolean} isDarkTheme - true if dark theme is active.
 */
 function updateThemeUI(isDarkTheme) {
-    toggle.textContent = isDarkTheme ? '☀️' : '🌙';
+    toggle.textContent = isDarkTheme ? '🌞' : '🌙';
     toggle.setAttribute('aria-label', `Switch to ${isDarkTheme ? 'light' : 'dark'} theme`);
 }
 
