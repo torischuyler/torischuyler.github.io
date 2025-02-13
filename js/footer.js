@@ -17,14 +17,19 @@ document.addEventListener('DOMContentLoaded', updateFooterYear);
 
 // Function to update the year in the footer.
 function updateFooterYear() {
+
     // Try to find the element with ID 'year' in the DOM and store it.
     const yearElement = document.getElementById('year');
     
     // Check if the element exists before attempting to modify it.
     if (yearElement) {
+
         // Set the element's text content to the current year (e.g., 2025).
         yearElement.textContent = new Date().getFullYear();
+    
+    // Otherwise
     } else {
+
         // Log a warning if the year element isn't found in the DOM.
         console.warn('Element with ID "year" not found in the DOM.');
     }
