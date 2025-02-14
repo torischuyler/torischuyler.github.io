@@ -17,6 +17,8 @@ rules:
     scopes:
       - yaml
       - js
+      - html
+      - assets
     description:
       case: lower
       tense: active
