@@ -11,6 +11,8 @@ rules:
       - refactor
       - chore
       - teach
+      - a11y
+      - config
     scopes:
       - yaml
       - js
@@ -22,3 +24,5 @@ rules:
       - "refactor(js): update sun emoji from ☀️ to 🌞 in theme toggle"
       - "chore(yaml): fix yaml linting issues"
       - "teach(js): enhance comments for clarity"
+      - "a11y(html): add aria-current to active nav link"
+      - "config(yaml): add config type to commit message rules"
