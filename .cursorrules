@@ -1,3 +1,4 @@
+---
 # Usage:
 # This file defines rules for generating commit messages.
 # Add to it as needed for new types of changes or formatting preferences.
@@ -8,6 +9,7 @@ rules:
     types:
       - feat
       - refactor
+      - chore
     scopes:
       - yaml
       - js
@@ -17,3 +19,4 @@ rules:
     examples:
       - "feat(yaml): create initial commit message format rules"
       - "refactor(js): update sun emoji from ☀️ to 🌞 in theme toggle"
+      - "chore(yaml): fix yaml linting issues"
