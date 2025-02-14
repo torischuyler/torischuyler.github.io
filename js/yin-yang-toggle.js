@@ -1,79 +1,90 @@
 /*
-Yin Yang Toggle: JavaScript
-Named Yin Yang for the balance of light and dark, visually represented by sun and moon.
+Yin Yang Toggle: A light/dark mode switch for websites, 
+symbolizing balance with sun (🌞) and moon (🌙) icons.
 
-This code creates a light/dark mode toggle for the website. It does three main things:
-1. Checks if you've used the site before and remembers your theme preference (using localStorage).
-2. Shows a sun (🌞) or moon (🌙) button that you can click to switch themes.
-3. Saves your choice for next time you visit.
+This script:
+1. Remembers a visitor's theme preference using localStorage.
+2. Displays a toggle button for visitors to switch themes.
+3. Saves the visitor's choice for future visits.
 */
 
-/*
-Check if localStorage is available by verifying both:
-1. The window object exists (we're in a browser environment).
-2. The localStorage API is available on the window object.
-This prevents errors in environments where localStorage isn't available
-(like Node.js, private browsing, or when cookies are disabled).
-*/
+// Check if localStorage is available to avoid errors in unsupported environments.
 const isLocalStorageAvailable = typeof window !== 'undefined' && window.localStorage;
 
-/*
-Retrieve any previously saved theme preference from localStorage.
-If localStorage isn't available or no theme was saved, default to null.
-*/
-const savedTheme = isLocalStorageAvailable ? localStorage.getItem('theme') : null;
+// Declare variable to hold the saved theme, initialized as undefined.
+let savedTheme;
 
-/*
-If user previously selected dark theme, apply it immediately.
-This prevents a flash of light theme when the page loads.
-*/
+// Check if localStorage is available before attempting to retrieve data.
+if (isLocalStorageAvailable) {
+
+    // Attempt to get the theme from localStorage.
+    try {
+        savedTheme = localStorage.getItem('theme');
+
+    // Catch any errors that occur during the retrieval.
+    } catch (e) {
+
+        // Log the error to console for debugging.
+        console.error('Failed to retrieve theme from localStorage:', e);
+
+        // Set savedTheme to null if retrieval fails.
+        savedTheme = null;
+    }
+
+// If localStorage is not available, set savedTheme to null.
+} else {
+    savedTheme = null;
+}
+
+// Apply dark theme if previously selected.
 if (savedTheme === 'dark') {
     document.body.classList.add('dark-theme');
 }
 
-/*
-Get reference to the theme toggle button in the DOM.
-This button must have an ID of 'yin-yang-toggle' in the HTML.
-Will return null if element doesn't exist, so ensure HTML includes this element.
-*/
+// Reference to the theme toggle button in the DOM.
 const toggle = document.getElementById('yin-yang-toggle');
 
-/**
-Updates all theme-related UI elements:
-- Button emoji (🌙 for dark mode, 🌞 for light mode).
-- Aria-label for screen readers.
-@param {boolean} isDarkTheme - true if dark theme is active.
-*/
+// Check if the toggle button exists in the DOM.
+if (!toggle) {
+
+    // Log an error if the toggle button is not found.
+    console.error('Toggle button not found!');
+}
+
+// Function to update UI based on the current theme.
 function updateThemeUI(isDarkTheme) {
+
+    // Set button icon to sun if dark theme, moon if light theme.
     toggle.textContent = isDarkTheme ? '🌞' : '🌙';
+
+    // Update aria-label for screen readers.
     toggle.setAttribute('aria-label', `Switch to ${isDarkTheme ? 'light' : 'dark'} theme`);
 }
 
-/*
-Set initial UI state based on current body class rather than savedTheme.
-This ensures UI accurately reflects the actual theme state in case:
-1. localStorage was cleared.
-2. Theme was set by other means (e.g., system preferences).
-3. savedTheme is out of sync with actual state.
-*/
+// Set initial UI based on current theme to ensure consistency with actual state.
 updateThemeUI(document.body.classList.contains('dark-theme'));
 
-/*
-Add click event listener to theme toggle button.
-When clicked, it:
-1. Toggles the 'dark-theme' class and stores the new state
-2. Updates the button's emoji and aria-label
-3. Saves the preference to localStorage
-*/
+// Add click event listener to toggle button.
 toggle.addEventListener('click', () => {
-    // Returns true if class was added (dark mode), false if removed.
+
+    // Toggle dark theme class on body.
     const isDarkTheme = document.body.classList.toggle('dark-theme');
-    
-    // Update UI elements with new theme state.
+
+    // Update UI based on new theme state.
     updateThemeUI(isDarkTheme);
-    
-    // Save the user's theme preference to localStorage.
+
+    // Check if localStorage is available before attempting to save data.
     if (isLocalStorageAvailable) {
-        localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
+
+        // Attempt to save the theme to localStorage.
+        try {
+            localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
+
+        // Catch any errors that occur during the saving process.
+        } catch (e) {
+
+            // Log the error to console for debugging.
+            console.error('Failed to save theme to localStorage:', e);
+        }
     }
 });
