@@ -1,5 +1,5 @@
 /*
-Yin Yang Toggle: A light/dark mode switch for websites, 
+Yin Yang Toggle: A light/dark mode switch for the site,
 symbolizing balance with sun (🌞) and moon (🌙) icons.
 
 This script:
