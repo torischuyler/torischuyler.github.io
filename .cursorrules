@@ -13,6 +13,7 @@ rules:
       - teach
       - a11y
       - config
+      - seo
     scopes:
       - yaml
       - js
@@ -26,3 +27,4 @@ rules:
       - "teach(js): enhance comments for clarity"
       - "a11y(html): add aria-current to active nav link"
       - "config(yaml): add config type to commit message rules"
+      - "seo(html): add site name to page title with standard format"
