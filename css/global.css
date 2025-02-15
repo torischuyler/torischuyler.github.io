@@ -111,7 +111,7 @@ body {
 }
 
 /* Homepage content container 🏠 */
-.home-content {
+.home-container {
     max-width: 80vw;
     margin: 0 auto;
     padding: 2rem;
@@ -119,7 +119,7 @@ body {
 }
 
 /* Homepage description text 📝 */
-.home-content p {
+.home-container p {
     max-width: 50rem;
     margin: 1.5rem auto;
     line-height: 1.6;
