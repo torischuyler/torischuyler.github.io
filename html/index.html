@@ -22,59 +22,97 @@ This helps with:
 <html lang="en">
 <!-- Sets the page language to English - helps screen readers, search engines, and spell checkers. -->
 
-<head>
-<!-- Head contains "behind-the-scenes" stuff that defines how the page works and looks. -->
+    <head>
+    <!-- Head contains "behind-the-scenes" stuff that defines how the page works and looks. -->
+        
+        <meta charset="UTF-8">
+        <!-- Character encoding tells browser how to decode the page. -->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Viewport makes sure the page looks good on all devices by adjusting to screen size.
+        It also affects page rendering and responsiveness. -->
+
+        <title>Home | eOS Lesson Plans</title>
+        <!-- Page title, visible in browser tabs, bookmarks, and search engine results.
+        Format: [Page Name] | [Site Name] - this pattern helps with SEO and user navigation. -->
+
+        <link rel="icon" href="../favicon.ico" type="image/x-icon">
+        <!-- Sets the favicon, the little icon you see in browser tabs and bookmarks. -->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- Preconnect hints tell the browser to start early connections to external domains,
+        speeding up resource loading from those sites.
+        - 'crossorigin' enables secure loading from different domains for fonts.gstatic.com;
+        Not needed for fonts.googleapis.com since it's just establishing a connection, not loading content. -->
+
+        <link rel="stylesheet" href="../css/global.css">
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <!-- Stylesheets:
+        - A stylesheet is a file that tells the browser how to style the HTML content.
+        - Local stylesheets (loaded first) for speed, then third-party.
+        This order prevents local styles from being accidentally overridden by external CSS. -->
+
+        <script src="../js/yin-yang-toggle.js" defer></script>
+        <!-- Script for toggling dark/light mode - placed last for better page load performance and security.
+        'defer' tells the browser to load the script after the HTML is parsed but before
+        the DOMContentLoaded event, improving page load times. -->
+    </head>
+
+    <body>
+    <!-- Body contains all the visible content of the webpage,
+    like text, images, and buttons - the "on-stage" part where the action happens. -->
+
+        <nav aria-label="Main menu">
+        <!-- Navigation section - like a table of contents for the webpage -->
+            <a href="index.html" class="active" aria-current="page">Home</a> |
+            <a href="students.html">Students</a> |
+            <a href="developers.html">Developers</a> |
+            <a href="who-are-you.html">Who Are You?</a>
+            <!-- Navigation links: Home (currently active) | Students | Developers | Who Are You? -->
+
+            <button id="yin-yang-toggle" aria-label="Toggle dark or light mode">🌙</button>
+            <!-- Dark/Light mode toggle button. The 'aria-label' attribute makes this button accessible
+            by providing a description for screen readers, ensuring users with visual impairments
+            can understand and use this control. -->
+
+            <noscript>
+            <!-- The noscript tag is used to provide alternative content
+            when JavaScript is disabled in the visitor's browser. -->
+
+                <div class="noscript-warning">
+                <!-- This div serves as a container for the warning message. -->
+
+                    <p>JavaScript is disabled on your browser. To experience all features of this site, please enable JavaScript.</p>
+                    <!-- Paragraph tag containing the message that informs visitors
+                    about disabled JavaScript and encourages them to enable it. -->
+                </div>
+            </noscript>
+        </nav>
+        
+        <main aria-label="Main content">
+            <!-- Main content area - where the primary, unique content of the page lives -->
+
+            <div class="home-content">
+            <!-- A container div for the 'home' section, used for styling and organizing content -->
+
+                <h1>Welcome to eOS Lesson Plans</h1>
+                <!-- Main heading of the page, sets the theme or topic -->
+
+                <p>This site hosts lesson plans for students on media and digital literacy, 
+                and for developers on computer basics, building the foundation for an educational operating system (eOS).</p>
+                <!-- A paragraph, a block of text -->
+            </div>
+        </main>
+
+        <footer aria-label="Page footer">
+        <!-- Footer content, like copyright info, contact details, or additional links -->
     
-    <meta charset="UTF-8">
-    <!-- Character encoding tells browser how to decode the page. -->
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Viewport makes sure the page looks good on all devices by adjusting to screen size.
-    It also affects page rendering and responsiveness. -->
-
-    <title>Home | eOS Lesson Plans</title>
-    <!-- Page title, visible in browser tabs, bookmarks, and search engine results.
-    Format: [Page Name] | [Site Name] - this pattern helps with SEO and user navigation. -->
-
-    <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <!-- Sets the favicon, the little icon you see in browser tabs and bookmarks. -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Preconnect hints tell the browser to start early connections to external domains,
-    speeding up resource loading from those sites.
-    - 'crossorigin' enables secure loading from different domains for fonts.gstatic.com;
-    Not needed for fonts.googleapis.com since it's just establishing a connection, not loading content. -->
-
-    <link rel="stylesheet" href="../css/global.css">
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Stylesheets:
-    - A stylesheet is a file that tells the browser how to style the HTML content.
-    - Local stylesheets (loaded first) for speed, then third-party.
-    This order prevents local styles from being accidentally overridden by external CSS. -->
-
-    <script src="../js/yin-yang-toggle.js" defer></script>
-    <!-- Script for toggling dark/light mode - placed last for better page load performance and security.
-    'defer' tells the browser to load the script after the HTML is parsed but before
-    the DOMContentLoaded event, improving page load times. -->
-</head>
-
-<body>
-    <nav>
-        <a href="index.html" class="active">Home</a> |
-        <a href="students.html">Students</a> |
-        <a href="developers.html">Developers</a> |
-        <a href="who-are-you.html">Who Are You?</a>
-        <button id="yin-yang-toggle" aria-label="Toggle dark or light mode">🌙</button>
-    </nav>
-    <main>
-        <div class="home-content">
-            <h1>Welcome to eOS Lesson Plans</h1>
-            <p>This site hosts lesson plans for students on media and digital literacy, and for developers on computer basics, building the foundation for an educational operating system (eOS).</p>
-        </div>
-    </main>
-    <footer>
-        <p>2025 eOS Lesson Plans | Built with 💙 for education</p>
-    </footer>
-</body>
+            <p><span id="year"></span> eOS Lesson Plans | Built with 💙 for education</p>
+            <!-- span highlights year, which is updated by the script in footer.js -->
+        </footer>
+    
+        <script src="../js/footer.js" defer></script>
+        <!-- Script for updating year in the footer -->
+    </body>
 </html>
