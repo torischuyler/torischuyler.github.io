@@ -14,6 +14,7 @@ rules:
       - a11y
       - config
       - seo
+      - security
     scopes:
       - yaml
       - js
@@ -30,3 +31,4 @@ rules:
       - "a11y(html): add aria-current to active nav link"
       - "config(yaml): add config type to commit message rules"
       - "seo(html): add site name to page title with standard format"
+      - "security(html): add noscript warning for javascript-disabled browsers"
