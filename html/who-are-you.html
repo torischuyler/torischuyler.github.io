@@ -26,8 +26,7 @@
         <!-- Preconnect hints tell the browser to start early connections to external domains, 
         speeding up resource loading from those sites.
         - 'crossorigin' enables secure loading from different domains for fonts.gstatic.com; 
-        Not needed for fonts.googleapis.com since it's just establishing a connection, not loading content.
-        -->
+        Not needed for fonts.googleapis.com since it's just establishing a connection, not loading content. -->
         
         <link rel="stylesheet" href="../css/global.css">
         <link rel="stylesheet" href="../css/who-are-you.css">
@@ -41,9 +40,6 @@
         <!-- Script for toggling dark/light mode - placed last for better page load performance and security.
         'defer' tells the browser to load the script after the HTML is parsed but before 
         the DOMContentLoaded event, improving page load times. -->
-
-        <script src="../js/footer.js" defer></script>
-        <!-- Script for updating year in the footer -->
     </head>
 
     <body>
@@ -104,6 +100,9 @@
             <p><span id="year"></span> eOS Lesson Plans | Built with 💙 for education</p>
             <!-- span highlights year, which is updated by the script in footer.js -->
         </footer>
+
+        <script src="../js/footer.js" defer></script>
+        <!-- Script for updating year in the footer -->
     </body>
 </html>
 
@@ -122,7 +121,7 @@ DOCTYPE
     │   ├── link (stylesheet global.css)
     │   ├── link (stylesheet who-are-you.css)
     │   ├── link (google fonts)
-    │   └── script
+    │   └── script (yin-yang-toggle.js)
     │
     └── body
         ├── nav
@@ -130,7 +129,7 @@ DOCTYPE
         │   ├── a (Students)
         │   ├── a (Developers)
         │   ├── a (Who Are You? - active)
-        │   └── button (theme-toggle)
+        │   └── button (yin-yang-toggle)
         │
         ├── main
         │   └── div (whoareyou-container)
@@ -146,5 +145,5 @@ DOCTYPE
         └── footer
             ├── p
             │   └── span
-            └── script
+            └── script (footer.js)
 -->
