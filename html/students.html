@@ -48,32 +48,80 @@ on media literacy and digital literacy for students.
     </head>
 
     <body>
-        <nav>
+    <!-- Body contains all the visible content of the webpage,
+    like text, images, and buttons - the "on-stage" part where the action happens. -->
+
+        <nav aria-label="Main menu">
+        <!-- Navigation section - like a table of contents for the webpage. -->
             <a href="index.html">Home</a> |
-            <a href="students.html" class="active">Students</a> |
+            <a href="students.html" class="active" aria-current="page">Students</a> |
             <a href="developers.html">Developers</a> |
             <a href="who-are-you.html">Who Are You?</a>
+            <!-- Navigation links: Home | Students (currently active) | Developers | Who Are You? -->
+
             <button id="yin-yang-toggle" aria-label="Toggle dark or light mode">🌙</button>
+            <!-- Dark/Light mode toggle button. The 'aria-label' attribute makes this button accessible
+            by providing a description for screen readers, ensuring users with visual impairments
+            can understand and use this control. -->
+
+            <noscript>
+            <!-- The noscript tag is used to provide alternative content
+            when JavaScript is disabled in the visitor's browser. -->
+
+                <div class="noscript-warning">
+                <!-- This div serves as a container for the warning message. -->
+
+                    <p>JavaScript is disabled on your browser. To experience all features of this site, please enable JavaScript.</p>
+                    <!-- Paragraph tag containing the message that informs visitors
+                    about disabled JavaScript and encourages them to enable it. -->
+                </div>
+            </noscript>
         </nav>
 
-        <main>
+        <main aria-label="Main content">
+        <!-- Main content area - where the primary, unique content of the page lives. -->
+
             <div class="curricula">
+            <!-- Organizes curriculum content for consistent layout and styling across devices. -->
+
                 <h1>Students</h1>
+                <!-- Main heading of the page, sets the theme or topic. -->
+
                 <p>Here you'll find lesson plans focused on media literacy and digital literacy.</p>
+                <!-- A paragraph, a block of text. -->
                 
                 <h2>Lesson Plans</h2>
+                <!-- Subheading for organizing lesson content. -->
+
                 <ul>
+                <!-- Unordered list, aka list of bullet points. -->
+
                     <li><a href="student-lessons/news-detectives.html">Lesson 1: News Detectives</a></li>
+                     <!-- List item, aka a bullet point. -->
+
                     <li><a href="">Lesson 2: Netiquette</a></li>
+                    <!-- Another list item, aka another bullet point. -->
+
                     <li><a href="">Lesson 3: Managing Digital Footprint</a></li>
+                    <!-- Another list item, aka another bullet point. -->
+
                     <li><a href="">Lesson 4: Staying Secure on Public WiFi</a></li>
-                    <li><a href="">Lesson 5: Smart Tethering: Connecting Your Laptop to the Internet Anywhere with Your Phone</a></li>  
+                    <!-- Another list item, aka another bullet point. -->
+
+                    <li><a href="">Lesson 5: Smart Tethering: Connecting Your Laptop to the Internet Anywhere with Your Phone</a></li>
+                    <!-- Another list item, aka another bullet point. -->
                 </ul>
             </div>
         </main>
 
-        <footer>
-            <p>2025 eOS Lesson Plans | Built with 💙 for education</p>
+        <footer aria-label="Page footer">
+        <!-- Footer content, like copyright info, contact details, or additional links. -->
+    
+            <p><span id="year"></span> eOS Lesson Plans | Built with 💙 for education</p>
+            <!-- span highlights year, which is updated by the script in footer.js. -->
         </footer>
+        
+        <script src="../js/footer.js" defer></script>
+        <!-- Script for updating year in the footer. -->
     </body>
 </html>
