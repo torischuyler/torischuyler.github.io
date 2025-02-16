@@ -16,6 +16,7 @@ rules:
       - seo
       - security
       - fix
+      - bug
     scopes:
       - yaml
       - js
@@ -34,3 +35,4 @@ rules:
       - "seo(html): add site name to page title with standard format"
       - "security(html): add noscript warning for javascript-disabled browsers"
       - "fix(html): correct social media preview image urls"
+      - "bug(html): Note issue with twitter:image not working"
