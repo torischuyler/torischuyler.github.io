@@ -15,6 +15,7 @@ rules:
       - config
       - seo
       - security
+      - fix
     scopes:
       - yaml
       - js
@@ -32,3 +33,4 @@ rules:
       - "config(yaml): add config type to commit message rules"
       - "seo(html): add site name to page title with standard format"
       - "security(html): add noscript warning for javascript-disabled browsers"
+      - "fix(html): correct social media preview image urls"
