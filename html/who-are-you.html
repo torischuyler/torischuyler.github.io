@@ -38,7 +38,7 @@ the creator of the eOS Lesson Plans website.
         <!-- SEO Description: This tag offers a quick summary for search results,
         improving click-through rates by setting user expectations and boosting relevance. -->
 
-        <meta name="keywords" content="Tori Schuyler, eOS Lesson Plans, tech education, software engineer, 
+        <meta name="keywords" content="Tori Schuyler, eOS Lesson Plans, tech education, software engineer,
         playful learning, tech accessibility, teaching philosophy, coding education">
         <!-- SEO Keywords: Although less impactful today due to search engines prioritizing content quality,
         they can still categorize content. Use sparingly to avoid keyword stuffing. -->
@@ -71,9 +71,9 @@ the creator of the eOS Lesson Plans website.
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        <!-- Preconnect hints tell the browser to start early connections to external domains, 
+        <!-- Preconnect hints tell the browser to start early connections to external domains,
         speeding up resource loading from those sites.
-        - 'crossorigin' enables secure loading from different domains for fonts.gstatic.com; 
+        - 'crossorigin' enables secure loading from different domains for fonts.gstatic.com;
         Not needed for fonts.googleapis.com since it's just establishing a connection, not loading content. -->
         <!-- End Preconnect Links  --------------------------------------------------->
         
@@ -82,20 +82,20 @@ the creator of the eOS Lesson Plans website.
         <link rel="stylesheet" href="../css/who-are-you.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
 
-        <!-- Stylesheets: 
+        <!-- Stylesheets:
         - A stylesheet is a file that tells the browser how to style the HTML content.
-        - Local stylesheets (loaded first) for speed, then third-party. 
+        - Local stylesheets (loaded first) for speed, then third-party.
         This order prevents local styles from being accidentally overridden by external CSS. -->
         <!-- End Stylesheet Links  --------------------------------------------------->
 
         <script src="../js/yin-yang-toggle.js" defer></script>
         <!-- Script for toggling dark/light mode - placed last for better page load performance and security.
-        'defer' tells the browser to load the script after the HTML is parsed but before 
+        'defer' tells the browser to load the script after the HTML is parsed but before
         the DOMContentLoaded event, improving page load times. -->
     </head>
 
     <body>
-    <!-- Body contains all the visible content of the webpage, 
+    <!-- Body contains all the visible content of the webpage,
     like text, images, and buttons - the "on-stage" part where the action happens. -->
 
         <!-- Begin Navigation Section  ------------------------------------------------->
@@ -121,7 +121,7 @@ the creator of the eOS Lesson Plans website.
                 <!-- This div serves as a container for the warning message. -->
 
                     <p>JavaScript is disabled on your browser. To experience all features of this site, please enable JavaScript.</p>
-                    <!-- Paragraph tag containing the message that informs visitors 
+                    <!-- Paragraph tag containing the message that informs visitors
                      about disabled JavaScript and encourages them to enable it. -->
                 </div>
             </noscript>
@@ -174,35 +174,45 @@ the creator of the eOS Lesson Plans website.
 </html>
 
 <!--
-HTML Structure:
-
 DOCTYPE
 └── html
     ├── head
-    │   ├── meta (charset)
-    │   ├── meta (viewport)
+    │   ├── meta
+    │   ├── meta
     │   ├── title
-    │   ├── link (favicon)
-    │   ├── link (preconnect googleapis)
-    │   ├── link (preconnect gstatic)
-    │   ├── link (stylesheet global.css)
-    │   ├── link (stylesheet who-are-you.css)
-    │   ├── link (google fonts)
-    │   └── script (yin-yang-toggle.js)
+    │   ├── link
+    │   ├── (SEO Group)
+    │   ├── meta (robots)
+    │   ├── meta (description)
+    │   ├── meta (keywords)
+    │   ├── meta (author)
+    │   ├── (OG Group)
+    │   ├── meta (og:title)
+    │   ├── meta (og:description)
+    │   ├── meta (og:image)
+    │   ├── meta (og:url)
+    │   ├── meta (og:type)
+    │   ├── (Preconnect Links)
+    │   ├── link
+    │   ├── link
+    │   ├── (Stylesheet Links)
+    │   ├── link
+    │   ├── link
+    │   ├── link
+    │   └── script
     │
     └── body
         ├── nav
-        │   ├── a (Home)
-        │   ├── a (Students)
-        │   ├── a (Developers)
-        │   ├── a (Who Are You? - active)
-        │   ├── button (yin-yang-toggle)
+        │   ├── a
+        │   ├── a
+        │   ├── a
+        │   ├── a
+        │   ├── button
         │   └── noscript
-        │       └── div (noscript-warning)
+        │       └── div
         │           └── p
-        │
         ├── main
-        │   └── div (whoareyou-container)
+        │   └── div
         │       ├── h1
         │       └── section
         │           ├── p
@@ -211,9 +221,8 @@ DOCTYPE
         │               ├── li
         │               ├── li
         │               └── li
-        │
         └── footer
             ├── p
             │   └── span
-            └── script (footer.js)
+            └── script
 -->
