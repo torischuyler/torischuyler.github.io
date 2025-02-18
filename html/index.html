@@ -170,35 +170,35 @@ This helps with:
 DOCTYPE
 └── html
     ├── head
-    │   ├── meta
-    │   ├── meta
-    │   ├── title
-    │   ├── link
-    │   ├── (SEO Group)
-    │   ├── meta (robots)
-    │   ├── meta (description)
-    │   ├── meta (keywords)
-    │   ├── meta (author)
-    │   ├── (OG Group)
-    │   ├── meta (og:title)
-    │   ├── meta (og:description)
-    │   ├── meta (og:image)
-    │   ├── meta (og:url)
-    │   ├── meta (og:type)
-    │   ├── (Preconnect Links)
-    │   ├── link
-    │   ├── link
-    │   ├── (Stylesheet Links)
-    │   ├── link
-    │   ├── link
-    │   └── script
+    │   ├── meta (charset)
+    │   ├── meta (viewport)
+    │   └── title
+    │   ├── link (favicon)
+    │   ├── SEO Group
+    │   │   ├── meta (robots)
+    │   │   ├── meta (description)
+    │   │   ├── meta (keywords)
+    │   │   └── meta (author)
+    │   ├── Open Graph Group
+    │   │   ├── meta (og:title)
+    │   │   ├── meta (og:description)
+    │   │   ├── meta (og:image)
+    │   │   ├── meta (og:url)
+    │   │   └── meta (og:type)
+    │   ├── Preconnect Links
+    │   │   ├── link (googleapis)
+    │   │   └── link (gstatic)
+    │   ├── Stylesheet Links
+    │   │   ├── link (global.css)
+    │   │   └── link (google fonts)
+    │   └── script (yin-yang-toggle.js)
     │
     └── body
         ├── nav
-        │   ├── a
-        │   ├── a
-        │   ├── a
-        │   ├── a
+        │   ├── a (Home - active)
+        │   ├── a (Students)
+        │   ├── a (Developers)
+        │   ├── a (Who Are You?)
         │   ├── button
         │   └── noscript
         │       └── div
@@ -207,8 +207,8 @@ DOCTYPE
         │   └── div
         │       ├── h1
         │       └── p
-        └── footer
-            ├── p
-            │   └── span
-            └── script
+        ├── footer
+        │   ├── p
+        │       └── span
+        └── script (footer.js)
 -->
