@@ -68,13 +68,12 @@ have a common baseline understanding. -->
         <!-- End Open Graph Tags  --------------------------------------------------->
 
         <!-- Begin Preconnect Links  ------------------------------------------------->
+        <!-- Preconnect hints establish early connections to external domains, speeding up resource loading. -->
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-        <!-- Preconnect hints tell the browser to start early connections to external domains,
-        speeding up resource loading from those sites.
-        - 'crossorigin' enables secure loading from different domains for fonts.gstatic.com;
-        Not needed for fonts.googleapis.com since it's just establishing a connection, not loading content. -->
+        <!-- 'crossorigin' on fonts.gstatic.com enables secure cross-origin font file loading; not needed for
+        fonts.googleapis.com, which only initiates connections. -->
         <!-- End Preconnect Links  --------------------------------------------------->
 
         <!-- Begin Stylesheet Links  ------------------------------------------------->
