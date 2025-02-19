@@ -131,37 +131,35 @@ the creator of the eOS Lesson Plans website. -->
         <!-- Main content area - where the primary, unique content of the page lives. -->
         <main aria-label="Main content">
 
-            <div class="whoareyou-container">
-            <!-- A container div for the 'Who Are You?' section, used for styling and organizing content. -->
+            <!-- Begin Who Are You? Section ------------------------------------------------------>
+            <!-- The <section> element groups the 'Who Are You?' content, used for styling and organizing the personal introduction. -->
+            <section class="whoareyou-container" aria-label="About Tori">
 
                 <h1>Who Are You?</h1>
-                <!-- Main heading of the page, sets the theme or topic. -->
-                
-                <section aria-label="About Tori">
-                <!-- A thematic grouping of content, typically with a heading. -->
+                <!-- Main heading (<h1>) of the page, sets the theme or topic. -->
 
-                    <p>I am Tori Schuyler (sorry to disappoint if you were hoping for Baba O'Reilly).</p>
-                    <!-- A paragraph, a block of text. -->
-                    
-                    <p>I'm a software engineer who thinks:</p>
-                    <!-- Another paragraph, another block of text. -->
+                <p>I am Tori Schuyler (sorry to disappoint if you were hoping for Baba O'Reilly).</p>
+                <!-- A <p> tag creates a paragraph, grouping text into a readable block. -->
 
-                    <ul>
-                    <!-- Unordered list, aka list of bullet points. -->
+                <p>I'm a software engineer who thinks:</p>
+                <!-- Another paragraph, another block of text. -->
 
-                        <li>Learning should be playful 🎮</li>
-                        <!-- List item, aka a bullet point. -->
+                <ul>
+                <!-- An unordered list (<ul>) displays items as bullet points, showing related ideas without a specific order. -->
 
-                        <li>Mistakes are just experiments in disguise 🔬</li>
-                        <!-- Another list item, aka another bullet point. -->
+                    <li>Learning should be playful 🎮</li>
+                    <!-- List item, aka a bullet point. -->
 
-                        <li>Tech is for everyone 💝</li>
-                        <!-- Another list item, aka another bullet point. -->
-                    </ul>
-                </section>
-            </div>
+                    <li>Mistakes are just experiments in disguise 🔬</li>
+                    <!-- Another list item, aka another bullet point. -->
+
+                    <li>Tech is for everyone 💝</li>
+                    <!-- Another list item, aka another bullet point. -->
+                </ul>
+            </section>
+            <!-- End Who Are You? Section ------------------------------------------------>
         </main>
-        <!-- End Main Section ------------------------------------------------->
+        <!-- End Main Section ------------------------------------------------------------>
 
         <footer aria-label="Page footer">
         <!-- Footer content, like copyright info, contact details, or additional links. -->
@@ -216,15 +214,14 @@ DOCTYPE
         │       └── div
         │           └── p
         ├── main
-        │   └── div
+        │   └── section
         │       ├── h1
-        │       └── section
-        │           ├── p
-        │           ├── p
-        │           └── ul
-        │               ├── li (Learning should be playful 🎮)
-        │               ├── li (Mistakes are just experiments in disguise 🔬)
-        │               └── li (Tech is for everyone 💝)
+        │       ├── p
+        │       ├── p
+        │       └── ul
+        │           ├── li (Learning should be playful 🎮)
+        │           ├── li (Mistakes are just experiments in disguise 🔬)
+        │           └── li (Tech is for everyone 💝)
         ├── footer
         │   ├── p
         │       └── span
