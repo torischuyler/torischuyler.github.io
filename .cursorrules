@@ -18,6 +18,7 @@ rules:
       - fix
       - bug
       - test
+      - lint
     scopes:
       - yaml
       - js
@@ -38,3 +39,4 @@ rules:
       - "fix(html): correct social media preview image urls"
       - "bug(html): note issue with twitter:image not working"
       - "test(html): test functionality of X card tags"
+      - "lint(html): escape & as &amp; to satisfy html linter"
