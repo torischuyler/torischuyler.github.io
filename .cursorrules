@@ -5,7 +5,7 @@
 
 rules:
   commit_message:
-    format: "{type}({scope}): {description}"
+    format: "{type}({scope}): {description} in {number} {target} {plurality}"
     types:
       - feat
       - refactor
@@ -24,16 +24,26 @@ rules:
       - js
       - html
       - assets
+    target:
+      description: "What's changed within the scope, named as you go"
+      examples:  # These will grow as commits happen
+        - "HTML files"
+        - "JS files"
     description:
       case: lower
       tense: active
+    number:
+      description: "How many items of the target were changed"
+    plurality:
+      - "files"  # for 2+, e.g., "in 5 HTML files"
+      - "file"  # for 1, e.g., "in 1 HTML file"
     examples:
       - "feat(yaml): create initial commit message format rules"
       - "refactor(js): update sun emoji from ☀️ to 🌞 in theme toggle"
       - "chore(yaml): fix yaml linting issues"
-      - "teach(js): enhance comments for clarity"
+      - "teach(html): tweak title comment in 4 HTML files"
       - "a11y(html): add aria-current to active nav link"
-      - "config(yaml): add config type to commit message rules"
+      - "config(yaml): add target, number, and plurality in 1 YAML file"
       - "seo(html): add site name to page title with standard format"
       - "security(html): add noscript warning for javascript-disabled browsers"
       - "fix(html): correct social media preview image urls"
