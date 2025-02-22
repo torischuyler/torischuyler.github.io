@@ -40,7 +40,7 @@ rules:
     examples:
       - "feat(yaml): create initial commit message format rules"
       - "refactor(js): update sun emoji from ☀️ to 🌞 in theme toggle"
-      - "chore(yaml): fix yaml linting issues"
+      - "chore(html): standardize comment line formatting in 1 HTML file"
       - "teach(html): tweak title comment in 4 HTML files"
       - "a11y(html): add aria-current to active nav link"
       - "config(yaml): add target, number, and plurality in 1 YAML file"
