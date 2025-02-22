@@ -1,4 +1,5 @@
 ---
+
 # Usage:
 # This file defines rules for generating commit messages.
 # Add to it as needed for new types of changes or formatting preferences.
@@ -6,6 +7,24 @@
 rules:
   commit_message:
     format: "{type}({scope}): {description} in {number} {target} {plurality}"
+    case_style: "toricase"  # Naming your custom style here for clarity
+    toricase:  # Define "toricase" explicitly
+      type:
+        case: lower  # {type} always lowercase, e.g., "feat", "refactor"
+      scope:
+        case: lower  # {scope} always lowercase, e.g., "html", "js"
+      description:
+        case: lower  # Base case is lowercase
+        exceptions:  # Allow capitalization for specific cases
+          - acronyms: ["SEO", "ARIA", "HTML", "JS", "CSS"]  # Add more as needed
+          - proper_nouns: [
+            "TypeScript", "Python", "JavaScript"
+          ]  # Add more as needed
+      target:
+        case: lower  # Base case is lowercase
+        exceptions:  # Same capitalization rules as description
+          - acronyms: ["SEO", "ARIA", "HTML", "JS", "CSS"]
+          - proper_nouns: ["TypeScript", "Python", "JavaScript"]
     types:
       - feat
       - refactor
@@ -26,11 +45,10 @@ rules:
       - assets
     target:
       description: "What's changed within the scope, named as you go"
-      examples:  # These will grow as commits happen
+      examples:
         - "HTML files"
         - "JS files"
     description:
-      case: lower
       tense: active
     number:
       description: "How many items of the target were changed"
@@ -38,15 +56,15 @@ rules:
       - "files"  # for 2+, e.g., "in 5 HTML files"
       - "file"  # for 1, e.g., "in 1 HTML file"
     examples:
-      - "feat(yaml): create initial commit message format rules"
-      - "refactor(js): update sun emoji from ☀️ to 🌞 in theme toggle"
-      - "chore(html): standardize comment line formatting in 1 HTML file"
+      - "feat(yaml): create initial commit message format rules in 1 YAML file"
+      - "refactor(js): update emojis in theme toggle in 1 JS file"
+      - "chore(html): standardize comment line formatting in 3 HTML files"
       - "teach(html): tweak title comment in 4 HTML files"
-      - "a11y(html): add aria-current to active nav link"
+      - "a11y(html): add ARIA-current to active nav link in 1 HTML file"
       - "config(yaml): add target, number, and plurality in 1 YAML file"
-      - "seo(html): add site name to page title with standard format"
-      - "security(html): add noscript warning for javascript-disabled browsers"
-      - "fix(html): correct social media preview image urls"
-      - "bug(html): note issue with twitter:image not working"
-      - "test(html): test functionality of X card tags"
-      - "lint(html): escape & as &amp; to satisfy html linter"
+      - "seo(html): add site name to page title in 2 HTML files"
+      - "security(html): add <noscript> warning in 1 HTML file"
+      - "fix(html): correct social media preview image urls in 5 HTML files"
+      - "bug(html): note issue with twitter:image not working in 1 HTML file"
+      - "test(html): test functionality of X card tags in 2 HTML files"
+      - "lint(html): escape & as &amp; to satisfy html linter in 1 HTML file"
