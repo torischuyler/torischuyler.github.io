@@ -7,7 +7,10 @@
     "devDependencies": "Tools needed only during development, not in production",
       "eslint": "Lints JavaScript - catches bugs and enforces coding standards",
       "stylelint": "Lints CSS/SCSS - spots errors and keeps your styles consistent",
-      "stylelint-config-standard": "Popular preset rules for Stylelint - saves time setting up"
+      "stylelint-config-standard": "Popular preset rules for Stylelint - saves time setting up",
+    "scripts": "Custom commands to run tasks via npm",
+      "lint:js": "Runs ESLint on all JavaScript files in the project to check for code quality and consistency",
+      "lint:css": "Runs Stylelint on all CSS files in the project to ensure styles follow defined rules"
   },
   "name": "eos-lesson-plans",
   "version": "1.0.0",
