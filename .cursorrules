@@ -43,8 +43,7 @@ rules:
       - html
       - assets
       - json
-      - config
-    targets:
+    target:
       description: "What's changed within the scope, named as you go"
       examples:
         - "HTML files"
@@ -69,4 +68,4 @@ rules:
       - "bug(html): note issue with twitter:image not working in 1 HTML file"
       - "test(html): test functionality of X card tags in 2 HTML files"
       - "lint(html): escape & as &amp; to satisfy html linter in 1 HTML file"
-      - "teach(config): enhance ecmaVersion comment in 1 config file"
+      - "teach(js): enhance ecmaVersion comment in 1 config file"
