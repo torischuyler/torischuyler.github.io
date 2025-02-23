@@ -81,12 +81,23 @@ export default {
     "rules": {
   
         /*
-        We are including "warn" in the rule to apply warnings to console usage in general.
-        We are then excluding "warn" and "error" from those warnings to permit console.warn and console.error, 
-        recognizing their value in both development and production environments.
-        */ 
+          Developers often use console.log, console.warn, and console.error to debug code, but they might forget to remove
+          these statements before pushing to production. Here’s how we configure the 'no-console' rule:
+
+          1. The first "warn" sets the rule’s severity: by default, 'no-console' would error on any console use (like
+          console.log('Debugging!')), but we change it to "warn" instead. This means ESLint flags console.log with a
+          warning (not an error), reminding us to review or remove it, but doesn’t break our build.
+
+          2. The second "warn" (in the allow list, along with "error") explicitly permits console.warn and console.error
+          without warnings. For example, console.warn('Missing footer element!') or console.error('Critical JS failure!')
+          are allowed because they’re valuable for logging issues in development and production - helping visitors or
+          developers spot real problems without cluttering the code with unnecessary warnings.
+
+          This setup catches accidental debug leftovers (like forgotten console.log) while keeping useful logging clean
+          for production.
+        */
         "no-console": ["warn", { "allow": ["warn", "error"] }],
-  
+
         /*
         'no-unused-vars' is set to "error" because unused variables can indicate dead code 
         or mistakes in logic, leading to clutter. 
