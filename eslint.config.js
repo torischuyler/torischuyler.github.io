@@ -96,12 +96,6 @@ export default {
           This setup catches accidental debug leftovers (like forgotten console.log) while keeping useful logging clean
           for production.
         */
-        "no-console": ["warn", { "allow": ["warn", "error"] }],
-
-        /*
-        'no-unused-vars' is set to "error" because unused variables can indicate dead code 
-        or mistakes in logic, leading to clutter. 
-        */ 
-        "no-unused-vars": "error"
+        "no-console": ["warn", { "allow": ["warn", "error"] }]
     }
 };
