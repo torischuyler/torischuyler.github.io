@@ -51,10 +51,20 @@ export default [
           Larger, established projects might prefer a specific stable version (e.g., 2020) for reliability.
         */
         "ecmaVersion": "latest",
-            
-            // 'globals' is a property that specifies a set of global variables that ESLint should recognize for the project.
+
+            /*
+              'globals' is a property that tells ESLint about global variables — special names (like 'window' or 'document')
+              that are automatically available in every JavaScript file because of the environment we’re coding in,
+              like a browser.
+              
+              Without listing them here, ESLint would complain they’re “undefined” since we didn’t
+              declare them ourselves.
+              
+              For this browser-only project, we’re setting up globals that match what a
+              browser provides, so our code makes sense to ESLint and runs smoothly.
+            */
             "globals": {
-    
+
                 // Since this is a browser-only project, we're setting browser globals to true.
                 "browser": true,
 
