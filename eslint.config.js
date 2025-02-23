@@ -1,12 +1,15 @@
 /*
-Configuration File: ESLint
+  Configuration File: ESLint
 
-This file sets up ESLint, a tool for maintaining code quality in JavaScript (JS) by:
-- Enforcing style consistency.
-- Detecting errors and suspicious patterns.
+  This file sets up ESLint, a tool for maintaining code quality in JavaScript (JS) by:
+    - Enforcing style consistency.
+    - Detecting errors and suspicious patterns.
 */
 
-// Import the recommended ESLint configuration for JavaScript.
+/*
+  Import ESLint's recommended rule set for JavaScript from the official @eslint/js package.
+  These are defaults compiled over time by JS experts to catch common issues and keep code solid.
+*/
 import js from '@eslint/js';
 
 /* 
