@@ -37,7 +37,7 @@ export default [
         */
         "ignores": ["node_modules/"],
 
-        // 'languageOptions' configures how ESLint interprets your JS code.
+        // 'languageOptions' defines how ESLint processes your JavaScript, like its version or environment.
         "languageOptions": {
     
             /*
