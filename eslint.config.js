@@ -65,7 +65,14 @@ export default [
             */
             "globals": {
 
-                // Since this is a browser-only project, we're setting browser globals to true.
+                /*
+                  The 'browser' property, when set to true, tells ESLint this project runs in a browser environment.
+                  This makes ESLint recognize all standard browser global variables (like 'window', 'document',
+                  'console', 'localStorage') without needing to list them one by one.
+
+                  Without this, ESLint would flag these globals as “undefined” since we didn’t declare them ourselves,
+                  breaking our linting for this browser-only setup.
+                */
                 "browser": true,
 
                 /*
