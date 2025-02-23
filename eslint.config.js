@@ -41,7 +41,7 @@ export default {
     "languageOptions": {
 
     /*
-      'ecmaVersion' is a property that specifies which version of ECMAScript syntax (the standard for JS, 
+      'ecmaVersion' is a property that specifies which version of ECMAScript syntax (the standard for JS,
       defining how code can be written) to use for parsing.
 
       Here, we set "latest" to enable the most current ECMAScript syntax ESLint supports at any given time —
@@ -56,10 +56,10 @@ export default {
           'globals' is a property that tells ESLint about global variables — special names (like 'window' or 'document')
           that are automatically available in every JavaScript file because of the environment we’re coding in,
           like a browser.
-          
+
           Without listing them here, ESLint would complain they’re “undefined” since we didn’t
           declare them ourselves.
-          
+
           For this browser-only project, we’re setting up globals that match what a
           browser provides, so our code makes sense to ESLint and runs smoothly.
         */
@@ -79,7 +79,7 @@ export default {
 
     // The 'rules' property lets you customize which coding practices ESLint should enforce or warn about in your project.
     "rules": {
-  
+
         /*
           Developers often use console.log, console.warn, and console.error to debug code, but they might forget to remove
           these statements before pushing to production. Here’s how we configure the 'no-console' rule:

@@ -12,7 +12,7 @@ function updateFooterYear() {
 
     // Try to find the element with ID 'year'.
     const yearElement = document.getElementById('year');
-    
+
     // Check if the year element exists.
     if (yearElement) {
 
