@@ -21,7 +21,7 @@ import js from '@eslint/js';
 // Export a list of configs with recommended JS rules and custom settings just for this project.
 export default [
 
-    // Use the recommended configuration from @eslint/js for common JS best practices.
+    // Grab the recommended rules from @eslint/js
     js.configs.recommended,
     {
         /*
