@@ -12,13 +12,10 @@
 */
 import js from '@eslint/js';
 
-/* 
-This file uses ES Modules (ECMAScript Modules), which is the standard JS
-module system. ES Modules use 'export' and 'import' statements to share code
-between files.
-
-This config can be imported in other files using:
-import config from './eslint.config.js'
+/*
+  This file uses ES Modules, the standard JS module system, with `export` and `import` to share code.
+    - For example, another config could import it like: `import config from './eslint.config.js'`.
+    - This lets you reuse it for stuff like test config files with different rules.
 */
 
 // Export an array of configurations for ESLint, including the recommended JS rules and custom settings.
