@@ -72,45 +72,7 @@ export default {
               Without this, ESLint would flag these globals as “undefined” since we didn’t declare them ourselves,
               breaking our linting for this browser-only setup.
             */
-            "browser": true,
-
-            /*
-            Declare 'window' as a global variable to avoid undefined errors in ESLint.
-            'window' is the global object in client-side JavaScript that represents the browser window
-            and contains all global JavaScript objects, functions, and variables.
-
-            🏠 Analogy: It's like the whole house where everything happens.
-            */
-            "window": true,
-
-            /*
-            Declare 'document' as a global variable to avoid undefined errors in ESLint.
-            'document' represents the web page loaded in the window and serves as the
-            entry point to the web page's content (the DOM).
-
-            🛋️ Analogy: Think of it as the living room within the house where you interact with content.
-            */
-            "document": true,
-            
-            /*
-            Declare 'localStorage' as a global variable to avoid undefined errors in ESLint.
-            'localStorage' is part of the Web Storage API that allows storing key-value pairs 
-            persistently in the user's browser.
-
-            🗄️ Analogy: It's like a locked drawer in your house where you keep notes or reminders; 
-            they stay even if you leave.
-            */
-            "localStorage": true,
-
-            /*
-            Declare 'console' as a global variable to avoid undefined errors in ESLint.
-            'console' provides access to the browser's debugging console for logging information,
-            warnings, and errors, aiding in development and debugging.
-
-            📝 Analogy: Think of it as your personal notepad where you jot down thoughts or 
-            observations about what's happening in your house.
-            */
-            "console": true
+            "browser": true
         }
     },
 
@@ -131,5 +93,3 @@ export default {
         "no-unused-vars": "error"
     }
 };
-
-// Note: More configurations, plugins, or custom rules can be added here as the project evolves.
