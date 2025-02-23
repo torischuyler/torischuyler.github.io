@@ -96,6 +96,9 @@ export default {
           This setup catches accidental debug leftovers (like forgotten console.log) while keeping useful logging clean
           for production.
         */
-        "no-console": ["warn", { "allow": ["warn", "error"] }]
+        "no-console": ["warn", { "allow": ["warn", "error"] }],
+
+        // 'no-trailing-spaces' is a rule that flags trailing whitespace as an error.
+        "no-trailing-spaces": "error"
     }
 };
