@@ -25,11 +25,18 @@ export default [
     js.configs.recommended,
     {
         /*
-        'ignores' specifies directories or files that ESLint should ignore. Here, we exclude 
-        node_modules to avoid unnecessary linting of external dependencies.
+          'ignores' tells ESLint which directories or files to skip.
+          We’re skipping node_modules here so it doesn’t mess with external stuff
+          (i.e. we avoid linting external dependencies).
+
+          What is meant by external stuff?
+
+          There is code that our project needs written by a bunch of really smart devs.
+          We just get to import this code in node_modules and stuff just works.
+          But it's not code we wrote personally, so we don't need to lint it.
         */
         "ignores": ["node_modules/"],
-    
+
         // 'languageOptions' configures how ESLint interprets your JS code.
         "languageOptions": {
     
