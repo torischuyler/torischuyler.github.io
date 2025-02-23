@@ -18,7 +18,7 @@ import js from '@eslint/js';
     - This lets you reuse it for stuff like test config files with different rules.
 */
 
-// Export an array of configurations for ESLint, including the recommended JS rules and custom settings.
+// Export a list of configs with recommended JS rules and custom settings just for this project.
 export default [
 
     // Use the recommended configuration from @eslint/js for common JS best practices.
