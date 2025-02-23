@@ -20,7 +20,8 @@ import js from '@eslint/js';
 
 // Export a single config object combining recommended JS rules with custom settings for this project.
 export default {
-    // Spreads the recommended rules into our config object
+
+    // Copies ESLint’s recommended rules into our config, combining them with our custom settings.
     ...js.configs.recommended,
 
     /*
