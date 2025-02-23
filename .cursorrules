@@ -43,6 +43,7 @@ rules:
       - js
       - html
       - assets
+      - json
     target:
       description: "What's changed within the scope, named as you go"
       examples:
