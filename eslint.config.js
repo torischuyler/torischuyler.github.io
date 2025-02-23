@@ -37,11 +37,11 @@ export default [
         */
         "ignores": ["node_modules/"],
 
-        // 'languageOptions' defines how ESLint processes your JavaScript, like its version or environment.
+        // 'languageOptions' is an object that defines how ESLint processes your JavaScript, like its version or environment.
         "languageOptions": {
 
         /*
-          'ecmaVersion' specifies which version of ECMAScript syntax (the standard for JS, 
+          'ecmaVersion' is a property that specifies which version of ECMAScript syntax (the standard for JS, 
           defining how code can be written) to use for parsing.
 
           Here, we set "latest" to enable the most current ECMAScript syntax ESLint supports at any given time —
@@ -52,7 +52,7 @@ export default [
         */
         "ecmaVersion": "latest",
             
-            // 'globals': specifies a set of global variables that ESLint should recognize for the project.
+            // 'globals' is a property that specifies a set of global variables that ESLint should recognize for the project.
             "globals": {
     
                 // Since this is a browser-only project, we're setting browser globals to true.
