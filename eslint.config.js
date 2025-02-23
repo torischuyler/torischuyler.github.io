@@ -76,7 +76,7 @@ export default {
         }
     },
 
-    // 'rules': where you customize which coding practices ESLint should enforce or warn about in your project.
+    // The 'rules' property lets you customize which coding practices ESLint should enforce or warn about in your project.
     "rules": {
   
         /*
