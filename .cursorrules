@@ -31,7 +31,6 @@ rules:
       - chore
       - teach
       - a11y
-      - config
       - seo
       - security
       - fix
@@ -44,11 +43,13 @@ rules:
       - html
       - assets
       - json
-    target:
+      - config
+    targets:
       description: "What's changed within the scope, named as you go"
       examples:
         - "HTML files"
         - "JS files"
+        - "config files"
     description:
       tense: active
     number:
@@ -62,10 +63,10 @@ rules:
       - "chore(html): standardize comment line formatting in 3 HTML files"
       - "teach(html): tweak title comment in 4 HTML files"
       - "a11y(html): add ARIA-current to active nav link in 1 HTML file"
-      - "config(yaml): add target, number, and plurality in 1 YAML file"
       - "seo(html): add site name to page title in 2 HTML files"
       - "security(html): add <noscript> warning in 1 HTML file"
       - "fix(html): correct social media preview image urls in 5 HTML files"
       - "bug(html): note issue with twitter:image not working in 1 HTML file"
       - "test(html): test functionality of X card tags in 2 HTML files"
       - "lint(html): escape & as &amp; to satisfy html linter in 1 HTML file"
+      - "teach(config): enhance ecmaVersion comment in 1 config file"
