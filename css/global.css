@@ -1,4 +1,9 @@
-/* Global Theme Settings - Base styles for the entire site */
+/*
+  Global.css - The central stylesheet for the website.
+  This file defines the core styles (like colors, fonts, and layouts)
+  that apply across all pages, keeping the design consistent and easy to update.
+ */
+
 :root {
     /* Font family cascade: Space Grotesk → system-ui → sans-serif 
     (bc who needs normal font when u could have cosmic?) */
