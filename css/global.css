@@ -4,6 +4,32 @@
   that apply across all pages, keeping the design consistent and easy to update.
  */
 
+/* 
+  Reset - Removes default browser styles.
+  Sets all elements to start with a clean base for predictable design.
+
+  Every single thing on the page is an element (like text or buttons).
+  Every element has space around it — this is called margin.
+  Every element has space inside it — this is called padding.
+ */
+
+* {
+  /* Setting these to 0 removes any space added to the elements by the browser. */
+  margin: 0;
+  padding: 0;
+
+  /*
+    By default, browsers use content-box, where padding and borders
+    add to an element’s width or height, which can screw up layouts.
+
+    With border-box, the width and height you set include padding and borders,
+    making your life way easier when designing.
+
+    It’s like telling the browser, “No, I decide what fits where.”
+  */
+  box-sizing: border-box;
+}
+
 :root {
     /* Font family cascade: Space Grotesk → system-ui → sans-serif 
     (bc who needs normal font when u could have cosmic?) */
