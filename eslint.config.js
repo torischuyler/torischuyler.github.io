@@ -53,6 +53,15 @@ export default {
         "ecmaVersion": "latest",
 
         /*
+          'sourceType' is a property that tells ESLint how to parse this file:
+          as a 'script' (old-school JS) or 'module' (modern JS with import/export).
+
+          We set it to "module" here because this config uses ES Modules—like importing the @eslint/js rules above.
+          Being explicit avoids any confusion, especially since we’re exporting this config for reuse.
+        */
+         "sourceType": "module",
+
+        /*
           'globals' is a property that tells ESLint about global variables — special names (like 'window' or 'document')
           that are automatically available in every JavaScript file because of the environment we’re coding in,
           like a browser.
