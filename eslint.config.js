@@ -40,17 +40,17 @@ export default {
     // 'languageOptions' is an object that defines how ESLint processes your JavaScript, like its version or environment.
     "languageOptions": {
 
-    /*
-      'ecmaVersion' is a property that specifies which version of ECMAScript syntax (the standard for JS,
-      defining how code can be written) to use for parsing.
+        /*
+          'ecmaVersion' is a property that specifies which version of ECMAScript syntax (the standard for JS,
+          defining how code can be written) to use for parsing.
 
-      Here, we set "latest" to enable the most current ECMAScript syntax ESLint supports at any given time —
-      ideal for smaller or cutting-edge projects chasing new features.
+          Here, we set "latest" to enable the most current ECMAScript syntax ESLint supports at any given time —
+          ideal for smaller or cutting-edge projects chasing new features.
 
-      Without setting this, ESLint defaults to a stable version from its last release, which may not include the newest syntax.
-      Larger, established projects might prefer a specific stable version (e.g., 2020) for reliability.
-    */
-    "ecmaVersion": "latest",
+          Without setting this, ESLint defaults to a stable version from its last release, which may not include the newest syntax.
+          Larger, established projects might prefer a specific stable version (e.g., 2020) for reliability.
+        */
+        "ecmaVersion": "latest",
 
         /*
           'globals' is a property that tells ESLint about global variables — special names (like 'window' or 'document')
