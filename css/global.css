@@ -63,18 +63,12 @@
 
   /* 
     Text color: charcoal has a dark and muted tone, providing good contrast on light backgrounds for readability.
-     😎 Context: Charcoal is one of the oldest known art materials. Archaeologists have found charcoal drawings
-     in caves dating back over 30,000 years, like those in Chauvet Cave in France.
+    😎 Context: Charcoal is one of the oldest known art materials. Archaeologists have found charcoal drawings
+    in caves dating back over 30,000 years, like those in Chauvet Cave in France.
   */
   --charcoal: #2c3e50;
 
   /* Need more colors? Play with https://coolors.co/ for ideas! */
-
-  /* 
-    Font family cascade: Space Grotesk → system-ui → sans-serif 
-    (bc who needs normal font when u could have cosmic?) 
-  */
-  font-family: 'Space Grotesk', system-ui, sans-serif;
 }
 
 /*  Dark Mode Palette 🌒  */
@@ -83,6 +77,24 @@
     --secondary-color: #2d7344;
     --background-color: #1a1a1a;
     --text-color: #e1e1e1;
+}
+
+/*
+  Body - The main content wrapper. Sets the stage for fonts and layout.
+*/
+body {
+  /*
+    Font family cascade: Space Grotesk → system-ui → sans-serif.
+    Bc who needs normal fonts when you could have cosmic vibes? 🧑‍🚀
+  */
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--anti-flash-white);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Navigation Control Center 🎮 (aka page navigation bar) */
@@ -148,16 +160,6 @@ h2 {
 .lesson-content h2 {
     margin-top: 2em;
     margin-bottom: 0.5em;
-}
-
-body {
-    min-height: 100vh;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--anti-flash-white);
-    color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Mission Control's Light Switch 🌓 (aka theme toggle button) */
