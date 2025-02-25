@@ -45,30 +45,44 @@
   /* Core color palette 🎨 to splash some happy little colors on our canvas. */
 
   /* 
-    Primary color: a vibrant blue that pops off the page.
+    Primary color: A vibrant blue that pops off the page.
     😎 Context: Inspired by the blue-washed streets of Chefchaouen, Morocco. */
   --chefchaouen-blue: #4a90e2;
 
   /*
-    Secondary color: emerald green for accents.
+    Secondary color: Emerald green for accents.
     😎 Context: Inspired by The Wizard of Oz's Emerald City.
   */
   --emerald-green: #50c878;
 
   /* 
-    Background color: anti-flash white for a soft, clean background on the page.
+    Background color: Anti-flash white for a soft, clean background on the page.
     😎 Context: Used on military aircraft to reflect thermal radiation from nuclear explosions. 
   */
   --anti-flash-white: #f5f7fa;
 
   /* 
-    Text color: charcoal has a dark and muted tone, providing good contrast on light backgrounds for readability.
+    Text color: Charcoal has a dark and muted tone, providing good contrast on light backgrounds for readability.
     😎 Context: Charcoal is one of the oldest known art materials. Archaeologists have found charcoal drawings
     in caves dating back over 30,000 years, like those in Chauvet Cave in France.
   */
   --charcoal: #2c3e50;
 
   /* Need more colors? Play with https://coolors.co/ for ideas! */
+
+  /*
+    Theme-Agnostic Variables 🎭
+
+    These are the “middlemen” that decide which palette — light or dark — gets used.
+
+    They’re like the director of a play, telling the actors (your styles) which
+    costume (color) to wear based on the scene (theme). Default to light mode
+    here, and the .dark-theme class will swap them to the dark palette later.
+  */
+  --primary-color: var(--chefchaouen-blue);
+  --secondary-color: var(--emerald-green);
+  --background-color: var(--anti-flash-white);
+  --text-color: var(--charcoal);
 }
 
 /*  Dark Mode Palette 🌒  */
