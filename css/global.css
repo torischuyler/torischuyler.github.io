@@ -30,16 +30,33 @@
   box-sizing: border-box;
 }
 
+/*
+  Root - a CSS selector targeting the <html> element, the top of your webpage.
+  It holds custom properties (aka variables) like colors, fonts, and spacing,
+  making them reusable everywhere. Your site’s toolbox. 🧰
+*/
 :root {
-    /* Font family cascade: Space Grotesk → system-ui → sans-serif 
-    (bc who needs normal font when u could have cosmic?) */
-    font-family: 'Space Grotesk', system-ui, sans-serif;
-    
-    /* Core color palette 🎨 Let's splash some happy little colors on our canvas */
-    --primary-color: #4a90e2;
-    --secondary-color: #50c878;
-    --background-color: #f5f7fa;
-    --text-color: #2c3e50;
+  /* Core color palette 🎨 to splash some happy little colors on our canvas. */
+
+  /* Primary color: bright blue, popping off the screen. */
+  --skyler-blue-color: #4a90e2;
+
+  /* Secondary color: happy green for accents. */
+  --tori-green-color: #50c878;
+
+  /* Soft, clean background for the whole page. */
+  --background-color: #f5f7fa;
+
+  /* Deep blue-gray for readable text. */
+  --text-color: #2c3e50;
+
+  /* Want some named CSS colors? Check: https://www.w3schools.com/colors/colors_names.asp */
+
+  /* 
+    Font family cascade: Space Grotesk → system-ui → sans-serif 
+    (bc who needs normal font when u could have cosmic?) 
+  */
+  font-family: 'Space Grotesk', system-ui, sans-serif;
 }
 
 /*  Dark Mode Palette 🌒  */
@@ -52,7 +69,7 @@
 
 /* Navigation Control Center 🎮 (aka page navigation bar) */
 nav {
-    background-color: var(--primary-color);
+    background-color: var(--skyler-blue-color);
     padding: 1rem;
     margin: 0;
     text-align: center;
@@ -72,14 +89,14 @@ nav a {
 
 /* 3...2...1...LIFT OFF! 💥 (aka hover effect) */
 nav a:hover {
-    background-color: var(--secondary-color);  /* highlight our destination */
+    background-color: var(--tori-green-color);  /* highlight our destination */
 }
 
 /* The Starship's Name Badge 📛 (aka lesson plan title) */
 h1 {
     /* If Righteous font isn't ready for takeoff, use our trusty Space Grotesk font backup crew */
     font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
-    color: var(--primary-color);
+    color: var(--skyler-blue-color);
     text-align: center;
 
     /* using rem for responsive sizing */
@@ -158,7 +175,7 @@ body {
 
 /* Footer 🐾 - Global styles */
 footer {
-    background-color: var(--primary-color);
+    background-color: var(--skyler-blue-color);
     color: white;
     text-align: center;
     padding: 1rem;
