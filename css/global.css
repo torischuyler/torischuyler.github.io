@@ -38,19 +38,31 @@
 :root {
   /* Core color palette 🎨 to splash some happy little colors on our canvas. */
 
-  /* Primary color: bright blue, popping off the screen. */
-  --skyler-blue-color: #4a90e2;
+  /* 
+    Primary color: a vibrant blue that pops off the page.
+    😎 Context: Inspired by the blue-washed streets of Chefchaouen, Morocco. */
+  --chefchaouen-blue: #4a90e2;
 
-  /* Secondary color: happy green for accents. */
-  --tori-green-color: #50c878;
+  /*
+    Secondary color: emerald green for accents.
+    😎 Context: Inspired by The Wizard of Oz's Emerald City.
+  */
+  --emerald-green: #50c878;
 
-  /* Soft, clean background for the whole page. */
-  --background-color: #f5f7fa;
+  /* 
+    Background color: anti-flash white for a soft, clean background on the page.
+    😎 Context: Used on military aircraft to reflect thermal radiation from nuclear explosions. 
+  */
+  --anti-flash-white: #f5f7fa;
 
-  /* Deep blue-gray for readable text. */
-  --text-color: #2c3e50;
+  /* 
+    Text color: charcoal has a dark and muted tone, providing good contrast on light backgrounds for readability.
+     😎 Context: Charcoal is one of the oldest known art materials. Archaeologists have found charcoal drawings
+     in caves dating back over 30,000 years, like those in Chauvet Cave in France.
+  */
+  --charcoal: #2c3e50;
 
-  /* Want some named CSS colors? Check: https://www.w3schools.com/colors/colors_names.asp */
+  /* Need more colors? Play with https://coolors.co/ for ideas! */
 
   /* 
     Font family cascade: Space Grotesk → system-ui → sans-serif 
@@ -69,7 +81,7 @@
 
 /* Navigation Control Center 🎮 (aka page navigation bar) */
 nav {
-    background-color: var(--skyler-blue-color);
+    background-color: var(--chefchaouen-blue);
     padding: 1rem;
     margin: 0;
     text-align: center;
@@ -89,14 +101,14 @@ nav a {
 
 /* 3...2...1...LIFT OFF! 💥 (aka hover effect) */
 nav a:hover {
-    background-color: var(--tori-green-color);  /* highlight our destination */
+    background-color: var(--emerald-green);  /* highlight our destination */
 }
 
 /* The Starship's Name Badge 📛 (aka lesson plan title) */
 h1 {
     /* If Righteous font isn't ready for takeoff, use our trusty Space Grotesk font backup crew */
     font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
-    color: var(--skyler-blue-color);
+    color: var(--chefchaouen-blue);
     text-align: center;
 
     /* using rem for responsive sizing */
@@ -137,7 +149,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    background-color: var(--background-color);
+    background-color: var(--anti-flash-white);
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
 }
@@ -175,7 +187,7 @@ body {
 
 /* Footer 🐾 - Global styles */
 footer {
-    background-color: var(--skyler-blue-color);
+    background-color: var(--chefchaouen-blue);
     color: white;
     text-align: center;
     padding: 1rem;
