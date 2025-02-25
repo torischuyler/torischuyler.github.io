@@ -45,7 +45,7 @@
   /* Core color palette 🎨 to splash some happy little colors on our canvas. */
 
   /* 
-    Primary color: A vibrant blue that pops off the page.
+    Primary color: Chefchaouen blue - a vibrant blue that pops off the page.
     😎 Context: Inspired by the blue-washed streets of Chefchaouen, Morocco. */
   --chefchaouen-blue: #4a90e2;
 
@@ -68,7 +68,57 @@
   */
   --charcoal: #2c3e50;
 
-  /* Need more colors? Play with https://coolors.co/ for ideas! */
+  /* Dark mode color palette 🌑  */
+
+  /*
+    The Darth Vader to your Luke Skywalker,
+    Your Jungian shadow self unleashed in low-light vibes.
+
+    Why dark mode matters? It’s not just moody aesthetics!
+
+    Dark mode cuts glare and reduces eye strain 👀, making screens less of a
+    punch to the retinas when you’re staring at code (or memes) for hours.
+
+    For some ppl — especially those sensitive to bright lights - it’s a
+    game changer, calming overstimulated senses and boosting focus.
+
+    Plus, it’s easier on everyone’s eyes in dim rooms, and might even
+    save a little battery life on those OLED screens.
+
+    What's an example of an OLED screen? 📱 Pretty much any iPhone X or later has an OLED.
+
+    Dark mode options like this? They’re the unsung heroes of accessibility and comfort.
+  */
+
+  /* 
+    Primary color: Lapis lazuli - a deep, rich blue color.
+    😎 Context: Historically, lapis lazuli was ground into a pigment known as ultramarine,
+    used by Reinaissance artists for its vibrant blue hue.
+  */
+  --lapis-lazuli: #2d5a8e;
+
+/* 
+  Secondary color: Dark spring green - a deep shade of green.
+  😎 Context: Using #2d7344 as our Dark Spring Green; X11’s official is #177245, 
+  with variants like #25754a and #1f7b50 floating out there.
+*/
+  --dark-spring-green: #2d7344;
+
+/* 
+  Background color: Eerie black - a near-black shade with subtle depth.
+  😎 Context: Eerie black sets a moody, mysterious tone;
+  close to pure black #000000 but with a hint of warmth.
+*/
+  --eerie-black:  #1a1a1a;
+
+/* 
+  Background color: Platinum - a bright gray color.
+  😎 Context: Actual platinum is so rare, all the platinum ever mined in 
+  human history could fit into an average sized living room (~ 25 feet X 25 feet X 10 feet).
+*/
+  --platinum: #e1e1e1;
+
+  /* Need more colors? 🌈 Play with https://coolors.co/ for ideas! */
 
   /*
     Theme-Agnostic Variables 🎭
@@ -85,12 +135,9 @@
   --text-color: var(--charcoal);
 }
 
-/*  Dark Mode Palette 🌒  */
+/*  Dark Theme */
 .dark-theme {
-    --primary-color: #2d5a8e;
-    --secondary-color: #2d7344;
-    --background-color: #1a1a1a;
-    --text-color: #e1e1e1;
+
 }
 
 /*
