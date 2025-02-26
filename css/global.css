@@ -195,12 +195,12 @@ body {
   Order of Properties: Size it, Space it, Style it (SSS)
 */
 nav {
-    width: 100%;   /* spans the full width of the page */
-    margin: 0;
-    padding: 1rem;
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
+  /* Spans the full width of the page */
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
 }
 
 /* Where astronauts choose their destination 🌍 (aka navigation links) */
