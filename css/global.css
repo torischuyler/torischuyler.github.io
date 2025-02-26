@@ -97,25 +97,25 @@
   */
   --lapis-lazuli: #2d5a8e;
 
-/* 
-  Secondary color: Dark spring green - a deep shade of green.
-  😎 Context: Using #2d7344 as our Dark Spring Green; X11’s official is #177245, 
-  with variants like #25754a and #1f7b50 floating out there.
-*/
+  /* 
+    Secondary color: Dark spring green - a deep shade of green.
+    😎 Context: Using #2d7344 as our Dark Spring Green; X11’s official is #177245, 
+    with variants like #25754a and #1f7b50 floating out there.
+  */
   --dark-spring-green: #2d7344;
 
-/* 
-  Background color: Eerie black - a near-black shade with subtle depth.
-  😎 Context: Eerie black sets a moody, mysterious tone;
-  close to pure black #000000 but with a hint of warmth.
-*/
+  /*
+    Background color: Eerie black - a near-black shade with subtle depth.
+    😎 Context: Eerie black sets a moody, mysterious tone;
+    close to pure black #000000 but with a hint of warmth.
+  */
   --eerie-black:  #1a1a1a;
 
-/* 
-  Background color: Platinum - a bright gray color.
-  😎 Context: Actual platinum is so rare, all the platinum ever mined in 
-  human history could fit into an average sized living room (~ 25 feet X 25 feet X 10 feet).
-*/
+  /* 
+    Text color: Platinum - a bright gray color.
+    😎 Context: Actual platinum is so rare, all the platinum ever mined in 
+    human history could fit into an average sized living room (~ 25 feet X 25 feet X 10 feet).
+  */
   --platinum: #e1e1e1;
 
   /* Need more colors? 🌈 Play with https://coolors.co/ for ideas! */
@@ -135,7 +135,7 @@
   --text-color: var(--charcoal);
 }
 
-/*  Dark Theme-Agnostic Variables 👺 */
+/*  Dark Theme Variables 🌑 */
 .dark-theme {
   --primary-color: var(--lapis-lazuli);
   --secondary-color: var(--dark-spring-green);
