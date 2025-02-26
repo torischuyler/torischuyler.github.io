@@ -207,20 +207,26 @@ body {
   Order of Properties: Size it, Space it, Style it (SSS)
 */
 nav {
+  /* --- Size It --- */
+
   /* Spans the full width of the page */
   width: 100%;
 
-/* 
-  Padding affects the space inside the nav bar on the page.
-  Crank it to 5rem, and you’ll see extra space above and below the text.
+  /* --- Space It --- */
 
-  Rem? It’s short for “root em.” Basically, it’s tied to the <html> font size
-  (usually 16px by default). So 1rem = 16px, 5rem = 80px. Easy math! 🧮
+  /* 
+    Padding affects the space inside the nav bar on the page.
+    Crank it to 5rem, and you’ll see extra space above and below the text.
 
-  Why use rem here? It’s responsive—padding scales with browser font size changes,
-  keeping the nav balanced across different screens and settings.
+    Rem? It’s short for “root em.” Basically, it’s tied to the <html> font size
+    (usually 16px by default). So 1rem = 16px, 5rem = 80px. Easy math! 🧮
+
+    Why use rem here? It’s responsive—padding scales with browser font size changes,
+    keeping the nav balanced across different screens and settings.
   */
   padding: 1rem;
+
+  /* --- Style It --- */
 
   /* Sets contrast text color for nav using an agnostic variable (white or anti-flash-white, based on light/dark mode). */
   color: var(--contrast-text-color);
