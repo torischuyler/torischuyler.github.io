@@ -316,7 +316,10 @@ h1 {
 
   /* --- Space It --- */
 
-  /* using the golden ratio for aesthetic harmony (and bc 6/18 is my bday 😎) */
+  /* 
+    Adds space below the heading (1.618rem ≈ 26px) using the golden ratio
+    for aesthetic harmony (and bc 6/18 is my bday 😎).
+  */
   margin-bottom: 1.618rem;
 
   /* --- Style It --- */
