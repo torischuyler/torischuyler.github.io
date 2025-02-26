@@ -295,9 +295,10 @@ nav a {
   transition: background-color 0.3s;
 }
 
-/* 3...2...1...LIFT OFF! 💥 (aka hover effect) */
+/* Navigation Hover Effect */
 nav a:hover {
-    background-color: var(--secondary-color);  /* highlight our destination */
+  /* Sets hover background to secondary color (light/dark mode) */
+  background-color: var(--secondary-color);
 }
 
 /* The Starship's Name Badge 📛 (aka lesson plan title) */
