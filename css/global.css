@@ -301,18 +301,31 @@ nav a:hover {
   background-color: var(--secondary-color);
 }
 
-/* The Starship's Name Badge 📛 (aka lesson plan title) */
+/* 
+  Main Page Heading
+  Order of Properties: Size it, Space it, Style it (SSS)
+ */
 h1 {
-    /* If Righteous font isn't ready for takeoff, use our trusty Space Grotesk font backup crew */
-    font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
-    color: var(--primary-color);
-    text-align: center;
+  /* --- Size It --- */
+  font-size: 2.5rem;
 
-    /* using rem for responsive sizing */
-    font-size: 2.5rem;
+  /* --- Space It --- */
 
-    /* using the golden ratio for aesthetic harmony (and bc 6/18 is my bday 😎) */
-    margin-bottom: 1.618rem;
+  /* using the golden ratio for aesthetic harmony (and bc 6/18 is my bday 😎) */
+  margin-bottom: 1.618rem;
+
+  /* --- Style It --- */
+
+  /* 
+    If Righteous font isn't ready for takeoff,
+    use our trusty Space Grotesk font backup crew
+
+    We are using quotes around 'Space Grotesk' bc it’s a multi-word font name, 
+    unlike single-word Righteous, system-ui or sans-serif.
+  */
+  font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
+  color: var(--primary-color);
+  text-align: center;
 }
 
 /* Deck Markers to help navigate the ship 🧭 (aka sub-headers to navigate the lesson plan) */
