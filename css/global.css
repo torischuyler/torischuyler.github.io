@@ -166,8 +166,11 @@
 
 /*
   Body - The main content wrapper. Sets the stage for fonts and layout.
+  Order of Properties: Size it, Style it (SS)
 */
 body {
+  /* --- Size It --- */
+
   /*
     Flex lets body control its contents (like nav, main, or footer) in a flexible way. 
     Without this, everything inside body would stack vertically ('block' display).
@@ -185,6 +188,8 @@ body {
     Unlike block stacking, flex lets them stretch to fill body's height (footer stays down!).
   */
   flex-direction: column;
+
+  /* --- Style It --- */
 
   /*
     Typography: Font family cascade: Space Grotesk → system-ui → sans-serif.
