@@ -135,9 +135,12 @@
   --text-color: var(--charcoal);
 }
 
-/*  Dark Theme */
+/*  Dark Theme-Agnostic Variables 👺 */
 .dark-theme {
-
+  --primary-color: var(--lapis-lazuli);
+  --secondary-color: var(--dark-spring-green);
+  --background-color: var(--eerie-black);
+  --text-color: var(--platinum);
 }
 
 /*
