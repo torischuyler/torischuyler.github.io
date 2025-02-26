@@ -183,7 +183,7 @@ body {
   /* Sets text color for all pages using an agnostic variable (charcoal or platinum, based on light/dark mode). */
   color: var(--text-color);
 
-  /* Background */
+  /* Sets background color for all pages using an agnostic variable (anti-flash-white or eerie-black, based on light/dark mode). */
   background-color: var(--background-color);
 
   /* Transitions */
