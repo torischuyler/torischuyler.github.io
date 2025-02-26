@@ -161,6 +161,7 @@
   --secondary-color: var(--dark-spring-green);
   --background-color: var(--eerie-black);
   --text-color: var(--platinum);
+  --contrast-text-color: var(--anti-flash-white);
 }
 
 /*
@@ -221,9 +222,11 @@ nav {
   */
   padding: 1rem;
 
+  /* Sets contrast text color for nav using an agnostic variable (white or anti-flash-white, based on light/dark mode). */
+  color: var(--contrast-text-color);
+
   /* Sets background color for nav using an agnostic variable (chefchaouen-blue or lapis-lazuli, based on light/dark mode). */
   background-color: var(--primary-color);
-  color: white;
   text-align: center;
 }
 
