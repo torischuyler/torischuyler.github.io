@@ -285,10 +285,10 @@ nav a {
   /* Text color */
   color: var(--accent-text-color);
 
-  /* No underline */
+  /* Links are not underlined */
   text-decoration: none;
 
-  /* Rounded corners */
+  /* Rounds link corners, noticeable when hovering links  */
   border-radius: 0.3rem;
 
   /* Smooth hover effect */
