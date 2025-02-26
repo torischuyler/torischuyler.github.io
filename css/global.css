@@ -259,8 +259,18 @@ nav {
 nav a {
   /* --- Space It --- */
 
-  /* Space between links */
-  margin: 0 0.3rem;
+  /* 
+    Space between nav links ⬅️ ➡️
+    - margin-left and margin-right set 0.3rem spacing explicitly for left and right,
+      ensuring older browsers keep links nicely spaced side to side.
+    - margin-inline is the modern way, applying 0.3rem to the inline axis (left/right),
+      overriding the above in newer browsers.
+
+    Using all 3 as a fallback bc some ppl still rock vintage browsers 🤘
+  */
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+  margin-inline: 0.3rem;
 
   /* Space inside links */
   padding: 0.5rem 1rem;
