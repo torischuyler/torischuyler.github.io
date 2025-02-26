@@ -158,16 +158,13 @@
 body {
   /* Display & Box Model */
   display: flex;
-  margin: 0;
   min-height: 100vh;
 
   /* Flex */
   flex-direction: column;
 
   /*
-    Typography 
-
-    Font family cascade: Space Grotesk → system-ui → sans-serif.
+    Typography: Font family cascade: Space Grotesk → system-ui → sans-serif.
     Bc who needs normal fonts when you could have cosmic vibes? 🧑‍🚀
   */
   font-family: 'Space Grotesk', system-ui, sans-serif;
