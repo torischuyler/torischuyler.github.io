@@ -190,14 +190,17 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Navigation Control Center 🎮 (aka page navigation bar) */
+/* 
+  Navigation Control Center 🎮 (aka page navigation bar)
+  Order of Properties: Size it, Space it, Style it (SSS)
+*/
 nav {
-    background-color: var(--primary-color);
-    padding: 1rem;
-    margin: 0;
-    text-align: center;
     width: 100%;   /* spans the full width of the page */
+    margin: 0;
+    padding: 1rem;
+    background-color: var(--primary-color);
     color: white;
+    text-align: center;
 }
 
 /* Where astronauts choose their destination 🌍 (aka navigation links) */
