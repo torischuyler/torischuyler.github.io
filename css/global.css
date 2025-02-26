@@ -11,6 +11,8 @@
   Every single thing on the page is an element (like text or buttons).
   Every element has space around it — this is called margin.
   Every element has space inside it — this is called padding.
+
+  Order of Properties: Size it, Space it (SS)
 */
 
 * {
@@ -20,9 +22,7 @@
     Here, we’re using it to wipe out browser defaults and take control.
   */
 
-  /* Setting these to 0 removes any space added to the elements by the browser. */
-  margin: 0;
-  padding: 0;
+  /* --- Size It --- */
 
   /*
     By default, browsers use content-box, where padding and borders
@@ -34,6 +34,12 @@
     It’s like telling the browser, “No, I decide what fits where.”
   */
   box-sizing: border-box;
+
+  /* --- Space It --- */
+
+  /* Setting these to 0 removes any space added to the elements by the browser. */
+  margin: 0;
+  padding: 0;
 }
 
 /*
