@@ -156,8 +156,13 @@
   Body - The main content wrapper. Sets the stage for fonts and layout.
 */
 body {
-  /* Display & Box Model */
+  /*
+    Flex lets body control its contents (like nav, main, or footer) in a flexible way. 
+    Without this, everything inside body would stack vertically ('block' display).
+  */
   display: flex;
+
+  /* Sets body to at least full screen height so it fills the viewport. */
   min-height: 100vh;
 
   /* Flex */
