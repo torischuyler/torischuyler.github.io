@@ -186,7 +186,7 @@ body {
   /* Sets background color for all pages using an agnostic variable (anti-flash-white or eerie-black, based on light/dark mode). */
   background-color: var(--background-color);
 
-  /* Transitions */
+  /* Fades background and text color changes (like light/dark mode) over 0.3 seconds for a smooth switch. */
   transition: background-color 0.3s, color 0.3s;
 }
 
