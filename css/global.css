@@ -168,7 +168,10 @@ body {
   */
   min-height: 100vh;
 
-  /* Flex */
+  /*
+    Flex - Stacks body's contents (like nav, main, footer) top-to-bottom in a flex container. 
+    Unlike block stacking, flex lets them stretch to fill body's height (footer stays down!).
+  */
   flex-direction: column;
 
   /*
