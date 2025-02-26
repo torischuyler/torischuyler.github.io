@@ -307,6 +307,11 @@ nav a:hover {
  */
 h1 {
   /* --- Size It --- */
+
+  /* 
+    Sets heading to 2.5rem (40px at default 16px root font size).
+    Typical h1 range is 2rem–3.5rem (32px–56px), balancing prominence and readability.
+  */
   font-size: 2.5rem;
 
   /* --- Space It --- */
