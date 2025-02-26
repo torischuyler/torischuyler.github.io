@@ -158,7 +158,7 @@
   --secondary-color: var(--emerald-green);
   --background-color: var(--anti-flash-white);
   --text-color: var(--charcoal);
-  --contrast-text-color: var(--white);
+  --accent-text-color: var(--white);
 }
 
 /*  Dark Theme Variables 🌑 */
@@ -167,7 +167,7 @@
   --secondary-color: var(--dark-spring-green);
   --background-color: var(--eerie-black);
   --text-color: var(--platinum);
-  --contrast-text-color: var(--anti-flash-white);
+  --accent-text-color: var(--anti-flash-white);
 }
 
 /*
@@ -239,10 +239,10 @@ nav {
 
   /* --- Style It --- */
 
-  /* Sets contrast text color for nav using an agnostic variable (white or anti-flash-white, based on light/dark mode). */
-  color: var(--contrast-text-color);
+  /* Text color */
+  color: var(--accent-text-color);
 
-  /* Sets background color for nav using an agnostic variable (chefchaouen-blue or lapis-lazuli, based on light/dark mode). */
+  /* Background color */
   background-color: var(--primary-color);
 
   /* 
@@ -268,7 +268,7 @@ nav a {
   /* --- Style It --- */
 
   /* Text color */
-  color: white;
+  color: var(--accent-text-color);
 
   /* No underline */
   text-decoration: none;
@@ -359,7 +359,7 @@ h2 {
 /* Footer 🐾 - Global styles */
 footer {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--accent-text-color);
     text-align: center;
     padding: 1rem;
     width: 100%;
