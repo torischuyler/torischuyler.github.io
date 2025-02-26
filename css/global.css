@@ -162,7 +162,10 @@ body {
   */
   display: flex;
 
-  /* Sets body to at least full screen height so it fills the viewport. */
+  /*
+    Sets the body box to at least the browser window’s height. 
+    vh stands for “viewport height,” and 100vh means “100% of the window’s height.”
+  */
   min-height: 100vh;
 
   /* Flex */
