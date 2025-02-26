@@ -42,31 +42,41 @@
   making them reusable everywhere. Your site’s toolbox. 🧰
 */
 :root {
-  /* Core color palette 🎨 to splash some happy little colors on our canvas. */
+  /*
+    Core color palette 🎨 to splash some happy little colors on our canvas.
+
+    You'll see below that each color in our palette gets its own little ID — a code that
+    tells the browser what shade to use. This is called a hex code.
+    Think of it as a color’s secret ID 🕵️‍♀️ A 6-digit code starting with # (like #4A90E2)
+    mixes red, green, and blue (RGB) — two digits each: RRGGBB. You want pure black? #000000.
+    Pure white? #FFFFFF. It’s how we talk color to computers.
+
+    🌈 Play with https://coolors.co/ to brainstorm colors for your project.
+  */
 
   /* 
     Primary color: Chefchaouen blue - a vibrant blue that pops off the page.
     😎 Context: Inspired by the blue-washed streets of Chefchaouen, Morocco. */
-  --chefchaouen-blue: #4a90e2;
+  --chefchaouen-blue: #4A90E2;
 
   /*
     Secondary color: Emerald green for accents.
     😎 Context: Inspired by The Wizard of Oz's Emerald City.
   */
-  --emerald-green: #50c878;
+  --emerald-green: #50C878;
 
   /* 
     Background color: Anti-flash white for a soft, clean background on the page.
     😎 Context: Used on military aircraft to reflect thermal radiation from nuclear explosions. 
   */
-  --anti-flash-white: #f5f7fa;
+  --anti-flash-white: #F5F7FA;
 
   /* 
     Text color: Charcoal has a dark and muted tone, providing good contrast on light backgrounds for readability.
     😎 Context: Charcoal is one of the oldest known art materials. Archaeologists have found charcoal drawings
     in caves dating back over 30,000 years, like those in Chauvet Cave in France.
   */
-  --charcoal: #2c3e50;
+  --charcoal: #2C3E50;
 
   /* Dark mode color palette 🌑  */
 
@@ -95,30 +105,28 @@
     😎 Context: Historically, lapis lazuli was ground into a pigment known as ultramarine,
     used by Reinaissance artists for its vibrant blue hue.
   */
-  --lapis-lazuli: #2d5a8e;
+  --lapis-lazuli: #2D5A8E;
 
   /* 
     Secondary color: Dark spring green - a deep shade of green.
     😎 Context: Using #2d7344 as our Dark Spring Green; X11’s official is #177245, 
     with variants like #25754a and #1f7b50 floating out there.
   */
-  --dark-spring-green: #2d7344;
+  --dark-spring-green: #2D7344;
 
   /*
     Background color: Eerie black - a near-black shade with subtle depth.
     😎 Context: Eerie black sets a moody, mysterious tone;
     close to pure black #000000 but with a hint of warmth.
   */
-  --eerie-black:  #1a1a1a;
+  --eerie-black:  #1A1A1A;
 
   /* 
     Text color: Platinum - a bright gray color.
     😎 Context: Actual platinum is so rare, all the platinum ever mined in 
     human history could fit into an average sized living room (~ 25 feet X 25 feet X 10 feet).
   */
-  --platinum: #e1e1e1;
-
-  /* Need more colors? 🌈 Play with https://coolors.co/ for ideas! */
+  --platinum: #E1E1E1;
 
   /*
     Theme-Agnostic Variables 🎭
