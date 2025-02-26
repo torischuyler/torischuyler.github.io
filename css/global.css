@@ -179,6 +179,8 @@ body {
     Bc who needs normal fonts when you could have cosmic vibes? 🧑‍🚀
   */
   font-family: 'Space Grotesk', system-ui, sans-serif;
+
+  /* Sets text color for all pages using an agnostic variable (charcoal or platinum, based on light/dark mode). */
   color: var(--text-color);
 
   /* Background */
