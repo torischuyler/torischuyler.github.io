@@ -164,14 +164,14 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-color: var(--anti-flash-white);
+  background-color: var(--background-color);
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
 }
 
 /* Navigation Control Center 🎮 (aka page navigation bar) */
 nav {
-    background-color: var(--chefchaouen-blue);
+    background-color: var(--primary-color);
     padding: 1rem;
     margin: 0;
     text-align: center;
@@ -191,14 +191,14 @@ nav a {
 
 /* 3...2...1...LIFT OFF! 💥 (aka hover effect) */
 nav a:hover {
-    background-color: var(--emerald-green);  /* highlight our destination */
+    background-color: var(--secondary-color);  /* highlight our destination */
 }
 
 /* The Starship's Name Badge 📛 (aka lesson plan title) */
 h1 {
     /* If Righteous font isn't ready for takeoff, use our trusty Space Grotesk font backup crew */
     font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
-    color: var(--chefchaouen-blue);
+    color: var(--primary-color);
     text-align: center;
 
     /* using rem for responsive sizing */
@@ -267,7 +267,7 @@ h2 {
 
 /* Footer 🐾 - Global styles */
 footer {
-    background-color: var(--chefchaouen-blue);
+    background-color: var(--primary-color);
     color: white;
     text-align: center;
     padding: 1rem;
