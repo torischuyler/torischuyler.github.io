@@ -209,6 +209,8 @@ nav {
   keeping the nav balanced across different screens and settings.
   */
   padding: 1rem;
+
+  /* Sets background color for nav using an agnostic variable (chefchaouen-blue or lapis-lazuli, based on light/dark mode). */
   background-color: var(--primary-color);
   color: white;
   text-align: center;
