@@ -252,14 +252,32 @@ nav {
   text-align: center;
 }
 
-/* Where astronauts choose their destination 🌍 (aka navigation links) */
+/*
+  Navigation Links 🔗 (links within the nav bar)
+  Order of Properties: Space it, Style it (SS)
+*/
 nav a {
-    color: white;   /* white text for visibility */
-    text-decoration: none;   /* no underline */
-    padding: 0.5rem 1rem;   /* padding for spacing */
-    margin: 0 0.3rem;   /* margin for spacing */
-    border-radius: 0.3rem;   /* rounded corners for a friendly feel */
-    transition: background-color 0.3s;   /* smooth transition for hover effect */
+  /* --- Space It --- */
+
+  /* Space between links */
+  margin: 0 0.3rem;
+
+  /* Space inside links */
+  padding: 0.5rem 1rem;
+  
+  /* --- Style It --- */
+
+  /* Text color */
+  color: white;
+
+  /* No underline */
+  text-decoration: none;
+
+  /* Rounded corners */
+  border-radius: 0.3rem;
+
+  /* Smooth hover effect */
+  transition: background-color 0.3s;
 }
 
 /* 3...2...1...LIFT OFF! 💥 (aka hover effect) */
