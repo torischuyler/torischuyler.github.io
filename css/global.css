@@ -79,6 +79,13 @@
   */
   --charcoal: #2C3E50;
 
+  /* 
+    Contrast text color: Pure white - a bright, clean text shade.
+    😎 Context: Inspired by fresh snow on the mountains of Maine, it’s the ultimate contrast 
+    against the vibrant blue streets of Chefchaouen (our light mode primary color).
+  */
+  --white: #FFF;
+
   /* Dark mode color palette 🌑  */
 
   /*
@@ -142,6 +149,7 @@
   --secondary-color: var(--emerald-green);
   --background-color: var(--anti-flash-white);
   --text-color: var(--charcoal);
+  --contrast-text-color: var(--white);
 }
 
 /*  Dark Theme Variables 🌑 */
