@@ -246,7 +246,7 @@ nav {
   background-color: var(--primary-color);
 
   /* 
-    Centers the nav’s text smack in the middle. 🖕
+    Centers the nav’s text smack in the middle.
     Other options? Try ‘left’ to hug the start, or ‘right’ to push it to the end.
   */  
   text-align: center;
