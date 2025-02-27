@@ -401,6 +401,8 @@ h2 {
   padding: 0.5rem;
 
   /* --- Style It --- */
+
+  /* Wipes out any background, so the emojis blend in with the nav bar. */
   background: none;
   border: none;
   cursor: pointer;
