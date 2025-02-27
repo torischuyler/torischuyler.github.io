@@ -396,8 +396,8 @@ h2 {
   font-size: 1.2em;
 
   /* --- Space It --- */
-  padding: 8px;
-  margin-left: 15px;
+  /* Adds a cushion inside the sun/moon toggle */
+  padding: 0.5rem;
 
   /* --- Style It --- */
   color: white;
