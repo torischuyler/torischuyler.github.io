@@ -467,6 +467,8 @@ footer {
     (Chefchaouen blue in light mode, lapis lazuli in dark).
   */
   background-color: var(--primary-color);
+
+  /* Centers the footer text. */
   text-align: center;
 }
 
