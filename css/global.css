@@ -349,12 +349,25 @@ h1 {
 */
 h2 {
   /* --- Size It --- */
+
+  /* 
+    Sets subheading to 1.5rem (24px at default 16px root font size).
+    Typical h2 range is 1.25rem–2rem (20px–32px), keeping it bold but smaller than h1.
+  */
   font-size: 1.5rem;
 
   /* --- Space It --- */
-  margin-bottom: 0.8rem;
+
+  /* Adds 1rem (16px) space above and below for breathing room between sections. */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 
   /* --- Style It --- */
+
+  /* 
+    Sets boldness to 700 (bold) for strong visual hierarchy—thicker than normal (400)
+    but not as heavy as extra-bold (900).
+  */
   font-weight: 700;
   color: var(--text-color);
 }
