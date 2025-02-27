@@ -436,9 +436,12 @@ footer {
   /* Spans the full width of the page */
   width: 100%;
 
-  /* Outsider art: Defiantly larger footer text bc 
-                        footer content deserves the same respect as any other content.
-                        Convention says make it smaller, we say make it seen. */
+  /*
+    👽 Outsider art: Defiantly larger footer text bc
+    footer content deserves the same respect as any other content.
+    Convention says make it smaller (0.8rem–1rem), but we’re boosting 
+    it to 1.25rem (20px at 16px root). Making it seen and challenging the norm.
+  */
   font-size: 1.25rem;
 
   /* --- Space It --- */
