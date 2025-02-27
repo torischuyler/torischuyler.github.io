@@ -445,6 +445,8 @@ footer {
   font-size: 1.25rem;
 
   /* --- Space It --- */
+
+  /* Adds a cushion inside the footer. */
   padding: 1rem;
 
   /*
