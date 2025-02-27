@@ -372,11 +372,6 @@ h2 {
   color: var(--text-color);
 }
 
-/* Main tile */
-.page-header h1 {
-    text-align: center;
-}
-
 /* Section headers */
 .lesson-content h2 {
     margin-top: 2em;
