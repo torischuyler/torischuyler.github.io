@@ -373,7 +373,7 @@ h2 {
 }
 
 /* Mission Control's Light Switch 🌓 (aka theme toggle button) */
-#yin-yang-toggle {
+#sun-moon-toggle {
     background: none;
     border: none;
     font-size: 1.2em;
@@ -384,7 +384,7 @@ h2 {
    transition: transform 0.3s ease;
 }
 
-#yin-yang-toggle:hover {
+#sun-moon-toggle:hover {
     transform: scale(1.1);
 }
 
