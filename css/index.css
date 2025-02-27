@@ -1,0 +1,20 @@
+/*
+  Index.css - The stylesheet for the home page.
+  This file defines the styles (like colors, fonts, and layouts)
+  that apply specifically to the home of eOS Lesson Plans.
+*/
+
+/* Homepage content container 🏠 */
+.home-container {
+  max-width: 80vw;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Homepage description text 📝 */
+.home-container p {
+  max-width: 50rem;
+  margin: 1.5rem auto;
+  line-height: 1.6;
+}

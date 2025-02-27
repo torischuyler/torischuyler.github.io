@@ -425,21 +425,6 @@ h2 {
     transform: scale(1.2);
 }
 
-/* Homepage content container 🏠 */
-.home-container {
-    max-width: 80vw;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-}
-
-/* Homepage description text 📝 */
-.home-container p {
-    max-width: 50rem;
-    margin: 1.5rem auto;
-    line-height: 1.6;
-}
-
 /* Footer 🐾 - Global styles */
 footer {
     background-color: var(--primary-color);
