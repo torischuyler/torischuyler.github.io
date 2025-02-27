@@ -425,24 +425,34 @@ h2 {
     transform: scale(1.2);
 }
 
-/* Footer 🐾 - Global styles */
+/* 
+  Footer Styling 🐾
+  The page’s foundation—sticks to the bottom and demands to be seen.
+  Order of Properties: Size it, Space it, Style it (SSS)
+*/
 footer {
-    background-color: var(--primary-color);
-    color: var(--accent-text-color);
-    text-align: center;
-    padding: 1rem;
-    width: 100%;
+  /* --- Size It --- */
 
-    /* Outsider art: Defiantly larger footer text bc 
-                           footer content deserves the same respect as any other content.
-                           Convention says make it smaller, we say make it seen. */
-    font-size: 1.25rem;
+  width: 100%;
 
-    /* makes footer stick to bottom of the page */
-    margin-top: auto;
+  /* Outsider art: Defiantly larger footer text bc 
+                        footer content deserves the same respect as any other content.
+                        Convention says make it smaller, we say make it seen. */
+  font-size: 1.25rem;
+
+  /* --- Space It --- */
+  padding: 1rem;
+
+  /* makes footer stick to bottom of the page */
+  margin-top: auto;
+  
+  /* --- Style It --- */
+  color: var(--accent-text-color);
+  background-color: var(--primary-color);
+  text-align: center;
 }
 
 footer p {
-    max-width: 80vw;
-    margin: 0 auto;
+  max-width: 80vw;
+  margin: 0 auto;
 }
