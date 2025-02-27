@@ -373,7 +373,7 @@ h2 {
 }
 
 /* 
-  Sun/Moon Light/Dark Mode Toggle 🌞 🌙
+  Sun/Moon Light/Dark Mode Toggle 🌞🌙
 
   Order of Properties: Size it, Space it, Style it (SSS)
 */
@@ -402,8 +402,10 @@ h2 {
 
   /* --- Style It --- */
 
-  /* Wipes out any background, so the emojis blend in with the nav bar. */
+  /* Wipes out any background, so the toggle emojis blend in with the nav bar. */
   background: none;
+
+  /* Removes the border; uncomment to see the toggle’s padding and margin during design. */
   border: none;
   cursor: pointer;
   transition: transform 0.3s ease;
