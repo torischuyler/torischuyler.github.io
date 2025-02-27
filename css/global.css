@@ -433,6 +433,7 @@ h2 {
 footer {
   /* --- Size It --- */
 
+  /* Spans the full width of the page */
   width: 100%;
 
   /* Outsider art: Defiantly larger footer text bc 
