@@ -326,13 +326,20 @@ h1 {
 
   /* 
     If Righteous font isn't ready for takeoff,
-    use our trusty Space Grotesk font backup crew
+    use our trusty Space Grotesk font backup crew.
 
     We are using quotes around 'Space Grotesk' bc it’s a multi-word font name, 
     unlike single-word Righteous, system-ui or sans-serif.
   */
   font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
+
+  /* 
+    Sets text color using our theme-agnostic primary hue 
+    (Chefchaouen blue in light mode, lapis lazuli in dark).
+  */
   color: var(--primary-color);
+
+  /* Centers the heading text. */ 
   text-align: center;
 }
 
