@@ -1,5 +1,5 @@
 /*
-  Yin Yang Toggle: A light/dark mode switch for the site,
+  Sun Moon Toggle: A light/dark mode switch for the site,
   symbolizing balance with sun (🌞) and moon (🌙) icons.
 
   This script:
@@ -37,7 +37,7 @@ if (savedTheme === 'dark') {
 }
 
 // Reference to the theme toggle button in the DOM.
-const toggle = document.getElementById('yin-yang-toggle');
+const toggle = document.getElementById('sun-moon-toggle');
 
 // Check if the toggle button exists in the DOM.
 if (!toggle) {
