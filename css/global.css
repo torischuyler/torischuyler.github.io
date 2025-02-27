@@ -372,16 +372,25 @@ h2 {
   color: var(--text-color);
 }
 
-/* Mission Control's Light Switch 🌓 (aka theme toggle button) */
+/* 
+  Sun/Moon Light/Dark Mode Toggle 🌞 🌙
+
+  Order of Properties: Size it, Space it, Style it (SSS)
+*/
 #sun-moon-toggle {
-    background: none;
-    border: none;
-    font-size: 1.2em;
-    cursor: pointer;
-    padding: 8px;
-    margin-left: 15px;
-    color: white;
-   transition: transform 0.3s ease;
+  /* --- Size It --- */
+  font-size: 1.2em;
+
+  /* --- Space It --- */
+  padding: 8px;
+  margin-left: 15px;
+
+  /* --- Style It --- */
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 #sun-moon-toggle:hover {
