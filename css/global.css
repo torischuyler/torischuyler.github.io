@@ -374,7 +374,6 @@ h2 {
 
 /* 
   Sun/Moon Light/Dark Mode Toggle 🌞🌙
-
   Order of Properties: Size it, Space it, Style it (SSS)
 */
 #sun-moon-toggle {
@@ -418,8 +417,12 @@ h2 {
   transition: transform 0.3s ease;
 }
 
+/* 
+  Hover: Sun/Moon Toggle 🌞🌙
+  Grows the emoji to 1.2x size (20% bigger), scaled evenly from the center.
+*/
 #sun-moon-toggle:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 /* Homepage content container 🏠 */
