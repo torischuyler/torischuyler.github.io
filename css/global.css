@@ -456,6 +456,11 @@ footer {
 
   /* --- Style It --- */
   color: var(--accent-text-color);
+
+  /*
+    Background color pulls from our theme-agnostic primary hue
+    (Chefchaouen blue in light mode, lapis lazuli in dark).
+  */
   background-color: var(--primary-color);
   text-align: center;
 }
