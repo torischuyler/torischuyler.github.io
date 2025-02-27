@@ -433,7 +433,7 @@ h2 {
 footer {
   /* --- Size It --- */
 
-  /* Spans the full width of the page */
+  /* Spans the full width of the page. */
   width: 100%;
 
   /*
@@ -447,9 +447,13 @@ footer {
   /* --- Space It --- */
   padding: 1rem;
 
-  /* makes footer stick to bottom of the page */
+  /*
+    Pushes the footer to the bottom of the page in a flex body.
+    Since body is flex with column direction, margin-top: auto eats up all available space above,
+    pinning the footer down and making it stick to the bottom of the page.
+  */
   margin-top: auto;
-  
+
   /* --- Style It --- */
   color: var(--accent-text-color);
   background-color: var(--primary-color);
