@@ -343,11 +343,20 @@ h1 {
   text-align: center;
 }
 
-/* Deck Markers to help navigate the ship 🧭 (aka sub-headers to navigate the lesson plan) */
+/* 
+  Page Subheading
+  Order of Properties: Size it, Space it, Style it (SSS)
+*/
 h2 {
-    font-weight: 700;   /* bold for clear navigation */
-    font-size: 1.5rem;  
-    margin-bottom: 0.8rem;
+  /* --- Size It --- */
+  font-size: 1.5rem;
+
+  /* --- Space It --- */
+  margin-bottom: 0.8rem;
+
+  /* --- Style It --- */
+  font-weight: 700;
+  color: var(--text-color);
 }
 
 /* Image */
