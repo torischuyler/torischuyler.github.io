@@ -77,3 +77,11 @@ ol {
     padding-left: 1.875rem;   /* navigation clearance for nested missions */
     margin-top: 0.5rem;   /* creates hierarchy in mission structure */
 }
+
+/* Image */
+.lesson-page img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
