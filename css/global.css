@@ -455,6 +455,11 @@ footer {
   margin-top: auto;
 
   /* --- Style It --- */
+
+  /*
+    Text color uses the accent shade
+    (white in light mode, anti-flash white in dark).
+  */
   color: var(--accent-text-color);
 
   /*
