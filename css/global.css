@@ -407,6 +407,8 @@ h2 {
 
   /* Removes the border; uncomment to see the toggle’s padding and margin during design. */
   border: none;
+
+  /* Turns the cursor into a hand to show it’s clickable; try ‘grab’ or ‘crosshair’ for a twist! */
   cursor: pointer;
   transition: transform 0.3s ease;
 }
