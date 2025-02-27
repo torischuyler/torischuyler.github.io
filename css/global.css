@@ -427,7 +427,6 @@ h2 {
 
 /* 
   Footer Styling 🐾
-  The page’s foundation—sticks to the bottom and demands to be seen.
   Order of Properties: Size it, Space it, Style it (SSS)
 */
 footer {
@@ -472,9 +471,4 @@ footer {
 
   /* Centers the footer text. */
   text-align: center;
-}
-
-footer p {
-  max-width: 80vw;
-  margin: 0 auto;
 }
