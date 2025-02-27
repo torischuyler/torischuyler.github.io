@@ -372,12 +372,6 @@ h2 {
   color: var(--text-color);
 }
 
-/* Section headers */
-.lesson-content h2 {
-    margin-top: 2em;
-    margin-bottom: 0.5em;
-}
-
 /* Mission Control's Light Switch 🌓 (aka theme toggle button) */
 #yin-yang-toggle {
     background: none;
