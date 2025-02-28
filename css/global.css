@@ -124,12 +124,12 @@
   */
   --lapis-lazuli: #2D5A8E;
 
-  /* 
-    Secondary color: Dark spring green - a deep shade of green.
-    😎 Context: Using #2d7344 as our Dark Spring Green; X11’s official is #177245, 
-    with variants like #25754a and #1f7b50 floating out there.
+  /*
+    Secondary color: British racing green.
+    😎 Context: A nod to the iconic shade of British motorsport, famously splashed across roaring
+    Bentleys and sleek MGs — like the one my dad drove before he flipped it to red.
   */
-  --dark-spring-green: #2D7344;
+  --british-racing-green: #004225;
 
   /*
     Background color: Eerie black - a near-black shade with subtle depth.
@@ -164,7 +164,7 @@
 /*  Dark Theme Variables 🌑 */
 .dark-theme {
   --primary-color: var(--lapis-lazuli);
-  --secondary-color: var(--dark-spring-green);
+  --secondary-color: var(--british-racing-green);
   --background-color: var(--eerie-black);
   --text-color: var(--platinum);
   --accent-text-color: var(--anti-flash-white);
