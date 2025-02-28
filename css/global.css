@@ -117,12 +117,19 @@
     Dark mode options like this? They’re the unsung heroes of accessibility and comfort.
   */
 
-  /* 
-    Primary color: Lapis lazuli - a deep, rich blue color.
-    😎 Context: Historically, lapis lazuli was ground into a pigment known as ultramarine,
-    used by Reinaissance artists for its vibrant blue hue.
+  /*
+    Primary color: Deep Skyler is a rich, dark blackish-blue color.
+    😎 Context: The hex code (#0D1B2A) doesn’t have a standard name, so gave it a personal touch -
+    my last name, ‘Schuyler’ (pronounced like ‘Skyler’). The name is a play on:
+      - It's dark, almost-black blue vibe, fitting for a dark mode design.
+      - A nod to the recent LLM DeepSeek, tying it to tech innovation.
+      - No color police here — when a color doesn't have a name, you can just name it!
+
+    ✨ Note: This color offers excellent contrast (~15:1 with Linen #F8F1E9) for accessibility in dark mode,
+    reducing eye strain in low-light environments. Pro tip: If you ever need to verify color contrast ratios,
+    AI assistants can help with the complex WCAG calculations.
   */
-  --lapis-lazuli: #2D5A8E;
+  --deep-skyler: #0D1B2A;
 
   /*
     Secondary color: British racing green.
@@ -163,7 +170,7 @@
 
 /*  Dark Theme Variables 🌑 */
 .dark-theme {
-  --primary-color: var(--lapis-lazuli);
+  --primary-color: var(--deep-skyler);
   --secondary-color: var(--british-racing-green);
   --background-color: var(--eerie-black);
   --text-color: var(--platinum);
@@ -335,7 +342,7 @@ h1 {
 
   /* 
     Sets text color using our theme-agnostic primary hue 
-    (Chefchaouen blue in light mode, lapis lazuli in dark).
+    (Chefchaouen blue in light mode, deep skyler in dark).
   */
   color: var(--primary-color);
 
@@ -470,7 +477,7 @@ footer {
 
   /*
     Background color pulls from our theme-agnostic primary hue
-    (Chefchaouen blue in light mode, lapis lazuli in dark).
+    (Chefchaouen blue in light mode, deep skyler in dark).
   */
   background-color: var(--primary-color);
 
