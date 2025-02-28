@@ -74,13 +74,13 @@
 
   /* 
     Background color: Anti-flash white for a soft, clean background on the page.
-    😎 Context: Used on military aircraft to reflect thermal radiation from nuclear explosions. 
+    😎 Fun Fact: This color is used on military aircraft to reflect thermal radiation from nuclear explosions. 
   */
   --anti-flash-white: #F5F7FA;
 
   /* 
     Text color: Charcoal has a dark and muted tone, providing good contrast on light backgrounds for readability.
-    😎 Context: Charcoal is one of the oldest known art materials. Archaeologists have found charcoal drawings
+    😎 Fun Fact: Charcoal is one of the oldest known art materials. Archaeologists have found charcoal drawings
     in caves dating back over 30,000 years, like those in Chauvet Cave in France.
   */
   --charcoal: #2C3E50;
@@ -140,17 +140,17 @@
 
   /*
     Background color: Lapis lazuli - a deep, rich blue color.
-    😎 Context: Historically, lapis lazuli was ground into a pigment known as ultramarine,
+    😎 Fun Fact: Historically, lapis lazuli was ground into a pigment known as ultramarine,
     used by Reinaissance artists for its vibrant blue hue.
   */
   --lapis-lazuli: #2D5A8E;
 
-  /* 
-    Text color: Platinum - a bright gray color.
-    😎 Context: Actual platinum is so rare, all the platinum ever mined in 
-    human history could fit into an average sized living room (~ 25 feet X 25 feet X 10 feet).
+  /*
+    Text color: Linen — a soft, warm light cream color, ideal for text in dark mode.
+    😎 Fun Fact: Linen is one of the oldest fabrics known to humanity — archaeologists have found
+    evidence of linen textiles dating back over 30,000 years, including fragments in a cave in Georgia.
   */
-  --platinum: #E1E1E1;
+  --linen: #F8F1E9;
 
   /*
     Theme-Agnostic Variables 🎭
@@ -173,8 +173,8 @@
   --primary-color: var(--deep-skyler);
   --secondary-color: var(--british-racing-green);
   --background-color: var(--lapis-lazuli);
-  --text-color: var(--platinum);
-  --accent-text-color: var(--anti-flash-white);
+  --text-color: var(--linen);
+  --accent-text-color: var(--linen);
 }
 
 /*
@@ -210,7 +210,7 @@ body {
   */
   font-family: 'Space Grotesk', system-ui, sans-serif;
 
-  /* Sets text color for all pages using an agnostic variable (charcoal or platinum, based on light/dark mode). */
+  /* Sets text color for all pages using an agnostic variable (charcoal or linen, based on light/dark mode). */
   color: var(--text-color);
 
   /* Sets background color for all pages using an agnostic variable (anti-flash-white or lapis lazuli, based on light/dark mode). */
@@ -471,7 +471,7 @@ footer {
 
   /*
     Text color uses the accent shade
-    (white in light mode, anti-flash white in dark).
+    (white in light mode, linen white in dark).
   */
   color: var(--accent-text-color);
 
