@@ -448,10 +448,15 @@ footer {
   /* Adds a cushion inside the footer. */
   padding: 1rem;
 
-  /*
-    Pushes the footer to the bottom of the page in a flex body.
-    Since body is flex with column direction, margin-top: auto eats up all available space above,
-    pinning the footer down and making it stick to the bottom of the page.
+/*
+    Pushes the footer to the bottom of the page in a flex body;
+    margin-top: auto eats up all the available space above it,
+    pinning the footer down and making it stick to the bottom of the page
+
+    For this to work, the following must be set in body: 
+    - display: flex
+    - min-height: 100vh
+    - flex-direction: column
   */
   margin-top: auto;
 
