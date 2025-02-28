@@ -31,8 +31,8 @@ if (isLocalStorageAvailable) {
   savedTheme = null;
 }
 
-// Apply dark theme if previously selected.
-if (savedTheme === 'dark') {
+// Apply dark theme by default unless explicitly set to 'light' in localStorage.
+if (savedTheme !== 'light') {
   document.body.classList.add('dark-theme');
 }
 
