@@ -536,3 +536,100 @@ footer {
 body, h1, nav, footer {
   transition: background-color 0.3s, color 0.3s;
 }
+
+/*
+Global.css
+├── 1. Resets
+│   └── * (Reset All Elements)
+│       ├── Size It
+│       │   └── box-sizing
+│       └── Space It
+│           ├── margin
+│           └── padding
+├── 2. Variables
+│   ├── :root (Dark Mode Default)
+│   │   ├── --primary-color: var(--deep-skyler)
+│   │   ├── --secondary-color: var(--british-racing-green)
+│   │   ├── --background-color: var(--lapis-lazuli)
+│   │   ├── --text-color: var(--linen)
+│   │   └── --accent-text-color: var(--linen)
+│   └── .light-theme (Light Mode Overrides)
+│       ├── --primary-color: var(--chefchaouen-blue)
+│       ├── --secondary-color: var(--emerald-green)
+│       ├── --background-color: var(--anti-flash-white)
+│       ├── --text-color: var(--charcoal)
+│       └── --accent-text-color: var(--white)
+├── 3. Base Styles
+│   ├── body
+│   │   ├── Size It
+│   │   │   ├── display
+│   │   │   ├── min-height
+│   │   │   └── flex-direction
+│   │   └── Style It
+│   │       ├── font-family
+│   │       ├── color
+│   │       └── background-color
+│   ├── h1
+│   │   ├── Size It
+│   │   │   └── font-size
+│   │   ├── Space It
+│   │   │   └── margin-bottom
+│   │   └── Style It
+│   │       ├── font-family
+│   │       ├── color
+│   │       └── text-align
+│   └── h2
+│       ├── Size It
+│       │   └── font-size
+│       ├── Space It
+│       │   ├── margin-top
+│       │   └── margin-bottom
+│       └── Style It
+│           ├── font-weight
+│           └── color
+├── 4. Components
+│   ├── nav
+│   │   ├── Size It
+│   │   │   └── width
+│   │   ├── Space It
+│   │   │   └── padding
+│   │   └── Style It
+│   │       ├── color
+│   │       ├── background-color
+│   │       └── text-align
+│   ├── nav a
+│   │   ├── Space It
+│   │   │   ├── margin-left
+│   │   │   ├── margin-right
+│   │   │   ├── margin-inline
+│   │   │   └── padding
+│   │   └── Style It
+│   │       ├── color
+│   │       ├── text-decoration
+│   │       ├── border-radius
+│   │       └── transition
+│   ├── #sun-moon-toggle
+│   │   ├── Size It
+│   │   │   └── font-size
+│   │   ├── Space It
+│   │   │   └── padding
+│   │   └── Style It
+│   │       ├── background
+│   │       ├── border
+│   │       ├── cursor
+│   │       └── transition
+│   └── footer
+│       ├── Size It
+│       │   ├── width
+│       │   └── font-size
+│       ├── Space It
+│       │   ├── padding
+│       │   └── margin-top
+│       └── Style It
+│           ├── color
+│           ├── background-color
+│           └── text-align
+└── 5. Behaviors
+    └── body, h1, nav, footer
+        └── transition
+*/
