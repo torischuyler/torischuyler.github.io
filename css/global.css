@@ -185,6 +185,15 @@
   --accent-text-color: var(--linen);
 }
 
+/* 
+  Smooth Theme Transitions
+  Change colors smoothly over 0.3s for body, nav, h1, and footer
+  when toggling the dark/light mode button.
+*/
+body, nav, h1, footer {
+  transition: background-color 0.3s, color 0.3s;
+}
+
 /*
   Body - The main content wrapper. Sets the stage for fonts and layout.
   Order of Properties: Size it, Style it (SS)
@@ -223,9 +232,6 @@ body {
 
   /* Sets background color for all pages using an agnostic variable (anti-flash-white or lapis lazuli, based on light/dark mode). */
   background-color: var(--background-color);
-
-  /* Fades background and text color changes (like light/dark mode) over 0.3 seconds for a smooth switch. */
-  transition: background-color 0.3s, color 0.3s;
 }
 
 /* 
