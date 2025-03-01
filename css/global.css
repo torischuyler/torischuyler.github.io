@@ -2,9 +2,20 @@
   Global.css - The central stylesheet for the website.
   This file defines the core styles (like colors, fonts, and layouts)
   that apply across all pages, keeping the design consistent and easy to update.
+
+  Table of Contents:
+  1. Resets        - Wipe browser defaults
+  2. Variables     - Define colors and themes
+  3. Base Styles   - Core layout and typography
+  4. Components    - Nav, footer, and toggle styles
+  5. Behaviors     - Element changes
 */
 
-/* 
+/* 1. Resets
+  * { ... }
+*/
+
+/*
   Reset - Removes default browser styles.
   Sets all elements to start with a clean base for predictable design.
 
@@ -41,6 +52,11 @@
   margin: 0;
   padding: 0;
 }
+
+/* 2. Variables
+  :root { ... }
+  .dark-theme { ... }
+*/
 
 /*
   Root - a CSS selector targeting the <html> element, the top of your webpage.
@@ -185,14 +201,11 @@
   --accent-text-color: var(--linen);
 }
 
-/* 
-  Smooth Theme Transitions
-  Change colors smoothly over 0.3s for body, nav, h1, and footer
-  when toggling the dark/light mode button.
+/* 3. Base Styles
+  body { ... }
+  h1 { ... }
+  h2 { ... }
 */
-body, nav, h1, footer {
-  transition: background-color 0.3s, color 0.3s;
-}
 
 /*
   Body - The main content wrapper. Sets the stage for fonts and layout.
@@ -233,6 +246,83 @@ body {
   /* Sets background color for all pages using an agnostic variable (anti-flash-white or lapis lazuli, based on light/dark mode). */
   background-color: var(--background-color);
 }
+
+/* 
+  Main Page Heading
+  Order of Properties: Size it, Space it, Style it (SSS)
+ */
+ h1 {
+  /* --- Size It --- */
+
+  /* 
+    Sets heading to 2.5rem (40px at default 16px root font size).
+    Typical h1 range is 2rem–3.5rem (32px–56px), balancing prominence and readability.
+  */
+  font-size: 2.5rem;
+
+  /* --- Space It --- */
+
+  /* 
+    Adds space below the heading (1.618rem ≈ 26px) using the golden ratio
+    for aesthetic harmony (and bc 6/18 is my bday 😎).
+  */
+  margin-bottom: 1.618rem;
+
+  /* --- Style It --- */
+
+  /* 
+    If Righteous font isn't ready for takeoff,
+    use our trusty Space Grotesk font backup crew.
+
+    We are using quotes around 'Space Grotesk' bc it’s a multi-word font name, 
+    unlike single-word Righteous, system-ui or sans-serif.
+  */
+  font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
+
+  /* 
+    Sets text color using our theme-agnostic primary hue 
+    (Chefchaouen blue in light mode, deep skyler in dark).
+  */
+  color: var(--primary-color);
+
+  /* Centers the heading text. */ 
+  text-align: center;
+}
+
+/* 
+  Page Subheading
+  Order of Properties: Size it, Space it, Style it (SSS)
+*/
+h2 {
+  /* --- Size It --- */
+
+  /* 
+    Sets subheading to 1.5rem (24px at default 16px root font size).
+    Typical h2 range is 1.25rem–2rem (20px–32px), keeping it bold but smaller than h1.
+  */
+  font-size: 1.5rem;
+
+  /* --- Space It --- */
+
+  /* Adds 1rem (16px) space above and below for breathing room between sections. */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  /* --- Style It --- */
+
+  /* 
+    Sets boldness to 700 (bold) for strong visual hierarchy—thicker than normal (400)
+    but not as heavy as extra-bold (900).
+  */
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+/* 4. Components
+  nav { ... }
+  footer { ... }
+  #sun-moon-toggle { ... }
+*/
 
 /* 
   Navigation Control Center 🎮 (aka page navigation bar)
@@ -320,77 +410,6 @@ nav a {
 nav a:hover {
   /* Sets hover background to secondary color (light/dark mode) */
   background-color: var(--secondary-color);
-}
-
-/* 
-  Main Page Heading
-  Order of Properties: Size it, Space it, Style it (SSS)
- */
-h1 {
-  /* --- Size It --- */
-
-  /* 
-    Sets heading to 2.5rem (40px at default 16px root font size).
-    Typical h1 range is 2rem–3.5rem (32px–56px), balancing prominence and readability.
-  */
-  font-size: 2.5rem;
-
-  /* --- Space It --- */
-
-  /* 
-    Adds space below the heading (1.618rem ≈ 26px) using the golden ratio
-    for aesthetic harmony (and bc 6/18 is my bday 😎).
-  */
-  margin-bottom: 1.618rem;
-
-  /* --- Style It --- */
-
-  /* 
-    If Righteous font isn't ready for takeoff,
-    use our trusty Space Grotesk font backup crew.
-
-    We are using quotes around 'Space Grotesk' bc it’s a multi-word font name, 
-    unlike single-word Righteous, system-ui or sans-serif.
-  */
-  font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
-
-  /* 
-    Sets text color using our theme-agnostic primary hue 
-    (Chefchaouen blue in light mode, deep skyler in dark).
-  */
-  color: var(--primary-color);
-
-  /* Centers the heading text. */ 
-  text-align: center;
-}
-
-/* 
-  Page Subheading
-  Order of Properties: Size it, Space it, Style it (SSS)
-*/
-h2 {
-  /* --- Size It --- */
-
-  /* 
-    Sets subheading to 1.5rem (24px at default 16px root font size).
-    Typical h2 range is 1.25rem–2rem (20px–32px), keeping it bold but smaller than h1.
-  */
-  font-size: 1.5rem;
-
-  /* --- Space It --- */
-
-  /* Adds 1rem (16px) space above and below for breathing room between sections. */
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-
-  /* --- Style It --- */
-
-  /* 
-    Sets boldness to 700 (bold) for strong visual hierarchy—thicker than normal (400)
-    but not as heavy as extra-bold (900).
-  */
-  font-weight: 700;
-  color: var(--text-color);
 }
 
 /* 
@@ -497,4 +516,17 @@ footer {
 
   /* Centers the footer text. */
   text-align: center;
+}
+
+/* 5. Behaviors 
+   - Color transitions
+*/
+
+/* 
+  Smooth Theme Transitions
+  Change colors smoothly over 0.3s for body, h1, nav, and footer
+  when toggling the dark/light mode button.
+*/
+body, h1, nav, footer {
+  transition: background-color 0.3s, color 0.3s;
 }
