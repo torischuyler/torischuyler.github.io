@@ -31,9 +31,9 @@ if (isLocalStorageAvailable) {
   savedTheme = null;
 }
 
-// Apply dark theme by default unless explicitly set to 'light' in localStorage.
-if (savedTheme !== 'light') {
-  document.body.classList.add('dark-theme');
+// Apply light theme by default unless explicitly set to 'dark' in localStorage.
+if (savedTheme === 'light') {
+  document.body.classList.add('light-theme');
 }
 
 // Reference to the theme toggle button in the DOM.
@@ -46,31 +46,31 @@ if (!toggle) {
 }
 
 // Function to update UI based on the current theme.
-function updateThemeUI(isDarkTheme) {
-  // Set button icon to sun if dark theme, moon if light theme.
-  toggle.textContent = isDarkTheme ? '🌞' : '🌙';
+function updateThemeUI(isLightTheme) {
+  // Set button icon to sun if dark (to switch to light), moon if light (to switch to dark).
+  toggle.textContent = isLightTheme ? '🌙' : '🌞';
   // Update aria-label for screen readers.
-  toggle.setAttribute('aria-label', `Switch to ${isDarkTheme ? 'light' : 'dark'} theme`);
-  // Update aria-pressed to reflect the current state (true for dark, false for light).
-  toggle.setAttribute('aria-pressed', isDarkTheme ? 'true' : 'false');
+  toggle.setAttribute('aria-label', `Switch to ${isLightTheme ? 'dark' : 'light'} theme`);
+  // Update aria-pressed to reflect the current state (true for light, false for dark).
+  toggle.setAttribute('aria-pressed', isLightTheme ? 'true' : 'false');
 }
 
 // Set initial UI based on current theme to ensure consistency with actual state.
-updateThemeUI(document.body.classList.contains('dark-theme'));
+updateThemeUI(document.body.classList.contains('light-theme'));
 
 // Add click event listener to toggle button.
 toggle.addEventListener('click', () => {
-  // Toggle dark theme class on body.
-  const isDarkTheme = document.body.classList.toggle('dark-theme');
+  // Toggle light theme class on body.
+  const isLightTheme = document.body.classList.toggle('light-theme');
 
   // Update UI based on new theme state.
-  updateThemeUI(isDarkTheme);
+  updateThemeUI(isLightTheme);
 
   // Check if localStorage is available before attempting to save data.
   if (isLocalStorageAvailable) {
     // Attempt to save the theme to localStorage.
     try {
-      localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
+      localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
       // Catch any errors that occur during the saving process.
     } catch (e) {
       // Log the error to console for debugging.
