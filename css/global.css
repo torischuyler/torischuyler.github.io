@@ -318,6 +318,20 @@ h2 {
   color: var(--text-color);
 }
 
+/*
+  Mobile Typography Adjustments
+  Scales down h1 on smaller screens for better readability.
+  Order of Properties: Size it (S)
+*/
+@media (width <= 768px) {
+  /* --- Size It --- */
+
+  /* Reduces h1 to 2rem (32px) on screens 768px wide or smaller */
+  h1 {
+    font-size: 2rem;
+  }
+}
+
 /* 4. Components
   nav { ... }
   footer { ... }
