@@ -55,7 +55,7 @@
 
 /* 2. Variables
   :root { ... }
-  .dark-theme { ... }
+  .light-theme { ... }
 */
 
 /*
@@ -74,63 +74,6 @@
     Pure white? #FFFFFF. It’s how we talk color to computers.
 
     🌈 Play with https://coolors.co/ to brainstorm colors for your project.
-  */
-
-  /* 
-    Primary color: Chefchaouen blue - a vibrant blue that pops off the page.
-    😎 Context: Inspired by the blue-washed streets of Chefchaouen, Morocco. 
-  */
-  --chefchaouen-blue: #3A80D2;
-
-  /*
-    Secondary color: Emerald green for accents.
-    😎 Context: Inspired by The Wizard of Oz's Emerald City.
-  */
-  --emerald-green: #50C878;
-
-  /* 
-    Background color: Anti-flash white for a soft, clean background on the page.
-    😎 Fun Fact: This color is used on military aircraft to reflect thermal radiation from nuclear explosions. 
-  */
-  --anti-flash-white: #F5F7FA;
-
-  /* 
-    Text color: Charcoal has a dark and muted tone, providing good contrast on light backgrounds for readability.
-    😎 Fun Fact: Charcoal is one of the oldest known art materials. Archaeologists have found charcoal drawings
-    in caves dating back over 30,000 years, like those in Chauvet Cave in France.
-  */
-  --charcoal: #2C3E50;
-
-  /* 
-    Contrast text color: Pure white - a bright, clean text shade.
-    😎 Context: Inspired by fresh snow on the mountains of Maine, it’s the ultimate contrast 
-    against the vibrant blue streets of Chefchaouen (our light mode primary color).
-
-    We use #FFF here instead of #FFFFFF ‘cause they’re the same color -
-    linter likes the shorter vibe, less typing!
-  */
-  --white: #FFF;
-
-  /* Dark mode color palette 🌑  */
-
-  /*
-    The Darth Vader to your Luke Skywalker,
-    Your Jungian shadow self unleashed in low-light vibes.
-
-    Why dark mode matters? It’s not just moody aesthetics!
-
-    Dark mode cuts glare and reduces eye strain 👀, making screens less of a
-    punch to the retinas when you’re staring at code (or memes) for hours.
-
-    For some ppl — especially those sensitive to bright lights - it’s a
-    game changer, calming overstimulated senses and boosting focus.
-
-    Plus, it’s easier on everyone’s eyes in dim rooms, and might even
-    save a little battery life on those OLED screens.
-
-    What's an example of an OLED screen? 📱 Pretty much any iPhone X or later has an OLED.
-
-    Dark mode options like this? They’re the unsung heroes of accessibility and comfort.
   */
 
   /*
@@ -177,28 +120,77 @@
   --linen: #F8F1E9;
 
   /*
+    Dark mode as default 🌑 — why it’s the base:
+
+    Dark mode cuts glare and reduces eye strain 👀, making screens less of a
+    punch to the retinas when you’re staring at code (or memes) for hours.
+    It’s a game changer for some, calming overstimulated senses and boosting focus.
+    Plus, it’s easier on eyes in dim rooms and might save battery on OLED screens.
+    (Think iPhone X or later 📱 — all OLED.)
+
+    This is the core palette, with light mode as the toggleable remix.
+  */
+
+  /* Light Theme Overrides 🌞 */
+
+  /* 
+    Primary color: Chefchaouen blue - a vibrant blue that pops off the page.
+    😎 Context: Inspired by the blue-washed streets of Chefchaouen, Morocco. 
+  */
+  --chefchaouen-blue: #3A80D2;
+
+  /*
+    Secondary color: Emerald green for accents.
+    😎 Context: Inspired by The Wizard of Oz's Emerald City.
+  */
+  --emerald-green: #50C878;
+
+  /* 
+    Background color: Anti-flash white for a soft, clean background on the page.
+    😎 Fun Fact: This color is used on military aircraft to reflect thermal radiation from nuclear explosions. 
+  */
+  --anti-flash-white: #F5F7FA;
+
+  /* 
+    Text color: Charcoal has a dark and muted tone, providing good contrast on light backgrounds for readability.
+    😎 Fun Fact: Charcoal is one of the oldest known art materials. Archaeologists have found charcoal drawings
+    in caves dating back over 30,000 years, like those in Chauvet Cave in France.
+  */
+  --charcoal: #2C3E50;
+
+  /* 
+    Contrast text color: Pure white - a bright, clean text shade.
+    😎 Context: Inspired by fresh snow on the mountains of Maine, it’s the ultimate contrast 
+    against the vibrant blue streets of Chefchaouen (our light mode primary color).
+
+    We use #FFF here instead of #FFFFFF ‘cause they’re the same color -
+    linter likes the shorter vibe, less typing!
+  */
+  --white: #FFF;
+
+  /*
     Theme-Agnostic Variables 🎭
 
-    These are the “middlemen” that decide which palette — light or dark — gets used.
+    These are the “middlemen” that decide which palette — dark or light — gets used.
 
     They’re like the director of a play, telling the actors (your styles) which
-    costume (color) to wear based on the scene (theme). Default to light mode
-    here, and the .dark-theme class will swap them to the dark palette later.
+    costume (color) to wear based on the scene (theme). Default to dark mode
+    here, and the .light-theme class will swap them to the light palette later.
   */
-  --primary-color: var(--chefchaouen-blue);
-  --secondary-color: var(--emerald-green);
-  --background-color: var(--anti-flash-white);
-  --text-color: var(--charcoal);
-  --accent-text-color: var(--white);
-}
-
-/*  Dark Theme Variables 🌑 */
-.dark-theme {
   --primary-color: var(--deep-skyler);
   --secondary-color: var(--british-racing-green);
   --background-color: var(--lapis-lazuli);
   --text-color: var(--linen);
   --accent-text-color: var(--linen);
+}
+
+/* Light Theme Variables 🌞 */
+.light-theme {
+  --primary-color: var(--chefchaouen-blue);
+  --secondary-color: var(--emerald-green);
+  --background-color: var(--anti-flash-white);
+  --text-color: var(--charcoal);
+  --accent-text-color: var(--white);
 }
 
 /* 3. Base Styles
@@ -240,10 +232,10 @@ body {
   */
   font-family: 'Space Grotesk', system-ui, sans-serif;
 
-  /* Sets text color for all pages using an agnostic variable (charcoal or linen, based on light/dark mode). */
+  /* Sets text color for all pages using an agnostic variable (charcoal or linen, based on dark/light mode). */
   color: var(--text-color);
 
-  /* Sets background color for all pages using an agnostic variable (anti-flash-white or lapis lazuli, based on light/dark mode). */
+  /* Sets background color for all pages using an agnostic variable (anti-flash-white or lapis lazuli, based on dark/light mode). */
   background-color: var(--background-color);
 }
 
@@ -280,8 +272,8 @@ body {
   font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
 
   /* 
-    Sets text color using our theme-agnostic primary hue 
-    (Chefchaouen blue in light mode, deep skyler in dark).
+    Sets text color using our theme-agnostic primary hue
+    (deep skyler in dark mode, chefchaouen in light mode).
   */
   color: var(--primary-color);
 
@@ -422,7 +414,7 @@ nav a {
 
 /* Navigation Hover Effect */
 nav a:hover {
-  /* Sets hover background to secondary color (light/dark mode) */
+  /* Sets hover background to secondary color (dark/light mode) */
   background-color: var(--secondary-color);
 }
 
@@ -524,7 +516,7 @@ footer {
 
   /*
     Background color pulls from our theme-agnostic primary hue
-    (Chefchaouen blue in light mode, deep skyler in dark).
+    (deep skyler in dark mode, chefchaouen in light mode).
   */
   background-color: var(--primary-color);
 
