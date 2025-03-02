@@ -187,12 +187,24 @@
 }
 
 /* Light Theme Variables 🌞 */
+
+/* 
+  Disable lint rule 'no-descending-specificity' bc we’re nesting h1 inside .light-theme
+  to override the base h1 color (var(--text-color)) with Chefchaouen blue (#3A80D2) in light mode only.
+  Left disabled for the file since base h1 rule follows, avoiding re-triggered warnings.
+*/
+/* stylelint-disable no-descending-specificity */
 .light-theme {
   --primary-color: var(--chefchaouen-blue);
   --secondary-color: var(--emerald-green);
   --background-color: var(--anti-flash-white);
   --text-color: var(--charcoal);
   --accent-text-color: var(--white);
+
+  /* Set h1 to Chefchaouen blue (#3A80D2) in light mode for a Moroccan pop. */
+  h1 {
+    color: var(--chefchaouen-blue);
+  }
 }
 
 /* 3. Base Styles
@@ -309,7 +321,7 @@ h2 {
     but not as heavy as extra-bold (900).
   */
   font-weight: 700;
-  
+
   /* (white in dark mode, charcoal in light mode). */
   color: var(--text-color);
 }
