@@ -14,6 +14,35 @@
   Warning: Some examples contain terrible jokes 😂 (srry about it)
 */
 
+* {
+  /*
+    The little asterisk (*) is a CSS superhero! 🦸‍♀️🦸 It targets EVERYTHING on the page -
+    every tag, every button, every speck of text.
+    Here, we’re using it to wipe out browser defaults and take control,
+    perfect for keeping our curricula pages in line.
+    Think of it as clearing the stage before the dancers (your content) perform!
+  */
+
+  /* --- Size It --- */
+
+  /*
+    By default, browsers use content-box, where padding and borders
+    add to an element’s width or height, which can screw up layouts.
+
+    With border-box, the width and height you set include padding and borders,
+    making your life way easier when designing.
+
+    It’s like telling the browser, “No, I decide what fits where.”
+  */
+  box-sizing: border-box;
+
+  /* --- Space It --- */
+
+  /* Setting these to 0 removes any space added to the elements by the browser. */
+  margin: 0;
+  padding: 0;
+}
+
 /* Lesson directory pages (Students & Developers) 📚 */
 .curriculum-container {
     max-width: 80vw;
