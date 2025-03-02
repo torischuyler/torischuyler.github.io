@@ -84,7 +84,7 @@
       - A nod to the recent LLM DeepSeek, tying it to tech innovation.
       - No color police here — when a color doesn't have a name, you can just name it!
 
-    ✨ Note: This color offers excellent contrast (~15:1 with Linen #F8F1E9) for
+    ✨ Note: This color offers strong contrast (~11:1 with Muad'Dib #C9C2BA) for
     accessibility in dark mode, reducing eye strain in low-light environments. It meets
     WCAG Level AAA standards (7:1 for normal text), ensuring top-tier readability.
     Pro tip: If you ever need to verify color contrast ratios, AI assistants
@@ -104,7 +104,7 @@
     😎 Fun Fact: Historically, lapis lazuli was ground into a pigment known as ultramarine,
     used by Renaissance artists for its vibrant blue hue.
 
-    ✨ Note: This color offers excellent contrast (~13:1 with Linen #F8F1E9) for
+    ✨ Note: This color offers strong contrast (~9:1 with Muad'Dib #C9C2BA) for
     accessibility in dark mode, reducing eye strain in low-light environments. It meets
     WCAG Level AAA standards (7:1 for normal text), ensuring top-tier readability.
     Pro tip: If you ever need to verify color contrast ratios, AI assistants
@@ -113,11 +113,11 @@
   --lapis-lazuli: #2D5A8E;
 
   /*
-    Text color: Linen — a soft, warm light cream color, ideal for text in dark mode.
-    😎 Fun Fact: Linen is one of the oldest fabrics known to humanity — archaeologists have found
-    evidence of linen textiles dating back over 30,000 years, including fragments in a cave in Georgia.
+    Text color: Muad'Dib — a warm, earthy gray inspired by the desert mouse of Dune.
+    😎 Context: "The mystery of life isn't a problem to solve, but a reality to experience."
+    — Reverend Mother Gaius Helen Mohiam, Dune by Frank Herbert.
   */
-  --linen: #F8F1E9;
+  --muad-dib: #C9C2BA;
 
   /*
     Dark mode as default 🌑 — why it’s the base:
@@ -180,8 +180,8 @@
   --primary-color: var(--deep-skyler);
   --secondary-color: var(--british-racing-green);
   --background-color: var(--lapis-lazuli);
-  --text-color: var(--linen);
-  --accent-text-color: var(--linen);
+  --text-color: var(--muad-dib);
+  --accent-text-color: var(--muad-dib);
 }
 
 /* Light Theme Variables 🌞 */
@@ -232,7 +232,7 @@ body {
   */
   font-family: 'Space Grotesk', system-ui, sans-serif;
 
-  /* Sets text color for all pages using an agnostic variable (charcoal or linen, based on dark/light mode). */
+  /* Sets text color for all pages using an agnostic variable (muad-dib or charcoal, based on dark/light mode). */
   color: var(--text-color);
 
   /* Sets background color for all pages using an agnostic variable (anti-flash-white or lapis lazuli, based on dark/light mode). */
@@ -510,7 +510,7 @@ footer {
 
   /*
     Text color uses the accent shade
-    (white in light mode, linen white in dark).
+    (muad-dib in dark, white in light mode).
   */
   color: var(--accent-text-color);
 
@@ -551,8 +551,8 @@ Global.css
 │   │   ├── --primary-color: var(--deep-skyler)
 │   │   ├── --secondary-color: var(--british-racing-green)
 │   │   ├── --background-color: var(--lapis-lazuli)
-│   │   ├── --text-color: var(--linen)
-│   │   └── --accent-text-color: var(--linen)
+│   │   ├── --text-color: var(--muad-dib)
+│   │   └── --accent-text-color: var(--muad-dib)
 │   └── .light-theme (Light Mode Overrides)
 │       ├── --primary-color: var(--chefchaouen-blue)
 │       ├── --secondary-color: var(--emerald-green)
