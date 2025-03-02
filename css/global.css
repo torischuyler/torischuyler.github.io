@@ -84,11 +84,12 @@
       - A nod to the recent LLM DeepSeek, tying it to tech innovation.
       - No color police here — when a color doesn't have a name, you can just name it!
 
-    ✨ Note: This color offers strong contrast (~11:1 with Muad'Dib #C9C2BA) for
+    ✨ Note: This color offers strong contrast (~10:1 with Muad'Dib #C9C2BA) for
     accessibility in dark mode, reducing eye strain in low-light environments. It meets
     WCAG Level AAA standards (7:1 for normal text), ensuring top-tier readability.
     Pro tip: If you ever need to verify color contrast ratios, AI assistants
     can help with the complex WCAG calculations.
+    Check your own contrast at https://webaim.org/resources/contrastchecker/.
   */
   --deep-skyler: #0D1B2A;
 
@@ -104,16 +105,27 @@
     😎 Fun Fact: Historically, lapis lazuli was ground into a pigment known as ultramarine,
     used by Renaissance artists for its vibrant blue hue.
 
-    ✨ Note: This color offers strong contrast (~9:1 with Muad'Dib #C9C2BA) for
+    ✨ Note: This color offers sufficient contrast (~7:1 with White #FFFFFF) for
     accessibility in dark mode, reducing eye strain in low-light environments. It meets
     WCAG Level AAA standards (7:1 for normal text), ensuring top-tier readability.
     Pro tip: If you ever need to verify color contrast ratios, AI assistants
     can help with the complex WCAG calculations.
+    Check your own contrast at https://webaim.org/resources/contrastchecker/.
   */
   --lapis-lazuli: #2D5A8E;
 
   /*
-    Text color: Muad'Dib — a warm, earthy gray inspired by the desert mouse of Dune.
+    Text color: Pure white - a bright, clean text shade.
+    😎 Context: Inspired by fresh snow on the mountains of Maine, it’s the ultimate contrast 
+    against our lapis lazuli and chefchaouen blues.
+
+    We use #FFF here instead of #FFFFFF ‘cause they’re the same color -
+    linter likes the shorter version, less typing!
+  */
+  --white: #FFF;
+
+  /*
+    Contrast text color: Muad'Dib — a warm, earthy gray inspired by the desert mouse of Dune.
     😎 Context: "The mystery of life isn't a problem to solve, but a reality to experience."
     — Reverend Mother Gaius Helen Mohiam, Dune by Frank Herbert.
   */
@@ -158,16 +170,6 @@
   */
   --charcoal: #2C3E50;
 
-  /* 
-    Contrast text color: Pure white - a bright, clean text shade.
-    😎 Context: Inspired by fresh snow on the mountains of Maine, it’s the ultimate contrast 
-    against the vibrant blue streets of Chefchaouen (our light mode primary color).
-
-    We use #FFF here instead of #FFFFFF ‘cause they’re the same color -
-    linter likes the shorter vibe, less typing!
-  */
-  --white: #FFF;
-
   /*
     Theme-Agnostic Variables 🎭
 
@@ -180,7 +182,7 @@
   --primary-color: var(--deep-skyler);
   --secondary-color: var(--british-racing-green);
   --background-color: var(--lapis-lazuli);
-  --text-color: var(--muad-dib);
+  --text-color: var(--white);
   --accent-text-color: var(--muad-dib);
 }
 
@@ -232,10 +234,10 @@ body {
   */
   font-family: 'Space Grotesk', system-ui, sans-serif;
 
-  /* Sets text color for all pages using an agnostic variable (muad-dib or charcoal, based on dark/light mode). */
+  /* Sets text color for all pages using an agnostic variable (white or charcoal, based on dark/light mode). */
   color: var(--text-color);
 
-  /* Sets background color for all pages using an agnostic variable (anti-flash-white or lapis lazuli, based on dark/light mode). */
+  /* Sets background color for all pages using an agnostic variable (lapis lazuli or anti-flash-white, based on dark/light mode). */
   background-color: var(--background-color);
 }
 
@@ -273,9 +275,9 @@ body {
 
   /* 
     Sets text color using our theme-agnostic primary hue
-    (deep skyler in dark mode, chefchaouen in light mode).
+    (white in dark mode, charcoal in light mode).
   */
-  color: var(--primary-color);
+  color: var(--text-color);
 
   /* Centers the heading text. */ 
   text-align: center;
@@ -307,6 +309,8 @@ h2 {
     but not as heavy as extra-bold (900).
   */
   font-weight: 700;
+  
+  /* (white in dark mode, charcoal in light mode). */
   color: var(--text-color);
 }
 
@@ -356,10 +360,10 @@ nav {
 
   /* --- Style It --- */
 
-  /* Text color */
+  /* (muad-dib in dark mode, white in light mode). */
   color: var(--accent-text-color);
 
-  /* Background color */
+  /* (deep-skyler in dark mode, chefchaouen-blue in light mode). */
   background-color: var(--primary-color);
 
   /* 
@@ -399,7 +403,7 @@ nav a {
   
   /* --- Style It --- */
 
-  /* Text color */
+  /* (muad-dib in dark mode, white in light mode). */
   color: var(--accent-text-color);
 
   /* Links are not underlined */
@@ -414,7 +418,7 @@ nav a {
 
 /* Navigation Hover Effect */
 nav a:hover {
-  /* Sets hover background to secondary color (dark/light mode) */
+  /* (british-racing-green in dark mode, emerald-green in light mode). */
   background-color: var(--secondary-color);
 }
 
@@ -516,7 +520,7 @@ footer {
 
   /*
     Background color pulls from our theme-agnostic primary hue
-    (deep skyler in dark mode, chefchaouen in light mode).
+    (deep-skyler in dark mode, chefchaouen-blue in light mode).
   */
   background-color: var(--primary-color);
 
@@ -551,7 +555,7 @@ Global.css
 │   │   ├── --primary-color: var(--deep-skyler)
 │   │   ├── --secondary-color: var(--british-racing-green)
 │   │   ├── --background-color: var(--lapis-lazuli)
-│   │   ├── --text-color: var(--muad-dib)
+│   │   ├── --text-color: var(--white)
 │   │   └── --accent-text-color: var(--muad-dib)
 │   └── .light-theme (Light Mode Overrides)
 │       ├── --primary-color: var(--chefchaouen-blue)
