@@ -177,9 +177,16 @@
   🔗 Lesson link styling
   The .curriculum-container a styles all anchor tags (<a>) inside the .curriculum-container.
   These are the clickable lesson links that need to pop visually and feel interactive.
-  Order of Properties: Style It (S)
+  Order of Properties: Space It, Style It (SS)
 */
 .curriculum-container a {
+  /* --- Space It --- */
+
+  /*
+    Adds a little cushion inside the link — 0.2rem top/bottom, 0.4rem left/right.
+  */
+  padding: 0.2rem 0.4rem;
+
   /* --- Style It --- */
 
   /*
@@ -199,87 +206,6 @@
     like a graceful twirl vs. a mechanical robot (which is Ms. Schuyler's best move btw 🤖).
   */
   transition: color 0.3s;
-}
-
-/* Lesson Plan Links 🔗 */
-.curriculum-container ul li a { 
-    /* The code targets unordered lists (🪆<ul>) with list items (🪆<li>) that have links (🪆<a>) inside them.
-    * An unordered list (<ul>) is a collection of items without a specific order, like a bullet-point list. 
-    * Here, our unordered list is a bullet-point collection of lesson plan links.
-
-    * Think of it like Russian dolls (🪆Matryoshka dolls) where each element nests inside another:
-    * 
-    * <ul>                  <!-- The biggest doll: the unordered list (lesson plan list) -->
-    *   <li>               <!-- The middle doll: list item (each lesson plan) -->
-    *     <a>Link!</a>     <!-- The smallest doll: the actual link (lesson plan link) -->
-    *   </li>
-    * </ul>
-    *
-    * When we write 'ul li a' in CSS, we're looking inside the dolls:
-    * - First, we open the biggest doll, the <ul>
-    * - Then, we open the middle doll, the <li> inside it
-    * - Finally, we find the smallest doll, the <a> link inside the <li>
-
-     * So when you see the CSS property 'ul li a', think: 🪆 → 🪆 → 🪆
-    */
-
-    /* 💃🕺 Now let's break down the padding - Cha Cha Slide style! 
-    * 
-    * 💃🕺 Remember the order: TRouBLe (Top, Right, Bottom, Left) - we're dancing our way into TROUBLE!
-    * 💃🕺 (Ms. Schuyler's best dance move is the robot btw)
-    */
-
-    padding-top: 0.2rem;   /* Take it back now y'all (⬆️) */
-    padding-right: 0.4rem;   /* Slide to the right! (➡️) */
-    padding-bottom: 0.2rem;        /* Get down low (⬇️) */
-    padding-left: 0.4rem;   /* Slide to the left! (⬅️) */
-
-    /* FREEZE! EVERYBODY CLAP YOUR HANDS! 👏👏👏👏 */
-
-    /* 🪄 Or we can write it in shorthand (much nicer, less words!) - Wingardium Less-code-iosa! */
-    padding: 0.2rem 0.4rem 0.2rem 0.4rem;   /* Values: top, right, bottom, left (TRouBLe) */
-
-    /* 🧠 Or we can go galaxy brain meme enlightened mode */
-    padding: 0.2rem 0.4rem;   /* First value: top/bottom, Second value: right/left */
-
-    /* 🏎️ Transitions - think of it like driving a car across a bridge 
-     Smooth, gentle transitions (All properties change smoothly in 0.5 seconds) 
-    */
-    transition: all 0.5s ease;
-
-    /* Different transitions to try (uncomment to test) */
-
-    /* 🤖 Robot Mode: Sharp & Digital */
-    /* transition: background-color 0.05s steps(2, jump-none); */
-
-    /* 🎢 Yeezy Mode: Absolutely Wild */
-    /* transition: all 4s cubic-bezier(.68,-0.55,.27,1.55); */
-
-    /* 🐌 Slow Motion */
-    /* transition: all 8s ease-in; */
-
-    /* Remember transitions with WTF:
-    - Which: which properties to animate
-    - Time: duration of the animation
-    - Flow: how the animation progresses */
-
-    /* Default color - vibrant blooming Poppy */
-    /* background-color: #FF6B6B; */
-
-    /* White - clean like fresh snow ❄️ */
-    background-color: white;
-
-    margin: -0.2rem -0.4rem -0.2rem 0.2rem;  /* 🏈 Like a football helmet: padding is the soft inside cushioning, 
-                                                margin is like the facemask - it controls the space around
-                                                (margin values, more TRouBLe: Top⬆️ Right➡️ Bottom⬇️ Left⬅️)
-
-                                                          ↕️ margin
-                                                     +--------------+
-                                                     |    ↕️ padding |
-                                                     |    [Link]    |
-                                                     |              |
-                                                     +--------------+
-                                                          ↕️ margin    */
 }
 
 /* Interactive Focus State 🎧 */
