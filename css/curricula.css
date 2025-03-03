@@ -64,6 +64,7 @@
 /* 2. Layouts
   .curriculum-container { ... }
   .curriculum-container p { ... }
+  .curriculum-container ul { ... }
 */
 
 /*
@@ -118,11 +119,20 @@
   text-align: center;
 }
 
-/* Lesson links list 🔗 */
+/* 
+  Lesson plan links 🔗
+  The .curriculum-container ul styles the unordered list (<ul>) inside the curriculum container.
+  This is where lesson links live, formatted as a bulleted list for easy navigation.
+  Order of Properties: Space It, Style It (SS)
+*/
 .curriculum-container ul {
-    list-style-type: disc;
-    padding-left: 2rem;
-    margin-left: 0;
+  /* --- Space It --- */
+
+  padding-left: 2rem;
+  margin-left: 0;
+
+  /* --- Style It --- */
+  list-style-type: disc;
 }
 
 .curriculum-container li {
