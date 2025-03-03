@@ -141,7 +141,16 @@
   padding-left: 2rem;
 
   /* --- Style It --- */
-  list-style-type: disc;
+
+  /*
+    List-style-type defines how list items look.
+    '🚀' gives us rocket bullets — blasting off to learning!
+    Most sites stick to boring 'disc' (●), 'circle' (○), or 'square' (■) because
+    SEO loves predictable, safe designs — yawn!
+    Those are fine, but you can level up with ANY Unicode character — yup, emojis too.
+    Try '⛩️' (Shinto Shrine, aka torii gate), '🎉', or '🛹' for fun.
+  */
+  list-style-type: '🚀';
 }
 
 .curriculum-container li {
