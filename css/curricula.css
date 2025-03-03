@@ -66,6 +66,7 @@
   .curriculum-container p { ... }
   .curriculum-container ul { ... }
   .curriculum-container li { ... }
+  .curriculum-container a { ... }
 */
 
 /*
@@ -172,10 +173,32 @@
   margin: 0.8rem 0;
 }
 
+/*
+  🔗 Lesson link styling
+  The .curriculum-container a styles all anchor tags (<a>) inside the .curriculum-container.
+  These are the clickable lesson links that need to pop visually and feel interactive.
+  Order of Properties: Style It (S)
+*/
 .curriculum-container a {
-    color: var(--text-color);
-    text-decoration: underline;
-    transition: color 0.3s;
+  /* --- Style It --- */
+
+  /*
+    Sets the color property with a CSS variable (--text-color, from global.css).
+    - White in dark mode, switches to charcoal in light mode.
+  */
+  color: var(--text-color);
+
+  /*
+    Adds an underline to make links stand out as clickable.
+  */
+  text-decoration: underline;
+
+  /*
+    Smoothly changes the color over 0.3 seconds when it’s updated (e.g., on hover).
+    Transition makes it feel polished, not jarring — 
+    like a graceful twirl vs. a mechanical robot (which is Ms. Schuyler's best move btw 🤖).
+  */
+  transition: color 0.3s;
 }
 
 /* Lesson Plan Links 🔗 */
