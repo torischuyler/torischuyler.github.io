@@ -214,8 +214,15 @@
    - Focus
 */
 
+/*
+  🧪 Link interaction states
+  The .curriculum-container ul li a:hover and :focus - these style lesson links when 
+  visitors hover (usually mouse or trackpad) or tab to them (usually keyboard).
+  Order of Properties: Style It (S)
+*/
 .curriculum-container ul li a:hover,
 .curriculum-container ul li a:focus {
+  /* --- Style It --- */
   box-shadow: 0 0 0 2px var(--primary-color);
   background-color: #39FF14; /* Yo dawg, I heard you like neon... 🟢
                                 So we put some electric green in your hover state! 
