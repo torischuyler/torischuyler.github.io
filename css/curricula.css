@@ -128,6 +128,16 @@
 .curriculum-container ul {
   /* --- Space It --- */
 
+  /*
+    Padding-left adds 2rem of space *inside* the list, on the left side only.
+    This pushes the bullets and text rightward, away from the left edge.
+    Here’s the math:
+    - 1rem = the root font size (default is 16px in browsers).
+    - So, 2rem = 2 × 16px = 32px of space.
+    - If the root font size changes (e.g., to 18px), 2rem becomes 36px.
+    Why rem? It scales spacing with font size for a consistent look!
+    Think of it as giving the list a little elbow room on the left.
+  */
   padding-left: 2rem;
   margin-left: 0;
 
