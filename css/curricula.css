@@ -63,6 +63,7 @@
 
 /* 2. Layouts
   .curriculum-container { ... }
+  .curriculum-container p { ... }
 */
 
 /*
@@ -103,18 +104,18 @@
   padding: 2rem;
 }
 
-/* ===== 📝 PARAGRAPH TEXT STYLES ===== 
- NOTE: The navigation bar (<nav>) and page title (<h1>) are styled in global.css
- which contains the shared styles used across all pages on the site.
- 
- What's in this section:
-   - Paragraph text formatting
-   - Text alignment and width
- */
+/*
+  This styles paragraph text (<p> tags) inside the .curriculum-container.
+  Order of Properties:  Style It (S)
+*/
  .curriculum-container p {
-    line-height: 1.6;
-    text-align: center;
-    max-width: 50rem;
+  /* --- Style It --- */
+
+  /*
+    Moves the text to the middle of the container.
+    This changes how the text is positioned horizontally.
+  */
+  text-align: center;
 }
 
 /* Lesson links list 🔗 */
