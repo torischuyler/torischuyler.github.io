@@ -229,8 +229,12 @@
     - Deep skyler in dark mode, switches to chefchaouen blue in light mode.
   */
   color: var(--primary-color);
+
+  /*
+    Yo dawg, I heard you like neon... 🟢
+    So we put some electric green in your hover state!
+    - Xzibit, probably
+  */
+  background-color: #39FF14;
   box-shadow: 0 0 0 2px var(--primary-color);
-  background-color: #39FF14; /* Yo dawg, I heard you like neon... 🟢
-                                So we put some electric green in your hover state! 
-                                - Xzibit, probably */
 }
