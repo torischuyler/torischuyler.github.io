@@ -15,6 +15,7 @@
 
     Table of Contents:
   1. Resets        - Wipe browser defaults
+  2. Layouts       - Structure and spacing for curricula pages
 */
 
 /* 1. Resets
@@ -31,7 +32,6 @@
 
   Order of Properties: Size it, Space it (SS)
 */
-
 * {
   /*
     The little asterisk (*) is a CSS superhero! 🦸‍♀️🦸 It targets EVERYTHING on the page -
@@ -61,11 +61,46 @@
   padding: 0;
 }
 
-/* Lesson directory pages (Students & Developers) 📚 */
+/* 2. Layouts
+  .curriculum-container { ... }
+*/
+
+/*
+  Lesson directory pages (Students & Developers)
+  The .curriculum-container holds the content for the curricula pages.
+  It controls the width and spacing of the content area.
+  Order of Properties: Size it, Space it (SS)
+*/
 .curriculum-container {
-    max-width: 80vw;
-    margin: 0 auto;
-    padding: 2rem;
+  /* --- Size It --- */
+
+  /* 
+    max-width: 60vw sets the maximum width to 60% of the viewport width.
+    This limits how wide the container can grow.
+  */
+  max-width: 60vw;
+
+  /* --- Space It --- */
+
+  /*
+    Space outside container ⬆️⬇️⬅️➡️
+    Using two values:
+    0 = top and bottom margins (no space above or below).
+    auto = left and right margins (splits remaining space to center container on desktop).
+  */
+  margin: 0 auto;
+
+  /*
+    Padding adds space inside the container, between its edges and content.
+    Try 5rem in Dev Tools — see more space around the text.
+
+    Rem = “root em,” based on the <html> font size (default 16px).
+    So, 1rem = 16px, 2rem = 32px. Simple math! 🧮
+
+    Why rem? It scales with font size settings, keeping padding consistent
+    across screens and browsers.
+  */
+  padding: 2rem;
 }
 
 /* ===== 📝 PARAGRAPH TEXT STYLES ===== 
