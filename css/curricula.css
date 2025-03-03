@@ -16,6 +16,7 @@
     Table of Contents:
   1. Resets        - Wipe browser defaults
   2. Layouts       - Structure and spacing for curricula pages
+  3. Behaviors     - Interactive states
 */
 
 /* 1. Resets
@@ -208,7 +209,11 @@
   transition: color 0.3s;
 }
 
-/* Interactive Focus State 🎧 */
+/* 5. Behaviors 
+   - Hover
+   - Focus
+*/
+
 .curriculum-container ul li a:hover,
 .curriculum-container ul li a:focus {
     outline: none;
