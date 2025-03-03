@@ -139,7 +139,6 @@
     Think of it as giving the list a little elbow room on the left.
   */
   padding-left: 2rem;
-  margin-left: 0;
 
   /* --- Style It --- */
   list-style-type: disc;
