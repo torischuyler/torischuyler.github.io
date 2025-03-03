@@ -21,6 +21,17 @@
   * { ... }
 */
 
+/*
+  Reset - Removes default browser styles.
+  Sets all elements to start with a clean base for predictable design.
+
+  Every single thing on the page is an element (like text or buttons).
+  Every element has space around it — this is called margin.
+  Every element has space inside it — this is called padding.
+
+  Order of Properties: Size it, Space it (SS)
+*/
+
 * {
   /*
     The little asterisk (*) is a CSS superhero! 🦸‍♀️🦸 It targets EVERYTHING on the page -
