@@ -65,6 +65,7 @@
   .curriculum-container { ... }
   .curriculum-container p { ... }
   .curriculum-container ul { ... }
+  .curriculum-container li { ... }
 */
 
 /*
@@ -120,7 +121,7 @@
 }
 
 /* 
-  Lesson plan links 🔗
+  📋 Lesson plan list
   The .curriculum-container ul styles the unordered list (<ul>) inside the curriculum container.
   This is where lesson links live, formatted as a bulleted list for easy navigation.
   Order of Properties: Space It, Style It (SS)
@@ -153,8 +154,22 @@
   list-style-type: '🚀';
 }
 
+/*
+  ✅ Lesson plan list items
+  The .curriculum-container li styles individual list items (<li>) inside the unordered list (<ul>).
+  These are the clickable lesson links, and this CSS adds spacing to make them readable and neat.
+  Order of Properties: Space It (S)
+*/
 .curriculum-container li {
-    margin: 0.8rem 0;
+   /* --- Space It --- */
+
+  /*
+    Margin adds space *outside* each list item ⬆️⬇️⬅️➡️
+    Using two values:
+    0.8rem = top and bottom margins (adds a little breathing room above and below each item).
+    0 = left and right margins (keeps items aligned with the list’s padding, no extra side space).
+  */
+  margin: 0.8rem 0;
 }
 
 .curriculum-container a {
