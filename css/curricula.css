@@ -75,10 +75,10 @@
   /* --- Size It --- */
 
   /* 
-    max-width: 60vw sets the maximum width to 60% of the viewport width.
+    max-width: 80vw sets the maximum width to 80% of the viewport width.
     This limits how wide the container can grow.
   */
-  max-width: 60vw;
+  max-width: 80vw;
 
   /* --- Space It --- */
 
