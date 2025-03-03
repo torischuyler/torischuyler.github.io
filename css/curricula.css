@@ -217,7 +217,7 @@
 /*
   🧪 Link interaction states
   The .curriculum-container ul li a:hover and :focus - these style lesson links when 
-  visitors hover (usually mouse or trackpad) or tab to them (usually keyboard).
+  visitors hover (usually with mouse or trackpad) or tab to them (usually with keyboard).
   Order of Properties: Style It (S)
 */
 .curriculum-container ul li a:hover,
@@ -225,16 +225,24 @@
   /* --- Style It --- */
 
   /*
+    This changes the color of the link text when hovered or focused.
     Sets the color property with a CSS variable (--primary-color, from global.css).
       - Deep skyler in dark mode, switches to chefchaouen blue in light mode.
   */
   color: var(--primary-color);
 
   /*
-    Yo dawg, I heard you like neon... 🟢
-    So we put some electric green in your hover state!
-    - Xzibit, probably
+    This changes the area behind the link text when hovered or focused.
+    Sets the background color to a specific neon green color.
   */
   background-color: #39FF14;
+
+  /*
+    This creates a text box around the link when hovered or focused.
+      - Syntax: horizontal-offset vertical-offset blur-radius spread-radius color
+      - Values: 0 (no left/right shift), 0 (no up/down shift), 0 (no blur), 2px (2-pixel thickness).
+    Sets the color property with a CSS variable (--primary-color, from global.css).
+      - Deep skyler in dark mode, switches to chefchaouen blue in light mode.
+  */
   box-shadow: 0 0 0 2px var(--primary-color);
 }
