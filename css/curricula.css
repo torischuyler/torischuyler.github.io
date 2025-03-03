@@ -223,9 +223,14 @@
 .curriculum-container ul li a:hover,
 .curriculum-container ul li a:focus {
   /* --- Style It --- */
+
+  /*
+    Sets the color property with a CSS variable (--primary-color, from global.css).
+    - Deep skyler in dark mode, switches to chefchaouen blue in light mode.
+  */
+  color: var(--primary-color);
   box-shadow: 0 0 0 2px var(--primary-color);
   background-color: #39FF14; /* Yo dawg, I heard you like neon... 🟢
                                 So we put some electric green in your hover state! 
                                 - Xzibit, probably */
-  color: var(--primary-color);
 }
