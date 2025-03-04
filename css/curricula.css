@@ -31,7 +31,7 @@
   Every element has space around it — this is called margin.
   Every element has space inside it — this is called padding.
 
-  Order of Properties: Size it, Space it (SS)
+  Order of Properties: Size it, Space it (Sz Sp)
 */
 * {
   /*
@@ -74,7 +74,7 @@
   Lesson directory pages (Students & Developers)
   The .curriculum-container holds the content for the curricula pages.
   It controls the width and spacing of the content area.
-  Order of Properties: Size it, Space it (SS)
+  Order of Properties: Size it, Space it (Sz Sp)
 */
 .curriculum-container {
   /* --- Size It --- */
@@ -110,7 +110,7 @@
 
 /*
   This styles paragraph text (<p> tags) inside the .curriculum-container.
-  Order of Properties:  Style It (S)
+  Order of Properties:  Style It (St)
 */
  .curriculum-container p {
   /* --- Style It --- */
@@ -126,7 +126,7 @@
   📋 Lesson plan list
   The .curriculum-container ul styles the unordered list (<ul>) inside the curriculum container.
   This is where lesson links live, formatted as a bulleted list for easy navigation.
-  Order of Properties: Space It (S)
+  Order of Properties: Space It (Sp)
 */
 .curriculum-container ul {
   /* --- Space It --- */
@@ -151,7 +151,7 @@
   SEO loves predictable, safe designs — yawn!
   Those are fine, but you can level up with ANY Unicode character — yup, emojis too.
   Try '⛩️' (Shinto shrine, aka torii gate), '🎉', or '🛹' for fun.
-  Order of Properties: Style It (S)
+  Order of Properties: Style It (St)
 */
 .curriculum-container ul li::marker {
   /* --- Style It --- */
@@ -166,7 +166,7 @@
   @supports checks if the browser understands ::marker.
   If it doesn't, the list reverts to disc bullets — keeping things readable
   even when fancy features aren't available.
-  Order of Properties: Style It (S)
+  Order of Properties: Style It (St)
 */
 @supports not (selector(::marker)) {
    /* --- Style It --- */
@@ -180,7 +180,7 @@
   ✅ Lesson plan list items
   The .curriculum-container li styles individual list items (<li>) inside the unordered list (<ul>).
   These are the clickable lesson links, and this CSS adds spacing to make them readable and neat.
-  Order of Properties: Space It (S)
+  Order of Properties: Space It (Sp)
 */
 .curriculum-container li {
    /* --- Space It --- */
@@ -198,7 +198,7 @@
   🔗 Lesson link styling
   The .curriculum-container a styles all anchor tags (<a>) inside the .curriculum-container.
   These are the clickable lesson links that need to pop visually and feel interactive.
-  Order of Properties: Space It, Style It (SS)
+  Order of Properties: Space It, Style It (Sp St)
 */
 .curriculum-container a {
   /* --- Space It --- */
@@ -238,7 +238,7 @@
   🧪 Link interaction states
   The .curriculum-container ul li a:hover and :focus - these style lesson links when 
   visitors hover (usually with mouse or trackpad) or tab to them (usually with keyboard).
-  Order of Properties: Style It (S)
+  Order of Properties: Style It (St)
 */
 .curriculum-container ul li a:hover,
 .curriculum-container ul li a:focus {

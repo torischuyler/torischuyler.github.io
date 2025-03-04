@@ -23,7 +23,7 @@
   Every element has space around it — this is called margin.
   Every element has space inside it — this is called padding.
 
-  Order of Properties: Size it, Space it (SS)
+  Order of Properties: Size it, Space it (Sz Sp)
 */
 * {
   /*
@@ -215,7 +215,7 @@
 
 /*
   Body - The main content wrapper. Sets the stage for fonts and layout.
-  Order of Properties: Size it, Style it (SS)
+  Order of Properties: Size it, Style it (Sz St)
 */
 body {
   /* --- Size It --- */
@@ -255,7 +255,7 @@ body {
 
 /* 
   Main Page Heading
-  Order of Properties: Size it, Space it, Style it (SSS)
+  Order of Properties: Size it, Space it, Style it (Sz Sp St)
  */
  h1 {
   /* --- Size It --- */
@@ -297,7 +297,7 @@ body {
 
 /* 
   Page Subheading
-  Order of Properties: Size it, Space it, Style it (SSS)
+  Order of Properties: Size it, Space it, Style it (Sz Sp St)
 */
 h2 {
   /* --- Size It --- */
@@ -329,7 +329,7 @@ h2 {
 /*
   Mobile Typography Adjustments
   Scales down h1 on smaller screens for better readability.
-  Order of Properties: Size it (S)
+  Order of Properties: Size it (Sz)
 */
 @media (width <= 768px) {
   /* --- Size It --- */
@@ -348,7 +348,7 @@ h2 {
 
 /* 
   Navigation Control Center 🎮 (aka page navigation bar)
-  Order of Properties: Size it, Space it, Style it (SSS)
+  Order of Properties: Size it, Space it, Style it (Sz Sp St)
 */
 nav {
   /* --- Size It --- */
@@ -387,7 +387,7 @@ nav {
 
 /*
   Navigation Links 🔗 (links within the nav bar)
-  Order of Properties: Space it, Style it (SS)
+  Order of Properties: Space it, Style it (Sp St)
 */
 nav a {
   /* --- Space It --- */
@@ -436,7 +436,7 @@ nav a:hover {
 
 /* 
   Sun/Moon Light/Dark Mode Toggle 🌞🌙
-  Order of Properties: Size it, Space it, Style it (SSS)
+  Order of Properties: Size it, Space it, Style it (Sz Sp St)
 */
 #sun-moon-toggle {
   /* --- Size It --- */
@@ -489,7 +489,7 @@ nav a:hover {
 
 /* 
   Footer Styling 🐾
-  Order of Properties: Size it, Space it, Style it (SSS)
+  Order of Properties: Size it, Space it, Style it (Sz Sp St)
 */
 footer {
   /* --- Size It --- */
