@@ -228,9 +228,9 @@
   color: var(--text-color);
 
   /*
-    Adds an underline to make links stand out as clickable.
+    Remove underlined links for a clean, minimalist look.
   */
-  text-decoration: underline;
+  text-decoration: none;
 
   /*
     Smoothly changes the color over 0.3 seconds when it’s updated (e.g., on hover).
@@ -261,6 +261,11 @@
       - White in dark mode, switches to charcoal in light mode.
   */
   color: var(--text-color);
+
+  /*
+    Adds an underline to make links stand out as clickable when hovered or focused.
+  */
+  text-decoration: underline;
 
   /*
     This changes the area behind the link text when hovered or focused.
