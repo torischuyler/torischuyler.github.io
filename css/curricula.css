@@ -126,7 +126,7 @@
   📋 Lesson plan list
   The .curriculum-container ul styles the unordered list (<ul>) inside the curriculum container.
   This is where lesson links live, formatted as a bulleted list for easy navigation.
-  Order of Properties: Space It, Style It (SS)
+  Order of Properties: Space It (S)
 */
 .curriculum-container ul {
   /* --- Space It --- */
@@ -142,18 +142,38 @@
     Think of it as giving the list a little elbow room on the left.
   */
   padding-left: 2rem;
+}
 
+/* 
+  marker defines how list items look.
+  '🚀' gives us rocket bullets — blasting off to learning!
+  Most sites stick to boring 'disc' (●), 'circle' (○), or 'square' (■) because
+  SEO loves predictable, safe designs — yawn!
+  Those are fine, but you can level up with ANY Unicode character — yup, emojis too.
+  Try '⛩️' (Shinto shrine, aka torii gate), '🎉', or '🛹' for fun.
+  Order of Properties: Style It (S)
+*/
+.curriculum-container ul li::marker {
   /* --- Style It --- */
 
-  /*
-    List-style-type defines how list items look.
-    '🚀' gives us rocket bullets — blasting off to learning!
-    Most sites stick to boring 'disc' (●), 'circle' (○), or 'square' (■) because
-    SEO loves predictable, safe designs — yawn!
-    Those are fine, but you can level up with ANY Unicode character — yup, emojis too.
-    Try '⛩️' (Shinto Shrine, aka torii gate), '🎉', or '🛹' for fun.
-  */
-  list-style-type: '🚀';
+  content: '🚀';
+}
+
+/*
+  Fallback Support:
+  If a browser doesn't support ::marker 😱
+  or if emoji rendering fails, we fall back to the classic disc bullet.
+  @supports checks if the browser understands ::marker.
+  If it doesn't, the list reverts to disc bullets — keeping things readable
+  even when fancy features aren't available.
+  Order of Properties: Style It (S)
+*/
+@supports not (selector(::marker)) {
+   /* --- Style It --- */
+
+  .curriculum-container ul {
+    list-style-type: disc;
+  }
 }
 
 /*
