@@ -257,16 +257,17 @@
 
   /*
     This changes the color of the link text when hovered or focused.
-    Sets the color property with a CSS variable (--primary-color, from global.css).
-      - Deep skyler in dark mode, switches to chefchaouen blue in light mode.
+    Sets the color property with a CSS variable (--accent-text-color, from global.css).
+      - White in dark mode, switches to charcoal in light mode.
   */
-  color: var(--primary-color);
+  color: var(--text-color);
 
   /*
     This changes the area behind the link text when hovered or focused.
-    Sets the background color to a specific neon green color.
+    Sets the color property with a CSS variable (--secondary-color, from global.css).
+      - British racing green in dark mode, switches to emerald green in light mode.
   */
-  background-color: #39FF14;
+  background-color:  var(--secondary-color);
 
   /*
     This creates a text box around the link when hovered or focused.
