@@ -65,6 +65,7 @@
 /* 2. Layouts
   .curriculum-container { ... }
   .curriculum-container p { ... }
+  .curriculum-container h2 { ... }
   .curriculum-container ul { ... }
   .curriculum-container li { ... }
   .curriculum-container a { ... }
@@ -120,6 +121,29 @@
     This changes how the text is positioned horizontally.
   */
   text-align: center;
+}
+
+/* 
+  Page Subheading
+  Order of Properties: Style it (St)
+*/
+.curriculum-container h2 {
+  /* --- Style It --- */
+
+  /*
+    If Righteous font isn't ready for takeoff,
+    use our trusty Space Grotesk font backup crew.
+
+    We use quotes around 'Space Grotesk' because it’s a multi-word font name,
+    unlike single-word Righteous, system-ui, or sans-serif —
+    quotes are required for multi-word names.
+  */
+  font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
+
+  /*
+    Underlines the subheading.
+  */
+  text-decoration: underline;
 }
 
 /* 
