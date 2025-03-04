@@ -189,7 +189,8 @@
     Margin adds space *outside* each list item ⬆️⬇️⬅️➡️
     Using two values:
     0.8rem = top and bottom margins (adds a little breathing room above and below each item).
-    0 = left and right margins (keeps items aligned with the list’s padding, no extra side space).
+    0 = left and right margins (no extra side space, unitless since zero means no value,
+    so rem or any unit isn’t needed).
   */
   margin: 0.8rem 0;
 }
