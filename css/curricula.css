@@ -208,6 +208,16 @@
   */
   padding: 0.2rem 0.4rem;
 
+  /*
+    Adds space to the left of the links for separation between links and 
+    the rocket emoji bulleted list.
+
+    😜 Fun version
+    Casts Spatial Separation Enchantment: Adds 0.4rem of leftward magic
+    to keep links clear of rocket bullet chaos. 🧙‍♂️🧝‍♀️
+  */
+  margin-left: 0.4rem;
+
   /* --- Style It --- */
 
   /*
