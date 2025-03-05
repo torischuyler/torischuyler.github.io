@@ -21,6 +21,11 @@
     It’s like saying, “Stay in your lane, image!” 🚧
   */
   max-width: 100%;
+
+  /*
+    block makes the image take up its own line, like a standalone element.
+    It’s like giving the spaceship its own parking spot. 🛸
+  */
   display: block;
   height: auto;
 
