@@ -4,6 +4,14 @@
   to the lesson plan pages of eOS Lesson Plans.
 */
 
+/* Image */
+.lesson-page img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
+
 body {
     /* browsers like to do their own thing so u need to reset them */
     margin: 0;
@@ -79,12 +87,4 @@ ol {
     /* Box Model - Docking Position */
     padding-left: 1.875rem;   /* navigation clearance for nested missions */
     margin-top: 0.5rem;   /* creates hierarchy in mission structure */
-}
-
-/* Image */
-.lesson-page img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 20px;
 }
