@@ -212,7 +212,7 @@
   /*
     Smoothly changes the color over 0.3 seconds when it’s updated (e.g., on hover).
     Transition makes it feel polished, not jarring — 
-    like a graceful twirl vs. a mechanical robot (which is Ms. Schuyler's best move btw 🤖).
+    like a graceful twirl vs. a mechanical robot (which is Ms. Schuyler's best dance move btw 🤖).
   */
   transition: color 0.3s;
 }
