@@ -260,3 +260,45 @@
   */
   box-shadow: 0 0 0 2px var(--primary-color);
 }
+
+/*
+Curricula.css
+├── 1. Curricula Styles
+│   ├── .curriculum-container
+│   │   ├── Size It
+│   │   │   └── max-width
+│   │   └── Space It
+│   │       ├── margin
+│   │       └── padding
+│   ├── .curriculum-container p
+│   │   └── Style It
+│   │       └── text-align
+│   ├── .curriculum-container h2
+│   │   └── Style It
+│   │       ├── font-family
+│   │       └── text-decoration
+│   ├── .curriculum-container ul
+│   │   └── Space It
+│   │       └── padding-left
+│   ├── .curriculum-container ul li::marker
+│   │   └── Style It
+│   │       └── content
+│   ├── .curriculum-container li
+│   │   └── Space It
+│   │       └── margin
+│   └── .curriculum-container a
+│       ├── Space It
+│       │   ├── padding
+│       │   └── margin-left
+│       └── Style It
+│           ├── color
+│           ├── text-decoration
+│           └── transition
+└── 2. Behaviors
+    └── .curriculum-container ul li a:hover, :focus
+        └── Style It
+            ├── color
+            ├── text-decoration
+            ├── background-color
+            └── box-shadow
+*/
