@@ -235,10 +235,10 @@
 
   /*
     This changes the color of the link text when hovered or focused.
-    Sets the color property with a CSS variable (--accent-text-color, from global.css).
-      - White in dark mode, switches to charcoal in light mode.
+    Sets the color property with a CSS variable (--text-color, from global.css).
+      - Muad'Dib in dark mode, switches to white in light mode.
   */
-  color: var(--text-color);
+  color: var(--accent-text-color);
 
   /*
     Adds an underline to make links stand out as clickable when hovered or focused.
