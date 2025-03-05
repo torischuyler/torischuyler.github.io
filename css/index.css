@@ -43,9 +43,6 @@
   text-align: center;
 }
 
-/* Homepage description text 📝 */
 .home-container p {
-  max-width: 50rem;
-  margin: 1.5rem auto;
   line-height: 1.6;
 }
