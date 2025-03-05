@@ -43,6 +43,10 @@
   text-align: center;
 }
 
+/*
+  This styles paragraph text (<p> tags) inside the .home-container.
+  Order of Properties:  Size It (Sz)
+*/
 .home-container p {
   line-height: 1.6;
 }
