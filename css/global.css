@@ -11,8 +11,9 @@
   5. Behaviors     - Interactive states
 */
 
-/* 1. Resets
-  * { ... }
+/* 
+  1. Resets
+    * { ... }
 */
 
 /*
@@ -53,9 +54,10 @@
   padding: 0;
 }
 
-/* 2. Variables
-  :root { ... }
-  .light-theme { ... }
+/* 
+  2. Variables
+    :root { ... }
+    .light-theme { ... }
 */
 
 /*
@@ -214,10 +216,11 @@
   }
 }
 
-/* 3. Base Styles
-  body { ... }
-  h1 { ... }
-  h2 { ... }
+/* 
+  3. Base Styles
+    body { ... }
+    h1 { ... }
+    h2 { ... }
 */
 
 /*
@@ -348,10 +351,11 @@ h2 {
   }
 }
 
-/* 4. Components
-  nav { ... }
-  footer { ... }
-  #sun-moon-toggle { ... }
+/* 
+  4. Components
+    nav { ... }
+    footer { ... }
+    #sun-moon-toggle { ... }
 */
 
 /* 
@@ -548,8 +552,9 @@ footer {
   text-align: center;
 }
 
-/* 5. Behaviors 
-   - Color transitions
+/* 
+  5. Behaviors 
+    - Color transitions
 */
 
 /* 
