@@ -10,61 +10,18 @@
   🔧 Acts as an educational tool to explain CSS properties
 
     Table of Contents:
-  1. Resets               - Wipe browser defaults
-  2. Curricula Styles     - Structure and spacing for curricula pages
-  3. Behaviors            - Interactive states
+  1. Curricula Styles     - Structure and spacing for curricula pages
+  2. Behaviors            - Interactive states
 */
 
-/* 1. Resets
-  * { ... }
-*/
-
-/*
-  Reset - Removes default browser styles.
-  Sets all elements to start with a clean base for predictable design.
-
-  Every single thing on the page is an element (like text or buttons).
-  Every element has space around it — this is called margin.
-  Every element has space inside it — this is called padding.
-
-  Order of Properties: Size it, Space it (Sz Sp)
-*/
-* {
-  /*
-    The little asterisk (*) is a CSS superhero! 🦸‍♀️🦸 It targets EVERYTHING on the page -
-    every tag, every button, every speck of text.
-    Here, we’re using it to wipe out browser defaults and take control,
-    perfect for keeping our curricula pages in line.
-    Think of it as clearing the stage before the dancers (your content) perform!
-  */
-
-  /* --- Size It --- */
-
-  /*
-    By default, browsers use content-box, where padding and borders
-    add to an element’s width or height, which can screw up layouts.
-
-    With border-box, the width and height you set include padding and borders,
-    making your life way easier when designing.
-
-    It’s like telling the browser, “No, I decide what fits where.”
-  */
-  box-sizing: border-box;
-
-  /* --- Space It --- */
-
-  /* Setting these to 0 removes any space added to the elements by the browser. */
-  margin: 0;
-  padding: 0;
-}
-
-/* 2. Curricula Styles
-  .curriculum-container { ... }
-  .curriculum-container p { ... }
-  .curriculum-container h2 { ... }
-  .curriculum-container ul { ... }
-  .curriculum-container li { ... }
-  .curriculum-container a { ... }
+/* 
+  1. Curricula Styles
+    .curriculum-container { ... }
+    .curriculum-container p { ... }
+    .curriculum-container h2 { ... }
+    .curriculum-container ul { ... }
+    .curriculum-container li { ... }
+    .curriculum-container a { ... }
 */
 
 /*
@@ -260,9 +217,10 @@
   transition: color 0.3s;
 }
 
-/* 5. Behaviors 
-   - Hover
-   - Focus
+/* 
+  2. Behaviors 
+    - Hover
+    - Focus
 */
 
 /*
