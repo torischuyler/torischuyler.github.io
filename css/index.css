@@ -10,7 +10,14 @@
   Order of Properties: Size it, Space it (Sz Sp)
 */
 .home-container {
+  /* --- Size It --- */
+
+  /* 
+    max-width: 80vw sets the maximum width to 80% of the viewport width.
+    This limits how wide the container can grow.
+  */
   max-width: 80vw;
+
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
