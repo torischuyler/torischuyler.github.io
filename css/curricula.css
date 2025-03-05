@@ -9,14 +9,10 @@
   😎 Styles the eOS website's curricula pages
   🔧 Acts as an educational tool to explain CSS properties
 
-  We'll use simple analogies like dance moves and football helmets for clarity, 
-  keeping the explanations straightforward and easy to understand.
-  Warning: Some examples contain terrible jokes 😂 (srry about it)
-
     Table of Contents:
-  1. Resets        - Wipe browser defaults
-  2. Layouts       - Structure and spacing for curricula pages
-  3. Behaviors     - Interactive states
+  1. Resets               - Wipe browser defaults
+  2. Curricula Styles     - Structure and spacing for curricula pages
+  3. Behaviors            - Interactive states
 */
 
 /* 1. Resets
@@ -62,7 +58,7 @@
   padding: 0;
 }
 
-/* 2. Layouts
+/* 2. Curricula Styles
   .curriculum-container { ... }
   .curriculum-container p { ... }
   .curriculum-container h2 { ... }
