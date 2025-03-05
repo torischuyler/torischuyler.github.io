@@ -50,14 +50,12 @@
   margin: 0 auto;
 
   /*
-    Padding adds space inside the container, between its edges and content.
-    Try 5rem in Dev Tools — see more space around the text.
-
-    Rem = “root em,” based on the <html> font size (default 16px).
+    Space inside container ⬆️⬇️➡️⬅️
+    Rem = “root em,” based on the <html> font size (usually 16 px by default).
     So, 1rem = 16px, 2rem = 32px. Simple math! 🧮
 
-    Why rem? It scales with font size settings, keeping padding consistent
-    across screens and browsers.
+    Why use rem here? It’s responsive—padding scales with browser font size changes,
+    keeping the nav balanced across different screens and settings.
   */
   padding: 2rem;
 }
