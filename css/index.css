@@ -61,3 +61,18 @@
   */
   line-height: 1.6;
 }
+
+/*
+Index.css
+├── .home-container
+│   ├── Size It
+│   │   └── max-width
+│   ├── Space It
+│   │   ├── margin
+│   │   └── padding
+│   └── Style It
+│       └── text-align
+└── .home-container p
+    └── Size It
+        └── line-height
+*/
