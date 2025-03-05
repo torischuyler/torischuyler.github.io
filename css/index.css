@@ -35,6 +35,11 @@
     keeping the nav balanced across different screens and settings.
   */
   padding: 2rem;
+
+  /*
+    Moves the text to the middle of the container.
+    This changes how the text is positioned horizontally.
+  */
   text-align: center;
 }
 
