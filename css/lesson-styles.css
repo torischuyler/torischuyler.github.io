@@ -4,7 +4,13 @@
   to the lesson plan pages of eOS Lesson Plans.
 */
 
-/* Image */
+/*
+  📸 Image Styling
+  This styles the space-themed image at the top of the lesson page - a kid-friendly
+  scene of planets and stars (space.jpeg) created with Apple’s Image Playground.
+  It’s got Magic School Bus vibes to kick off the learning adventure 🚀
+  These rules make it responsive, centered, and spaced out for a clean start.
+*/
 .lesson-page img {
   max-width: 100%;
   height: auto;
