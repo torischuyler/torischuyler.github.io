@@ -48,5 +48,10 @@
   Order of Properties:  Size It (Sz)
 */
 .home-container p {
+  /*
+    line-height: 1.6 sets text line spacing to 1.6 times the font size.
+    This improves readability by giving lines some breathing room.
+    🧮 If default font size is 16px: 16 × 1.6 = 25.6px line height
+  */
   line-height: 1.6;
 }
