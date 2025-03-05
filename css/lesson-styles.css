@@ -1,16 +1,19 @@
-/* Lesson Page Styles - Our educational space station 🚀 */
+/*
+  👩‍🏫👨‍🏫 Lesson-styles.css - The stylesheet for lesson plan pages.
+  This file defines the styles that apply specifically
+  to the lesson plan pages of eOS Lesson Plans.
+*/
 
-/* Preparing the page for future liftoff 🚀 (aka consistent display across different browsers, screens, devices) */
 body {
     /* browsers like to do their own thing so u need to reset them */
     margin: 0;
     padding: 0;
-
+    
     /* Visual Properties - how things look */
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;   /* makes it easier on me eyes (said in British accent) */
-
+    
     /* Layout Properties - how things are arranged */
     min-height: 100vh;   /* ensures our page always fills the viewport */
     display: flex;   /* makes the page all stretchy and flexible */
@@ -56,7 +59,7 @@ ol {
     max-width: 80vw;
     padding-left: 2.5rem;
     margin: 0 0 1rem 0;
-
+    
     /* Visual Properties - make it look stellar */
     list-style-position: outside;   /* keeps numbers neatly aligned */
 }
