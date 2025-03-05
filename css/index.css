@@ -4,7 +4,11 @@
   that apply specifically to the home of eOS Lesson Plans.
 */
 
-/* Homepage content container 🏠 */
+/*
+  The .home-container holds the content for the home page.
+  It controls the width and spacing of the content area.
+  Order of Properties: Size it, Space it (Sz Sp)
+*/
 .home-container {
   max-width: 80vw;
   margin: 0 auto;
