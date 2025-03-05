@@ -14,6 +14,12 @@
 */
 .lesson-page img {
   /* --- Size It --- */
+
+  /*
+    max-width caps the image width at 100% of its container (the .lesson-page area).
+    So, if the page shrinks (like on a phone), the image shrinks too.
+    It’s like saying, “Stay in your lane, image!” 🚧
+  */
   max-width: 100%;
   display: block;
   height: auto;
