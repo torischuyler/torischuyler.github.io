@@ -7,7 +7,7 @@
 /*
   The .home-container holds the content for the home page.
   It controls the width and spacing of the content area.
-  Order of Properties: Size it, Space it (Sz Sp)
+  Order of Properties: Size it, Space it (Sz Sp St)
 */
 .home-container {
   /* --- Size It --- */
@@ -17,6 +17,8 @@
     This limits how wide the container can grow.
   */
   max-width: 80vw;
+
+  /* --- Space It --- */
 
   /*
     Space outside container ⬆️⬇️⬅️➡️
@@ -36,6 +38,8 @@
   */
   padding: 2rem;
 
+  /* --- Style It --- */
+
   /*
     Moves the text to the middle of the container.
     This changes how the text is positioned horizontally.
@@ -48,6 +52,8 @@
   Order of Properties:  Size It (Sz)
 */
 .home-container p {
+  /* --- Size It --- */
+
   /*
     line-height: 1.6 sets text line spacing to 1.6 times the font size.
     This improves readability by giving lines some breathing room.
