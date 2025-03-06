@@ -11,7 +11,7 @@
   1. Lesson Styles
     .lesson-container { ... }
     .lesson-container img { ... } 
-    .lesson-container h2 span { ... }
+    .lesson-container h2 { ... }
     .lesson-container main {...}
     .lesson-container ol {...}
 */
@@ -68,7 +68,22 @@
 }
 
 /*
-  🧭 Subheaders to navigate the lesson plan
+  🧭 Subheadings to navigate the lesson plan
+  Order of Properties: Space it (Sp)
+*/
+.lesson-container h2 {
+  /* --- Space It --- */
+
+  /* 
+    Adds space below the subheading.
+    🧮 Here's the math:
+      - 0.3rem × 16px = 4.8px
+  */
+  margin-bottom: 0.3rem;
+}
+
+/*
+  🏹 Targets subheadings
   Order of Properties: Space it (Sp)
 */
 .lesson-container h2 span {
