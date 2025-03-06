@@ -125,7 +125,6 @@
 */
 .lesson-container ol {
   /* --- Size It --- */
-  display: block;
   max-width: 80vw;
 
   /* --- Space It --- */
