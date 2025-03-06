@@ -77,11 +77,11 @@
 }
 
 /* Main content container */
-.lesson-page main {
-    max-width: 80vw;
-    margin: 0 auto;
-    padding: 0 20px;
-    flex: 1;
+.lesson-container main {
+  max-width: 80vw;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex: 1;
 }
 
 /* Mission Checklist Format 📝 (aka lists for step-by-step instructions) */
