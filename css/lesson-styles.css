@@ -69,7 +69,7 @@
   🧭 Subheaders to navigate the lesson plan
   Order of Properties: Size it, Space it, Style it (Sz Sp St)
 */
-h2 {
+.lesson-container h2 {
   /* --- Size It --- */
   font-size: 1.5rem;
 
