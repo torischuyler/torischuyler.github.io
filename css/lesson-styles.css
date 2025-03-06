@@ -91,7 +91,6 @@
     This limits how wide the container can grow.
   */
   max-width: 80vw;
-  flex: 1;
 
   /* --- Space It --- */
   margin: 0 auto;
