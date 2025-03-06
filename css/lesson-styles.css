@@ -3,13 +3,33 @@
   This file defines the styles that apply specifically
   to the lesson plan pages of eOS Lesson Plans.
 
-    Table of Contents:
-    1. Media           - Visual elements like images
-    2. Lesson Styles   - Structure and spacing for lesson plan pages
+  Table of Contents:
+    1. Lesson Styles   - Structure and spacing for lesson plan pages
+    2. Media           - Visual elements like images
 */
 
 /*
-  1. Media
+  1. Lesson Styles
+    .lesson-container { ... }
+*/
+
+/*
+  Lesson plan pages
+  The .lesson-container holds the content for the lesson plan pages.
+  It controls the width and spacing of the content area.
+  Order of Properties: Space it (Sp)
+*/
+.lesson-container {
+  /* --- Space It --- */
+
+  /*
+    This doubles the space between text lines (32px for a 16px font).
+  */
+  line-height: 2;
+}
+
+/*
+  2. Media
    .lesson-container img { ... }
 */
 
@@ -47,26 +67,6 @@
     (20px ÷ 16px = 1.25rem)
   */
   margin: 0 auto 1.25rem;
-}
-
-/*
-  2. Lesson Styles
-    .lesson-container { ... }
-*/
-
-/*
-  Lesson plan pages (Students & Developers)
-  The .lesson-container holds the content for the lesson plan pages.
-  It controls the width and spacing of the content area.
-  Order of Properties: Space it (Sp)
-*/
-.lesson-container {
-  /* --- Space It --- */
-
-  /*
-    This doubles the space between text lines (32px for a 16px font).
-  */
-  line-height: 2;
 }
 
 /* Deck Markers to help navigate the ship 🧭 (aka sub-headers to navigate the lesson plan) */
