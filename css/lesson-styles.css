@@ -86,6 +86,10 @@
 .lesson-container main {
   /* --- Size It --- */
 
+  /*
+    max-width: 80vw sets the maximum width to 80% of the viewport width.
+    This limits how wide the container can grow.
+  */
   max-width: 80vw;
   flex: 1;
 
