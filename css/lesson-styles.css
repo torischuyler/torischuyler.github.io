@@ -101,7 +101,18 @@
     auto = left and right margins (splits remaining space to center container).
   */
   margin: 0 auto;
-  padding: 0 20px;
+
+  /*
+    Space inside container ⬆️⬇️➡️⬅️
+    0 = top and bottom padding (no extra height).
+    1.25rem = left and right padding (20px at 16px root font size).
+    Rem = “root em,” based on the <html> font size (usually 16 px by default).
+    🧮 If default font size is 16px: 16 × 1.25 = 20px padding.
+
+    Why use rem here? It’s responsive — padding scales with browser font size changes,
+    keeping the content balanced across different screens and settings.
+  */
+  padding: 0 1.25rem;
 }
 
 /* Mission Checklist Format 📝 (aka lists for step-by-step instructions) */
