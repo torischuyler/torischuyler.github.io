@@ -29,7 +29,15 @@
   display: block;
 
   /* --- Space It --- */
-  margin: 0 auto 20px;
+
+  /*
+    ⬆️ Top margin = 0px. No space above the image.
+    ⬅️➡️ Left and right margins = auto, which splits the leftover
+    space equally on both sides, centering the image horizontally.
+    ⬇️ Bottom margin = 1.25rem. Adds space below the image.
+    (20px ÷ 16px = 1.25rem)
+  */
+  margin: 0 auto 1.25rem;
 }
 
 body {
