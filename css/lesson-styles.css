@@ -47,7 +47,6 @@ body {
     This doubles the space between text lines (32px for a 16px font).
   */
   line-height: 2;
-  display: flex;   /* makes the page all stretchy and flexible */
   flex-direction: column;   /* stacks page content like pancakes */
 }
 
