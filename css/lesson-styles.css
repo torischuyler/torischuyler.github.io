@@ -41,9 +41,6 @@
 }
 
 body {
-  /* Visual Properties - how things look */
-  background-color: var(--background-color);
-  color: var(--text-color);
   line-height: 1.6;   /* makes it easier on me eyes (said in British accent) */
   
   /* Layout Properties - how things are arranged */
