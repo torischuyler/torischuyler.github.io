@@ -13,6 +13,7 @@
     .lesson-container img { ... } 
     .lesson-container h2 span { ... }
     .lesson-container main {...}
+    .lesson-container ol {...}
 */
 
 /*
@@ -116,18 +117,12 @@
   padding: 0 1.25rem;
 }
 
-/* Mission Checklist Format 📝 (aka lists for step-by-step instructions) */
-ol {
-    /* Display & Positioning - how it fits in space */
-    display: block; /* Vertical stack formation (default) */
-    
-    /* Box Model - the spacecraft's dimensions */
-    max-width: 80vw;
-    margin: 0 auto;   /* centers our mission checklist in its container */
-    padding-left: 5rem;   /* room for those mission numbers */
-    
-    /* Visual Properties - make it look stellar */
-    list-style-position: outside;   /* keeps numbers neatly aligned */
+.lesson-container ol {
+  display: block;
+  max-width: 80vw;
+  margin: 0 auto;
+  padding-left: 5rem;
+  list-style-position: outside;
 }
 
 /* Mission Checklist Format 📝 (aka lists for step-by-step instructions) */
