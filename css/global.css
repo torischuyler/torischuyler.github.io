@@ -194,9 +194,9 @@
 */
 
 /*
-  Disable lint rule 'no-descending-specificity' bc we’re nesting h1 and h2 in .light-theme
+  Disable lint rule 'no-descending-specificity' bc we’re nesting h1 in .light-theme
   to override their default color (var(--text-color)) with chefchaouen blue in light mode only.
-  Kept disabled for the file to avoid warnings from base h1 and h2 rules.
+  Kept disabled for the file to avoid warnings from base h1 rules.
 */
 /* stylelint-disable no-descending-specificity */
 .light-theme {
@@ -205,13 +205,13 @@
   --background-color: var(--anti-flash-white);
   --text-color: var(--charcoal);
   --accent-text-color: var(--white);
+  --subheader-text-color: var(--lapis-lazuli);
 
   /*
     Overrides the default text color only in light mode to use 
     chefchaoouen blue for headings and subheadings.
   */
-  h1,
-  h2 {
+  h1 {
     color: var(--primary-color);
   }
 }

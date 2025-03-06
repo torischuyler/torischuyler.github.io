@@ -80,6 +80,12 @@
       - 0.3rem × 16px = 4.8px
   */
   margin-bottom: 0.3rem;
+
+  /*
+    Sets the color property with a CSS variable (--subheader-text-color, from global.css).
+      - White in dark mode, switches to lapis lazuli in light mode.
+  */
+  color: var(--subheader-text-color);
 }
 
 /*
