@@ -49,10 +49,10 @@
 
 /*
   This styles paragraph text (<p> tags) inside the .home-container.
-  Order of Properties:  Size It (Sz)
+  Order of Properties:  Space It (Sp)
 */
 .home-container p {
-  /* --- Size It --- */
+  /* --- Space It --- */
 
   /*
     line-height: 1.6 sets text line spacing to 1.6 times the font size.
@@ -73,6 +73,6 @@ Index.css
 │   └── Style It
 │       └── text-align
 └── .home-container p
-    └── Size It
+    └── Space It
         └── line-height
 */
