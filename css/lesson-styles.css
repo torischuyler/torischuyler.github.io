@@ -67,12 +67,9 @@
 
 /* 
   🧭 Subheaders to navigate the lesson plan
-  Order of Properties: Size it, Space it, Style it (Sz Sp St)
+  Order of Properties: Size it, Space it, Style it (Sp St)
 */
 .lesson-container h2 {
-  /* --- Size It --- */
-  font-size: 1.5rem;
-
   /* --- Space It --- */
   margin-bottom: 0.8rem;
 
@@ -87,7 +84,6 @@
     quotes are required for multi-word names.
   */
   font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
-  font-weight: 700;
 }
 
 /* Underline only the text, not the emoji */
