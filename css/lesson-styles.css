@@ -11,7 +11,7 @@
   1. Lesson Styles
     .lesson-container { ... }
     .lesson-container img { ... } 
-    .lesson-container h2 { ... }
+    .lesson-container h2 span { ... }
 */
 
 /*
@@ -65,17 +65,14 @@
   margin: 0 auto 1.25rem;
 }
 
-/* 
+/*
   🧭 Subheaders to navigate the lesson plan
-  Order of Properties: Space it (Sp St)
+  Order of Properties: Space it (Sp)
 */
-.lesson-container h2 {
-  /* --- Space It --- */
-  margin-bottom: 0.8rem;
-}
-
-/* Underline only the text, not the emoji */
 .lesson-container h2 span {
+  /* --- Space It --- */
+
+  /* Underline only the text, not the emoji */
   text-decoration: underline;
 }
 
