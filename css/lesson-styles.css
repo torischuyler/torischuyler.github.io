@@ -76,7 +76,12 @@
   text-decoration: underline;
 }
 
-/* Main content container */
+/*
+  📖 Main Content HQ - getting to the good stuff.
+  .lesson-container main targets the <main> element within the
+  container, controlling layout stuff like width, margin, 
+  padding, and flex behavior.
+*/
 .lesson-container main {
   max-width: 80vw;
   margin: 0 auto;
