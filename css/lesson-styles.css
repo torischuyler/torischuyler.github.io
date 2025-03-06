@@ -12,6 +12,7 @@
   1. Lesson Styles
     .lesson-container { ... }
     .lesson-container h2 { ... }
+    .lesson-container h2 span
 */
 
 /*
@@ -52,6 +53,11 @@ h2 {
   */
   font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
   font-weight: 700;
+}
+
+/* Underline only the text, not the emoji */
+.lesson-container h2 span {
+  text-decoration: underline;
 }
 
 /*
