@@ -79,14 +79,19 @@
 /*
   📖 Main Content HQ - getting to the good stuff.
   .lesson-container main targets the <main> element within the
-  container, controlling layout stuff like width, margin, 
-  padding, and flex behavior.
+  container, controlling layout stuff like width, flex, 
+  margin, and padding behavior.
+  Order of Properties: Size it, Space it (Sz Sp)
 */
 .lesson-container main {
+  /* --- Size It --- */
+
   max-width: 80vw;
+  flex: 1;
+
+  /* --- Space It --- */
   margin: 0 auto;
   padding: 0 20px;
-  flex: 1;
 }
 
 /* Mission Checklist Format 📝 (aka lists for step-by-step instructions) */
