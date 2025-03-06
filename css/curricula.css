@@ -82,16 +82,6 @@
   /* --- Style It --- */
 
   /*
-    If Righteous font isn't ready for takeoff,
-    use our trusty Space Grotesk font backup crew.
-
-    We use quotes around 'Space Grotesk' because it’s a multi-word font name,
-    unlike single-word Righteous, system-ui, or sans-serif —
-    quotes are required for multi-word names.
-  */
-  font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
-
-  /*
     Underlines the subheading.
   */
   text-decoration: underline;

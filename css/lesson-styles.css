@@ -67,23 +67,11 @@
 
 /* 
   🧭 Subheaders to navigate the lesson plan
-  Order of Properties: Size it, Space it, Style it (Sp St)
+  Order of Properties: Space it (Sp St)
 */
 .lesson-container h2 {
   /* --- Space It --- */
   margin-bottom: 0.8rem;
-
-  /* --- Style It --- */
-
-  /*
-    If Righteous font isn't ready for takeoff,
-    use our trusty Space Grotesk font backup crew.
-
-    We use quotes around 'Space Grotesk' because it’s a multi-word font name,
-    unlike single-word Righteous, system-ui, or sans-serif —
-    quotes are required for multi-word names.
-  */
-  font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
 }
 
 /* Underline only the text, not the emoji */

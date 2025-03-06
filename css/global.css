@@ -326,6 +326,16 @@ h2 {
   margin-bottom: 1rem;
 
   /* --- Style It --- */
+  
+  /*
+    If Righteous font isn't ready for takeoff,
+    use our trusty Space Grotesk font backup crew.
+
+    We use quotes around 'Space Grotesk' because it’s a multi-word font name,
+    unlike single-word Righteous, system-ui, or sans-serif —
+    quotes are required for multi-word names.
+  */
+  font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
 
   /* 
     Sets boldness to 700 (bold) for strong visual hierarchy—thicker than normal (400)
