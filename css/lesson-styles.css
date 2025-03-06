@@ -5,14 +5,13 @@
 
   Table of Contents:
     1. Lesson Styles   - Structure and spacing for lesson plan pages
-    2. Media           - Visual elements like images
 */
 
 /*
   1. Lesson Styles
     .lesson-container { ... }
+    .lesson-container img { ... } 
     .lesson-container h2 { ... }
-    .lesson-container h2 span
 */
 
 /*
@@ -29,41 +28,6 @@
   */
   line-height: 2;
 }
-
-/* 
-  🧭 Subheaders to navigate the lesson plan
-  Order of Properties: Size it, Space it, Style it (Sz Sp St)
-*/
-h2 {
-  /* --- Size It --- */
-  font-size: 1.5rem;
-
-  /* --- Space It --- */
-  margin-bottom: 0.8rem;
-
-  /* --- Style It --- */
-
-  /*
-    If Righteous font isn't ready for takeoff,
-    use our trusty Space Grotesk font backup crew.
-
-    We use quotes around 'Space Grotesk' because it’s a multi-word font name,
-    unlike single-word Righteous, system-ui, or sans-serif —
-    quotes are required for multi-word names.
-  */
-  font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
-  font-weight: 700;
-}
-
-/* Underline only the text, not the emoji */
-.lesson-container h2 span {
-  text-decoration: underline;
-}
-
-/*
-  2. Media
-   .lesson-container img { ... }
-*/
 
 /*
   📸 Image Styling
@@ -99,6 +63,36 @@ h2 {
     (20px ÷ 16px = 1.25rem)
   */
   margin: 0 auto 1.25rem;
+}
+
+/* 
+  🧭 Subheaders to navigate the lesson plan
+  Order of Properties: Size it, Space it, Style it (Sz Sp St)
+*/
+h2 {
+  /* --- Size It --- */
+  font-size: 1.5rem;
+
+  /* --- Space It --- */
+  margin-bottom: 0.8rem;
+
+  /* --- Style It --- */
+
+  /*
+    If Righteous font isn't ready for takeoff,
+    use our trusty Space Grotesk font backup crew.
+
+    We use quotes around 'Space Grotesk' because it’s a multi-word font name,
+    unlike single-word Righteous, system-ui, or sans-serif —
+    quotes are required for multi-word names.
+  */
+  font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 700;
+}
+
+/* Underline only the text, not the emoji */
+.lesson-container h2 span {
+  text-decoration: underline;
 }
 
 /* Main content container */
