@@ -47,7 +47,6 @@ body {
     This doubles the space between text lines (32px for a 16px font).
   */
   line-height: 2;
-  flex-direction: column;   /* stacks page content like pancakes */
 }
 
 /* Deck Markers to help navigate the ship 🧭 (aka sub-headers to navigate the lesson plan) */
