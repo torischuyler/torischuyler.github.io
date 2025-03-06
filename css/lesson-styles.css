@@ -130,8 +130,7 @@
 }
 
 /* Mission Checklist Format 📝 (aka lists for step-by-step instructions) */
-.lesson-content ul,
-.lesson-content ol {
+.lesson-content ul {
     /* Display & Positioning - how it fits in space */
     display: block;   /* Vertical stack formation (default) */
     
@@ -154,8 +153,7 @@
 }
 
 /* Sub-missions 🛸 (aka nested lists) */
-.lesson-content li > ul,
-.lesson-content li > ol {
+.lesson-content li > ul {
     /* Box Model - Docking Position */
     padding-left: 1.875rem;   /* navigation clearance for nested missions */
     margin-top: 0.5rem;   /* creates hierarchy in mission structure */
