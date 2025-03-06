@@ -93,6 +93,13 @@
   max-width: 80vw;
 
   /* --- Space It --- */
+
+  /*
+    Space outside container ⬆️⬇️⬅️➡️
+    Using two values:
+    0 = top and bottom margins (no space above or below).
+    auto = left and right margins (splits remaining space to center container).
+  */
   margin: 0 auto;
   padding: 0 20px;
 }
