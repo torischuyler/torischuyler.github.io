@@ -40,6 +40,10 @@
   margin: 0 auto 1.25rem;
 }
 
+/*
+  Body - The main content wrapper. Sets the stage for the page layout.
+  Order of Properties: Space it (Sp)
+*/
 body {
   /* --- Space It --- */
 
