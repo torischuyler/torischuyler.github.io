@@ -306,6 +306,7 @@ for K-12 students to build media and digital literacy skills. -->
             </main>
             <!-- End Main Section -->
         </div>
+        <!-- End of .lesson-container -->
 
         <!-- Begin Footer Section -->
         <!-- Footer content, like copyright info, contact details, or additional links. -->
@@ -351,7 +352,7 @@ DOCTYPE
     │   │   ├── link (global.css)
     │   │   ├── link (lesson-styles.css)
     │   │   └── link (google fonts)
-    │   └── script (sun-moons-toggle.js)
+    │   └── script (sun-moon-toggle.js)
     │
     └── body
         ├── nav
@@ -363,87 +364,88 @@ DOCTYPE
         │   └── noscript
         │       └── div
         │           └── p
-        ├── header
-        │   ├── img
-        │   └── h1
-        ├── main
-        │   ├── section (Lesson Goals)
-        │   │   ├── h2
-        │   │   └── ol
-        │   │       ├── li
-        │   │       ├── li
-        │   │       └── li
-        │   ├── section (Duration)
-        │   │   ├── h2
-        │   │   └── ul
-        │   │       └── li
-        │   ├── section (Age Groups)
-        │   │   ├── h2
-        │   │   └── ul
-        │   │       ├── li
-        │   │       └── li
-        │   ├── section (Materials Needed)
-        │   │   ├── h2
-        │   │   └── ul
-        │   │       ├── li
-        │   │       └── li
-        │   ├── section (Lesson Steps)
-        │   │   ├── h2
-        │   │   ├── section (Kick-off)
-        │   │   │   ├── h3
-        │   │   │   └── ul
-        │   │   │       └── li
-        │   │   ├── section (Key Terms)
-        │   │   │   ├── h3
-        │   │   │   └── ul
-        │   │   │       ├── li
-        │   │   │       ├── li
-        │   │   │       ├── li
-        │   │   │       └── li
-        │   │   ├── section (Take It In)
-        │   │   │   ├── h3
-        │   │   │   ├── p
-        │   │   │   └── ul
-        │   │   │       ├── li
-        │   │   │       │   └── ul
-        │   │   │       │       ├── li
-        │   │   │       │       ├── li
-        │   │   │       │       └── li
-        │   │   │       └── li
-        │   │   │           └── ul
-        │   │   │               ├── li
-        │   │   │               ├── li
-        │   │   │               └── li
-        │   │   ├── section (Dig Deeper)
-        │   │   │   ├── h3
-        │   │   │   ├── p
-        │   │   │   └── ul
-        │   │   │       ├── li
-        │   │   │       │   └── ul
-        │   │   │       │       ├── li
-        │   │   │       │       ├── li
-        │   │   │       │       └── li
-        │   │   │       └── li
-        │   │   │           └── ul
-        │   │   │               ├── li
-        │   │   │               ├── li
-        │   │   │               └── li
-        │   │   ├── section (Share & Compare)
-        │   │   │   ├── h3
-        │   │   │   ├── p
-        │   │   │   └── ul
-        │   │   │       ├── li
-        │   │   │       ├── li
-        │   │   │       └── li
-        │   │   └── section (Think About It)
-        │   │       ├── h3
-        │   │       └── p
-        │   └── section (Teacher Tips)
-        │       ├── h2
-        │       └── ul
-        │           ├── li
-        │           ├── li
-        │           └── li
+        ├── div (lesson-container)
+        │   ├── header
+        │   │   ├── img
+        │   │   └── h1
+        │   └── main
+        │       ├── section (Lesson Goals)
+        │       │   ├── h2
+        │       │   └── ol
+        │       │       ├── li
+        │       │       ├── li
+        │       │       └── li
+        │       ├── section (Duration)
+        │       │   ├── h2
+        │       │   └── ul
+        │       │       └── li
+        │       ├── section (Age Groups)
+        │       │   ├── h2
+        │       │   └── ul
+        │       │       ├── li
+        │       │       └── li
+        │       ├── section (Materials Needed)
+        │       │   ├── h2
+        │       │   └── ul
+        │       │       ├── li
+        │       │       └── li
+        │       ├── section (Lesson Steps)
+        │       │   ├── h2
+        │       │   ├── section (Kick-off)
+        │       │   │   ├── h3
+        │       │   │   └── ul
+        │       │   │       └── li
+        │       │   ├── section (Key Terms)
+        │       │   │   ├── h3
+        │       │   │   └── ul
+        │       │   │       ├── li
+        │       │   │       ├── li
+        │       │   │       ├── li
+        │       │   │       └── li
+        │       │   ├── section (Take It In)
+        │       │   │   ├── h3
+        │       │   │   ├── p
+        │       │   │   └── ul
+        │       │   │       ├── li
+        │       │   │       │   └── ul
+        │       │   │       │       ├── li
+        │       │   │       │       ├── li
+        │       │   │       │       └── li
+        │       │   │       └── li
+        │       │   │           └── ul
+        │       │   │               ├── li
+        │       │   │               ├── li
+        │       │   │               └── li
+        │       │   ├── section (Dig Deeper)
+        │       │   │   ├── h3
+        │       │   │   ├── p
+        │       │   │   └── ul
+        │       │   │       ├── li
+        │       │   │       │   └── ul
+        │       │   │       │       ├── li
+        │       │   │       │       ├── li
+        │       │   │       │       └── li
+        │       │   │       └── li
+        │       │   │           └── ul
+        │       │   │               ├── li
+        │       │   │               ├── li
+        │       │   │               └── li
+        │       │   ├── section (Share & Compare)
+        │       │   │   ├── h3
+        │       │   │   ├── p
+        │       │   │   └── ul
+        │       │   │       ├── li
+        │       │   │       ├── li
+        │       │   │       └── li
+        │       │   └── section (Think About It)
+        │       │       ├── h3
+        │       │       └── p
+        │       └── section (Teacher Tips)
+        │           ├── h2
+        │           └── ul
+        │               ├── li
+        │               ├── li
+        │               └── li
         ├── footer
         │   └── p
         │       └── span
