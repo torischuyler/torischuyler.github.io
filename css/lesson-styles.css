@@ -41,19 +41,15 @@
 }
 
 body {
-    /* browsers like to do their own thing so u need to reset them */
-    margin: 0;
-    padding: 0;
-    
-    /* Visual Properties - how things look */
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;   /* makes it easier on me eyes (said in British accent) */
-    
-    /* Layout Properties - how things are arranged */
-    min-height: 100vh;   /* ensures our page always fills the viewport */
-    display: flex;   /* makes the page all stretchy and flexible */
-    flex-direction: column;   /* stacks page content like pancakes */
+  /* Visual Properties - how things look */
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;   /* makes it easier on me eyes (said in British accent) */
+  
+  /* Layout Properties - how things are arranged */
+  min-height: 100vh;   /* ensures our page always fills the viewport */
+  display: flex;   /* makes the page all stretchy and flexible */
+  flex-direction: column;   /* stacks page content like pancakes */
 }
 
 /* Deck Markers to help navigate the ship 🧭 (aka sub-headers to navigate the lesson plan) */
