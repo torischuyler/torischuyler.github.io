@@ -125,7 +125,20 @@
 */
 .lesson-container ol {
   /* --- Space It --- */
-  padding-left: 5rem;
+
+  /*
+    Padding-left adds 3.5rem of space *inside* the list, on the left side only.
+    This pushes the bullets and text rightward, away from the left edge.
+
+    🧮 Here’s the math:
+      - 1rem = the root font size (default is 16px in browsers).
+      - So, 3.5rem = 3.5 × 16px = 56px of space.
+      - If the root font size changes (e.g., to 18px), 3.5rem becomes 63px.
+
+    Why rem? It scales spacing with font size for a consistent look -
+    think of it as giving the list a little elbow room on the left.
+  */
+  padding-left: 3.5rem;
 }
 
 /* Mission Checklist Format 📝 (aka lists for step-by-step instructions) */
