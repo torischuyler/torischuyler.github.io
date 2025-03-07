@@ -203,12 +203,12 @@
   /* --- Space It --- */
 
   /*
-    Adds 1rem below each item for breathing room.
+    Adds 0.75rem below each item for balanced spacing.
     🧮 Here’s the math:
-      - 1rem × 16px = 16px spacing (at a 16px default root).
-      - If root font size changes (e.g., to 20px), 1rem becomes 20px.
+      - 0.75rem × 16px = 12px spacing (at a 16px default root).
+      - If root font size changes (e.g., to 20px), 0.75rem becomes 15px.
   */
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 /* Mission Checklist Format 📝 (aka lists for step-by-step instructions) */
