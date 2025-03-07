@@ -134,13 +134,32 @@
   --muad-dib: #C9C2BA;
 
   /*
-    Header text color: Princeton orange.
-    😎 Fun teacher facts: In 1989, while at Princeton, Wendy Kopp laid out the vision for
-    Teach For America in her senior thesis. Ms. Schuyler was born one year later and
-    eventually became a teacher through Teach For America! She also lived and worked
-    in Princeton from June 2015 to February 2017.
+    Header text color: Hermès orange.
+    😎 Context: The Orange Box: Hermès is famous for its iconic orange packaging,
+    which started as a happy accident. During World War II, wartime shortages forced
+    the company to use the only paper stock available — an orange shade. What began as
+    a necessity turned into a brand signature by the 1950s. Today, that vibrant orange
+    (often described as a warm, poppy-like hue) is synonymous with luxury and instantly recognizable.
+
+    🎨 Color Variations:
+    Different representations of the Hermès orange show how brand colors can vary across mediums:
+    #FF6600 - Traditional digital representation, brightest and most saturated.
+    #F77F00 - Warmer, more muted variation with red undertones.
+    #F37021 - Closest match to physical Hermès packaging, with a "burnt orange" quality.
+
+    ⚠️ Note: Using special characters in CSS variables (like è) isn't recommended as it
+    can cause encoding issues. For production, use: --hermes-orange instead.
+    I am a renegade which is why we are doing it here. 😝
   */
-  --princeton-orange: #F89317;
+
+  /* Classic digital version - very bright */
+  /* --hermès-orange: #FF6600; */
+
+  /* Warmer, muted variation */
+  /* --hermès-orange: #F77F00; */
+
+  /* Most accurate to physical packaging */
+  --hermès-orange: #F37021;
 
   /*
     Subheader text color: Peach 🍑👑
@@ -148,6 +167,15 @@
     South Carolina is actually the second largest peach producer in the U.S. behind California.
   */
   --peach: #FACAA1;
+
+  /*
+    Header text color: Princeton orange.
+    😎 Fun teacher facts: In 1989, while at Princeton, Wendy Kopp laid out the vision for
+    Teach For America in her senior thesis. Ms. Schuyler was born one year later and
+    eventually became a teacher through Teach For America! She also lived and worked
+    in Princeton from June 2015 to February 2017.
+  */
+  /* --princeton-orange: #F89317; */
 
   /*
     Dark mode as default 🌑 — why it’s the base:
@@ -202,7 +230,7 @@
   --background-color: var(--lapis-lazuli);
   --text-color: var(--white);
   --accent-text-color: var(--muad-dib);
-  --header-text-color: var(--princeton-orange);
+  --header-text-color: var(--hermès-orange);
   --subheader-text-color: var(--peach);
 }
 
