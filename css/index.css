@@ -10,6 +10,7 @@
 /*
   1. Home Styles
     .home-container { ... }
+    .home-container h1 { ... }
     .home-container p { ... }
 */
 
@@ -57,6 +58,20 @@
 }
 
 /*
+  Page Heading
+  Order of Properties: Style it (St)
+*/
+.home-container h1 {
+  /* --- Style It --- */
+
+  /*
+    Sets the color property with a CSS variable (--header-text-color, from global.css).
+      - Princeton orange in dark mode, switches to chefchaouen blue in light mode.
+  */
+  color: var(--header-text-color);
+}
+
+/*
   This styles paragraph text (<p> tags) inside the .home-container.
   Order of Properties:  Space It (Sp)
 */
@@ -81,6 +96,9 @@ Index.css
 │   │   └── padding
 │   └── Style It
 │       └── text-align
+├── .home-container h1
+│   └── Style It
+│       └── color
 └── .home-container p
     └── Space It
         └── line-height
