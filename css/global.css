@@ -103,7 +103,7 @@
   --british-racing-green: #004225;
 
   /*
-    Background color: Lapis lazuli — a deep, rich blue color.
+    Background and subheader text color: Lapis lazuli — a deep, rich blue color.
     😎 Fun Fact: Historically, lapis lazuli was ground into a pigment known as ultramarine,
     used by Renaissance artists for its vibrant blue hue.
 
@@ -134,6 +134,22 @@
   --muad-dib: #C9C2BA;
 
   /*
+    Header text color: Princeton orange.
+    😎 Fun teacher facts: In 1989, while at Princeton, Wendy Kopp laid out the vision for
+    Teach For America in her senior thesis. Ms. Schuyler was born one year later and
+    eventually became a teacher through Teach For America! She also lived and worked
+    in Princeton from June 2015 to February 2017.
+  */
+  --princeton-orange: #F89317;
+
+  /*
+    Subheader text color: Peach 🍑👑
+    😎 Fun fact: Sure, Georgia’s called the Peach State, but here’s the juicy twist -
+    South Carolina is actually the second largest peach producer in the U.S. behind California.
+  */
+  --peach: #FACAA1;
+
+  /*
     Dark mode as default 🌑 — why it’s the base:
 
     Dark mode cuts glare and reduces eye strain 👀, making screens less of a
@@ -148,7 +164,7 @@
   /* Light Theme Overrides 🌞 */
 
   /* 
-    Primary color: Chefchaouen blue - a vibrant blue that pops off the page.
+    Primary and header text color: Chefchaouen blue - a vibrant blue that pops off the page.
     😎 Context: Inspired by the blue-washed streets of Chefchaouen, Morocco. 
   */
   --chefchaouen-blue: #3A80D2;
@@ -186,6 +202,8 @@
   --background-color: var(--lapis-lazuli);
   --text-color: var(--white);
   --accent-text-color: var(--muad-dib);
+  --header-text-color: var(--princeton-orange);
+  --subheader-text-color: var(--peach);
 }
 
 /*
@@ -193,27 +211,14 @@
   These override default colors only in light mode.
 */
 
-/*
-  Disable lint rule 'no-descending-specificity' bc we’re nesting h1 in .light-theme
-  to override their default color (var(--text-color)) with chefchaouen blue in light mode only.
-  Kept disabled for the file to avoid warnings from base h1 rules.
-*/
-/* stylelint-disable no-descending-specificity */
 .light-theme {
   --primary-color: var(--chefchaouen-blue);
   --secondary-color: var(--emerald-green);
   --background-color: var(--anti-flash-white);
   --text-color: var(--charcoal);
   --accent-text-color: var(--white);
+  --header-text-color: var(--chefchaouen-blue);
   --subheader-text-color: var(--lapis-lazuli);
-
-  /*
-    Overrides the default text color only in light mode to use 
-    chefchaoouen blue for headings and subheadings.
-  */
-  h1 {
-    color: var(--primary-color);
-  }
 }
 
 /* 
