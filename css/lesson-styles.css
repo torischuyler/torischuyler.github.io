@@ -227,10 +227,3 @@
   */
   padding-left: 3.5rem;
 }
-
-/* Sub-missions 🛸 (aka nested lists) */
-.lesson-content li > ul {
-    /* Box Model - Docking Position */
-    padding-left: 1.875rem;   /* navigation clearance for nested missions */
-    margin-top: 0.5rem;   /* creates hierarchy in mission structure */
-}
