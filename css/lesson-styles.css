@@ -159,7 +159,7 @@
   🎯 Lesson goals list
   The .lesson-container ol styles the ordered list (<ol>) inside the lesson container.
   This is where lesson goals live, formatted as a numbered list for easy navigation.
-  Order of Properties: Space it
+  Order of Properties: Space it (Sp)
 */
 .lesson-container ol {
   /* --- Space It --- */
@@ -170,7 +170,7 @@
 
     🧮 Here’s the math:
       - 1rem = the root font size (default is 16px in browsers).
-      - So, 3.5rem = 3.5 × 16px = 56px of space.
+      - So, 3.5rem = 3.5rem × 16px = 56px of space.
       - If the root font size changes (e.g., to 18px), 3.5rem becomes 63px.
 
     Why rem? It scales spacing with font size for a consistent look -
@@ -183,9 +183,24 @@
   📋 Bullet Crew
   The .lesson-container li styles the list items (<li>) inside the lesson container.
   These are the bullet points in the lesson plan.
+
+  Order of Properties: Size it, Space it (Sz Sp)
 */
 .lesson-container li {
+  /* --- Size It --- */
+
+  /*
+    Typical li range for body text is 1rem to 1.25rem (16px - 20px).
+    Sets bullet points to 1.125rem 
+    (which is 18px, assuming a 16px default root size).
+
+    🧮 Here’s the math:
+      - 1.125rem × 16px = 18px font size.
+      - If the root font size changes (e.g., to 20px), 1.125rem becomes 22.5px.
+  */
   font-size: 1.125rem;
+
+  /* --- Space It --- */
   margin-bottom: 1rem;
 }
 
