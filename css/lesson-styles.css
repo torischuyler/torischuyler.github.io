@@ -14,6 +14,7 @@
     .lesson-container h2 { ... }
     .lesson-container main {...}
     .lesson-container ol {...}
+    .lesson-container li { ... }
 */
 
 /*
@@ -178,6 +179,16 @@
   padding-left: 3.5rem;
 }
 
+/*
+  📋 Bullet Crew
+  The .lesson-container li styles the list items (<li>) inside the lesson container.
+  These are the bullet points in the lesson plan.
+*/
+.lesson-container li {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
 /* Mission Checklist Format 📝 (aka lists for step-by-step instructions) */
 .lesson-content ul {
     /* Display & Positioning - how it fits in space */
@@ -190,15 +201,6 @@
     
     /* Visual Properties - make it look stellar */
     list-style-position: outside;   /* keeps numbers neatly aligned */
-}
-
-/* Mission Crew 🧑‍🚀 (aka list items) */
-.lesson-content li {
-    /* Typography */
-    font-size: 1.125rem;
-    
-    /* Box Model */
-    margin-bottom: 1rem;   /* provides breathing space between crew members */
 }
 
 /* Sub-missions 🛸 (aka nested lists) */
