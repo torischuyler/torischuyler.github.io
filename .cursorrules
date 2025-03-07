@@ -37,6 +37,7 @@ rules:
       - bug
       - test
       - lint
+      - delete
     scopes:
       - yaml
       - js
@@ -70,3 +71,4 @@ rules:
       - "bug(html): note issue with twitter:image not working in 1 HTML file"
       - "test(html): test functionality of X card tags in 2 HTML files"
       - "lint(html): escape & as &amp; to satisfy html linter in 1 HTML file"
+      - "delete(css): remove redundant nested ul styles in 1 CSS file"
