@@ -68,8 +68,22 @@
 }
 
 /*
+  Page Heading
+  Order of Properties: Style it (St)
+*/
+.lesson-container h1 {
+  /* --- Style It --- */
+
+  /*
+    Sets the color property with a CSS variable (--header-text-color, from global.css).
+      - Princeton orange in dark mode, switches to chefchaouen blue in light mode.
+  */
+  color: var(--header-text-color);
+}
+
+/*
   🧭 Subheadings to navigate the lesson plan
-  Order of Properties: Space it (Sp)
+  Order of Properties: Space it, Style it (Sp St)
 */
 .lesson-container h2 {
   /* --- Space It --- */
@@ -81,9 +95,11 @@
   */
   margin-bottom: 0.3rem;
 
+  /* --- Style It --- */
+
   /*
     Sets the color property with a CSS variable (--subheader-text-color, from global.css).
-      - White in dark mode, switches to lapis lazuli in light mode.
+      - Peach in dark mode, switches to lapis lazuli in light mode.
   */
   color: var(--subheader-text-color);
 }
