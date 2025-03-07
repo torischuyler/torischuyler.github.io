@@ -18,6 +18,7 @@
   1. Curricula Styles
     .curriculum-container { ... }
     .curriculum-container p { ... }
+    .curriculum-container h1 { ... }
     .curriculum-container h2 { ... }
     .curriculum-container ul { ... }
     .curriculum-container li { ... }
@@ -58,6 +59,20 @@
     keeping the nav balanced across different screens and settings.
   */
   padding: 2rem;
+}
+
+/*
+  Page Heading
+  Order of Properties: Style it (St)
+*/
+.curriculum-container h1 {
+  /* --- Style It --- */
+
+  /*
+    Sets the color property with a CSS variable (--header-text-color, from global.css).
+      - Princeton orange in dark mode, switches to chefchaouen blue in light mode.
+  */
+  color: var(--header-text-color);
 }
 
 /*
@@ -260,6 +275,9 @@ Curricula.css
 │   │   └── Space It
 │   │       ├── margin
 │   │       └── padding
+│   ├── .curriculum-container h1
+│   │   └── Style It
+│   │       └── color
 │   ├── .curriculum-container p
 │   │   └── Style It
 │   │       └── text-align
