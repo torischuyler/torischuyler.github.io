@@ -191,7 +191,7 @@
 
   /*
     Typical li range for body text is 1rem to 1.25rem (16px - 20px).
-    Sets bullet points to 1.125rem 
+    Sets bullet points to 1.125rem
     (which is 18px, assuming a 16px default root size).
 
     🧮 Here’s the math:
@@ -201,6 +201,13 @@
   font-size: 1.125rem;
 
   /* --- Space It --- */
+
+  /*
+    Adds 1rem below each item for breathing room.
+    🧮 Here’s the math:
+      - 1rem × 16px = 16px spacing (at a 16px default root).
+      - If root font size changes (e.g., to 20px), 1rem becomes 20px.
+  */
   margin-bottom: 1rem;
 }
 
