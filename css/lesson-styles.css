@@ -211,18 +211,18 @@
   margin-bottom: 0.75rem;
 }
 
-/* Mission Checklist Format 📝 (aka lists for step-by-step instructions) */
-.lesson-content ul {
-    /* Display & Positioning - how it fits in space */
-    display: block;   /* Vertical stack formation (default) */
-    
-    /* Box Model - the spacecraft's dimensions */
-    max-width: 80vw;
-    padding-left: 2.5rem;
-    margin: 0 0 1rem 0;
-    
-    /* Visual Properties - make it look stellar */
-    list-style-position: outside;   /* keeps numbers neatly aligned */
+/*
+  🧩 Unordered lists
+  The .lesson-container ul styles the unordered lists (<ul>) inside the lesson container.
+  This is where lesson duration, age groups, materials needed, lesson steps, and teacher tips
+  are presented as unordered lists for easy navigation.
+*/
+.lesson-container ul {
+  display: block;
+  max-width: 80vw;
+  padding-left: 2.5rem;
+  margin: 0 0 1rem 0;
+  list-style-position: outside;
 }
 
 /* Sub-missions 🛸 (aka nested lists) */
