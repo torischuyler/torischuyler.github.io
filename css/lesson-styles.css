@@ -217,13 +217,9 @@
   The .lesson-container ul styles the unordered lists (<ul>) inside the lesson container.
   This is where lesson duration, age groups, materials needed, lesson steps, and teacher tips
   are presented as unordered lists for easy navigation.
-  Order of Properties: Size It, Space It, Style It (Sz Sp St)
+  Order of Properties: Space It, Style It (Sp St)
 */
 .lesson-container ul {
-  /* --- Size It --- */
-
-  max-width: 80vw;
-
   /* --- Space It --- */
 
   padding-left: 2.5rem;
