@@ -17,8 +17,8 @@
 /* 
   1. Curricula Styles
     .curriculum-container { ... }
-    .curriculum-container p { ... }
     .curriculum-container h1 { ... }
+    .curriculum-container p { ... }
     .curriculum-container h2 { ... }
     .curriculum-container ul { ... }
     .curriculum-container li { ... }
@@ -95,6 +95,12 @@
 */
 .curriculum-container h2 {
   /* --- Style It --- */
+
+  /*
+    Sets the color property with a CSS variable (--subheader-text-color, from global.css).
+      - Peach in dark mode, switches to lapis lazuli in light mode.
+  */
+  color: var(--subheader-text-color);
 
   /*
     Underlines the subheading.
@@ -283,7 +289,7 @@ Curricula.css
 │   │       └── text-align
 │   ├── .curriculum-container h2
 │   │   └── Style It
-│   │       ├── font-family
+│   │       ├── color
 │   │       └── text-decoration
 │   ├── .curriculum-container ul
 │   │   └── Space It
