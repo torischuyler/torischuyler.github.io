@@ -12,6 +12,7 @@
     .lesson-container { ... }
     .lesson-container img { ... } 
     .lesson-container h2 { ... }
+    .lesson-container h3 { ... }
     .lesson-container main {...}
     .lesson-container ol {...}
     .lesson-container li { ... }
@@ -115,6 +116,17 @@
 
   /* Underline only the text, not the emoji */
   text-decoration: underline;
+}
+
+/*
+  🪜 Level 3 subheadings to navigate the lesson steps
+  Order of Properties: Style it (St)
+*/
+.lesson-container h3 {
+  /* --- Style It --- */
+
+  /* Font style. Fallbacks if Righteous fails. */
+  font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
 }
 
 /*
