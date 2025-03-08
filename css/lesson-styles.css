@@ -120,9 +120,18 @@
 
 /*
   🪜 Level 3 subheadings to navigate the lesson steps
-  Order of Properties: Style it (St)
+  Order of Properties: Space it, Style it (Sp St)
 */
 .lesson-container h3 {
+  /* --- Space It --- */
+
+  /*
+    Indents the subheading 1.5rem (24px at 16px root font size) from the left.
+    Creates a visual hierarchy under h2 or main content.
+    🧮 Math: 1.5rem × 16px = 24px; scales with root font size.
+  */
+  padding-left: 1.5rem;
+
   /* --- Style It --- */
 
   /* Font style. Fallbacks if Righteous fails. */
