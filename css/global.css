@@ -173,7 +173,7 @@
   --peach: #FACAA1;
 
   /*
-    Header text color: Princeton orange.
+    Subheader text color: Princeton orange.
     😎 Fun teacher facts: In 1989, while at Princeton, Wendy Kopp laid out the vision for
     Teach For America in her senior thesis. Ms. Schuyler was born one year later and
     eventually became a teacher through Teach For America! She also lived and worked
@@ -220,6 +220,16 @@
   */
   --charcoal: #2C3E50;
 
+  /* 
+    Subheader text color: Poppy - a bright, warm red with just the right amount of orange undertone.
+    😎 Fun Fact: Poppies close their petals at night and during bad weather, then open them again when 
+    conditions improve! They're like natural weather predictors. Ancient sailors actually used to 
+    watch poppies to help forecast the weather - if the flowers closed up during the day, 
+    they knew a storm might be coming. The flowers' movement is called "nyctinasty" - 
+    it's a response to changes in temperature and humidity.
+  */
+  --poppy: #E23D28;
+
   /*
     Theme-Agnostic Variables 🎭
 
@@ -251,7 +261,8 @@
   --text-color: var(--charcoal);
   --accent-text-color: var(--white);
   --header-text-color: var(--chefchaouen-blue);
-  --subheader-text-color: var(--lapis-lazuli);
+  --subheader-text-color: var(--poppy);
+  --subheader-three-text-color: var(--lapis-lazuli);
 }
 
 /* 

@@ -102,7 +102,7 @@
 
   /*
     Sets the color property with a CSS variable (--subheader-text-color, from global.css).
-      - Peach in dark mode, switches to lapis lazuli in light mode.
+      - Peach in dark mode, switches to poppy in light mode.
   */
   color: var(--subheader-text-color);
 }
@@ -139,7 +139,7 @@
 
   /*
     Sets the color property with a CSS variable (--subheader-three-text-color, from global.css).
-      - Princeton orange in dark mode.
+      - Princeton orange in dark mode, switches to lapus lazuli in light mode.
   */
   color: var(--subheader-three-text-color);
 }
