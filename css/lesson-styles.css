@@ -19,7 +19,7 @@
 */
 
 /*
-  Lesson plan pages
+  Lesson Plan Pages
   The .lesson-container holds the content for the lesson plan pages.
   It controls the width and spacing of the content area.
   Order of Properties: Space it (Sp)
@@ -107,7 +107,7 @@
 }
 
 /*
-  🏹 Targets subheadings
+  🏹 Targets Subheadings
   Order of Properties: Style it (St)
 */
 .lesson-container h2 span {
@@ -196,7 +196,7 @@
 }
 
 /*
-  🎯 Lesson goals list
+  🎯 Lesson Goals List
   The .lesson-container ol styles the ordered list (<ol>) inside the lesson container.
   This is where lesson goals live, formatted as a numbered list for easy navigation.
   Order of Properties: Space it (Sp)
@@ -246,7 +246,7 @@
 }
 
 /*
-  Unordered lists
+  Unordered Lists
   The .lesson-container ul styles the unordered lists (<ul>) inside the lesson container.
   This is where lesson duration, age groups, materials needed, lesson steps, and teacher tips
   are presented as unordered lists for easy navigation.
@@ -279,6 +279,7 @@
 }
 
 /*
+  Paragraph Text
   This styles paragraph text (<p> tags) inside the .lesson-container.
   Order of Properties: Size it, Space it (Sz Sp)
 */
