@@ -2,13 +2,10 @@
   👩‍🏫👨‍🏫 Lesson-styles.css - The stylesheet for lesson plan pages.
   This file defines the styles that apply specifically
   to the lesson plan pages of eOS Lesson Plans.
-
-  Table of Contents:
-    1. Lesson Styles   - Structure and spacing for lesson plan pages
 */
 
 /*
-  1. Lesson Styles
+  Lesson Styles
     .lesson-container { ... }
     .lesson-container img { ... } 
     .lesson-container h2 { ... }
