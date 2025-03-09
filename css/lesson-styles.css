@@ -158,10 +158,9 @@
 }
 
 /*
-  📖 Main Content HQ - getting to the good stuff.
-  .lesson-container main targets the <main> element within the
-  container, controlling layout stuff like width, flex, 
-  margin, and padding behavior.
+  📖 Main Content HQ - getting to the good stuff! .lesson-container main targets
+  the <main> element within the container, controlling layout such as width,
+  flex, margin, and padding behavior.
   Order of Properties: Size it, Space it (Sz Sp)
 */
 .lesson-container main {
