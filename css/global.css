@@ -179,8 +179,7 @@
     eventually became a teacher through Teach For America! She also lived and worked
     in Princeton from June 2015 to February 2017.
   */
-
-  /* --princeton-orange: #F89317; */
+  --princeton-orange: #F89317;
 
   /*
     Dark mode as default 🌑 — why it’s the base:
@@ -237,6 +236,7 @@
   --accent-text-color: var(--muad-dib);
   --header-text-color: var(--hermès-orange);
   --subheader-text-color: var(--peach);
+  --subheader-three-text-color: var(--princeton-orange);
 }
 
 /*

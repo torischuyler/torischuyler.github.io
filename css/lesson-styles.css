@@ -136,6 +136,12 @@
 
   /* Font style. Fallbacks if Righteous fails. */
   font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
+
+  /*
+    Sets the color property with a CSS variable (--subheader-three-text-color, from global.css).
+      - Princeton orange in dark mode.
+  */
+  color: var(--subheader-three-text-color);
 }
 
 /*
