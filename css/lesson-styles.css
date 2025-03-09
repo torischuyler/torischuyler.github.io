@@ -78,7 +78,7 @@
 
   /*
     Sets the color property with a CSS variable (--header-text-color, from global.css).
-      - Princeton orange in dark mode, switches to chefchaouen blue in light mode.
+      - Hèrmes orange in dark mode, switches to chefchaouen blue in light mode.
   */
   color: var(--header-text-color);
 }
