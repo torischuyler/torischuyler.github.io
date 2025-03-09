@@ -261,15 +261,6 @@
       - British racing green in dark mode, switches to emerald green in light mode.
   */
   background-color:  var(--secondary-color);
-
-  /*
-    This creates a text box around the link when hovered or focused.
-      - Syntax: horizontal-offset vertical-offset blur-radius spread-radius color
-      - Values: 0 (no left/right shift), 0 (no up/down shift), 0 (no blur), 2px (2-pixel thickness).
-    Sets the color property with a CSS variable (--primary-color, from global.css).
-      - Deep skyler in dark mode, switches to chefchaouen blue in light mode.
-  */
-  box-shadow: 0 0 0 2px var(--primary-color);
 }
 
 /*
@@ -314,5 +305,4 @@ Curricula.css
             ├── color
             ├── text-decoration
             ├── background-color
-            └── box-shadow
 */
