@@ -141,8 +141,11 @@
 
   /* --- Style It --- */
 
-  /* Font style. Fallbacks if Righteous fails. */
-  font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
+  /*
+    If Righteous font isn’t ready to roll,
+    fall back to the system-ui default, then sans-serif as the final catch-all.
+  */
+  font-family: Righteous, system-ui, sans-serif;
 
   /*
     Sets the color property with a CSS variable (--subheader-three-text-color, from global.css).

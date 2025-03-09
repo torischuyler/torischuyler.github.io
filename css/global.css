@@ -346,14 +346,10 @@ body {
   /* --- Style It --- */
 
   /*
-    If Righteous font isn't ready for takeoff,
-    use our trusty Space Grotesk font backup crew.
-
-    We use quotes around 'Space Grotesk' because it’s a multi-word font name,
-    unlike single-word Righteous, system-ui, or sans-serif —
-    quotes are required for multi-word names.
+    If Righteous font isn’t ready to roll,
+    fall back to the system-ui default, then sans-serif as the final catch-all.
   */
-  font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
+  font-family: Righteous, system-ui, sans-serif;
 
   /* 
     Sets text color using our theme-agnostic primary hue
@@ -387,14 +383,10 @@ h2 {
   /* --- Style It --- */
   
   /*
-    If Righteous font isn't ready for takeoff,
-    use our trusty Space Grotesk font backup crew.
-
-    We use quotes around 'Space Grotesk' because it’s a multi-word font name,
-    unlike single-word Righteous, system-ui, or sans-serif —
-    quotes are required for multi-word names.
+    If Righteous font isn’t ready to roll,
+    fall back to the system-ui default, then sans-serif as the final catch-all.
   */
-  font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
+  font-family: Righteous, system-ui, sans-serif;
 
   /* 
     Sets boldness to 700 (bold) for strong visual hierarchy—thicker than normal (400)
