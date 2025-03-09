@@ -211,7 +211,6 @@
     🧮 Here’s the math:
       - 1rem = the root font size (default is 16px in browsers).
       - So, 3.5rem = 3.5rem × 16px = 56px of space.
-      - If the root font size changes (e.g., to 18px), 3.5rem becomes 63px.
   */
   padding-left: 3.5rem;
 }
@@ -233,7 +232,6 @@
 
     🧮 Here’s the math:
       - 1.125rem × 16px = 18px font size.
-      - If the root font size changes (e.g., to 20px), 1.125rem becomes 22.5px.
   */
   font-size: 1.125rem;
 
@@ -243,7 +241,6 @@
     Adds 0.75rem below each item for balanced spacing.
     🧮 Here’s the math:
       - 0.75rem × 16px = 12px spacing (at a 16px default root).
-      - If root font size changes (e.g., to 20px), 0.75rem becomes 15px.
   */
   margin-bottom: 0.75rem;
 }
