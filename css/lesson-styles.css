@@ -17,6 +17,7 @@
     .lesson-container ol {...}
     .lesson-container li { ... }
     .lesson-container ul { ... }
+    .lesson-container ul ul { ... }
     .lesson-container p { ... }
 */
 
@@ -265,6 +266,23 @@
     Pushes bullets 3.5rem (56px) from the left, same as <ol>.
   */
   padding-left: 3.5rem;
+}
+
+/*
+  🪆 Nested Unordered Lists
+  Targets <ul> inside another <ul> within .lesson-container to style nested lists.
+  Reduces padding from 3.5rem to 1.5rem for a tighter hierarchy without over-indentation.
+  Order of Properties: Space It (Sp)
+*/
+.lesson-container ul ul {
+  /* --- Space It --- */
+
+  /*
+    Sets padding to 1.5rem (24px at 16px root font size).
+    Keeps nested lists readable without pushing them too far right.
+    🧮 Math: 1.5rem × 16px = 24px; scales with root font size.
+  */
+  padding-left: 1.5rem;
 }
 
 /*
