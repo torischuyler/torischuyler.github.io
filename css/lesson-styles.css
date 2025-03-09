@@ -139,7 +139,7 @@
 
   /*
     Sets the color property with a CSS variable (--subheader-three-text-color, from global.css).
-      - Princeton orange in dark mode, switches to lapus lazuli in light mode.
+      - Princeton orange in dark mode, switches to moonstone in light mode.
   */
   color: var(--subheader-three-text-color);
 }

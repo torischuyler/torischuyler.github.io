@@ -220,7 +220,7 @@
   */
   --charcoal: #2C3E50;
 
-  /* 
+  /*
     Subheader text color: Poppy - a bright, warm red with just the right amount of orange undertone.
     😎 Fun Fact: Poppies close their petals at night and during bad weather, then open them again when 
     conditions improve! They're like natural weather predictors. Ancient sailors actually used to 
@@ -229,6 +229,16 @@
     it's a response to changes in temperature and humidity.
   */
   --poppy: #E23D28;
+
+  /*
+    Subheader text color: Moonstone inspired, a medium-light blue with a slight gray undertone.
+    😎 Fun Context: Moonstone has a unique optical effect called "adularescence" which creates 
+    a floating blue-white glow that moves across the stone when tilted. This ethereal effect, 
+    resembling moonlight through clouds, led Ancient Romans to believe the stones 
+    contained actual captured moonbeams. Moonstone is also one of the three birthstones for June,
+    the month Ms. Schuyler was born in! Pearl and alexandrite are the other two.
+  */
+  --moonstone: #63B0CD;
 
   /*
     Theme-Agnostic Variables 🎭
@@ -262,7 +272,7 @@
   --accent-text-color: var(--white);
   --header-text-color: var(--chefchaouen-blue);
   --subheader-text-color: var(--poppy);
-  --subheader-three-text-color: var(--lapis-lazuli);
+  --subheader-three-text-color: var(--moonstone);
 }
 
 /* 
