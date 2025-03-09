@@ -6,12 +6,12 @@
 
 rules:
   commit_message:
-    format: "{type}({scope}): {description} in {number} {target} {plurality}"
+    format: "{type}({scopes}): {description} in {targets}"
     case_style: "toricase"  # Naming your custom style here for clarity
     toricase:  # Define "toricase" explicitly
       type:
         case: lower  # {type} always lowercase, e.g., "feat", "refactor"
-      scope:
+      scopes:
         case: lower  # {scope} always lowercase, e.g., "html", "js"
       description:
         case: lower  # Base case is lowercase
@@ -20,7 +20,7 @@ rules:
           - proper_nouns: [
             "TypeScript", "Python", "JavaScript"
           ]  # Add more as needed
-      target:
+      targets:
         case: lower  # Base case is lowercase
         exceptions:  # Same capitalization rules as description
           - acronyms: ["SEO", "ARIA", "HTML", "JS", "CSS"]
@@ -45,20 +45,17 @@ rules:
       - assets
       - json
       - css
-    target:
-      description: "What's changed within the scope, named as you go"
+    targets:
+      description: "List of affected items with counts and types"
+      format: |
+          "{number} {target} {plurality}[ and {number} {target} {plurality}]*"
       examples:
-        - "HTML files"
-        - "JS files"
-        - "config files"
-        - "CSS files"
+        - "1 HTML file"
+        - "2 JS files"
+        - "1 HTML file and 1 CSS file"
+        - "3 HTML files and 2 CSS files"
     description:
       tense: active
-    number:
-      description: "How many items of the target were changed"
-    plurality:
-      - "files"  # for 2+, e.g., "in 5 HTML files"
-      - "file"  # for 1, e.g., "in 1 HTML file"
     examples:
       - "feat(yaml): create initial commit message format rules in 1 YAML file"
       - "refactor(js): update emojis in theme toggle in 1 JS file"
@@ -71,4 +68,5 @@ rules:
       - "bug(html): note issue with twitter:image not working in 1 HTML file"
       - "test(html): test functionality of X card tags in 2 HTML files"
       - "lint(html): escape & as &amp; to satisfy html linter in 1 HTML file"
-      - "delete(css): remove redundant nested ul styles in 1 CSS file"
+      - "delete(html, css): remove styles in 1 HTML file and 1 CSS file"
+      - "chore(html, js): standardize comments in 2 HTML files and 1 JS file"
