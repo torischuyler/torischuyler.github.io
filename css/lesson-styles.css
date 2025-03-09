@@ -120,9 +120,17 @@
 
 /*
   🪜 Level 3 subheadings to navigate the lesson steps
-  Order of Properties: Space it, Style it (Sp St)
+  Order of Properties: Size it, Space it, Style it (Sz Sp St)
 */
 .lesson-container h3 {
+  /* --- Size It --- */
+
+  /*
+    Sets subheading to 1.25rem (20px at default 16px root font size).
+    Typical h3 range is 1rem–1.25rem (16px–20px).
+  */
+  font-size: 1.25rem;
+
   /* --- Space It --- */
 
   /*
