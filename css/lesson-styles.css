@@ -109,10 +109,10 @@
 
 /*
   🏹 Targets subheadings
-  Order of Properties: Space it (Sp)
+  Order of Properties: Style it (St)
 */
 .lesson-container h2 span {
-  /* --- Space It --- */
+  /* --- Style It --- */
 
   /* Underline only the text, not the emoji */
   text-decoration: underline;
