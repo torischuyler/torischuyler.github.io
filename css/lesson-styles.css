@@ -17,6 +17,7 @@
     .lesson-container ol {...}
     .lesson-container li { ... }
     .lesson-container ul { ... }
+    .lesson-container p { ... }
 */
 
 /*
@@ -251,7 +252,7 @@
 }
 
 /*
-  🧩 Unordered lists
+  Unordered lists
   The .lesson-container ul styles the unordered lists (<ul>) inside the lesson container.
   This is where lesson duration, age groups, materials needed, lesson steps, and teacher tips
   are presented as unordered lists for easy navigation.
@@ -264,4 +265,18 @@
     Pushes bullets 3.5rem (56px) from the left, same as <ol>.
   */
   padding-left: 3.5rem;
+}
+
+/*
+  This styles paragraph text (<p> tags) inside the .lesson-container.
+  Order of Properties: Size it, Space it (Sz Sp)
+*/
+.lesson-container p {
+  /* --- Size It --- */
+
+  font-size: 1.125rem;
+
+  /* --- Space It --- */
+
+  padding-left: 1.7rem;
 }
