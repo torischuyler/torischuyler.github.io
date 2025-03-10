@@ -136,12 +136,10 @@ This setup keeps things simple and standard, so your browser knows exactly where
 
         <!-- Begin Main Section -------------------------------------------------------->
         <!-- Main content area - where the primary, unique content of the page lives. -->
-        <main aria-label="Main content">
-        <!-- 'aria-label' tags this as "Main navigation" for screen readers since there’s no heading;
-        without it, it’d just be "navigation," leaving visitors unsure which nav this is (e.g., main vs. footer). -->
-
-            <div class="home-container">
-            <!-- Organizes 'Who Are You?' content for consistent layout and styling across devices. -->
+        <div class="home-container">
+            <main aria-label="Main content">
+            <!-- 'aria-label' tags this as "Main content" for screen readers since there’s no heading;
+            without it, it’d just be "region," leaving visitors unsure of its purpose. -->
 
                 <h1>Welcome to eOS Lesson Plans</h1>
                 <!-- Main heading of the page, sets the theme or topic. -->
@@ -149,8 +147,8 @@ This setup keeps things simple and standard, so your browser knows exactly where
                 <p>This site hosts lesson plans for students on media and digital literacy,
                 and for developers on computer basics, building the foundation for an educational operating system (eOS).</p>
                 <!-- A paragraph, a block of text. -->
-            </div>
-        </main>
+            </main>
+        </div>
         <!-- End Main Section ---------------------------------------------------------->
 
         <!-- Begin Footer Section ------------------------------------------------------>
@@ -211,8 +209,8 @@ DOCTYPE
         │   └── noscript
         │       └── div
         │           └── p
-        ├── main
-        │   └── div
+        ├── div (home-container)
+        │   └── main
         │       ├── h1
         │       └── p
         ├── footer
