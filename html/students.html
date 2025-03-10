@@ -124,14 +124,13 @@ on media literacy and digital literacy for students. -->
         </nav>
         <!-- End Navigation Section  --------------------------------------------------->
 
+        <!-- Wrap all curriculum content in .curriculum-container ---------------------->
+        <div class="curriculum-container">
         <!-- Begin Main Section -------------------------------------------------------->
         <!-- Main content area - where the primary, unique content of the page lives. -->
-        <main aria-label="Main content">
-        <!-- 'aria-label' tags this as "Main navigation" for screen readers since there’s no heading;
-        without it, it’d just be "navigation," leaving visitors unsure which nav this is (e.g., main vs. footer). -->
-
-            <div class="curriculum-container">
-            <!-- Organizes curriculum content for consistent layout and styling across devices. -->
+            <main aria-label="Main content">
+            <!-- 'aria-label' tags this as "Main navigation" for screen readers since there’s no heading;
+            without it, it’d just be "navigation," leaving visitors unsure which nav this is (e.g., main vs. footer). -->
 
                 <h1>Students</h1>
                 <!-- Main heading of the page, sets the theme or topic. -->
@@ -171,9 +170,10 @@ on media literacy and digital literacy for students. -->
                     <li><a href="javascript:void(0)">Lesson 5: Smart Tethering: Connecting Your Laptop to the Internet Anywhere with Your Phone</a> - <em>Coming Soon!</em></li>
                     <!-- Another list item, aka another bullet point. -->
                 </ul>
-            </div>
-        </main>
-        <!-- End Main Section ---------------------------------------------------------->
+            </main>
+            <!-- End Main Section ------------------------------------------------------>
+        </div>
+        <!-- End of .curriculum-container ---------------------------------------------->
 
         <!-- Begin Footer Section ------------------------------------------------------>
         <!-- Footer content, like copyright info, contact details, or additional links. -->
@@ -234,8 +234,8 @@ DOCTYPE
         │   └── noscript
         │       └── div
         │           └── p
-        ├── main
-        │   └── div
+        ├── div (curriculum-container)
+        │   └── main
         │       ├── h1
         │       ├── p
         │       ├── h2

@@ -127,23 +127,23 @@ have a common baseline understanding. -->
         </nav>
         <!-- End Navigation Section  --------------------------------------------------->
 
+        <!-- Wrap all curriculum content in .curriculum-container ---------------------->
+        <div class="curriculum-container">
         <!-- Begin Main Section -------------------------------------------------------->
         <!-- Main content area - where the primary, unique content of the page lives. -->
-        <main aria-label="Main content">
-        <!-- 'aria-label' tags this as "Main navigation" for screen readers since there’s no heading;
-        without it, it’d just be "navigation," leaving visitors unsure which nav this is (e.g., main vs. footer). -->
-
-            <div class="curriculum-container">
-            <!-- Organizes curriculum content for consistent layout and styling across devices. -->
+            <main aria-label="Main content">
+            <!-- 'aria-label' tags this as "Main navigation" for screen readers since there’s no heading;
+            without it, it’d just be "navigation," leaving visitors unsure which nav this is (e.g., main vs. footer). -->
 
                 <h1>Developers</h1>
                 <!-- Main heading of the page, sets the theme or topic. -->
 
                 <p>Here you'll find lesson plans focused on computer basics and operating system fundamentals.</p>
                 <!-- A paragraph, a block of text. -->
-            </div>
-        </main>
-        <!-- End Main Section ---------------------------------------------------------->
+            </main>
+            <!-- End Main Section ---------------------------------------------------------->
+        </div>
+        <!-- End of .curriculum-container -------------------------------------------------->
 
         <!-- Begin Footer Section ------------------------------------------------------>
         <!-- Footer content, like copyright info, contact details, or additional links. -->
@@ -172,7 +172,7 @@ DOCTYPE
     ├── head
     │   ├── meta (charset)
     │   ├── meta (viewport)
-    │   └── title
+    │   ├── title
     │   ├── link (favicon)
     │   ├── SEO Group
     │   │   ├── meta (robots)
@@ -204,8 +204,8 @@ DOCTYPE
         │   └── noscript
         │       └── div
         │           └── p
-        ├── main
-        │   └── div
+        ├── div (curriculum-container)
+        │   └── main
         │       ├── h1
         │       └── p
         ├── footer
