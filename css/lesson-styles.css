@@ -22,10 +22,26 @@
   Lesson Plan Pages
   The .lesson-container holds the content for the lesson plan pages.
   It controls the width and spacing of the content area.
-  Order of Properties: Space it (Sp)
+  Order of Properties: Size it, Space it (Sz Sp)
 */
 .lesson-container {
+  /* --- Size It --- */
+
+  /*
+    max-width: 80vw sets the maximum width to 80% of the viewport width.
+    This limits how wide the container can grow.
+  */
+  max-width: 80vw;
+
   /* --- Space It --- */
+
+  /*
+    Space outside container ⬆️⬇️⬅️➡️
+    Using two values:
+    0 = top and bottom margins (no space above or below).
+    auto = left and right margins (splits remaining space to center container).
+  */
+  margin: 0 auto;
 
   /*
     This doubles the space between text lines (32px for a 16px font).
@@ -158,29 +174,12 @@
 }
 
 /*
-  📖 Main Content HQ - getting to the good stuff! .lesson-container main targets
-  the <main> element within the container, controlling layout such as width,
-  flex, margin, and padding behavior.
-  Order of Properties: Size it, Space it (Sz Sp)
+  📖 Main Content HQ - the heart of the lesson, .lesson-container main
+  targets the <main> element within the container.
+  Order of Properties: Space it (Sp)
 */
 .lesson-container main {
-  /* --- Size It --- */
-
-  /*
-    max-width: 80vw sets the maximum width to 80% of the viewport width.
-    This limits how wide the container can grow.
-  */
-  max-width: 80vw;
-
   /* --- Space It --- */
-
-  /*
-    Space outside container ⬆️⬇️⬅️➡️
-    Using two values:
-    0 = top and bottom margins (no space above or below).
-    auto = left and right margins (splits remaining space to center container).
-  */
-  margin: 0 auto;
 
   /*
     Space inside container ⬆️⬇️➡️⬅️
