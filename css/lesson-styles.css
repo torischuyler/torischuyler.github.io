@@ -296,3 +296,61 @@
   */
   padding-left: 1.7rem;
 }
+
+/*
+Lesson-styles.css
+├── .lesson-container
+│   ├── Size It
+│   │   └── max-width
+│   └── Space It
+│       ├── margin
+│       └── line-height
+├── .lesson-container img
+│   ├── Size It
+│   │   ├── max-width
+│   │   └── display
+│   └── Space It
+│       └── margin
+├── .lesson-container h1
+│   └── Style It
+│       └── color
+├── .lesson-container h2
+│   ├── Space It
+│   │   └── margin-bottom
+│   └── Style It
+│       └── color
+├── .lesson-container h2 span
+│   └── Style It
+│       └── text-decoration
+├── .lesson-container h3
+│   ├── Size It
+│   │   └── font-size
+│   ├── Space It
+│   │   └── padding-left
+│   └── Style It
+│       ├── font-family
+│       ├── color
+│       └── text-decoration
+├── .lesson-container main
+│   └── Space It
+│       └── padding
+├── .lesson-container ol
+│   └── Space It
+│       └── padding-left
+├── .lesson-container li
+│   ├── Size It
+│   │   └── font-size
+│   └── Space It
+│       └── margin-bottom
+├── .lesson-container ul
+│   └── Space It
+│       └── padding-left
+├── .lesson-container ul ul
+│   └── Space It
+│       └── padding-left
+└── .lesson-container p
+    ├── Size It
+    │   └── font-size
+    └── Space It
+        └── padding-left
+*/
