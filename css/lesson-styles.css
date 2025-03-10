@@ -7,7 +7,8 @@
 /*
   Lesson Styles
     .lesson-container { ... }
-    .lesson-container img { ... } 
+    .lesson-container img { ... }
+    .lesson-container h1 { ... }
     .lesson-container h2 { ... }
     .lesson-container h3 { ... }
     .lesson-container main {...}
