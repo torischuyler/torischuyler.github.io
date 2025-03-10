@@ -290,5 +290,9 @@
 
   /* --- Space It --- */
 
+  /*
+    Indents by 1.7rem (27.2px at 16px root).
+    Why 1.7? I dunno, just liked the look 🤷‍♀️
+  */
   padding-left: 1.7rem;
 }
