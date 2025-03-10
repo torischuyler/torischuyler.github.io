@@ -24,8 +24,9 @@ rules:
         case: lower  # Base case is lowercase
         exceptions:  # Same capitalization rules as description
           - acronyms:
-            values: ["SEO", "ARIA", "HTML", "JS", "CSS"]
-            note: "Acronyms in targets must use uppercase when listed here"
+              values: ["SEO", "ARIA", "HTML", "JS", "CSS"]
+              apply: "uppercase"  # Explicitly enforce uppercase for acronyms in targets
+              note: "Acronyms in targets must use uppercase when listed here"
           - proper_nouns: ["TypeScript", "Python", "JavaScript"]
     types:
       - feat
