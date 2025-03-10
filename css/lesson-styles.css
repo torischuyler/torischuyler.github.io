@@ -47,7 +47,7 @@
   /*
     This doubles the space between text lines (32px for a 16px font).
   */
-  line-height: 2;
+  line-height: 1.5;
 }
 
 /*
