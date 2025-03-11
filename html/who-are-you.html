@@ -125,17 +125,15 @@ the creator of the eOS Lesson Plans website. -->
                 </div>
             </noscript>
         </nav>
-        <!-- End Navigation Section  --------------------------------------------------->
+        <!-- End Navigation Section  --------------------------------------------------------->
 
-        <!-- Begin Main Section -------------------------------------------------------->
-        <!-- Main content area - where the primary, unique content of the page lives. -->
-        <main aria-label="Main content">
-        <!-- 'aria-label' tags this as "Main navigation" for screen readers since there’s no heading;
-        without it, it’d just be "navigation," leaving visitors unsure which nav this is (e.g., main vs. footer). -->
-
-            <!-- Begin Who Are You? Section ------------------------------------------------------>
-            <!-- The <section> element groups the 'Who Are You?' content, used for styling and organizing the personal introduction. -->
-            <section class="who-are-you-container" aria-label="About Tori">
+        <!-- Wrap all "Who Are You?" content in .who-are-you-container ----------------------->
+        <div class="who-are-you-container" aria-label="About Tori">
+            <!-- Begin Main Section -------------------------------------------------------->
+            <!-- Main content area - where the primary, unique content of the page lives. -->
+            <main aria-label="Main content">
+            <!-- 'aria-label' tags this as "Main content" for screen readers since there’s no heading;
+            without it, it’d just be "region," leaving visitors unsure of its purpose. -->
 
                 <h1>Who Are You?</h1>
                 <!-- Main heading (<h1>) of the page, sets the theme or topic. -->
@@ -161,12 +159,12 @@ the creator of the eOS Lesson Plans website. -->
                     <li>Tech is for everyone 💝</li>
                     <!-- Another list item, aka another bullet point. -->
                 </ul>
-            </section>
-            <!-- End Who Are You? Section ---------------------------------------------->
-        </main>
-        <!-- End Main Section ---------------------------------------------------------->
+            </main>
+            <!-- End Main Section ---------------------------------------------------------->
+        </div>
+        <!-- End of .who-are-you-container ------------------------------------------------->
 
-        <!-- Begin Footer Section ------------------------------------------------------>
+        <!-- Begin Footer Section ---------------------------------------------------------->
         <!-- Footer content, like copyright info, contact details, or additional links. -->
         <footer aria-label="Page footer">
         <!-- 'aria-label' tags this as "Page footer" for screen readers, adding clarity since there’s no heading;
@@ -225,8 +223,8 @@ DOCTYPE
         │   └── noscript
         │       └── div
         │           └── p
-        ├── main
-        │   └── section
+        ├── div (who-are-you-container)
+        │   └── main
         │       ├── h1
         │       ├── p
         │       ├── p
