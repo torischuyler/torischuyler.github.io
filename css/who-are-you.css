@@ -20,10 +20,32 @@
 */
 .who-are-you-container {
   /* --- Size It --- */
-  max-width: 50rem;
 
-/* --- Space It --- */
+  /*
+    max-width: 60vw sets the maximum width to 60% of the viewport width.
+    This limits how wide the container can grow.
+  */
+  max-width: 60vw;
+
+  /* --- Space It --- */
+
+  /*
+    Space outside container ⬆️⬇️⬅️➡️
+    Using two values:
+    0 = top and bottom margins (no space above or below).
+    auto = left and right margins (splits remaining space to center container).
+  */
   margin: 0 auto;
+
+  /*
+    Space inside container ⬆️⬇️➡️⬅️
+    Rem = “root em,” based on the <html> font size (usually 16 px by default).
+    So, 1rem = 16px, 2rem = 32px. Simple math! 🧮
+    2rem applies to all sides (top, right, bottom, left).
+
+    Why use rem here? It’s responsive—padding scales with browser font size changes,
+    keeping the nav balanced across different screens and settings.
+  */
   padding: 2rem;
 }
 
