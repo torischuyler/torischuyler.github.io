@@ -14,7 +14,7 @@
 /*
   The .home-container holds the content for the home page.
   It controls the width and spacing of the content area.
-  Order of Properties: Size it, Space it (Sz Sp St)
+  Order of Properties: Size it, Space it, Style it (Sz Sp St)
 */
 .home-container {
   /* --- Size It --- */
