@@ -8,6 +8,7 @@
   Who Are You Styles
     .who-are-you-container { ... }
     .who-are-you-container h1 { ... }
+      @keyframes spin { ... }
     .who-are-you-container p  { ... }
     .who-are-you-container ul { ... }
     .who-are-you-container li { ... }
@@ -77,7 +78,7 @@
 
 /*
   Page Heading
-  Order of Properties: Size it, Style it (Sz St)
+  Order of Properties: Size it, Style it, Chaos it (Sz St Ch)
 */
 .who-are-you-container h1 {
   /* --- Size It --- */
@@ -99,6 +100,35 @@
       - Grogu green in dark mode, switches to ruby red in light mode.
   */
   color: var(--tori-header-color);
+
+  /* --- Chaos It --- */
+
+  /*
+    🤪 Spins the header 1 time over 6 seconds, then stops.
+    Linear means the animation happens at a steady, constant speed from start to finish.
+  */
+  animation: spin 6s linear;
+
+  /*
+    🌟 Hot pink glow, bc chaos
+    0 - Horizontal offset (How far the shadow moves left or right from the text).
+    0 - Vertical offset (How far the shadow moves up or down from the text).
+    10px - Blur radius (How blurry or spread out the shadow gets.
+    Bigger number = softer, wider glow; smaller = sharper, tighter edge).
+    #FF69B4 - Hot pink color.
+
+    🎛️ Glow Control: For shadows/glows, px is common bc you often want 
+    a fixed, predictable effect, not something that shifts.
+  */
+  text-shadow: 0 0 10px #FF69B4;
+}
+
+/* Define the spin animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+
+  /* 1 spin */
+  to { transform: rotate(360deg); }
 }
 
 /*
