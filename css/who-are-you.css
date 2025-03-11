@@ -104,13 +104,13 @@
   Order of Properties: Space it (Sp)
 */
 .who-are-you-container p {
-    /* --- Space It --- */
+  /* --- Space It --- */
 
-    /*
-      Adds space below the heading (1.618rem ≈ 26px) using the golden ratio
-      for aesthetic harmony (and bc 6/18 is my bday 😎).
-    */
-    margin-bottom: 1.618rem;
+  /*
+    Adds space below the heading (1.618rem ≈ 26px) using the golden ratio
+    for aesthetic harmony (and bc 6/18 is my bday 😎).
+  */
+  margin-bottom: 1.618rem;
 }
 
 /*
