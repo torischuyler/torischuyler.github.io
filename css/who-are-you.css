@@ -51,17 +51,18 @@
 
 /*
   Page Heading
-  Order of Properties: Size it, Space it, Style it (Sz Sp St)
+  Order of Properties: Size it (Sz)
 */
 .who-are-you-container h1 {
   /* --- Size It --- */
+
+  /*
+    Sets heading font size to 3rem.
+    🧮 Here's the math:
+      - 3rem × 16px = 48px (at a 16px default root).
+    Typical h1 range is 2rem-4rem (32px–64px).
+  */
   font-size: 3rem;
-
-  /* --- Space It --- */
-  margin-bottom: 2rem;
-
-  /* --- Style It --- */
-  font-family: Righteous, system-ui, sans-serif;
 }
 
 /* Styles all the main paragraphs of text
