@@ -204,6 +204,11 @@
   */
   --princeton-orange: #F89317;
 
+  /*
+    Tori header text color: Grogu green.
+  */
+  --grogu-green: #9CBB80;
+
   /* Light Theme Overrides 🌞 */
 
   /* 
@@ -285,6 +290,7 @@
   --header-text-color: var(--hermès-orange);
   --subheader-text-color: var(--peach);
   --subheader-three-text-color: var(--princeton-orange);
+  --tori-header-color: var(--grogu-green);
 }
 
 /*
