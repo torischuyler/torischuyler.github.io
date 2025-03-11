@@ -4,6 +4,15 @@
   to the "Who Are You?" page.
 */
 
+/*
+  Who Are You Styles
+    .who-are-you-container { ... }
+    .who-are-you-container h1 { ... }
+    .who-are-you-container p  { ... }
+    .who-are-you-container ul { ... }
+    .who-are-you-container li { ... }
+*/
+
 /* This is the main wrapper that keeps everything neat and centered on the page
    - max-width keeps content from getting too wide
    - margin auto centers everything horizontally
