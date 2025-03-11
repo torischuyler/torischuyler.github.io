@@ -25,22 +25,22 @@ rules:
         exceptions:  # Same capitalization rules as description
           - acronyms:
               values: ["SEO", "ARIA", "HTML", "JS", "CSS"]
-              apply: "uppercase"  # Explicitly enforce uppercase for acronyms in targets
+              apply: "uppercase"  # Force uppercase for acronyms
               note: "Acronyms in targets must use uppercase when listed here"
           - proper_nouns: ["TypeScript", "Python", "JavaScript"]
     types:
-      - feat
-      - refactor
-      - chore
-      - teach
-      - a11y
-      - seo
-      - security
-      - fix
-      - bug
-      - test
-      - lint
-      - delete
+      - feat: "Adds a new feature or functionality"
+      - refactor: "Enhances code structure without behavior change"
+      - chore: "Routine maintenance or formatting tasks (not documentation)"
+      - teach: "Updates or improves comments, docs, or explanatory content"
+      - a11y: "Improves accessibility"
+      - seo: "Enhances search engine optimization"
+      - security: "Addresses security concerns"
+      - fix: "Corrects a bug or issue"
+      - bug: "Notes or flags a bug (not a fix)"
+      - test: "For testing functionality in production"
+      - lint: "Applies linting or formatting fixes"
+      - delete: "Removes code, files, or assets"
     scopes:
       - yaml
       - js
@@ -63,7 +63,7 @@ rules:
       - "feat(yaml): create initial commit message format rules in 1 YAML file"
       - "refactor(js): update emojis in theme toggle in 1 JS file"
       - "chore(html): standardize comment line formatting in 3 HTML files"
-      - "teach(html): tweak title comment in 4 HTML files"
+      - "teach(css): simplify comment for paragraph styles in 1 CSS file"
       - "a11y(html): add ARIA-current to active nav link in 1 HTML file"
       - "seo(html): add site name to page title in 2 HTML files"
       - "security(html): add <noscript> warning in 1 HTML file"
