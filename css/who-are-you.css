@@ -73,11 +73,8 @@
   color: var(--tori-header-color);
 }
 
-/* Styles all the main paragraphs of text
-   - Space Grotesk font (gro·tesque /ɡrōˈtesk/: weird, distorted, or bizarre, often in an unsettling way)
-   - 1.2rem is comfortable reading size
-   - line height gives text vertical breathing room
-   - margin spaces paragraphs apart
+/*
+  This styles paragraph text (<p> tags) inside the .who-are-you-container.
 */
 .who-are-you-container p {
     font-family: 'Space Grotesk', system-ui, sans-serif;
