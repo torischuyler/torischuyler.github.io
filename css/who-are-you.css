@@ -132,11 +132,19 @@
   padding-left: 2rem;
 }
 
-/* Makes each list item look nice and spaced out
-   - margin keeps items from crowding each other
+/*
+  The .who-are-you-container li styles the list items (<li>) inside the who-are-you container.
+  Order of Properties: Space it (Sp)
 */
 .who-are-you-container li {
-    margin-bottom: 0.5rem;
+  /* --- Space It --- */
+
+  /*
+    Adds 0.5rem below each bulleted list item.
+    🧮 Here’s the math:
+      - 0.5rem × 16px = 8px spacing (at a 16px default root).
+  */
+  margin-bottom: 0.5rem;
 }
 
 /* Visual Hierarchy:
