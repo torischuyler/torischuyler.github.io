@@ -89,6 +89,16 @@
     Pure white? #FFFFFF. It’s how we talk color to computers.
 
     🌈 Play with https://coolors.co/ to brainstorm colors for your project.
+
+    Dark mode as default 🌑 — why it’s the base:
+
+    Dark mode cuts glare and reduces eye strain 👀, making screens less of a
+    punch to the retinas when you’re staring at code (or memes) for hours.
+    It’s a game changer for some, calming overstimulated senses and boosting focus.
+    Plus, it’s easier on eyes in dim rooms and might save battery on OLED screens.
+    (Think iPhone X or later 📱 — all OLED.)
+
+    This is the core palette, with light mode as the toggleable remix.
   */
 
   /*
@@ -193,18 +203,6 @@
     in Princeton from June 2015 to February 2017.
   */
   --princeton-orange: #F89317;
-
-  /*
-    Dark mode as default 🌑 — why it’s the base:
-
-    Dark mode cuts glare and reduces eye strain 👀, making screens less of a
-    punch to the retinas when you’re staring at code (or memes) for hours.
-    It’s a game changer for some, calming overstimulated senses and boosting focus.
-    Plus, it’s easier on eyes in dim rooms and might save battery on OLED screens.
-    (Think iPhone X or later 📱 — all OLED.)
-
-    This is the core palette, with light mode as the toggleable remix.
-  */
 
   /* Light Theme Overrides 🌞 */
 
