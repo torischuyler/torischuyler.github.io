@@ -41,6 +41,7 @@ rules:
       - test: "For testing functionality in production"
       - lint: "Applies linting or formatting fixes"
       - delete: "Removes code, files, or assets"
+      - style: "Modifies visual presentation or UI styles"
     scopes:
       - yaml
       - js
@@ -73,3 +74,4 @@ rules:
       - "lint(html): escape & as &amp; to satisfy html linter in 1 HTML file"
       - "delete(html, css): remove styles in 1 HTML file and 1 CSS file"
       - "chore(html, js): standardize comments in 2 HTML files and 1 JS file"
+      - "style(css): update h1 color and comment in 1 CSS file"
