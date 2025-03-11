@@ -27,6 +27,17 @@
   */
   max-width: 60vw;
 
+  /*
+    Sets page body font size to 1.25rem
+    (20px at default 16px root font size).
+    🧮 Here's the math:
+      - 1.25rem × 16px = 20px
+
+    Typical body text range is 1rem–1.125rem (16px–18px).
+    We're going a lil bigger here bc we are bold 🍎
+  */
+  font-size: 1.25rem;
+
   /* --- Space It --- */
 
   /*
@@ -36,6 +47,21 @@
     auto = left and right margins (splits remaining space to center container).
   */
   margin: 0 auto;
+
+  /*
+    line-height: 1.6 sets text line spacing to 1.6 times the font size.
+    This improves readability by giving lines some breathing room.
+    🧮 Here's the math:
+      - 1.6 × 16px = 25.6px (at a 16px default root).
+    
+    📐 Why is there no unit of measurement here for 1.6 like rem or px?
+
+    Great question! Unitless values are standard for line-height in modern CSS
+    because they adapt better than fixed units.
+
+    🍭 1.6 is in the sweet spot between too cramped (< 1.5) and too spacious (> 2.0).
+  */
+  line-height: 1.6;
 
   /*
     Space inside container ⬆️⬇️➡️⬅️
@@ -77,8 +103,6 @@
   This styles paragraph text (<p> tags) inside the .who-are-you-container.
 */
 .who-are-you-container p {
-    font-size: 1.2rem;
-    line-height: 1.6;
     margin-bottom: 1.5rem;
 }
 
@@ -89,8 +113,6 @@
 */
 .who-are-you-container ul {
     font-family: 'Space Grotesk', system-ui, sans-serif;
-    font-size: 1.2rem;
-    line-height: 1.6;
     margin: 1.5rem 0;
     padding-left: 2rem;
 }
