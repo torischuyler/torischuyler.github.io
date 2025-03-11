@@ -665,17 +665,17 @@ body, h1, nav, footer {
 
 /*
 Global.css
-├── 1. Resets
+├── Resets
 │   └── * (Reset All Elements)
 │       ├── Size It
 │       │   └── box-sizing
 │       └── Space It
 │           ├── margin
 │           └── padding
-├── 2. Variables
+├── Variables
 │   ├── :root (Color Palette - Dark Mode Default)
 │   └── .light-theme (Light Mode Overrides)
-├── 3. Base Styles
+├── Base Styles
 │   ├── body
 │   │   ├── Size It
 │   │   │   ├── display
@@ -703,7 +703,7 @@ Global.css
 │       └── Style It
 │           ├── font-weight
 │           └── color
-├── 4. Components
+├── Components
 │   ├── nav
 │   │   ├── Size It
 │   │   │   └── width
@@ -745,7 +745,7 @@ Global.css
 │           ├── color
 │           ├── background-color
 │           └── text-align
-└── 5. Behaviors
+└── Behaviors
     └── body, h1, nav, footer
         └── transition
 */
