@@ -45,7 +45,17 @@
   margin: 0 auto;
 
   /*
-    This doubles the space between text lines (32px for a 16px font).
+    line-height: 1.5 sets text line spacing to 1.5 times the font size.
+    This improves readability by giving lines some breathing room.
+    🧮 Here's the math:
+      - 1.5 × 16px = 24px (at a 16px default root).
+    
+    📐 Why is there no unit of measurement here for 1.5 like rem or px?
+
+    Great question! Unitless values are standard for line-height in modern CSS
+    because they adapt better than fixed units.
+
+    🍭 1.5 is in the sweet spot between too cramped (< 1.5) and too spacious (> 2.0).
   */
   line-height: 1.5;
 }
