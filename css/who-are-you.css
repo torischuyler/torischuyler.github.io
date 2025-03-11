@@ -49,18 +49,19 @@
   padding: 2rem;
 }
 
-/* Makes the "Who Are You?" title big and bold
-   - Righteous font (right·eous /ˈrīCHəs/: morally right or justifiable)
-    - Font names only need quotes if they contain spaces
-     (like 'Space Grotesk') or numbers (like '4Righteous')
-     or special characters (like '&Righteous')
-   - 3rem makes it nice and big
-   - margin keeps it from crowding the text below
+/*
+  Page Heading
+  Order of Properties: Size it, Space it, Style it (Sz Sp St)
 */
 .who-are-you-container h1 {
-    font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
-    font-size: 3rem;
-    margin-bottom: 2rem;
+  /* --- Size It --- */
+  font-size: 3rem;
+
+  /* --- Space It --- */
+  margin-bottom: 2rem;
+
+  /* --- Style It --- */
+  font-family: Righteous, system-ui, sans-serif;
 }
 
 /* Styles all the main paragraphs of text
