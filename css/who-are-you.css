@@ -119,8 +119,6 @@
    - padding makes room for bullet points
 */
 .who-are-you-container ul {
-    font-family: 'Space Grotesk', system-ui, sans-serif;
-    margin: 1.5rem 0;
     padding-left: 2rem;
 }
 
