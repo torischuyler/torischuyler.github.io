@@ -9,7 +9,7 @@
    - margin auto centers everything horizontally
    - padding gives everything some breathing room
 */
-.whoareyou-container {
+.who-are-you-container {
     max-width: 50rem;
     margin: 0 auto;
     padding: 2rem;
@@ -23,7 +23,7 @@
    - 3rem makes it nice and big
    - margin keeps it from crowding the text below
 */
-.whoareyou-container h1 {
+.who-are-you-container h1 {
     font-family: Righteous, 'Space Grotesk', system-ui, sans-serif;
     font-size: 3rem;
     margin-bottom: 2rem;
@@ -35,7 +35,7 @@
    - line height gives text vertical breathing room
    - margin spaces paragraphs apart
 */
-.whoareyou-container p {
+.who-are-you-container p {
     font-family: 'Space Grotesk', system-ui, sans-serif;
     font-size: 1.2rem;
     line-height: 1.6;
@@ -47,7 +47,7 @@
    - adds space above and below list
    - padding makes room for bullet points
 */
-.whoareyou-container ul {
+.who-are-you-container ul {
     font-family: 'Space Grotesk', system-ui, sans-serif;
     font-size: 1.2rem;
     line-height: 1.6;
@@ -58,13 +58,13 @@
 /* Makes each list item look nice and spaced out
    - margin keeps items from crowding each other
 */
-.whoareyou-container li {
+.who-are-you-container li {
     margin-bottom: 0.5rem;
 }
 
 /* Visual Hierarchy:
    
-   .whoareyou-container        Main wrapper
+   .who-are-you-container        Main wrapper
    └── h1                  Title
    └── p                   Paragraphs
    └── ul                  List container
