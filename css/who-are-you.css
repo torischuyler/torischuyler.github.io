@@ -13,15 +13,18 @@
     .who-are-you-container li { ... }
 */
 
-/* This is the main wrapper that keeps everything neat and centered on the page
-   - max-width keeps content from getting too wide
-   - margin auto centers everything horizontally
-   - padding gives everything some breathing room
+/*
+  The .who-are-you-container holds the content for the "Who Are You?" page.
+  It controls the width and spacing of the content area.
+  Order of Properties: Size it, Space it (Sz Sp)
 */
 .who-are-you-container {
-    max-width: 50rem;
-    margin: 0 auto;
-    padding: 2rem;
+  /* --- Size It --- */
+  max-width: 50rem;
+
+/* --- Space It --- */
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 /* Makes the "Who Are You?" title big and bold
