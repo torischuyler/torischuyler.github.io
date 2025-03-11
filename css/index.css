@@ -64,9 +64,9 @@
 
   /*
     Sets the color property with a CSS variable (--header-text-color, from global.css).
-      - Princeton orange in dark mode, switches to chefchaouen blue in light mode.
+      - Grogu green in dark mode, switches to ruby red in light mode.
   */
-  color: var(--header-text-color);
+  color: var(--tori-header-color);
 }
 
 /*
