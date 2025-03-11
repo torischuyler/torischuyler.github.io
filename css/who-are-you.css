@@ -83,12 +83,14 @@
   /* --- Size It --- */
 
   /*
-    Sets heading font size to 3rem.
+    Sets heading font size to 5rem.
     🧮 Here's the math:
-      - 3rem × 16px = 48px (at a 16px default root).
-    Typical h1 range is 2rem-4rem (32px–64px).
+      - 5rem × 16px = 80px (at a 16px default root).
+
+    😲 I’m going big with 5rem here because I want this page to feel bold and quirky,
+    not cookie-cutter. Normal h1 range is 2rem-4rem (32px–64px).
   */
-  font-size: 3rem;
+  font-size: 5rem;
 
   /* --- Style It --- */
 
