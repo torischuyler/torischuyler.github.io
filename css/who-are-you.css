@@ -51,7 +51,7 @@
 
 /*
   Page Heading
-  Order of Properties: Size it (Sz)
+  Order of Properties: Size it, Style it (Sz St)
 */
 .who-are-you-container h1 {
   /* --- Size It --- */
@@ -63,6 +63,14 @@
     Typical h1 range is 2rem-4rem (32px–64px).
   */
   font-size: 3rem;
+
+  /* --- Style It --- */
+
+  /*
+    Sets the color property with a CSS variable (--tori-header-color, from global.css).
+      - Grogu green in dark mode, switches to ruby red in light mode.
+  */
+  color: var(--tori-header-color);
 }
 
 /* Styles all the main paragraphs of text
