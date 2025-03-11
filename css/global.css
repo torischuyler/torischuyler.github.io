@@ -450,6 +450,7 @@ nav {
 
     Rem? It’s short for “root em.” Basically, it’s tied to the <html> font size
     (usually 16px by default). So 1rem = 16px, 5rem = 80px. Easy math! 🧮
+    1rem applies to all sides (top, right, bottom, left).
 
     Why use rem here? It’s responsive—padding scales with browser font size changes,
     keeping the nav balanced across different screens and settings.
