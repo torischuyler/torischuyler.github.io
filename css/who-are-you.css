@@ -180,13 +180,32 @@
   margin-bottom: 0.5rem;
 }
 
-/* Visual Hierarchy:
-   
-   .who-are-you-container        Main wrapper
-   └── h1                  Title
-   └── p                   Paragraphs
-   └── ul                  List container
-       └── li              List items
-
-   CSS follows this top-down, parent-to-child structure
+/*
+Who-are-you.css
+├── .who-are-you-container
+│   ├── Size It
+│   │   ├── max-width
+│   │   └── font-size
+│   └── Space It
+│       ├── margin
+│       ├── line-height
+│       └── padding
+├── .who-are-you-container h1
+│   ├── Size It
+│   │   └── font-size
+│   ├── Style It
+│   │   └── color
+│   └── Chaos It
+│       ├── animation
+│       │   └── @keyframes spin
+│       └── text-shadow
+├── .who-are-you-container p
+│   └── Space It
+│       └── margin-bottom
+├── .who-are-you-container ul
+│   └── Space It
+│       └── padding-left
+└── .who-are-you-container li
+    └── Space It
+        └── margin-bottom
 */
