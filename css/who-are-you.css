@@ -113,13 +113,23 @@
     margin-bottom: 1.618rem;
 }
 
-/* Styles the list that holds our bullet points
-   - matches paragraph text styling
-   - adds space above and below list
-   - padding makes room for bullet points
+/*
+  The .who-are-you-container ul styles the unordered list (<ul>) inside the who-are-you container.
+  Order of Properties: Space It (Sp)
 */
 .who-are-you-container ul {
-    padding-left: 2rem;
+  /* --- Space It --- */
+
+  /*
+    Padding-left adds 2rem of space *inside* the list, on the left side only.
+    This pushes the bullets and text rightward, away from the left edge.
+
+    🧮 Here’s the math:
+      - 1rem = the root font size (default is 16px in browsers).
+      - So, 2rem = 2 × 16px = 32px of space.
+      - If the root font size changes (e.g., to 18px), 2rem becomes 36px.
+  */
+  padding-left: 2rem;
 }
 
 /* Makes each list item look nice and spaced out
