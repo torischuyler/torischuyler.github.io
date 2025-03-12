@@ -21,7 +21,7 @@
     .curriculum-container p { ... }
     .curriculum-container h2 { ... }
     .curriculum-container ul { ... }
-    .curriculum-container li { ... }
+    .curriculum-container ul li { ... }
     .curriculum-container a { ... }
 */
 
@@ -80,7 +80,7 @@
   This styles paragraph text (<p> tags) inside the .curriculum-container.
   Order of Properties:  Style It (St)
 */
- .curriculum-container p {
+.curriculum-container p {
   /* --- Style It --- */
 
   /*
@@ -119,59 +119,32 @@
   /* --- Space It --- */
 
   /*
-    Padding-left adds 2rem of space *inside* the list, on the left side only.
+    Padding-left adds 0.8rem of space *inside* the list, on the left side only.
     This pushes the bullets and text rightward, away from the left edge.
 
     🧮 Here’s the math:
       - 1rem = the root font size (default is 16px in browsers).
-      - So, 2rem = 2 × 16px = 32px of space.
-      - If the root font size changes (e.g., to 18px), 2rem becomes 36px.
+      - So, 0.8rem = 0.8 × 16px = 12.8px of space.
+      - If the root font size changes (e.g., to 18px), 0.8rem becomes 14.4px.
 
     Why rem? It scales spacing with font size for a consistent look -
     think of it as giving the list a little elbow room on the left.
   */
-  padding-left: 2rem;
-}
+  padding-left: 0.8rem;
 
-/* 
-  marker defines how list items look.
-  '🚀' gives us rocket bullets — blasting off to learning!
-  Most sites stick to boring 'disc' (●), 'circle' (○), or 'square' (■) — yawn!
-  Those are fine, but you can level up with ANY Unicode character — yup, emojis too.
-  Try '⛩️' (Shinto shrine, aka torii gate), '🎉', or '🛹' for fun.
-  Order of Properties: Style It (St)
-*/
-.curriculum-container ul li::marker {
-  /* --- Style It --- */
-
-  content: '🚀';
-}
-
-/*
-  Fallback Support:
-  If a browser doesn't support ::marker 😱
-  or if emoji rendering fails, we fall back to the classic disc bullet.
-  @supports checks if the browser understands ::marker.
-  If it doesn't, the list reverts to disc bullets — keeping things readable
-  even when fancy features aren't available.
-  Order of Properties: Style It (St)
-*/
-@supports not (selector(::marker)) {
-   /* --- Style It --- */
-
-  .curriculum-container ul {
-    list-style-type: disc;
-  }
+  /* Remove default bullets since we're using ::before for custom rocket emojis */
+  list-style-type: none;
 }
 
 /*
   ✅ Lesson plan list items
-  The .curriculum-container li styles individual list items (<li>) inside the unordered list (<ul>).
+  The .curriculum-container ul li styles individual list items (<li>) inside the unordered list (<ul>).
   These are the clickable lesson links, and this CSS adds spacing to make them readable and neat.
-  Order of Properties: Space It (Sp)
+  It also sets up positioning for the custom rocket bullet.
+  Order of Properties: Space It, Style It (Sp St)
 */
-.curriculum-container li {
-   /* --- Space It --- */
+.curriculum-container ul li {
+  /* --- Space It --- */
 
   /*
     Margin adds space *outside* each list item ⬆️⬇️⬅️➡️
@@ -181,6 +154,56 @@
     so rem or any unit isn’t needed).
   */
   margin: 0.8rem 0;
+
+  /*
+    Adds space for the rocket bullet by positioning it with padding.
+    1rem aligns it nicely with the padding-left on ul.
+  */
+  padding-left: 1rem;
+
+  /* --- Style It --- */
+
+  /*
+    Sets the <li> as the starting point for the ::before rocket.
+    Without this, the rocket would move to the page's left edge.
+  */
+  position: relative;
+}
+
+/* 
+  ✅ Custom rocket bullets using ::before to ensure Safari compatibility.
+  '🚀' gives us rocket bullets — blasting off to learning!
+  Most sites stick to boring 'disc' (●), 'circle' (○), or 'square' (■) — yawn!
+  Those are fine, but you can level up with ANY Unicode character — yup, emojis too.
+  Try '⛩️' (Shinto shrine, aka torii gate), '🎉', or '🛹' for fun.
+  Order of Properties: Style It (St)
+*/
+.curriculum-container ul li::before {
+  /* --- Style It --- */
+
+  /* Rocket emoji */
+  content: '🚀';
+
+  /* Places the rocket at the left edge of the <li>, which is indented by the <ul> */
+  position: absolute;
+
+  /* Moves the rocket to the left edge of the <li> */
+  left: 0;
+}
+
+/*
+  😱 Fallback Support:
+  If a browser doesn't support ::before or emoji rendering fails (unlikely),
+  we fall back to the classic disc bullet.
+  This is a safety net, though ::before is widely supported.
+  Order of Properties: Style It (St)
+*/
+@supports not (selector(::before)) {
+  /* --- Style It --- */
+
+  .curriculum-container ul {
+    list-style-type: disc;
+  }
 }
 
 /*
@@ -261,7 +284,7 @@
     Sets the color property with a CSS variable (--secondary-color, from global.css).
       - British racing green in dark mode, switches to emerald green in light mode.
   */
-  background-color:  var(--secondary-color);
+  background-color: var(--secondary-color);
 }
 
 /*
@@ -285,25 +308,31 @@ Curricula.css
 │   │       └── text-decoration
 │   ├── .curriculum-container ul
 │   │   └── Space It
-│   │       └── padding-left
-│   ├── .curriculum-container ul li::marker
+│   │       ├── padding-left
+│   │       └── list-style-type
+│   ├── .curriculum-container ul li
+│   │   ├── Space It
+│   │   │   ├── margin
+│   │   │   └── padding-left
 │   │   └── Style It
-│   │       └── content
-│   ├── .curriculum-container li
-│   │   └── Space It
-│   │       └── margin
-│   └── .curriculum-container a
-│       ├── Space It
-│       │   ├── padding
-│       │   └── margin-left
-│       └── Style It
-│           ├── color
-│           ├── text-decoration
-│           └── transition
+│   │       └── position
+│   ├── .curriculum-container ul li::before
+│   │   └── Style It
+│   │       ├── content
+│   │       ├── position
+│   │       └── left
+│   ├── .curriculum-container a
+│   │   ├── Space It
+│   │   │   ├── padding
+│   │   │   └── margin-left
+│   │   └── Style It
+│   │       ├── color
+│   │       ├── text-decoration
+│   │       └── transition
 └── 2. Behaviors
     └── .curriculum-container ul li a:hover, :focus
         └── Style It
             ├── color
             ├── text-decoration
-            ├── background-color
+            └── background-color
 */
