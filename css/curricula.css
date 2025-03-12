@@ -131,7 +131,12 @@
   */
   padding-left: 0.8rem;
 
-  /* Remove default bullets since we're using ::before for custom rocket emojis */
+  /*
+    Remove default bullets, we’re using emojis. If we didn't do this
+    we’d end up with both the default bullet (●) and the 🚀 bullets.
+
+    No bueno! 🙅‍♀️
+  */
   list-style-type: none;
 }
 
