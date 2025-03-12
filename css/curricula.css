@@ -8,21 +8,20 @@
   This CSS stylesheet serves two purposes:
   😎 Styles the eOS website's curricula pages
   🔧 Acts as an educational tool to explain CSS properties
-
-  Table of Contents:
-    1. Curricula Styles     - Structure and spacing for curricula pages
-    2. Behaviors            - Interactive states
 */
 
-/* 
-  1. Curricula Styles
+/*
+  Curricula Styles
     .curriculum-container { ... }
     .curriculum-container h1 { ... }
     .curriculum-container p { ... }
     .curriculum-container h2 { ... }
     .curriculum-container ul { ... }
     .curriculum-container ul li { ... }
+      .curriculum-container ul li::before { ... }
+      @supports not (selector(::before)) { ... }
     .curriculum-container a { ... }
+      .curriculum-container ul li a:hover, :focus { ... }
 */
 
 /*
@@ -78,7 +77,7 @@
 
 /*
   This styles paragraph text (<p> tags) inside the .curriculum-container.
-  Order of Properties:  Style It (St)
+  Order of Properties: Style It (St)
 */
 .curriculum-container p {
   /* --- Style It --- */
@@ -181,7 +180,7 @@
 .curriculum-container ul li::before {
   /* --- Style It --- */
 
-  /* Rocket emoji */
+  /* Rocket emoji bullet point */
   content: '🚀';
 
   /* Places the rocket at the left edge of the <li>, which is indented by the <ul> */
@@ -199,9 +198,10 @@
   Order of Properties: Style It (St)
 */
 @supports not (selector(::before)) {
-  /* --- Style It --- */
-
   .curriculum-container ul {
+    /* --- Style It --- */
+
+    /* Classic disc bullet point */
     list-style-type: disc;
   }
 }
@@ -251,12 +251,6 @@
   transition: color 0.3s;
 }
 
-/* 
-  2. Behaviors 
-    - Hover
-    - Focus
-*/
-
 /*
   🧪 Link interaction states
   The .curriculum-container ul li a:hover and :focus - these style lesson links when 
@@ -289,50 +283,49 @@
 
 /*
 Curricula.css
-├── 1. Curricula Styles
-│   ├── .curriculum-container
-│   │   ├── Size It
-│   │   │   └── max-width
-│   │   └── Space It
-│   │       ├── margin
-│   │       └── padding
-│   ├── .curriculum-container h1
-│   │   └── Style It
-│   │       └── color
-│   ├── .curriculum-container p
-│   │   └── Style It
-│   │       └── text-align
-│   ├── .curriculum-container h2
-│   │   └── Style It
-│   │       ├── color
-│   │       └── text-decoration
-│   ├── .curriculum-container ul
-│   │   └── Space It
-│   │       ├── padding-left
-│   │       └── list-style-type
-│   ├── .curriculum-container ul li
-│   │   ├── Space It
-│   │   │   ├── margin
-│   │   │   └── padding-left
-│   │   └── Style It
-│   │       └── position
+├── .curriculum-container
+│   ├── Size It
+│   │   └── max-width
+│   └── Space It
+│       ├── margin
+│       └── padding
+├── .curriculum-container h1
+│   └── Style It
+│       └── color
+├── .curriculum-container p
+│   └── Style It
+│       └── text-align
+├── .curriculum-container h2
+│   └── Style It
+│       ├── color
+│       └── text-decoration
+├── .curriculum-container ul
+│   └── Space It
+│       ├── padding-left
+│       └── list-style-type
+├── .curriculum-container ul li
+│   ├── Space It
+│   │   ├── margin
+│   │   └── padding-left
+│   ├── Style It
+│   │   └── position
 │   ├── .curriculum-container ul li::before
 │   │   └── Style It
 │   │       ├── content
 │   │       ├── position
 │   │       └── left
-│   ├── .curriculum-container a
-│   │   ├── Space It
-│   │   │   ├── padding
-│   │   │   └── margin-left
-│   │   └── Style It
-│   │       ├── color
-│   │       ├── text-decoration
-│   │       └── transition
-└── 2. Behaviors
-    └── .curriculum-container ul li a:hover, :focus
-        └── Style It
-            ├── color
-            ├── text-decoration
-            └── background-color
+│   └── @supports not (selector(::before))
+├── .curriculum-container a
+│   ├── Space It
+│   │   ├── padding
+│   │   └── margin-left
+│   ├── Style It
+│   │   ├── color
+│   │   ├── text-decoration
+│   │   └── transition
+│   └── .curriculum-container ul li a:hover, :focus
+│       └── Style It
+│           ├── color
+│           ├── text-decoration
+│           └── background-color
 */
