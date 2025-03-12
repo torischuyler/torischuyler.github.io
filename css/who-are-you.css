@@ -104,10 +104,11 @@
   /* --- Chaos It --- */
 
   /*
-    🤪 Spins the header 1 time over 6 seconds, then stops.
+    🤪 Spins the header 1 time over 1.618 seconds, then stops. Using 1.618 to see
+    what the golden ratio (φ) looks like in terms of duration and bc 6/18 is my bday 😎
     Linear means the animation happens at a steady, constant speed from start to finish.
   */
-  animation: spin 6s linear;
+  animation: spin 1.618s linear;
 
   /*
     🌟 Hot pink glow, bc chaos
