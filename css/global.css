@@ -368,7 +368,15 @@ body {
     Sets heading to 2.5rem (40px at default 16px root font size).
     Typical h1 range is 2rem–3.5rem (32px–56px), balancing prominence and readability.
   */
-  font-size: 2.5rem;
+
+  /*
+    Sets heading font size to 3.5rem.
+    🧮 Here's the math:
+      - 3.5rem × 16px = 56px (at a 16px default root).
+
+    Standard h1 range is 2rem-4rem (32px–64px).
+  */
+  font-size: 3.5rem;
 
   /* --- Space It --- */
 
