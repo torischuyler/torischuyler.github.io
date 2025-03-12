@@ -16,7 +16,7 @@ rules:
       description:
         case: lower  # Base case is lowercase
         exceptions:  # Allow capitalization for specific cases
-          - acronyms: ["SEO", "ARIA", "HTML", "JS", "CSS"]  # Add more as needed
+          - acronyms: ["SEO", "ARIA", "HTML", "JS", "CSS", "JPG", "JPEG"]  # Add more as needed
           - proper_nouns: [
             "TypeScript", "Python", "JavaScript"
           ]  # Add more as needed
@@ -24,7 +24,7 @@ rules:
         case: lower  # Base case is lowercase
         exceptions:  # Same capitalization rules as description
           - acronyms:
-              values: ["SEO", "ARIA", "HTML", "JS", "CSS"]
+              values: ["SEO", "ARIA", "HTML", "JS", "CSS", "JPG", "JPEG"]
               apply: "uppercase"  # Force uppercase for acronyms
               note: "Acronyms in targets must use uppercase when listed here"
           - proper_nouns: ["TypeScript", "Python", "JavaScript"]
@@ -58,6 +58,7 @@ rules:
         - "2 JS files"
         - "1 HTML file and 1 CSS file"
         - "3 HTML files and 2 CSS files"
+        - "1 JPG file"
     description:
       tense: active
     examples:
@@ -75,3 +76,4 @@ rules:
       - "delete(html, css): remove styles in 1 HTML file and 1 CSS file"
       - "chore(html, js): standardize comments in 2 HTML files and 1 JS file"
       - "style(css): update h1 color and comment in 1 CSS file"
+      - "feat(assets): add van gogh orca image for homepage in 1 JPG file"
