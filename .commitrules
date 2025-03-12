@@ -16,9 +16,9 @@ rules:
       description:
         case: lower  # Base case is lowercase
         exceptions:  # Allow capitalization for specific cases
-          - acronyms: ["SEO", "ARIA", "HTML", "JS", "CSS", "JPG", "JPEG"]  # Add more as needed
+          - acronyms: ["SEO", "ARIA", "HTML", "JS", "CSS", "JPG", "JPEG"]
           - proper_nouns: [
-            "TypeScript", "Python", "JavaScript"
+            "Safari", "TypeScript", "Python", "JavaScript"
           ]  # Add more as needed
       targets:
         case: lower  # Base case is lowercase
