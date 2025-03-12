@@ -140,11 +140,11 @@
   /* --- Space It --- */
 
   /*
-    Adds space below the paragraph text, using .618rem bc 6/18 is my bday 😎
+    Adds space below the paragraph text.
     🧮 Here’s the math:
-      - .618rem × 16px = 9.88px of space (at default 16px root font size).
+      - 0.5rem × 16px = 8px of space (at default 16px root font size).
   */
-  margin-bottom: .618rem;
+  margin-bottom: 0.5rem;
 }
 
 /*
