@@ -12,6 +12,10 @@
     .who-are-you-container p  { ... }
     .who-are-you-container ul { ... }
     .who-are-you-container li { ... }
+      .who-are-you-container li:nth-child(1)::before { ... }
+      .who-are-you-container li:nth-child(2)::before { ... }
+      .who-are-you-container li:nth-child(3)::before { ... }
+      @supports not (selector(::before)) { ... }
 */
 
 /*
@@ -149,26 +153,35 @@
 
 /*
   The .who-are-you-container ul styles the unordered list (<ul>) inside the who-are-you container.
-  Order of Properties: Space It (Sp)
+  Order of Properties: Space It, Style It (Sp St)
 */
 .who-are-you-container ul {
   /* --- Space It --- */
 
   /*
-    Padding-left adds 2rem of space *inside* the list, on the left side only.
+    Padding-left adds 1rem of space *inside* the list, on the left side only.
     This pushes the bullets and text rightward, away from the left edge.
 
     🧮 Here’s the math:
       - 1rem = the root font size (default is 16px in browsers).
-      - So, 2rem = 2 × 16px = 32px of space.
-      - If the root font size changes (e.g., to 18px), 2rem becomes 36px.
+      - So, 1rem = 1 × 16px = 16px of space.
   */
-  padding-left: 2rem;
+  padding-left: 1rem;
+
+  /* --- Style It --- */
+
+  /*
+    Remove default bullets, we’re using emojis. If we didn't do this
+    we’d end up with both the default bullet (●) and the emoji bullets.
+
+    No bueno! 🙅‍♀️
+  */
+  list-style-type: none;
 }
 
 /*
   The .who-are-you-container li styles the list items (<li>) inside the who-are-you container.
-  Order of Properties: Space it (Sp)
+  Order of Properties: Space it, Style It (Sp St)
 */
 .who-are-you-container li {
   /* --- Space It --- */
@@ -179,6 +192,66 @@
       - 0.5rem × 16px = 8px spacing (at a 16px default root).
   */
   margin-bottom: 0.5rem;
+
+  /* Space between emoji bullet and the text to the right of it */
+  padding-left: 2.2rem;
+
+  /* --- Style It --- */
+
+  /*
+    Sets the <li> as the starting point for the ::before emojis.
+    Without this, the emojis would move to the page's left edge.
+  */
+  position: relative;
+}
+
+/*
+  🎮🔬💝 Custom emoji bullets using ::before for each list item.
+  Matches the emojis to their respective list items.
+  Order of Properties: Style It (St)
+*/
+.who-are-you-container li:nth-child(1)::before {
+  /* --- Style It --- */
+
+  /* Game controller for "Learning should be playful" */
+  content: '🎮';
+
+  /* Places the emoji at the left edge of the <li>, which is indented by the <ul> */
+  position: absolute;
+
+  /* Moves the emoji to the left edge of the <li> */
+  left: 0;
+}
+
+.who-are-you-container li:nth-child(2)::before {
+  /* --- Style It --- */
+
+  /* Microscope for "Mistakes are just experiments" */
+  content: '🔬';
+  position: absolute;
+  left: 0;
+}
+
+.who-are-you-container li:nth-child(3)::before {
+  /* --- Style It --- */
+
+  /* Gift heart for "Tech is for everyone" */
+  content: '💝';
+  position: absolute;
+  left: 0;
+}
+
+/*
+  😱 Fallback Support:
+  If ::before isn’t supported (super rare), revert to classic bullets.
+*/
+@supports not (selector(::before)) {
+  .who-are-you-container ul {
+    /* --- Style It --- */
+
+    /* Classic disc bullet point */
+    list-style-type: disc;
+  }
 }
 
 /*
@@ -204,9 +277,27 @@ Who-are-you.css
 │   └── Space It
 │       └── margin-bottom
 ├── .who-are-you-container ul
-│   └── Space It
-│       └── padding-left
+│   ├── Space It
+│   │   └── padding-left
+│   └── Style It
+│       └── list-style-type
 └── .who-are-you-container li
-    └── Space It
-        └── margin-bottom
+    ├── Space It
+    │   ├── margin-bottom
+    │   └── padding-left
+    ├── Style It
+    │   └── position
+    ├── .who-are-you-container li:nth-child(1)::before
+    │   ├── content
+    │   ├── position
+    │   └── left
+    ├── .who-are-you-container li:nth-child(2)::before
+    │   ├── content
+    │   ├── position
+    │   └── left
+    ├── .who-are-you-container li:nth-child(3)::before
+    │   ├── content
+    │   ├── position
+    │   └── left
+    └── @supports not (selector(::before))
 */
