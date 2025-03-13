@@ -7,7 +7,7 @@
     1. Resets        - Wipe browser defaults
     2. Variables     - Define colors and themes
     3. Base Styles   - Core layout and typography
-    4. Components    - Nav, footer, and toggle styles
+    4. Components    - Nav, footer, toggle, and mobile styles
     5. Behaviors     - Interactive states
 */
 
@@ -458,8 +458,13 @@ h2 {
 /* 
   4. Components
     nav { ... }
+      #sun-moon-toggle { ... }
+        #sun-moon-toggle:hover
+    nav a { ... }
+      nav a:hover
     footer { ... }
-    #sun-moon-toggle { ... }
+
+    Mobile Styles
 */
 
 /* 
