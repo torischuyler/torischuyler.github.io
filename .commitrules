@@ -43,6 +43,7 @@ rules:
       - lint: "Applies linting or formatting fixes"
       - delete: "Removes code, files, or assets"
       - style: "Modifies visual presentation or UI styles"
+      - content: "Modifies page content such as text or media"
     scopes:
       - yaml
       - js
@@ -81,3 +82,4 @@ rules:
       - "style(css): update h1 color and comment in 1 CSS file"
       - "feat(assets): add van gogh orca image for homepage in 1 JPG file"
       - "teach(md): refine README with status and skills context in 1 MD file"
+      - "content(html): update footer text in 5 HTML files"
