@@ -89,6 +89,9 @@ the creator of the eOS Lesson Plans website. -->
         <!-- Script for toggling Dark/Light mode - placed last for better page load performance and security.
         'defer' tells the browser to load the script after the HTML is parsed but before
         the DOMContentLoaded event, improving page load times. -->
+
+        <script src="../js/mobile-nav.js" defer></script>
+        <!-- Script for toggling mobile navigation------>
     </head>
     <!-- End Head Section --------------------------------------------------->
 
@@ -101,16 +104,26 @@ the creator of the eOS Lesson Plans website. -->
         <!-- Navigation section - like a table of contents for the webpage. -->
         <nav aria-label="Page navigation">
 
-            <!-- Navigation links: Home | Students | Developers | Who Are You? (currently active) -->
-            <a href="index.html">Home</a>
-            <a href="students.html">Students</a>
-            <a href="developers.html">Developers</a>
-            <a href="who-are-you.html" class="active" aria-current="page">Who Are You?</a>
+            <!-- Navigation menu for desktop and mobile -->
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="developers.html">Developers</a></li>
+                <li><a href="who-are-you.html" class="active" aria-current="page">Who Are You?</a></li>
+            </ul>
 
-            <button id="sun-moon-toggle" aria-label="Toggle light or dark mode" aria-pressed="false">🌞</button>
-            <!-- Light/Dark mode toggle button. The 'aria-label' attribute enhances accessibility
-            by describing the button for screen readers, ensuring users with visual impairments
-            can identify its purpose, with 'aria-pressed' indicating the current mode. -->
+            <!-- Begin Nav Header Wrapper: Groups hamburger and toggle------------------>
+            <div class="nav-header">
+
+                <div class="hamburger">☰</div>
+                <!-- Hamburger icon -->
+
+                <button id="sun-moon-toggle" aria-label="Toggle light or dark mode" aria-pressed="false">🌞</button>
+                <!-- Dark/Light mode toggle button. The 'aria-label' attribute enhances accessibility
+                by describing the button for screen readers, ensuring users with visual impairments
+                can identify its purpose, with 'aria-pressed' indicating the current mode. -->
+            </div>
+            <!-- End Nav Header Wrapper ------------------------------------------------->
 
             <noscript>
             <!-- The noscript tag is used to provide alternative content
@@ -191,7 +204,7 @@ DOCTYPE
     ├── head
     │   ├── meta (charset)
     │   ├── meta (viewport)
-    │   └── title
+    │   ├── title
     │   ├── link (favicon)
     │   ├── SEO Group
     │   │   ├── meta (robots)
@@ -211,15 +224,23 @@ DOCTYPE
     │   │   ├── link (global.css)
     │   │   ├── link (who-are-you.css)
     │   │   └── link (google fonts)
-    │   └── script (sun-moon-toggle.js)
+    │   ├── script (sun-moon-toggle.js)
+    │   └── script (mobile-nav.js)
     │
     └── body
         ├── nav
-        │   ├── a (Home)
-        │   ├── a (Students)
-        │   ├── a (Developers)
-        │   ├── a (Who Are You? - active)
-        │   ├── button
+        │   ├── ul (nav-menu)
+        │   │   ├── li
+        │   │   │   └── a (Home)
+        │   │   ├── li
+        │   │   │   └── a (Students)
+        │   │   ├── li
+        │   │   │   └── a (Developers)
+        │   │   └── li
+        │   │       └── a (Who Are You? - active)
+        │   ├── div (nav-header)
+        │   │   ├── div (hamburger)
+        │   │   └── button (sun-moon-toggle)
         │   └── noscript
         │       └── div
         │           └── p
@@ -229,11 +250,11 @@ DOCTYPE
         │       ├── p
         │       ├── p
         │       └── ul
-        │           ├── li (Learning should be playful 🎮)
-        │           ├── li (Mistakes are just experiments in disguise 🔬)
-        │           └── li (Tech is for everyone 💝)
+        │           ├── li (Learning should be playful)
+        │           ├── li (Mistakes are just experiments in disguise)
+        │           └── li (Tech is for everyone)
         ├── footer
-        │   ├── p
+        │   └── p
         │       └── span
         └── script (footer.js)
 -->
