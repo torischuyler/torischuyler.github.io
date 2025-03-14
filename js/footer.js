@@ -30,12 +30,12 @@ function updateHeart() {
   const heart = document.querySelector(".heart");
   const isLightTheme = document.body.classList.contains("light-theme");
 
-  if (isLightTheme) {
+  if (!isLightTheme) {
+      // Blue heart for default dark mode
+      heart.textContent = "💙";
+  } else {
       // Red heart for light mode
       heart.textContent = "❤️";
-  } else {
-      // Blue heart for dark mode
-      heart.textContent = "💙";
   }
 }
 
