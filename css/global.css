@@ -319,7 +319,7 @@
 
 /*
   Body - The main content wrapper. Sets the stage for fonts and layout.
-  Order of Properties: Size it, Style it (Sz St)
+  Order of Properties: Size It, Style It (Sz St)
 */
 body {
   /* --- Size It --- */
@@ -441,27 +441,14 @@ h2 {
   color: var(--text-color);
 }
 
-/*
-  Mobile Typography Adjustments
-  Scales down h1 on smaller screens for better readability.
-  Order of Properties: Size it (Sz)
-*/
-@media (width <= 768px) {
-  /* --- Size It --- */
-
-  /* Reduces h1 to 2rem (32px) on screens 768px wide or smaller */
-  h1 {
-    font-size: 2rem;
-  }
-}
-
 /* 
   4. Components
     nav { ... }
-      #sun-moon-toggle { ... }
+      nav a { ... }
+        nav a:hover
+    .nav-menu { ... }
+    #sun-moon-toggle { ... }
         #sun-moon-toggle:hover
-    nav a { ... }
-      nav a:hover
     footer { ... }
 
     Mobile Styles
@@ -469,13 +456,16 @@ h2 {
 
 /* 
   Navigation Control Center 🎮 (aka page navigation bar)
-  Order of Properties: Size it, Space it, Style it (Sz Sp St)
+  Order of Properties: Size It, Space It, Style It (Sz Sp St)
 */
 nav {
   /* --- Size It --- */
 
   /* Spans the full width of the page */
   width: 100%;
+
+  /* Enables flexbox to control layout of nav items and toggle. */
+  display: flex;
 
   /* --- Space It --- */
 
@@ -491,6 +481,9 @@ nav {
     keeping the nav balanced across different screens and settings.
   */
   padding: 1rem;
+
+  /* Centers the nav items and toggle horizontally within the nav bar */
+  justify-content: center;
 
   /* --- Style It --- */
 
@@ -554,6 +547,41 @@ nav a {
 nav a:hover {
   /* (british-racing-green in dark mode, emerald-green in light mode). */
   background-color: var(--secondary-color);
+}
+
+/*
+  🧭 Defines the main navigation list for the site
+  Order of Properties: Size It, Space It, Style It (Sz Sp St)
+*/
+.nav-menu {
+  /* --- Size It --- */
+
+  /* Arranges nav items in a horizontal row for desktop. */
+  display: flex;
+
+  /* --- Space It --- */
+
+  /* Adds consistent spacing between nav items on desktop. */
+  gap: 1rem;
+
+  /* Vertically centers nav items within the nav bar on desktop. */
+  align-items: center;
+
+  /* --- Style It --- */
+
+  /* Removes the default bullet points from the navigation list. */
+  list-style: none;
+}
+
+/*
+  🍔 Hamburger menu for mobile
+  Order of Properties: Size It (Sz)
+*/
+.hamburger {
+  /* --- Size It --- */
+
+  /* Hides the hamburger icon on desktop screens. */
+  display: none;
 }
 
 /* 
@@ -662,6 +690,85 @@ footer {
   text-align: center;
 }
 
+/*
+  Mobile Styles
+*/
+
+/*
+  Mobile Typography Adjustments
+  Scales down h1 on smaller screens for better readability.
+  Order of Properties: Size It (Sz)
+*/
+@media (width <= 768px) {
+  /* --- Size It --- */
+
+  /* Reduces h1 to 2rem (32px) on screens 768px wide or smaller */
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/*
+  🍔 Menu
+  Order of Properties: Size It, Space It (Sz Sp)
+*/
+@media (width <= 768px) {
+  .hamburger {
+    /* --- Size It --- */
+
+    /* Shows the hamburger icon on mobile screens. */
+    display: block;
+    
+    /*
+      Sets hamburger icon size to 3rem/48px
+      (traditional range 1.5rem-2rem/24px-32px from small-phone era);
+      now 2.5rem-3rem/40px-48px for larger screens, 👵👴 aging population,
+      and better visibility.
+
+      🧮 Here's the math:
+        - 3rem × 16px = 48px (at a 16px default root).
+    */
+    font-size: 3rem;
+  }
+
+  .nav-menu {
+    /* --- Size It --- */
+
+    /* Hides the navigation menu on mobile screens by default. */
+    display: none;
+  }
+
+  nav {
+    /* --- Space It --- */
+
+    /* Centers hamburger and toggle together on mobile. */
+    justify-content: center;
+
+    /* Adds space between hamburger and toggle on mobile. */
+    gap: 1rem;
+  }
+
+  #sun-moon-toggle {
+    /* --- Size It --- */
+    font-size: 3rem;
+  }
+
+  .nav-menu.active {
+    /* --- Size It --- */
+
+    /* Shows the navigation menu as a flex container on mobile. */
+    display: flex;
+
+    /* Stacks navigation items vertically when active on mobile. */
+    flex-direction: column;
+
+    /* --- Space It --- */
+
+    /* Adds vertical space between nav items. */
+    gap: 1rem;
+  }
+}
+
 /* 
   5. Behaviors 
     - Color transitions
@@ -714,14 +821,17 @@ Global.css
 │       │   ├── margin-top
 │       │   └── margin-bottom
 │       └── Style It
+│           ├── font-family
 │           ├── font-weight
 │           └── color
 ├── Components
 │   ├── nav
 │   │   ├── Size It
-│   │   │   └── width
+│   │   │   ├── width
+│   │   │   └── display
 │   │   ├── Space It
-│   │   │   └── padding
+│   │   │   ├── padding
+│   │   │   └── justify-content
 │   │   └── Style It
 │   │       ├── color
 │   │       ├── background-color
@@ -737,16 +847,31 @@ Global.css
 │   │       ├── text-decoration
 │   │       ├── border-radius
 │   │       └── transition
+│   │   └── nav a:hover
+│   │       └── background-color
+│   ├── .nav-menu
+│   │   ├── Size It
+│   │   │   └── display
+│   │   ├── Space It
+│   │   │   ├── gap
+│   │   │   └── align-items
+│   │   └── Style It
+│   │       └── list-style
+│   ├── .hamburger
+│   │   └── Size It
+│   │       └── display
 │   ├── #sun-moon-toggle
 │   │   ├── Size It
 │   │   │   └── font-size
 │   │   ├── Space It
 │   │   │   └── padding
 │   │   └── Style It
-│   │       ├── background
-│   │       ├── border
-│   │       ├── cursor
-│   │       └── transition
+│   │   |   ├── background
+│   │   |   ├── border
+│   │   |   ├── cursor
+│   │   |   └── transition
+│   │   └── #sun-moon-toggle:hover
+│   │       
 │   └── footer
 │       ├── Size It
 │       │   ├── width
@@ -758,6 +883,31 @@ Global.css
 │           ├── color
 │           ├── background-color
 │           └── text-align
+├── Mobile Styles
+│   ├── @media
+│   │   ├── h1
+│   │   │   └── Size It
+│   │   │       └── font-size
+│   │   ├── .hamburger
+│   │   │   └── Size It
+│   │   │       ├── display
+│   │   │       └── font-size
+│   │   ├── .nav-menu
+│   │   │   └── Size It
+│   │   │       └── display
+│   │   ├── nav
+│   │   │   └── Space It
+│   │   │       ├── justify-content
+│   │   │       └── gap
+│   │   ├── #sun-moon-toggle
+│   │   │   └── Size It
+│   │   │       └── font-size
+│   │   └── .nav-menu.active
+│   │       ├── Size It
+│   │       │   ├── display
+│   │       │   └── flex-direction
+│   │       └── Space It
+│   │           └── gap
 └── Behaviors
     └── body, h1, nav, footer
         └── transition
