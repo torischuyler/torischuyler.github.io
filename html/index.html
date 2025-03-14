@@ -111,6 +111,14 @@ This setup keeps things simple and standard, so your browser knows exactly where
         <!-- Navigation section - like a table of contents for the webpage. ------------>
         <nav aria-label="Page navigation">
 
+            <!-- Navigation menu for desktop and mobile -->
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="developers.html">Developers</a></li>
+                <li><a href="who-are-you.html">Who Are You?</a></li>
+            </ul>
+
             <!-- Begin Nav Header Wrapper: Groups hamburger and toggle------------------>
             <div class="nav-header">
 
@@ -123,14 +131,6 @@ This setup keeps things simple and standard, so your browser knows exactly where
                 can identify its purpose, with 'aria-pressed' indicating the current mode. -->
             </div>
             <!-- End Nav Header Wrapper ------------------------------------------------->
-
-            <!-- Navigation menu for desktop and mobile -->
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-                <li><a href="students.html">Students</a></li>
-                <li><a href="developers.html">Developers</a></li>
-                <li><a href="who-are-you.html">Who Are You?</a></li>
-            </ul>
 
             <noscript>
             <!-- The noscript tag is used to provide alternative content
@@ -221,9 +221,6 @@ DOCTYPE
     │
     └── body
         ├── nav
-        │   ├── div (nav-header)
-        │   │   ├── div (hamburger)
-        │   │   └── button (sun-moon-toggle)
         │   ├── ul (nav-menu)
         │   │   ├── li
         │   │   │   └── a (Home - active)
@@ -233,6 +230,9 @@ DOCTYPE
         │   │   │   └── a (Developers)
         │   │   ├── li
         │   │   │   └── a (Who Are You?)
+        │   ├── div (nav-header)
+        │   │   ├── div (hamburger)
+        │   │   └── button (sun-moon-toggle)
         │   └── noscript
         │       └── div
         │           └── p
