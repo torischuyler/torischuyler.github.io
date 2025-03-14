@@ -16,10 +16,11 @@ rules:
       description:
         case: lower  # Base case is lowercase
         exceptions:  # Allow capitalization for specific cases
-          - acronyms: ["SEO", "ARIA", "HTML", "JS", "CSS", "JPG", "JPEG"]
-          - proper_nouns: [
-            "Safari", "TypeScript", "Python", "JavaScript"
-          ]  # Add more as needed
+          - acronyms: [
+            "SEO", "ARIA", "HTML", "JS",
+            "CSS", "JPG", "JPEG", "README"
+          ]
+          - proper_nouns: ["Safari", "JavaScript"]  # Add more as needed
       targets:
         case: lower  # Base case is lowercase
         exceptions:  # Same capitalization rules as description
@@ -49,6 +50,7 @@ rules:
       - assets
       - json
       - css
+      - md
     targets:
       description: "List of affected items with counts and types"
       format: |
@@ -59,6 +61,7 @@ rules:
         - "1 HTML file and 1 CSS file"
         - "3 HTML files and 2 CSS files"
         - "1 JPG file"
+        - "1 MD file"
     description:
       tense: active
     examples:
@@ -77,3 +80,4 @@ rules:
       - "chore(html, js): standardize comments in 2 HTML files and 1 JS file"
       - "style(css): update h1 color and comment in 1 CSS file"
       - "feat(assets): add van gogh orca image for homepage in 1 JPG file"
+      - "teach(md): refine README with status and skills context in 1 MD file"
