@@ -662,7 +662,7 @@ footer {
   /* --- Space It --- */
 
   /* Adds a cushion inside the footer. */
-  padding: 1rem;
+  padding: 1.5rem;
 
 /*
     Pushes the footer to the bottom of the page in a flex body;
@@ -770,6 +770,11 @@ footer {
 
     /* Adds vertical space between nav items. */
     gap: 1rem;
+  }
+
+  footer {
+    /* --- Size It --- */
+    font-size: 1rem;
   }
 }
 
@@ -906,12 +911,15 @@ Global.css
 │   │   ├── #sun-moon-toggle
 │   │   │   └── Size It
 │   │   │       └── font-size
-│   │   └── .nav-menu.active
-│   │       ├── Size It
-│   │       │   ├── display
-│   │       │   └── flex-direction
-│   │       └── Space It
-│   │           └── gap
+│   │   ├── .nav-menu.active
+│   │   │   ├── Size It
+│   │   │   │   ├── display
+│   │   │   │   └── flex-direction
+│   │   │   └── Space It
+│   │   │       └── gap
+│   │   └── footer
+│   │       └── Size It
+│   │           └── font-size
 └── Behaviors
     └── body, h1, nav, footer
         └── transition
