@@ -593,7 +593,7 @@ nav a:hover {
   /*
     “em” = stretchy size tied to parent’s font size. Here's how it works: 
     parent size x em = your toggle size
-    (16px parent × 1.2em = 19.2px toggle)
+    (16px parent × 2em = 32px toggle)
 
     😎 Context: "em" gets its name from typography, where it was traditionally based on 
     the width of a capital "M". Typesetters have used this unit for centuries, from 
@@ -603,7 +603,7 @@ nav a:hover {
     element's font size changes, maintaining proportional sizing. Pixels (px) won't automatically
     adjust when parent font sizes change.
   */
-  font-size: 1.2em;
+  font-size: 2em;
 
   /* --- Space It --- */
 
