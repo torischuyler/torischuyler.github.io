@@ -317,13 +317,18 @@
 */
 @media (max-width: 768px) {
   .lesson-container {
-  /* --- Size It --- */
+    /* --- Size It --- */
 
     /*
       max-width: 100vw sets the maximum width to 100% of the viewport width.
       Increased from 80vw to 100vw for mobile to enhance text and image size on smaller screens.
     */
     max-width: 100vw;
+  }
+
+  .lesson-container h1 {
+    /* --- Size It --- */
+    font-size: 1.75rem;
   }
 }
 
@@ -387,5 +392,6 @@ Lesson-styles.css
 │   ├── @media
 │       ├── .lesson-container
 │           └── Size It
-│               └── max-width
+│               ├── max-width
+│               └── font-size
 */
