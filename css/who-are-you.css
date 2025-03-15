@@ -261,6 +261,27 @@
 }
 
 /*
+  Who Are You Container Mobile Styles
+  Order of Properties: Size It (Sz)
+
+  📲 The 768px width is widely used because it aligns with the typical screen size
+  of tablets in portrait mode, like the iPad (which has a resolution of 768px wide
+  at 1x pixel density). It’s become a convention in responsive design to mark the
+  transition between "mobile" and "tablet" layouts.
+*/
+@media (max-width: 768px) {
+  .who-are-you-container {
+  /* --- Size It --- */
+
+    /*
+      max-width: 100vw sets the maximum width to 100% of the viewport width.
+      Increased from 80vw to 100vw for mobile to enhance text and image size on smaller screens.
+    */
+    max-width: 100vw;
+  }
+}
+
+/*
 Who-are-you.css
 ├── .who-are-you-container
 │   ├── Size It
@@ -287,23 +308,28 @@ Who-are-you.css
 │   │   └── padding-left
 │   └── Style It
 │       └── list-style-type
-└── .who-are-you-container li
-    ├── Space It
-    │   ├── margin-bottom
-    │   └── padding-left
-    ├── Style It
-    │   └── position
-    ├── .who-are-you-container li:nth-child(1)::before
-    │   ├── content
-    │   ├── position
-    │   └── left
-    ├── .who-are-you-container li:nth-child(2)::before
-    │   ├── content
-    │   ├── position
-    │   └── left
-    ├── .who-are-you-container li:nth-child(3)::before
-    │   ├── content
-    │   ├── position
-    │   └── left
-    └── @supports not (selector(::before))
+├── .who-are-you-container li
+│   ├── Space It
+│   │   ├── margin-bottom
+│   │   └── padding-left
+│   ├── Style It
+│   │   └── position
+│   ├── .who-are-you-container li:nth-child(1)::before
+│   │   ├── content
+│   │   ├── position
+│   │   └── left
+│   ├── .who-are-you-container li:nth-child(2)::before
+│   │   ├── content
+│   │   ├── position
+│   │   └── left
+│   ├── .who-are-you-container li:nth-child(3)::before
+│   │   ├── content
+│   │   ├── position
+│   │   └── left
+│   └── @supports not (selector(::before))
+└── Mobile Styles
+    ├── @media
+        ├── .who-are-you-container
+            └── Size It
+                └── max-width
 */
