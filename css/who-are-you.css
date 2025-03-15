@@ -241,6 +241,12 @@
   left: 0;
 }
 
+.who-are-you-container li:nth-child(4)::before {
+  content: '🐞';
+  position: absolute;
+  left: 0;
+}
+
 /*
   😱 Fallback Support:
   If ::before isn’t supported (super rare), revert to classic bullets.
