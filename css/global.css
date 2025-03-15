@@ -702,6 +702,11 @@ footer {
   Mobile Typography Adjustments
   Scales down h1 on smaller screens for better readability.
   Order of Properties: Size It (Sz)
+
+  📲 The 768px width is widely used because it aligns with the typical screen size
+  of tablets in portrait mode, like the iPad (which has a resolution of 768px wide
+  at 1x pixel density). It’s become a convention in responsive design to mark the
+  transition between "mobile" and "tablet" layouts.
 */
 @media (width <= 768px) {
   /* --- Size It --- */
