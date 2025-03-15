@@ -166,7 +166,7 @@
 */
 @media (width <= 768px) {
   .home-container {
-  /* --- Size It --- */
+    /* --- Size It --- */
 
     /*
       max-width: 100vw sets the maximum width to 100% of the viewport width.

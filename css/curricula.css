@@ -305,7 +305,7 @@
 */
 @media (max-width: 768px) {
   .curriculum-container {
-  /* --- Size It --- */
+    /* --- Size It --- */
 
     /*
       max-width: 100vw sets the maximum width to 100% of the viewport width.
