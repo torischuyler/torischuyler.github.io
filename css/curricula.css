@@ -77,9 +77,17 @@
 
 /*
   This styles paragraph text (<p> tags) inside the .curriculum-container.
-  Order of Properties: Style It (St)
+  Order of Properties: Style It, Space It (St Sp)
 */
 .curriculum-container p {
+  /* --- Space It --- */
+
+  /*
+    Adds space below the heading (1.618rem ≈ 26px) using the golden ratio
+    for aesthetic harmony (and bc 6/18 is my bday 😎).
+  */
+  margin-bottom: 1.618rem;
+
   /* --- Style It --- */
 
   /*
@@ -298,6 +306,8 @@ Curricula.css
 │   └── Style It
 │       └── color
 ├── .curriculum-container p
+│   ├── Space It
+│   │   └── margin-bottom
 │   └── Style It
 │       └── text-align
 ├── .curriculum-container h2
