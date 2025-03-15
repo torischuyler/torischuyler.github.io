@@ -307,6 +307,27 @@
 }
 
 /*
+  Lesson Container Mobile Styles
+  Order of Properties: Size It (Sz)
+
+  📲 The 768px width is widely used because it aligns with the typical screen size
+  of tablets in portrait mode, like the iPad (which has a resolution of 768px wide
+  at 1x pixel density). It’s become a convention in responsive design to mark the
+  transition between "mobile" and "tablet" layouts.
+*/
+@media (max-width: 768px) {
+  .lesson-container {
+  /* --- Size It --- */
+
+    /*
+      max-width: 100vw sets the maximum width to 100% of the viewport width.
+      Increased from 80vw to 100vw for mobile to enhance text and image size on smaller screens.
+    */
+    max-width: 100vw;
+  }
+}
+
+/*
 Lesson-styles.css
 ├── .lesson-container
 │   ├── Size It
@@ -362,4 +383,9 @@ Lesson-styles.css
     │   └── font-size
     └── Space It
         └── padding-left
+├── Mobile Styles
+│   ├── @media
+│       ├── .lesson-container
+│           └── Size It
+│               └── max-width
 */
