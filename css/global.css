@@ -642,6 +642,39 @@ nav a:hover {
 }
 
 /* 
+  Yin Yang Toggle ☯️
+  Order of Properties: Size It, Space It, Style It (Sz Sp St)
+*/
+#yin-yang-toggle {
+  /* --- Size It --- */
+  font-size: 2em;
+
+  /* --- Space It --- */
+  padding: 0.5rem 1.5rem;
+
+  /* --- Style It --- */
+
+  /* Wipes out any background, so the toggle emoji blends in with the nav bar. */
+  background: none;
+
+  /* Removes the border; uncomment to see the toggle’s padding and margin during design. */
+  border: none;
+
+  /* Turns the cursor into a hand to show it’s clickable; try ‘grab’ or ‘crosshair’ for a twist! */
+  cursor: pointer;
+
+  /* 
+    Sets the speed (0.3 seconds) and transition style (ease, which is a smooth transition)
+    for how the toggle emoji grows when hovering over it.
+  */
+  transition: transform 0.3s ease;
+}
+
+#yin-yang-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* 
   Footer Styling 🐾
   Order of Properties: Size it, Space it, Style it (Sz Sp St)
 */
@@ -758,6 +791,11 @@ footer {
   }
 
   #sun-moon-toggle {
+    /* --- Size It --- */
+    font-size: 3rem;
+  }
+
+  #yin-yang-toggle {
     /* --- Size It --- */
     font-size: 3rem;
   }
@@ -886,6 +924,18 @@ Global.css
 │   │   |   └── transition
 │   │   └── #sun-moon-toggle:hover
 │   │       
+│   ├── #yin-yang-toggle
+│   │   ├── Size It
+│   │   │   └── font-size
+│   │   ├── Space It
+│   │   │   └── padding
+│   │   └── Style It
+│   │   |   ├── background
+│   │   |   ├── border
+│   │   |   ├── cursor
+│   │   |   └── transition
+│   │   └── #yin-yang-toggle:hover
+│   │       
 │   └── footer
 │       ├── Size It
 │       │   ├── width
@@ -914,6 +964,9 @@ Global.css
 │   │   │       ├── justify-content
 │   │   │       └── gap
 │   │   ├── #sun-moon-toggle
+│   │   │   └── Size It
+│   │   │       └── font-size
+│   │   ├── #yin-yang-toggle
 │   │   │   └── Size It
 │   │   │       └── font-size
 │   │   ├── .nav-menu.active
