@@ -303,7 +303,7 @@
   at 1x pixel density). It’s become a convention in responsive design to mark the
   transition between "mobile" and "tablet" layouts.
 */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .curriculum-container {
     /* --- Size It --- */
 
