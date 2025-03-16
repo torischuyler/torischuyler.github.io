@@ -115,6 +115,7 @@ for developers on computer basics and operating system fundamentals. -->
                 linking to the 'lesson-title' ID on the <h1> in the page-header section above,
                 helping screen readers connect content to its heading. -->
 
+                <!-- Begin Introduction Section ------------->
                 <section>
                     <h2><span>Introduction</span></h2>
                     <!-- 'h2' tags act as section headings to organize key topics,
@@ -123,8 +124,8 @@ for developers on computer basics and operating system fundamentals. -->
                     <p>
                         Hey there! I'm your little orca buddy, Connie, your guide to the magical world of Computerland—
                         where everything is computer. Why am I an orca? Well, one of the creators of this operating system
-                        started her software development journey in New York City with a pod of awesome people and
-                        their team mascot was an orca.
+                        started her software development journey in New York City with a team of awesome people and
+                        their pod mascot was an orca.
                     </p>
                     <br>
                     <p>
@@ -139,6 +140,33 @@ for developers on computer basics and operating system fundamentals. -->
                         and we'll uncover the not-so-mysterious magic—starting with the bootloader and the kernel.
                     </p>
                 </section>
+                <!-- End Introduction Section ------------->
+
+                <!-- Begin Bootloader Section ------------->
+                <section>
+                    <h2><span>Bootloader</span></h2>
+
+                    <section>
+                        <h3>macOS</h3>
+                    </section>
+
+                    <section>
+                        <h3>Linux</h3>
+                    </section>
+
+                    <section>
+                        <h3>Windows</h3>
+                    </section>
+
+                    <section>
+                        <h3>iOS</h3>
+                    </section>
+
+                    <section>
+                        <h3>Android</h3>
+                    </section>
+                </section>
+                <!-- End Bootloader Section ------------->
             </main>
             <!-- End Main Section -->
         </div>
@@ -200,13 +228,24 @@ DOCTYPE
         │   ├── header
         │   │   └── h1
         │   └── main
-        │       └── section (Introduction)
+        │       ├── section (Introduction)
+        │       │   ├── h2
+        │       │   ├── p
+        │       │   ├── br
+        │       │   └── p
+        │       └── section (Bootloader)
         │           ├── h2
-        │           ├── p
-        │           ├── br
-        │           └── p
+        │           ├── section
+        │           │   └── h3 (macOS)
+        │           ├── section
+        │           │   └── h3 (Linux)
+        │           ├── section
+        │           │   └── h3 (Windows)
+        │           ├── section
+        │           │   └── h3 (iOS)
+        │           └── section
+        │               └── h3 (Android)
         ├── footer
         │   └── p
-        │       └── span
         └── script (footer.js)
 -->
