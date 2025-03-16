@@ -153,6 +153,17 @@ have a common baseline understanding. -->
 
                 <p>Here you'll find lesson plans focused on computer basics and operating system fundamentals.</p>
                 <!-- A paragraph, a block of text. -->
+
+                <h2>Lesson Plans</h2>
+                <!-- 'h2' tags act as section headings to organize key topics,
+                sitting below 'h1' in the heading hierarchy for structure and accessibility. -->
+    
+                <ul>
+                <!-- Unordered list, aka list of bullet points. -->
+    
+                    <li><a href="developer-lessons/bootloader-kernel.html">Lesson 1: Bootloader and Kernel</a></li>
+                    <!-- List item, aka a bullet point. -->
+                </ul>
             </main>
             <!-- End Main Section ---------------------------------------------------------->
         </div>
@@ -207,7 +218,6 @@ DOCTYPE
     │   │   └── link (google fonts)
     │   ├── script (yin-yang-toggle.js)
     │   └── script (mobile-nav.js)
-    │
     └── body
         ├── nav
         │   ├── ul (nav-menu)
@@ -228,7 +238,11 @@ DOCTYPE
         ├── div (curriculum-container)
         │   └── main
         │       ├── h1
-        │       └── p
+        │       ├── p
+        │       ├── h2
+        │       └── ul
+        │           └── li
+        │               └── a (Bootloader and Kernel)
         ├── footer
         │   └── p
         │       └── span
