@@ -1,4 +1,4 @@
-/* 
+/*
   📚 Curricula.css - 
   Welcome! If you find yourself reading this, here's what you're learning: 
   CSS (Cascading Style Sheets) is what transforms a website from a basic structure 
@@ -183,23 +183,30 @@
 }
 
 /* 
-  ✅ Custom rocket bullets using ::before to ensure Safari compatibility.
-  '🚀' gives us rocket bullets — blasting off to learning!
+  Custom bullets using ::before to ensure Safari compatibility.
+  - '🚀' gives rocket bullets for the student page — blasting off to learning!
+  - 'φ' gives phi bullets for the developer page — a nod to the golden ratio.
+
   Most sites stick to boring 'disc' (●), 'circle' (○), or 'square' (■) — yawn!
   Those are fine, but you can level up with ANY Unicode character — yup, emojis too.
   Try '⛩️' (Shinto shrine, aka torii gate), '🎉', or '🛹' for fun.
   Order of Properties: Style It (St)
 */
-.curriculum-container ul li::before {
+.students-page .curriculum-container ul li::before {
   /* --- Style It --- */
 
-  /* Rocket emoji bullet point */
+  /* Rocket for students */
   content: '🚀';
-
-  /* Places the rocket at the left edge of the <li>, which is indented by the <ul> */
   position: absolute;
+  left: 0;
+}
 
-  /* Moves the rocket to the left edge of the <li> */
+.developers-page .curriculum-container ul li::before {
+  /* --- Style It --- */
+
+  /* Phi for developers */
+  content: 'φ';
+  position: absolute;
   left: 0;
 }
 
@@ -345,7 +352,12 @@ Curricula.css
 │   │   └── padding-left
 │   ├── Style It
 │   │   └── position
-│   ├── .curriculum-container ul li::before
+│   ├── .students-page .curriculum-container ul li::before
+│   │   └── Style It
+│   │       ├── content
+│   │       ├── position
+│   │       └── left
+│   ├── .developers-page .curriculum-container ul li::before
 │   │   └── Style It
 │   │       ├── content
 │   │       ├── position
