@@ -51,6 +51,27 @@ for developers on computer basics and operating system fundamentals. -->
         <!-- Script for toggling mobile navigation--------->
     </head>
     <!-- End Head Section --------------------------------------------------->
+
+    <!-- Begin Body Section ------------------------------------------------->
+    <!-- Body contains all the visible content of the webpage,
+    like text, images, and buttons - the "on-stage" part where the action happens. -->
+    <body>
+
+        <!-- Begin Navigation Section  ------------------------------------------------->
+        <!-- Navigation section - like a table of contents for the webpage. -->
+        <nav aria-label="Main navigation">
+        <!-- 'aria-label' tags this as "Main navigation" for screen readers since there’s no heading;
+        without it, it’d just be "navigation," leaving visitors unsure which nav this is (e.g., main vs. footer). -->
+
+            <!-- Navigation menu for desktop and mobile -->
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../students.html">Students</a></li>
+                <li><a href="../developers.html">Developers</a></li>
+                <li><a href="../who-are-you.html">Who Are You?</a></li>
+            </ul>
+        </nav>
+    </body>
 </html>
 
 <!--
@@ -71,4 +92,14 @@ DOCTYPE
     │   ├── script (yin-yang-toggle.js)
     │   └── script (mobile-nav.js)
     └── body
+        └── nav
+            └── ul (nav-menu)
+                ├── li
+                │   └── a (Home)
+                ├── li
+                │   └── a (Students)
+                ├── li
+                │   └── a (Developers)
+                └── li
+                    └── a (Who Are You?)
 -->
