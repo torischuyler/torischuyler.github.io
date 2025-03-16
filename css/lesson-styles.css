@@ -98,9 +98,17 @@
 
 /*
   Page Heading
-  Order of Properties: Style it (St)
+  Order of Properties: Space It, Style It (Sp St)
 */
 .lesson-container h1 {
+  /* --- Style It --- */
+
+  /*
+    Adds space below the heading (1.618rem ≈ 26px) using the golden ratio
+    for aesthetic harmony (and bc 6/18 is my bday 😎).
+  */
+  margin-top: 1.618rem;
+
   /* --- Style It --- */
 
   /*
@@ -347,6 +355,8 @@ Lesson-styles.css
 │   └── Space It
 │       └── margin
 ├── .lesson-container h1
+│   ├── Space It
+│   │   └── margin-top
 │   └── Style It
 │       └── color
 ├── .lesson-container h2
