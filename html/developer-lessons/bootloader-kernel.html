@@ -42,7 +42,7 @@ for developers on computer basics and operating system fundamentals. -->
         <!-- Load local stylesheets first for speed and to prevent overrides by third-party CSS (e.g., Google Fonts). -->
         <!-- End Stylesheet Links  --------------------------------------------------->
 
-        <script src="../js/yin-yang-toggle.js" defer></script>
+        <script src="../../js/yin-yang-toggle.js" defer></script>
         <!-- Script for toggling Dark/Light mode - placed last for better page load performance and security.
         'defer' tells the browser to load the script after the HTML is parsed but before
         the DOMContentLoaded event, improving page load times. -->
@@ -70,6 +70,19 @@ for developers on computer basics and operating system fundamentals. -->
                 <li><a href="../developers.html">Developers</a></li>
                 <li><a href="../who-are-you.html">Who Are You?</a></li>
             </ul>
+
+            <!-- Begin Nav Header Wrapper: Groups hamburger and toggle ------------------>
+            <div class="nav-header">
+
+                <div class="hamburger">☰</div>
+                <!-- Hamburger icon -->
+
+                <button id="yin-yang-toggle" aria-label="Toggle light or dark mode" aria-pressed="false">☯️</button>
+                <!-- Dark/Light mode toggle button. The 'aria-label' attribute enhances accessibility
+                by describing the button for screen readers, ensuring users with visual impairments
+                can identify its purpose, with 'aria-pressed' indicating the current mode. -->
+            </div>
+            <!-- End Nav Header Wrapper ------------------------------------------------->
         </nav>
     </body>
 </html>
@@ -93,13 +106,16 @@ DOCTYPE
     │   └── script (mobile-nav.js)
     └── body
         └── nav
-            └── ul (nav-menu)
-                ├── li
-                │   └── a (Home)
-                ├── li
-                │   └── a (Students)
-                ├── li
-                │   └── a (Developers)
-                └── li
-                    └── a (Who Are You?)
+            ├── ul (nav-menu)
+            │   ├── li
+            │   │   └── a (Home)
+            │   ├── li
+            │   │   └── a (Students)
+            │   ├── li
+            │   │   └── a (Developers)
+            │   └── li
+            │       └── a (Who Are You?)
+            └── div (nav-header)
+                ├── div (hamburger)
+                └── button (yin-yang-toggle)
 -->
