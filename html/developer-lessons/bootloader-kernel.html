@@ -154,10 +154,14 @@ for developers on computer basics and operating system fundamentals. -->
             <!-- span highlights year, which is updated by the script in footer.js. -->
         </footer>
         <!-- End Footer Section -->
+
+        <script src="../../js/footer.js" defer></script>
+        <!-- Footer script: Automatically updates the copyright year.
+        The 'defer' attribute ensures the script loads after HTML parsing is complete. -->
     </body>
+    <!-- End Body Section -->
 </html>
 
-<!--
 <!--
 DOCTYPE
 └── html
@@ -201,7 +205,8 @@ DOCTYPE
         │           ├── p
         │           ├── br
         │           └── p
-        └── footer
-            └── p
-                └── span
+        ├── footer
+        │   └── p
+        │       └── span
+        └── script (footer.js)
 -->
