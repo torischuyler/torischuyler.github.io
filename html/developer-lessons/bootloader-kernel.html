@@ -143,9 +143,21 @@ for developers on computer basics and operating system fundamentals. -->
             <!-- End Main Section -->
         </div>
         <!-- End of .lesson-container -->
+
+        <!-- Begin Footer Section -->
+        <!-- Footer content, like copyright info, contact details, or additional links. -->
+        <footer aria-label="Page footer">
+        <!-- 'aria-label' tags this as "Page footer" for screen readers, adding clarity since there’s no heading;
+        without it, it’s still announced as "footer," but this ensures the purpose is explicit. -->
+
+            <p><span id="year"></span> eOS Lesson Plans <span class="heart">💙</span> For Education</p>
+            <!-- span highlights year, which is updated by the script in footer.js. -->
+        </footer>
+        <!-- End Footer Section -->
     </body>
 </html>
 
+<!--
 <!--
 DOCTYPE
 └── html
@@ -180,13 +192,16 @@ DOCTYPE
         │   └── noscript
         │       └── div
         │           └── p
-        └── div (lesson-container)
-            ├── header
-            │   └── h1
-            └── main
-                └── section (Introduction)
-                    ├── h2
-                    ├── p
-                    ├── br
-                    └── p
+        ├── div (lesson-container)
+        │   ├── header
+        │   │   └── h1
+        │   └── main
+        │       └── section (Introduction)
+        │           ├── h2
+        │           ├── p
+        │           ├── br
+        │           └── p
+        └── footer
+            └── p
+                └── span
 -->
