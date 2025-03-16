@@ -107,6 +107,25 @@ for developers on computer basics and operating system fundamentals. -->
                 <!-- Main heading introduces the lesson topic. -->
             </header>
             <!-- End Header Section -->
+
+            <!-- Begin Main Section -->
+            <!-- Main content area - where the primary, unique content of the page lives. -->
+            <main aria-labelledby="lesson-title">
+                <!-- 'aria-labelledby' ties this main section to the lesson title for accessibility,
+                linking to the 'lesson-title' ID on the <h1> in the page-header section above,
+                helping screen readers connect content to its heading. -->
+
+                <section>
+                    <h2>Introduction</h2>
+                    <!-- 'h2' tags act as section headings to organize key topics,
+                    sitting below 'h1' in the heading hierarchy for structure and accessibility. -->
+
+                    <p>Hey there! I'm your little orca buddy—let's call me Connie, your guide to the magical world of Computerland, where everything is computer. Whether you're a total newbie just dipping your toes in or a seasoned dev with battle scars, I've got something for you. Fair warning: if you're a Real Serious Developer—why so serious?—and can't handle a couple emojis or some fun, this might not be your jam. If you read that and you're still here, chama…</p>
+                    <br>
+                    <p>Ever wonder what really happens when you press that power button to turn on your device? Maybe you've got it mapped out, or maybe you're like, “Is it Oompa Loompas?” (Spoiler: it's not Oompa Loompas 😩). Stick with me, and we'll uncover the not-so-mysterious magic—starting with the bootloader and the kernel. Ready to dive in?</p>
+                </section>
+            </main>
+            <!-- End Main Section -->
         </div>
         <!-- End of .lesson-container -->
     </body>
@@ -147,6 +166,12 @@ DOCTYPE
         │       └── div
         │           └── p
         └── div (lesson-container)
-            └── header
-                └── h1
+            ├── header
+            │   └── h1
+            └── main
+                └── section (Introduction)
+                    ├── h2
+                    ├── p
+                    ├── br
+                    └── p
 -->
