@@ -83,6 +83,19 @@ for developers on computer basics and operating system fundamentals. -->
                 can identify its purpose, with 'aria-pressed' indicating the current mode. -->
             </div>
             <!-- End Nav Header Wrapper ------------------------------------------------->
+
+            <noscript>
+            <!-- The noscript tag is used to provide alternative content
+            when JavaScript is disabled in the visitor's browser. -->
+
+                <div class="noscript-warning">
+                <!-- This div serves as a container for the warning message. -->
+
+                    <p>JavaScript is disabled on your browser. To experience all features of this site, please enable JavaScript.</p>
+                    <!-- Paragraph tag containing the message that informs visitors
+                    about disabled JavaScript and encourages them to enable it. -->
+                </div>
+            </noscript>
         </nav>
     </body>
 </html>
@@ -115,7 +128,10 @@ DOCTYPE
             │   │   └── a (Developers)
             │   └── li
             │       └── a (Who Are You?)
-            └── div (nav-header)
-                ├── div (hamburger)
-                └── button (yin-yang-toggle)
+            ├── div (nav-header)
+            │   ├── div (hamburger)
+            │   └── button (yin-yang-toggle)
+            └── noscript
+                └── div
+                    └── p
 -->
