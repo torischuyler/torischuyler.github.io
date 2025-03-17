@@ -124,8 +124,7 @@ for developers on computer basics and operating system fundamentals. -->
                     <p>
                         Hey there! I'm your little orca buddy, Connie, your guide to the magical world of Computerland—
                         where everything is computer. Why am I an orca? Well, one of the creators of this operating system
-                        started her software development journey in New York City with a team of awesome people and
-                        their pod mascot was an orca.
+                        began her software development journey in New York City and their pod mascot was an orca.
                     </p>
                     <br>
                     <p>
@@ -146,6 +145,47 @@ for developers on computer basics and operating system fundamentals. -->
                 <!-- Begin Bootloader Section ------------->
                 <section>
                     <h2><span>Bootloader</span></h2>
+
+                    <p>
+                        Hey, it's me, Connie, your orca pal from a sec ago! So, you're curious about how computers tick, huh?
+                        Sweet—I'm pumped to nerd out with you. Let's start with the first thing that happens when you power on.
+                    </p>
+                    <br>
+                    <p>
+                        Here's how your device goes from a lifeless brick to something useful:
+                        <ol>
+                            <li>
+                                <strong>Power On:</strong> You press the button. Electricity hits the CPU (Central Processing Unit—the 🧠
+                                of your device that runs instructions). It wakes up with no clue what to do—just a blank slate, waiting for orders.
+                                That jolt of power triggers the next step.
+                            </li>
+
+                            <li>
+                                <strong>Built-In Firmware Guides CPU:</strong> Right then, a small, permanent program in the phone or computer hardware 
+                                (called firmware) jumps in and tells the CPU, “Go check this exact spot,” usually a physical location on the device 
+                                in storage—like a drive or chip—where the bootloader sits. Sometimes it's pre-loaded into memory—another physical spot, 
+                                fast but temporary. Future us will explore which firmware different types of devices use.
+                            </li>
+
+                            <li>
+                                <strong>CPU Finds the Bootloader:</strong> The CPU goes to that 📍spot and finds the bootloader—a small program of basic
+                                instructions that it executes instantly.
+                            </li>
+
+                            <li>
+                                <strong>Bootloader Takes Over:</strong> The bootloader <i>then</i> loads itself into memory and starts running,
+                                taking control of the startup process.
+                            </li>
+                        </ol>
+                    </p>
+                    <br>
+                    <p>
+                        <strong>📜 Histoire:</strong>
+                    </p>
+                    <br>
+                    <p>
+                        <strong>😎 Trop Cool:</strong>
+                    </p>
 
                     <section>
                         <h3>macOS</h3>
@@ -258,10 +298,18 @@ DOCTYPE
         │       ├── section (Introduction)
         │       │   ├── h2
         │       │   ├── p
-        │       │   ├── br
         │       │   └── p
         │       ├── section (Bootloader)
         │       │   ├── h2
+        │       │   ├── p (Connie intro)
+        │       │   ├── p
+        │       │   │   └── ol
+        │       │   │       ├── li (Power On)
+        │       │   │       ├── li (Built-In Firmware Guides CPU)
+        │       │   │       ├── li (CPU Finds the Bootloader)
+        │       │   │       └── li (Bootloader Takes Over)
+        │       │   ├── p (Histoire)
+        │       │   ├── p (Trop Cool)
         │       │   ├── section
         │       │   │   └── h3 (macOS)
         │       │   ├── section
