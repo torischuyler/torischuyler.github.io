@@ -217,9 +217,12 @@
   🎯 Lesson Goals List
   The .lesson-container ol styles the ordered list (<ol>) inside the lesson container.
   This is where lesson goals live, formatted as a numbered list for easy navigation.
-  Order of Properties: Space it (Sp)
+  Order of Properties: Size It, Space It (Sz Sp)
 */
 .lesson-container ol {
+  /* --- Size It --- */
+  font-size: 1.125rem;
+
   /* --- Space It --- */
 
   /*
@@ -380,6 +383,8 @@ Lesson-styles.css
 │   └── Space It
 │       └── padding
 ├── .lesson-container ol
+│   ├── Size It
+│   │   └── font-size
 │   └── Space It
 │       └── padding-left
 ├── .lesson-container li
