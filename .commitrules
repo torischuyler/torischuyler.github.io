@@ -18,7 +18,7 @@ rules:
         exceptions:  # Allow capitalization for specific cases
           - acronyms: [
             "SEO", "ARIA", "HTML", "JS",
-            "CSS", "JPG", "JPEG", "README", "RAM"
+            "CSS", "JPG", "JPEG", "README", "RAM", "MMU"
           ]
           - proper_nouns: ["Narendra Modi", "Connie", "Safari", "JavaScript"]
       targets:
