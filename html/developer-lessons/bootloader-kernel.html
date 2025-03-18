@@ -158,75 +158,79 @@ for developers on computer basics and operating system fundamentals. -->
                 <!-- Begin Bootloader Section ------------->
                 <section>
                     <h2><span>Bootloader</span></h2>
-                    <p>
-                        <strong>[Boot Flow: Power On ⚡️ &gt; CPU Looks 🧠 &gt; Firmware 🐕 &gt; CPU Looks 🧠 &gt; Bootloader 🥾]</strong>
-                        <ul>
-                            <li>
-                                <strong>Power On ⚡️</strong> Electricity hits the <strong>hardware.</strong>
-                            </li>
 
-                            <li>
-                                <strong>CPU Looks 🧠</strong> The CPU (<strong>hardware</strong>) checks a hardcoded spot.
-                            </li>
-
-                            <li>
-                                <strong>Firmware 🐕</strong><strong> Software</strong> steps in to guide the CPU.
-                            </li>
-
-                            <li>
-                                <strong>Bootloader 🥾</strong> More<strong> software</strong> takes over.
-                            </li>
-                        </ul>
+                    <details>
+                        <summary>Tap/Click Me!</summary>
                         <p>
-                            Hey, it's me, Connie, your orca pal from a sec ago! So, you're curious about how computers tick, huh?
-                            Sweet—I'm pumped to nerd out with you. Let's start with the first thing that happens when you power on.
+                            <strong>[Boot Flow: Power On ⚡️ &gt; CPU Looks 🧠 &gt; Firmware 🐕 &gt; CPU Looks 🧠 &gt; Bootloader 🥾]</strong>
+                            <ul>
+                                <li>
+                                    <strong>Power On ⚡️</strong> Electricity hits the <strong>hardware.</strong>
+                                </li>
+    
+                                <li>
+                                    <strong>CPU Looks 🧠</strong> The CPU (<strong>hardware</strong>) checks a hardcoded spot.
+                                </li>
+    
+                                <li>
+                                    <strong>Firmware 🐕</strong><strong> Software</strong> steps in to guide the CPU.
+                                </li>
+    
+                                <li>
+                                    <strong>Bootloader 🥾</strong> More<strong> software</strong> takes over.
+                                </li>
+                            </ul>
+                            <p>
+                                Hey, it's me, Connie, your orca pal from a sec ago! So, you're curious about how computers tick, huh?
+                                Sweet—I'm pumped to nerd out with you. Let's start with the first thing that happens when you power on.
+                            </p>
                         </p>
-                    </p>
-                    <br>
-                    <p>
-                        Here's how your device goes from a lifeless brick to something useful:
-                        <ol>
-                            <li>
-                                <strong>Power On:</strong> You press the button. Electricity zaps ⚡️ the CPU (Central Processing Unit—the brain 🧠 of 
-                                your device that runs instructions). Boom! 💥 It's awake and instantly knows to check a special spot in permanent memory—
-                                like a “Start Here!” sign that's always in the exact same place.  No fumbling around, just straight to business. This initial 
-                                check kicks off all the next steps in starting up your machine.
-                            </li>
-                            <li>
-                                <strong>Built-In Firmware Guides CPU:</strong> As soon as the CPU sees that “Start Here!” sign, a built-in program in your device
-                                (called firmware) leaps into action and tells the CPU, “Yo, check this exact spot!”—usually a physical location in storage,
-                                like a drive or chip, where the bootloader hangs out. Firmware is like a loyal sidekick 🐕 it sticks around even when your device is
-                                powered off, and it can get updates to squash bugs or boost security.
-                            </li>
-
-                            <li>
-                                <strong>CPU Finds the Bootloader:</strong> The CPU goes to that spot and finds the bootloader 🥾 a small program of basic
-                                instructions that it executes instantly.
-                            </li>
-
-                            <li>
-                                <strong>Bootloader Takes Over:</strong> Here's where things get interesting! The bootloader works in stages to take control of the
-                                startup process, like a relay race 🏊‍♀️🏊‍♂️ First, a tiny initial stage loads itself into memory—small but mighty! Then it passes
-                                the baton to a bigger, more capable stage that knows how to handle all your device's fancy hardware. One of its most important jobs?
-                                Setting up memory zones—like drawing a treasure map 🗺️ of where all the important stuff (like programs) will live later.
-                                This tag-team approach helps your device boot up safely and efficiently.
-                            </li>
-                        </ol>
-                    </p>
-                    <br>
-                    <p>
-                        <strong>Trop Cool 😎</strong> Why “Boot”? The term “booting” traces back to a 19th-century phrase from a Baron Munchausen story,
-                        where he pulls himself out of a swamp by his own bootstraps. Engineers in the 1950s thought it was a hilarious fit for computers
-                        starting themselves up, and it stuck!
-                    </p>
-                    <br>
-                    <p>
-                        Now that the bootloader's set the stage, it's time to bring in the real MVP of Computerland: the kernel. ✨
-                    </p>
-                    <br>
-                    <p>
-                        <strong>[Transition: Firmware discovers → Bootloader queries and reformats → Kernel receives]</strong>
-                    </p>
+                        <br>
+                        <p>
+                            Here's how your device goes from a lifeless brick to something useful:
+                            <ol>
+                                <li>
+                                    <strong>Power On:</strong> You press the button. Electricity zaps ⚡️ the CPU (Central Processing Unit—the brain 🧠 of 
+                                    your device that runs instructions). Boom! 💥 It's awake and instantly knows to check a special spot in permanent memory—
+                                    like a “Start Here!” sign that's always in the exact same place.  No fumbling around, just straight to business. This initial 
+                                    check kicks off all the next steps in starting up your machine.
+                                </li>
+                                <li>
+                                    <strong>Built-In Firmware Guides CPU:</strong> As soon as the CPU sees that “Start Here!” sign, a built-in program in your device
+                                    (called firmware) leaps into action and tells the CPU, “Yo, check this exact spot!”—usually a physical location in storage,
+                                    like a drive or chip, where the bootloader hangs out. Firmware is like a loyal sidekick 🐕 it sticks around even when your device is
+                                    powered off, and it can get updates to squash bugs or boost security.
+                                </li>
+    
+                                <li>
+                                    <strong>CPU Finds the Bootloader:</strong> The CPU goes to that spot and finds the bootloader 🥾 a small program of basic
+                                    instructions that it executes instantly.
+                                </li>
+    
+                                <li>
+                                    <strong>Bootloader Takes Over:</strong> Here's where things get interesting! The bootloader works in stages to take control of the
+                                    startup process, like a relay race 🏊‍♀️🏊‍♂️ First, a tiny initial stage loads itself into memory—small but mighty! Then it passes
+                                    the baton to a bigger, more capable stage that knows how to handle all your device's fancy hardware. One of its most important jobs?
+                                    Setting up memory zones—like drawing a treasure map 🗺️ of where all the important stuff (like programs) will live later.
+                                    This tag-team approach helps your device boot up safely and efficiently.
+                                </li>
+                            </ol>
+                        </p>
+                        <br>
+                        <p>
+                            <strong>Trop Cool 😎</strong> Why “Boot”? The term “booting” traces back to a 19th-century phrase from a Baron Munchausen story,
+                            where he pulls himself out of a swamp by his own bootstraps. Engineers in the 1950s thought it was a hilarious fit for computers
+                            starting themselves up, and it stuck!
+                        </p>
+                        <br>
+                        <p>
+                            Now that the bootloader's set the stage, it's time to bring in the real MVP of Computerland: the kernel. ✨
+                        </p>
+                        <br>
+                        <p>
+                            <strong>[Transition: Firmware discovers → Bootloader queries and reformats → Kernel receives]</strong>
+                        </p>
+                    </details>
                 </section>
                 <!-- End Bootloader Section --------------->
 
@@ -368,25 +372,27 @@ DOCTYPE
         │       │       └── p
         │       ├── section (Bootloader)
         │       │   ├── h2
-        │       │   ├── p
-        │       │   │   └── ul
-        │       │   │       ├── li (Power On)
-        │       │   │       ├── li (CPU Looks)
-        │       │   │       ├── li (Firmware)
-        │       │   │       └── li (Bootloader)
-        │       │   ├── br
-        │       │   ├── p
-        │       │   │   └── ol
-        │       │   │       ├── li (Power On)
-        │       │   │       ├── li (Built-In Firmware Guides CPU)
-        │       │   │       ├── li (CPU Finds the Bootloader)
-        │       │   │       └── li (Bootloader Takes Over)
-        │       │   ├── br
-        │       │   ├── p (Trop Cool)
-        │       │   ├── br
-        │       │   ├── p
-        │       │   ├── br
-        │       │   ├── p (Transition)
+        │       │   └── details
+        │       │       ├── summary
+        │       │       ├── p
+        │       │       │   └── ul
+        │       │       │       ├── li (Power On)
+        │       │       │       ├── li (CPU Looks)
+        │       │       │       ├── li (Firmware)
+        │       │       │       └── li (Bootloader)
+        │       │       ├── br
+        │       │       ├── p
+        │       │       │   └── ol
+        │       │       │       ├── li (Power On)
+        │       │       │       ├── li (Built-In Firmware Guides CPU)
+        │       │       │       ├── li (CPU Finds the Bootloader)
+        │       │       │       └── li (Bootloader Takes Over)
+        │       │       ├── br
+        │       │       ├── p (Trop Cool)
+        │       │       ├── br
+        │       │       ├── p
+        │       │       ├── br
+        │       │       ├── p (Transition)
         │       ├── section (Kernel)
         │       │   ├── h2
         │       │   ├── p
