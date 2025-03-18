@@ -279,7 +279,7 @@ for developers on computer basics and operating system fundamentals. -->
 
                                 <ul>
                                     <li>
-                                        <strong>Where 📍</strong>  Physical addresses (e.g., 0x0000 to 0xFFFF) of usable RAM.
+                                        <strong>Where 📍</strong>  Physical addresses (e.g., 0x00000000 to 0x1FFFFFFFF) of usable RAM.
                                     </li>
                                     <li>
                                         <strong>What's Usable ✅</strong>  Which chunks are free for the kernel to use.
@@ -294,6 +294,56 @@ for developers on computer basics and operating system fundamentals. -->
                                 It's where all your running programs will live, so the kernel needs to be extra careful about organizing it!
                                 RAM is speedy, but it forgets everything when the power is off—kinda like Dory from Finding Nemo 🐠
                                 (Ted Lasso ⚽️ says sometimes it's good to be a goldfish. Just keep swimming…)
+                            </li>
+                            <br>
+                            <li>
+                                <strong>Sets Up Memory Management:</strong> Alright, so the kernel has studied the map like the scholarly software it is,
+                                and now it's time to act! What's the first problem it tackles? Well… the computer's got this chunk of RAM—physical memory
+                                with addresses like 0x00000000 to 0x1FFFFFFFF—but it's a free-for-all without rules. Programs could stomp 🦶 all over each other's data,
+                                overwrite critical stuff, or try to use memory that's reserved for hardware. Chaos! The kernel's job in this step 
+                                is to bring order.<br><br>
+                                The key 🔑 in this step is all about abstraction and control. The kernel takes the raw, physical RAM and creates a system so
+                                programs don't have to deal with it directly. It sets up virtual memory—a layer of fake addresses that each program thinks it owns.
+                                Picture it like giving every app its own private sandbox to play in, even though they're sharing the same physical RAM.<br><br>
+
+                                <strong>How does the kernel set up memory management?</strong><br>
+                                <strong>[Kernel builds page tables → Loads them into the MMU → Enables the MMU → Virtual memory]</strong>
+                                <ul>
+                                    <li>
+                                        <strong>Page Tables:</strong> The kernel builds a lookup table (like a cheat sheet) that maps virtual addresses to 
+                                        physical ones. So when a program says, “I want my data at address 123,” the kernel quietly 🤫 translates it to,
+                                        “Ohhhhh, you mean physical address 0xABCD? Gotcha.”
+                                    </li>
+                                    <li>
+                                        <strong>MMU Activation:</strong> The kernel configures the Memory Management Unit (MMU), a hardware component in the CPU,
+                                        by loading the page tables into it and enabling it. This allows the MMU to translate virtual addresses to physical addresses,
+                                        making virtual memory functional and enforcing access rules.
+                                    </li>
+                                    <li>
+                                        <strong>Segmentation:</strong> Older systems divided memory into chunks by purpose (code, data, etc.),
+                                        but modern systems rely on page tables. Some architectures, like x86-64, still use a hybrid of both for flexibility and compatibility.
+                                    </li>
+                                    <li>
+                                        <strong>Protection 🛡️:</strong> The kernel sets rules—some memory is read-only, some is off-limits—so apps can't mess
+                                        with each other or the kernel itself.
+                                    </li>
+                                    <li>
+                                        <strong>Allocation:</strong> It decides who gets how much memory and when, like handing out slices of pizza 🍕 at a party.
+                                        Hawaiian pizza is pretty good, 2 slices please! 🤤
+                                    </li>
+                                </ul>
+                                <strong>Why is memory management important?</strong>
+                                <ul>
+                                    <li>
+                                        <strong>Safety:</strong> Keeps programs from crashing into each other.
+                                    </li>
+                                    <li>
+                                        <strong>Efficiency:</strong> Shares RAM smartly so everyone gets what they need. 
+                                    </li>
+                                    <li>
+                                        <strong>Flexibility:</strong> Lets the system pretend it has more memory than it does (hello, swapping to disk!).
+                                    </li>
+                                </ul>
                             </li>
                         </ol>
                     </p>
@@ -439,4 +489,19 @@ DOCTYPE
         ├── footer
         │   └── p
         └── script (footer.js)
+-->
+
+<!--
+Step 2: Sets Up Memory Management
+└── li
+    ├── ul (How)
+    │   ├── li (Page Tables)
+    │   ├── li (MMU Activation)
+    │   ├── li (Segmentation)
+    │   ├── li (Protection)
+    │   └── li (Allocation)
+    └── ul (Why)
+        ├── li (Safety)
+        ├── li (Efficiency)
+        └── li (Flexibility)
 -->
