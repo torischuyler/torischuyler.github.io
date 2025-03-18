@@ -273,9 +273,22 @@ for developers on computer basics and operating system fundamentals. -->
                                 to leave it on the side of the road on Thompson St. 😭).<br><br>
                                 
                                 The kernel examines the map to understand the physical memory layout—where the usable RAM is,
-                                what's off-limits, and any special regions. This isn't setting anything up yet; its just taking stock
-                                of the situation.<br><br>
+                                what's off-limits, and any special regions. No setting anything up yet; just taking stock
+                                of the situation. At this step, the main focus for the kernel is interpreting the physical 
+                                RAM memory, including:<br><br>
 
+                                <ul>
+                                    <li>
+                                        <strong>Where 📍</strong>  Physical addresses (e.g., 0x0000 to 0xFFFF) of usable RAM.
+                                    </li>
+                                    <li>
+                                        <strong>What's Usable ✅</strong>  Which chunks are free for the kernel to use.
+                                    </li>
+                                    <li>
+                                        <strong>What's Reserved 🙅‍♀️ </strong>  Areas blocked off (e.g., for hardware devices, firmware).
+                                    </li>
+                                </ul>
+                                <br>
                                 <strong>Trop Cool 😎</strong> Oh, what's RAM? It's Random Access Memory—hardware that acts as the device's
                                 short-term memory where it stashes stuff it needs to grab fast, like apps or data you're using right now. 
                                 It's where all your running programs will live, so the kernel needs to be extra careful about organizing it!
