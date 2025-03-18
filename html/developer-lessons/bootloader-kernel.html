@@ -121,32 +121,37 @@ for developers on computer basics and operating system fundamentals. -->
                     <!-- 'h2' tags act as section headings to organize key topics,
                     sitting below 'h1' in the heading hierarchy for structure and accessibility. -->
 
-                    <p>
-                        Hey there! I'm your little orca buddy, Connie, your guide to the magical world of Computerland—
-                        where everything is computer. Why am I an orca? Well, one of the creators of this operating system
-                        started her software development journey in New York City with a team of awesome people and
-                        their pod mascot was an orca.
-                    </p>
-                    <br>
-                    <p>
-                        Whether you're a total newbie just dipping your toes in or a seasoned dev with battle scars, I've got
-                        something for you. Fair warning: if you're a Super Serious Developer—why so serious?—and can't handle a
-                        couple emojis or some fun, this might not be your jam. If you read that and you're still here, let's dive in…
-                    </p>
-                    <br>
-                    <p>
-                        Ever wonder what really happens when you press that power button to turn on your phone or computer? 
-                        Maybe you've got it mapped out, or maybe you're like, “Is it Oompa Loompas?” (Spoiler: it's not Oompa Loompas 😩). 
-                        Stick with me, and we'll uncover the not-so-mysterious magic of the bootloader and the kernel.
-                        Do you dare disturb the computerverse?
-                    </p>
-                    <br>
-                    <p>
-                        Oh, and keep an eye out for <strong>Histoire 📜</strong> (French for history) and <strong>Trop Cool 😎</strong>
-                        (that's “so cool” in French)—French flairs inspired by the 1996 game <i>Madeline European Adventures</i>. 
-                        They'll pop up with fun facts or lil tidbits of computer history.
-                    </p>
+                    <details>
+                    <!-- Creates a collapsible section that hides content until toggled open. -->
 
+                        <summary>Tap/Click Me!</summary>
+                        <!-- Defines the clickable text that toggles the visibility of the content below. -->
+                        <p>
+                            Hey there! I'm your little orca buddy, Connie, your guide to the magical world of Computerland—
+                            where everything is computer. Why am I an orca? Well, one of the creators of this operating system
+                            started her software development journey in New York City with a team of awesome people and
+                            their pod mascot was an orca.
+                        </p>
+                        <br>
+                        <p>
+                            Whether you're a total newbie just dipping your toes in or a seasoned dev with battle scars, I've got
+                            something for you. Fair warning: if you're a Super Serious Developer—why so serious?—and can't handle a
+                            couple emojis or some fun, this might not be your jam. If you read that and you're still here, let's dive in…
+                        </p>
+                        <br>
+                        <p>
+                            Ever wonder what really happens when you press that power button to turn on your phone or computer? 
+                            Maybe you've got it mapped out, or maybe you're like, “Is it Oompa Loompas?” (Spoiler: it's not Oompa Loompas 😩). 
+                            Stick with me, and we'll uncover the not-so-mysterious magic of the bootloader and the kernel.
+                            Do you dare disturb the computerverse?
+                        </p>
+                        <br>
+                        <p>
+                            Oh, and keep an eye out for <strong>Histoire 📜</strong> (French for history) and <strong>Trop Cool 😎</strong>
+                            (that's “so cool” in French)—French flairs inspired by the 1996 game <i>Madeline European Adventures</i>. 
+                            They'll pop up with fun facts or lil tidbits of computer history.
+                        </p>
+                    </details>
                 </section>
                 <!-- End Introduction Section ------------->
 
@@ -352,19 +357,48 @@ DOCTYPE
         │   └── main
         │       ├── section (Introduction)
         │       │   ├── h2
-        │       │   ├── p
-        │       │   └── p
+        │       │   └── details
+        │       │       ├── summary
+        │       │       ├── p
+        │       │       ├── br
+        │       │       ├── p
+        │       │       ├── br
+        │       │       ├── p
+        │       │       ├── br
+        │       │       └── p
         │       ├── section (Bootloader)
         │       │   ├── h2
-        │       │   ├── p (Connie intro)
+        │       │   ├── p
+        │       │   │   └── ul
+        │       │   │       ├── li (Power On)
+        │       │   │       ├── li (CPU Looks)
+        │       │   │       ├── li (Firmware)
+        │       │   │       └── li (Bootloader)
+        │       │   ├── br
         │       │   ├── p
         │       │   │   └── ol
         │       │   │       ├── li (Power On)
         │       │   │       ├── li (Built-In Firmware Guides CPU)
         │       │   │       ├── li (CPU Finds the Bootloader)
         │       │   │       └── li (Bootloader Takes Over)
-        │       │   ├── p (Histoire)
+        │       │   ├── br
         │       │   ├── p (Trop Cool)
+        │       │   ├── br
+        │       │   ├── p
+        │       │   ├── br
+        │       │   ├── p (Transition)
+        │       ├── section (Kernel)
+        │       │   ├── h2
+        │       │   ├── p
+        │       │   ├── br
+        │       │   ├── p
+        │       │   ├── br
+        │       │   ├── p
+        │       │   ├── br
+        │       │   ├── p
+        │       │   │   └── ol
+        │       │   │       └── li (Reads and Interprets The Memory Map)
+        │       │   ├── br
         │       │   ├── section
         │       │   │   └── h3 (macOS)
         │       │   ├── section
@@ -375,18 +409,6 @@ DOCTYPE
         │       │   │   └── h3 (iOS)
         │       │   └── section
         │       │       └── h3 (Android)
-        │       └── section (Kernel)
-        │           ├── h2
-        │           ├── section
-        │           │   └── h3 (macOS)
-        │           ├── section
-        │           │   └── h3 (Linux)
-        │           ├── section
-        │           │   └── h3 (Windows)
-        │           ├── section
-        │           │   └── h3 (iOS)
-        │           └── section
-        │               └── h3 (Android)
         ├── footer
         │   └── p
         └── script (footer.js)
