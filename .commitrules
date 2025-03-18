@@ -20,7 +20,7 @@ rules:
             "SEO", "ARIA", "HTML", "JS",
             "CSS", "JPG", "JPEG", "README"
           ]
-          - proper_nouns: ["Connie", "Safari", "JavaScript"]
+          - proper_nouns: ["Narendra Modi", "Connie", "Safari", "JavaScript"]
       targets:
         case: lower  # Base case is lowercase
         exceptions:  # Same capitalization rules as description
