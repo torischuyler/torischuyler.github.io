@@ -237,35 +237,40 @@ for developers on computer basics and operating system fundamentals. -->
                 <!-- Begin Kernel Section ----------------->
                 <section>
                     <h2><span>Kernel</span></h2>
-                    <p>
-                        Hiya, it's Connie, your orca buddy, back again with the good stuff! So, the bootloader's set the stage,
-                        and now it's time for the kernel ✨ to steal the show.
-                    </p>
-                    <br>
-                    <p>
-                        Unlike the bootloader, which just sets up and steps back, the kernel sticks around, keeping everything smooth.
-                        Before it can shine, though, the bootloader gives kernel a quick pep talk, “Hey, kernel, I've got you loaded
-                        in memory with a sweet map 🗺️ of the place; it's your turn to take the wheel!”
-                    </p>
-                    <br>
-                    <p>
-                        What's the kernel? It's a piece of software—the big boss of Computerland—a super-smart wizard 🧙‍♂️ that runs the whole 
-                        shebang 24/7, deciding which programs get to use the CPU when, (no chat and cuts allowed! Larry David IYKYK), 
-                        which programs get access to memory, and creates a special universal language that all your software can use 
-                        to talk to any hardware.<br><br>
+                    <details>
+                        <summary>Tap/Click Me!</summary>
+                        <p>
+                            Hiya, it's Connie, your orca buddy, back again with the good stuff! So, the bootloader's set the stage,
+                            and now it's time for the kernel ✨ to steal the show.
+                        </p>
+                        <br>
+                        <p>
+                            Unlike the bootloader, which just sets up and steps back, the kernel sticks around, keeping everything smooth.
+                            Before it can shine, though, the bootloader gives kernel a quick pep talk, “Hey, kernel, I've got you loaded
+                            in memory with a sweet map 🗺️ of the place; it's your turn to take the wheel!”
+                        </p>
+                        <br>
+                        <p>
+                            What's the kernel? It's a piece of software—the big boss of Computerland—a super-smart wizard 🧙‍♂️ that runs the whole 
+                            shebang 24/7, deciding which programs get to use the CPU when, (no chat and cuts allowed! Larry David IYKYK), 
+                            which programs get access to memory, and creates a special universal language that all your software can use 
+                            to talk to any hardware.<br><br>
+    
+                            <strong>Histoire 📜</strong> The term “kernel” comes from the idea of a seed or nut kernel 🌰 In mathematics,
+                            kernel had already been used to describe the core part of a mathematical function or transformation.
+                            When computer scientists were developing operating systems in the 1960s, they adopted this term because it
+                            represented the fundamental part of the OS that everything else depends on. The kernel handles the most
+                            critical tasks (processes, memory, and hardware communication) and everything else (apps, user interfaces)
+                            is built around it, like the shell or husk around a seed.
+                        </p>
+                        <br>
 
-                        <strong>Histoire 📜</strong> The term “kernel” comes from the idea of a seed or nut kernel 🌰 In mathematics,
-                        kernel had already been used to describe the core part of a mathematical function or transformation.
-                        When computer scientists were developing operating systems in the 1960s, they adopted this term because it
-                        represented the fundamental part of the OS that everything else depends on. The kernel handles the most
-                        critical tasks (processes, memory, and hardware communication) and everything else (apps, user interfaces)
-                        is built around it, like the shell or husk around a seed.
-                    </p>
-                    <br>
-                    <p>
-                        Here's how the kernel takes your device from a fancy brick to a living, breathing, extraordinary machine:
-                        <ol>
-                            <li>
+                        <!-- Begin Memory Map - Kernel Step #1 ---------------->
+                        <h3>1. Reads and Interprets The Memory Map</h3>
+                        <details>
+                            <summary>Tap/Click Me!</summary>
+                            <p>
+                                Here's how the kernel takes your device from a fancy brick to a living, breathing, extraordinary machine.<br><br>
                                 <strong>Reads and Interprets The Memory Map:</strong> First thing the kernel does? It looks at that map from
                                 the bootloader to figure out what it's working with. Think of it like moving into a cramped Greenwich Village 
                                 walkup in NYC 🗽 Before you smoosh your stuff into your new living space, you check the floor plan to see where
@@ -276,36 +281,49 @@ for developers on computer basics and operating system fundamentals. -->
                                 what's off-limits, and any special regions. No setting anything up yet; just taking stock
                                 of the situation. At this step, the main focus for the kernel is interpreting the physical 
                                 RAM memory, including:<br><br>
-
                                 <ul>
                                     <li>
-                                        <strong>Where 📍</strong>  Physical addresses (e.g., 0x00000000 to 0x1FFFFFFFF) of usable RAM.
+                                        <strong>Where 📍</strong> Physical addresses (e.g., 0x00000000 to 0x1FFFFFFFF) of usable RAM.
                                     </li>
                                     <li>
-                                        <strong>What's Usable ✅</strong>  Which chunks are free for the kernel to use.
+                                        <strong>What's Usable ✅</strong> Which chunks are free for the kernel to use.
                                     </li>
                                     <li>
-                                        <strong>What's Reserved 🙅‍♀️ </strong>  Areas blocked off (e.g., for hardware devices, firmware).
+                                        <strong>What's Reserved 🙅‍♀️ </strong> Areas blocked off (e.g., for hardware devices, firmware).
                                     </li>
                                 </ul>
-                                <br>
+                            </p>
+                            <br>
+                            <p>
                                 <strong>Trop Cool 😎</strong> Oh, what's RAM? It's Random Access Memory—hardware that acts as the device's
                                 short-term memory where it stashes stuff it needs to grab fast, like apps or data you're using right now. 
                                 It's where all your running programs will live, so the kernel needs to be extra careful about organizing it!
                                 RAM is speedy, but it forgets everything when the power is off—kinda like Dory from Finding Nemo 🐠
                                 (Ted Lasso ⚽️ says sometimes it's good to be a goldfish. Just keep swimming…)
-                            </li>
-                            <br>
-                            <li>
+                            </p>
+                        </details>
+                        <!-- End Memory Map - Kernel Step #1 ------------------------->
+
+                        <br>
+                        <!-- Begin Memory Management - Kernel Step #2 ---------------->
+                        <h3>2. Sets Up Memory Management</h3>
+                        <details>
+                            <summary>Tap/Click Me!</summary>
+                            <p>
                                 <strong>Sets Up Memory Management:</strong> Alright, so the kernel has studied the map like the scholarly software it is,
                                 and now it's time to act! What's the first problem it tackles? Well… the computer's got this chunk of RAM—physical memory
                                 with addresses like 0x00000000 to 0x1FFFFFFFF—but it's a free-for-all without rules. Programs could stomp 🦶 all over each other's data,
                                 overwrite critical stuff, or try to use memory that's reserved for hardware. Chaos! The kernel's job in this step 
                                 is to bring order.<br><br>
+                            </p>
+
+                            <p>
                                 The key 🔑 in this step is all about abstraction and control. The kernel takes the raw, physical RAM and creates a system so
                                 programs don't have to deal with it directly. It sets up virtual memory—a layer of fake addresses that each program thinks it owns.
                                 Picture it like giving every app its own private sandbox to play in, even though they're sharing the same physical RAM.<br><br>
+                            </p>
 
+                            <p>
                                 <strong>How does the kernel set up memory management?</strong><br>
                                 <strong>[Kernel builds page tables → Loads them into the MMU → Enables the MMU → Virtual memory]</strong>
                                 <ul>
@@ -329,9 +347,12 @@ for developers on computer basics and operating system fundamentals. -->
                                     </li>
                                     <li>
                                         <strong>Allocation:</strong> It decides who gets how much memory and when, like handing out slices of pizza 🍕 at a party.
-                                        Hawaiian pizza is pretty good, 2 slices please! 🤤
+                                        Hawaiian pizza is pretty good, 2 slices please! 🤤 <br><br>
                                     </li>
                                 </ul>
+                            </p>
+
+                            <p>
                                 <strong>Why is memory management important?</strong>
                                 <ul>
                                     <li>
@@ -344,29 +365,10 @@ for developers on computer basics and operating system fundamentals. -->
                                         <strong>Flexibility:</strong> Lets the system pretend it has more memory than it does (hello, swapping to disk!).
                                     </li>
                                 </ul>
-                            </li>
-                        </ol>
-                    </p>
-                    <br>
-                    <section>
-                        <h3>macOS</h3>
-                    </section>
-
-                    <section>
-                        <h3>Linux</h3>
-                    </section>
-
-                    <section>
-                        <h3>Windows</h3>
-                    </section>
-
-                    <section>
-                        <h3>iOS</h3>
-                    </section>
-
-                    <section>
-                        <h3>Android</h3>
-                    </section>
+                            </p>
+                        </details>
+                        <!-- End Memory Management - Kernel Step #2 ---------------->
+                    </details>
                 </section>
                 <!-- End Kernel Section --------------->
             </main>
@@ -457,23 +459,22 @@ DOCTYPE
         │       │       └── p (Transition)
         │       ├── section (Kernel)
         │       │   ├── h2
-        │       │   ├── p
-        │       │   ├── p
-        │       │   ├── p
-        │       │   ├── p
-        │       │   │   └── ol
-        │       │   │       ├── li (Step 1: Reads and Interprets The Memory Map)
-        │       │   │       └── li (Step 2: Sets Up Memory Management)
-        │       │   ├── section
-        │       │   │   └── h3 (macOS)
-        │       │   ├── section
-        │       │   │   └── h3 (Linux)
-        │       │   ├── section
-        │       │   │   └── h3 (Windows)
-        │       │   ├── section
-        │       │   │   └── h3 (iOS)
-        │       │   └── section
-        │       │       └── h3 (Android)
+        │       │   └── details
+        │       │       ├── summary
+        │       │       ├── p
+        │       │       ├── p
+        │       │       ├── p (Histoire)
+        │       │       ├── h3 (Step 1: Reads and Interprets The Memory Map)
+        │       │       │   └── details
+        │       │       │       ├── summary
+        │       │       │       ├── p (See Step 1 Blueprint)
+        │       │       │       └── p (Trop Cool)
+        │       │       ├── h3 (Step 2: Sets Up Memory Management)
+        │       │       │   └── details
+        │       │       │       ├── summary
+        │       │       │       ├── p
+        │       │       │       ├── p
+        │       │       │       └── p (See Step 2 Blueprint)
         ├── footer
         │   └── p
         └── script (footer.js)
