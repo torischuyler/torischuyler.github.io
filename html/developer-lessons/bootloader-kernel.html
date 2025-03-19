@@ -377,7 +377,7 @@ for developers on computer basics and operating system fundamentals. -->
                                 Alright, the kernel's got its memory map sorted out and its virtual memory sandboxes ready.
                                 But here's the deal: what good is all that organized memory if your device can't actually DO anything?
                                 Right now, the CPU is like a person in a dark room - it can't see or interact with any of the cool stuff
-                                around it, like your keyboard ⌨️, your storage full of top tier memes 😜, or your screen 🖥️. Without communication,
+                                around it, like your touchscreen 📱 or your storage full of top tier memes 😜. Without communication,
                                 your device is kinda pointless. So, the kernel needs a way to wake up the hardware and get it ready for action,
                                 and that's where step #3 comes in: initializing the hardware basics with something called <strong>interrupts.</strong>
                             </p>
@@ -393,10 +393,10 @@ for developers on computer basics and operating system fundamentals. -->
                             <p>
                                 <strong>What's an interrupt?</strong><br>
                                 <strong>[Hardware pings &gt; CPU receives &gt; CPU responds &gt; CPU resumes]</strong><br><br>
-                                <strong>Interrupts</strong> let hardware signal the CPU asynchronously—meaning the CPU doesn't need to guess when something's coming;
-                                it just reacts when it happens. This is the bedrock of how the kernel starts chatting with hardware. Normally, the CPU's
-                                humming along, running instructions, but when a device—like the screen 🖥️ needs to pipe up, it sends an interrupt signal.
-                                The CPU saves what it was doing (like putting a bookmark in a book 📚), deals with the screen's request, then picks right
+                                <strong>Interrupts</strong> let hardware signal the CPU asynchronously—meaning the CPU doesn't need to guess when something's 
+                                coming; it just reacts when it happens. This is the bedrock of how the kernel starts chatting with hardware. Normally, 
+                                the CPU's humming along, running instructions, but when a device—like the touchscreen 📱 needs to start up, it sends an interrupt signal.
+                                The CPU saves what it was doing (like putting a bookmark in a book 📚), deals with the touchscreen's request, then picks right
                                 back up where it left off. Way better than the CPU pestering every device nonstop, “Hey, you got something for me?”—that'd 
                                 be slow and a total energy suck.<br><br>
                             </p>
@@ -408,8 +408,17 @@ for developers on computer basics and operating system fundamentals. -->
                             <p>
                                 💭 Here's a thought: For us humans, nonstop synchronous communication (real-time back and forth messages) can sometimes take a toll on us.
                                 So can constantly checking (polling) our favorite apps and games for notifications and updates. Attention is our most precious resource.
+                                Use it wisely.
                                 “The currency of life isn't money. It's not even time. It's attention.” - Naval Ravikant <br><br>
                             </p>
+                            <p>
+                                <strong>Why do we need an interrupt system?</strong><br>
+                                Before the kernel can use hardware, it has to set up an interrupt system. Why? Because interrupts don't just work automatically—the
+                                hardware can't signal on its own, and the CPU doesn't know how to respond yet. The kernel configures both sides: setting up the hardware
+                                to send interrupt signals and preparing the CPU to handle them. This step builds the groundwork so that later, when you tap your screen or
+                                type on your keyboard, every device can grab the CPU's attention right away.
+                            </p>
+                            <br>
                         </details>
                         <!-- End Hardware Interrupts - Kernel Step #3 ------------------>
                     </details>
