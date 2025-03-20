@@ -310,7 +310,7 @@ for developers on computer basics and operating system fundamentals. -->
                         <details>
                             <summary>Tap/Click Me!</summary>
                             <p>
-                                Alright, so the kernel has studied the map like the scholarly software it is,and now it's time to act! What's the
+                                Alright, so the kernel has studied the map like the scholarly software it is, and now it's time to act! What's the
                                 first problem it tackles? Well… the computer's got this chunk of RAM—physical memory with addresses like 0x00000000
                                 to 0x1FFFFFFFF—but it's a free-for-all without rules. Programs could stomp 🦶 all over each other's data,
                                 overwrite critical stuff, or try to use memory that's reserved for hardware.
@@ -448,12 +448,25 @@ for developers on computer basics and operating system fundamentals. -->
                             </p>
                             <br>
                             <p>
-                                The kernel now has a basic line of communication open with the hardware. It's not fully chatting yet—drivers handle that later—but it's
-                                enough to catch taps and swipes. By setting up interrupts, the kernel gets just enough functionality to unlock controlled, responsive hardware
-                                interactions, paving the road for the next steps. 🚀
+                                The kernel now has a basic line of communication open with the hardware. It's not fully chatting yet—drivers handle that in the next step—but
+                                it's enough to catch taps and swipes. By setting up interrupts, the kernel gets just enough functionality to unlock controlled, responsive
+                                hardware interactions, paving the road ahead. 🚀
                             </p>
                         </details>
                         <!-- End Hardware Interrupts - Kernel Step #3 ------------------>
+                        <br>
+                        <!-- Begin Drivers - Kernel Step #4 ---------------------------->
+                        <h3>4. Loads Drivers to Talk to Hardware</h3>
+                        <details>
+                            <summary>Tap/Click Me!</summary>
+                            <p>
+                                At this stage, the kernel has initialized basic hardware communication via interrupts, set up memory management, and interpreted the memory map.
+                                However, the system still lacks the ability to fully utilize the hardware—interrupts alone only provide a minimal, reactive signaling mechanism.
+                                The kernel needs a way to actively manage and interact with specific hardware components (e.g., storage devices, network interfaces, input devices)
+                                in a detailed, functional way. This is where <strong>drivers</strong> 🏎️ come in.
+                            </p>
+                        </details>
+                        <!-- End Drivers - Kernel Step #4 ------------------------------>
                     </details>
                 </section>
                 <!-- End Kernel Section --------------->
