@@ -532,6 +532,7 @@ for developers on computer basics and operating system fundamentals. -->
                                                 configurations, often via ACPI (Advanced Configuration and Power Interface) tables.
                                             </li>
                                         </ul>
+
                                         <p>
                                             Alternatively, the kernel can skip firmware and directly scan buses 🚌. A bus in a computer is a hardware communication system—a set of
                                             wires or circuits—that lets hardware components talk to the CPU and memory. For example:
@@ -546,13 +547,32 @@ for developers on computer basics and operating system fundamentals. -->
                                                 </li>
                                             </ul>
                                         </p>
+    
                                         <p>
                                             The kernel collects this info—whether from firmware or buses—to build a list of hardware it needs to manage, setting the stage for loading the right drivers.
                                         </p>
+
+                                    </li>
+                                    <li>
+                                        <strong>Loading the Driver into Memory</strong>
+                                        <ul>
+                                            <li>
+                                                If the driver is a <strong>module</strong> (not built into the kernel), the kernel allocates a region of its own memory space to
+                                                ensure the driver has a dedicated, protected area for its code and data. It reads the driver file from storage (e.g., an initial RAM disk
+                                                or filesystem 📂), copies it into the allocated memory, and <strong>dynamically links</strong> it to the kernel's existing functions.
+                                                This linking allows the driver to use kernel utilities like memory allocation or interrupt registration.
+                                            </li>
+                                            <li>
+                                                For drivers compiled into the kernel, this step is skipped—they're already part of the kernel's memory image from the bootloader 🥾 stage.
+                                            </li>
+                                            <li>
+                                                🚨 <strong>Drivers get VIP access to the kernel. More drivers = more risk. Plug at your own discretion!</strong>
+                                            </li>
+                                        </ul>
                                     </li>
                                 </ol>
                             </p>
-
+                            <br>
                         </details>
                         <!-- End Drivers - Kernel Step #4 ------------------------------>
                     </details>
