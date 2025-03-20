@@ -566,7 +566,7 @@ for developers on computer basics and operating system fundamentals. -->
                                                 For drivers compiled into the kernel, this step is skipped—they're already part of the kernel's memory image from the bootloader 🥾 stage.
                                             </li>
                                             <li>
-                                                🚨 <strong>Drivers get VIP access to the kernel. More drivers = more risk. Plug at your own discretion!</strong>
+                                                🚨 <strong>Drivers get VIP access to the kernel. More drivers = more risk. Be careful what you plug in!</strong>
                                             </li>
                                         </ul>
                                     </li>
@@ -585,6 +585,16 @@ for developers on computer basics and operating system fundamentals. -->
                                                 <strong>Resource Requests:</strong> The driver specifies what it needs, like memory regions or I/O ports, which the kernel allocates and maps into the driver's address space.
                                             </li>
                                         </ul>
+                                    </li>
+
+                                    <li>
+                                        <strong>Binding the Driver to the Hardware</strong> 🖇️ The kernel connects the driver to the physical device by configuring the hardware's
+                                        registers—special memory locations that control the device's behavior. The driver provides the exact values and sequences to write to
+                                        these registers based on the hardware's specification.
+                                        <br><br>
+                                        For example, it might write to a register to set the device's operating mode or enable its interrupt line. The kernel updates
+                                        its internal data structures to associate the driver with the device's interrupt numbers and memory-mapped regions, ensuring that
+                                        hardware signals route to the driver's handlers.
                                     </li>
                                 </ol>
                             </p>
