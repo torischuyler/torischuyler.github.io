@@ -133,12 +133,14 @@ for developers on computer basics and operating system fundamentals. -->
                             their pod mascot was an orca.
                         </p>
                         <br>
+
                         <p>
                             Whether you're a total newbie just dipping your toes in or a seasoned dev with battle scars, I've got
                             something for you. Fair warning: if you're a Super Serious Developer—why so serious?—and can't handle a
                             couple emojis or some fun, this might not be your jam. If you read that and you're still here, let's dive in…
                         </p>
                         <br>
+
                         <p>
                             Ever wonder what really happens when you press that power button to turn on your phone or computer? 
                             Maybe you've got it mapped out, or maybe you're like, “Is it Oompa Loompas?” (Spoiler: it's not Oompa Loompas 😩). 
@@ -146,6 +148,7 @@ for developers on computer basics and operating system fundamentals. -->
                             Do you dare disturb the computerverse?
                         </p>
                         <br>
+
                         <p>
                             Oh, and keep an eye out for <strong>Histoire 📜</strong> (French for history) and <strong>Trop Cool 😎</strong>
                             (that's “so cool” in French)—French flairs inspired by the 1996 game <i>Madeline European Adventures</i>. 
@@ -180,12 +183,15 @@ for developers on computer basics and operating system fundamentals. -->
                                     <strong>Bootloader 🥾</strong> More<strong> software</strong> takes over.
                                 </li>
                             </ul>
+
                             <p>
                                 Hey, it's me, Connie, your orca pal from a sec ago! So, you're curious about how computers tick, huh?
                                 Sweet—I'm pumped to nerd out with you. Let's start with the first thing that happens when you power on.
                             </p>
+
                         </p>
                         <br>
+
                         <p>
                             Here's how your device goes from a lifeless brick to something useful:
                             <ol>
@@ -217,16 +223,19 @@ for developers on computer basics and operating system fundamentals. -->
                             </ol>
                         </p>
                         <br>
+    
                         <p>
                             <strong>Trop Cool 😎</strong> Why “Boot”? The term “booting” traces back to a 19th-century phrase from a Baron Munchausen story,
                             where he pulls himself out of a swamp by his own bootstraps. Engineers in the 1950s thought it was a hilarious fit for computers
                             starting themselves up, and it stuck!
                         </p>
                         <br>
+
                         <p>
                             Now that the bootloader's set the stage, it's time to bring in the real MVP of Computerland: the kernel. ✨
                         </p>
                         <br>
+
                         <p>
                             <strong>[Transition: Firmware discovers → Bootloader queries and reformats → Kernel receives]</strong>
                         </p>
@@ -244,17 +253,20 @@ for developers on computer basics and operating system fundamentals. -->
                             and now it's time for the kernel ✨ to steal the show.
                         </p>
                         <br>
+
                         <p>
                             Unlike the bootloader, which just sets up and steps back, the kernel sticks around, keeping everything smooth.
                             Before it can shine, though, the bootloader gives kernel a quick pep talk, “Hey, kernel, I've got you loaded
                             in memory with a sweet map 🗺️ of the place; it's your turn to take the wheel!”
                         </p>
                         <br>
+
                         <p>
                             What's the kernel? It's a piece of software—the big boss of Computerland—a super-smart wizard 🧙‍♂️ that runs the whole 
                             shebang 24/7, deciding which programs get to use the CPU when, (no chat and cuts allowed! Larry David IYKYK), 
                             which programs get access to memory, and creates a special universal language that all your software can use 
-                            to talk to any hardware.<br><br>
+                            to talk to any hardware.
+                            <br><br>
     
                             <strong>Histoire 📜</strong> The term “kernel” comes from the idea of a seed or nut kernel 🌰 In mathematics,
                             kernel had already been used to describe the core part of a mathematical function or transformation.
@@ -270,17 +282,20 @@ for developers on computer basics and operating system fundamentals. -->
                         <details>
                             <summary>Tap/Click Me!</summary>
                             <p>
-                                Here's how the kernel takes your device from a fancy brick to a living, breathing, extraordinary machine.<br><br>
+                                Here's how the kernel takes your device from a fancy brick to a living, breathing, extraordinary machine.
+                                <br><br>
                                 First thing the kernel does? It looks at that map from
                                 the bootloader to figure out what it's working with. Think of it like moving into a cramped Greenwich Village 
                                 walkup in NYC 🗽 Before you smoosh your stuff into your new living space, you check the floor plan to see where
                                 everything should go (if you don't, your couch may not fit and then on move in day you'll have
-                                to leave it on the side of the road on Thompson St. 😭).<br><br>
+                                to leave it on the side of the road on Thompson St. 😭).
+                                <br><br>
                                 
                                 The kernel examines the map to understand the physical memory layout—where the usable RAM is,
                                 what's off-limits, and any special regions. No setting anything up yet; just taking stock
                                 of the situation. At this step, the main focus for the kernel is interpreting the physical 
-                                RAM memory, including:<br><br>
+                                RAM memory, including:
+                                <br><br>
                                 <ul>
                                     <li>
                                         <strong>Where 📍</strong> Physical addresses (e.g., 0x00000000 to 0x1FFFFFFFF) of usable RAM.
@@ -294,6 +309,7 @@ for developers on computer basics and operating system fundamentals. -->
                                 </ul>
                             </p>
                             <br>
+
                             <p>
                                 <strong>Trop Cool 😎</strong> Oh, what's RAM? It's Random Access Memory—hardware that acts as the device's
                                 short-term memory where it stashes stuff it needs to grab fast, like apps or data you're using right now. 
@@ -303,7 +319,6 @@ for developers on computer basics and operating system fundamentals. -->
                             </p>
                         </details>
                         <!-- End Memory Map - Kernel Step #1 ------------------------->
-
                         <br>
                         <!-- Begin Memory Management - Kernel Step #2 ---------------->
                         <h3>2. Sets Up Memory Management</h3>
@@ -314,7 +329,8 @@ for developers on computer basics and operating system fundamentals. -->
                                 first problem it tackles? Well… the computer's got this chunk of RAM—physical memory with addresses like 0x00000000
                                 to 0x1FFFFFFFF—but it's a free-for-all without rules. Programs could stomp 🦶 all over each other's data,
                                 overwrite critical stuff, or try to use memory that's reserved for hardware.
-                                Chaos! The kernel's job in this step is to bring order.<br><br>
+                                Chaos! The kernel's job in this step is to bring order.
+                                <br><br>
                             </p>
 
                             <p>
@@ -324,7 +340,8 @@ for developers on computer basics and operating system fundamentals. -->
                             </p>
 
                             <p>
-                                <strong>How does the kernel set up memory management?</strong><br>
+                                <strong>How does the kernel set up memory management?</strong>
+                                <br>
                                 <strong>[Kernel builds page tables → Loads them into the MMU → Enables the MMU → Virtual memory]</strong>
                                 <ul>
                                     <li>
@@ -347,7 +364,8 @@ for developers on computer basics and operating system fundamentals. -->
                                     </li>
                                     <li>
                                         <strong>Allocation:</strong> It decides who gets how much memory and when, like handing out slices of pizza 🍕 at a party.
-                                        Hawaiian pizza is pretty good, 2 slices please! 🤤 <br><br>
+                                        Hawaiian pizza is pretty good, 2 slices please! 🤤 
+                                        <br><br>
                                     </li>
                                 </ul>
                             </p>
@@ -381,44 +399,54 @@ for developers on computer basics and operating system fundamentals. -->
                                 your device is kinda pointless. So, the kernel needs a way to wake up the hardware and get it ready for action,
                                 and that's where step #3 comes in: initializing the hardware basics with something called <strong>interrupts.</strong>
                             </p>
-
                             <br>
+
                             <p>
                                 <strong> Hardware needs to talk to the CPU, and the CPU needs to listen.</strong> But the CPU can't just sit around waiting 
                                 for every piece of hardware to say something—it'd be too slow and inefficient. Instead, we need a system where hardware 
                                 can tap the CPU on the shoulder when it's got something to say, and the CPU can respond without missing a beat.
                             </p>
-
                             <br>
+
                             <p>
-                                <strong>What's an interrupt?</strong><br>
-                                <strong>[Hardware pings &gt; CPU receives &gt; CPU responds &gt; CPU resumes]</strong><br><br>
+                                <strong>What's an interrupt?</strong>
+                                <br>
+                                <strong>[Hardware pings &gt; CPU receives &gt; CPU responds &gt; CPU resumes]</strong>
+                                <br><br>
                                 <strong>Interrupts</strong> let hardware signal the CPU asynchronously—meaning the CPU doesn't need to guess when something's 
                                 coming; it just reacts when it happens. This is the bedrock of how the kernel starts chatting with hardware. Normally, 
                                 the CPU's humming along, running instructions, but when a device—like the touchscreen 📱 needs to start up, it sends an interrupt signal.
                                 The CPU saves what it was doing (like putting a bookmark in a book 📚), deals with the touchscreen's request, then picks right
                                 back up where it left off. Way better than the CPU pestering every device nonstop, “Hey, you got something for me?”—that'd 
-                                be slow and a total energy suck.<br><br>
+                                be slow and a total energy suck.
+                                <br><br>
                             </p>
+
                             <p>
                                 Picture this: You're scrolling your fave app or crushing a game 🎮, totally in the zone, when—bam!—your friend texts you a killer
                                 meme that's got you cackling. You pause, fire back a quick “lolz,” then jump back into your groove. Beats texting all your contacts
-                                24/7, “Hey, you got a good meme for me? Any now? How about now?”—that's a fast track to the block list 😂<br><br>
+                                24/7, “Hey, you got a good meme for me? Any now? How about now?”—that's a fast track to the block list 😂
+                                <br><br>
                             </p>
+
                             <p>
                                 💭 Here's a thought: For us humans, nonstop synchronous communication (real-time back and forth messages) can sometimes take a toll on us.
                                 So can constantly checking (polling) our favorite apps and games for notifications and updates. Attention is our most precious resource.
                                 Use it wisely.
-                                “The currency of life isn't money. It's not even time. It's attention.” - Naval Ravikant <br><br>
+                                “The currency of life isn't money. It's not even time. It's attention.” - Naval Ravikant 
+                                <br><br>
                             </p>
+
                             <p>
-                                <strong>Why do we need an interrupt system?</strong><br>
+                                <strong>Why do we need an interrupt system?</strong>
+                                <br>
                                 Before the kernel can use hardware, it has to set up an interrupt system. Why? Because interrupts don't just work automatically—the
                                 hardware can't signal on its own, and the CPU doesn't know how to respond yet. The kernel configures both sides: setting up the hardware
                                 to send interrupt signals and preparing the CPU to handle them. This step builds the groundwork so that later, when you tap your screen or
                                 type on your keyboard, every device can grab the CPU's attention right away.
                             </p>
                             <br>
+
                             <p>
                                 <strong>How do interrupts actually work?</strong>
                                 <br>
@@ -441,12 +469,14 @@ for developers on computer basics and operating system fundamentals. -->
                                     </li>
                                 </ul>
                             </p>
+
                             <p>
                                 <strong>Software Side:</strong> The kernel writes tiny programs called interrupt handlers—think mini-instructions like “If the touchscreen
                                 pings, grab the tap”—and stores them in a table (like the Interrupt Descriptor Table or GIC's setup on phones). It tells the CPU where this
                                 table lives, so when an interrupt hits, the CPU jumps straight to the right spot.
                             </p>
                             <br>
+
                             <p>
                                 The kernel now has a basic line of communication open with the hardware. It's not fully chatting yet—drivers handle that in the next step—but
                                 it's enough to catch taps and swipes. By setting up interrupts, the kernel gets just enough functionality to unlock controlled, responsive
@@ -465,6 +495,12 @@ for developers on computer basics and operating system fundamentals. -->
                                 The kernel needs a way to actively manage and interact with specific hardware components (e.g., storage devices, network interfaces, input devices)
                                 in a detailed, functional way. This is where <strong>drivers</strong> 🏎️ come in.
                             </p>
+                            <br>
+
+                            <p>
+
+                            </p>
+
                         </details>
                         <!-- End Drivers - Kernel Step #4 ------------------------------>
                     </details>
