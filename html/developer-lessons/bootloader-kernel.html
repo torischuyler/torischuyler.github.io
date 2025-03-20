@@ -419,6 +419,33 @@ for developers on computer basics and operating system fundamentals. -->
                                 type on your keyboard, every device can grab the CPU's attention right away.
                             </p>
                             <br>
+                            <p>
+                                <strong>How do interrupts actually work?</strong>
+                                <br>
+                                <strong>Hardware side:</strong> Let's start with the hardware. Your phone has a main interrupt controller plus smaller controllers in devices
+                                like your touchscreen or volume buttons. During setup, the kernel configures both: it writes instructions to their registers—special memory
+                                spots that control how the hardware behaves. These instructions include which interrupt number to use (like a special code that tells the CPU
+                                what kind of event happened) and when to send the signal.
+                                <br><br>
+                                For example, the kernel might tell the touchscreen controller, “When someone taps their screen to post a meme, send interrupt #28!” 
+                                From then on, every tap automatically triggers that specific interrupt number. 🎯
+                                <br><br>
+                                <ul>
+                                    <li>
+                                        <strong>Main Interrupt Controller:</strong> Think of this as the signal traffic cop—like the GIC (Generic Interrupt Controller) in your
+                                        phone's ARM chip. It's a dedicated piece of hardware that catches and directs interrupt signals to the CPU.
+                                    </li>
+                                    <li>
+                                        <strong>Device Controller:</strong> These are tiny circuits—like the ones in your touchscreen or volume buttons—that handle data
+                                        flow between the device and the CPU.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Software Side:</strong> The kernel writes tiny programs called interrupt handlers—think mini-instructions like “If the touchscreen
+                                pings, grab the tap”—and stores them in a table (like the Interrupt Descriptor Table or GIC's setup on phones). It tells the CPU where this
+                                table lives, so when an interrupt hits, the CPU jumps straight to the right spot.
+                            </p>
                         </details>
                         <!-- End Hardware Interrupts - Kernel Step #3 ------------------>
                     </details>
