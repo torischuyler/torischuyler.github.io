@@ -17,20 +17,22 @@ rules:
         case: lower  # Base case is lowercase
         exceptions:  # Allow capitalization for specific cases
           - acronyms: [
-            "SEO", "ARIA", "HTML", "JS",
+            "YAML", SEO", "ARIA", "HTML", "JS",
             "CSS", "JPG", "JPEG", "README", "RAM", "MMU", "ASCII", "OS"
           ]
-          - proper_nouns: ["Narendra Modi", "Connie", "Safari", "JavaScript"]
+          - proper_nouns: [
+            "Windows", "Apple", "Linux",
+            "Android", "Python", "Safari", "JavaScript"
+          ]
       targets:
         case: lower  # Base case is lowercase
         exceptions:  # Same capitalization rules as description
           - acronyms:
-              values: ["SEO", "ARIA", "HTML", "JS", "CSS", "JPG", "JPEG"]
+              values: [
+                "SEO", "ARIA", "HTML", "JS", "CSS", "JPG", "JPEG", "YAML"
+              ]
               apply: "uppercase"  # Force uppercase for acronyms
               note: "Acronyms in targets must use uppercase when listed here"
-          - proper_nouns: [
-            "Windows", "Apple", Linux", "Android", "Python", "JavaScript"
-          ]
     types:
       - feat: "Adds a new feature or functionality"
       - refactor: "Enhances code structure without behavior change"
