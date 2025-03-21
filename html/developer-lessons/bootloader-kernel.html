@@ -166,7 +166,7 @@ for developers on computer basics and operating system fundamentals. -->
                     <details>
                         <summary>Tap/Click Me!</summary>
                         <p>
-                            <strong>[Boot Flow: Power On ⚡️ &gt; CPU Looks 🧠 &gt; Firmware 🐕 &gt; CPU Looks 🧠 &gt; Bootloader 🥾]</strong>
+                            <strong>[Power on ➡️ CPU checks memory ➡️ Firmware directs CPU ➡️ CPU finds Bootloader ➡️ Bootloader loads]</strong>
                             <ul>
                                 <li>
                                     <strong>Power On ⚡️</strong> Electricity hits the <strong>hardware.</strong>
@@ -238,7 +238,7 @@ for developers on computer basics and operating system fundamentals. -->
                         <br>
 
                         <p>
-                            <strong>[Transition: Firmware discovers → Bootloader queries and reformats → Kernel receives]</strong>
+                            <strong>[Firmware discovers ➡️ Bootloader queries and reformats ➡️ Kernel receives]</strong>
                         </p>
                     </details>
                 </section>
@@ -343,7 +343,7 @@ for developers on computer basics and operating system fundamentals. -->
                             <p>
                                 <strong><u>How does the kernel set up memory management?</u></strong>
                                 <br>
-                                <strong>[Kernel builds page tables → Loads them into the MMU → Enables the MMU → Virtual memory]</strong>
+                                <strong>[Kernel builds page tables ➡️ Loads them into the MMU ➡️ Enables the MMU ➡️ Virtual memory]</strong>
                                 <ul>
                                     <li>
                                         <strong>Page Tables:</strong> The kernel builds a lookup table (like a cheat sheet) that maps virtual addresses to 
@@ -412,7 +412,7 @@ for developers on computer basics and operating system fundamentals. -->
                             <p>
                                 <strong><u>What's an interrupt?</u></strong>
                                 <br>
-                                <strong>[Hardware pings &gt; CPU receives &gt; CPU responds &gt; CPU resumes]</strong>
+                                <strong>[Hardware pings ➡️ CPU receives ➡️ CPU responds ➡️ CPU resumes]</strong>
                                 <br><br>
                                 <strong>Interrupts</strong> let hardware signal the CPU asynchronously—meaning the CPU doesn't need to guess when something's 
                                 coming; it just reacts when it happens. This is the bedrock of how the kernel starts chatting with hardware. Normally, 
