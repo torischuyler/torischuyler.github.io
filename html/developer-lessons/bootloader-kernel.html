@@ -712,12 +712,26 @@ for developers on computer basics and operating system fundamentals. -->
                                             <li><strong>🤖 Linux and Android:</strong> <code>init</code>
                                                 <ul>
                                                     <li>
-                                                        <strong>What's the pick?</strong> On Linux (and Android, which is Linux-based), the kernel taps init—the grandparent 
-                                                        of all processes. Look for it chilling at <code>/sbin/init</code>
+                                                        <strong>What's the pick?</strong> On Linux (and Android, which is Linux-based), the kernel taps <code>init</code> the grandparent 
+                                                        of all processes. Look for it chilling at <code>/sbin/init</code>.
                                                     </li>
                                                     <li>
                                                         <strong>What's the process ID (PID)?</strong> Every process gets a special ID number (PID for Process ID), and on Linux systems, 
                                                         init snags PID 1. From there, it starts “adopting” other processes, creating a whole family tree of running programs.
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <strong>🍎 macOS and iOS:</strong> <code>launchd</code>
+                                                <ul>
+                                                    <li>
+                                                        <strong>What's the pick?</strong> Over at Apple Park (macOS and iOS), the kernel picks <code>launchd</code> the slick multitasker 
+                                                        of first processes. Its parked at <code>/sbin/launchd</code>.
+                                                    </li>
+                                                    <li>
+                                                        <strong>What's the process ID (PID)?</strong> Like its Linux cousin, launchd grabs PID 1. But this process is a real overachiever
+                                                        (Hermione vibes 🦁). It not only starts other processes but also manages system services, handles scheduled tasks,
+                                                        and keeps an eye on everything running on your Apple device.
                                                     </li>
                                                 </ul>
                                             </li>
