@@ -279,17 +279,16 @@ for developers on computer basics and operating system fundamentals. -->
                         <br>
 
                         <!-- Begin Memory Map - Kernel Step #1 ---------------->
-                        <h3>1. Reads and Interprets The Memory Map</h3>
+                        <h3>1. Read and Interpret The Memory Map</h3>
                         <details>
                             <summary>Tap/Click Me!</summary>
                             <p>
                                 Here's how the kernel takes your device from a fancy brick to a living, breathing, extraordinary machine.
                                 <br><br>
-                                First thing the kernel does? It looks at that map from
-                                the bootloader to figure out what it's working with. Think of it like moving into a cramped Greenwich Village 
-                                walkup in NYC 🗽 Before you smoosh your stuff into your new living space, you check the floor plan to see where
-                                everything should go (if you don't, your couch may not fit and then on move in day you'll have
-                                to leave it on the side of the road on Thompson St. 😭).
+                                First thing the kernel does? It looks at that map from the bootloader to figure out what it's working with. 
+                                Think of it like moving into a cramped Greenwich Village walkup in NYC 🗽 Before you smoosh your stuff into 
+                                your new living space, you check the floor plan to see where everything should go (if you don't, your couch 
+                                may not fit and then on move in day you'll have to leave it on the side of the road on Thompson St. 😭).
                                 <br><br>
                                 
                                 The kernel examines the map to understand the physical memory layout—where the usable RAM is,
@@ -322,7 +321,7 @@ for developers on computer basics and operating system fundamentals. -->
                         <!-- End Memory Map - Kernel Step #1 ------------------------->
                         <br>
                         <!-- Begin Memory Management - Kernel Step #2 ---------------->
-                        <h3>2. Sets Up Memory Management</h3>
+                        <h3>2. Set Up Memory Management</h3>
                         <details>
                             <summary>Tap/Click Me!</summary>
                             <p>
@@ -335,7 +334,7 @@ for developers on computer basics and operating system fundamentals. -->
                             </p>
 
                             <p>
-                                The key 🔑 in this step is all about abstraction and control. The kernel takes the raw, physical RAM and creates a system so
+                                The key in this step is all about abstraction and control. The kernel takes the raw, physical RAM and creates a system so
                                 programs don't have to deal with it directly. It sets up virtual memory—a layer of fake addresses that each program thinks it owns.
                                 Picture it like giving every app its own private sandbox to play in, even though they're sharing the same physical RAM.<br><br>
                             </p>
@@ -389,7 +388,7 @@ for developers on computer basics and operating system fundamentals. -->
                         <!-- End Memory Management - Kernel Step #2 -------------------->
                         <br>
                         <!-- Begin Hardware Interrupts - Kernel Step #3 ---------------->
-                        <h3>3. Initializes Hardware Basics (via Interrupts)</h3>
+                        <h3>3. Initialize Hardware Basics (via Interrupts)</h3>
                         <details>
                             <summary>Tap/Click Me!</summary>
                             <p>
@@ -487,7 +486,7 @@ for developers on computer basics and operating system fundamentals. -->
                         <!-- End Hardware Interrupts - Kernel Step #3 ------------------>
                         <br>
                         <!-- Begin Drivers - Kernel Step #4 ---------------------------->
-                        <h3>4. Loads Drivers to Talk to Hardware</h3>
+                        <h3>4. Load Drivers to Talk to Hardware</h3>
                         <details>
                             <summary>Tap/Click Me!</summary>
                             <p>
@@ -511,9 +510,12 @@ for developers on computer basics and operating system fundamentals. -->
 
                             <p>
                                 <strong><u>How does the kernel load drivers?</u></strong>
+                                <br><br>
+                                <strong>[Identify Hardware ➡️ Load Driver Into Memory ➡️ Initialize Driver ➡️ Bind Driver to Hardware]</strong>
+                                <br><br>
                                 <ol>
                                     <li>
-                                        <strong>Identification of Hardware</strong> 🔍 The kernel begins by figuring out what hardware is attached to the system. This detection
+                                        <strong>Identification of Hardware</strong> The kernel begins by figuring out what hardware is attached to the system. This detection
                                         happens by querying firmware 🐕, as a reminder, firmware is a low-level software layer that lives on the device and talks directly to the hardware.
                                         The type of firmware depends on the system:
                                         <ul>
@@ -651,7 +653,7 @@ for developers on computer basics and operating system fundamentals. -->
                             <p>
                                 <strong><u>Why is this necessary?</u></strong> 🤔
                                 <br>
-                                Without drivers, the kernel would need to include hardcoded logic for every possible hardware device—an impractical and inflexible approach
+                                Without drivers, the kernel would need to include hardcoded logic for every possible hardware device ‼️ an impractical and inflexible approach
                                 given the variety of components across systems. Drivers modularize this logic, allowing the kernel to remain generic while still supporting
                                 diverse hardware. They also enable the system to adapt—new drivers can be added for new devices without rewriting the kernel.
                             </p>
@@ -661,7 +663,7 @@ for developers on computer basics and operating system fundamentals. -->
                         <!-- End Drivers - Kernel Step #4 ------------------------------>
                         <br>
                         <!-- Begin First Process - Kernel Step #5 ---------------------->
-                        <h3>5. Launches the First Process</h3>
+                        <h3>5. Launch the First Process</h3>
                         <details open>
                             <summary>Tap/Click Me!</summary>
                             <p>
@@ -669,22 +671,15 @@ for developers on computer basics and operating system fundamentals. -->
                                 The touchscreen's reporting taps, the storage is stashing memes, and the CPU's cruising with its memory sandboxes
                                 all set up. Things are looking alive, right? But here's the kicker: the kernel's been doing all this heavy lifting
                                 while ridin' solo. It's like a one-orca show so far with Connie swimming alone 🥺. To really wake up Computerland,
-                                the kernel's gotta pass the mic to a <strong>process</strong>—a program that can strut its stuff independently, like launching a
+                                the kernel's gotta pass the mic to a <strong>process</strong>—a running instance of a program, like launching a
                                 shell or an app. Enter the first process: the spark 🧨 that lights up everything else. Let's plunge deeper!
                             </p>
                             <br>
 
                             <p>
-                                <strong>Trop Cool</strong> 😎 Why “process”? Back in the 1960s, computers were like fancy factory machines that would process
-                                stacks of punch cards (imagine paper cards with holes in them that told the computer what to do). Each stack was called a “process”
-                                because it was being processed, just like how a factory processes raw materials into cool stuff! When modern operating systems came
-                                along, they kept the name “process” for running programs, even though we're not punching holes in cards anymore, thank goodness 😅.
-                            </p>
-                            <br>
-                            <p>
                                 <strong><u>What's a process, anyway?</u></strong>
                                 <br>
-                                At its core, a process is just a program in action. Think of it like a recipe (the program) being cooked (executed) by a chef
+                                At its core, a process is just a program in action. Think of it like a recipe (the program) being cooked (processed) by a chef
                                 (the CPU). The kernel's job is to set up the kitchen, hand over the recipe, and let the chef start cooking some tasty code 🥩
                                 all while keeping an eye out so nothing burns. The first process? Oh, it's extra special—it's the kernel's big debut handoff,
                                 flipping from “I've got this solo” to “Alright, you're up, champ!” Connie's excited to see this kitchen come alive! 🐋
@@ -713,11 +708,11 @@ for developers on computer basics and operating system fundamentals. -->
                                         <strong>🤖 Linux and Android: <code>init</code></strong>
                                             <ul>
                                                 <li>
-                                                    <strong>What's the pick?</strong> On Linux (and Android, which is Linux-based), the kernel taps <code>init</code> the grandparent 
+                                                    <strong>What's the pick?</strong> On Linux (and Android, which is Linux-based), the kernel taps <code>init</code> as the grandparent 
                                                     of all processes. Look for it chilling at <code>/sbin/init</code>.
                                                 </li>
                                                 <li>
-                                                    <strong>What's the process ID (PID)?</strong> Every process gets a special ID number (PID for Process ID), and on Linux systems, 
+                                                    <strong>What's the first process ID (PID)?</strong> Every process gets a special ID number (PID for Process ID), and on Linux systems, 
                                                     init snags PID 1. From there, it starts “adopting” other processes, creating a whole family tree of running programs.
                                                 </li>
                                             </ul>
@@ -729,8 +724,8 @@ for developers on computer basics and operating system fundamentals. -->
                                                     of first processes. Its parked at <code>/sbin/launchd</code>.
                                                 </li>
                                                 <li>
-                                                    <strong>What's the process ID (PID)?</strong> Like its Linux cousin, launchd grabs PID 1. But this process is a real overachiever
-                                                    (Hermione vibes 🦁). It not only starts other processes but also manages system services, handles scheduled tasks,
+                                                    <strong>What's the first process ID (PID)?</strong> Like its Linux cousin, <code>launchd</code> grabs PID 1. But this process is a real overachiever
+                                                    (Hermione energy 🦁). It not only starts other processes but also manages system services, handles scheduled tasks,
                                                     and keeps an eye on everything running on your Apple device.
                                                 </li>
                                             </ul>
@@ -742,10 +737,11 @@ for developers on computer basics and operating system fundamentals. -->
                                                     <code>C:\Windows\System32\smss.exe</code>.
                                                 </li>
                                                 <li>
-                                                    <strong>What's the process ID (PID)?</strong> Windows does things a bit differently (classic Windows 😂). Instead of PID 1, Windows
-                                                    reserves PID 4 for its System process, and <code>smss.exe</code> gets a different number each time. It's like Windows is playing musical
-                                                    chairs with PIDs 🎵 But the gist is the same, <code>smss.exe</code> is the session maestro—spinning up user sessions and
-                                                    kickstarting the right programs.
+                                                    <strong>What's the first process ID (PID)?</strong> Windows does things its own way—like, “Nah, forget starting at 1, let's kick it off with 4!” 😂
+                                                    (Which, by the way, is your orca pal Connie's fave number 4️⃣ It's the only number in English with the same number of letters as it's value, F-O-U-R)
+                                                    You might think, “Is it 'cause a window has four sides, some geometry flex?” Nope, not quite—it's more because of a kernel quirk in Windows that loves
+                                                    multiples of 4. So Windows reserves PID 4 for its System process, and <code>smss.exe</code> gets a different number each time. But the gist is the same,
+                                                    <code>smss.exe</code> is the session maestro, spinning up user sessions and kickstarting the right programs.
                                                 </li>
                                             </ul>
                                     </li>
