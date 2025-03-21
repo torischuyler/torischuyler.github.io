@@ -340,7 +340,7 @@ for developers on computer basics and operating system fundamentals. -->
                             </p>
 
                             <p>
-                                <strong>How does the kernel set up memory management?</strong>
+                                <strong><u>How does the kernel set up memory management?</u></strong>
                                 <br>
                                 <strong>[Kernel builds page tables → Loads them into the MMU → Enables the MMU → Virtual memory]</strong>
                                 <ul>
@@ -371,7 +371,7 @@ for developers on computer basics and operating system fundamentals. -->
                             </p>
 
                             <p>
-                                <strong>Why is memory management important?</strong>
+                                <strong><u>Why is memory management important?</u></strong>
                                 <ul>
                                     <li>
                                         <strong>Safety:</strong> Keeps programs from crashing into each other.
@@ -409,7 +409,7 @@ for developers on computer basics and operating system fundamentals. -->
                             <br>
 
                             <p>
-                                <strong>What's an interrupt?</strong>
+                                <strong><u>What's an interrupt?</u></strong>
                                 <br>
                                 <strong>[Hardware pings &gt; CPU receives &gt; CPU responds &gt; CPU resumes]</strong>
                                 <br><br>
@@ -438,7 +438,7 @@ for developers on computer basics and operating system fundamentals. -->
                             </p>
 
                             <p>
-                                <strong>Why do we need an interrupt system?</strong>
+                                <strong><u>Why do we need an interrupt system?</u></strong>
                                 <br>
                                 Before the kernel can use hardware, it has to set up an interrupt system. Why? Because interrupts don't just work automatically—the
                                 hardware can't signal on its own, and the CPU doesn't know how to respond yet. The kernel configures both sides: setting up the hardware
@@ -448,7 +448,7 @@ for developers on computer basics and operating system fundamentals. -->
                             <br>
 
                             <p>
-                                <strong>How do interrupts actually work?</strong>
+                                <strong><u>How do interrupts actually work?</u></strong>
                                 <br>
                                 <strong>Hardware side:</strong> Let's start with the hardware. Your phone has a main interrupt controller plus smaller controllers in devices
                                 like your touchscreen or volume buttons. During setup, the kernel configures both: it writes instructions to their registers—special memory
@@ -498,7 +498,7 @@ for developers on computer basics and operating system fundamentals. -->
                             <br>
 
                             <p>
-                                <strong>What are drivers?</strong>
+                                <strong><u>What are drivers?</u></strong>
                                 <br>
                                 <strong>Drivers are specialized software modules</strong> 💻 that extend the kernel's capabilities. They are written to handle the unique protocols,
                                 commands, and data formats of individual hardware devices 🔌. The kernel itself is a generalist—it knows how to manage resources like CPU time and
@@ -509,7 +509,7 @@ for developers on computer basics and operating system fundamentals. -->
                             <br>
 
                             <p>
-                                <strong>How does the kernel load drivers?</strong>
+                                <strong><u>How does the kernel load drivers?</u></strong>
                                 <ol>
                                     <li>
                                         <strong>Identification of Hardware</strong> 🔍 The kernel begins by figuring out what hardware is attached to the system. This detection
@@ -598,6 +598,12 @@ for developers on computer basics and operating system fundamentals. -->
                                     </li>
                                 </ol>
                             </p>
+                            <br>
+
+                            <p>
+                                <strong><u>What happens after loading?</u></strong>
+                            </p>
+
                             <br>
                         </details>
                         <!-- End Drivers - Kernel Step #4 ------------------------------>
