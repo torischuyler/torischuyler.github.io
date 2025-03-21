@@ -29,7 +29,7 @@ rules:
               apply: "uppercase"  # Force uppercase for acronyms
               note: "Acronyms in targets must use uppercase when listed here"
           - proper_nouns: [
-            "Linux", "Android", "TypeScript", "Python", "JavaScript"
+            "Windows", "Apple", Linux", "Android", "Python", "JavaScript"
           ]
     types:
       - feat: "Adds a new feature or functionality"
