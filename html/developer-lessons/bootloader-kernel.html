@@ -121,8 +121,9 @@ for developers on computer basics and operating system fundamentals. -->
                     <!-- 'h2' tags act as section headings to organize key topics,
                     sitting below 'h1' in the heading hierarchy for structure and accessibility. -->
 
-                    <details>
-                    <!-- Creates a collapsible section that hides content until toggled open. -->
+                    <details open>
+                        <!-- 'details' creates a collapsible section to hide and toggle page content.
+                        Set to 'open' here so that the introductory content will be expanded by default.  -->
 
                         <summary>Tap/Click Me!</summary>
                         <!-- Defines the clickable text that toggles the visibility of the content below. -->
@@ -246,7 +247,7 @@ for developers on computer basics and operating system fundamentals. -->
                 <!-- Begin Kernel Section ----------------->
                 <section>
                     <h2><span>Kernel</span></h2>
-                    <details open>
+                    <details>
                         <summary>Tap/Click Me!</summary>
                         <p>
                             Hiya, it's Connie, your orca buddy, back again with the good stuff! So, the bootloader's set the stage,
@@ -487,7 +488,7 @@ for developers on computer basics and operating system fundamentals. -->
                         <br>
                         <!-- Begin Drivers - Kernel Step #4 ---------------------------->
                         <h3>4. Loads Drivers to Talk to Hardware</h3>
-                        <details open>
+                        <details>
                             <summary>Tap/Click Me!</summary>
                             <p>
                                 At this stage, the kernel has initialized basic hardware communication via interrupts, set up memory management, and interpreted the memory map.
