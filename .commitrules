@@ -28,7 +28,9 @@ rules:
               values: ["SEO", "ARIA", "HTML", "JS", "CSS", "JPG", "JPEG"]
               apply: "uppercase"  # Force uppercase for acronyms
               note: "Acronyms in targets must use uppercase when listed here"
-          - proper_nouns: ["TypeScript", "Python", "JavaScript"]
+          - proper_nouns: [
+            "Linux", "Android", "TypeScript", "Python", "JavaScript"
+          ]
     types:
       - feat: "Adds a new feature or functionality"
       - refactor: "Enhances code structure without behavior change"
