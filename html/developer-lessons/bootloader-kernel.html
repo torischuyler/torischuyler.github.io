@@ -689,6 +689,28 @@ for developers on computer basics and operating system fundamentals. -->
                                 all while keeping an eye out so nothing burns. The first process? Oh, it's extra special—it's the kernel's big debut handoff,
                                 flipping from “I've got this solo” to “Alright, you're up, champ!” Connie's excited to see this kitchen come alive! 🐋
                             </p>
+                            <br>
+
+                            <p>
+                                <strong><u>How is the first process launched?</u></strong>
+                                <ol>
+                                    <li>
+                                        <strong>Pick the First Process</strong>
+                                        The kernel doesn't just launch <i>any</i> process—it needs a specific starting point, a process that's ready to roll.
+                                        This is usually a hardcoded choice baked into the kernel by the system's designers. Here's how it works:
+                                        <ul>
+                                            <li>
+                                                During boot, the bootloader loaded an initial RAM disk (reminder, this is our temporary filesystem in memory, our forgetful Dory 🐠)
+                                                or pointed to a spot on storage (like a disk partition) with must-have files.
+                                            </li> 
+                                            <li>
+                                                The kernel, now talking to storage via drivers, grabs the binary 0️⃣ 1️⃣ (a compiled program file) from there and pulls it into memory.
+                                            </li>
+                                        </ul>
+                                        Time to splash around the big operating systems and meet their first-process VIPs! 🌊
+                                    </li>
+                                </ol>
+                            </p>
                         </details>
                         <!-- End First Process - Kernel Step #5 ------------------------>
                         <br>
