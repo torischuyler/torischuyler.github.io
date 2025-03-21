@@ -246,7 +246,7 @@ for developers on computer basics and operating system fundamentals. -->
                 <!-- Begin Kernel Section ----------------->
                 <section>
                     <h2><span>Kernel</span></h2>
-                    <details>
+                    <details open>
                         <summary>Tap/Click Me!</summary>
                         <p>
                             Hiya, it's Connie, your orca buddy, back again with the good stuff! So, the bootloader's set the stage,
@@ -487,7 +487,7 @@ for developers on computer basics and operating system fundamentals. -->
                         <br>
                         <!-- Begin Drivers - Kernel Step #4 ---------------------------->
                         <h3>4. Loads Drivers to Talk to Hardware</h3>
-                        <details>
+                        <details open>
                             <summary>Tap/Click Me!</summary>
                             <p>
                                 At this stage, the kernel has initialized basic hardware communication via interrupts, set up memory management, and interpreted the memory map.
@@ -572,7 +572,7 @@ for developers on computer basics and operating system fundamentals. -->
                                     </li>
 
                                     <li>
-                                        <strong>Initializing the Driver 🏎️</strong> The kernel executes the driver's initialization function (a predefined entry point in the driver code). 
+                                        <strong>Initializing the Driver</strong> The kernel executes the driver's initialization function (a predefined entry point in the driver code). 
                                         During initialization, the driver registers itself with the kernel by providing:
                                         <ul>
                                             <li>
@@ -601,7 +601,49 @@ for developers on computer basics and operating system fundamentals. -->
                             <br>
 
                             <p>
-                                <strong><u>What happens after loading?</u></strong>
+                                <strong><u>What happens after loading?</u></strong> 
+                                <br>
+                                Driver's loaded and bound—now what? The magic happens! Think of it like finally
+                                getting both sides of a video call connected. Here's how it works:
+                                <ul>
+                                    <li>
+                                        The kernel issues commands 📣 through the driver's operation functions:
+                                        <ul>
+                                            <li>
+                                                “Hey touchscreen, tell me where that tap landed!”
+                                            </li>
+                                            <li>
+                                                “Camera, snap a photo!” 📸
+                                            </li>
+                                            <li>
+                                                “Storage, save this spicy meme to block 42!” 👯‍♀️
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        The hardware talks back via interrupts, which the driver translates like a tech whisperer:
+                                        <ul>
+                                            <li>
+                                                Touchscreen: “Tap at coordinates (1, 618)!” 👆
+                                            </li>
+                                            <li>
+                                                Camera: “Picture's ready in memory buffer 0x123!”
+                                            </li>
+                                            <li>
+                                                “Saved that 🔥 meme to block 42!”
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                                <p>
+                                    A two-way communication channel 🔃 is now live—like a perfect tech tango 💃🕺 The kernel leads with commands, and the hardware
+                                    follows with updates. No more awkward silence between your device's brain and its body parts!
+                                </p>
+                                <br>
+                                <p>
+                                    <strong>[Kernel commands ➡️ Driver translates ➡️ Hardware executes ➡️ Hardware responds ➡️ Driver translates ➡️ Kernel understands]</strong>
+                                </p>
                             </p>
 
                             <br>
