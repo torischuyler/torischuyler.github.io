@@ -664,7 +664,7 @@ for developers on computer basics and operating system fundamentals. -->
                         <br>
                         <!-- Begin First Process - Kernel Step #5 ---------------------->
                         <h3>5. Launch the First Process</h3>
-                        <details open>
+                        <details>
                             <summary>Tap/Click Me!</summary>
                             <p>
                                 So, we've made it this far—drivers are loaded, and the kernel's got a two-way convo going with the hardware.
@@ -956,6 +956,32 @@ for developers on computer basics and operating system fundamentals. -->
                                         actually the original?! Just like musicians riff off legends, programming tools often remix and reimagine core computer science concepts. Take job queues in modern programming—
                                         like Ruby's Resque or Sidekiq—they're basically cover songs of the OS process scheduler! They took that same idea of “here's a line of tasks waiting their turn” and adapted it
                                         for web apps. Next time you queue up a background job, you can thank the OS pioneers who first dropped that beat 🎻
+                                    </li>
+                                    <li>
+                                        <strong>Let It Fly 🦅 (and Keep Watch)</strong>
+                                        <br>
+                                        <strong>[Process Starts ➡️ Runs Initial Processes ➡️ Launches Services ➡️ System Ready]</strong>
+                                        <br><br>
+                                        Once the first process is running, the kernel delegates but never fully lets go—it's the foundation everything builds on. It's
+                                        still the boss of Computerland, managing resources and handling interrupts. What does the first process do? Depends on the system:
+                                        <ul>
+                                            <li>
+                                                On Linux, <code>init</code> might run a script (like <code>/etc/init.d</code>) to start system services (e.g., networking, a shell) or use a modern system like
+                                                <code>systemd</code> to manage dependencies and boot targets.
+                                            </li>
+                                            <li>
+                                                On embedded systems (like a phone), it could launch a basic runtime or UI, often tailored to the device's purpose (e.g., Android's Zygote for app spawning).
+                                            </li>
+                                            <li>
+                                                On Apple, <code>launchd</code> takes charge, loading system daemons and user services from plists (property list files,
+                                                like <code>/System/Library/LaunchDaemons</code>), kicking off everything from the GUI to background tasks.
+                                            </li>
+                                            <li>
+                                                On Windows, <code>smss.exe</code> sets up the session environment, launching critical components like <code>csrss.exe</code> (Client/Server Runtime Subsystem)
+                                                and <code>winlogon.exe</code> to initialize the user login and desktop.
+                                            </li>
+                                        </ul>
+                                        The kernel keeps tabs via the Process Control Block, ready to step in if the first process needs help (e.g., more memory) or spawns kids (other processes).
                                     </li>
                                 </ol>
                             </p>
