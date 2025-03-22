@@ -29,7 +29,7 @@ rules:
         exceptions:  # Same capitalization rules as description
           - acronyms:
               values: [
-                "SEO", "ARIA", "HTML", "JS", "CSS", "JPG", "JPEG", "YAML"
+                "HTML", "JS", "CSS", "JPG", "JPEG", "YAML"
               ]
               apply: "uppercase"  # Force uppercase for acronyms
               note: "Acronyms in targets must use uppercase when listed here"
