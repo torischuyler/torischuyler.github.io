@@ -682,7 +682,7 @@ for developers on computer basics and operating system fundamentals. -->
                                 At its core, a process is just a program in action. Think of it like a recipe (the program) being cooked (processed) by a chef
                                 (the CPU). The kernel's job is to set up the kitchen, hand over the recipe, and let the chef start cooking some tasty code 🥩
                                 all while keeping an eye out so nothing burns. The first process? Oh, it's extra special—it's the kernel's big debut handoff,
-                                flipping from “I've got this solo” to “Alright, you're up, champ!” Connie's excited to see this kitchen come alive! 🐋
+                                flipping from “I've got this solo” to “Alright, you're up, champ!” Connie's excited to see this kitchen come alive!
                             </p>
                             <br>
 
@@ -785,27 +785,142 @@ for developers on computer basics and operating system fundamentals. -->
                                             </li>
 
                                             <li>
-                                                <strong>Process Control Block (PCB):</strong> The kernel whips up a data structure (think of it as a “process ID card”) to keep tabs on this newbie.
-                                                It's got info like the process ID (say, PID 1), memory locations, and a status like “Ready,” “Running,” or “Waiting” for its moment. Without this, 
-                                                processes would crash into each other like bumper cars gone wild 😵‍💫
+                                                <strong>Process Control Block (PCB):</strong> The kernel whips up a data structure to keep tabs on this newbie. Think of it as a process's ID card 🪪
+                                                - without it, processes would crash into each other like bumper cars gone wild 😵‍💫. Let's peek at what's on this ID card:
                                                 <br><br>
-                                                <strong>Process ID Card</strong> 🪪
+                                                <strong>Process Control Block aka Process ID Card 🪪</strong>
                                                 <ul>
-                                                    <li>
-                                                        <i>Name (PID):</i> #1 
-                                                    </li>
-                                                    <li>
-                                                        <i>Address (Memory Location):</i> 0x12345
-                                                    </li>
-                                                    <li>
-                                                        <i>Current Status:</i> Ready to rock! 🎸
-                                                    </li>
-                                                    <li>
-                                                        <i>Family Info:</i> Parent Process
-                                                    </li>
-                                                    <li>
-                                                        <i>Security Clearance:</i> What it can/can't do
-                                                    </li>
+                                                    <strong>Who Am I? 👤</strong>
+                                                        <ul>
+                                                            <li>
+                                                                <strong>Name (PID):</strong> The unique ID badge for this process—my kernel-given name.
+                                                            </li>
+                                                            <li>
+                                                                <strong>Parent Process ID (PPID):</strong> Who “brought me into existence”—my parent's PID.
+                                                            </li>
+                                                        </ul>
+
+                                                    <strong>Where Am I Right Now? 📍</strong>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>Memory Address:</strong> Where I crash in memory—my home base (e.g., page table or base/limit registers).
+                                                        </li>    
+                                                        <li>
+                                                            <strong>Program Counter (PC):</strong> The exact spot I'm at in my code—my next move when I get the green light.
+                                                        </li>                        
+                                                    </ul>
+
+                                                    <strong>What's My State? 🦦</strong>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>Current Status:</strong> Am I running, waiting, or chilling in the ready queue? My current mood.
+                                                        </li>
+                                                        <li>
+                                                            <strong>CPU Registers:</strong> My brain's scratchpad—values I'm juggling when I get paused.
+                                                        </li>
+                                                        <li>
+                                                            <strong>CPU Time Used:</strong> How long I've hogged the CPU—my time sheet. (Greedy or sharing? Santa's watching! 🎅)
+                                                        </li>
+                                                    </ul>
+
+                                                    <strong>What're My Abilities? ✨</strong>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>Scheduling Information:</strong> My spot in line—how urgent I am (priority) and how long I get to shine (time slice).
+                                                        </li>
+                                                        <li>
+                                                            <strong>Process Privileges:</strong> My access pass—am I a VIP (root) or just an NPC (user)?
+                                                        </li>
+                                                    </ul>
+
+                                                    <strong>What Am I Up To? 🪄</strong>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>I/O (Input/Output) Status:</strong> What I'm waiting on—disk, network, printer, you name it.
+                                                        </li>
+                                                        <li>
+                                                            <strong>Open Files:</strong> My toolbox—files I've got open and ready.
+                                                        </li>
+                                                    </ul>
+
+                                                    <strong>Extra Details ➕</strong>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>Signal Information:</strong> Signals the system for messages like “Yo, wrap it up!” (SIGTERM) or “You're toast!” (SIGKILL).
+                                                        </li>
+                                                        <li>
+                                                            <strong>Accounting Information:</strong> My resource tab—start time, memory usage, all that jazz for the system's bookkeeper.
+                                                        </li>
+                                                    </ul>
+                                                </ul>
+                                                <br>
+                                                Hey, wanna see my ID card? Here's what mine looks like 🐬
+                                                <br><br>
+                                                <strong>Process ID Card 🪪 <code>launchd</code></strong>
+                                                <br>
+                                                <ul>
+                                                    <strong>Who Am I? 👤</strong>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>PID:</strong> 1
+                                                        </li>
+                                                        <li>
+                                                           <strong>PPID:</strong> 0 (I have no parent, I'm the OG 😎)
+                                                        </li>
+                                                    </ul>
+
+                                                    <strong>Where Am I Right Now? 📍</strong>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>Memory Address:</strong> <code>0x1000</code>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Program Counter (PC):</strong> <code>0x1234 (about to call load_launchd_services())</code>
+                                                        </li>
+                                                    </ul>
+
+                                                    <strong>What's My State? 🦦</strong>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>Current Status:</strong> Running
+                                                        </li>
+                                                        <li>
+                                                            <strong>CPU Time Used:</strong> <code>0.03s</code> (Just getting cookin'!)
+                                                        </li>
+                                                    </ul>
+
+                                                    <strong>What're My Abilities? ✨</strong>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>Priority:</strong> High (obv, I'm <code>launchd</code>! 💁‍♀️)
+                                                        </li>
+                                                        <li>
+                                                            <strong>Privileges:</strong> Root (bc I'm a Queen 👑 Man + Woman - King = Queen)
+                                                        </li>
+                                                    </ul>
+
+                                                    <strong>Current Shenanigans 🪄</strong>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>I/O Status:</strong> Reading from <code>/etc/launchd.conf</code>
+                                                        </li>
+                                                        <li>
+                                                            <strong>Open Files:</strong> <code>["/etc/launchd.conf", "/dev/console", "/var/run/launchd.pid"]</code>
+                                                        </li>
+                                                    </ul>
+
+                                                    <strong>Extra Details ➕</strong>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>Signals:</strong> No alerts for me, all clear!
+                                                        </li>
+                                                        <li>
+                                                            <strong>Started:</strong> 2024-05-01 00:00:01
+                                                        </li>
+                                                        <li>
+                                                            <strong> Memory Used:</strong> 6.18MB
+                                                        </li>
+                                                    </ul>
                                                 </ul>
                                             </li>
                                         </ul>
