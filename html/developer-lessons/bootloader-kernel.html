@@ -925,6 +925,34 @@ for developers on computer basics and operating system fundamentals. -->
                                             </li>
                                         </ul>
                                     </li>
+
+                                    <li>
+                                        <strong>Schedule It to Run</strong> 
+                                        <br>
+                                        <strong>[Add Process to Ready Queue ➡️ Load Process's Memory Map to MMU ➡️ Apply CPU Registers to Process ➡️ CPU jumps to the Program Counter ➡️ Process Execution]</strong>
+                                        <br><br>
+                                        The kernel's juggling a lot—interrupts, memory management—but it's not running the first process yet. It's still in control. Now it <i>finally</i> hands the process to the scheduler,
+                                        a part of the kernel that decides what runs when. Here's the breakdown:
+                                        <ul>
+                                            <li>
+                                                The scheduler adds PID 1 to its “ready queue”—a list of processes waiting for CPU time. Since this is the first process, the queue's empty otherwise, so it's go time!
+                                            </li>
+                                            <li>
+                                                The kernel switches from its own context to the process's context:
+                                                <ul>
+                                                    <li>
+                                                        Loads the process's memory map (page tables) into the Memory Management Unit (MMU).
+                                                    </li>
+                                                    <li>
+                                                        Sets the CPU registers to the values from previous the previous step.
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                The CPU jumps to the program counter, and then whammo! The process starts executing its first instruction.
+                                            </li>
+                                        </ul>
+                                    </li>
                                 </ol>
                             </p>
                         </details>
