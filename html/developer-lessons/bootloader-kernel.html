@@ -1074,6 +1074,47 @@ for developers on computer basics and operating system fundamentals. -->
                                 <strong>Histoire 📜</strong> The first real implementation of a virtual memory system was in the Atlas Computer at the University of Manchester in 1962. Before that, programmers had to 
                                 manually manage memory locations—imagine having to tell everyone exactly where to put their beach towel!🏖️
                             </p>
+                            <br>
+
+                            <p>
+                                <u><strong>Handling Interrupts (Staying Responsive to Hardware)</strong></u>
+                                <br>
+                                <strong>[Hardware Interrupt ➡️ CPU Pauses Process ➡️ Interrupt Handler Processes ➡️ Driver Acts ➡️ CPU Process Resumes]</strong>
+                                <br><br>
+                                Hardware needs to talk to the CPU without delay, but the CPU's busy running processes. Back in Step 3, we set up interrupts to get the hardware and CPU ready to chat—like flipping the “on”
+                                switch for communication. Now that the system's rolling, those interrupts are firing nonstop—your touchscreen taps, Wi-Fi packets arrive, storage reads finish—all screaming for attention.
+                                <br><br>
+                                <strong>How it works:</strong>
+                                <ul>
+                                    <li>
+                                        When hardware sends an interrupt (e.g., “Tap at (100, 200)!”), the CPU pauses the current process, saves its state (via the PCB), and jumps to the kernel's interrupt handler.
+                                    </li>
+                                    <li>
+                                        The handler—a tiny program tied to that interrupt—figures out what's up (e.g., “Touchscreen says hi! ☺️”) and hands it off to the right driver.
+                                    </li>
+                                    <li>
+                                        The driver processes it (e.g., tells an app, “You've been tapped! 🫵”), and the kernel resumes the interrupted process like nothing happened.
+                                    </li>
+                                    <li>
+                                        For efficiency, the kernel prioritizes interrupts—critical ones (like a power button press) jump the queue ⏭️ over routine ones (like a USB plug-in).
+                                    </li>
+                                </ul>
+                            </p>
+
+                            <p>
+                                <strong>Why it matters:</strong>
+                                <br>
+                                Interrupts keep the system snappy—your taps register instantly, not after a lag. Back in Step 3, we were just building the interrupt system to wake up the hardware. Now, it's about keeping
+                                everything humming along, reacting to every ping in real-time. Without this constant handling, your device would freeze up waiting for hardware to pipe up, like a game 🎮 stuck buffering
+                                while you mash the buttons. Reticulating Splines...
+                            </p>
+                            <br>
+
+                            <p>
+                                <strong>Trop Cool 😎</strong> The Apollo Guidance Computer was a pioneer in interrupt handling! During the Apollo 11 lunar landing, when the computer became overloaded with interrupts from
+                                 the rendezvous radar, its Executive system automatically restarted and dropped lower-priority tasks to maintain critical navigation calculations. This smart priority scheduling kept the
+                                 essential systems running—helping ensure humanity's first steps on the moon 🌙 🚀
+                            </p>
                         </details>
                         <!-- End Smooth Running - Kernel Step #6 ----------------------->
                     </details>
