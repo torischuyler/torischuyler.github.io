@@ -998,6 +998,40 @@ for developers on computer basics and operating system fundamentals. -->
                                 together, ensuring every process gets what it needs (CPU time, memory, hardware access) without tripping over each other. To do this, it relies on these fundamental principles:
                                 scheduling, resource management, responsiveness, coordination, and monitoring. Here's how it pulls that off, step by step.
                             </p>
+                            <br>
+
+                            <p>
+                                <u><strong>Scheduling Processes (Who Gets the CPU and When?)</strong></u>
+                                <br>
+                                The CPU can only do one thing at a time (per core), but we need many things to happen “at once.” After launching the first process, more processes start popping up—like kids of the
+                                first process (e.g., <code>init</code> spawns a shell, <code>launchd</code> kicks off system services). The CPU can't run them all simultaneously (unless you've got multiple cores,
+                                and even then, each core handles one task at a time). So, the kernel uses a <i>scheduler</i> to decide who gets the CPU and for how long.
+                                <br><br>
+                                <strong>How it works:</strong>
+                                <ul>
+                                    <li>
+                                        The kernel maintains a “ready queue”—a list of processes waiting for CPU time. Each process has a priority (e.g., system tasks might rank higher than your meme generator app)
+                                        and a state (ready, running, waiting).
+                                    </li>
+                                    <li>
+                                        The scheduler picks a process based on a strategy (like round-robin for fairness or priority-based for urgency), gives it a tiny time slice (say, 10 milliseconds), and lets it run.
+                                    </li>
+                                    <li>
+                                        When the time's up—or if a higher-priority process barges in—the kernel <i>preempts</i> the current process, saves its state (via the Process Control Block, or PCB), and switches
+                                        to the next one. This is called a <i>context switch</i>.
+                                    </li>
+                                    <li>
+                                        To the user, this rapid switching (hundreds of times per second) feels like everything's running at once—smooth as butter 🧈.
+                                    </li>
+                                </ul>
+                            </p>
+
+                            <p>
+                                <strong>Why it matters:</strong>
+                                <br>
+                                Without scheduling, one greedy process could hog the CPU, starving others. Imagine a video call freezing because your music player won't share the stage. The scheduler keeps the peace,
+                                ensuring fairness and responsiveness.
+                            </p>
                         </details>
                         <!-- End Smooth Running - Kernel Step #6 ----------------------->
                     </details>
