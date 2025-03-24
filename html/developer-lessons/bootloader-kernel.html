@@ -1415,112 +1415,137 @@ for developers on computer basics and operating system fundamentals. -->
     <!-- End Body Section -->
 </html>
 
-<!--
+<!-- 
 DOCTYPE
 └── html
     ├── head
-    │   ├── meta (charset)
-    │   ├── meta (viewport)
+    │   ├── meta (charset, viewport)
     │   ├── title
-    │   ├── link (favicon)
-    │   ├── link (googleapis)
-    │   ├── link (gstatic)
-    │   ├── link (global.css)
-    │   ├── link (lesson-styles.css)
-    │   ├── link (google fonts)
-    │   ├── script (yin-yang-toggle.js)
-    │   └── script (mobile-nav.js)
+    │   ├── link (favicon, preconnects, stylesheets, fonts)
+    │   └── script (yin-yang-toggle.js, mobile-nav.js)
     └── body
         ├── nav
-        │   ├── ul (nav-menu)
-        │   │   ├── li
-        │   │   │   └── a (Home)
-        │   │   ├── li
-        │   │   │   └── a (Students)
-        │   │   ├── li
-        │   │   │   └── a (Developers)
-        │   │   └── li
-        │   │       └── a (Who Are You?)
-        │   ├── div (nav-header)
-        │   │   ├── div (hamburger)
-        │   │   └── button (yin-yang-toggle)
-        │   └── noscript
-        │       └── div
-        │           └── p
+        │   ├── ul (nav-menu: Home, Students, Developers, Who Are You?)
+        │   ├── div (nav-header: hamburger, yin-yang-toggle)
+        │   └── noscript → warning
         ├── div (lesson-container)
-        │   ├── header
-        │   │   └── h1
+        │   ├── header → h1 (Bootloader and Kernel)
         │   └── main
         │       ├── section (Introduction)
-        │       │   ├── h2
-        │       │   └── details
-        │       │       ├── summary
-        │       │       ├── p
-        │       │       ├── p
-        │       │       ├── p
-        │       │       └── p
         │       ├── section (Bootloader)
-        │       │   ├── h2
-        │       │   └── details
-        │       │       ├── summary
-        │       │       ├── p
-        │       │       │   └── ul
-        │       │       │       ├── li (Power On)
-        │       │       │       ├── li (CPU Looks)
-        │       │       │       ├── li (Firmware)
-        │       │       │       └── li (Bootloader)
-        │       │       ├── p
-        │       │       │   └── ol
-        │       │       │       ├── li (Power On)
-        │       │       │       ├── li (Built-In Firmware Guides CPU)
-        │       │       │       ├── li (CPU Finds the Bootloader)
-        │       │       │       └── li (Bootloader Takes Over)
-        │       │       ├── p (Cool)
-        │       │       ├── p
-        │       │       └── p (Transition)
         │       ├── section (Kernel)
-        │       │   ├── h2
-        │       │   └── details
-        │       │       ├── summary
-        │       │       ├── p
-        │       │       ├── p
-        │       │       ├── p (History)
-        │       │       ├── h3 (Step 1: Reads and Interprets The Memory Map)
-        │       │       │   └── details
-        │       │       │       ├── summary
-        │       │       │       ├── p (See Step 1 Blueprint)
-        │       │       │       └── p (Cool)
-        │       │       ├── h3 (Step 2: Sets Up Memory Management)
-        │       │       │   └── details
-        │       │       │       ├── summary
-        │       │       │       ├── p
-        │       │       │       ├── p
-        │       │       │       └── p (See Step 2 Blueprint)
+        │       └── section (Closure)
         ├── footer
-        │   └── p
         └── script (footer.js)
 -->
 
 <!--
-Step 1: Reads and Interprets The Memory Map
-└── li
-    └── ul
-        ├── li (Where)
-        ├── li (What's Usable)
-        └── li (What's Reserved)
+section (Introduction)
+└── content
+    ├── h2 (Introduction)
+    └── details (open)
+        ├── summary
+        └── p
 -->
 
 <!--
-Step 2: Sets Up Memory Management
-└── li
-    ├── ul (How)
-    │   ├── li (Page Tables)
-    │   ├── li (MMU Activation)
-    │   ├── li (Segmentation)
-    │   ├── li (Protection)
-    │   └── li (Allocation)
-    └── ul (Why)
-        ├── li (Safety)
-        ├── li (Efficiency)
-        └── li (Flexibility)
+section (Bootloader)
+└── content
+    ├── h2 (Bootloader)
+    └── details
+        ├── summary
+        ├── p → ul (Power On, CPU Looks, Firmware, Bootloader)
+        ├── p → ol (Power On, Firmware Guides, CPU Finds, Bootloader Takes Over)
+        ├── p (Cool: "Boot" origin)
+        ├── p (Kernel transition)
+        └── p (Firmware → Bootloader → Kernel)
+-->
+
+<!--
+section (Kernel)
+└── content
+    ├── h2 (Kernel)
+    └── details
+        ├── summary
+        ├── p
+        ├── h3 (Step 1: Memory Map)
+        ├── h3 (Step 2: Memory Management)
+        ├── h3 (Step 3: Hardware Interrupts)
+        ├── h3 (Step 4: Drivers)
+        ├── h3 (Step 5: First Process)
+        ├── h3 (Step 6: Smooth Running)
+-->
+
+<!--
+Step 1: Memory Map
+└── content
+    ├── summary
+    ├── p → ul (Where, Usable, Reserved)
+    └── p (Cool: RAM)
+-->
+
+<!--
+Step 2: Memory Management
+└── content
+    ├── summary
+    ├── p
+    ├── p
+    ├── p → ul (How: Page Tables, MMU, Segmentation, Protection, Allocation)
+    └── p → ul (Why: Safety, Efficiency, Flexibility)
+-->
+
+<!--
+Step 3: Interrupts
+└── content
+    ├── summary
+    ├── p (Problem to solve)
+    ├── p → ul (Hardware pings → CPU receives → CPU responds → CPU resumes)
+    ├── p (Interrupt example)
+    ├── p (Philosophical thought)
+    ├── p (Why)
+    ├── p → ul (How: Main Interrupt Controller, Device Controller)
+-->
+
+<!--
+Step 4: Drivers
+└── content
+    ├── summary
+    ├── p (Intro)
+    ├── p (What)
+    ├── p → ol (How)
+    ├── p → ul (After Loading)
+    └── p (Why)
+-->
+
+<!--
+Step 5: First Process
+└── content
+    ├── summary
+    ├── p (Intro)
+    ├── p (What)
+    ├── p → ol (How: Pick Process, Process Env, Schedule, Fly)
+-->
+
+<!--
+Step 6: Smooth Running
+└── content
+    ├── summary
+    ├── p (Intro)
+    ├── p (Scheduling)
+    ├── p (Memory)
+    ├── p (Interrupts)
+    ├── p (Communication)
+    ├── p (Monitoring)
+    ├── p → ol (The Kernel's 7 Magical Powers)
+-->
+
+<!--
+section (Closure)
+└── content
+    ├── h2 (Closure)
+    └── details (open)
+        ├── summary
+        ├── p (Wrap-up)
+        ├── img (Connie photo)
+        └── p (Caption)
 -->
