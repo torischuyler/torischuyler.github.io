@@ -187,9 +187,6 @@
       - Princeton orange in dark mode, switches to moonstone in light mode.
   */
   color: var(--subheader-three-text-color);
-
-  /* Underline headers with a fun wavy line 😵‍💫 */
-  text-decoration: wavy underline;
 }
 
 /*
