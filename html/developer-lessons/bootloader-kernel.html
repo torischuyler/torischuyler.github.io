@@ -487,7 +487,7 @@ for developers on computer basics and operating system fundamentals. -->
                         <br>
                         <!-- Begin Drivers - Kernel Step #4 ---------------------------->
                         <h3>4. Load Drivers to Talk to Hardware</h3>
-                        <details open>
+                        <details>
                             <summary>Tap/Click Me!</summary>
                             <p>
                                 At this stage, the kernel has initialized basic hardware communication via interrupts, set up memory management, and interpreted the memory map.
@@ -688,7 +688,7 @@ for developers on computer basics and operating system fundamentals. -->
                         <br>
                         <!-- Begin First Process - Kernel Step #5 ---------------------->
                         <h3>5. Launch the First Process</h3>
-                        <details>
+                        <details open>
                             <summary>Tap/Click Me!</summary>
                             <p>
                                 So, we've made it this far—drivers are loaded, and the kernel's got a two-way convo going with the hardware.
@@ -715,297 +715,315 @@ for developers on computer basics and operating system fundamentals. -->
                                 <ol>
                                     <li>
                                         <strong>Pick the First Process</strong>
-                                        The kernel doesn't just launch <i>any</i> process—it needs a specific starting point, a process that's ready to roll.
-                                        This is usually a hardcoded choice baked into the kernel by the system's designers. Here's how it works:
-                                        <ul>
-                                            <li>
-                                                During boot, the bootloader loaded an initial RAM disk (reminder, this is our temporary filesystem in memory, our forgetful Dory 🐠)
-                                                or pointed to a spot on storage (like a disk partition) with must-have files.
-                                            </li> 
-                                            <li>
-                                                The kernel, now talking to storage via drivers, grabs the binary 0️⃣ 1️⃣ (a compiled program file) from there and pulls it into memory.
-                                            </li>
-                                        </ul>
-                                        Time to splash around the big operating systems and meet their #1 picks for first process (kinda like the NBA draft 🏀 but for computers).
-                                        <br>
-
-                                        <strong>🤖 Linux and Android: <code>init</code></strong>
-                                            <ul>
-                                                <li>
-                                                    <strong>What's the pick?</strong> On Linux (and Android, which is Linux-based), the kernel taps <code>init</code> as the starting point 
-                                                    of all processes. Look for it chilling at <code>/sbin/init</code>.
-                                                </li>
-                                                <li>
-                                                    <strong>What's the first process ID (PID)?</strong> Every process gets a special ID number (PID for Process ID), and on Linux systems, 
-                                                    <code>init</code> snags PID 1. From there, it starts “adopting” other processes, creating a whole family tree of running programs.
-                                                </li>
-                                            </ul>
-
-                                        <strong>🍎 macOS and iOS: <code>launchd</code></strong>
-                                            <ul>
-                                                <li>
-                                                    <strong>What's the pick?</strong> Over at Apple Park (macOS and iOS), the kernel picks <code>launchd</code> the slick multitasker 
-                                                    of first processes. Its parked at <code>/sbin/launchd</code>.
-                                                </li>
-                                                <li>
-                                                    <strong>What's the first process ID (PID)?</strong> Like its Linux cousin, <code>launchd</code> grabs PID 1. But this process is a real overachiever
-                                                    (Hermione energy 🦁). It not only starts other processes but also manages system services, handles scheduled tasks,
-                                                    and keeps an eye on everything running on your Apple device.
-                                                </li>
-                                            </ul>
-
-                                        <strong>🪟 Windows: <code>smss.exe</code></strong>
-                                            <ul>
-                                                <li>
-                                                    <strong>What's the pick?</strong> On Windows, the kernel calls up <code>smss.exe</code>—short for Session Manager Subsystem—found at
-                                                    <code>C:\Windows\System32\smss.exe</code>.
-                                                </li>
-                                                <li>
-                                                    <strong>What's the first process ID (PID)?</strong> Windows does things its own way—like, “Nah, forget starting at 1, let's kick it off with 4!” 😂
-                                                    (Which, by the way, is your orca pal Connie's fave number 4️⃣ It's the only number in English with the same number of letters as it's value, F-O-U-R)
-                                                    You might think, “Is it 'cause a window has four sides, some geometry flex?” Nope, not quite—it's more because of a kernel quirk in Windows that loves
-                                                    multiples of 4. So Windows reserves PID 4 for its System process, and <code>smss.exe</code> gets a different number each time. But the gist is the same,
-                                                    <code>smss.exe</code> is the session maestro, spinning up user sessions and kickstarting the right programs.
-                                                </li>
-                                            </ul>
+                                        <details>
+                                            <summary>Tap/Click Me!</summary>
+                                            <p>
+                                                The kernel doesn't just launch <i>any</i> process—it needs a specific starting point, a process that's ready to roll.
+                                                This is usually a hardcoded choice baked into the kernel by the system's designers. Here's how it works:
+                                                <ul>
+                                                    <li>
+                                                        During boot, the bootloader loaded an initial RAM disk (reminder, this is our temporary filesystem in memory, our forgetful Dory 🐠)
+                                                        or pointed to a spot on storage (like a disk partition) with must-have files.
+                                                    </li> 
+                                                    <li>
+                                                        The kernel, now talking to storage via drivers, grabs the binary 0️⃣ 1️⃣ (a compiled program file) from there and pulls it into memory.
+                                                    </li>
+                                                </ul>
+                                                Time to splash around the big operating systems and meet their #1 picks for first process (kinda like the NBA draft 🏀 but for computers).
+                                                <br>
+        
+                                                <strong>🤖 Linux and Android: <code>init</code></strong>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>What's the pick?</strong> On Linux (and Android, which is Linux-based), the kernel taps <code>init</code> as the starting point 
+                                                            of all processes. Look for it chilling at <code>/sbin/init</code>.
+                                                        </li>
+                                                        <li>
+                                                            <strong>What's the first process ID (PID)?</strong> Every process gets a special ID number (PID for Process ID), and on Linux systems, 
+                                                            <code>init</code> snags PID 1. From there, it starts “adopting” other processes, creating a whole family tree of running programs.
+                                                        </li>
+                                                    </ul>
+        
+                                                <strong>🍎 macOS and iOS: <code>launchd</code></strong>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>What's the pick?</strong> Over at Apple Park (macOS and iOS), the kernel picks <code>launchd</code> the slick multitasker 
+                                                            of first processes. Its parked at <code>/sbin/launchd</code>.
+                                                        </li>
+                                                        <li>
+                                                            <strong>What's the first process ID (PID)?</strong> Like its Linux cousin, <code>launchd</code> grabs PID 1. But this process is a real overachiever
+                                                            (Hermione energy 🦁). It not only starts other processes but also manages system services, handles scheduled tasks,
+                                                            and keeps an eye on everything running on your Apple device.
+                                                        </li>
+                                                    </ul>
+        
+                                                <strong>🪟 Windows: <code>smss.exe</code></strong>
+                                                    <ul>
+                                                        <li>
+                                                            <strong>What's the pick?</strong> On Windows, the kernel calls up <code>smss.exe</code>—short for Session Manager Subsystem—found at
+                                                            <code>C:\Windows\System32\smss.exe</code>.
+                                                        </li>
+                                                        <li>
+                                                            <strong>What's the first process ID (PID)?</strong> Windows does things its own way—like, “Nah, forget starting at 1, let's kick it off with 4!” 😂
+                                                            (Which, by the way, is your orca pal Connie's fave number 4️⃣ It's the only number in English with the same number of letters as it's value, F-O-U-R)
+                                                            You might think, “Is it 'cause a window has four sides, some geometry flex?” Nope, not quite—it's more because of a kernel quirk in Windows that loves
+                                                            multiples of 4. So Windows reserves PID 4 for its System process, and <code>smss.exe</code> gets a different number each time. But the gist is the same,
+                                                            <code>smss.exe</code> is the session maestro, spinning up user sessions and kickstarting the right programs.
+                                                        </li>
+                                                    </ul>
+                                            </p>
+                                        </details>
                                     </li>
 
                                     <li>
                                         <strong>Create a Process Environment</strong>
-                                        <br>
-                                        <strong>[Allocate Memory Spaces ➡️ Set Up CPU Registers ➡️ Create Process Control Block]</strong>
-                                        <br><br>
-                                        The kernel can't just toss the first process at the CPU and say, “Go!” Nope, it's gotta build a cozy little world for it to swim 
-                                        in—Connie's here to show you how! This is where that virtual memory magic (remember it?) comes back. A process needs its own space
-                                        and a starting line, or it's just a blob of code floating around. Here's the setup:
-                                        <ul>
-                                            <li>
-                                                <strong>Allocate Memory:</strong> The kernel reserves a chunk of virtual memory for the process. This includes:
-                                                <ul>
-                                                    <li>
-                                                        <i>Code:</i> The binary itself (the instructions for <code>init</code>, <code>launchd</code>, or <code>smss.exe</code>).
-                                                    </li>
-                                                    <li>
-                                                        <i>Data:</i> Room for variables and goodies the binary needs.
-                                                    </li>
-                                                    <li>
-                                                        <i>Stack:</i> A scratchpad to track of what the binary is doing (like a call stack for function calls).
-                                                    </li>
-                                                </ul>
-                                            </li>
-
-                                            <li>
-                                                <strong>Set Up Registers:</strong> The CPU's got tiny sticky notes called registers (like the program counter and stack pointer).
-                                                The kernel scribbles in starting values:
-                                                <ul>
-                                                    <li>
-                                                        Program counter points to the kickoff spot—like the first line of <code>init</code>, <code>launchd</code>, or <code>smss.exe</code>,
-                                                        depending on your system.
-                                                    </li>
-                                                    <li>
-                                                        Stack pointer points to the process's stack—its to-do list spot.
-                                                    </li>
-                                                </ul>
-                                            </li>
-
-                                            <li>
-                                                <strong>Process Control Block (PCB):</strong> The kernel whips up a data structure to keep tabs on this newbie. Think of it as a process's ID card 🪪
-                                                - without it, processes would crash into each other like bumper cars gone wild 😵‍💫. Let's peek at what's on this ID card:
+                                        <details>
+                                            <summary>Tap/Click Me!</summary>
+                                            <p>
+                                                <strong>[Allocate Memory Spaces ➡️ Set Up CPU Registers ➡️ Create Process Control Block]</strong>
                                                 <br><br>
-                                                <strong>Process Control Block aka Process ID Card 🪪</strong>
+                                                The kernel can't just toss the first process at the CPU and say, “Go!” Nope, it's gotta build a cozy little world for it to swim 
+                                                in—Connie's here to show you how! This is where that virtual memory magic (remember it?) comes back. A process needs its own space
+                                                and a starting line, or it's just a blob of code floating around. Here's the setup:
                                                 <ul>
-                                                    <strong>Who Am I? 👤</strong>
+                                                    <li>
+                                                        <strong>Allocate Memory:</strong> The kernel reserves a chunk of virtual memory for the process. This includes:
                                                         <ul>
                                                             <li>
-                                                                <strong>Name (PID):</strong> The unique ID badge for this process—my kernel-given name.
+                                                                <i>Code:</i> The binary itself (the instructions for <code>init</code>, <code>launchd</code>, or <code>smss.exe</code>).
                                                             </li>
                                                             <li>
-                                                                <strong>Parent Process ID (PPID):</strong> Who “brought me into existence”—my parent's PID.
+                                                                <i>Data:</i> Room for variables and goodies the binary needs.
+                                                            </li>
+                                                            <li>
+                                                                <i>Stack:</i> A scratchpad to track of what the binary is doing (like a call stack for function calls).
                                                             </li>
                                                         </ul>
-
-                                                    <strong>Where Am I Right Now? 📍</strong>
-                                                    <ul>
-                                                        <li>
-                                                            <strong>Memory Address:</strong> Where I crash in memory—my home base (e.g., page table or base/limit registers).
-                                                        </li>    
-                                                        <li>
-                                                            <strong>Program Counter (PC):</strong> The exact spot I'm at in my code—my next move when I get the green light.
-                                                        </li>                        
-                                                    </ul>
-
-                                                    <strong>What's My State? 🦦</strong>
-                                                    <ul>
-                                                        <li>
-                                                            <strong>Current Status:</strong> Am I running, waiting, or chilling in the ready queue? My current mood.
-                                                        </li>
-                                                        <li>
-                                                            <strong>CPU Registers:</strong> My brain's scratchpad—values I'm juggling when I get paused.
-                                                        </li>
-                                                        <li>
-                                                            <strong>CPU Time Used:</strong> How long I've hogged the CPU—my time sheet. (Greedy or sharing? Santa's watching! 🎅)
-                                                        </li>
-                                                    </ul>
-
-                                                    <strong>What're My Abilities? ✨</strong>
-                                                    <ul>
-                                                        <li>
-                                                            <strong>Scheduling Information:</strong> My spot in line—how urgent I am (priority) and how long I get to shine (time slice).
-                                                        </li>
-                                                        <li>
-                                                            <strong>Process Privileges:</strong> My access pass—am I a VIP (root) or just an NPC (user)?
-                                                        </li>
-                                                    </ul>
-
-                                                    <strong>What Am I Up To? 🪄</strong>
-                                                    <ul>
-                                                        <li>
-                                                            <strong>I/O (Input/Output) Status:</strong> What I'm waiting on—disk, network, printer, you name it.
-                                                        </li>
-                                                        <li>
-                                                            <strong>Open Files:</strong> My toolbox—files I've got open and ready.
-                                                        </li>
-                                                    </ul>
-
-                                                    <strong>Extra Details ➕</strong>
-                                                    <ul>
-                                                        <li>
-                                                            <strong>Signal Information:</strong> Signals the system for messages like “Yo, wrap it up!” (SIGTERM) or “You're toast!” (SIGKILL).
-                                                        </li>
-                                                        <li>
-                                                            <strong>Accounting Information:</strong> My resource tab—start time, memory usage, all that jazz for the system's bookkeeper.
-                                                        </li>
-                                                    </ul>
+                                                    </li>
+        
+                                                    <li>
+                                                        <strong>Set Up Registers:</strong> The CPU's got tiny sticky notes called registers (like the program counter and stack pointer).
+                                                        The kernel scribbles in starting values:
+                                                        <ul>
+                                                            <li>
+                                                                Program counter points to the kickoff spot—like the first line of <code>init</code>, <code>launchd</code>, or <code>smss.exe</code>,
+                                                                depending on your system.
+                                                            </li>
+                                                            <li>
+                                                                Stack pointer points to the process's stack—its to-do list spot.
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+        
+                                                    <li>
+                                                        <strong>Process Control Block (PCB):</strong> The kernel whips up a data structure to keep tabs on this newbie. Think of it as a process's ID card 🪪
+                                                        - without it, processes would crash into each other like bumper cars gone wild 😵‍💫. Let's peek at what's on this ID card:
+                                                        <br><br>
+                                                        <strong>Process Control Block aka Process ID Card 🪪</strong>
+                                                        <ul>
+                                                            <strong>Who Am I? 👤</strong>
+                                                                <ul>
+                                                                    <li>
+                                                                        <strong>Name (PID):</strong> The unique ID badge for this process—my kernel-given name.
+                                                                    </li>
+                                                                    <li>
+                                                                        <strong>Parent Process ID (PPID):</strong> Who “brought me into existence”—my parent's PID.
+                                                                    </li>
+                                                                </ul>
+        
+                                                            <strong>Where Am I Right Now? 📍</strong>
+                                                            <ul>
+                                                                <li>
+                                                                    <strong>Memory Address:</strong> Where I crash in memory—my home base (e.g., page table or base/limit registers).
+                                                                </li>    
+                                                                <li>
+                                                                    <strong>Program Counter (PC):</strong> The exact spot I'm at in my code—my next move when I get the green light.
+                                                                </li>                        
+                                                            </ul>
+        
+                                                            <strong>What's My State? 🦦</strong>
+                                                            <ul>
+                                                                <li>
+                                                                    <strong>Current Status:</strong> Am I running, waiting, or chilling in the ready queue? My current mood.
+                                                                </li>
+                                                                <li>
+                                                                    <strong>CPU Registers:</strong> My brain's scratchpad—values I'm juggling when I get paused.
+                                                                </li>
+                                                                <li>
+                                                                    <strong>CPU Time Used:</strong> How long I've hogged the CPU—my time sheet. (Greedy or sharing? Santa's watching! 🎅)
+                                                                </li>
+                                                            </ul>
+        
+                                                            <strong>What're My Abilities? ✨</strong>
+                                                            <ul>
+                                                                <li>
+                                                                    <strong>Scheduling Information:</strong> My spot in line—how urgent I am (priority) and how long I get to shine (time slice).
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Process Privileges:</strong> My access pass—am I a VIP (root) or just an NPC (user)?
+                                                                </li>
+                                                            </ul>
+        
+                                                            <strong>What Am I Up To? 🪄</strong>
+                                                            <ul>
+                                                                <li>
+                                                                    <strong>I/O (Input/Output) Status:</strong> What I'm waiting on—disk, network, printer, you name it.
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Open Files:</strong> My toolbox—files I've got open and ready.
+                                                                </li>
+                                                            </ul>
+        
+                                                            <strong>Extra Details ➕</strong>
+                                                            <ul>
+                                                                <li>
+                                                                    <strong>Signal Information:</strong> Signals the system for messages like “Yo, wrap it up!” (SIGTERM) or “You're toast!” (SIGKILL).
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Accounting Information:</strong> My resource tab—start time, memory usage, all that jazz for the system's bookkeeper.
+                                                                </li>
+                                                            </ul>
+                                                        </ul>
+                                                        <br>
+                                                        Hey, wanna see my ID card? Here's what mine looks like 🐬
+                                                        <br><br>
+                                                        <strong>Process ID Card 🪪 <code>launchd</code></strong>
+                                                        <br>
+                                                        <ul>
+                                                            <strong>Who Am I? 👤</strong>
+                                                            <ul>
+                                                                <li>
+                                                                    <strong>PID:</strong> 1
+                                                                </li>
+                                                                <li>
+                                                                   <strong>PPID:</strong> 0 (I have no parent, I'm the OG 😎)
+                                                                </li>
+                                                            </ul>
+        
+                                                            <strong>Where Am I Right Now? 📍</strong>
+                                                            <ul>
+                                                                <li>
+                                                                    <strong>Memory Address:</strong> <code>0x1000</code>
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Program Counter (PC):</strong> <code>0x1234 (about to call load_launchd_services())</code>
+                                                                </li>
+                                                            </ul>
+        
+                                                            <strong>What's My State? 🦦</strong>
+                                                            <ul>
+                                                                <li>
+                                                                    <strong>Current Status:</strong> Running
+                                                                </li>
+                                                                <li>
+                                                                    <strong>CPU Time Used:</strong> <code>0.03s</code> (Just getting cookin'!)
+                                                                </li>
+                                                            </ul>
+        
+                                                            <strong>What're My Abilities? ✨</strong>
+                                                            <ul>
+                                                                <li>
+                                                                    <strong>Priority:</strong> High (obv, I'm <code>launchd</code>! 💁‍♀️)
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Privileges:</strong> Root (bc I'm a Queen 👑 Man + Woman - King = Queen)
+                                                                </li>
+                                                            </ul>
+        
+                                                            <strong>Current Shenanigans 🪄</strong>
+                                                            <ul>
+                                                                <li>
+                                                                    <strong>I/O Status:</strong> Reading from <code>/etc/launchd.conf</code>
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Open Files:</strong> <code>["/etc/launchd.conf", "/dev/console", "/var/run/launchd.pid"]</code>
+                                                                </li>
+                                                            </ul>
+        
+                                                            <strong>Extra Details ➕</strong>
+                                                            <ul>
+                                                                <li>
+                                                                    <strong>Signals:</strong> No alerts for me, all clear!
+                                                                </li>
+                                                                <li>
+                                                                    <strong>Started:</strong> 2024-05-01 00:00:01
+                                                                </li>
+                                                                <li>
+                                                                    <strong> Memory Used:</strong> 6.18MB
+                                                                </li>
+                                                            </ul>
+                                                        </ul>
+                                                    </li>
                                                 </ul>
-                                                <br>
-                                                Hey, wanna see my ID card? Here's what mine looks like 🐬
-                                                <br><br>
-                                                <strong>Process ID Card 🪪 <code>launchd</code></strong>
-                                                <br>
-                                                <ul>
-                                                    <strong>Who Am I? 👤</strong>
-                                                    <ul>
-                                                        <li>
-                                                            <strong>PID:</strong> 1
-                                                        </li>
-                                                        <li>
-                                                           <strong>PPID:</strong> 0 (I have no parent, I'm the OG 😎)
-                                                        </li>
-                                                    </ul>
-
-                                                    <strong>Where Am I Right Now? 📍</strong>
-                                                    <ul>
-                                                        <li>
-                                                            <strong>Memory Address:</strong> <code>0x1000</code>
-                                                        </li>
-                                                        <li>
-                                                            <strong>Program Counter (PC):</strong> <code>0x1234 (about to call load_launchd_services())</code>
-                                                        </li>
-                                                    </ul>
-
-                                                    <strong>What's My State? 🦦</strong>
-                                                    <ul>
-                                                        <li>
-                                                            <strong>Current Status:</strong> Running
-                                                        </li>
-                                                        <li>
-                                                            <strong>CPU Time Used:</strong> <code>0.03s</code> (Just getting cookin'!)
-                                                        </li>
-                                                    </ul>
-
-                                                    <strong>What're My Abilities? ✨</strong>
-                                                    <ul>
-                                                        <li>
-                                                            <strong>Priority:</strong> High (obv, I'm <code>launchd</code>! 💁‍♀️)
-                                                        </li>
-                                                        <li>
-                                                            <strong>Privileges:</strong> Root (bc I'm a Queen 👑 Man + Woman - King = Queen)
-                                                        </li>
-                                                    </ul>
-
-                                                    <strong>Current Shenanigans 🪄</strong>
-                                                    <ul>
-                                                        <li>
-                                                            <strong>I/O Status:</strong> Reading from <code>/etc/launchd.conf</code>
-                                                        </li>
-                                                        <li>
-                                                            <strong>Open Files:</strong> <code>["/etc/launchd.conf", "/dev/console", "/var/run/launchd.pid"]</code>
-                                                        </li>
-                                                    </ul>
-
-                                                    <strong>Extra Details ➕</strong>
-                                                    <ul>
-                                                        <li>
-                                                            <strong>Signals:</strong> No alerts for me, all clear!
-                                                        </li>
-                                                        <li>
-                                                            <strong>Started:</strong> 2024-05-01 00:00:01
-                                                        </li>
-                                                        <li>
-                                                            <strong> Memory Used:</strong> 6.18MB
-                                                        </li>
-                                                    </ul>
-                                                </ul>
-                                            </li>
-                                        </ul>
+                                            </p>
+                                        </details>
                                     </li>
 
                                     <li>
-                                        <strong>Schedule It to Run</strong> 
-                                        <br>
-                                        <strong>[Add Process to Ready Queue ➡️ Load Process's Memory Map to MMU ➡️ Apply CPU Registers to Process ➡️ CPU jumps to the Program Counter ➡️ Process Execution]</strong>
-                                        <br><br>
-                                        The kernel's juggling a lot—interrupts, memory management—but it's not running the first process yet. It's still in control. Now it <i>finally</i> hands the process to the scheduler,
-                                        a part of the kernel that decides what runs when. Here's the breakdown:
-                                        <ul>
-                                            <li>
-                                                The scheduler adds PID 1 to its “ready queue”—a list of processes waiting for CPU time. Since this is the first process, the queue's empty otherwise, so it's go time!
-                                            </li>
-                                            <li>
-                                                The kernel switches from its own context to the process's context:
+                                        <strong>Schedule It to Run</strong>
+                                        <details>
+                                            <summary>Tap/Click Me!</summary>
+                                            <p>
+                                                <strong>[Add Process to Ready Queue ➡️ Load Process's Memory Map to MMU ➡️ Apply CPU Registers to Process ➡️ CPU jumps to the Program Counter ➡️ Process Execution]</strong>
+                                                <br><br>
+                                                The kernel's juggling a lot—interrupts, memory management—but it's not running the first process yet. It's still in control. Now it <i>finally</i> hands the process to the scheduler,
+                                                a part of the kernel that decides what runs when. Here's the breakdown:
                                                 <ul>
                                                     <li>
-                                                        Loads the process's memory map (page tables) into the Memory Management Unit (MMU).
+                                                        The scheduler adds PID 1 to its “ready queue”—a list of processes waiting for CPU time. Since this is the first process, the queue's empty otherwise, so it's go time!
                                                     </li>
                                                     <li>
-                                                        Sets the CPU registers to the values from previous the previous step.
+                                                        The kernel switches from its own context to the process's context:
+                                                        <ul>
+                                                            <li>
+                                                                Loads the process's memory map (page tables) into the Memory Management Unit (MMU).
+                                                            </li>
+                                                            <li>
+                                                                Sets the CPU registers to the values from previous the previous step.
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        The CPU jumps to the program counter, and then whammo! The process starts executing its first instruction.
                                                     </li>
                                                 </ul>
-                                            </li>
-                                            <li>
-                                                The CPU jumps to the program counter, and then whammo! The process starts executing its first instruction.
-                                            </li>
-                                        </ul>
-                                        <strong>Trop Cool 😎</strong> Ever be jamming along to a song bragging to others about its greatness only for your dad to completely shatter your world by telling you it's not
-                                        actually the original?! Just like musicians riff off legends, programming tools often remix and reimagine core computer science concepts. Take job queues in modern programming—
-                                        like Ruby's Resque or Sidekiq—they're basically cover songs of the OS process scheduler! They took that same idea of “here's a line of tasks waiting their turn” and adapted it
-                                        for web apps. Next time you queue up a background job, you can thank the OS pioneers who first dropped that beat 🎻
+                                                <strong>Trop Cool 😎</strong> Ever be jamming along to a song bragging to others about its greatness only for your dad to completely shatter your world by telling you it's not
+                                                actually the original?! Just like musicians riff off legends, programming tools often remix and reimagine core computer science concepts. Take job queues in modern programming—
+                                                like Ruby's Resque or Sidekiq—they're basically cover songs of the OS process scheduler! They took that same idea of “here's a line of tasks waiting their turn” and adapted it
+                                                for web apps. Next time you queue up a background job, you can thank the OS pioneers who first dropped that beat 🎻
+                                            </p>
+                                        </details>
                                     </li>
+
                                     <li>
                                         <strong>Let It Fly 🦅 (and Keep Watch)</strong>
-                                        <br>
-                                        <strong>[Process Starts ➡️ Runs Initial Processes ➡️ Launches Services ➡️ System Ready]</strong>
-                                        <br><br>
-                                        Once the first process is running, the kernel delegates but never fully lets go—it's the foundation everything builds on. It's
-                                        still the boss of Computerland, managing resources and handling interrupts. What does the first process do? Depends on the system:
-                                        <ul>
-                                            <li>
-                                                On Linux, <code>init</code> might run a script (like <code>/etc/init.d</code>) to start system services (e.g., networking, a shell) or use a modern system like
-                                                <code>systemd</code> to manage dependencies and boot targets.
-                                            </li>
-                                            <li>
-                                                On embedded systems (like a phone), it could launch a basic runtime or UI, often tailored to the device's purpose (e.g., Android's Zygote for app spawning).
-                                            </li>
-                                            <li>
-                                                On Apple, <code>launchd</code> takes charge, loading system daemons and user services from plists (property list files,
-                                                like <code>/System/Library/LaunchDaemons</code>), kicking off everything from the GUI to background tasks.
-                                            </li>
-                                            <li>
-                                                On Windows, <code>smss.exe</code> sets up the session environment, launching critical components like <code>csrss.exe</code> (Client/Server Runtime Subsystem)
-                                                and <code>winlogon.exe</code> to initialize the user login and desktop.
-                                            </li>
-                                        </ul>
-                                        The kernel keeps tabs via the Process Control Block, ready to step in if the first process needs help (e.g., more memory) or spawns kids (other processes).
+                                        <details>
+                                            <summary>Tap/Click Me!</summary>
+                                            <p>
+                                                <strong>[Process Starts ➡️ Runs Initial Processes ➡️ Launches Services ➡️ System Ready]</strong>
+                                                <br><br>
+                                                Once the first process is running, the kernel delegates but never fully lets go—it's the foundation everything builds on. It's
+                                                still the boss of Computerland, managing resources and handling interrupts. What does the first process do? Depends on the system:
+                                                <ul>
+                                                    <li>
+                                                        On Linux, <code>init</code> might run a script (like <code>/etc/init.d</code>) to start system services (e.g., networking, a shell) or use a modern system like
+                                                        <code>systemd</code> to manage dependencies and boot targets.
+                                                    </li>
+                                                    <li>
+                                                        On embedded systems (like a phone), it could launch a basic runtime or UI, often tailored to the device's purpose (e.g., Android's Zygote for app spawning).
+                                                    </li>
+                                                    <li>
+                                                        On Apple, <code>launchd</code> takes charge, loading system daemons and user services from plists (property list files,
+                                                        like <code>/System/Library/LaunchDaemons</code>), kicking off everything from the GUI to background tasks.
+                                                    </li>
+                                                    <li>
+                                                        On Windows, <code>smss.exe</code> sets up the session environment, launching critical components like <code>csrss.exe</code> (Client/Server Runtime Subsystem)
+                                                        and <code>winlogon.exe</code> to initialize the user login and desktop.
+                                                    </li>
+                                                </ul>
+                                                The kernel keeps tabs via the Process Control Block, ready to step in if the first process needs help (e.g., more memory) or spawns kids (other processes).                              
+                                            </p>
+                                        </details>
                                     </li>
                                 </ol>
                             </p>
