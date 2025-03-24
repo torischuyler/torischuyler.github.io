@@ -247,7 +247,7 @@ for developers on computer basics and operating system fundamentals. -->
                 <!-- Begin Kernel Section ----------------->
                 <section>
                     <h2><span>Kernel</span></h2>
-                    <details open>
+                    <details>
                         <summary>Tap/Click Me!</summary>
                         <p>
                             Hiya, it's Connie, your orca buddy, back again with the good stuff! So, the bootloader's set the stage,
@@ -688,7 +688,7 @@ for developers on computer basics and operating system fundamentals. -->
                         <br>
                         <!-- Begin First Process - Kernel Step #5 ---------------------->
                         <h3>5. Launch the First Process</h3>
-                        <details open>
+                        <details>
                             <summary>Tap/Click Me!</summary>
                             <p>
                                 So, we've made it this far—drivers are loaded, and the kernel's got a two-way convo going with the hardware.
@@ -1044,285 +1044,307 @@ for developers on computer basics and operating system fundamentals. -->
 
                             <p>
                                 <u><strong>Scheduling Processes (Who Gets the CPU and When?)</strong></u>
-                                <br>
-                                The CPU can only do one thing at a time (per core), but we need many things to happen “at once.” After launching the first process, more processes start popping up—like kids of the
-                                first process (e.g., <code>init</code> spawns a shell, <code>launchd</code> kicks off system services). The CPU can't run them all simultaneously (unless you've got multiple cores,
-                                and even then, each core handles one task at a time). So, the kernel uses a <i>scheduler</i> to decide who gets the CPU and for how long.
-                                <br><br>
-                                <strong>How it works:</strong>
-                                <ul>
-                                    <li>
-                                        The kernel maintains a “ready queue”—a list of processes waiting for CPU time. Each process has a priority (e.g., system tasks might rank higher than your meme generator app)
-                                        and a state (ready, running, waiting).
-                                    </li>
-                                    <li>
-                                        The scheduler picks a process based on a strategy (like round-robin for fairness or priority-based for urgency), gives it a tiny time slice (say, 10 milliseconds), and lets it run.
-                                    </li>
-                                    <li>
-                                        When the time's up—or if a higher-priority process barges in—the kernel <i>preempts</i> the current process, saves its state (via the Process Control Block, or PCB), and switches
-                                        to the next one. This is called a <i>context switch</i>.
-                                    </li>
-                                    <li>
-                                        To the user, this rapid switching (hundreds of times per second) feels like everything's running at once—smooth as butter 🧈.
-                                    </li>
-                                </ul>
-                            </p>
+                                <details>
+                                    <summary>Tap/Click Me!</summary>
+                                    <p>
+                                        The CPU can only do one thing at a time (per core), but we need many things to happen “at once.” After launching the first process, more processes start popping up—like kids of the
+                                        first process (e.g., <code>init</code> spawns a shell, <code>launchd</code> kicks off system services). The CPU can't run them all simultaneously (unless you've got multiple cores,
+                                        and even then, each core handles one task at a time). So, the kernel uses a <i>scheduler</i> to decide who gets the CPU and for how long.
+                                        <br><br>
+                                        <strong>How it works:</strong>
+                                        <ul>
+                                            <li>
+                                                The kernel maintains a “ready queue”—a list of processes waiting for CPU time. Each process has a priority (e.g., system tasks might rank higher than your meme generator app)
+                                                and a state (ready, running, waiting).
+                                            </li>
+                                            <li>
+                                                The scheduler picks a process based on a strategy (like round-robin for fairness or priority-based for urgency), gives it a tiny time slice (say, 10 milliseconds), and lets it run.
+                                            </li>
+                                            <li>
+                                                When the time's up—or if a higher-priority process barges in—the kernel <i>preempts</i> the current process, saves its state (via the Process Control Block, or PCB), and switches
+                                                to the next one. This is called a <i>context switch</i>.
+                                            </li>
+                                            <li>
+                                                To the user, this rapid switching (hundreds of times per second) feels like everything's running at once—smooth as butter 🧈.
+                                            </li>
+                                        </ul>
+                                    </p>
 
-                            <p>
-                                <strong>Why it matters:</strong>
+                                    <p>
+                                        <strong>Why it matters:</strong>
+                                        <br>
+                                        Without scheduling, one greedy process could hog the CPU, starving others. Imagine a video call freezing because your music player won't share the stage. The scheduler keeps the peace,
+                                        ensuring fairness and responsiveness.
+                                    </p>
+                                    <br>
+                                </details>
                                 <br>
-                                Without scheduling, one greedy process could hog the CPU, starving others. Imagine a video call freezing because your music player won't share the stage. The scheduler keeps the peace,
-                                ensuring fairness and responsiveness.
                             </p>
-                            <br>
 
                             <p>
                                 <u><strong>Managing Memory (No Stepping on Toes! 🩰)</strong></u>
-                                <br>
-                                Remember when we set up those memory sandboxes earlier? Well, now we've got a whole playground of processes, and they all want their own space to build castles 🏰 Physical memory (RAM)
-                                is like beachfront property—limited and precious. Let me show you how we keep everyone playing nice.
-                                <br><br>
-                                <strong>How it works:</strong>
-                                <ul>
-                                    <li>
-                                        <strong>Virtual Address Spaces:</strong> Each process gets its own virtual address space (thanks to those page tables we built earlier). The Memory Management Unit (MMU) translates 
-                                        these virtual addresses to physical ones, so Process A can't overwrite Process B's data. Process A thinks it owns address 207, Process B thinks it owns address 207, and neither 
-                                        knows they're actually sharing different parts of the same physical RAM! (shout out to all the Mainers reppin' the 207 🦞). 
-                                    </li>
-                                    <li>
-                                        <strong>Dynamic Memory:</strong> When a process gets greedy (like  when you're opening your 100th browser tab while tryna outcompete the bots 👾 to score concert tix), the kernel 
-                                        hands out virtual pages and maps them to free physical RAM.
-                                    </li>
-                                    <li>
-                                        <strong>Swap Magic:</strong> RAM running low? The kernel's got a trick up its sleeve: <i>swapping</i>. Think of it like a valet parking service 🚗. Less-active stuff gets “parked” on disk 
-                                        (in a swap file or partition), freeing up RAM for the active processes. When those parked pages are needed again—vroom!—back they come.
-                                    </li>
-                                    <li>
-                                        <strong>Protection Rules:</strong> Some memory is like a museum—look but don't touch (read-only code). Other areas are VIP kernel-only zones. This keeps processes from accidentally 
-                                        (or intentionally 😈) messing with critical system data.
-                                    </li>
-                                </ul>
-                            </p>
+                                <details>
+                                    <summary>Tap/Click Me!</summary>
+                                    <p>
+                                        Remember when we set up those memory sandboxes earlier? Well, now we've got a whole playground of processes, and they all want their own space to build castles 🏰 Physical memory (RAM)
+                                        is like beachfront property—limited and precious. Let me show you how we keep everyone playing nice.
+                                        <br><br>
+                                        <strong>How it works:</strong>
+                                        <ul>
+                                            <li>
+                                                <strong>Virtual Address Spaces:</strong> Each process gets its own virtual address space (thanks to those page tables we built earlier). The Memory Management Unit (MMU) translates 
+                                                these virtual addresses to physical ones, so Process A can't overwrite Process B's data. Process A thinks it owns address 207, Process B thinks it owns address 207, and neither 
+                                                knows they're actually sharing different parts of the same physical RAM! (shout out to all the Mainers reppin' the 207 🦞). 
+                                            </li>
+                                            <li>
+                                                <strong>Dynamic Memory:</strong> When a process gets greedy (like  when you're opening your 100th browser tab while tryna outcompete the bots 👾 to score concert tix), the kernel 
+                                                hands out virtual pages and maps them to free physical RAM.
+                                            </li>
+                                            <li>
+                                                <strong>Swap Magic:</strong> RAM running low? The kernel's got a trick up its sleeve: <i>swapping</i>. Think of it like a valet parking service 🚗. Less-active stuff gets “parked” on disk 
+                                                (in a swap file or partition), freeing up RAM for the active processes. When those parked pages are needed again—vroom!—back they come.
+                                            </li>
+                                            <li>
+                                                <strong>Protection Rules:</strong> Some memory is like a museum—look but don't touch (read-only code). Other areas are VIP kernel-only zones. This keeps processes from accidentally 
+                                                (or intentionally 😈) messing with critical system data.
+                                            </li>
+                                        </ul>
+                                    </p>
 
-                            <p>
-                                <strong>Why it matters:</strong>
-                                <br>
-                                Without this, processes would collide like bumper cars, corrupting data or crashing. Virtual memory and swapping let the system handle more processes than physical RAM allows,
-                                keeping things smooth even under load.
-                            </p>
-                            <br>
+                                    <p>
+                                        <strong>Why it matters:</strong>
+                                        <br>
+                                        Without this, processes would collide like bumper cars, corrupting data or crashing. Virtual memory and swapping let the system handle more processes than physical RAM allows,
+                                        keeping things smooth even under load.
+                                    </p>
+                                    <br>
 
-                            <p>
-                                <strong>Histoire 📜</strong> The first real implementation of a virtual memory system was in the Atlas Computer at the University of Manchester in 1962. Before that, programmers had to 
-                                manually manage memory locations—imagine having to tell everyone exactly where to put their beach towel!🏖️
+                                    <p>
+                                        <strong>Histoire 📜</strong> The first real implementation of a virtual memory system was in the Atlas Computer at the University of Manchester in 1962. Before that, programmers had to 
+                                        manually manage memory locations—imagine having to tell everyone exactly where to put their beach towel!🏖️
+                                    </p>
+                                </details>
+                                <br>
                             </p>
-                            <br>
 
                             <p>
                                 <u><strong>Handling Interrupts (Staying Responsive to Hardware)</strong></u>
-                                <br>
-                                <strong>[Hardware Interrupt ➡️ CPU Pauses Process ➡️ Interrupt Handler Processes ➡️ Driver Acts ➡️ CPU Process Resumes]</strong>
-                                <br><br>
-                                Hardware needs to talk to the CPU without delay, but the CPU's busy running processes. Back in Step 3, we set up interrupts to get the hardware and CPU ready to chat—like flipping the “on”
-                                switch for communication. Now that the system's rolling, those interrupts are firing nonstop—your touchscreen taps, Wi-Fi packets arrive, storage reads finish—all screaming for attention.
-                                <br><br>
-                                <strong>How it works:</strong>
-                                <ul>
-                                    <li>
-                                        When hardware sends an interrupt (e.g., “Tap at (100, 200)!”), the CPU pauses the current process, saves its state (via the PCB), and jumps to the kernel's interrupt handler.
-                                    </li>
-                                    <li>
-                                        The handler—a tiny program tied to that interrupt—figures out what's up (e.g., “Touchscreen says hi! ☺️”) and hands it off to the right driver.
-                                    </li>
-                                    <li>
-                                        The driver processes it (e.g., tells an app, “You've been tapped! 🫵”), and the kernel resumes the interrupted process like nothing happened.
-                                    </li>
-                                    <li>
-                                        For efficiency, the kernel prioritizes interrupts—critical ones (like a power button press) jump the queue ⏭️ over routine ones (like a USB plug-in).
-                                    </li>
-                                </ul>
-                            </p>
+                                <details>
+                                    <summary>Tap/Click Me!</summary>
+                                    <p>
+                                        <strong>[Hardware Interrupt ➡️ CPU Pauses Process ➡️ Interrupt Handler Processes ➡️ Driver Acts ➡️ CPU Process Resumes]</strong>
+                                        <br><br>
+                                        Hardware needs to talk to the CPU without delay, but the CPU's busy running processes. Back in Step 3, we set up interrupts to get the hardware and CPU ready to chat—like flipping the “on”
+                                        switch for communication. Now that the system's rolling, those interrupts are firing nonstop—your touchscreen taps, Wi-Fi packets arrive, storage reads finish—all screaming for attention.
+                                        <br><br>
+                                        <strong>How it works:</strong>
+                                        <ul>
+                                            <li>
+                                                When hardware sends an interrupt (e.g., “Tap at (100, 200)!”), the CPU pauses the current process, saves its state (via the PCB), and jumps to the kernel's interrupt handler.
+                                            </li>
+                                            <li>
+                                                The handler—a tiny program tied to that interrupt—figures out what's up (e.g., “Touchscreen says hi! ☺️”) and hands it off to the right driver.
+                                            </li>
+                                            <li>
+                                                The driver processes it (e.g., tells an app, “You've been tapped! 🫵”), and the kernel resumes the interrupted process like nothing happened.
+                                            </li>
+                                            <li>
+                                                For efficiency, the kernel prioritizes interrupts—critical ones (like a power button press) jump the queue ⏭️ over routine ones (like a USB plug-in).
+                                            </li>
+                                        </ul>
 
-                            <p>
-                                <strong>Why it matters:</strong>
-                                <br>
-                                Interrupts keep the system snappy—your taps register instantly, not after a lag. Back in Step 3, we were just building the interrupt system to wake up the hardware. Now, it's about keeping
-                                everything humming along, reacting to every ping in real-time. Without this constant handling, your device would freeze up waiting for hardware to pipe up, like a game 🎮 stuck buffering
-                                while you mash the buttons. Reticulating Splines...
-                            </p>
-                            <br>
+                                        <p>
+                                            <strong>Why it matters:</strong>
+                                            <br>
+                                            Interrupts keep the system snappy—your taps register instantly, not after a lag. Back in Step 3, we were just building the interrupt system to wake up the hardware. Now, it's about keeping
+                                            everything humming along, reacting to every ping in real-time. Without this constant handling, your device would freeze up waiting for hardware to pipe up, like a game 🎮 stuck buffering
+                                            while you mash the buttons. Reticulating Splines...
+                                        </p>
+                                        <br>
 
-                            <p>
-                                <strong>Trop Cool 😎</strong> The Apollo Guidance Computer was a pioneer in interrupt handling! During the Apollo 11 lunar landing, when the computer became overloaded with interrupts from
-                                 the rendezvous radar, its Executive system automatically restarted and dropped lower-priority tasks to maintain critical navigation calculations. This smart priority scheduling kept the
-                                 essential systems running—helping ensure humanity's first steps on the moon 🌙 🚀
+                                        <p>
+                                            <strong>Trop Cool 😎</strong> The Apollo Guidance Computer was a pioneer in interrupt handling! During the Apollo 11 lunar landing, when the computer became overloaded with interrupts from
+                                             the rendezvous radar, its Executive system automatically restarted and dropped lower-priority tasks to maintain critical navigation calculations. This smart priority scheduling kept the
+                                             essential systems running—helping ensure humanity's first steps on the moon 🌙 🚀
+                                        </p>
+                                    </p>
+                                </details>
+                                <br>
                             </p>
-                            <br>
 
                             <p>
                                 <u><strong>Coordinating Communication (Processes Talking to Each Other)</strong></u>
-                                <br>
-                                <strong>[Process A writes ➡️ Kernel mediates ➡️ Process B reads]</strong>
-                                <br><br>
-                                Processes need to share info or sync up, but they're isolated for safety. Processes don't live in a vacuum—they need to chat (e.g., a music app telling the volume driver to crank up 🔊
-                                the good stuff). The kernel provides safe ways for this.
-                                <br><br>
-                                <strong>How it works:</strong>
-                                <ul>
-                                    <li>
-                                        <i>Inter-Process Communication (IPC):</i> The kernel offers tools like pipes (data streams), message queues, or shared memory. For example, Process A writes to a pipe, and
-                                        Process B reads from it—kernel-mediated, so no direct meddling.
-                                    </li>
-                                    <li>
-                                        <i>Synchronization:</i> If two processes want the same resource (like a file), the kernel uses locks or semaphores to prevent conflicts. One process waits while the other 
-                                        finishes—no data corruption!
+                                <details>
+                                    <summary>Tap/Click Me!</summary>
+                                    <p>
+                                        <strong>[Process A writes ➡️ Kernel mediates ➡️ Process B reads]</strong>
                                         <br><br>
-                                        Wondering what in the heckin is a sempahore? 🚦 In computer science, it's a nifty counter that tracks who's allowed to use something—like an “only X at a time” rule. It controls
-                                        access to a shared resource by multiple threads, keeping things orderly and preventing race conditions.
+                                        Processes need to share info or sync up, but they're isolated for safety. Processes don't live in a vacuum—they need to chat (e.g., a music app telling the volume driver to crank up 🔊
+                                        the good stuff). The kernel provides safe ways for this.
                                         <br><br>
-                                        Wondering what in the heckin is a race condition? 🏃‍♀️🏃‍♂️ It's when two or more threads try to grab the same resource at once, risking errors or crashes. Picture you and your
-                                        Uncle Jim at the tailgate before the big game, both thirsty for a refreshing energy drink. You dive into the cooler at the same time—hands brushing, awkward. 😳 
-                                        That's a race condition that could've been avoided if your Aunt Liz (the semaphore) were there, keeping tabs on the drink sitch and handing 'em out one at a time.
-                                    </li>
-                                    <li>
-                                        <i>Signals:</i> The kernel can send messages (e.g., “Quit now!” via SIGTERM) to nudge processes into action or shut them down cleanly.
-                                    </li>
-                                </ul>
-                            </p>
+                                        <strong>How it works:</strong>
+                                        <ul>
+                                            <li>
+                                                <i>Inter-Process Communication (IPC):</i> The kernel offers tools like pipes (data streams), message queues, or shared memory. For example, Process A writes to a pipe, and
+                                                Process B reads from it—kernel-mediated, so no direct meddling.
+                                            </li>
+                                            <li>
+                                                <i>Synchronization:</i> If two processes want the same resource (like a file), the kernel uses locks or semaphores to prevent conflicts. One process waits while the other 
+                                                finishes—no data corruption!
+                                                <br><br>
+                                                Wondering what in the heckin is a sempahore? 🚦 In computer science, it's a nifty counter that tracks who's allowed to use something—like an “only X at a time” rule. It controls
+                                                access to a shared resource by multiple threads, keeping things orderly and preventing race conditions.
+                                                <br><br>
+                                                Wondering what in the heckin is a race condition? 🏃‍♀️🏃‍♂️ It's when two or more threads try to grab the same resource at once, risking errors or crashes. Picture you and your
+                                                Uncle Jim at the tailgate before the big game, both thirsty for a refreshing energy drink. You dive into the cooler at the same time—hands brushing, awkward. 😳 
+                                                That's a race condition that could've been avoided if your Aunt Liz (the semaphore) were there, keeping tabs on the drink sitch and handing 'em out one at a time.
+                                            </li>
+                                            <li>
+                                                <i>Signals:</i> The kernel can send messages (e.g., “Quit now!” via SIGTERM) to nudge processes into action or shut them down cleanly.
+                                            </li>
+                                        </ul>
 
-                            <p>
-                                <strong>Why it matters:</strong>
+                                        <p>
+                                            <strong>Why it matters:</strong>
+                                            <br>
+                                            Without this coordination, processes would either be totally isolated (no teamwork) or crash into each other (chaos). The kernel ensures they play nice, keeping the system stable and functional.
+                                        </p>
+                                        <br>
+
+                                        <p>
+                                            <strong>Histoire 📜</strong> Back in the 1960s, many programs had to share data by writing to temporary files on disk. Douglas McIlroy, Ken Thompson, Dennis Ritchie and the team at Bell Labs 🔔
+                                            changed everything in 1973 by implementing Unix pipes <code>(|)</code>, allowing the output of one program to be used as the input for another, enabling a seamless flow of data between commands.
+                                            This simple yet powerful idea transformed Unix into a highly modular and flexible system, embodying the Unix philosophy of “do one thing and do it well.” Many of today's chat apps and cloud systems
+                                            rely on this foundational mechanism.🌟
+                                        </p>
+                                    </p>
+                                </details>
                                 <br>
-                                Without this coordination, processes would either be totally isolated (no teamwork) or crash into each other (chaos). The kernel ensures they play nice, keeping the system stable and functional.
                             </p>
-                            <br>
-
-                            <p>
-                                <strong>Histoire 📜</strong> Back in the 1960s, many programs had to share data by writing to temporary files on disk. Douglas McIlroy, Ken Thompson, Dennis Ritchie and the team at Bell Labs 🔔
-                                changed everything in 1973 by implementing Unix pipes <code>(|)</code>, allowing the output of one program to be used as the input for another, enabling a seamless flow of data between commands.
-                                This simple yet powerful idea transformed Unix into a highly modular and flexible system, embodying the Unix philosophy of “do one thing and do it well.” Many of today's chat apps and cloud systems
-                                rely on this foundational mechanism.🌟
-                            </p>
-                            <br>
 
                             <p>
                                 <u><strong>Monitoring and Recovery (Catching Problems Before They Wreck the Show)</strong></u>
-                                <br>
-                                <strong>[Process Error Occurs ➡️ CPU Throws Exception ➡️ Kernel Catches ➡️ Kernel Takes Action ➡️ System Continues]</strong>
-                                <br><br>
-                                Stuff breaks—hardware fails, software goes kaput—but the system doesn't quit. The kernel's our superhero 🦸 in Computerland, watching for trouble and swooping in to save the day.
-                                Check out its <i>pouvoirs magiques</i> (that's French 🇫🇷 for magic powers!)
-                                <br><br>
-                                <strong>The Kernel's 7 Pouvoirs Magiques 🧞‍♀️</strong>
-                                <ol>
-                                    <li>
-                                        <strong>Process Monitoring</strong>
-                                        <ul>
+                                <details>
+                                    <summary>Tap/Click Me!</summary>
+                                    <p>
+                                        <strong>[Process Error Occurs ➡️ CPU Throws Exception ➡️ Kernel Catches ➡️ Kernel Takes Action ➡️ System Continues]</strong>
+                                        <br><br>
+                                        Stuff breaks—hardware fails, software goes kaput—but the system doesn't quit. The kernel's our superhero 🦸 in Computerland, watching for trouble and swooping in to save the day.
+                                        Check out its <i>pouvoirs magiques</i> (that's French 🇫🇷 for magic powers!)
+                                        <br><br>
+                                        <strong>The Kernel's 7 Pouvoirs Magiques 🧞‍♀️</strong>
+                                        <ol>
                                             <li>
-                                                <strong>What:</strong> Process monitoring is the kernel tracking what each running program (process) is doing—its state, resource use, and behavior.
+                                                <strong>Process Monitoring</strong>
+                                                <ul>
+                                                    <li>
+                                                        <strong>What:</strong> Process monitoring is the kernel tracking what each running program (process) is doing—its state, resource use, and behavior.
+                                                    </li>
+                                                    <li>
+                                                        <strong>How:</strong> The kernel uses the Process Control Block (PCB) to store and check data like CPU time, memory use, and status for each process. If a process acts up
+                                                        (e.g., crashes or loops endlessly), the kernel stops it and cleans up its resources.
+                                                    </li>
+                                                    <li>
+                                                        <strong>Why:</strong> It prevents one misbehaving process from overloading the CPU or crashing the entire system, keeping everything stable.
+                                                    </li>
+                                                </ul>
                                             </li>
+        
                                             <li>
-                                                <strong>How:</strong> The kernel uses the Process Control Block (PCB) to store and check data like CPU time, memory use, and status for each process. If a process acts up
-                                                (e.g., crashes or loops endlessly), the kernel stops it and cleans up its resources.
+                                                <strong>System Performance Tracking</strong>
+                                                <ul>
+                                                    <li>
+                                                        <strong>What:</strong> System performance tracking is the kernel measuring how well the system is running—CPU usage, memory load, and task delays.
+                                                    </li>
+                                                    <li>
+                                                        <strong>How:</strong> The kernel gathers data on resource use and wait times, then adjusts process scheduling or memory allocation to optimize speed and efficiency.
+                                                    </li>
+                                                    <li>
+                                                        <strong>Why:</strong> It ensures the system stays fast and responsive, preventing lag or bottlenecks when too many tasks compete for resources.
+                                                    </li>
+                                                </ul>
                                             </li>
+        
                                             <li>
-                                                <strong>Why:</strong> It prevents one misbehaving process from overloading the CPU or crashing the entire system, keeping everything stable.
+                                                <strong>Memory Leak Detection</strong>
+                                                <ul>
+                                                    <li>
+                                                        <strong>What:</strong> Memory leak detection is the kernel spotting when a process fails to release memory it's finished using.
+                                                    </li>
+                                                    <li>
+                                                        <strong>How:</strong> The kernel tracks memory allocations tied to each process. When a process exits, it checks if all allocated memory was released; if not, it reclaims the unused memory.
+                                                    </li>
+                                                    <li>
+                                                        <strong>Why:</strong> It stops memory from being wasted over time, ensuring there's enough left for new processes and preventing slowdowns or crashes.
+                                                    </li>
+                                                </ul>
                                             </li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <strong>System Performance Tracking</strong>
-                                        <ul>
+        
                                             <li>
-                                                <strong>What:</strong> System performance tracking is the kernel measuring how well the system is running—CPU usage, memory load, and task delays.
+                                                <strong>Software Error Handling</strong>
+                                                <ul>
+                                                    <li>
+                                                        <strong>What:</strong> Software error handling is the kernel managing errors in running programs, like when they crash or try invalid operations.
+                                                    </li>
+                                                    <li>
+                                                        <strong>How:</strong> The kernel catches CPU exceptions (e.g., segmentation faults from accessing bad memory), identifies the faulty process, terminates it, and frees its resources to prevent further issues.
+                                                    </li>
+                                                    <li>
+                                                        <strong>Why:</strong> It stops broken software from corrupting data or crashing the whole system, keeping everything else running smoothly.
+                                                    </li>
+                                                </ul>
                                             </li>
+        
                                             <li>
-                                                <strong>How:</strong> The kernel gathers data on resource use and wait times, then adjusts process scheduling or memory allocation to optimize speed and efficiency.
+                                                <strong>Hardware Error Handling</strong>
+                                                <ul>
+                                                    <li>
+                                                        <strong>What:</strong> Hardware error handling is the kernel responding to problems in physical components like the CPU, disk, or sensors when they fail or glitch.
+                                                    </li>
+                                                    <li>
+                                                        <strong>How:</strong> The kernel detects errors via interrupts or exceptions from the hardware, then resets the device, switches to a backup, or limits the damage so the system can keep running.
+                                                    </li>
+                                                    <li>
+                                                        <strong>Why:</strong> It keeps the system operational despite hardware issues, avoiding total failures from things like cosmic rays 💫 or worn-out parts.
+                                                    </li>
+                                                </ul>
                                             </li>
+        
                                             <li>
-                                                <strong>Why:</strong> It ensures the system stays fast and responsive, preventing lag or bottlenecks when too many tasks compete for resources.
+                                                <strong>Resource Cleanup 🚮</strong>
+                                                <ul>
+                                                    <li>
+                                                        <strong>What:</strong> Resource cleanup is the kernel reclaiming resources—like memory, files, or CPU time—that a process was using after it finishes or crashes.
+                                                    </li>
+                                                    <li>
+                                                        <strong>How:</strong> When a process exits (normally or by force), the kernel checks its Process Control Block (PCB) to see what resources it had, then frees the memory, closes open files,
+                                                        and releases any other allocated items back to the system.
+                                                    </li>
+                                                    <li>
+                                                        <strong>Why:</strong> It prevents leftover resources from piling up and clogging the system, ensuring there's space and capacity for new processes to run smoothly.
+                                                    </li>
+                                                </ul>
                                             </li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <strong>Memory Leak Detection</strong>
-                                        <ul>
+        
                                             <li>
-                                                <strong>What:</strong> Memory leak detection is the kernel spotting when a process fails to release memory it's finished using.
+                                                <strong>Watchdogs 👀🐶</strong>
+                                                <ul>
+                                                    <li>
+                                                        <strong>What:</strong> Watchdogs are timers the kernel uses to detect when a critical task or the system itself stalls or freezes.
+                                                    </li>
+                                                    <li>
+                                                        <strong>How:</strong> The kernel sets a countdown timer that a process or system must reset regularly. If the timer runs out because the reset didn't happen,
+                                                        the kernel triggers a reboot or restarts the stuck task to recover.
+                                                    </li>
+                                                    <li>
+                                                        <strong>Why:</strong> It keeps the system from staying locked up if something critical hangs, like from a glitch or overload, ensuring it can bounce back without manual intervention.
+                                                    </li>
+                                                </ul>
                                             </li>
-                                            <li>
-                                                <strong>How:</strong> The kernel tracks memory allocations tied to each process. When a process exits, it checks if all allocated memory was released; if not, it reclaims the unused memory.
-                                            </li>
-                                            <li>
-                                                <strong>Why:</strong> It stops memory from being wasted over time, ensuring there's enough left for new processes and preventing slowdowns or crashes.
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <strong>Software Error Handling</strong>
-                                        <ul>
-                                            <li>
-                                                <strong>What:</strong> Software error handling is the kernel managing errors in running programs, like when they crash or try invalid operations.
-                                            </li>
-                                            <li>
-                                                <strong>How:</strong> The kernel catches CPU exceptions (e.g., segmentation faults from accessing bad memory), identifies the faulty process, terminates it, and frees its resources to prevent further issues.
-                                            </li>
-                                            <li>
-                                                <strong>Why:</strong> It stops broken software from corrupting data or crashing the whole system, keeping everything else running smoothly.
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <strong>Hardware Error Handling</strong>
-                                        <ul>
-                                            <li>
-                                                <strong>What:</strong> Hardware error handling is the kernel responding to problems in physical components like the CPU, disk, or sensors when they fail or glitch.
-                                            </li>
-                                            <li>
-                                                <strong>How:</strong> The kernel detects errors via interrupts or exceptions from the hardware, then resets the device, switches to a backup, or limits the damage so the system can keep running.
-                                            </li>
-                                            <li>
-                                                <strong>Why:</strong> It keeps the system operational despite hardware issues, avoiding total failures from things like cosmic rays 💫 or worn-out parts.
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <strong>Resource Cleanup 🚮</strong>
-                                        <ul>
-                                            <li>
-                                                <strong>What:</strong> Resource cleanup is the kernel reclaiming resources—like memory, files, or CPU time—that a process was using after it finishes or crashes.
-                                            </li>
-                                            <li>
-                                                <strong>How:</strong> When a process exits (normally or by force), the kernel checks its Process Control Block (PCB) to see what resources it had, then frees the memory, closes open files,
-                                                and releases any other allocated items back to the system.
-                                            </li>
-                                            <li>
-                                                <strong>Why:</strong> It prevents leftover resources from piling up and clogging the system, ensuring there's space and capacity for new processes to run smoothly.
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <strong>Watchdogs 👀🐶</strong>
-                                        <ul>
-                                            <li>
-                                                <strong>What:</strong> Watchdogs are timers the kernel uses to detect when a critical task or the system itself stalls or freezes.
-                                            </li>
-                                            <li>
-                                                <strong>How:</strong> The kernel sets a countdown timer that a process or system must reset regularly. If the timer runs out because the reset didn't happen,
-                                                the kernel triggers a reboot or restarts the stuck task to recover.
-                                            </li>
-                                            <li>
-                                                <strong>Why:</strong> It keeps the system from staying locked up if something critical hangs, like from a glitch or overload, ensuring it can bounce back without manual intervention.
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ol>
+                                        </ol>
+                                    </p>
+                                    <br>
+                                </details>
                             </p>
                             <br>
 
@@ -1357,7 +1379,7 @@ for developers on computer basics and operating system fundamentals. -->
                 <!-- Begin Curtain Call Section ------------->
                 <section>
                     <h2><span>Curtain Call</span></h2>
-                    <details>
+                    <details open>
                         <summary>Tap/Click Me!</summary>
                         <p>
                             And that's the scoop on bootloaders and kernels! From powering on to keeping the party going, you've just peeked under Computerland's hood.
