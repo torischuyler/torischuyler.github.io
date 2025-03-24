@@ -17,7 +17,7 @@ rules:
         case: lower  # Base case is lowercase
         exceptions:  # Allow capitalization for specific cases
           - acronyms: [
-            "YAML", SEO", "ARIA", "HTML", "JS",
+            "URL", "YAML", SEO", "ARIA", "HTML", "JS",
             "CSS", "JPG", "JPEG", "README", "RAM", "MMU", "ASCII", "OS"
           ]
           - proper_nouns: [
