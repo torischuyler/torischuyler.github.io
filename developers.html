@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <!-- This is the DOCTYPE declaration. It’s like a signal to browsers that says, “Hey, this is an HTML web page!”
 
-This is the "Students" page, designed to provide lesson plans
-on media literacy and digital literacy for students. -->
+This is the "Developers" page, providing a foundational curriculum
+that explains computer systems from the ground up, ensuring all developers
+have a common baseline understanding. -->
 
 <html lang="en">
 <!-- Sets the page language to English - helps screen readers, search engines, and spell checkers. -->
@@ -17,7 +18,7 @@ on media literacy and digital literacy for students. -->
         <!-- Viewport makes sure the page looks good on all devices by adjusting to screen size.
         It also affects page rendering and responsiveness. -->
 
-        <title>Students | eOS Lesson Plans</title>
+        <title>Developers | eOS Lesson Plans</title>
         <!-- Page title, visible in browser tabs, bookmarks, and search engine results.
         Format: [Page Name] | [Site Name] - this pattern helps with SEO and page navigation. -->
 
@@ -27,16 +28,17 @@ on media literacy and digital literacy for students. -->
         <!-- Begin SEO Elements --------------------------------------------------->
         <!-- SEO Elements: These tags optimize your webpage for search engines,
         influencing how your site is indexed and displayed in search results. -->
-    
+
         <meta name="robots" content="noindex, nofollow">
         <!-- Robots Directive: Temporarily set to prevent search engines from indexing this page or following its links
         until the first iteration is complete and ready for public viewing. -->
 
-        <meta name="description" content="Lesson plans on media and digital literacy for students.">
+        <meta name="description" content="Discover simplified lesson plans for developers eager to learn
+        computer systems and OS basics. Start your journey with eOS Lesson Plans.">
         <!-- SEO Description: This tag offers a quick summary for search results,
         improving click-through rates by setting user expectations and boosting relevance. -->
 
-        <meta name="keywords" content="media literacy, digital literacy, education, lesson plans">
+        <meta name="keywords" content="developers, lesson plans, computer science, OS basics, operating systems, education, eOS">
         <!-- SEO Keywords: Although less impactful today due to search engines prioritizing content quality,
         they can still categorize content. Use sparingly to avoid keyword stuffing. -->
 
@@ -48,16 +50,17 @@ on media literacy and digital literacy for students. -->
         <!-- Open Graph Tags: These control how this page appears when shared on social media platforms like
         Facebook, LinkedIn, etc., by providing metadata for rich previews. -->
 
-        <meta property="og:title" content="Students | eOS Lesson Plans">
+        <meta property="og:title" content="Developers | eOS Lesson Plans">
         <!-- Open Graph Title: Defines the title for social media sharing. -->
 
-        <meta property="og:description" content="Explore lesson plans for media and digital literacy designed for students.">
+        <meta property="og:description" content="Discover simplified lesson plans for developers eager to learn
+        about computer systems and OS basics. Begin your educational journey with eOS Lesson Plans.">
         <!-- Open Graph Description: Provides a summary when shared on social platforms. -->
 
         <meta property="og:image" content="https://torischuyler.github.io/eos-lesson-plans/photos/van-gogh-orca.jpg">
         <!-- Open Graph Image: Sets the image that appears when the page is shared. -->
 
-        <meta property="og:url" content="https://torischuyler.github.io/eos-lesson-plans/html/students.html">
+        <meta property="og:url" content="https://torischuyler.github.io/eos-lesson-plans/developers.html">
         <!-- Open Graph URL: Ensures the correct URL is used when shared. -->
 
         <meta property="og:type" content="website">
@@ -82,7 +85,7 @@ on media literacy and digital literacy for students. -->
         <!-- Load local stylesheets first for speed and to prevent overrides by third-party CSS (e.g., Google Fonts). -->
         <!-- End Stylesheet Links  --------------------------------------------------->
 
-        <script src="../js/sun-moon-toggle.js" defer></script>
+        <script src="../js/yin-yang-toggle.js" defer></script>
         <!-- Script for toggling Dark/Light mode - placed last for better page load performance and security.
         'defer' tells the browser to load the script after the HTML is parsed but before
         the DOMContentLoaded event, improving page load times. -->
@@ -95,19 +98,19 @@ on media literacy and digital literacy for students. -->
     <!-- Begin Body Section ------------------------------------------------->
     <!-- Body contains all the visible content of the webpage,
     like text, images, and buttons - the "on-stage" part where the action happens. -->
-    <body class="students-page">
-    <!-- Adds 'students-page' class to scope CSS styles in curricula.css,
-    setting rocket (🚀) bullets for this page vs. triangle (📐) bullets for developers -->
-
-        <!-- Begin Navigation Section  ------------------------------------------------->
-        <!-- Navigation section - like a table of contents for the webpage. -->
+    <body class="developers-page">
+    <!-- Adds 'developers-page' class to scope CSS styles in curricula.css,
+    setting triangle (📐) bullets for this page vs. rocket (🚀) bullets for students -->
+    
+    <!-- Begin Navigation Section  ------------------------------------------------->
+    <!-- Navigation section - like a table of contents for the webpage. -->
         <nav aria-label="Page navigation">
 
             <!-- Navigation menu for desktop and mobile -->
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="students.html" class="active" aria-current="page">Students</a></li>
-                <li><a href="developers.html">Developers</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="developers.html" class="active" aria-current="page">Developers</a></li>
                 <li><a href="who-are-you.html">Who Are You?</a></li>
             </ul>
 
@@ -117,7 +120,7 @@ on media literacy and digital literacy for students. -->
                 <div class="hamburger">☰</div>
                 <!-- Hamburger icon -->
 
-                <button id="sun-moon-toggle" aria-label="Toggle light or dark mode" aria-pressed="false">🌞</button>
+                <button id="yin-yang-toggle" aria-label="Toggle light or dark mode" aria-pressed="false">☯️</button>
                 <!-- Dark/Light mode toggle button. The 'aria-label' attribute enhances accessibility
                 by describing the button for screen readers, ensuring users with visual impairments
                 can identify its purpose, with 'aria-pressed' indicating the current mode. -->
@@ -125,8 +128,8 @@ on media literacy and digital literacy for students. -->
             <!-- End Nav Header Wrapper ------------------------------------------------->
 
             <noscript>
-            <!-- The noscript tag is used to provide alternative content
-            when JavaScript is disabled in the visitor's browser. -->
+                <!-- The noscript tag is used to provide alternative content
+                when JavaScript is disabled in the visitor's browser. -->
 
                 <div class="noscript-warning">
                 <!-- This div serves as a container for the warning message. -->
@@ -147,26 +150,26 @@ on media literacy and digital literacy for students. -->
             <!-- 'aria-label' tags this as "Main navigation" for screen readers since there’s no heading;
             without it, it’d just be "navigation," leaving visitors unsure which nav this is (e.g., main vs. footer). -->
 
-                <h1>Students</h1>
+                <h1>Developers</h1>
                 <!-- Main heading of the page, sets the theme or topic. -->
 
-                <p>Here you'll find lesson plans focused on media literacy and digital literacy.</p>
+                <p>Here you'll find lesson plans focused on computer basics and operating system fundamentals.</p>
                 <!-- A paragraph, a block of text. -->
-                
+
                 <h2>Lesson Plans</h2>
                 <!-- 'h2' tags act as section headings to organize key topics,
                 sitting below 'h1' in the heading hierarchy for structure and accessibility. -->
-
+    
                 <ul>
                 <!-- Unordered list, aka list of bullet points. -->
-
-                    <li><a href="student-lessons/news-detectives.html">Lesson 1: News Detectives</a></li>
+    
+                    <li><a href="developer-lessons/bootloader-kernel.html">Lesson 1: Bootloader and Kernel</a></li>
                     <!-- List item, aka a bullet point. -->
                 </ul>
             </main>
-            <!-- End Main Section ------------------------------------------------------>
+            <!-- End Main Section ---------------------------------------------------------->
         </div>
-        <!-- End of .curriculum-container ---------------------------------------------->
+        <!-- End of .curriculum-container -------------------------------------------------->
 
         <!-- Begin Footer Section ------------------------------------------------------>
         <!-- Footer content, like copyright info, contact details, or additional links. -->
@@ -215,23 +218,22 @@ DOCTYPE
     │   │   ├── link (global.css)
     │   │   ├── link (curricula.css)
     │   │   └── link (google fonts)
-    │   ├── script (sun-moon-toggle.js)
+    │   ├── script (yin-yang-toggle.js)
     │   └── script (mobile-nav.js)
-    │
     └── body
         ├── nav
         │   ├── ul (nav-menu)
         │   │   ├── li
         │   │   │   └── a (Home)
         │   │   ├── li
-        │   │   │   └── a (Students - active)
+        │   │   │   └── a (Students)
         │   │   ├── li
-        │   │   │   └── a (Developers)
+        │   │   │   └── a (Developers - active)
         │   │   └── li
         │   │       └── a (Who Are You?)
         │   ├── div (nav-header)
         │   │   ├── div (hamburger)
-        │   │   └── button (sun-moon-toggle)
+        │   │   └── button (yin-yang-toggle)
         │   └── noscript
         │       └── div
         │           └── p
@@ -241,7 +243,8 @@ DOCTYPE
         │       ├── p
         │       ├── h2
         │       └── ul
-        │           ├── li (Lesson 1: News Detectives)
+        │           └── li
+        │               └── a (Bootloader and Kernel)
         ├── footer
         │   └── p
         │       └── span
