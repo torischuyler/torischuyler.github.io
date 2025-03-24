@@ -1119,7 +1119,7 @@ for developers on computer basics and operating system fundamentals. -->
 
                             <p>
                                 <u><strong>Coordinating Communication (Processes Talking to Each Other)</strong></u>
-                                <br><br>
+                                <br>
                                 <strong>[Process A writes ➡️ Kernel mediates ➡️ Process B reads]</strong>
                                 <br><br>
                                 Processes need to share info or sync up, but they're isolated for safety. Processes don't live in a vacuum—they need to chat (e.g., a music app telling the volume driver to crank up 🔊
@@ -1160,6 +1160,127 @@ for developers on computer basics and operating system fundamentals. -->
                                 changed everything in 1973 by implementing Unix pipes <code>(|)</code>, allowing the output of one program to be used as the input for another, enabling a seamless flow of data between commands.
                                 This simple yet powerful idea transformed Unix into a highly modular and flexible system, embodying the Unix philosophy of “do one thing and do it well.” Many of today's chat apps and cloud systems
                                 rely on this foundational mechanism.🌟
+                            </p>
+                            <br>
+
+                            <p>
+                                <u><strong>Monitoring and Recovery (Catching Problems Before They Wreck the Show)</strong></u>
+                                <br>
+                                <strong>[Process Error Occurs ➡️ CPU Throws Exception ➡️ Kernel Catches ➡️ Kernel Takes Action ➡️ System Continues]</strong>
+                                <br><br>
+                                Stuff breaks—hardware fails, software goes kaput—but the system doesn't quit. The kernel's our superhero 🦸 in Computerland, watching for trouble and swooping in to save the day.
+                                Check out its <i>pouvoirs magiques</i> (that's French 🇫🇷 for magic powers!)
+                                <br><br>
+                                <strong>The Kernel's 7 Pouvoirs Magiques 🧞‍♀️</strong>
+                                <ol>
+                                    <li>
+                                        <strong>Process Monitoring</strong>
+                                        <ul>
+                                            <li>
+                                                <strong>What:</strong> Process monitoring is the kernel tracking what each running program (process) is doing—its state, resource use, and behavior.
+                                            </li>
+                                            <li>
+                                                <strong>How:</strong> The kernel uses the Process Control Block (PCB) to store and check data like CPU time, memory use, and status for each process. If a process acts up
+                                                (e.g., crashes or loops endlessly), the kernel stops it and cleans up its resources.
+                                            </li>
+                                            <li>
+                                                <strong>Why:</strong> It prevents one misbehaving process from overloading the CPU or crashing the entire system, keeping everything stable.
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <strong>System Performance Tracking</strong>
+                                        <ul>
+                                            <li>
+                                                <strong>What:</strong> System performance tracking is the kernel measuring how well the system is running—CPU usage, memory load, and task delays.
+                                            </li>
+                                            <li>
+                                                <strong>How:</strong> The kernel gathers data on resource use and wait times, then adjusts process scheduling or memory allocation to optimize speed and efficiency.
+                                            </li>
+                                            <li>
+                                                <strong>Why:</strong> It ensures the system stays fast and responsive, preventing lag or bottlenecks when too many tasks compete for resources.
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <strong>Memory Leak Detection</strong>
+                                        <ul>
+                                            <li>
+                                                <strong>What:</strong> Memory leak detection is the kernel spotting when a process fails to release memory it's finished using.
+                                            </li>
+                                            <li>
+                                                <strong>How:</strong> The kernel tracks memory allocations tied to each process. When a process exits, it checks if all allocated memory was released; if not, it reclaims the unused memory.
+                                            </li>
+                                            <li>
+                                                <strong>Why:</strong> It stops memory from being wasted over time, ensuring there's enough left for new processes and preventing slowdowns or crashes.
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <strong>Software Error Handling</strong>
+                                        <ul>
+                                            <li>
+                                                <strong>What:</strong> Software error handling is the kernel managing errors in running programs, like when they crash or try invalid operations.
+                                            </li>
+                                            <li>
+                                                <strong>How:</strong> The kernel catches CPU exceptions (e.g., segmentation faults from accessing bad memory), identifies the faulty process, terminates it, and frees its resources to prevent further issues.
+                                            </li>
+                                            <li>
+                                                <strong>Why:</strong> It stops broken software from corrupting data or crashing the whole system, keeping everything else running smoothly.
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <strong>Hardware Error Handling</strong>
+                                        <ul>
+                                            <li>
+                                                <strong>What:</strong> Hardware error handling is the kernel responding to problems in physical components like the CPU, disk, or sensors when they fail or glitch.
+                                            </li>
+                                            <li>
+                                                <strong>How:</strong> The kernel detects errors via interrupts or exceptions from the hardware, then resets the device, switches to a backup, or limits the damage so the system can keep running.
+                                            </li>
+                                            <li>
+                                                <strong>Why:</strong> It keeps the system operational despite hardware issues, avoiding total failures from things like cosmic rays 💫 or worn-out parts.
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <strong>Resource Cleanup 🚮</strong>
+                                        <ul>
+                                            <li>
+                                                <strong>What:</strong> Resource cleanup is the kernel reclaiming resources—like memory, files, or CPU time—that a process was using after it finishes or crashes.
+                                            </li>
+                                            <li>
+                                                <strong>How:</strong> When a process exits (normally or by force), the kernel checks its Process Control Block (PCB) to see what resources it had, then frees the memory, closes open files,
+                                                and releases any other allocated items back to the system.
+                                            </li>
+                                            <li>
+                                                <strong>Why:</strong> It prevents leftover resources from piling up and clogging the system, ensuring there's space and capacity for new processes to run smoothly.
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <strong>Watchdogs 👀🐶</strong>
+                                        <ul>
+                                            <li>
+                                                <strong>What:</strong> Watchdogs are timers the kernel uses to detect when a critical task or the system itself stalls or freezes.
+                                            </li>
+                                            <li>
+                                                <strong>How:</strong> The kernel sets a countdown timer that a process or system must reset regularly. If the timer runs out because the reset didn't happen,
+                                                the kernel triggers a reboot or restarts the stuck task to recover.
+                                            </li>
+                                            <li>
+                                                <strong>Why:</strong> It keeps the system from staying locked up if something critical hangs, like from a glitch or overload, ensuring it can bounce back without manual intervention.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ol>
                             </p>
                         </details>
                         <!-- End Smooth Running - Kernel Step #6 ----------------------->
