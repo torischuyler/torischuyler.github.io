@@ -92,7 +92,7 @@ This setup keeps things simple and standard, so your browser knows exactly where
         <!-- Load local stylesheets first for speed and to prevent overrides by third-party CSS (e.g., Google Fonts). -->
         <!-- End Stylesheet Links  --------------------------------------------------->
 
-        <script src="js/sun-moon-toggle.js" defer></script>
+        <script src="js/sunrise-gotham-toggle.js" defer></script>
         <!-- Script for toggling Light/Dark mode - placed last for better page load performance and security.
         'defer' tells the browser to load the script after the HTML is parsed but before
         the DOMContentLoaded event, improving page load times. -->
@@ -125,7 +125,7 @@ This setup keeps things simple and standard, so your browser knows exactly where
                 <div class="hamburger">☰</div>
                 <!-- Hamburger icon -->
 
-                <button id="sun-moon-toggle" aria-label="Toggle light or dark mode" aria-pressed="false">🌞</button>
+                <button id="sunrise-gotham-toggle" aria-label="Toggle light or dark mode" aria-pressed="false">🌅</button>
                 <!-- Dark/Light mode toggle button. The 'aria-label' attribute enhances accessibility
                 by describing the button for screen readers, ensuring users with visual impairments
                 can identify its purpose, with 'aria-pressed' indicating the current mode. -->
@@ -216,7 +216,7 @@ DOCTYPE
     │   │   ├── link (global.css)
     │   │   ├── link (index.css)
     │   │   └── link (google fonts)
-    │   ├── script (sun-moon-toggle.js)
+    │   ├── script (sunrise-gotham-toggle.js)
     │   └── script (mobile-nav.js)
     │
     └── body
@@ -232,7 +232,7 @@ DOCTYPE
         │   │   │   └── a (Who Are You?)
         │   ├── div (nav-header)
         │   │   ├── div (hamburger)
-        │   │   └── button (sun-moon-toggle)
+        │   │   └── button (sunrise-gotham-toggle)
         │   └── noscript
         │       └── div
         │           └── p
