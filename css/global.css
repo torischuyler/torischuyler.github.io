@@ -872,6 +872,16 @@ footer {
     font-size: 3rem;
   }
 
+  #torii-gemini-toggle {
+    /* --- Size It --- */
+    font-size: 3rem;
+  }
+
+  #sunrise-gotham-toggle {
+    /* --- Size It --- */
+    font-size: 3rem;
+  }
+
   .nav-menu.active {
     /* --- Size It --- */
 
@@ -990,10 +1000,10 @@ Global.css
 │   │   ├── Space It
 │   │   │   └── padding
 │   │   └── Style It
-│   │   |   ├── background
-│   │   |   ├── border
-│   │   |   ├── cursor
-│   │   |   └── transition
+│   │       ├── background
+│   │       ├── border
+│   │       ├── cursor
+│   │       └── transition
 │   │   └── #sun-moon-toggle:hover
 │   │       └── transform
 │   ├── #torii-gemini-toggle
@@ -1002,10 +1012,10 @@ Global.css
 │   │   ├── Space It
 │   │   │   └── padding
 │   │   └── Style It
-│   │   |   ├── background
-│   │   |   ├── border
-│   │   |   ├── cursor
-│   │   |   └── transition
+│   │       ├── background
+│   │       ├── border
+│   │       ├── cursor
+│   │       └── transition
 │   │   └── #torii-gemini-toggle:hover
 │   │       └── transform
 │   ├── #yin-yang-toggle
@@ -1014,10 +1024,10 @@ Global.css
 │   │   ├── Space It
 │   │   │   └── padding
 │   │   └── Style It
-│   │   |   ├── background
-│   │   |   ├── border
-│   │   |   ├── cursor
-│   │   |   └── transition
+│   │       ├── background
+│   │       ├── border
+│   │       ├── cursor
+│   │       └── transition
 │   │   └── #yin-yang-toggle:hover
 │   │       └── transform
 │   ├── #sunrise-gotham-toggle
@@ -1063,6 +1073,12 @@ Global.css
 │   │   │   └── Size It
 │   │   │       └── font-size
 │   │   ├── #yin-yang-toggle
+│   │   │   └── Size It
+│   │   │       └── font-size
+│   │   ├── #torii-gemini-toggle
+│   │   │   └── Size It
+│   │   │       └── font-size
+│   │   ├── #sunrise-gotham-toggle
 │   │   │   └── Size It
 │   │   │       └── font-size
 │   │   ├── .nav-menu.active
