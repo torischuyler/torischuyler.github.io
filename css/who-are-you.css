@@ -276,10 +276,10 @@
 }
 
 /*
-  My Life Tree Styles 🌳
+  My Life Branch Styles 🌳
   Size It, Space It, Style It (Sz Sp)
 */
-.life-tree {
+.life-branch {
   /* --- Size It --- */
 
   /* Keeps the element within the parent container's width */
@@ -287,6 +287,8 @@
   font-family: monospace;
   padding: 15px;
   border-radius: 5px;
+
+  /* Adds a horizontal scrollbar if content overflows on desktop */
   overflow-x: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -294,27 +296,27 @@
 }
 
 /* Show desktop version by default, hide mobile */
-.life-tree-desktop {
+.life-branch-desktop {
   display: block;
 }
 
-.life-tree-mobile {
+.life-branch-mobile {
   display: none;
 }
 
 /*
-  My Life Tree Mobile Styles 🌳
+  My Life Branch Mobile Styles 🌳
 */
 @media (max-width: 600px) {
-  .life-tree-desktop {
+  .life-branch-desktop {
     display: none;
   }
 
-  .life-tree-mobile {
+  .life-branch-mobile {
     display: block;
   }
 
-  .life-tree {
+  .life-branch {
     font-size: 0.8rem;
     padding: 10px;
     white-space: pre-wrap;
