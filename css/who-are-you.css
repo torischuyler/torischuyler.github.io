@@ -276,6 +276,55 @@
 }
 
 /*
+  My Life Tree Styles 🌳
+  Size It, Space It, Style It (Sz Sp)
+*/
+.life-tree {
+  /* --- Size It --- */
+
+  /* Keeps the element within the parent container's width */
+  max-width: 100%;
+  font-family: monospace;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  box-sizing: border-box;
+}
+
+/* Show desktop version by default, hide mobile */
+.life-tree-desktop {
+  display: block;
+}
+
+.life-tree-mobile {
+  display: none;
+}
+
+/*
+  My Life Tree Mobile Styles 🌳
+*/
+@media (max-width: 600px) {
+  .life-tree-desktop {
+    display: none;
+  }
+
+  .life-tree-mobile {
+    display: block;
+  }
+
+  .life-tree {
+    font-size: 0.8rem;
+    padding: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: hidden;
+    line-height: 1.2;
+  }
+}
+
+/*
 Who-are-you.css
 ├── .who-are-you-container
 │   ├── Size It
