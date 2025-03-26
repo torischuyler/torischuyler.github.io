@@ -329,6 +329,11 @@
     /* --- Size It --- */
     font-size: 0.8rem;
   }
+
+  /* Center h2 headings on mobile */
+  h2 {
+    text-align: center;
+  }
 }
 
 /*
@@ -400,7 +405,9 @@ Who-are-you.css
         │   └── display
         ├── .life-branch-mobile
         │   └── display
-        └── .life-branch
-            └── Size It
-                └── font-size
+        ├── .life-branch
+        │   └── Size It
+        │       └── font-size
+        └── h2
+            └── text-align
 */
