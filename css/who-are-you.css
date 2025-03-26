@@ -255,6 +255,43 @@
 }
 
 /*
+  My Life Branch Styles 🌳
+  Order of Properties: Size It, Space It, Style It (Sz Sp St)
+*/
+.life-branch {
+  /* --- Size It --- */
+
+  /* Keeps the ASCII branch display within the parent container's width */
+  max-width: 100%;
+
+  /* Includes padding in the element's width to prevent overflow */
+  box-sizing: border-box;
+
+  /* --- Space It --- */
+
+  /*
+    Padding-left adds 1rem of space *inside* the list, on the left side only.
+    This pushes the text rightward, away from the left edge.
+  */
+  padding-left: 1rem;
+
+  /* --- Style It --- */
+  font-family: monospace;
+
+  /* Allows text to wrap while preserving whitespace for ASCII structure */
+  white-space: pre-wrap;
+}
+
+/* Show desktop version by default, hide mobile */
+.life-branch-desktop {
+  display: block;
+}
+
+.life-branch-mobile {
+  display: none;
+}
+
+/*
   Who Are You Container Mobile Styles
   Order of Properties: Size It (Sz)
 
@@ -276,38 +313,10 @@
 }
 
 /*
-  My Life Branch Styles 🌳
-  Size It, Space It, Style It (Sz Sp)
-*/
-.life-branch {
-  /* --- Size It --- */
-
-  /* Keeps the element within the parent container's width */
-  max-width: 100%;
-  font-family: monospace;
-  padding: 15px;
-  border-radius: 5px;
-
-  /* Adds a horizontal scrollbar if content overflows on desktop */
-  overflow-x: auto;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  box-sizing: border-box;
-}
-
-/* Show desktop version by default, hide mobile */
-.life-branch-desktop {
-  display: block;
-}
-
-.life-branch-mobile {
-  display: none;
-}
-
-/*
   My Life Branch Mobile Styles 🌳
+  Order of Properties: Size It (Sz)
 */
-@media (max-width: 600px) {
+@media (width <= 600px) {
   .life-branch-desktop {
     display: none;
   }
@@ -317,12 +326,8 @@
   }
 
   .life-branch {
+    /* --- Size It --- */
     font-size: 0.8rem;
-    padding: 10px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    overflow-x: hidden;
-    line-height: 1.2;
   }
 }
 
@@ -372,9 +377,30 @@ Who-are-you.css
 │   │   ├── position
 │   │   └── left
 │   └── @supports not (selector(::before))
+├── .life-branch
+│   ├── Size It
+│   │   ├── max-width
+│   │   └── box-sizing
+│   ├── Space It
+│   │   └── padding-left
+│   └── Style It
+│       ├── font-family
+│       └── white-space
+├── .life-branch-desktop
+│   └── display
+├── .life-branch-mobile
+│   └── display
 └── Mobile Styles
     ├── @media
-        ├── .who-are-you-container
+    │   ├── .who-are-you-container
+    │   │   └── Size It
+    │   │       └── max-width
+    └── @media
+        ├── .life-branch-desktop
+        │   └── display
+        ├── .life-branch-mobile
+        │   └── display
+        └── .life-branch
             └── Size It
-                └── max-width
+                └── font-size
 */
