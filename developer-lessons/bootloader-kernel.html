@@ -85,7 +85,7 @@ for developers on computer basics and operating system fundamentals. -->
         <!-- Load local stylesheets first for speed and to prevent overrides by third-party CSS (e.g., Google Fonts). -->
         <!-- End Stylesheet Links  --------------------------------------------------->
 
-        <script src="../js/yin-yang-toggle.js" defer></script>
+        <script src="../js/sun-moon-toggle.js" defer></script>
         <!-- Script for toggling Dark/Light mode - placed last for better page load performance and security.
         'defer' tells the browser to load the script after the HTML is parsed but before
         the DOMContentLoaded event, improving page load times. -->
@@ -109,8 +109,7 @@ for developers on computer basics and operating system fundamentals. -->
             <!-- Navigation menu for desktop and mobile -->
             <ul class="nav-menu">
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="../students.html">Students</a></li>
-                <li><a href="../developers.html">Developers</a></li>
+                <li><a href="../lesson-plans.html">Lesson Plans</a></li>
                 <li><a href="../who-am-i.html">Who Am I?</a></li>
             </ul>
 
@@ -120,7 +119,7 @@ for developers on computer basics and operating system fundamentals. -->
                 <div class="hamburger">☰</div>
                 <!-- Hamburger icon -->
 
-                <button id="yin-yang-toggle" aria-label="Toggle light or dark mode" aria-pressed="false">☯️</button>
+                <button id="sun-moon-toggle" aria-label="Toggle light or dark mode" aria-pressed="false">🌞</button>
                 <!-- Dark/Light mode toggle button. The 'aria-label' attribute enhances accessibility
                 by describing the button for screen readers, ensuring users with visual impairments
                 can identify its purpose, with 'aria-pressed' indicating the current mode. -->
@@ -1468,11 +1467,11 @@ DOCTYPE
     │   ├── meta (charset, viewport)
     │   ├── title
     │   ├── link (favicon, preconnects, stylesheets, fonts)
-    │   └── script (yin-yang-toggle.js, mobile-nav.js)
+    │   └── script (sun-moon-toggle.js, mobile-nav.js)
     └── body
         ├── nav
-        │   ├── ul (nav-menu: Home, Students, Developers, Who Am I?)
-        │   ├── div (nav-header: hamburger, yin-yang-toggle)
+        │   ├── ul (nav-menu: Home, Lesson Plans, Who Am I?)
+        │   ├── div (nav-header: hamburger, sun-moon-toggle)
         │   └── noscript → warning
         ├── div (lesson-container)
         │   ├── header → h1 (Bootloader and Kernel)
