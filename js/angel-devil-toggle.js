@@ -2,6 +2,8 @@
   Angel Devil toggle: A light/dark mode switch for the site,
   the angel (😇) represents light mode and devilish face (😈) for dark mode.
 
+  😇 "Lead me not into temptation... Oh, who am I kidding? Follow me, I know a shortcut!" 😈 —Anon
+
    This script:
    1. Remembers a visitor's theme preference using localStorage.
    2. Displays a toggle button for visitors to switch themes.
