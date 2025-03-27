@@ -4,14 +4,46 @@
 
 /*
   Who Are You Styles
-    h1 { ... }
+    .who-are-you-container { ... }
+    .who-are-you-container h1 { ... }
 */
+
+/*
+  The .who-are-you holds the content for the cool page.
+  It controls the width and spacing of the content area.
+  Order of Properties: Size It, Space It, Style It (Sz Sp St)
+*/
+.who-are-you-container {
+  /* --- Size It --- */
+
+  /* 
+    max-width: 80vw sets the maximum width to 80% of the viewport width.
+    This limits how wide the container can grow.
+  */
+  max-width: 80vw;
+
+  /* --- Space It --- */
+
+  /*
+    Space outside container ⬆️⬇️⬅️➡️
+  */
+  margin: 0 auto;
+
+  /*
+    Space inside container ⬆️⬇️➡️⬅️
+  */
+  padding: 2rem;
+
+  /* --- Style It --- */
+  text-align: center;
+}
+
 
 /*
   Page Heading
   Order of Properties: Style It (St)
 */
-h1 {
+.who-are-you-container h1 {
   /* --- Style It --- */
 
   /*
