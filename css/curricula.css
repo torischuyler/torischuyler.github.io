@@ -97,7 +97,7 @@
   📋 Lesson plan list
   The .curriculum-container ul styles the unordered list (<ul>) inside the curriculum container.
   This is where lesson links live, formatted as a bulleted list for easy navigation.
-  Order of Properties: Space It (Sp)
+  Order of Properties: Space It, Style It (Sp St)
 */
 .curriculum-container ul {
   /* --- Space It --- */
@@ -115,6 +115,8 @@
     think of it as giving the list a little elbow room on the left.
   */
   padding-left: 0.8rem;
+
+  /* --- Style It --- */
 
   /*
     Remove default bullets, we’re using emojis. If we didn't do this

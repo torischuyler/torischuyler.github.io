@@ -4,15 +4,49 @@
 
 /*
   Cool Styles
-    h1 { ... }
-    h1 img { ... }
+    .cool-container { ... }
+    .cool-container h1 { ... }
+    .cool-container h1 img { ... }
+    .cool-container ul { ... }
+    .cool-container ul li { ... }
+      .cool-container ul li::before { ... }
 */
+
+/*
+  The .cool-container holds the content for the cool page.
+  It controls the width and spacing of the content area.
+  Order of Properties: Size It, Space It, Style It (Sz Sp St)
+*/
+.cool-container {
+  /* --- Size It --- */
+
+  /* 
+    max-width: 80vw sets the maximum width to 80% of the viewport width.
+    This limits how wide the container can grow.
+  */
+  max-width: 80vw;
+
+  /* --- Space It --- */
+
+  /*
+    Space outside container ⬆️⬇️⬅️➡️
+  */
+  margin: 0 auto;
+
+  /*
+    Space inside container ⬆️⬇️➡️⬅️
+  */
+  padding: 2rem;
+
+  /* --- Style It --- */
+  text-align: center;
+}
 
 /*
   Page Heading
   Order of Properties: Style It (St)
 */
- h1 {
+.cool-container h1 {
   /* --- Style It --- */
 
   /*
@@ -26,9 +60,59 @@
   The header image.
   Order of Properties: Style It (St)
 */
-h1 img {
+.cool-container h1 img {
   /* --- Style It --- */
 
   /* Aligns the cool ice cream emoji with the middle of the text */
   vertical-align: middle;
+}
+
+/* 
+  Cool page unordered list
+  Order of Properties: Space It, Style It (Sp St)
+*/
+.cool-container ul {
+  /* --- Space It --- */
+  padding-left: 0.8rem;
+
+  /* --- Style It --- */
+
+  /*
+    Remove default bullets, we’re using emojis. If we didn't do this
+    we’d end up with both the default bullet (●) and the φ bullets.
+
+    No bueno! 🙅‍♀️
+  */
+  list-style-type: none;
+}
+
+/*
+  Cool page list items
+  Order of Properties: Space It, Style It (Sp St)
+*/
+.cool-container ul li {
+  /* --- Space It --- */
+  margin: 0.8rem 0;
+  padding-left: 1rem;
+
+  /* --- Style It --- */
+  position: relative;
+}
+
+/*
+  Custom bullets using ::before to ensure Safari compatibility.
+    - 'φ' gives phi bullets for the cool page.
+  
+  Order of Properties: Size It, Style It (Sz St)
+*/
+.cool-container ul li::before {
+  /* --- Size It --- */
+  font-size: 2rem;
+
+  /* --- Style It --- */
+
+  /* Phi */
+  content: 'φ';
+  position: absolute;
+  left: 0;
 }
