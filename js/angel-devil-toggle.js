@@ -1,19 +1,15 @@
 /*
-  Sunrise Gotham toggle: A light/dark mode switch for the site,
-  the sunrise (🌅) represents light mode and Gotham (🌃) for dark mode.
+  Angel Devil toggle: A light/dark mode switch for the site,
+  the angel (😇) represents light mode and devilish face (😈) for dark mode.
 
-  "Give me odorous at sunrise a garden of beautiful flowers where I can walk undisturbed." -Walt Whitman
+   This script:
+   1. Remembers a visitor's theme preference using localStorage.
+   2. Displays a toggle button for visitors to switch themes.
+   3. Saves the visitor's choice for future visits.
+ */
 
-  "The night is darkest just before dawn." -Harvey Dent (Two-Face) in The Dark Knight (2008).
-
-  This script:
-  1. Remembers a visitor's theme preference using localStorage.
-  2. Displays a toggle button for visitors to switch themes.
-  3. Saves the visitor's choice for future visits.
-*/
-
-// Function to initialize and manage the Sunrise-Gotham theme toggle
-function initializeSunriseGothamToggle() {
+ // Function to initialize and manage the Angel-Devil theme toggle
+ function initializeAngelDevilToggle() {
   // Check if localStorage is available to ensure compatibility
   const isLocalStorageAvailable = typeof window !== 'undefined' && window.localStorage;
 
@@ -38,18 +34,18 @@ function initializeSunriseGothamToggle() {
   }
 
   // Get the toggle button by its ID
-  const toggle = document.getElementById('sunrise-gotham-toggle');
+  const toggle = document.getElementById('angel-devil-toggle');
 
   // Check if the toggle button exists
   if (!toggle) {
-    console.error('Sunrise-Gotham toggle button not found! Theme functionality disabled.');
+    console.error('Angel-Devil toggle button not found! Theme functionality disabled.');
     return;
   }
 
   // Function to update the button’s UI based on the current theme
   function updateThemeUI(isLightTheme) {
-    // Set icon to Gotham (🌃) for light mode, Sunrise (🌅) for dark mode
-    toggle.textContent = isLightTheme ? '🌃' : '🌅';
+    // Set icon to Devil (😈) for light mode, Angel (😇) for dark mode
+    toggle.textContent = isLightTheme ? '😈' : '😇';
     // Update aria-label for accessibility
     toggle.setAttribute('aria-label', `Switch to ${isLightTheme ? 'dark' : 'light'} theme`);
     // Update aria-pressed to reflect the current state
@@ -79,4 +75,4 @@ function initializeSunriseGothamToggle() {
 }
 
 // Initialize the toggle when the script runs
-initializeSunriseGothamToggle();
+initializeAngelDevilToggle();
