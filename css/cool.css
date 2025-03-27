@@ -1,0 +1,19 @@
+/*
+  😎 Cool.css - The stylesheet for the cool page.
+*/
+
+/*
+  Cool Styles
+    h1 img { ... }
+*/
+
+/*
+  The header image.
+  Order of Properties: Style It (St)
+*/
+h1 img {
+  /* --- Style It --- */
+
+  /* Aligns the cool ice cream emoji with the middle of the text */
+  vertical-align: middle;
+}
