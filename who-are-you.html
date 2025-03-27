@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <!-- This is the DOCTYPE declaration. It’s like a signal to browsers that says, “Hey, this is an HTML web page!”
 
-This is the "Who Are You?" page, designed to introduce Tori Schuyler,
-the creator of the eOS Lesson Plans website. -->
+This is the "Who Are You?" page, designed to explain to visitors who they are. -->
 
 <html lang="en">
 <!-- Sets the page language to English - helps screen readers, search engines, and spell checkers. -->
@@ -32,13 +31,11 @@ the creator of the eOS Lesson Plans website. -->
         <!-- Robots Directive: Temporarily set to prevent search engines from indexing this page or following its links
         until the first iteration is complete and ready for public viewing. -->
 
-        <meta name="description" content="Meet Tori Schuyler, passionate software developer making tech education
-        playful and accessible. Discover eOS Lesson Plans creator.">
+        <meta name="description" content="">
         <!-- SEO Description: This tag offers a quick summary for search results,
         improving click-through rates by setting user expectations and boosting relevance. -->
 
-        <meta name="keywords" content="Tori Schuyler, eOS Lesson Plans, tech education, software developer,
-        playful learning, tech accessibility, teaching philosophy, coding education">
+        <meta name="keywords" content="">
         <!-- SEO Keywords: Although less impactful today due to search engines prioritizing content quality,
         they can still categorize content. Use sparingly to avoid keyword stuffing. -->
 
@@ -53,8 +50,7 @@ the creator of the eOS Lesson Plans website. -->
         <meta property="og:title" content="Who Are You? | eOS Lesson Plans">
         <!-- Open Graph Title: Defines the title for social media sharing. -->
 
-        <meta property="og:description" content="Uncover the mind behind eOS Lesson Plans!
-        Tori shares her journey to make tech education fun and accessible for all.">
+        <meta property="og:description" content="">
         <!-- Open Graph Description: Provides a summary when shared on social platforms. -->
 
         <meta property="og:image" content="https://torischuyler.github.io/eos-lesson-plans/photos/van-gogh-orca.jpg">
@@ -85,7 +81,7 @@ the creator of the eOS Lesson Plans website. -->
         <!-- Load local stylesheets first for speed and to prevent overrides by third-party CSS (e.g., Google Fonts). -->
         <!-- End Stylesheet Links  --------------------------------------------------->
 
-        <script src="js/torii-gemini-toggle.js" defer></script>
+        <script src="js/yin-yang-toggle.js" defer></script>
         <!-- Script for toggling Dark/Light mode - placed last for better page load performance and security.
         'defer' tells the browser to load the script after the HTML is parsed but before
         the DOMContentLoaded event, improving page load times. -->
@@ -107,8 +103,8 @@ the creator of the eOS Lesson Plans website. -->
             <!-- Navigation menu for desktop and mobile -->
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="students.html">Students</a></li>
-                <li><a href="developers.html">Developers</a></li>
+                <li><a href="lesson-plans.html">Lesson Plans</a></li>
+                <li><a href="who-am-i.html">Who Am I?</a></li>
                 <li><a href="who-are-you.html" class="active" aria-current="page">Who Are You?</a></li>
             </ul>
 
@@ -118,7 +114,7 @@ the creator of the eOS Lesson Plans website. -->
                 <div class="hamburger">☰</div>
                 <!-- Hamburger icon -->
 
-                <button id="torii-gemini-toggle" aria-label="Toggle light or dark mode" aria-pressed="false">🌞</button>
+                <button id="yin-yang-toggle" aria-label="Toggle light or dark mode" aria-pressed="false">☯️</button>
                 <!-- Dark/Light mode toggle button. The 'aria-label' attribute enhances accessibility
                 by describing the button for screen readers, ensuring users with visual impairments
                 can identify its purpose, with 'aria-pressed' indicating the current mode. -->
@@ -141,7 +137,7 @@ the creator of the eOS Lesson Plans website. -->
         <!-- End Navigation Section  --------------------------------------------------------->
 
         <!-- Wrap all "Who Are You?" content in .who-are-you-container ----------------------->
-        <div class="who-are-you-container" aria-label="About Tori">
+        <div class="who-are-you-container">
             <!-- Begin Main Section -------------------------------------------------------->
             <!-- Main content area - where the primary, unique content of the page lives. -->
             <main aria-label="Main content">
@@ -150,69 +146,6 @@ the creator of the eOS Lesson Plans website. -->
 
                 <h1>Who Are You?</h1>
                 <!-- Main heading (<h1>) of the page, sets the theme or topic. -->
-
-                <p>
-                    I am Tori Schuyler (sorry to disappoint if you were hoping for Baba O'Reilly).
-                </p>
-                <!-- A <p> tag creates a paragraph, grouping text into a readable block. -->
-
-                <p>I'm a software developer who thinks:</p>
-                <!-- Another paragraph, another block of text. -->
-
-                <ul>
-                <!-- An unordered list (<ul>) displays items as bullet points, showing related ideas without a specific order. -->
-
-                    <li>Learning should be playful</li>
-                    <!-- List item, aka a bullet point. -->
-
-                    <li>Mistakes are just experiments in disguise</li>
-                    <!-- Another list item, aka another bullet point. -->
-
-                    <li>Tech is for everyone</li>
-                    <!-- Another list item, aka another bullet point. -->
-                </ul>
-                <br>
-
-<!-- Begin Life Branch ------------------------->
-<h2>March 2025 Snapshot of My Branch 🌳</h2>
-
-<!-- Desktop version - <pre> content is aligned left to avoid extra whitespace; <pre> preserves all spaces, which would shift the ASCII tree if indented. -->
-<pre class="life-branch life-branch-desktop">
-Maine
-├── Scarborough (Hometown)
-├── Orono (University of Maine)
-├── Mississippi
-│   └── Cleveland (Teach For America, Summer Institute)
-├── South Carolina
-│   └── North Charleston (Lambs Elementary School)
-├── New Jersey
-│   └── Princeton (Public Consulting Group, NJ SMART)
-└── New York
-    └── NYC (StreetEasy)
-        ├── Kips Bay
-        ├── Williamsburg
-        └── Greenwich Village
-</pre>
-
-<!-- Mobile version with shorter phrases -->
-<pre class="life-branch life-branch-mobile">
-Maine
-├── Scarborough (Hometown)
-├── Orono (Univ. of Maine)
-├── Mississippi
-│   └── Cleveland (TFA, Summer)
-├── South Carolina
-│   └── North Charleston (Lambs)
-├── New Jersey
-│   └── Princeton (PCG, NJ SMART)
-└── New York
-    └── NYC (StreetEasy)
-        ├── Kips Bay
-        ├── Williamsburg
-        └── Greenwich Village
-</pre>
-<!-- End Life Branch ------------------------->
-
             </main>
             <!-- End Main Section ---------------------------------------------------------->
         </div>
@@ -265,38 +198,27 @@ DOCTYPE
     │   │   ├── link (global.css)
     │   │   ├── link (who-are-you.css)
     │   │   └── link (google fonts)
-    │   ├── script (torii-gemini-toggle.js)
+    │   ├── script (yin-yang-toggle.js)
     │   └── script (mobile-nav.js)
-    │
     └── body
         ├── nav
         │   ├── ul (nav-menu)
         │   │   ├── li
         │   │   │   └── a (Home)
         │   │   ├── li
-        │   │   │   └── a (Students)
+        │   │   │   └── a (Lesson Plans)
         │   │   ├── li
-        │   │   │   └── a (Developers)
+        │   │   │   └── a (Who Am I?)
         │   │   └── li
         │   │       └── a (Who Are You? - active)
         │   ├── div (nav-header)
         │   │   ├── div (hamburger)
-        │   │   └── button (torii-gemini-toggle)
+        │   │   └── button (yin-yang-toggle)
         │   └── noscript
         │       └── div
         │           └── p
         ├── div (who-are-you-container)
         │   └── main
-        │       ├── h1
-        │       ├── p
-        │       ├── p
-        │       ├── ul
-        │       │   ├── li (Learning should be playful)
-        │       │   ├── li (Mistakes are just experiments in disguise)
-        │       │   └── li (Tech is for everyone)
-        │       ├── br
-        │       ├── h2 (March 2025 Snapshot of My Life Tree)
-        │       └── pre (Life Tree)
         ├── footer
         │   └── p
         │       └── span
