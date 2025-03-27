@@ -1,23 +1,23 @@
 /*
-  😎 Cool.css - The stylesheet for the cool page.
+  TIL.css - The stylesheet for the "Today I Learned" page.
 */
 
 /*
-  Cool Styles
-    .cool-container { ... }
-    .cool-container h1 { ... }
-    .cool-container h1 img { ... }
-    .cool-container ul { ... }
-    .cool-container ul li { ... }
-      .cool-container ul li::before { ... }
+  TIL Styles
+    .til-container { ... }
+    .til-container h1 { ... }
+    .til-container h1 img { ... }
+    .til-container ul { ... }
+    .til-container ul li { ... }
+      .til-container ul li::before { ... }
 */
 
 /*
-  The .cool-container holds the content for the cool page.
+  The .til-container holds the content for the til page.
   It controls the width and spacing of the content area.
   Order of Properties: Size It, Space It, Style It (Sz Sp St)
 */
-.cool-container {
+.til-container {
   /* --- Size It --- */
 
   /* 
@@ -46,7 +46,7 @@
   Page Heading
   Order of Properties: Style It (St)
 */
-.cool-container h1 {
+.til-container h1 {
   /* --- Style It --- */
 
   /*
@@ -60,18 +60,18 @@
   The header image.
   Order of Properties: Style It (St)
 */
-.cool-container h1 img {
+.til-container h1 img {
   /* --- Style It --- */
 
-  /* Aligns the cool ice cream emoji with the middle of the text */
+  /* Aligns the til ice cream emoji with the middle of the text */
   vertical-align: middle;
 }
 
 /* 
-  Cool page unordered list
+  TIL page unordered list
   Order of Properties: Space It, Style It (Sp St)
 */
-.cool-container ul {
+.til-container ul {
   /* --- Space It --- */
   padding-left: 0.8rem;
 
@@ -87,10 +87,10 @@
 }
 
 /*
-  Cool page list items
+  TIL page list items
   Order of Properties: Space It, Style It (Sp St)
 */
-.cool-container ul li {
+.til-container ul li {
   /* --- Space It --- */
   margin: 0.8rem 0;
   padding-left: 1rem;
@@ -101,11 +101,11 @@
 
 /*
   Custom bullets using ::before to ensure Safari compatibility.
-    - 'φ' gives phi bullets for the cool page.
+    - 'φ' gives phi bullets for the til page.
   
   Order of Properties: Size It, Style It (Sz St)
 */
-.cool-container ul li::before {
+.til-container ul li::before {
   /* --- Size It --- */
   font-size: 2rem;
 
