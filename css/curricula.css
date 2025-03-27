@@ -14,7 +14,6 @@
   Curricula Styles
     .curriculum-container { ... }
     .curriculum-container h1 { ... }
-    .curriculum-container p { ... }
     .curriculum-container h2 { ... }
     .curriculum-container ul { ... }
     .curriculum-container ul li { ... }
@@ -73,28 +72,6 @@
       - Grogu green in dark mode, switches to chefchaouen blue in light mode.
   */
   color: var(--tori-header-color);
-}
-
-/*
-  This styles paragraph text (<p> tags) inside the .curriculum-container.
-  Order of Properties: Style It, Space It (St Sp)
-*/
-.curriculum-container p {
-  /* --- Space It --- */
-
-  /*
-    Adds space below the heading (1.618rem ≈ 26px) using the golden ratio
-    for aesthetic harmony (and bc 6/18 is my bday 😎).
-  */
-  margin-bottom: 1.618rem;
-
-  /* --- Style It --- */
-
-  /*
-    Moves the text to the middle of the container.
-    This changes how the text is positioned horizontally.
-  */
-  text-align: center;
 }
 
 /* 
@@ -182,17 +159,12 @@
   position: relative;
 }
 
-/* 
+/*
   Custom bullets using ::before to ensure Safari compatibility.
-  - '🚀' gives rocket bullets for the student page — blasting off to learning!
-  - '📐' gives triangle bullets for the developer page — triangles are my favorite shape.
-
-  Most sites stick to boring 'disc' (●), 'circle' (○), or 'square' (■) — yawn!
-  Those are fine, but you can level up with ANY Unicode character — yup, emojis too.
-  Try '⛩️' (Shinto shrine, aka torii gate), '🎉', or '🛹' for fun.
-  Order of Properties: Style It (St)
+  - '🚀' gives rocket bullets for the student list — blasting off to learning!
+  - '📐' gives triangle bullets for the developer list — triangles are my favorite shape.
 */
-.students-page .curriculum-container ul li::before {
+.curriculum-container ul.student-list li::before {
   /* --- Style It --- */
 
   /* Rocket for students */
@@ -201,7 +173,7 @@
   left: 0;
 }
 
-.developers-page .curriculum-container ul li::before {
+.curriculum-container ul.developer-list li::before {
   /* --- Style It --- */
 
   /* Triangle for developers */
@@ -333,11 +305,6 @@ Curricula.css
 ├── .curriculum-container h1
 │   └── Style It
 │       └── color
-├── .curriculum-container p
-│   ├── Space It
-│   │   └── margin-bottom
-│   └── Style It
-│       └── text-align
 ├── .curriculum-container h2
 │   └── Style It
 │       ├── color
@@ -352,17 +319,20 @@ Curricula.css
 │   │   └── padding-left
 │   ├── Style It
 │   │   └── position
-│   ├── .students-page .curriculum-container ul li::before
+│   ├── .curriculum-container ul.student-list li::before
 │   │   └── Style It
 │   │       ├── content
 │   │       ├── position
 │   │       └── left
-│   ├── .developers-page .curriculum-container ul li::before
+│   ├── .curriculum-container ul.developer-list li::before
 │   │   └── Style It
 │   │       ├── content
 │   │       ├── position
 │   │       └── left
 │   └── @supports not (selector(::before))
+│       └── .curriculum-container ul
+│           └── Style It
+│               └── list-style-type
 ├── .curriculum-container a
 │   ├── Space It
 │   │   ├── padding
