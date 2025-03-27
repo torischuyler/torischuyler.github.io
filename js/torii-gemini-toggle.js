@@ -1,5 +1,5 @@
 /*
-  Torii Gemini Toggle: A light/dark mode switch for the "Who Are You?" page,
+  Torii Gemini Toggle: A light/dark mode switch for the "Who Am I?" page,
   with a Torii gate (⛩️) for dark mode and Gemini (♊️) for light mode.
 
   Torii gate (⛩️): A traditional Japenese gate most commonly found at the entrance
