@@ -4,8 +4,23 @@
 
 /*
   Cool Styles
+    h1 { ... }
     h1 img { ... }
 */
+
+/*
+  Page Heading
+  Order of Properties: Style It (St)
+*/
+ h1 {
+  /* --- Style It --- */
+
+  /*
+    Sets the color property with a CSS variable (--header-text-color, from global.css).
+      - Grogu green in dark mode, switches to ruby red in light mode.
+  */
+  color: var(--tori-header-color);
+}
 
 /*
   The header image.

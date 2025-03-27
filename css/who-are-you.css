@@ -1,3 +1,22 @@
 /*
   👋 Who-are-you.css - The stylesheet placeholder for the page that tells visitors who they are.
 */
+
+/*
+  Who Are You Styles
+    h1 { ... }
+*/
+
+/*
+  Page Heading
+  Order of Properties: Style It (St)
+*/
+h1 {
+  /* --- Style It --- */
+
+  /*
+    Sets the color property with a CSS variable (--header-text-color, from global.css).
+      - Grogu green in dark mode, switches to ruby red in light mode.
+  */
+  color: var(--tori-header-color);
+}
