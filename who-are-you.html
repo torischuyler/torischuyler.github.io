@@ -87,10 +87,13 @@ This is the "Who Are You?" page, designed to explain to visitors who they are. -
         the DOMContentLoaded event, improving page load times. -->
 
         <script src="js/mobile-nav.js" defer></script>
-        <!-- Script for toggling mobile navigation------>
+        <!-- Script for toggling mobile navigation---------->
 
         <script src="js/location.js" defer></script>
         <!-- Script for determining visitor's location------>
+
+        <script src="js/device-info.js" defer></script>
+        <!-- Script for determining visitor's device-------->
     </head>
     <!-- End Head Section --------------------------------------------------->
 
@@ -155,6 +158,8 @@ This is the "Who Are You?" page, designed to explain to visitors who they are. -
 
                 <ul>
                     <li id="location">You're visiting from [loading...]</li>
+                    <br>
+                    <li id="device-info">Your device whispers: [Loading...]</li>
                 </ul>
             </main>
             <!-- End Main Section ---------------------------------------------------------->

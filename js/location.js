@@ -20,7 +20,7 @@ async function getVisitorLocation() {
 
       // Update the HTML with the location
       document.getElementById('location').textContent =
-          `🔮 I see you hailing from ${region}, ${country}… or perhaps a mystical nearby realm!`;
+          `🔮 I see you hailing from ${region}, ${country}… or perhaps a mystical nearby realm`;
 
   // If something goes wrong in the 'try' block, 'catch' grabs the error so we can handle it nicely.
   } catch (error) {
@@ -30,7 +30,7 @@ async function getVisitorLocation() {
 
       // Updates the HTML with a friendly message for visitors to see in the UI if the location fetch fails.
       document.getElementById('location').textContent =
-          `🔮 The spirits couldn't pinpoint you… somewhere mysterious, I wager!`;
+          `🔮 The spirits couldn't pinpoint you… somewhere mysterious, I wager`;
   }
 }
 
