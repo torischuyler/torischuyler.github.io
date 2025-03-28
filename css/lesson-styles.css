@@ -120,7 +120,7 @@
 
 /*
   🧭 Subheadings to navigate the lesson plan
-  Order of Properties: Space it, Style it (Sp St)
+  Order of Properties: Space It, Style It (Sp St)
 */
 .lesson-container h2 {
   /* --- Space It --- */
@@ -136,7 +136,7 @@
 
   /*
     Sets the color property with a CSS variable (--subheader-text-color, from global.css).
-      - Peach in dark mode, switches to poppy in light mode.
+      - Peach in dark mode, switches to poppy red in light mode.
   */
   color: var(--subheader-text-color);
 }

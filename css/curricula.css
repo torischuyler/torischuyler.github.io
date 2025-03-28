@@ -76,14 +76,14 @@
 
 /* 
   Page Subheading
-  Order of Properties: Style it (St)
+  Order of Properties: Style It (St)
 */
 .curriculum-container h2 {
   /* --- Style It --- */
 
   /*
     Sets the color property with a CSS variable (--subheader-text-color, from global.css).
-      - Peach in dark mode, switches to lapis lazuli in light mode.
+      - Peach in dark mode, switches to poppy red in light mode.
   */
   color: var(--subheader-text-color);
 
