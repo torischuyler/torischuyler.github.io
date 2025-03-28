@@ -6,9 +6,9 @@
 function getFriendlyDevice(userAgent) {
   if (userAgent.includes("iPhone")) return "a magical iPhone";
   if (userAgent.includes("Android")) return "an enchanted Android";
-  if (userAgent.includes("Windows")) return "a mystical Windows box";
+  if (userAgent.includes("Windows")) return "a mystical Windows";
   if (userAgent.includes("Mac")) return "a charmed Mac";
-  if (userAgent.includes("Linux")) return "a legendary Linux realm";
+  if (userAgent.includes("Linux")) return "a legendary Linux";
 
   // Fallback: returns a default name if no specific device type matches
   return "a mysterious gadget";
@@ -24,5 +24,5 @@ document.addEventListener("DOMContentLoaded", function() {
   const friendlyDevice = getFriendlyDevice(userAgent);
 
   // Updates the HTML element with id "device-info" to show the friendly device message
-  document.getElementById("device-info").textContent = `🔮 Your device whispers: You're on ${friendlyDevice}`;
+  document.getElementById("device-info").innerHTML = `🔮 Your device whispers: <i>You're on ${friendlyDevice}</i>`;
 });
