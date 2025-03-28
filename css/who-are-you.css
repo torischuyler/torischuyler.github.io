@@ -6,6 +6,7 @@
   Who Are You Styles
     .who-are-you-container { ... }
     .who-are-you-container h1 { ... }
+    .who-are-you-container ul { ... }
 */
 
 /*
@@ -51,4 +52,15 @@
       - Grogu green in dark mode, switches to ruby red in light mode.
   */
   color: var(--tori-header-color);
+}
+
+/*
+  Unordered list
+  Order of Properties: Style It (St)
+*/
+.who-are-you-container ul {
+  /* --- Style It --- */
+
+  /* Removes the default bullet */
+  list-style-type: none;
 }
