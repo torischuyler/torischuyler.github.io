@@ -175,10 +175,12 @@ This is the "Who Are You?" page, designed to explain to visitors who they are. -
 
                 <h2>Your Meme Language</h2>
                 <p>
-                    Take the quiz below to find out your meme language! (kinda like your love language but memes)
+                  Take the quiz below to find out your meme language! (kinda like your love language but memes)
                 </p>
                 <br>
-                <div>
+                <!-- Begin Quiz Wrapper ---------------------------------------------------->
+                <div class="quiz-wrapper">
+                  <div class="question active" id="q1">
                     <p><strong>1: What's your go-to reaction when something mildly annoying happens?</strong></p>
                     <label>
                       <input type="radio" name="q1" value="mystical"> Cast an imaginary spell to banish the annoyance to another realm.
@@ -202,8 +204,7 @@ This is the "Who Are You?" page, designed to explain to visitors who they are. -
                       <input type="radio" name="q1" value="tech"> Blame it on a glitch in the matrix.
                     </label><br>
                   </div>
-                  <br>
-                  <div>
+                  <div class="question" id="q2">
                     <p><strong>2: How do you celebrate a small win, like finding $20 in your Venmo?</strong></p>
                     <label>
                       <input type="radio" name="q2" value="mystical"> Pretend you've just unlocked a secret level of existence and strike a mystical pose.
@@ -227,7 +228,6 @@ This is the "Who Are You?" page, designed to explain to visitors who they are. -
                       <input type="radio" name="q2" value="tech"> Declare your bank app must've lagged and accidentally blessed you.
                     </label><br>
                   </div>
-                  <br>
                   <div class="question" id="q3">
                     <p><strong>3: What's your style when you're procrastinating on something you <i>should</i> be doing?</strong></p>
                     <label>
@@ -251,57 +251,57 @@ This is the "Who Are You?" page, designed to explain to visitors who they are. -
                     <label>
                       <input type="radio" name="q3" value="tech"> Convince yourself the Wi-Fi's too slow to start anyway and blame Starlink satellites.
                     </label><br>
-                    <br>
-                    <div class="question" id="q4">
-                        <p><strong>4: What's your move when someone sends you a boring text?</strong></p>
-                        <label>
-                          <input type="radio" name="q4" value="mystical"> Reply with a cryptic rune emoji and let them figure out your arcane mood.
-                        </label><br>
-                        <label>
-                          <input type="radio" name="q4" value="cute"> Send back a sticker of a cartoon sloth napping on a rainbow.
-                        </label><br>
-                        <label>
-                          <input type="radio" name="q4" value="chaos"> Respond with “k” and then a 3-paragraph rant about your day to spice it up.
-                        </label><br>
-                        <label>
-                          <input type="radio" name="q4" value="positive"> Hit them with a “you're enough just as you are” meme to keep it sweet.
-                        </label><br>
-                        <label>
-                          <input type="radio" name="q4" value="savage"> Type “wow, thrilling stuff, I'm on the edge of my coffin” and hit send.
-                        </label><br>
-                        <label>
-                          <input type="radio" name="q4" value="history"> Quote Shakespeare's “brevity is the soul of wit” and leave it there.
-                        </label><br>
-                        <label>
-                          <input type="radio" name="q4" value="tech"> Send a gif of a robot short-circuiting because their text fried your circuits.
-                        </label><br>
-                      </div>
-                      <br>
-                      <div class="question" id="q5">
-                        <p><strong>5: How do you handle a random burst of energy at 2 a.m.?</strong></p>
-                        <label>
-                          <input type="radio" name="q5" value="mystical"> Channel it into a midnight ritual to summon inspiration from the cosmos.
-                        </label><br>
-                        <label>
-                          <input type="radio" name="q5" value="cute"> Decide it's the perfect time to watch baby goat yoga videos.
-                        </label><br>
-                        <label>
-                          <input type="radio" name="q5" value="chaos"> Start a live-tweet thread about your unhinged nighttime thoughts.
-                        </label><br>
-                        <label>
-                          <input type="radio" name="q5" value="positive"> Write a gratitude list because even insomnia is a gift, right?
-                        </label><br>
-                        <label>
-                          <input type="radio" name="q5" value="savage"> Cackle and declare “sleep is for the weak” while plotting world domination.
-                        </label><br>
-                        <label>
-                          <input type="radio" name="q5" value="history"> Pretend you're a Renaissance genius burning the midnight oil for art.
-                        </label><br>
-                        <label>
-                          <input type="radio" name="q5" value="tech"> Crack open your laptop to debug your life like it's a coding error.
-                        </label><br>
-                      </div>
                   </div>
+                  <div class="question" id="q4">
+                    <p><strong>4: What's your move when someone sends you a boring text?</strong></p>
+                    <label>
+                      <input type="radio" name="q4" value="mystical"> Reply with a cryptic rune emoji and let them figure out your arcane mood.
+                    </label><br>
+                    <label>
+                      <input type="radio" name="q4" value="cute"> Send back a sticker of a cartoon sloth napping on a rainbow.
+                    </label><br>
+                    <label>
+                      <input type="radio" name="q4" value="chaos"> Respond with “k” and then a 3-paragraph rant about your day to spice it up.
+                    </label><br>
+                    <label>
+                      <input type="radio" name="q4" value="positive"> Hit them with a “you're enough just as you are” meme to keep it sweet.
+                    </label><br>
+                    <label>
+                      <input type="radio" name="q4" value="savage"> Type “wow, thrilling stuff, I'm on the edge of my coffin” and hit send.
+                    </label><br>
+                    <label>
+                      <input type="radio" name="q4" value="history"> Quote Shakespeare's “brevity is the soul of wit” and leave it there.
+                    </label><br>
+                    <label>
+                      <input type="radio" name="q4" value="tech"> Send a gif of a robot short-circuiting because their text fried your circuits.
+                    </label><br>
+                  </div>
+                  <div class="question" id="q5">
+                    <p><strong>5: How do you handle a random burst of energy at 2 a.m.?</strong></p>
+                    <label>
+                      <input type="radio" name="q5" value="mystical"> Channel it into a midnight ritual to summon inspiration from the cosmos.
+                    </label><br>
+                    <label>
+                      <input type="radio" name="q5" value="cute"> Decide it's the perfect time to watch baby goat yoga videos.
+                    </label><br>
+                    <label>
+                      <input type="radio" name="q5" value="chaos"> Start a live-tweet thread about your unhinged nighttime thoughts.
+                    </label><br>
+                    <label>
+                      <input type="radio" name="q5" value="positive"> Write a gratitude list because even insomnia is a gift, right?
+                    </label><br>
+                    <label>
+                      <input type="radio" name="q5" value="savage"> Cackle and declare “sleep is for the weak” while plotting world domination.
+                    </label><br>
+                    <label>
+                      <input type="radio" name="q5" value="history"> Pretend you're a Renaissance genius burning the midnight oil for art.
+                    </label><br>
+                    <label>
+                      <input type="radio" name="q5" value="tech"> Crack open your laptop to debug your life like it's a coding error.
+                    </label><br>
+                  </div>
+                </div>
+                <!-- End Quiz Wrapper ------------------------------------------------------>
             </main>
             <!-- End Main Section ---------------------------------------------------------->
         </div>
