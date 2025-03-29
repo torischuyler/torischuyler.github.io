@@ -8,13 +8,38 @@ function detectArc() {
   return arcVariable !== '';
 }
 
-// Defines a function that takes the raw userAgent string and returns a fun, browser-specific message
+// Function to detect if the browser is Brave by checking if it blocks requests to doubleclick.net
+function detectBrave(callback) {
+  // Create an image element to attempt loading a resource from a tracking domain
+  const img = new Image();
+  // Load a resource from doubleclick.net, a tracking domain that Brave Shields blocks by default, with a timestamp to prevent caching
+  img.src = 'https://doubleclick.net/favicon.ico?' + new Date().getTime();
+
+  // Set a 2-second timeout to determine if the request was blocked; if it doesn’t load, assume it’s Brave
+  const timeout = setTimeout(() => {
+      // If the image doesn't load within 2 seconds, it's likely blocked by Brave Shields
+      callback(true);
+  }, 2000);
+
+  img.onload = () => {
+      // If the image loads successfully, it's not Brave (or Shields is disabled)
+      clearTimeout(timeout);
+      callback(false);
+  };
+
+  img.onerror = () => {
+      // If the request fails (blocked by Brave Shields), it's likely Brave
+      clearTimeout(timeout);
+      callback(true);
+  };
+}
+
+// Defines a function that takes the raw userAgent string and uses additional detection methods to return a fun, browser-specific message
 function getMysticalBrowser(userAgent) {
   // Check for Arc first using the CSS variable method
   if (detectArc()) return "the radiant arcs of Arc";
   // If not Arc, proceed with user agent checks for other browsers
   if (userAgent.includes("Tor")) return "the shadowed veils of Tor";
-  if (userAgent.includes("Brave")) return "the valiant shields of Brave";
   if (userAgent.includes("Opera")) return "the grand opera of Opera";
   if (userAgent.includes("Samsung Internet")) return "the cosmic waves of Samsung Internet";
   if (userAgent.includes("Android")) return "the ancient scrolls of Android Browser";
@@ -35,15 +60,23 @@ document.addEventListener("DOMContentLoaded", function() {
   const userAgent = navigator.userAgent;
 
   /*
-    Since Arc detection requires CSS variables that may load after DOMContentLoaded,
-    we add a small delay to ensure the variables are available.
+  Since Arc detection requires CSS variables that may load after DOMContentLoaded,
+  and Brave detection requires an async network request, we add a small delay (500 ms)
+  to ensure the variables are available and the request has time to complete.
   */
   setTimeout(() => {
-      // Sets mysticalBrowser to the fun name we get from translating the raw userAgent
-      const mysticalBrowser = getMysticalBrowser(userAgent);
-      // Updates the HTML element with id "browser" to show the browser message with italics
-      document.getElementById("browser").innerHTML =
-          `🔮 The winds of the web carried you here via <i>${mysticalBrowser}</i>`;
-  // 500ms delay to ensure Arc's CSS variables are injected
-  }, 500);
+    // Check for Brave first, since it requires an async callback
+    detectBrave((isBrave) => {
+        let mysticalBrowser;
+        if (isBrave) {
+            mysticalBrowser = "the valiant shields of Brave";
+        } else {
+            // If not Brave, check for Arc and other browsers
+            mysticalBrowser = getMysticalBrowser(userAgent);
+        }
+        // Updates the HTML element with id "browser" to show the browser message with italics
+        document.getElementById("browser").innerHTML =
+            `🔮 The winds of the web carried you here via <i>${mysticalBrowser}</i>`;
+    });
+}, 500);
 });
