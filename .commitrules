@@ -21,7 +21,7 @@ rules:
             "CSS", "JPG", "JPEG", "README", "RAM", "MMU", "ASCII", "OS"
           ]
           - proper_nouns: [
-            "Arc",
+            "Arc", "Brave",
             "Open Graph", Windows", "Apple", "Linux",
             "Android", "Python", "Safari", "JavaScript"
           ]
