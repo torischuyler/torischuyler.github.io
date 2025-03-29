@@ -94,7 +94,7 @@ function getMysticalBrowser(userAgent) {
   if (userAgent.includes("Huawei")) return "the silken roads of Huawei";
   if (userAgent.includes("Edge")) return "the sharp edges of Edge";
   if (userAgent.includes("Firefox")) return "the fiery trails of Firefox";
-  if (userAgent.includes("Safari")) return "the wild orchards of Safari";
+  if (userAgent.includes("Safari")) return "the wild orchards of Safari (or you're on an iPhone and it's all one big Safari 😂)";
   if (userAgent.includes("Chrome")) return "the gleaming paths of Chrome";
   // Fallback for unknown browsers
   return "an unseen web whisperer";
