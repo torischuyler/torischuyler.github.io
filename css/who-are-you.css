@@ -78,3 +78,14 @@
   /* Removes the default bullet */
   list-style-type: none;
 }
+
+/* Meme Quiz Wrapper */
+.who-are-you-container .quiz-wrapper .question {
+  /* Hide all questions by default */
+  display: none; 
+}
+
+.who-are-you-container .quiz-wrapper .question.active {
+  /* Show only the active one */
+  display: block;
+}
