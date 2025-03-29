@@ -322,13 +322,13 @@
   Order of Properties: Size It, Style It (Sz St)
 */
 body {
-  /* --- Size It --- */
-
   /*
     Flex lets body control its contents (like nav, main, or footer) in a flexible way. 
     Without this, everything inside body would stack vertically ('block' display).
   */
   display: flex;
+
+  /* --- Size It --- */
 
   /*
     Sets the body box to at least the browser window’s height. 
@@ -467,13 +467,13 @@ h2 {
   Order of Properties: Size It, Space It, Style It (Sz Sp St)
 */
 nav {
+  /* Enables flexbox to control layout of nav items and toggle. */
+  display: flex;
+
   /* --- Size It --- */
 
   /* Spans the full width of the page */
   width: 100%;
-
-  /* Enables flexbox to control layout of nav items and toggle. */
-  display: flex;
 
   /* --- Space It --- */
 
@@ -558,11 +558,9 @@ nav a:hover {
 
 /*
   🧭 Defines the main navigation list for the site
-  Order of Properties: Size It, Space It, Style It (Sz Sp St)
+  Order of Properties: Space It, Style It (Sp St)
 */
 .nav-menu {
-  /* --- Size It --- */
-
   /* Arranges nav items in a horizontal row for desktop. */
   display: flex;
 
@@ -580,13 +578,8 @@ nav a:hover {
   list-style: none;
 }
 
-/*
-  🍔 Hamburger menu for mobile
-  Order of Properties: Size It (Sz)
-*/
+/* 🍔 Hamburger menu for mobile */
 .hamburger {
-  /* --- Size It --- */
-
   /* Hides the hamburger icon on desktop screens. */
   display: none;
 }
@@ -863,11 +856,11 @@ footer {
 */
 @media (width <= 768px) {
   .hamburger {
-    /* --- Size It --- */
-
     /* Shows the hamburger icon on mobile screens. */
     display: block;
     
+    /* --- Size It --- */
+
     /*
       Sets hamburger icon size to 3rem/48px
       (traditional range 1.5rem-2rem/24px-32px from small-phone era);
@@ -881,8 +874,6 @@ footer {
   }
 
   .nav-menu {
-    /* --- Size It --- */
-
     /* Hides the navigation menu on mobile screens by default. */
     display: none;
   }
@@ -918,8 +909,6 @@ footer {
   }
 
   .nav-menu.active {
-    /* --- Size It --- */
-
     /* Shows the navigation menu as a flex container on mobile. */
     display: flex;
 
