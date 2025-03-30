@@ -100,15 +100,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Updates the score for the final question before calculating
     updateScore(questions.length - 1);
 
-    // Find the category with the most points
+    // Finds the meme language category with the highest score from selections
+    // Sets initial maximum score to 0 for comparison
     let maxScore = 0;
+    // Sets initial meme language to an empty string as a placeholder
     let memeLanguage = '';
+    // Loops through each category and its score in the scores object
     for (const [category, score] of Object.entries(scores)) {
+      // Checks if the current score exceeds the maximum score found so far
       if (score > maxScore) {
+        // Updates the maximum score to the current score if it’s higher
         maxScore = score;
+        // Updates the meme language to the current category if its score is higher
         memeLanguage = category;
       }
     }
+    // Displays the result as an alert with the winning category capitalized
     alert(`Your Meme Language is: ${memeLanguage.charAt(0).toUpperCase() + memeLanguage.slice(1)}!`);
   });
 });
