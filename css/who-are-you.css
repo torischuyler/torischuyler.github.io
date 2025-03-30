@@ -7,6 +7,10 @@
     .who-are-you-container { ... }
     .who-are-you-container h1 { ... }
     .who-are-you-container ul { ... }
+    .who-are-you-container .quiz-wrapper .question { ... }
+      .who-are-you-container .quiz-wrapper .question .active { ... }
+    .who-are-you-container .quiz-wrapper .next-btn { ... }
+      .who-are-you-container .quiz-wrapper .next-btn:hover { ... }
 */
 
 /*
@@ -88,4 +92,32 @@
 .who-are-you-container .quiz-wrapper .question.active {
   /* Show only the active one */
   display: block;
+}
+
+/* 
+  Meme Quiz Next Button
+  Order of Properties: Size It, Space It, Style It (Sz Sp St)
+*/
+.who-are-you-container .quiz-wrapper .next-btn {
+  display: block;
+
+  /* --- Size It --- */
+  font-size: 18px;
+
+  /* --- Space It --- */
+  margin: 1.25rem auto 0;
+  padding: 0.625rem 1.25rem;
+
+  /* --- Style It --- */
+  font-family: Righteous, system-ui, sans-serif;
+  color: white;
+  background-color: #8B00FF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.who-are-you-container .quiz-wrapper .next-btn:hover {
+  /* --- Style It --- */
+  background-color: var(--secondary-color);
 }
