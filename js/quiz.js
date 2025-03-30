@@ -1,19 +1,24 @@
-/*
-  🤓 Meme Quiz Magic: This script powers the "Your Meme Language" quiz by toggling between questions one at a time.
-*/
+/* 🤓 Meme Quiz Logic: This script controls the "Your Meme Language" quiz, managing question navigation and scoring selections. */
 
 // Wait for the HTML to fully load
 document.addEventListener('DOMContentLoaded', () => {
-  // Grab all the question divs (<div class="question">s) and store them in a list
+
+  /*
+    Declare variables at the top for:
+     1. Clarity (like a blueprint)
+     2. Efficiency (single DOM queries)
+     3. Maintainability (centralized updates)
+  */
+  // Selects all question containers (<div class="question">) and stores them in a NodeList
   const questions = document.querySelectorAll('.question');
-  // Snag all the "Next" buttons (<button class="next-btn">s) so we can make them do stuff
+  // Selects all "Next" buttons (<button class="next-btn">) and stores them in a list
   const nextButtons = document.querySelectorAll('.next-btn');
-  // Scoop up all the "Back" buttons (<button class="back-btn">s) for reverse action
+  // Selects all "Back" buttons (<button class="back-btn">) and stores them in a list
   const backButtons = document.querySelectorAll('.back-btn');
-  // Nab the "Submit" button (that lone <button class="submit-btn">) to wrap things up
+  // Selects the "Submit" button (<button class="submit-btn">) and stores it as a single element
   const submitButton = document.querySelector('.submit-btn');
 
-  // Object to tally up the vibe points for each meme language
+  // Object to hold the score for each meme language category, initialized to zero for tracking selections
   const scores = {
     mystical: 0,
     cute: 0,
