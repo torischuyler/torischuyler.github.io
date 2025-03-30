@@ -58,12 +58,15 @@ document.addEventListener('DOMContentLoaded', () => {
     lastSelections[questionIndex] = newCategory;
   }
 
-  // Listen for radio button changes and update scores immediately
+  // Adds event listeners to radio buttons to update scores when selections change
   questions.forEach((question, index) => {
+    // Selects all radio buttons within the current question and stores them in a NodeList
     const radios = question.querySelectorAll('input[type="radio"]');
+    // Iterates over each radio button in the NodeList to attach event listeners
     radios.forEach(radio => {
+      // Attaches a change event listener to the radio button to detect selection changes
       radio.addEventListener('change', () => {
-        // Update score when they change their answer
+        // Updates the score for this question when a new option is selected
         updateScore(index);
       });
     });
