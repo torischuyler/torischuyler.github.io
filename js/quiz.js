@@ -84,12 +84,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Handle "Back" button clicks
+  // Adds event listeners to "Back" buttons to navigate to the previous question
   backButtons.forEach((button, index) => {
     button.addEventListener('click', () => {
+      // Removes "active" class from current question to hide it
       questions[index + 1].classList.remove('active');
+      // Adds "active" class to previous question to show it
       questions[index].classList.add('active');
-      // No need to update score here since it’s already tracked
+      // Score remains unchanged as it’s already tracked on selection
     });
   });
 
