@@ -24,43 +24,69 @@ document.addEventListener('DOMContentLoaded', () => {
     tech: 0
   };
 
-  // Listen for radio button clicks and tally the scores
-  questions.forEach(question => {
+  // Object to track the last selected category per question
+  const lastSelections = {};
+
+  // Function to update the score for a specific question
+  function updateScore(questionIndex) {
+    const question = questions[questionIndex];
+    const selectedRadio = question.querySelector('input[type="radio"]:checked');
+    // No selection yet, skip it
+    if (!selectedRadio) return;
+
+    const newCategory = selectedRadio.value;
+    const oldCategory = lastSelections[questionIndex];
+
+    // If there was a previous selection, subtract its point
+    if (oldCategory && oldCategory !== newCategory) {
+      scores[oldCategory]--;
+    }
+
+    // Add a point to the new selection (if it’s not already counted)
+    if (newCategory !== oldCategory) {
+      scores[newCategory]++;
+    }
+
+    // Update the last selection for this question
+    lastSelections[questionIndex] = newCategory;
+  }
+
+  // Listen for radio button changes and update scores immediately
+  questions.forEach((question, index) => {
     const radios = question.querySelectorAll('input[type="radio"]');
     radios.forEach(radio => {
       radio.addEventListener('change', () => {
-        // Grab the value (mystical, cute, etc.)
-        const category = radio.value;
-        // Add a point to that category
-        scores[category]++;
+        // Update score when they change their answer
+        updateScore(index);
       });
     });
   });
 
-  // Loop through each "Next" button and give it a job
+  // Handle "Next" button clicks
   nextButtons.forEach((button, index) => {
-    // When someone clicks a "Next" button, here’s what happens...
     button.addEventListener('click', () => {
-      // Hide the current question by yeeting the "active" class off it
+      // Update the score for the current question before moving on
+      updateScore(index);
+      // Hide current question, show next
       questions[index].classList.remove('active');
-      // Show the next question by slapping the "active" class on it
       questions[index + 1].classList.add('active');
     });
   });
 
-  // Loop through each "Back" button and give it a reverse mission
+  // Handle "Back" button clicks
   backButtons.forEach((button, index) => {
-    // When someone clicks a "Back" button, time to rewind...
     button.addEventListener('click', () => {
-      // Hide the current question by tossing the "active" class away
       questions[index + 1].classList.remove('active');
-      // Show the previous question by bringing "active" back to it
       questions[index].classList.add('active');
+      // No need to update score here since it’s already tracked
     });
   });
 
-  // When they hit "Submit", let’s see what meme language they’ve got
+  // Handle "Submit" button click
   submitButton.addEventListener('click', () => {
+    // Update the score for the last question
+    updateScore(questions.length - 1);
+
     // Find the category with the most points
     let maxScore = 0;
     let memeLanguage = '';
@@ -70,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
         memeLanguage = category;
       }
     }
-    // For now, just alert the result
     alert(`Your Meme Language is: ${memeLanguage.charAt(0).toUpperCase() + memeLanguage.slice(1)}!`);
   });
 });
