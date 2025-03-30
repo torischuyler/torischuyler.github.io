@@ -13,6 +13,8 @@
       .who-are-you-container .quiz-wrapper .next-btn:hover { ... }
     .who-are-you-container .quiz-wrapper .back-btn { ... }
       .who-are-you-container .quiz-wrapper .back-btn:hover { ... }
+    .who-are-you-container .quiz-wrapper .submit-btn { ... }
+      .who-are-you-container .quiz-wrapper .submit-btn:hover { ... }
 */
 
 /*
@@ -148,6 +150,34 @@
 }
 
 .who-are-you-container .quiz-wrapper .back-btn:hover {
+  /* --- Style It --- */
+  background-color: var(--secondary-color);
+}
+
+/* 
+  Meme Quiz Submit Button
+  Order of Properties: Size It, Space It, Style It (Sz Sp St)
+*/
+.who-are-you-container .quiz-wrapper .submit-btn {
+  display: block;
+
+  /* --- Size It --- */
+  font-size: 18px;
+
+  /* --- Space It --- */
+  margin: 1.25rem auto 0;
+  padding: 0.625rem 1.25rem;
+
+  /* --- Style It --- */
+  font-family: Righteous, system-ui, sans-serif;
+  color: white;
+  background-color: #8B00FF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.who-are-you-container .quiz-wrapper .submit-btn:hover {
   /* --- Style It --- */
   background-color: var(--secondary-color);
 }
