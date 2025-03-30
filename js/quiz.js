@@ -95,9 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Handle "Submit" button click
+  // Adds event listener to "Submit" button to calculate and display the result
   submitButton.addEventListener('click', () => {
-    // Update the score for the last question
+    // Updates the score for the final question before calculating
     updateScore(questions.length - 1);
 
     // Find the category with the most points
