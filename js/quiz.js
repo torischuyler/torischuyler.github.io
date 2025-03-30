@@ -72,13 +72,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Handle "Next" button clicks
+  // Adds event listeners to "Next" buttons to navigate to the next question
   nextButtons.forEach((button, index) => {
     button.addEventListener('click', () => {
-      // Update the score for the current question before moving on
+      // Updates the score for the current question before proceeding
       updateScore(index);
-      // Hide current question, show next
+      // Removes "active" class from current question to hide it
       questions[index].classList.remove('active');
+      // Adds "active" class to next question to show it
       questions[index + 1].classList.add('active');
     });
   });
