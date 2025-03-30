@@ -29,17 +29,19 @@ document.addEventListener('DOMContentLoaded', () => {
     tech: 0
   };
 
-  // Object to track the last selected category per question
+  // Object to track the last selected category for each question by index
   const lastSelections = {};
 
-  // Function to update the score for a specific question
+  // Updates the score for a given question based on the current radio button selection
   function updateScore(questionIndex) {
     const question = questions[questionIndex];
     const selectedRadio = question.querySelector('input[type="radio"]:checked');
-    // No selection yet, skip it
+    // If no radio button is selected, exit the function
     if (!selectedRadio) return;
 
+    // Stores the value of the currently selected radio button (e.g., "mystical")
     const newCategory = selectedRadio.value;
+    // Stores the value of the previously selected radio button for this question (e.g., "cute")
     const oldCategory = lastSelections[questionIndex];
 
     // If there was a previous selection, subtract its point
