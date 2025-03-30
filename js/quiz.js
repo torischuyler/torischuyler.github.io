@@ -39,22 +39,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // If no radio button is selected, exit the function
     if (!selectedRadio) return;
 
-    // Stores the value of the currently selected radio button (e.g., "mystical")
+    // Stores the string value of the currently selected radio button (e.g., "mystical")
     const newCategory = selectedRadio.value;
-    // Stores the value of the previously selected radio button for this question (e.g., "cute")
+    // Stores the string value of the previously selected radio button for this question (e.g., "cute")
     const oldCategory = lastSelections[questionIndex];
 
-    // If there was a previous selection, subtract its point
+    // If there was a previous selection different from the new one, decrease its score
     if (oldCategory && oldCategory !== newCategory) {
       scores[oldCategory]--;
     }
 
-    // Add a point to the new selection (if it’s not already counted)
+    // If the new selection differs from the old one, increase its score
     if (newCategory !== oldCategory) {
       scores[newCategory]++;
     }
 
-    // Update the last selection for this question
+    // Updates the lastSelections object with the new category for this question
     lastSelections[questionIndex] = newCategory;
   }
 
