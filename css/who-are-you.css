@@ -5,6 +5,7 @@
 /*
   Page Styles
     nav a { ... }
+    body { ... }
 
   Who Are You Styles
     .who-are-you-container { ... }
@@ -30,6 +31,12 @@
 
   /* Matches body’s cursor (e.g., 🧙‍♂️) */
   cursor: inherit;
+}
+
+/* Default cursor for the page before dropdown selection from Meme Quiz */
+body {
+  /* Classic cursor, no frillies (aka no I-beam/insertion point symbol when hovering over nav links)  */
+  cursor: default;
 }
 
 /*
@@ -194,7 +201,7 @@ body.cursor-tech {
   background-color: #8B00FF;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
+  cursor: inherit;
 }
 
 .who-are-you-container .quiz-wrapper .next-btn:hover {
