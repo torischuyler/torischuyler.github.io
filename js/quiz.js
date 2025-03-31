@@ -118,4 +118,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Displays the result as an alert with the winning category capitalized
     alert(`Your Meme Language is: ${memeLanguage.charAt(0).toUpperCase() + memeLanguage.slice(1)}!`);
   });
+
+  document.querySelectorAll('.quiz-wrapper .question select').forEach(select => {
+    select.addEventListener('change', () => {
+      const option = select.options[select.selectedIndex];
+      const category = option.dataset.category;
+      console.log('Selected category:', category);
+      if (category) {
+        document.body.classList.remove('cursor-mystical', 'cursor-cute', 'cursor-chaos', 'cursor-positive', 'cursor-savage', 'cursor-history', 'cursor-tech');
+        document.body.classList.add(`cursor-${category}`);
+        console.log('Body class added:', document.body.classList);
+      }
+    });
+
+    select.addEventListener('mouseleave', () => {
+      // Do nothing with cursor—let body handle it
+      // Or, if you want a dropdown-specific cursor when no category:
+      if (!select.options[select.selectedIndex].dataset.category) {
+        select.style.cursor = 'pointer'; // Only for placeholder
+      } else {
+        select.style.cursor = ''; // Clear inline style, let body rule
+      }
+    });
+  });
 });
