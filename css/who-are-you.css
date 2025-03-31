@@ -3,6 +3,9 @@
 */
 
 /*
+  Page Styles
+    nav a { ... }
+
   Who Are You Styles
     .who-are-you-container { ... }
     .who-are-you-container h1 { ... }
@@ -17,6 +20,17 @@
     .who-are-you-container .quiz-wrapper .submit-btn { ... }
       .who-are-you-container .quiz-wrapper .submit-btn:hover { ... }
 */
+
+/* 
+  Make nav links inherit the body’s emoji cursor
+  Order of Properties: Style It (St)
+ */
+ nav a {
+  /* --- Style It --- */
+
+  /* Matches body’s cursor (e.g., 🧙‍♂️) */
+  cursor: inherit;
+}
 
 /*
   The .who-are-you holds the content for the TIL page.
@@ -47,7 +61,6 @@
   /* --- Style It --- */
   text-align: center;
 }
-
 
 /*
   Page Heading
