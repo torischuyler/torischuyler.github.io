@@ -117,6 +117,50 @@
   color: var(--tori-header-color);
 }
 
+/* Style the dropdown */
+.who-are-you-container .quiz-wrapper .question select {
+  display: block;
+  width: 90%;
+  max-width: 1000px;
+  margin: 1rem auto;
+  padding: 1rem;
+  font-size: 18px;
+  font-family: "Space Grotesk", sans-serif;
+  background-color: #fff;
+  border: 2px solid #8B00FF;
+  border-radius: 5px;
+  cursor: inherit; /* Lets body’s cursor take over */
+}
+
+/* Custom cursor classes for the whole page */
+body.cursor-mystical { 
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text x="0" y="24" font-size="24">🧙‍♂️</text></svg>') 16 16, pointer; 
+}
+
+body.cursor-cute { 
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text x="0" y="24" font-size="24">🐾</text></svg>') 16 16, pointer; 
+}
+
+body.cursor-chaos { 
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text x="0" y="24" font-size="24">💥</text></svg>') 16 16, pointer; 
+}
+
+body.cursor-positive { 
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text x="0" y="24" font-size="24">🌟</text></svg>') 16 16, pointer; 
+}
+
+body.cursor-savage { 
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text x="0" y="24" font-size="24">💀</text></svg>') 16 16, pointer; 
+}
+
+body.cursor-history { 
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text x="0" y="24" font-size="24">📜</text></svg>') 16 16, pointer; 
+}
+
+body.cursor-tech { 
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text x="0" y="24" font-size="24">🤖</text></svg>') 16 16, pointer; 
+}
+
 /* 
   Meme Quiz Next Button
   Order of Properties: Size It, Space It, Style It (Sz Sp St)
