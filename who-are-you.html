@@ -185,27 +185,16 @@ This is the "Who Are You?" page, designed to explain to visitors who they are. -
                 <div class="quiz-wrapper">
                   <div class="question active" id="q1">
                     <p><strong>1: What's your go-to reaction when something mildly annoying happens?</strong></p>
-                    <label>
-                      <input type="radio" name="q1" value="mystical"> Cast an imaginary spell to banish the annoyance to another realm.
-                    </label>
-                    <label>
-                      <input type="radio" name="q1" value="cute"> Send a picture of a puppy cuddling a kitten to make it all better.
-                    </label>
-                    <label>
-                      <input type="radio" name="q1" value="chaos"> Text your friends a dramatic reenactment of the chaos that just unfolded.
-                    </label>
-                    <label>
-                      <input type="radio" name="q1" value="positive"> Share an uplifting quote about how everything happens for a reason.
-                    </label>
-                    <label>
-                      <input type="radio" name="q1" value="savage"> Mutter a sarcastic “well, guess I'll just die then” under your breath.
-                    </label>
-                    <label>
-                      <input type="radio" name="q1" value="history"> Compare it to that time Napoleon lost his cool at Waterloo.
-                    </label>
-                    <label>
-                      <input type="radio" name="q1" value="tech"> Blame it on a glitch in the matrix.
-                    </label>
+                    <select name="q1">
+                      <option value="" disabled selected>Select your reaction...</option>
+                      <option value="mystical" data-category="mystical">Cast an imaginary spell to banish the annoyance to another realm.</option>
+                      <option value="cute" data-category="cute">Send a picture of a puppy cuddling a kitten to make it all better.</option>
+                      <option value="chaos" data-category="chaos">Text your friends a dramatic reenactment of the chaos that just unfolded.</option>
+                      <option value="positive" data-category="positive">Share an uplifting quote about how everything happens for a reason.</option>
+                      <option value="savage" data-category="savage">Mutter a sarcastic “well, guess I'll just die then” under your breath.</option>
+                      <option value="history" data-category="history">Compare it to that time Napoleon lost his cool at Waterloo.</option>
+                      <option value="tech" data-category="tech">Blame it on a glitch in the matrix.</option>
+                    </select>
                     <button class="next-btn">Next</button>
                   </div>
                   <div class="question" id="q2">
