@@ -119,25 +119,33 @@ document.addEventListener('DOMContentLoaded', () => {
     alert(`Your Meme Language is: ${memeLanguage.charAt(0).toUpperCase() + memeLanguage.slice(1)}!`);
   });
 
+  // Queries all dropdown elements and iterates over them
   document.querySelectorAll('.quiz-wrapper .question select').forEach(select => {
+    // Listens for changes in the dropdown selection
     select.addEventListener('change', () => {
+      // Stores the currently selected dropdown option (e.g. "cute" option)
       const option = select.options[select.selectedIndex];
+      // Gets the data-category value of the selected option (e.g. "cute")
       const category = option.dataset.category;
-      console.log('Selected category:', category);
+
+      // Checks if the selected option has a data-category value
       if (category) {
+        // Removes all cursor classes from the body element
         document.body.classList.remove('cursor-mystical', 'cursor-cute', 'cursor-chaos', 'cursor-positive', 'cursor-savage', 'cursor-history', 'cursor-tech');
+        // Adds the cursor class (e.g., cursor-cute) to the body, triggering the emoji cursor from CSS
         document.body.classList.add(`cursor-${category}`);
-        console.log('Body class added:', document.body.classList);
       }
     });
 
+    // Listens for when the mouse leaves the dropdown
     select.addEventListener('mouseleave', () => {
-      // Do nothing with cursor—let body handle it
-      // Or, if you want a dropdown-specific cursor when no category:
+      // Checks if the selected option has no data-category value
       if (!select.options[select.selectedIndex].dataset.category) {
-        select.style.cursor = 'pointer'; // Only for placeholder
+        // Sets the dropdown cursor to default when no category is selected
+        select.style.cursor = 'default';
       } else {
-        select.style.cursor = ''; // Clear inline style, let body rule
+        // Removes the inline default cursor from the dropdown, letting the body’s cursor class (e.g., cursor-cute) take over
+        select.style.cursor = '';
       }
     });
   });
