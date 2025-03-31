@@ -6,6 +6,7 @@
   Page Styles
     nav a { ... }
     body { ... }
+    #yin-yang-toggle { ... }
 
   Who Are You Styles
     .who-are-you-container { ... }
@@ -33,10 +34,24 @@
   cursor: inherit;
 }
 
-/* Default cursor for the page before dropdown selection from Meme Quiz */
+/* 
+  Default cursor for the page before dropdown selection from Meme Quiz
+  Order of Properties: Style It (St)
+ */
 body {
+  /* --- Style It --- */
+
   /* Classic cursor, no frillies (aka no I-beam/insertion point symbol when hovering over nav links)  */
   cursor: default;
+}
+
+/* 
+  Yin-yang toggle button inherits body’s emoji cursor
+  Order of Properties: Style It (St)
+*/
+#yin-yang-toggle {
+  /* --- Style It --- */
+  cursor: inherit;
 }
 
 /*
@@ -229,7 +244,7 @@ body.cursor-tech {
   background-color: #8B00FF;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
+  cursor: inherit;
 }
 
 .who-are-you-container .quiz-wrapper .back-btn:hover {
@@ -257,7 +272,7 @@ body.cursor-tech {
   background-color: #8B00FF;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
+  cursor: inherit;
 }
 
 .who-are-you-container .quiz-wrapper .submit-btn:hover {
