@@ -167,33 +167,37 @@ body {
   cursor: inherit; /* Lets body’s cursor take over */
 }
 
-/* Custom cursor classes for the whole page */
-body.cursor-mystical { 
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text x="0" y="24" font-size="24">🧙‍♂️</text></svg>') 16 16, pointer; 
+/* 
+  Supersized cursors for desktop.
+  We have to use HTTP (instead of secure HTTPS) W3 links
+  otherwise it breaks. We are NOT happy about this 😤
+ */
+body.cursor-mystical {
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🧙‍♂️</text></svg>') 32 32, default;
 }
 
-body.cursor-cute { 
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text x="0" y="24" font-size="24">🐾</text></svg>') 16 16, pointer; 
+body.cursor-cute {
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🐾</text></svg>') 32 32, default;
 }
 
-body.cursor-chaos { 
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text x="0" y="24" font-size="24">💥</text></svg>') 16 16, pointer; 
+body.cursor-chaos {
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">💥</text></svg>') 32 32, default;
 }
 
-body.cursor-positive { 
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text x="0" y="24" font-size="24">🌟</text></svg>') 16 16, pointer; 
+body.cursor-positive {
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🌟</text></svg>') 32 32, default;
 }
 
-body.cursor-savage { 
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text x="0" y="24" font-size="24">💀</text></svg>') 16 16, pointer; 
+body.cursor-savage {
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">💀</text></svg>') 32 32, default;
 }
 
-body.cursor-history { 
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text x="0" y="24" font-size="24">📜</text></svg>') 16 16, pointer; 
+body.cursor-history {
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">📜</text></svg>') 32 32, default;
 }
 
-body.cursor-tech { 
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text x="0" y="24" font-size="24">🤖</text></svg>') 16 16, pointer; 
+body.cursor-tech {
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🤖</text></svg>') 32 32, default;
 }
 
 /* 
