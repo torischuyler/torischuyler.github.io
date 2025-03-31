@@ -9,6 +9,7 @@
     .who-are-you-container ul { ... }
     .who-are-you-container .quiz-wrapper .question { ... }
       .who-are-you-container .quiz-wrapper .question .active { ... }
+    .who-are-you-container .quiz-wrapper .question p { ... }
     .who-are-you-container .quiz-wrapper .next-btn { ... }
       .who-are-you-container .quiz-wrapper .next-btn:hover { ... }
     .who-are-you-container .quiz-wrapper .back-btn { ... }
@@ -96,6 +97,24 @@
 .who-are-you-container .quiz-wrapper .question.active {
   /* Show only the active one */
   display: block;
+}
+
+/* 
+  Meme Quiz Questions
+  Order of Properties: Size It, Space It, Style It (Sz Sp St)
+*/
+.who-are-you-container .quiz-wrapper .question p {
+  /* --- Size It --- */
+  font-size: 20px;
+
+  /* --- Space It --- */
+
+  /* Adds some space below the question before the responses */
+  margin-bottom: 1rem;
+
+  /* --- Style It --- */
+  font-family: Righteous, system-ui, sans-serif;
+  color: var(--tori-header-color);
 }
 
 /* 
