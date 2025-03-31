@@ -6,6 +6,14 @@
   Page Styles
     nav a { ... }
     body { ... }
+      body.cursor-mystical { ... }
+      body.cursor-cute { ... }
+      body.cursor-chaos { ... }
+      body.cursor-positive { ... }
+      body.cursor-savage { ... }
+      body.cursor-history { ... }
+      body.cursor-tech { ... }
+
     #yin-yang-toggle { ... }
 
   Who Are You Styles
@@ -198,37 +206,63 @@ body {
   cursor: inherit;
 }
 
-/* 
-  Supersized cursors for desktop.
-  We have to use HTTP (instead of secure HTTPS) W3 links
-  otherwise it breaks. We are NOT happy about this 😤
- */
-body.cursor-mystical {
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🧙‍♂️</text></svg>') 32 32, default;
+/*
+  Meme Quiz Supersized Desktop Cursor Emojis
+    Custom cursors via data URI SVGs (embedded images, no external files needed!).
+    URI = Uniform Resource Identifier
+    SVG = Scalable Vector Graphics
+    SVG canvas: 64x64px, emoji at x="0" y="48", sized font-size="48".
+    charset=utf-8: Supports emojis like 🧙‍♂️ without breaking.
+    xmlns="http://www.w3.org/2000/svg": Namespace URI (not a URL!) telling the browser "this is SVG, render it right".
+    W3C: Web standards crew. 2000: SVG 1.0 spec. svg: Vector graphics rules.
+    Fallback default: Arrow cursor if the SVG fails (browser quirks, bad syntax, etc.).
+
+    🧮 Here's the hotspot math:
+    32 32 places the hotspot at the center of the 64x64 image (since 64 ÷ 2 = 32).
+    This means clicks register from the middle of the emoji, which is intuitive for users.
+    Without this, the hotspot would default to the top-left corner (0 0), which might feel off for a large cursor.
+*/
+
+ body.cursor-mystical {
+  /* Sets a custom cursor with an SVG emoji (🧙‍♂️) */
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🧙‍♂️</text></svg>')
+  32 32, default;
 }
 
 body.cursor-cute {
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🐾</text></svg>') 32 32, default;
+  /* Sets a custom cursor with an SVG emoji (🐾) */
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🐾</text></svg>')
+  32 32, default;
 }
 
 body.cursor-chaos {
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">💥</text></svg>') 32 32, default;
+  /* Sets a custom cursor with an SVG emoji (💥) */
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">💥</text></svg>') 
+  32 32, default;
 }
 
 body.cursor-positive {
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🌟</text></svg>') 32 32, default;
+  /* Sets a custom cursor with an SVG emoji (🌟) */
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🌟</text></svg>')
+  32 32, default;
 }
 
 body.cursor-savage {
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">💀</text></svg>') 32 32, default;
+  /* Sets a custom cursor with an SVG emoji (💀) */
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">💀</text></svg>')
+  32 32, default;
 }
 
 body.cursor-history {
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">📜</text></svg>') 32 32, default;
+  /* Sets a custom cursor with an SVG emoji (📜) */
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">📜</text></svg>')
+  32 32, default;
 }
 
 body.cursor-tech {
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🤖</text></svg>') 32 32, default;
+  /* Sets a custom cursor with an SVG emoji (🤖) */
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🤖</text></svg>')
+  32 32, default;
 }
 
 /* 
