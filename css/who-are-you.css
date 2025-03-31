@@ -11,10 +11,12 @@
   Who Are You Styles
     .who-are-you-container { ... }
     .who-are-you-container h1 { ... }
+    .who-are-you-container h2 { ... }
     .who-are-you-container ul { ... }
     .who-are-you-container .quiz-wrapper .question { ... }
       .who-are-you-container .quiz-wrapper .question .active { ... }
-    .who-are-you-container .quiz-wrapper .question p { ... }
+      .who-are-you-container .quiz-wrapper .question p { ... }
+      .who-are-you-container .quiz-wrapper .question select { ... }
     .who-are-you-container .quiz-wrapper .next-btn { ... }
       .who-are-you-container .quiz-wrapper .next-btn:hover { ... }
     .who-are-you-container .quiz-wrapper .back-btn { ... }
@@ -152,19 +154,48 @@ body {
   color: var(--tori-header-color);
 }
 
-/* Style the dropdown */
+/* 
+  Meme Quiz Dropdown
+  Order of Properties: Size It, Space It, Style It (Sz Sp St)
+*/
 .who-are-you-container .quiz-wrapper .question select {
   display: block;
-  width: 90%;
-  max-width: 1000px;
+
+  /* --- Size It --- */
+  font-size: 16px;
+
+  /* --- Space It --- */
   margin: 1rem auto;
   padding: 1rem;
-  font-size: 18px;
+
+  /*
+    - This sets the element’s width to 90% of its containing element’s width (in this case, the parent of the select element).
+    - It’s a relative measurement, meaning the select will scale proportionally with the size of its container, making it
+    flexible for smaller devices or layouts.
+    
+    🧮 Here's the math:
+    If the container is 1200px wide, the select will be 1080px (90% of 1200px).
+    .90 x 1200 = 1080
+  */
+  width: 90%;
+
+  /*
+    - This sets an upper limit on the element’s width, overriding the width value if it would otherwise exceed 1000px.
+    - It’s an absolute measurement, so it caps the size regardless of the container’s width, preventing the select from growing 
+    too wide on larger screens.
+
+    E.g.
+    If the container is 1200px, the width: 90% would make the select 1080px, but max-width: 1000px kicks in and limits it to 1000px.
+
+  */
+  max-width: 1000px;
+
+  /* --- Style It --- */
   font-family: "Space Grotesk", sans-serif;
-  background-color: #fff;
+  background-color: white;
   border: 2px solid #8B00FF;
   border-radius: 5px;
-  cursor: inherit; /* Lets body’s cursor take over */
+  cursor: inherit;
 }
 
 /* 
