@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const backButtons = document.querySelectorAll('.back-btn');
   // Selects the "Submit" button (<button class="submit-btn">) and stores it as a single element
   const submitButton = document.querySelector('.submit-btn');
+  // Selects the quiz wrapper container (<div class="quiz-wrapper">) to append quiz results
+  const quizWrapper = document.querySelector('.quiz-wrapper');
 
   // Object to hold the score for each meme language category, initialized to zero for tracking selections
   const scores = {
@@ -31,6 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Object to track the last selected category for each question by index
   const lastSelections = {};
+
+  // Mapping of meme categories to image filenames
+  const categoryImages = {
+    cute: 'photos/memes/cute.jpeg'
+  };
 
   // Updates the score for a given question based on the current dropdown selection
   function updateScore(questionIndex) {
@@ -120,8 +127,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (memeLanguage === '') {
       alert('Please select at least one option to get your Meme Language!');
     } else {
-    // Displays the result as an alert with the winning category capitalized
-    alert(`Your Meme Language is: ${memeLanguage.charAt(0).toUpperCase() + memeLanguage.slice(1)}!`);
+      // Remove any previous result image
+      const existingResult = document.querySelector('.quiz-result');
+      if (existingResult) existingResult.remove();
+
+      // Create and append the result image
+      const resultDiv = document.createElement('div');
+      resultDiv.classList.add('quiz-result'); // For styling or future removal
+      const resultImage = document.createElement('img');
+      resultImage.src = categoryImages[memeLanguage];
+      resultImage.alt = `Your Meme Language: ${memeLanguage.charAt(0).toUpperCase() + memeLanguage.slice(1)}`;
+      resultImage.style.maxWidth = '100%'; // Basic responsive styling
+      resultDiv.appendChild(resultImage);
+      quizWrapper.appendChild(resultDiv);
+
+      // Hide the last question
+      questions[questions.length - 1].classList.remove('active');
     }
   });
 
