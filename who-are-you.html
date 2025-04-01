@@ -260,29 +260,19 @@ This is the "Who Are You?" page, designed to explain to visitors who they are. -
 
                   <div class="question" id="q5">
                     <p><strong>5: How do you handle a random burst of energy at 2 a.m.?</strong></p>
-                    <label>
-                      <input type="radio" name="q5" value="mystical"> Channel it into a midnight ritual to summon inspiration from the cosmos.
-                    </label>
-                    <label>
-                      <input type="radio" name="q5" value="cute"> Decide it's the perfect time to watch baby goat yoga videos.
-                    </label>
-                    <label>
-                      <input type="radio" name="q5" value="chaos"> Start a live-tweet thread about your unhinged nighttime thoughts.
-                    </label>
-                    <label>
-                      <input type="radio" name="q5" value="positive"> Write a gratitude list because even insomnia is a gift, right?
-                    </label>
-                    <label>
-                      <input type="radio" name="q5" value="savage"> Cackle and declare “sleep is for the weak” while plotting world domination.
-                    </label>
-                    <label>
-                      <input type="radio" name="q5" value="history"> Pretend you're a Renaissance genius burning the midnight oil for art.
-                    </label>
-                    <label>
-                      <input type="radio" name="q5" value="tech"> Crack open your laptop to debug your life like it's a coding error.
-                    </label>
+                    <select name="q5">
+                      <option value="" disabled selected>Select your 2 a.m. energy move...</option>
+                      <option value="mystical" data-category="mystical">Channel it into a midnight ritual to summon inspiration from the cosmos.</option>
+                      <option value="cute" data-category="cute">Decide it's the perfect time to watch baby monkey videos.</option>
+                      <option value="chaos" data-category="chaos">Start live posting your unhinged nighttime thoughts.</option>
+                      <option value="positive" data-category="positive">Write a gratitude list because even insomnia is a gift, right?</option>
+                      <option value="savage" data-category="savage">Cackle and declare “sleep is for the weak” while plotting world domination.</option>
+                      <option value="history" data-category="history">Pretend you're a Renaissance genius burning the midnight oil for art.</option>
+                      <option value="tech" data-category="tech">Crack open your laptop to debug your life like it's a coding error.</option>
+                    </select>
                     <button class="back-btn">Back</button>
                     <button class="submit-btn">Submit</button>
+                    <!-- Creates the submit button to submit answers and receive score -->
                   </div>
                 </div>
                 <!-- End Quiz Wrapper ------------------------------------------------------>
