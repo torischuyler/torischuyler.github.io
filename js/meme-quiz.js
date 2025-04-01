@@ -32,16 +32,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // Object to track the last selected category for each question by index
   const lastSelections = {};
 
-  // Updates the score for a given question based on the current radio button selection
+  // Updates the score for a given question based on the current dropdown selection
   function updateScore(questionIndex) {
     const question = questions[questionIndex];
-    const selectedRadio = question.querySelector('input[type="radio"]:checked');
-    // If no radio button is selected, exit the function
-    if (!selectedRadio) return;
+    // Find the <select> element
+    const select = question.querySelector('select');
+    // Get the value of the selected option
+    const selectedOption = select.value;
+    // If no valid option is selected (e.g., the placeholder), exit
+    if (!selectedOption) return;
 
-    // Stores the string value of the currently selected radio button (e.g., "mystical")
-    const newCategory = selectedRadio.value;
-    // Stores the string value of the previously selected radio button for this question (e.g., "cute")
+    // Stores the string value of the currently selected dropdown option (e.g., "mystical")
+    const newCategory = selectedOption;
+    // Stores the string value of the previously selected dropdown option for this question (e.g., "cute")
     const oldCategory = lastSelections[questionIndex];
 
     // If there was a previous selection different from the new one, decrease its score
@@ -60,15 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Adds event listeners to radio buttons to update scores when selections change
   questions.forEach((question, index) => {
-    // Selects all radio buttons within the current question and stores them in a NodeList
-    const radios = question.querySelectorAll('input[type="radio"]');
-    // Iterates over each radio button in the NodeList to attach event listeners
-    radios.forEach(radio => {
-      // Attaches a change event listener to the radio button to detect selection changes
-      radio.addEventListener('change', () => {
-        // Updates the score for this question when a new option is selected
-        updateScore(index);
-      });
+    // Find the <select> element
+    const select = question.querySelector('select');
+    // Attaches a change event listener dropdown selection to detect changes
+    select.addEventListener('change', () => {
+      // Updates the score for this question when a new option is selected
+      updateScore(index);
     });
   });
 
@@ -115,8 +115,14 @@ document.addEventListener('DOMContentLoaded', () => {
         memeLanguage = category;
       }
     }
+
+    // Handle case where no selections were made
+    if (memeLanguage === '') {
+      alert('Please select at least one option to get your Meme Language!');
+    } else {
     // Displays the result as an alert with the winning category capitalized
     alert(`Your Meme Language is: ${memeLanguage.charAt(0).toUpperCase() + memeLanguage.slice(1)}!`);
+    }
   });
 
   // Queries all dropdown elements and iterates over them
