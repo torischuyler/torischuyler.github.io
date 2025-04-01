@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mapping of meme categories to image filenames
   const categoryImages = {
-    cute: 'photos/memes/cute.jpeg'
+    cute: 'images/memes/cute.jpeg'
   };
 
   // Updates the score for a given question based on the current dropdown selection
