@@ -207,34 +207,25 @@ This is the "Who Are You?" page, designed to explain to visitors who they are. -
                     </select>
                     <button class="next-btn">Next</button>
                     <!-- Creates the button to navigate to the next question -->
-
                   </div>
+
                   <div class="question" id="q2">
                     <p><strong>2: How do you celebrate a small win, like finding $20 in your Venmo?</strong></p>
-                    <label>
-                      <input type="radio" name="q2" value="mystical"> Pretend you've just unlocked a secret level of existence and strike a mystical pose.
-                    </label>
-                    <label>
-                      <input type="radio" name="q2" value="cute"> Post a gif of a baby panda doing a somersault because it's too adorable not to share.
-                    </label>
-                    <label>
-                      <input type="radio" name="q2" value="chaos"> Announce it to the group chat like it's the plot twist of the century.
-                    </label>
-                    <label>
-                      <input type="radio" name="q2" value="positive"> Drop a “the universe always provides” meme with a sunset background.
-                    </label>
-                    <label>
-                      <input type="radio" name="q2" value="savage"> Smirk and say “finally, the world pays its debts” like a brooding antihero.
-                    </label>
-                    <label>
-                      <input type="radio" name="q2" value="history"> Toast to it like it's 1776 and you just signed the Declaration of Independence.
-                    </label>
-                    <label>
-                      <input type="radio" name="q2" value="tech"> Declare your bank app must've lagged and accidentally blessed you.
-                    </label>
+                    <select name="q2">
+                      <option value="" disabled selected>Select your celebration...</option>
+                      <option value="mystical" data-category="mystical">Pretend you've just unlocked a secret level of existence and strike a mystical pose.</option>
+                      <option value="cute" data-category="cute">Post a gif of a baby panda doing a somersault because it's too adorable not to share.</option>
+                      <option value="chaos" data-category="chaos">Announce it to the group chat like it's the plot twist of the century.</option>
+                      <option value="positive" data-category="positive">Drop a “the universe always provides” meme with a sunset background.</option>
+                      <option value="savage" data-category="savage">Smirk and say “finally, the world pays its debts” like a brooding antihero.</option>
+                      <option value="history" data-category="history">Toast to it like it's 1776 and you just signed the Declaration of Independence.</option>
+                      <option value="tech" data-category="tech">Declare your bank app must've lagged and accidentally blessed you.</option>
+                    </select>
                     <button class="next-btn">Next</button>
                     <button class="back-btn">Back</button>
+                    <!-- Creates the back button to navigate back a question -->
                   </div>
+
                   <div class="question" id="q3">
                     <p><strong>3: What's your style when you're procrastinating on something you <i>should</i> be doing?</strong></p>
                     <label>
