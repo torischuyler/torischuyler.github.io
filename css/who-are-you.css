@@ -349,3 +349,19 @@ body.cursor-tech {
   /* --- Style It --- */
   background-color: var(--secondary-color);
 }
+
+#mobile-cursor {
+  position: absolute;
+  font-size: 32px; /* Big enough to be fun, not too huge */
+  pointer-events: none; /* Lets taps pass through to the dropdown */
+  display: none; /* Hidden by default */
+  z-index: 10; /* Ensures it floats above other elements */
+  transition: all 0.1s ease; /* Smooth movement */
+}
+
+/* Show on mobile (adjust breakpoint as needed) */
+@media (width <= 768px) {
+  #mobile-cursor {
+    display: block;
+  }
+}

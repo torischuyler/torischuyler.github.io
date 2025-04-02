@@ -159,34 +159,76 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Queries all dropdown elements and iterates over them
+  // Handle dropdown interactions
   document.querySelectorAll('.quiz-wrapper .question select').forEach(select => {
-    // Listens for changes in the dropdown selection
+    const mobileCursor = document.getElementById('mobile-cursor');
+
+    // When a dropdown option is selected
     select.addEventListener('change', () => {
-      // Stores the currently selected dropdown option (e.g. "cute" option)
       const option = select.options[select.selectedIndex];
-      // Gets the data-category value of the selected option (e.g. "cute")
       const category = option.dataset.category;
 
-      // Checks if the selected option has a data-category value
       if (category) {
-        // Removes all cursor classes from the body element
+        // Desktop: Update cursor
         document.body.classList.remove('cursor-mystical', 'cursor-cute', 'cursor-chaos', 'cursor-positive', 'cursor-savage', 'cursor-history', 'cursor-tech');
-        // Adds the cursor class (e.g., cursor-cute) to the body, triggering the emoji cursor from CSS
         document.body.classList.add(`cursor-${category}`);
+
+        // Mobile: Show emoji buddy
+        mobileCursor.textContent = emojiMap[category];
+      } else {
+        // If no category (e.g., placeholder), clear the buddy
+        mobileCursor.textContent = '';
       }
     });
 
-    // Listens for when the mouse leaves the dropdown
+    // Reset cursor/buddy state when leaving dropdown (desktop only)
     select.addEventListener('mouseleave', () => {
-      // Checks if the selected option has no data-category value
       if (!select.options[select.selectedIndex].dataset.category) {
-        // Sets the dropdown cursor to default when no category is selected
         select.style.cursor = 'default';
+        mobileCursor.textContent = ''; // Clear buddy if placeholder is selected
       } else {
-        // Removes the inline default cursor from the dropdown, letting the body’s cursor class (e.g., cursor-cute) take over
-        select.style.cursor = '';
+        select.style.cursor = ''; // Let body cursor take over
       }
     });
+
+    // Mobile: Show buddy briefly on tap
+    select.addEventListener('touchstart', (e) => {
+      const category = select.options[select.selectedIndex]?.dataset.category;
+      if (category) {
+        mobileCursor.textContent = emojiMap[category];
+        const touch = e.touches[0];
+        mobileCursor.style.left = `${touch.pageX - 16}px`; // Center emoji (32px / 2)
+        mobileCursor.style.top = `${touch.pageY - 16}px`;
+      }
+    });
+  });
+
+  // Emoji mapping for both desktop cursor and mobile buddy
+  const emojiMap = {
+    mystical: '🧙‍♂️',
+    cute: '🐾',
+    chaos: '💥',
+    positive: '🌟',
+    savage: '💀',
+    history: '📜',
+    tech: '🤖'
+  };
+
+  // Mobile: Move emoji buddy with touch
+  document.addEventListener('touchmove', (e) => {
+    const mobileCursor = document.getElementById('mobile-cursor');
+    if (mobileCursor.textContent) { // Only move if an emoji is active
+      const touch = e.touches[0];
+      mobileCursor.style.left = `${touch.pageX - 16}px`;
+      mobileCursor.style.top = `${touch.pageY - 16}px`;
+    }
+  });
+
+  // Mobile: Hide emoji after touch ends (optional, for a cleaner feel)
+  document.addEventListener('touchend', () => {
+    const mobileCursor = document.getElementById('mobile-cursor');
+    setTimeout(() => {
+      mobileCursor.textContent = ''; // Clear after a short delay
+    }, 1000); // 1 second delay—adjust as desired
   });
 });
