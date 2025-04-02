@@ -352,11 +352,17 @@ body.cursor-tech {
 
 #mobile-cursor {
   position: absolute;
-  font-size: 32px; /* Big enough to be fun, not too huge */
-  pointer-events: none; /* Lets taps pass through to the dropdown */
-  display: none; /* Hidden by default */
-  z-index: 10; /* Ensures it floats above other elements */
-  transition: all 0.1s ease; /* Smooth movement */
+  font-size: 32px;
+  pointer-events: none;
+  display: none;
+  z-index: 10;
+  transition: all 0.1s ease;
+  max-width: 100%; /* Keeps it from stretching the page */
+  overflow: hidden; /* Clips anything that might spill out */
+
+  /* Optional: Tie it to the container */
+  left: 0; /* Reset default positioning */
+  top: 0; /* Reset default positioning */
 }
 
 /* Show on mobile (adjust breakpoint as needed) */

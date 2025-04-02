@@ -197,8 +197,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (category) {
         mobileCursor.textContent = emojiMap[category];
         const touch = e.touches[0];
-        mobileCursor.style.left = `${touch.pageX - 16}px`; // Center emoji (32px / 2)
-        mobileCursor.style.top = `${touch.pageY - 16}px`;
+        const x = Math.max(0, Math.min(touch.pageX - 16, window.innerWidth - 32)); // 32 is emoji width
+        const y = Math.max(0, Math.min(touch.pageY - 16, window.innerHeight - 32)); // 32 is emoji height
+        mobileCursor.style.left = `${x}px`;
+        mobileCursor.style.top = `${y}px`;
       }
     });
   });
@@ -217,10 +219,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Mobile: Move emoji buddy with touch
   document.addEventListener('touchmove', (e) => {
     const mobileCursor = document.getElementById('mobile-cursor');
-    if (mobileCursor.textContent) { // Only move if an emoji is active
+    if (mobileCursor.textContent) {
       const touch = e.touches[0];
-      mobileCursor.style.left = `${touch.pageX - 16}px`;
-      mobileCursor.style.top = `${touch.pageY - 16}px`;
+      const x = Math.max(0, Math.min(touch.pageX - 16, window.innerWidth - 32));
+      const y = Math.max(0, Math.min(touch.pageY - 16, window.innerHeight - 32));
+      mobileCursor.style.left = `${x}px`;
+      mobileCursor.style.top = `${y}px`;
     }
   });
 
