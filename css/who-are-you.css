@@ -14,6 +14,7 @@
       body.cursor-savage { ... }
       body.cursor-history { ... }
       body.cursor-tech { ... }
+      body.cursor-fam { ... }
 
     #yin-yang-toggle { ... }
 
@@ -263,6 +264,12 @@ body.cursor-history {
 body.cursor-tech {
   /* Sets a custom cursor with an SVG emoji (🤖) */
   cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🤖</text></svg>')
+  32 32, default;
+}
+
+body.cursor-fam {
+  /* Sets a custom cursor with an SVG emoji (🐦‍🔥) */
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🐦‍🔥</text></svg>')
   32 32, default;
 }
 

@@ -28,7 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
     positive: 0,
     savage: 0,
     history: 0,
-    tech: 0
+    tech: 0,
+    fam: 0
   };
 
   // Object to track the last selected category for each question by index
@@ -42,7 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
     positive: 'images/memes/giggleblossom.jpg',
     savage: 'images/memes/bone-appetit.jpg',
     history: 'images/memes/alexander-hamilton.jpg',
-    tech: 'images/memes/steve-jobs.jpg'
+    tech: 'images/memes/steve-jobs.jpg',
+    fam: 'images/memes/schuyler-fam.jpg'
   };
 
   // Updates the score for a given question based on the current dropdown selection
@@ -170,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (category) {
         // Desktop: Update cursor
-        document.body.classList.remove('cursor-mystical', 'cursor-cute', 'cursor-chaos', 'cursor-positive', 'cursor-savage', 'cursor-history', 'cursor-tech');
+        document.body.classList.remove('cursor-mystical', 'cursor-cute', 'cursor-chaos', 'cursor-positive', 'cursor-savage', 'cursor-history', 'cursor-tech', 'cursor-fam');
         document.body.classList.add(`cursor-${category}`);
 
         // Mobile: Trigger pop-up
@@ -208,6 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
     positive: '🌟',
     savage: '💀',
     history: '📜',
-    tech: '🤖'
+    tech: '🤖',
+    fam: '🐦‍🔥'
   };
 });
