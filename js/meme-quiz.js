@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const categoryImages = {
     cute: 'images/memes/lil-twirlip.jpg',
     positive: 'images/memes/giggleblossom.jpg',
+    savage: 'images/memes/bone-appetit.jpg',
     history: 'images/memes/alexander-hamilton.jpg',
     tech: 'images/memes/steve-jobs.jpg'
   };
