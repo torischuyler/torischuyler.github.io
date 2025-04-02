@@ -137,17 +137,24 @@ document.addEventListener('DOMContentLoaded', () => {
       const existingResult = document.querySelector('.quiz-result');
       if (existingResult) existingResult.remove();
 
-      // Create and append the result image
+      // Creates a new <div> element to serve as a container for the result image
       const resultDiv = document.createElement('div');
-      resultDiv.classList.add('quiz-result'); // For styling or future removal
+      // Attaches the 'quiz-result' class to the div’s class list for styling and easy removal
+      resultDiv.classList.add('quiz-result');
+      // Creates a new <img> element to store the image result
       const resultImage = document.createElement('img');
+      // Sets the image source to the meme language’s matching file
       resultImage.src = categoryImages[memeLanguage];
+      // Adds alternative (alt) text like "Your Meme Language: Chaos" for accessibility
       resultImage.alt = `Your Meme Language: ${memeLanguage.charAt(0).toUpperCase() + memeLanguage.slice(1)}`;
-      resultImage.style.maxWidth = '100%'; // Basic responsive styling
+      // Sets the image’s max width to 100% of its container
+      resultImage.style.maxWidth = '100%';
+      // Adds the result image to the result div container
       resultDiv.appendChild(resultImage);
+      // Adds the result div to the quiz wrapper to display it on the page
       quizWrapper.appendChild(resultDiv);
 
-      // Hide the last question
+      // Hides the last question to show only the result after submission
       questions[questions.length - 1].classList.remove('active');
     }
   });
