@@ -351,23 +351,38 @@ body.cursor-tech {
 }
 
 #mobile-cursor {
-  position: absolute;
-  font-size: 32px;
+  position: fixed;
+  font-size: 100px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   pointer-events: none;
   display: none;
-  z-index: 10;
-  transition: all 0.1s ease;
-  max-width: 100%; /* Keeps it from stretching the page */
-  overflow: hidden; /* Clips anything that might spill out */
-
-  /* Optional: Tie it to the container */
-  left: 0; /* Reset default positioning */
-  top: 0; /* Reset default positioning */
+  z-index: 20;
 }
 
-/* Show on mobile (adjust breakpoint as needed) */
+/* Animation for the pop-up */
+@keyframes pop-in {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Show and animate on mobile */
 @media (width <= 768px) {
-  #mobile-cursor {
+  #mobile-cursor.active {
     display: block;
+    animation: pop-in 0.5s ease-out forwards;
   }
 }

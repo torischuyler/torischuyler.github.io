@@ -173,11 +173,18 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.remove('cursor-mystical', 'cursor-cute', 'cursor-chaos', 'cursor-positive', 'cursor-savage', 'cursor-history', 'cursor-tech');
         document.body.classList.add(`cursor-${category}`);
 
-        // Mobile: Show emoji buddy
-        mobileCursor.textContent = emojiMap[category];
+        // Mobile: Trigger pop-up
+        if (window.innerWidth <= 768) { // Only on mobile
+          mobileCursor.textContent = emojiMap[category];
+          mobileCursor.classList.add('active');
+          setTimeout(() => {
+            mobileCursor.classList.remove('active');
+            mobileCursor.textContent = '';
+          }, 1000); // Hides after 1 second
+        }
       } else {
-        // If no category (e.g., placeholder), clear the buddy
         mobileCursor.textContent = '';
+        mobileCursor.classList.remove('active');
       }
     });
 
@@ -185,22 +192,10 @@ document.addEventListener('DOMContentLoaded', () => {
     select.addEventListener('mouseleave', () => {
       if (!select.options[select.selectedIndex].dataset.category) {
         select.style.cursor = 'default';
-        mobileCursor.textContent = ''; // Clear buddy if placeholder is selected
+        mobileCursor.textContent = '';
+        mobileCursor.classList.remove('active');
       } else {
-        select.style.cursor = ''; // Let body cursor take over
-      }
-    });
-
-    // Mobile: Show buddy briefly on tap
-    select.addEventListener('touchstart', (e) => {
-      const category = select.options[select.selectedIndex]?.dataset.category;
-      if (category) {
-        mobileCursor.textContent = emojiMap[category];
-        const touch = e.touches[0];
-        const x = Math.max(0, Math.min(touch.pageX - 16, window.innerWidth - 32)); // 32 is emoji width
-        const y = Math.max(0, Math.min(touch.pageY - 16, window.innerHeight - 32)); // 32 is emoji height
-        mobileCursor.style.left = `${x}px`;
-        mobileCursor.style.top = `${y}px`;
+        select.style.cursor = '';
       }
     });
   });
@@ -215,24 +210,4 @@ document.addEventListener('DOMContentLoaded', () => {
     history: '📜',
     tech: '🤖'
   };
-
-  // Mobile: Move emoji buddy with touch
-  document.addEventListener('touchmove', (e) => {
-    const mobileCursor = document.getElementById('mobile-cursor');
-    if (mobileCursor.textContent) {
-      const touch = e.touches[0];
-      const x = Math.max(0, Math.min(touch.pageX - 16, window.innerWidth - 32));
-      const y = Math.max(0, Math.min(touch.pageY - 16, window.innerHeight - 32));
-      mobileCursor.style.left = `${x}px`;
-      mobileCursor.style.top = `${y}px`;
-    }
-  });
-
-  // Mobile: Hide emoji after touch ends (optional, for a cleaner feel)
-  document.addEventListener('touchend', () => {
-    const mobileCursor = document.getElementById('mobile-cursor');
-    setTimeout(() => {
-      mobileCursor.textContent = ''; // Clear after a short delay
-    }, 1000); // 1 second delay—adjust as desired
-  });
 });
