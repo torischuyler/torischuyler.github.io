@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mapping of meme categories to image filenames
   const categoryImages = {
+    mystical: 'images/memes/trigon.jpg',
     cute: 'images/memes/lil-twirlip.jpg',
     positive: 'images/memes/giggleblossom.jpg',
     savage: 'images/memes/bone-appetit.jpg',
