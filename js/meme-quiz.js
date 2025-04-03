@@ -163,13 +163,14 @@ document.addEventListener('DOMContentLoaded', () => {
       // Adds the button to the result div, placing it underneath the image
       resultDiv.appendChild(shareButton);
 
-      // Adds a click event listener to the share button to copy the user's meme result with quiz link
+      // Adds a click event listener to the share button to copy the user's meme result with image and quiz link
       shareButton.addEventListener('click', function() {
         const result = memeLanguage.charAt(0).toUpperCase() + memeLanguage.slice(1);
+        const imageUrl = `https://torischuyler.github.io/eos-lesson-plans/${categoryImages[memeLanguage]}`;
         const quizLink = 'https://torischuyler.github.io/eos-lesson-plans/who-are-you.html#meme-quiz';
-        const shareMessage = `I got ${result}! Take the quiz to find out your meme language: ${quizLink}`;
+        const shareMessage = `My meme language is ${result}! Check out my meme: ${imageUrl} Discover yours here: ${quizLink}`;
         navigator.clipboard.writeText(shareMessage).then(() => {
-          alert('Meme result and quiz link copied to clipboard! Share it with your friends!');
+          alert('Meme result, image, and quiz link copied to clipboard! Share it with your friends!');
         }).catch(err => {
           alert('Failed to copy result. Please try again.');
         });
