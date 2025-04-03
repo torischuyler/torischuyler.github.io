@@ -52,14 +52,14 @@
 }
 
 /* 
-  Default cursor for the page before dropdown selection from Meme Quiz
+  Page Cursor
   Order of Properties: Style It (St)
  */
 body {
   /* --- Style It --- */
 
-  /* Classic cursor, no frillies (aka no I-beam/insertion point symbol when hovering over nav links)  */
-  cursor: default;
+  /* Pointer cursor, no frillies (aka no I-beam/insertion point symbol when hovering over nav links)  */
+  cursor: pointer;
 }
 
 /* 
