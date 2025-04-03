@@ -153,6 +153,26 @@ document.addEventListener('DOMContentLoaded', () => {
       resultImage.style.maxWidth = '100%';
       // Adds the result image to the result div container
       resultDiv.appendChild(resultImage);
+
+      // Creates button for sharing the quiz result
+      const shareButton = document.createElement('button');
+      // Adds the 'share-quiz-btn' class to apply existing CSS styling to the button
+      shareButton.classList.add('share-quiz-btn');
+      // Sets the button text to "Share Quiz" for user interaction
+      shareButton.textContent = 'Share Quiz';
+      // Adds the button to the result div, placing it underneath the image
+      resultDiv.appendChild(shareButton);
+
+      // Adds a click event listener to the share button to copy the quiz link to the clipboard
+      shareButton.addEventListener('click', function() {
+        const quizLink = 'https://torischuyler.github.io/eos-lesson-plans/who-are-you.html#meme-quiz';
+        navigator.clipboard.writeText(quizLink).then(() => {
+          alert('Quiz link copied to clipboard!');
+        }).catch(err => {
+          alert('Failed to copy link. Please try again.');
+        });
+      });
+
       // Adds the result div to the quiz wrapper to display it on the page
       quizWrapper.appendChild(resultDiv);
 
