@@ -35,7 +35,9 @@
       .who-are-you-container .quiz-wrapper .submit-btn:hover { ... }
   
   Mobile Styles
-    #mobile-emoji-pop 
+    #mobile-emoji-pop
+      @keyframes pop-up { ... }
+      #mobile-emoji-pop.active { ... }
 */
 
 /* 
@@ -399,28 +401,31 @@ body.cursor-fam {
   z-index: 20;
 }
 
-/* Animation for the pop-up */
-@keyframes pop-in {
+/* Makes the emoji pop-up bounce in with size and fade */
+@keyframes pop-up {
+  /* Starts the emoji tiny and invisible */
   0% {
     transform: translate(-50%, -50%) scale(0);
     opacity: 0;
   }
 
+  /* The emoji gets bigger and fully visible - peak size */
   50% {
     transform: translate(-50%, -50%) scale(1.2);
     opacity: 1;
   }
 
+  /* Settles the emoji at normal size, still fully visible */
   100% {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
   }
 }
 
-/* Show and animate on mobile */
+/* Triggers the emoji pop-up animation on mobile screens */
 @media (width <= 768px) {
   #mobile-emoji-pop.active {
     display: block;
-    animation: pop-in 0.5s ease-out forwards;
+    animation: pop-up 1s ease-out forwards;
   }
 }
