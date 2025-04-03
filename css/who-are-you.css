@@ -405,14 +405,8 @@ body.cursor-fam {
 @keyframes pop-up {
   /* Starts the emoji tiny and invisible */
   0% {
-    transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0.8); /* Start smaller but not zero */
     opacity: 0;
-  }
-
-  /* The emoji gets bigger and fully visible - peak size */
-  50% {
-    transform: translate(-50%, -50%) scale(1.2);
-    opacity: 1;
   }
 
   /* Settles the emoji at normal size, still fully visible */
