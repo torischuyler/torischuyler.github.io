@@ -35,7 +35,7 @@
       .who-are-you-container .quiz-wrapper .submit-btn:hover { ... }
   
   Mobile Styles
-    #mobile-cursor 
+    #mobile-emoji-pop 
 */
 
 /* 
@@ -365,7 +365,7 @@ body.cursor-fam {
   Order of Properties: Size It, Space It, Style It (Sz Sp St)
 */
 
-#mobile-cursor {
+#mobile-emoji-pop {
   /* Hides the mobile cursor by default until activated */
   display: none;
 
@@ -415,7 +415,7 @@ body.cursor-fam {
 
 /* Show and animate on mobile */
 @media (width <= 768px) {
-  #mobile-cursor.active {
+  #mobile-emoji-pop.active {
     display: block;
     animation: pop-in 0.5s ease-out forwards;
   }

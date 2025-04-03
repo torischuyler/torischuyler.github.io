@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Handle dropdown interactions
   document.querySelectorAll('.quiz-wrapper .question select').forEach(select => {
-    const mobileCursor = document.getElementById('mobile-cursor');
+    const mobileEmojiPop = document.getElementById('mobile-emoji-pop');
 
     // When a dropdown option is selected
     select.addEventListener('change', () => {
@@ -177,16 +177,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Mobile: Trigger pop-up
         if (window.innerWidth <= 768) { // Only on mobile
-          mobileCursor.textContent = emojiMap[category];
-          mobileCursor.classList.add('active');
+          mobileEmojiPop.textContent = emojiMap[category];
+          mobileEmojiPop.classList.add('active');
           setTimeout(() => {
-            mobileCursor.classList.remove('active');
-            mobileCursor.textContent = '';
+            mobileEmojiPop.classList.remove('active');
+            mobileEmojiPop.textContent = '';
           }, 1000); // Hides after 1 second
         }
       } else {
-        mobileCursor.textContent = '';
-        mobileCursor.classList.remove('active');
+        mobileEmojiPop.textContent = '';
+        mobileEmojiPop.classList.remove('active');
       }
     });
 
@@ -194,8 +194,8 @@ document.addEventListener('DOMContentLoaded', () => {
     select.addEventListener('mouseleave', () => {
       if (!select.options[select.selectedIndex].dataset.category) {
         select.style.cursor = 'default';
-        mobileCursor.textContent = '';
-        mobileCursor.classList.remove('active');
+        mobileEmojiPop.textContent = '';
+        mobileEmojiPop.classList.remove('active');
       } else {
         select.style.cursor = '';
       }
