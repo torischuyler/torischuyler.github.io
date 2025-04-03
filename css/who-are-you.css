@@ -178,7 +178,9 @@ body {
 
   /* --- Size It --- */
   font-size: 15px;
-  overflow-x: hidden; /* Prevents horizontal overflow from long options */
+
+  /* Prevents horizontal overflow shift from long response options */
+  overflow-x: hidden;
 
   /* --- Space It --- */
   margin: 1rem auto;
@@ -212,8 +214,9 @@ body {
   border: 2px solid #8B00FF;
   border-radius: 5px;
   cursor: inherit;
-  white-space: nowrap; /* Forces long option text to stay on one line */
-  text-overflow: ellipsis; /* Adds "…" if text is truncated */
+
+  /* Adds "…" if response is too long and gets cut off (truncated) */
+  text-overflow: ellipsis;
 }
 
 /*
