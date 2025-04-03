@@ -33,6 +33,9 @@
       .who-are-you-container .quiz-wrapper .back-btn:hover { ... }
     .who-are-you-container .quiz-wrapper .submit-btn { ... }
       .who-are-you-container .quiz-wrapper .submit-btn:hover { ... }
+  
+  Mobile Styles
+    #mobile-cursor 
 */
 
 /* 
@@ -357,14 +360,38 @@ body.cursor-fam {
   background-color: var(--secondary-color);
 }
 
+/* 
+  Mobile Styles
+  Order of Properties: Size It, Space It, Style It (Sz Sp St)
+*/
+
 #mobile-cursor {
-  position: fixed;
-  font-size: 207px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
+  /* Hides the mobile cursor by default until activated */
   display: none;
+
+  /* --- Size It --- */
+  font-size: 207px;
+
+  /* --- Space It (Sp) --- */
+
+  /* Locks it in place relative to the viewport, spacing-related */
+  position: fixed;
+
+  /* Positions it horizontally at 50% from the left */
+  left: 50%;
+
+  /* Positions it vertically at 50% from the top */
+  top: 50%;
+
+  /* Shifts it to center, adjusts spacing */
+  transform: translate(-50%, -50%);
+
+  /* --- Style It (St) --- */
+
+  /* Prevents interaction */
+  pointer-events: none;
+
+  /* Controls stacking order */
   z-index: 20;
 }
 
