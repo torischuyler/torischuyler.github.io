@@ -158,18 +158,20 @@ document.addEventListener('DOMContentLoaded', () => {
       const shareButton = document.createElement('button');
       // Adds the 'share-quiz-btn' class to apply existing CSS styling to the button
       shareButton.classList.add('share-quiz-btn');
-      // Sets the button text to "Share Quiz" for user interaction
-      shareButton.textContent = 'Share Quiz';
+      // Sets the button text to "Share Your Meme Language!" for visitor interaction
+      shareButton.textContent = 'Share Your Meme Language!';
       // Adds the button to the result div, placing it underneath the image
       resultDiv.appendChild(shareButton);
 
-      // Adds a click event listener to the share button to copy the quiz link to the clipboard
+      // Adds a click event listener to the share button to copy the user's meme result with quiz link
       shareButton.addEventListener('click', function() {
+        const result = memeLanguage.charAt(0).toUpperCase() + memeLanguage.slice(1);
         const quizLink = 'https://torischuyler.github.io/eos-lesson-plans/who-are-you.html#meme-quiz';
-        navigator.clipboard.writeText(quizLink).then(() => {
-          alert('Quiz link copied to clipboard!');
+        const shareMessage = `I got ${result}! Take the quiz to find out your meme language: ${quizLink}`;
+        navigator.clipboard.writeText(shareMessage).then(() => {
+          alert('Meme result and quiz link copied to clipboard! Share it with your friends!');
         }).catch(err => {
-          alert('Failed to copy link. Please try again.');
+          alert('Failed to copy result. Please try again.');
         });
       });
 
