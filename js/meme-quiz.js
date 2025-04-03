@@ -198,19 +198,20 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Reset cursor/buddy state when leaving dropdown (desktop only)
+    // Desktop only - adds event listener for when the mouse leaves the dropdown
     select.addEventListener('mouseleave', () => {
+      // Runs if no category is selected
       if (!select.options[select.selectedIndex].dataset.category) {
+        // Sets the dropdown cursor to default
         select.style.cursor = 'default';
-        mobileEmojiPop.textContent = '';
-        mobileEmojiPop.classList.remove('active');
+      // Clears the dropdown cursor to use the body’s style
       } else {
         select.style.cursor = '';
       }
     });
   });
 
-  // Emoji mapping for both desktop cursor and mobile buddy
+  // Maps categories to emojis for mobile pop-up and desktop cursor classes
   const emojiMap = {
     mystical: '🧙‍♂️',
     cute: '🐾',
