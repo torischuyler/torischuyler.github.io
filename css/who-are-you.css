@@ -360,13 +360,14 @@ body.cursor-fam {
   background-color: var(--secondary-color);
 }
 
+/* Mobile Styles */
+
 /* 
-  Mobile Styles
+  Styles the emoji pop-up triggered by dropdown selections on mobile
   Order of Properties: Size It, Space It, Style It (Sz Sp St)
 */
-
 #mobile-emoji-pop {
-  /* Hides the mobile cursor by default until activated */
+  /* Hides the emoji pop-up by default until activated */
   display: none;
 
   /* --- Size It --- */
@@ -374,24 +375,27 @@ body.cursor-fam {
 
   /* --- Space It (Sp) --- */
 
-  /* Locks it in place relative to the viewport, spacing-related */
+  /* Centers the emoji pop-up on the screen for a quick flash */
   position: fixed;
 
-  /* Positions it horizontally at 50% from the left */
+  /* Positions the emoji halfway across the screen from the left */
   left: 50%;
 
-  /* Positions it vertically at 50% from the top */
+  /* Positions the emoji halfway across the screen from the top */
   top: 50%;
 
-  /* Shifts it to center, adjusts spacing */
+  /*
+    Moves emoji to the center of the screen.
+    It's a trick that says, “Shift me left by half my own width and up by half my own height.”
+  */
   transform: translate(-50%, -50%);
 
   /* --- Style It (St) --- */
 
-  /* Prevents interaction */
+  /* Prevents pop-up emoji from being tapped/interacted with */
   pointer-events: none;
 
-  /* Controls stacking order */
+  /* Puts the emoji pop-up on top of other page content (e.g. move to front) */
   z-index: 20;
 }
 
