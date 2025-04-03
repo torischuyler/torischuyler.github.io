@@ -43,7 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
     positive: 'images/memes/giggleblossom.jpg',
     savage: 'images/memes/bone-appetit.jpg',
     history: 'images/memes/alexander-hamilton.jpg',
-    tech: 'images/memes/steve-jobs.jpg'
+    tech: 'images/memes/steve-jobs.jpg',
+    renegade: 'images/memes/retina-goggles.jpg'
   };
 
   // Updates the score for a given question based on the current dropdown selection
