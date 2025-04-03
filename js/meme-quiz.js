@@ -186,9 +186,13 @@ document.addEventListener('DOMContentLoaded', () => {
           //Turns on the pop-up by adding the active class
           mobileEmojiPop.classList.add('active');
           // Hides the pop-up after 1 second by removing active and clearing text
+          document.body.style.position = 'fixed'; // Lock body
+          document.body.style.overflow = 'hidden'; // Kill scrolling
           setTimeout(() => {
             mobileEmojiPop.classList.remove('active');
             mobileEmojiPop.textContent = '';
+            document.body.style.position = ''; // Unlock body
+            document.body.style.overflow = ''; // Unlock scrolling
           }, 1000);
         }
       // Resets the pop-up if no category is picked
