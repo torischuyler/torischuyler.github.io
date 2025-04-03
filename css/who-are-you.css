@@ -60,8 +60,6 @@ body {
 
   /* Classic cursor, no frillies (aka no I-beam/insertion point symbol when hovering over nav links)  */
   cursor: default;
-  overflow-x: hidden;
-  width: 100%;
 }
 
 /* 
