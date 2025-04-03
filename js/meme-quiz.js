@@ -161,29 +161,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Handle dropdown interactions
+  // Handle quiz dropdown selections
   document.querySelectorAll('.quiz-wrapper .question select').forEach(select => {
+    // Stores the emoji pop-up element for later use
     const mobileEmojiPop = document.getElementById('mobile-emoji-pop');
 
-    // When a dropdown option is selected
+    // Adds event listener for when a dropdown option is chosen
     select.addEventListener('change', () => {
+      // Grabs the chosen dropdown option
       const option = select.options[select.selectedIndex];
+      // Gets the category from the chosen option
       const category = option.dataset.category;
 
+      // Runs if a category is picked
       if (category) {
-        // Desktop: Update cursor
+        // Desktop - Swaps the body’s cursor class to match the category
         document.body.classList.remove('cursor-mystical', 'cursor-cute', 'cursor-chaos', 'cursor-positive', 'cursor-savage', 'cursor-history', 'cursor-tech', 'cursor-fam');
         document.body.classList.add(`cursor-${category}`);
 
         // Mobile: Trigger pop-up
-        if (window.innerWidth <= 768) { // Only on mobile
+        if (window.innerWidth <= 768) {
+          // Sets the pop-up to show the category’s emoji
           mobileEmojiPop.textContent = emojiMap[category];
+          //Turns on the pop-up by adding the active class
           mobileEmojiPop.classList.add('active');
+          // Hides the pop-up after 1 second by removing active and clearing text
           setTimeout(() => {
             mobileEmojiPop.classList.remove('active');
             mobileEmojiPop.textContent = '';
-          }, 1000); // Hides after 1 second
+          }, 1000);
         }
+      // Resets the pop-up if no category is picked
       } else {
         mobileEmojiPop.textContent = '';
         mobileEmojiPop.classList.remove('active');
