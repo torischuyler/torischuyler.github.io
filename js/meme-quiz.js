@@ -37,14 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mapping of meme categories to image filenames
   const categoryImages = {
-    mystical: 'images/memes/trigon.jpg',
-    cute: 'images/memes/lil-twirlip.jpg',
-    chaos: 'images/memes/subway-rats.jpg',
-    positive: 'images/memes/giggleblossom.jpg',
-    savage: 'images/memes/bone-appetit.jpg',
-    history: 'images/memes/alexander-hamilton.jpg',
-    tech: 'images/memes/steve-jobs.jpg',
-    renegade: 'images/memes/retina-goggles.jpg'
+    mystical: 'images/meme-results/trigon.jpg',
+    cute: 'images/meme-results/lil-twirlip.jpg',
+    chaos: 'images/meme-results/subway-rats.jpg',
+    positive: 'images/meme-results/giggleblossom.jpg',
+    savage: 'images/meme-results/bone-appetit.jpg',
+    history: 'images/meme-results/alexander-hamilton.jpg',
+    tech: 'images/meme-results/steve-jobs.jpg',
+    renegade: 'images/meme-results/retina-goggles.jpg'
   };
 
   // Updates the score for a given question based on the current dropdown selection
