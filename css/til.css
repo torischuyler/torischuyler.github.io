@@ -45,11 +45,6 @@
 */
 .til-container h1 {
   /* --- Style It --- */
-
-  /*
-    Sets the color property with a CSS variable (--header-text-color, from global.css).
-      - Grogu green in dark mode, switches to ruby red in light mode.
-  */
   color: var(--tori-header-color);
 }
 
@@ -76,11 +71,12 @@
 
   /*
     Remove default bullets, we’re using emojis. If we didn't do this
-    we’d end up with both the default bullet (●) and the φ bullets.
+    we’d end up with both the default and custom bullets.
 
     No bueno! 🙅‍♀️
   */
   list-style-type: none;
+  text-align: center;
 }
 
 /*
@@ -88,6 +84,8 @@
   Order of Properties: Space It, Style It (Sp St)
 */
 .til-container ul li {
+  display: inline-block;
+
   /* --- Space It --- */
   margin: 0.8rem 0;
   padding-left: 1.5rem;
