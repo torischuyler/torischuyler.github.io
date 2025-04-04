@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!-- This is the DOCTYPE declaration. It’s like a signal to browsers that says, “Hey, this is an HTML web page!” -->
+
+<html lang="en">
+<!-- Sets the page language to English - helps screen readers, search engines, and spell checkers. -->
+
+    <!-- Begin Head Section ------------------------------------------------->
+    <!-- Head contains "behind-the-scenes" stuff that defines how the page works and looks. -->
+    <head>
+        <meta charset="UTF-8">
+        <!-- Character encoding tells browser how to decode the page. -->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Viewport makes sure the page looks good on all devices by adjusting to screen size.
+        It also affects page rendering and responsiveness. -->
+
+        <title>Golden Ratio | eOS Lesson Plans</title>
+        <!-- Page title, visible in browser tabs, bookmarks, and search engine results.
+        Format: [Page Name] | [Site Name] - this pattern helps with SEO and page navigation. -->
+
+        <link rel="icon" href="../favicon.ico" type="image/x-icon">
+        <!-- Sets the favicon, the little icon you see in browser tabs and bookmarks. -->
+
+        <!-- Begin SEO Elements --------------------------------------------------->
+        <!-- SEO Elements: These tags optimize your webpage for search engines,
+        influencing how your site is indexed and displayed in search results. -->
+
+        <meta name="robots" content="noindex, nofollow">
+        <!-- Robots Directive: Temporarily set to prevent search engines from indexing this page or following its links
+        until the first iteration is complete and ready for public viewing. -->
+
+        <meta name="description" content="">
+        <!-- SEO Description: This tag offers a quick summary for search results,
+        improving click-through rates by setting user expectations and boosting relevance. -->
+
+        <meta name="keywords" content="">
+        <!-- SEO Keywords: Although less impactful today due to search engines prioritizing content quality,
+        they can still categorize content. Use sparingly to avoid keyword stuffing. -->
+
+        <meta name="author" content="eOS Lesson Plans">
+        <!-- Author Tag: Identifies the content creator or organization, aiding in branding and copyright recognition. -->
+        <!-- End SEO Elements ------------------------------------------------------->
+
+        <!-- Begin Open Graph Tags  ------------------------------------------------->
+        <!-- Open Graph Tags: These control how this page appears when shared on social media platforms like
+        Facebook, LinkedIn, etc., by providing metadata for rich previews. -->
+
+        <meta property="og:title" content="Golden Ratio | eOS Lesson Plans">
+        <!-- Open Graph Title: Defines the title for social media sharing. -->
+
+        <meta property="og:description" content="">
+        <!-- Open Graph Description: Provides a summary when shared on social platforms. -->
+
+        <meta property="og:image" content="https://torischuyler.github.io/eos-lesson-plans/images/van-gogh-orca.jpg">
+        <!-- Open Graph Image: Sets the image that appears when the page is shared. -->
+
+        <meta property="og:url" content="https://torischuyler.github.io/eos-lesson-plans/today-i-learned/golden-ratio.html">
+        <!-- Open Graph URL: Ensures the correct URL is used when shared. -->
+
+        <meta property="og:type" content="website">
+        <!-- Open Graph Type: Specifies the type of the content, here it's a website. -->
+        <!-- End Open Graph Tags  ---------------------------------------------------->
+
+        <!-- Begin Preconnect Links  ------------------------------------------------->
+        <!-- Preconnect hints establish early connections to external domains, speeding up resource loading. -->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- 'crossorigin' on fonts.gstatic.com enables secure cross-origin font file loading; not needed for
+        fonts.googleapis.com, which only initiates connections. -->
+        <!-- End Preconnect Links  --------------------------------------------------->
+
+        <!-- Begin Stylesheet Links  ------------------------------------------------->
+        <!-- Stylesheets define how the browser styles HTML content, improving page appearance. -->
+
+        <link rel="stylesheet" href="../css/global.css">
+        <link rel="stylesheet" href="../css/til.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+        <!-- Load local stylesheets first for speed and to prevent overrides by third-party CSS (e.g., Google Fonts). -->
+        <!-- End Stylesheet Links  --------------------------------------------------->
+
+        <script src="../js/yin-yang-toggle.js" defer></script>
+        <!-- Script for toggling Light/Dark mode - placed last for better page load performance and security.
+        'defer' tells the browser to load the script after the HTML is parsed but before
+        the DOMContentLoaded event, improving page load times. -->
+
+        <script src="../js/mobile-nav.js" defer></script>
+        <!-- Script for toggling mobile navigation------>
+    </head>
+    <!-- End Head Section --------------------------------------------------->
+
+    <!-- Begin Body Section ------------------------------------------------->
+    <!-- Body contains all the visible content of the webpage,
+    like text, images, and buttons - the "on-stage" part where the action happens. -->
+    <body>
+
+        <!-- Begin Navigation Section  ------------------------------------------------->
+        <!-- Navigation section - like a table of contents for the webpage. ------------>
+        <nav aria-label="Page navigation">
+
+            <!-- Navigation menu for desktop and mobile -->
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../curricula.html">Lesson Plans</a></li>
+                <li><a href="../who-am-i.html">Who Am I?</a></li>
+                <li><a href="../who-are-you.html">Who Are You?</a></li>
+                <li><a href="../til.html">TIL</a></li>
+            </ul>
+
+            <!-- Begin Nav Header Wrapper: Groups hamburger and toggle------------------>
+            <div class="nav-header">
+
+                <div class="hamburger">☰</div>
+                <!-- Hamburger icon -->
+
+                <button id="yin-yang-toggle" aria-label="Toggle light or dark mode" aria-pressed="false">☯️</button>
+                <!-- Dark/Light mode toggle button. The 'aria-label' attribute enhances accessibility
+                by describing the button for screen readers, ensuring users with visual impairments
+                can identify its purpose, with 'aria-pressed' indicating the current mode. -->
+            </div>
+            <!-- End Nav Header Wrapper ------------------------------------------------->
+
+            <noscript>
+            <!-- The noscript tag is used to provide alternative content
+            when JavaScript is disabled in the visitor's browser. -->
+
+                <div class="noscript-warning">
+                <!-- This div serves as a container for the warning message. -->
+
+                    <p>JavaScript is disabled on your browser. To experience all features of this site, please enable JavaScript.</p>
+                    <!-- Paragraph tag containing the message that informs visitors
+                    about disabled JavaScript and encourages them to enable it. -->
+                </div>
+            </noscript>
+        </nav>
+        <!-- End Navigation Section  --------------------------------------------------->
+
+        <!-- Wrap all home page content in .til-container -->
+        <div class="til-container">
+            <!-- Begin Main Section -------------------------------------------------------->
+            <!-- Main content area - where the primary, unique content of the page lives. -->
+            <main aria-label="Main content">
+            <!-- 'aria-label' tags this as "Main content" for screen readers since there’s no heading;
+            without it, it’d just be "region," leaving visitors unsure of its purpose. -->
+
+                <h1>The Golden Ratio</h1>
+                <!-- Main heading of the page, sets the theme or topic. -->
+            </main>
+            <!-- End Main Section ---------------------------------------------------------->
+        </div>
+        <!-- End of .til-container -------------------------------------------------------->
+
+        <!-- Begin Footer Section ---------------------------------------------------------->
+        <!-- Footer content, like copyright info, contact details, or additional links. -->
+        <footer aria-label="Page footer">
+        <!-- 'aria-label' tags this as "Page footer" for screen readers, adding clarity since there’s no heading;
+        without it, it’s still announced as "footer," but this ensures the purpose is explicit. -->
+
+            <p>
+                <span id="year"></span>
+                <!-- span highlights year, which is updated by the script in footer.js -->
+                eOS Lesson Plans <span class="heart">💙</span> For Education
+            </p>
+        </footer>
+        <!-- End Footer Section -------------------------------------------------------->
+
+        <script src="../js/footer.js" defer></script>
+        <!-- Footer script: Automatically updates the copyright year.
+        The 'defer' attribute ensures the script loads after HTML parsing is complete. -->
+    </body>
+    <!-- End Body Section ------------------------------------------------->
+</html>
