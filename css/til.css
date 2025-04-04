@@ -17,7 +17,7 @@
 /*
   The .til-container holds the content for the til page.
   It controls the width and spacing of the content area.
-  Order of Properties: Size It, Space It, Style It (Sz Sp St)
+  Order of Properties: Size It, Space It (Sz Sp)
 */
 .til-container {
   /* --- Size It --- */
@@ -39,9 +39,6 @@
     Space inside container ⬆️⬇️➡️⬅️
   */
   padding: 2rem;
-
-  /* --- Style It --- */
-  text-align: center;
 }
 
 /*
