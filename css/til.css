@@ -10,6 +10,7 @@
     .til-container ul { ... }
     .til-container ul li { ... }
       .til-container ul li::before { ... }
+    .til-container a { ... }
 */
 
 /*
@@ -101,18 +102,36 @@
 
 /*
   Custom bullets using ::before to ensure Safari compatibility.
-    - 'φ' gives phi bullets for the til page.
+    - 'φ' gives phi bullets for the TIL page.
   
-  Order of Properties: Size It, Style It (Sz St)
+  Order of Properties: Style It (Sz St)
 */
 .til-container ul li::before {
-  /* --- Size It --- */
-  font-size: 2rem;
-
   /* --- Style It --- */
 
   /* Phi */
   content: 'φ';
   position: absolute;
   left: 0;
+}
+
+/*
+  TIL link styling
+  The .til-container a styles all anchor tags (<a>) inside the .til-container.
+  These are the clickable lesson links that need to pop visually and feel interactive.
+  Order of Properties: Space It, Style It (Sp St)
+*/
+.til-container a {
+  /* --- Space It --- */
+
+  padding: 0.2rem 0.4rem;
+  margin-left: 0.4rem;
+
+  /* --- Style It --- */
+
+  color: var(--text-color);
+
+  /* Remove underlined links for a clean, minimalist look. */
+  text-decoration: none;
+  transition: color 0.3s;
 }
