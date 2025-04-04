@@ -153,4 +153,8 @@
     /* --- Size It --- */
     max-width: 100vw;
   }
+
+  .til-container h1 {
+    width: auto;
+  }
 }
