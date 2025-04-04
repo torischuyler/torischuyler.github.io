@@ -10,6 +10,7 @@
     .til-container ul { ... }
     .til-container ul li { ... }
       .til-container ul li::before { ... }
+      .til-container ul li a:hover, :focus { ... }
     .til-container a { ... }
 */
 
@@ -134,4 +135,32 @@
   /* Remove underlined links for a clean, minimalist look. */
   text-decoration: none;
   transition: color 0.3s;
+}
+
+/*
+  🧪 Link interaction states
+  The .til-container ul li a:hover and :focus - these style lesson links when 
+  visitors hover (usually with mouse or trackpad) or tab to them (usually with keyboard).
+  Order of Properties: Style It (St)
+*/
+.til-container ul li a:hover,
+.til-container ul li a:focus {
+  /* --- Style It --- */
+
+  /*
+    This changes the color of the link text when hovered or focused.
+    Sets the color property with a CSS variable (--text-color, from global.css).
+      - Muad'Dib in dark mode, switches to white in light mode.
+  */
+  color: var(--accent-text-color);
+
+  /* Adds an underline to make links stand out as clickable when hovered or focused. */
+  text-decoration: underline;
+
+  /*
+    This changes the area behind the link text when hovered or focused.
+    Sets the color property with a CSS variable (--secondary-color, from global.css).
+      - British racing green in dark mode, switches to emerald green in light mode.
+  */
+  background-color: var(--secondary-color);
 }
