@@ -8,6 +8,7 @@
   Who Am I Styles
     .who-am-i-container { ... }
     .who-am-i-container h1 { ... }
+    .who-am-i-container h2 { ... }
       @keyframes spin { ... }
     .who-am-i-container p  { ... }
     .who-am-i-container ul { ... }
@@ -134,6 +135,20 @@
 
   /* 1 spin */
   to { transform: rotate(360deg); }
+}
+
+/* 
+  Page Subheading
+  Order of Properties: Style It (St)
+*/
+.who-am-i-container h2 {
+  /* --- Style It --- */
+
+  /*
+    Sets the color property with a CSS variable (--subheader-text-color, from global.css).
+      - Peach in dark mode, switches to poppy red in light mode.
+  */
+  color: var(--subheader-text-color);
 }
 
 /*
@@ -355,6 +370,9 @@ Who-am-i.css
 │       ├── animation
 │       │   └── @keyframes spin
 │       └── text-shadow
+├── .who-am-i-container h2
+│   └── Style It
+│       └── color
 ├── .who-am-i-container p
 │   └── Space It
 │       └── margin-bottom
