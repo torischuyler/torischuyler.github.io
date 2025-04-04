@@ -9,9 +9,7 @@
     .til-container h1 img { ... }
     .til-container ul { ... }
     .til-container ul li { ... }
-      .til-container ul li::before { ... }
-      .til-container ul li a:hover, :focus { ... }
-    .til-container a { ... }
+    .til-container ul li a { ... }
 */
 
 /*
@@ -92,72 +90,53 @@
 .til-container ul li {
   /* --- Space It --- */
   margin: 0.8rem 0;
-  padding-left: 1rem;
+  padding-left: 1.5rem;
 
   /* --- Style It --- */
+  font-family: Righteous, system-ui, sans-serif;
+  font-size: 24px;
+  color: goldenrod;
   position: relative;
 }
 
 /*
-  Custom bullets using ::before to ensure Safari compatibility.
-    - 'φ' gives phi bullets for the TIL page.
-  
-  Order of Properties: Style It (Sz St)
-*/
-.til-container ul li::before {
-  /* --- Style It --- */
-
-  /* Phi */
-  content: 'φ';
-  position: absolute;
-  left: 0;
-}
-
-/*
   TIL link styling
-  The .til-container a styles all anchor tags (<a>) inside the .til-container.
-  These are the clickable lesson links that need to pop visually and feel interactive.
   Order of Properties: Space It, Style It (Sp St)
 */
-.til-container a {
+.til-container ul li a {
   /* --- Space It --- */
 
   padding: 0.2rem 0.4rem;
-  margin-left: 0.4rem;
+  margin-left: .5rem;
 
   /* --- Style It --- */
-
-  color: var(--text-color);
-
-  /* Remove underlined links for a clean, minimalist look. */
+  color: goldenrod;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 /*
+  Custom bullets using ::before to ensure Safari compatibility.
+  Order of Properties: Style It (Sz St)
+*/
+.til-container ul li::before {
+  /* --- Style It --- */
+
+  content: '🤯';
+  position: absolute;
+  left: 0;
+}
+
+/*
   🧪 Link interaction states
-  The .til-container ul li a:hover and :focus - these style lesson links when 
-  visitors hover (usually with mouse or trackpad) or tab to them (usually with keyboard).
+  These style lesson links when visitors hover (usually with mouse or trackpad)
+  or tab to them (usually with keyboard).
   Order of Properties: Style It (St)
 */
 .til-container ul li a:hover,
 .til-container ul li a:focus {
   /* --- Style It --- */
-
-  /*
-    This changes the color of the link text when hovered or focused.
-    Sets the color property with a CSS variable (--text-color, from global.css).
-      - Muad'Dib in dark mode, switches to white in light mode.
-  */
-  color: var(--accent-text-color);
-
-  /* Adds an underline to make links stand out as clickable when hovered or focused. */
+  color: goldenrod;
+  background-color: purple;
   text-decoration: underline;
-
-  /*
-    This changes the area behind the link text when hovered or focused.
-    Sets the color property with a CSS variable (--secondary-color, from global.css).
-      - British racing green in dark mode, switches to emerald green in light mode.
-  */
-  background-color: var(--secondary-color);
 }
