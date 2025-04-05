@@ -118,6 +118,11 @@
   color: var(--header-text-color);
 }
 
+/* Gold header color for Golden Ratio page */
+.lesson-container.golden-ratio-page h1 {
+  color: goldenrod; 
+}
+
 /*
   🧭 Subheadings to navigate the lesson plan
   Order of Properties: Space It, Style It (Sp St)
