@@ -118,7 +118,7 @@
   color: var(--header-text-color);
 }
 
-/* Gold header color for Golden Ratio page */
+/* Gold header color for Golden Ratio Page */
 .lesson-container.golden-ratio-page h1 {
   color: goldenrod; 
 }
@@ -155,6 +155,11 @@
 
   /* Underline only the text, not the emoji */
   text-decoration: underline;
+}
+
+/* Sunglow color for Golden Ratio Page */
+.lesson-container.golden-ratio-page h2 {
+  color: #FC3;
 }
 
 /*
