@@ -123,7 +123,7 @@
 .til-container ul li::before {
   /* --- Style It --- */
 
-  content: '🤯';
+  content: '✨';
   position: absolute;
   left: 0;
 }
