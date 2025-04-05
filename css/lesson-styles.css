@@ -199,6 +199,12 @@
   color: var(--subheader-three-text-color);
 }
 
+/* Metallic gold color for Golden Ratio Page */
+.lesson-container.golden-ratio-page h3 {
+  color: #D4AF37;
+  text-decoration: underline;
+}
+
 /*
   📖 Main Content HQ - the heart of the lesson, .lesson-container main
   targets the <main> element within the container.
