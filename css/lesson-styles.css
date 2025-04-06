@@ -333,9 +333,12 @@
 
 /* 
   Phi side note on Golden Ratio Page
-   Order of Properties: Space It (Sp)
+   Order of Properties: Size It, Space It (Sp)
 */
 .phi-side-note {
+   /* --- Size It --- */
+  font-size: 1.125rem;
+
   /* --- Space It --- */
 
   /* Indents the Phi side note toggle from the left; 2.5rem = 40px (assuming 1rem = 16px) */
@@ -424,11 +427,13 @@ Lesson-styles.css
 │   └── Space It
 │       └── padding-left
 └── .lesson-container p
-    ├── Size It
-    │   └── font-size
-    └── Space It
-        └── padding-left
+|    ├── Size It
+|    │   └── font-size
+|    └── Space It
+|        └── padding-left
 ├── .phi-side-note
+│   ├── Size It
+│   │   └── font-size
 │   └── Space It
 │       └── margin-left
 ├── Mobile Styles
