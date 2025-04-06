@@ -345,6 +345,20 @@
   margin-left: 2.5rem;
 }
 
+/* 
+  Agenda on Golden Ratio Page
+  Order of Properties: Size It, Space It (Sp)
+*/
+.agenda {
+  /* --- Size It --- */
+ font-size: 1.125rem;
+
+ /* --- Space It --- */
+
+ /* Indents the Phi side note toggle from the left; 2.5rem = 40px (assuming 1rem = 16px) */
+ margin-left: 2.5rem;
+}
+
 /*
   Lesson Container Mobile Styles
   Order of Properties: Size It (Sz)
@@ -426,12 +440,18 @@ Lesson-styles.css
 ├── .lesson-container ul ul
 │   └── Space It
 │       └── padding-left
-└── .lesson-container p
-|    ├── Size It
-|    │   └── font-size
-|    └── Space It
-|        └── padding-left
+├── .lesson-container p
+│   ├── Size It
+│   │   └── font-size
+│   └── Space It
+│       ├── padding-left
+│       └── padding-right
 ├── .phi-side-note
+│   ├── Size It
+│   │   └── font-size
+│   └── Space It
+│       └── margin-left
+├── .agenda
 │   ├── Size It
 │   │   └── font-size
 │   └── Space It
