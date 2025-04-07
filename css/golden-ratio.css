@@ -31,16 +31,16 @@
 }
 
 /* 
-  Phi side note on Golden Ratio Page
+  Tidbits on Golden Ratio Page
   Order of Properties: Size It, Space It (Sp)
 */
-.phi-side-note {
+.tidbit {
   /* --- Size It --- */
   font-size: 1.125rem;
 
   /* --- Space It --- */
 
-  /* Indents the Phi side note toggle from the left; 2.5rem = 40px (assuming 1rem = 16px) */
+  /* Indents toggle from the left; 2.5rem = 40px (assuming 1rem = 16px) */
   margin-left: 2.5rem;
 }
 
@@ -74,7 +74,7 @@
   Golden Ratio Page Mobile Styles
 */
 @media (width <= 768px) {
-  .phi-side-note {
+  .tidbit {
     /* --- Space It --- */
     margin-right: 1.75rem;
   }
