@@ -12,8 +12,20 @@
   color: #FC3;
 }
 
-/* Metallic gold color for Golden Ratio Page */
+/* 
+  Level 3 Subheadings
+  Order of Properties: Size It Space It, Style It (Sz Sp St)
+*/
 .lesson-container.golden-ratio-page h3 {
+  /* --- Size It --- */
+
+  /* 22px ÷ 16px = 1.375rem */
+  font-size: 1.375rem;
+
+  /* --- Space It --- */
+  text-align: center;
+
+  /* --- Style It --- */
   color: #D4AF37;
   text-decoration: underline;
 }
