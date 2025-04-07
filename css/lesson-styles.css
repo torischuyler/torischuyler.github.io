@@ -97,18 +97,6 @@
 }
 
 /*
-  🌻 Sunflower Image for the Golden Ratio Page
-  Order of Properties: Size It (Sz)
-*/
-.sunflower-image {
-  /* --- Size It --- */
-  width: 500px;
-
-  /* Allows an element's height to auto adjust based on its content. */
-  height: auto;
-}
-
-/*
   Page Heading
   Order of Properties: Space It, Style It (Sp St)
 */
@@ -128,11 +116,6 @@
       - Hèrmes orange in dark mode, switches to chefchaouen blue in light mode.
   */
   color: var(--header-text-color);
-}
-
-/* Gold header color for Golden Ratio Page */
-.lesson-container.golden-ratio-page h1 {
-  color: goldenrod; 
 }
 
 /*
@@ -167,11 +150,6 @@
 
   /* Underline only the text, not the emoji */
   text-decoration: underline;
-}
-
-/* Sunglow color for Golden Ratio Page */
-.lesson-container.golden-ratio-page h2 {
-  color: #FC3;
 }
 
 /*
@@ -209,12 +187,6 @@
       - Princeton orange in dark mode, switches to moonstone in light mode.
   */
   color: var(--subheader-three-text-color);
-}
-
-/* Metallic gold color for Golden Ratio Page */
-.lesson-container.golden-ratio-page h3 {
-  color: #D4AF37;
-  text-decoration: underline;
 }
 
 /*
@@ -343,34 +315,6 @@
   padding-right: 1.7rem;
 }
 
-/* 
-  Phi side note on Golden Ratio Page
-   Order of Properties: Size It, Space It (Sp)
-*/
-.phi-side-note {
-  /* --- Size It --- */
-  font-size: 1.125rem;
-
-  /* --- Space It --- */
-
-  /* Indents the Phi side note toggle from the left; 2.5rem = 40px (assuming 1rem = 16px) */
-  margin-left: 2.5rem;
-}
-
-/* 
-  Agenda on Golden Ratio Page
-  Order of Properties: Size It, Space It (Sp)
-*/
-.agenda {
-  /* --- Size It --- */
-  font-size: 1.125rem;
-
-  /* --- Space It --- */
-
-  /* Indents the Phi side note toggle from the left; 2.5rem = 40px (assuming 1rem = 16px) */
-  margin-left: 2.5rem;
-}
-
 /*
   Lesson Container Mobile Styles
   Order of Properties: Size It (Sz)
@@ -394,18 +338,6 @@
   .lesson-container h1 {
     /* --- Size It --- */
     font-size: 1.75rem;
-  }
-
-  .phi-side-note {
-    /* --- Space It --- */
-    margin-right: 1.75rem;
-  }
-
-  .agenda {
-    /* --- Size It --- */
-    margin: 0;
-    margin-right: 1.75rem;
-    padding-left: 1px;
   }
 }
 
@@ -443,8 +375,7 @@ Lesson-styles.css
 │   │   └── padding-left
 │   └── Style It
 │       ├── font-family
-│       ├── color
-│       └── text-decoration
+│       └── color
 ├── .lesson-container main
 │   └── Space It
 │       └── padding
@@ -470,16 +401,6 @@ Lesson-styles.css
 │   └── Space It
 │       ├── padding-left
 │       └── padding-right
-├── .phi-side-note
-│   ├── Size It
-│   │   └── font-size
-│   └── Space It
-│       └── margin-left
-├── .agenda
-│   ├── Size It
-│   │   └── font-size
-│   └── Space It
-│       └── margin-left
 ├── Mobile Styles
 │   ├── @media
 │       ├── .lesson-container

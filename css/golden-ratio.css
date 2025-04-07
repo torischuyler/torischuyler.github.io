@@ -1,0 +1,76 @@
+/*
+  🌀 Golden-ratio.css - The stylesheet for the Golden Ratio Page
+*/
+
+/*
+  🌻 Sunflower Image for the Golden Ratio Page
+  Order of Properties: Size It (Sz)
+*/
+.sunflower-image {
+  /* --- Size It --- */
+  width: 500px;
+
+  /* Allows an element's height to auto adjust based on its content. */
+  height: auto;
+}
+
+/* Gold header color for Golden Ratio Page */
+.lesson-container.golden-ratio-page h1 {
+  color: goldenrod; 
+}
+
+/* Sunglow color for Golden Ratio Page */
+.lesson-container.golden-ratio-page h2 {
+  color: #FC3;
+}
+
+/* Metallic gold color for Golden Ratio Page */
+.lesson-container.golden-ratio-page h3 {
+  color: #D4AF37;
+  text-decoration: underline;
+}
+
+/* 
+  Phi side note on Golden Ratio Page
+  Order of Properties: Size It, Space It (Sp)
+*/
+.phi-side-note {
+  /* --- Size It --- */
+  font-size: 1.125rem;
+
+  /* --- Space It --- */
+
+  /* Indents the Phi side note toggle from the left; 2.5rem = 40px (assuming 1rem = 16px) */
+  margin-left: 2.5rem;
+}
+
+/* 
+  Agenda on Golden Ratio Page
+  Order of Properties: Size It, Space It (Sp)
+*/
+.agenda {
+  /* --- Size It --- */
+  font-size: 1.125rem;
+
+  /* --- Space It --- */
+
+  /* Indents the Phi side note toggle from the left; 2.5rem = 40px (assuming 1rem = 16px) */
+  margin-left: 2.5rem;
+}
+
+/*
+  Golden Ratio Page Mobile Styles
+*/
+@media (width <= 768px) {
+  .phi-side-note {
+    /* --- Space It --- */
+    margin-right: 1.75rem;
+  }
+
+  .agenda {
+    /* --- Size It --- */
+    margin: 0;
+    margin-right: 1.75rem;
+    padding-left: 1px;
+  }
+}
