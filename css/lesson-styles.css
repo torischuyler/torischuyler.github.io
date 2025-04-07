@@ -336,7 +336,7 @@
    Order of Properties: Size It, Space It (Sp)
 */
 .phi-side-note {
-   /* --- Size It --- */
+  /* --- Size It --- */
   font-size: 1.125rem;
 
   /* --- Space It --- */
@@ -351,12 +351,12 @@
 */
 .agenda {
   /* --- Size It --- */
- font-size: 1.125rem;
+  font-size: 1.125rem;
 
- /* --- Space It --- */
+  /* --- Space It --- */
 
- /* Indents the Phi side note toggle from the left; 2.5rem = 40px (assuming 1rem = 16px) */
- margin-left: 2.5rem;
+  /* Indents the Phi side note toggle from the left; 2.5rem = 40px (assuming 1rem = 16px) */
+  margin-left: 2.5rem;
 }
 
 /*
@@ -382,6 +382,18 @@
   .lesson-container h1 {
     /* --- Size It --- */
     font-size: 1.75rem;
+  }
+
+  .phi-side-note {
+    /* --- Space It --- */
+    margin-right: 1.75rem;
+  }
+
+  .agenda {
+    /* --- Size It --- */
+    margin: 0;
+    margin-right: 1.75rem;
+    padding-left: 1px;
   }
 }
 
