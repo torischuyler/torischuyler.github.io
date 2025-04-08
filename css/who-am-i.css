@@ -121,7 +121,7 @@
     🎛️ Glow Control: For shadows/glows, px is common bc you often want 
     a fixed, predictable effect, not something that shifts.
   */
-  text-shadow: 0 0 10px #D4AF37;
+  text-shadow: 0 0 18px #D4AF37;
 
   /* Hides header text until the typewriter keyframes animation reveals it on the page */
   overflow: hidden;
@@ -340,7 +340,7 @@
   /* --- Style It --- */
   .who-am-i-container h1 {
     /* Tighter blur for a subtler glow */
-    text-shadow: 0 0 3px #D4AF37;
+    text-shadow: 0 0 6px #D4AF37;
   }
 }
 
@@ -432,9 +432,12 @@ Who-am-i.css
     │   ├── .who-am-i-container
     │   │   └── Size It
     │   │       └── max-width
-    │   └── h2
-    │       └── Space It
-    │           └── text-align
+    │   ├── .who-am-i-container h2
+    │   │   └── Space It
+    │   │       └── text-align
+    │   └── .who-am-i-container h1
+    │       └── Style It
+    │           └── text-shadow
     └── @media
         ├── .life-branch-desktop
         │   └── display
