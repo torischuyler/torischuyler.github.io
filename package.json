@@ -12,7 +12,7 @@
       "lint:js": "Runs ESLint on all JavaScript files in the project to check for code quality and consistency",
       "lint:css": "Runs Stylelint on all CSS files in the project to ensure styles follow defined rules"
   },
-  "name": "eos-lesson-plans",
+  "name": "eos",
   "version": "1.0.0",
   "type": "module",
   "devDependencies": {
