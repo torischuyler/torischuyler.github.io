@@ -314,7 +314,7 @@
 
 /*
   Who Am I Container Mobile Styles
-  Order of Properties: Size It, Space It (Sz Sp)
+  Order of Properties: Size It, Space It, Style It (Sz Sp St)
 
   📲 The 768px width is widely used because it aligns with the typical screen size
   of tablets in portrait mode, like the iPad (which has a resolution of 768px wide
@@ -332,9 +332,15 @@
   }
 
   /* --- Space It --- */
-  h2 {
+  .who-am-i-container h2 {
     /* Center h2 headings on mobile */
     text-align: center;
+  }
+
+  /* --- Style It --- */
+  .who-am-i-container h1 {
+    /* Tighter blur for a subtler glow */
+    text-shadow: 0 0 3px #D4AF37;
   }
 }
 
