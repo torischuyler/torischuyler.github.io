@@ -137,6 +137,7 @@
 
   /* Blinks every 1s for 7 cycles, then stops */
   animation: blink 1s 7 forwards;
+  display: inline-block; /* Keeps cursor in line, avoids clipping */
 }
 
 /* Keyframes for typewriter effect */
