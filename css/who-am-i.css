@@ -314,7 +314,7 @@
 
 /*
   Who Am I Container Mobile Styles
-  Order of Properties: Size It (Sz)
+  Order of Properties: Size It, Space It (Sz Sp)
 
   📲 The 768px width is widely used because it aligns with the typical screen size
   of tablets in portrait mode, like the iPad (which has a resolution of 768px wide
@@ -322,14 +322,19 @@
   transition between "mobile" and "tablet" layouts.
 */
 @media (width <= 768px) {
+  /* --- Size It --- */
   .who-am-i-container {
-    /* --- Size It --- */
-
     /*
       max-width: 100vw sets the maximum width to 100% of the viewport width.
       Increased from 80vw to 100vw for mobile to enhance text and image size on smaller screens.
     */
     max-width: 100vw;
+  }
+
+  /* --- Space It --- */
+  h2 {
+    /* Center h2 headings on mobile */
+    text-align: center;
   }
 }
 
@@ -337,7 +342,7 @@
   My Life Branch Mobile Styles 🌳
   Order of Properties: Size It (Sz)
 */
-@media (width <= 600px) {
+@media (width <= 768px) {
   .life-branch-desktop {
     display: none;
   }
@@ -349,11 +354,6 @@
   .life-branch {
     /* --- Size It --- */
     font-size: 0.8rem;
-  }
-
-  /* Center h2 headings on mobile */
-  h2 {
-    text-align: center;
   }
 }
 
@@ -426,6 +426,9 @@ Who-am-i.css
     │   ├── .who-am-i-container
     │   │   └── Size It
     │   │       └── max-width
+    │   └── h2
+    │       └── Space It
+    │           └── text-align
     └── @media
         ├── .life-branch-desktop
         │   └── display
@@ -434,6 +437,4 @@ Who-am-i.css
         ├── .life-branch
         │   └── Size It
         │       └── font-size
-        └── h2
-            └── text-align
 */
