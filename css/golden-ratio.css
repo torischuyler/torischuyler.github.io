@@ -83,6 +83,18 @@
 }
 
 /*
+  🌲 Base Pinecone Image
+  Order of Properties: Size It (Sz)
+*/
+.base-pinecone-image {
+  /* --- Size It --- */
+  width: 500px;
+
+  /* Allows an element's height to auto adjust based on its content. */
+  height: auto;
+}
+
+/*
   Golden Ratio Page Mobile Styles
 */
 @media (width <= 768px) {
