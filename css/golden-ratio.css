@@ -59,10 +59,22 @@
 }
 
 /*
-  🌻 Sunflower Image for the Golden Ratio Page
+  🌻 Sunflower Image
   Order of Properties: Size It (Sz)
 */
 .sunflower-image {
+  /* --- Size It --- */
+  width: 500px;
+
+  /* Allows an element's height to auto adjust based on its content. */
+  height: auto;
+}
+
+/*
+  🌲 Pinecone Image
+  Order of Properties: Size It (Sz)
+*/
+.pinecone-image {
   /* --- Size It --- */
   width: 500px;
 
