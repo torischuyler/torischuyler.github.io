@@ -22,7 +22,7 @@ rules:
             "CSS", "JPG", "JPEG", "README", "RAM", "MMU", "ASCII", "OS"
           ]
           - proper_nouns: [
-            "Fibonacci", "Phi", "Arc", "Brave",
+            "Jekyll", Fibonacci", "Phi", "Arc", "Brave",
             "Open Graph", Windows", "Apple", "Linux",
             "Android", "Python", "Safari", "JavaScript"
           ]
