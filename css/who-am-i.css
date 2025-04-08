@@ -130,6 +130,15 @@
   white-space: nowrap;
 }
 
+/* Adds a blinking cursor after the h1 text */
+.who-am-i-container h1::after {
+  /* Displays a vertical bar as the cursor */
+  content: "|";
+
+  /* Blinks every 1s for 7 cycles, then stops */
+  animation: blink 1s 7 forwards;
+}
+
 /* Keyframes for typewriter effect */
 @keyframes typewriter {
   /* Starts with no width, text "hidden" */
@@ -141,6 +150,18 @@
   to {
     width: 100%;
   }
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+  /* Starts fully visible */
+  0% { opacity: 1; }
+
+  /* Fades to almost off, but softer */
+  50% { opacity: 1; }
+
+  /* Ends fully hidden */
+  100% { opacity: 0; }
 }
 
 /* 
