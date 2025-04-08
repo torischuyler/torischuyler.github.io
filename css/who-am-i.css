@@ -6,17 +6,12 @@
 
 /*
   Who Am I Styles
-    .who-am-i-container { ... }
+    .who-am-i-container    { ... }
     .who-am-i-container h1 { ... }
     .who-am-i-container h2 { ... }
-      @keyframes spin { ... }
     .who-am-i-container p  { ... }
     .who-am-i-container ul { ... }
     .who-am-i-container li { ... }
-      .who-am-i-container li:nth-child(1)::before { ... }
-      .who-am-i-container li:nth-child(2)::before { ... }
-      .who-am-i-container li:nth-child(3)::before { ... }
-      @supports not (selector(::before)) { ... }
 */
 
 /*
@@ -83,7 +78,7 @@
 
 /*
   Page Heading
-  Order of Properties: Size it, Style it, Chaos it (Sz St Ch)
+  Order of Properties: Size It, Style It, Chaos It (Sz St Ch)
 */
 .who-am-i-container h1 {
   /* --- Size It --- */
@@ -92,11 +87,10 @@
     Sets heading font size to 5rem.
     🧮 Here's the math:
       - 5rem × 16px = 80px (at a 16px default root).
-
-    😲 I’m going big with 5rem here because I want this page to feel bold and quirky,
-    not cookie-cutter. Normal h1 range is 2rem-4rem (32px–64px).
+      
+    Standard h1 range is 2rem-4rem (32px–64px).
   */
-  font-size: 5rem;
+  font-size: 4rem;
 
   /* --- Style It --- */
 
@@ -109,32 +103,44 @@
   /* --- Chaos It --- */
 
   /*
-    🤪 Spins the header 1 time over 1.618 seconds, then stops. Using 1.618 to see
-    what the golden ratio (φ) looks like in terms of duration and bc 6/18 is my bday 😎
-    Linear means the animation happens at a steady, constant speed from start to finish.
+    Typewriter effect: Text appears character-by-character.
+    - 2s duration for a relaxed pace.
+    - steps() mimics the typewriter "jump" per character—assuming ~10 chars in "Who Am I?"
+    - Forwards keeps the text visible after animation ends.
   */
-  animation: spin 1.618s linear;
+  animation: typewriter 2s steps(10) forwards;
 
   /*
-    🌟 Hot pink glow, bc chaos
+    🌟 Gold glow around the header
     0 - Horizontal offset (How far the shadow moves left or right from the text).
     0 - Vertical offset (How far the shadow moves up or down from the text).
     10px - Blur radius (How blurry or spread out the shadow gets.
     Bigger number = softer, wider glow; smaller = sharper, tighter edge).
-    #FF69B4 - Hot pink color.
+    #D4AF37 - Muted, classy gold color.
 
     🎛️ Glow Control: For shadows/glows, px is common bc you often want 
     a fixed, predictable effect, not something that shifts.
   */
-  text-shadow: 0 0 10px #FF69B4;
+  text-shadow: 0 0 10px #D4AF37;
+
+  /* Hides header text until the typewriter keyframes animation reveals it on the page */
+  overflow: hidden;
+
+  /* Keeps text on one line so it types out like a typewriter */
+  white-space: nowrap;
 }
 
-/* Define the spin animation */
-@keyframes spin {
-  from { transform: rotate(0deg); }
+/* Keyframes for typewriter effect */
+@keyframes typewriter {
+  /* Starts with no width, text "hidden" */
+  from {
+    width: 0;
+  }
 
-  /* 1 spin */
-  to { transform: rotate(360deg); }
+  /* Expands to full width, revealing text */
+  to {
+    width: 100%;
+  }
 }
 
 /* 
@@ -368,8 +374,10 @@ Who-am-i.css
 │   │   └── color
 │   └── Chaos It
 │       ├── animation
-│       │   └── @keyframes spin
-│       └── text-shadow
+│       │   └── @keyframes typewriter
+│       ├── text-shadow
+│       ├── overflow
+│       └── white-space
 ├── .who-am-i-container h2
 │   └── Style It
 │       └── color
