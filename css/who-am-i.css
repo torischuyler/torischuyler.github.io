@@ -137,7 +137,6 @@
 
   /* Blinks every 1s for 7 cycles, then stops */
   animation: blink 1s 7 forwards;
-  display: inline-block; /* Keeps cursor in line, avoids clipping */
 }
 
 /* Keyframes for typewriter effect */
@@ -336,7 +335,6 @@
 
 /*
   Who Am I Container Mobile Styles
-  Order of Properties: Size It, Space It, Style It (Sz Sp St)
 
   📲 The 768px width is widely used because it aligns with the typical screen size
   of tablets in portrait mode, like the iPad (which has a resolution of 768px wide
@@ -344,7 +342,6 @@
   transition between "mobile" and "tablet" layouts.
 */
 @media (width <= 768px) {
-  /* --- Size It --- */
   .who-am-i-container {
     /*
       max-width: 100vw sets the maximum width to 100% of the viewport width.
@@ -353,22 +350,22 @@
     max-width: 100vw;
   }
 
-  /* --- Space It --- */
   .who-am-i-container h2 {
     /* Center h2 headings on mobile */
     text-align: center;
   }
 
-  /* --- Style It --- */
   .who-am-i-container h1 {
     /* Tighter blur for a subtler glow */
     text-shadow: 0 0 6px #D4AF37;
+
+    /* Lets cursor show beyond h1 box on mobile */
+    overflow: visible;
   }
 }
 
 /*
   My Life Branch Mobile Styles 🌳
-  Order of Properties: Size It (Sz)
 */
 @media (width <= 768px) {
   .life-branch-desktop {
@@ -380,7 +377,6 @@
   }
 
   .life-branch {
-    /* --- Size It --- */
     font-size: 0.8rem;
   }
 }
@@ -405,7 +401,11 @@ Who-am-i.css
 │       │   └── @keyframes typewriter
 │       ├── text-shadow
 │       ├── overflow
-│       └── white-space
+│       ├── white-space
+│       └── .who-am-i-container h1::after
+│           ├── content
+│           └── animation
+│               └── @keyframes blink
 ├── .who-am-i-container h2
 │   └── Style It
 │       └── color
@@ -452,20 +452,17 @@ Who-am-i.css
 └── Mobile Styles
     ├── @media
     │   ├── .who-am-i-container
-    │   │   └── Size It
-    │   │       └── max-width
+    │   │   └── max-width
     │   ├── .who-am-i-container h2
-    │   │   └── Space It
-    │   │       └── text-align
+    │   │   └── text-align
     │   └── .who-am-i-container h1
-    │       └── Style It
-    │           └── text-shadow
+    │       ├── text-shadow
+    │       └── overflow
     └── @media
         ├── .life-branch-desktop
         │   └── display
         ├── .life-branch-mobile
         │   └── display
         ├── .life-branch
-        │   └── Size It
-        │       └── font-size
+        │   └── font-size
 */
