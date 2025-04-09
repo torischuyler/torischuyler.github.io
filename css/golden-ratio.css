@@ -44,49 +44,11 @@
   margin-left: 2.5rem;
 }
 
-/* 
-  Agenda on Golden Ratio Page
-  Order of Properties: Size It, Space It (Sp)
-*/
-.agenda {
-  /* --- Size It --- */
-  font-size: 1.125rem;
-
-  /* --- Space It --- */
-
-  /* Indents the Phi side note toggle from the left; 2.5rem = 40px (assuming 1rem = 16px) */
-  margin-left: 2.5rem;
-}
-
 /*
   🌻 Sunflower Image
   Order of Properties: Size It (Sz)
 */
 .sunflower-image {
-  /* --- Size It --- */
-  width: 500px;
-
-  /* Allows an element's height to auto adjust based on its content. */
-  height: auto;
-}
-
-/*
-  🌲 Pinecone Image
-  Order of Properties: Size It (Sz)
-*/
-.pinecone-image {
-  /* --- Size It --- */
-  width: 500px;
-
-  /* Allows an element's height to auto adjust based on its content. */
-  height: auto;
-}
-
-/*
-  🌲 Base Pinecone Image
-  Order of Properties: Size It (Sz)
-*/
-.base-pinecone-image {
   /* --- Size It --- */
   width: 500px;
 
@@ -101,12 +63,5 @@
   .tidbit {
     /* --- Space It --- */
     margin-right: 1.75rem;
-  }
-
-  .agenda {
-    /* --- Size It --- */
-    margin: 0;
-    margin-right: 1.75rem;
-    padding-left: 0.0625rem;
   }
 }
