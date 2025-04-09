@@ -359,8 +359,8 @@
     /* Tighter blur for a subtler glow */
     text-shadow: 0 0 6px #D4AF37;
 
-    /* Lets cursor show beyond h1 box on mobile */
-    overflow: visible;
+    /* Hides header text until the typewriter keyframes animation reveals it on the page */
+    overflow: hidden;
   }
 }
 
