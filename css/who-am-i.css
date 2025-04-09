@@ -362,6 +362,12 @@
     /* Hides header text until the typewriter keyframes animation reveals it on the page */
     overflow: hidden;
   }
+
+  /* Hide the cursor on mobile */
+  .who-am-i-container h1::after {
+    /* Removes the "|" */
+    content: "";
+  }
 }
 
 /*
@@ -457,7 +463,9 @@ Who-am-i.css
     │   │   └── text-align
     │   └── .who-am-i-container h1
     │       ├── text-shadow
-    │       └── overflow
+    │       ├── overflow
+    │       └── .who-am-i-container h1::after
+    │           └── content
     └── @media
         ├── .life-branch-desktop
         │   └── display
