@@ -15,7 +15,7 @@
 .lesson-container.golden-ratio-page h2 {
   /* --- Size It --- */
 
-  /* 30px ÷ 16px = 1.875 */
+  /* 30px ÷ 16px = 1.875rem */
   font-size: 1.875rem;
 
   /* --- Style It --- */
@@ -29,7 +29,7 @@
 .lesson-container.golden-ratio-page h3 {
   /* --- Size It --- */
 
-  /* 28px ÷ 16px = 1.75 */
+  /* 28px ÷ 16px = 1.75rem */
   font-size: 1.75rem;
 
   /* --- Space It --- */
@@ -38,6 +38,23 @@
   /* --- Style It --- */
   color: #D4AF37;
   text-decoration: underline;
+}
+
+/* 
+  H4 Subheadings
+  Order of Properties: Size It, Style It (Sz St)
+*/
+.lesson-container.golden-ratio-page h4 {
+  /* --- Size It --- */
+
+  /* 
+    Golden Ratio Size
+    1.618rem x 16px = 25.888px
+  */
+  font-size: 1.618rem;
+
+  /* --- Style It --- */
+  color: gold;
 }
 
 /* 
@@ -52,23 +69,6 @@
 
   /* Indents toggle from the left; 2.5rem = 40px (assuming 1rem = 16px) */
   margin-left: 2.5rem;
-}
-
-/* 
-  Centered tidbits on Golden Ratio Page
-  Order of Properties: Size It, Space It (Sz Sp)
-*/
-.centered-tidbit {
-  /* --- Size It --- */
-
-  /* Boosts text size to 18px (assuming 1rem = 16px) */
-  font-size: 1.125rem;
-  max-width: 500px;
-
-  /* --- Space It --- */
-
-  /* centers tidbit horizontally by setting the left and right margins to auto  */
-  margin: 0 auto;
 }
 
 /*
