@@ -166,9 +166,12 @@
 
 /* 
   Page Subheading
-  Order of Properties: Style It (St)
+  Order of Properties: Space It, Style It (Sp St)
 */
 .who-am-i-container h2 {
+  /* --- Space It --- */
+  margin-top: 1.5rem;
+
   /* --- Style It --- */
 
   /*
@@ -413,6 +416,8 @@ Who-am-i.css
 │           └── animation
 │               └── @keyframes blink
 ├── .who-am-i-container h2
+│   ├── Space It
+│   │   └── margin-top
 │   └── Style It
 │       └── color
 ├── .who-am-i-container p
