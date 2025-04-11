@@ -139,6 +139,34 @@
   animation: blink 1s 7 forwards;
 }
 
+/*
+  Styles for my Headshot 
+  Order of Properties: Size It, Space It, Style It (Sz Sp St)
+*/
+.who-am-i-container img {
+  /* --- Size It --- */
+
+  /* Prevents overflow, keeps it responsive */
+  max-width: 100%;
+
+  /* Maintains aspect ratio when scaled */
+  height: auto;
+
+  /* --- Space It --- */
+
+  /* Makes the image a block element to allow margin centering */
+  display: block;
+
+  /* Centers horizontally with auto margins; adds 1rem top/bottom spacing */
+  margin: 1rem auto;
+
+  /* --- Style It --- */
+
+  /* Adds a subtle border and shadow for visual polish */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+}
+
 /* Keyframes for typewriter effect */
 @keyframes typewriter {
   /* Starts with no width, text "hidden" */
