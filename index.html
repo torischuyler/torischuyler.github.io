@@ -25,6 +25,10 @@ This setup keeps things simple and standard, so your browser knows exactly where
         <!-- Viewport makes sure the page looks good on all devices by adjusting to screen size.
         It also affects page rendering and responsiveness. -->
 
+        <link rel="canonical" href="https://torischuyler.github.io/eOS/">
+        <!-- Canonical URL: Specifies the preferred version of this page for search engines to index, 
+        preventing duplicate content issues. -->
+    
         <title>Home | eOS Lesson Plans</title>
         <!-- Page title, visible in browser tabs, bookmarks, and search engine results.
         Format: [Page Name] | [Site Name] - this pattern helps with SEO and page navigation. -->
@@ -67,7 +71,7 @@ This setup keeps things simple and standard, so your browser knows exactly where
         <meta property="og:image" content="https://torischuyler.github.io/eOS/images/van-gogh-orca.jpg">
         <!-- Open Graph Image: Sets the image that appears when the page is shared. -->
 
-        <meta property="og:url" content="https://torischuyler.github.io/eOS/index.html">
+        <meta property="og:url" content="https://torischuyler.github.io/eOS/">
         <!-- Open Graph URL: Ensures the correct URL is used when shared. -->
 
         <meta property="og:type" content="website">
@@ -188,12 +192,14 @@ This setup keeps things simple and standard, so your browser knows exactly where
     <!-- End Body Section ------------------------------------------------->
 </html>
 
-<!--
+<!DOCTYPE html>
+<!-- 
 DOCTYPE
 └── html
     ├── head
     │   ├── meta (charset)
     │   ├── meta (viewport)
+    │   ├── link (canonical)
     │   ├── title
     │   ├── link (favicon)
     │   ├── SEO Group
