@@ -17,7 +17,7 @@ rules:
         case: lower  # Base case is lowercase
         exceptions:  # Allow capitalization for specific cases
           - acronyms: [
-            "ICO",
+            "TXT", "ICO",
             "TIL", "TOC", "URL", "SEO", "ARIA",
             "README", "RAM", "MMU", "ASCII", "OS", "XML",
             "HTML", "JSON", "JS", "CSS", "JPG", "YAML", "MD"
@@ -32,7 +32,7 @@ rules:
         exceptions:  # Same capitalization rules as description
           - acronyms:
               values: [
-                "XML", "HTML", "JSON", "JS", "CSS", "JPG", "YAML", "MD"
+                "TXT", "XML", "HTML", "JSON", "JS", "CSS", "JPG", "YAML", "MD"
               ]
               apply: "uppercase"  # Force uppercase for acronyms
               note: "Acronyms in targets must use uppercase when listed here"
@@ -52,6 +52,7 @@ rules:
       - style: "Modifies visual presentation or UI styles"
       - content: "Modifies page content such as text or media"
     scopes:
+      = txt
       - xml
       - html
       - json
@@ -73,6 +74,7 @@ rules:
         - "1 MD file"
         - "1 PNG file"
         - "1 XML file"
+        - "1 TXT file"
     description:
       tense: active
     examples:
@@ -91,3 +93,4 @@ rules:
       - "style(css): update h1 color and comment in 1 CSS file"
       - "content(html): update footer text in 5 HTML files"
       - "seo(xml): add XML sitemap for SEO in 1 XML file"
+      - "feat(txt): add robots txt file to specify sitemap URL in 1 TXT file"
