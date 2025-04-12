@@ -17,9 +17,10 @@ rules:
         case: lower  # Base case is lowercase
         exceptions:  # Allow capitalization for specific cases
           - acronyms: [
-            "XML", "ICO", "TIL",
-            "TOC", "URL", "YAML", SEO", "ARIA", "HTML", "JS",
-            "CSS", "JPG", "JPEG", "README", "RAM", "MMU", "ASCII", "OS"
+            "ICO",
+            "TIL", "TOC", "URL", "SEO", "ARIA",
+            "README", "RAM", "MMU", "ASCII", "OS", "XML",
+            "HTML", "JSON", "JS", "CSS", "JPG", "YAML", "MD"
           ]
           - proper_nouns: [
             "Jekyll", Fibonacci", "Phi", "Arc", "Brave",
@@ -31,7 +32,7 @@ rules:
         exceptions:  # Same capitalization rules as description
           - acronyms:
               values: [
-                "XML", "HTML", "JS", "CSS", "JPG", "JPEG", "YAML"
+                "XML", "HTML", "JSON", "JS", "CSS", "JPG", "YAML", "MD"
               ]
               apply: "uppercase"  # Force uppercase for acronyms
               note: "Acronyms in targets must use uppercase when listed here"
@@ -52,12 +53,12 @@ rules:
       - content: "Modifies page content such as text or media"
     scopes:
       - xml
-      - yaml
-      - js
       - html
-      - assets
       - json
+      - js
       - css
+      - assets
+      - yaml
       - md
     targets:
       description: "List of affected items with counts and types"
