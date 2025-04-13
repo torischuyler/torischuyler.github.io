@@ -776,7 +776,7 @@ nav a:hover {
 
 /* 
   Footer Styling 🐾
-  Order of Properties: Size it, Space it, Style it (Sz Sp St)
+  Order of Properties: Size It, Space It, Style It (Sz Sp St)
 */
 footer {
   /* --- Size It --- */
@@ -794,27 +794,24 @@ footer {
 
   /* --- Space It --- */
 
+  /* Fixes footer to the bottom of the viewport */
+  position: fixed;
+
+  /*
+    Sets footer 0 pixels from the bottom of the screen (without this property
+    the footer could stick to a random spot like the top of the page)
+  */
+  bottom: 0;
+
   /* Adds a cushion inside the footer. */
   padding: 1.5rem;
 
-/*
-    Pushes the footer to the bottom of the page in a flex body;
-    margin-top: auto eats up all the available space above it,
-    pinning the footer down and making it stick to the bottom of the page
-
-    For this to work, the following must be set in body: 
-    - display: flex
-    - min-height: 100vh
-    - flex-direction: column
-  */
-  margin-top: auto;
+  /* Centers the footer text. */
+  text-align: center;
 
   /* --- Style It --- */
 
-  /*
-    Text color uses the accent shade
-    (muad-dib in dark, white in light mode).
-  */
+  /* Text color uses the accent shade muad-dib in dark, white in light mode). */
   color: var(--accent-text-color);
 
   /*
@@ -822,9 +819,6 @@ footer {
     (deep-skyler in dark mode, chefchaouen-blue in light mode).
   */
   background-color: var(--primary-color);
-
-  /* Centers the footer text. */
-  text-align: center;
 }
 
 /*
@@ -1083,12 +1077,13 @@ Global.css
 │       │   ├── width
 │       │   └── font-size
 │       ├── Space It
+│       │   ├── position
+│       │   ├── bottom
 │       │   ├── padding
-│       │   └── margin-top
+│       │   └── text-align
 │       └── Style It
 │           ├── color
-│           ├── background-color
-│           └── text-align
+│           └── background-color
 ├── Mobile Styles
 │   ├── @media
 │   │   ├── h1
