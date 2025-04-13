@@ -10,6 +10,9 @@
     .home-container h1 { ... }
     .home-container p { ... }
     .home-container img { ... }
+  
+  Touch Styles
+  .home-container { ... }
 */
 
 /*
@@ -156,7 +159,7 @@
 }
 
 /*
-  Home Container Mobile Styles
+  Home Container Touch Styles
   Order of Properties: Size It (Sz)
 
   📲 The 768px width is widely used because it aligns with the typical screen size
@@ -170,7 +173,7 @@
 
     /*
       max-width: 100vw sets the maximum width to 100% of the viewport width.
-      Increased from 80vw to 100vw for mobile to enhance text and image size on smaller screens.
+      Increased from 80vw to 100vw to enhance text and image size on smaller screens.
     */
     max-width: 100vw;
   }
@@ -203,7 +206,7 @@ Index.css
 │   └── Style It
 │       ├── display
 │       └── border-radius
-├── Mobile Styles
+├── Touch Styles
 │   ├── @media
 │       ├── .home-container
 │           └── Size It
