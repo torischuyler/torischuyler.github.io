@@ -1,7 +1,6 @@
 /*
-  🏡 Index.css - The stylesheet for the home page.
-  This file defines the styles that apply specifically 
-  to the home of eOS Lesson Plans.
+  🏡 Index.css - The stylesheet for the home page. This file defines the styles
+  that apply specifically to the home of eOS Lesson Plans.
 */
 
 /*
@@ -9,7 +8,6 @@
     .home-container { ... }
     .home-container h1 { ... }
     .home-container p { ... }
-    .home-container img { ... }
   
   Touch Styles
   .home-container { ... }
@@ -103,62 +101,6 @@
 }
 
 /*
-  🐳 Image styles for van Gogh orca
-  Order of Properties: Size it, Space it, Style it (Sz Sp St)
-*/
-.home-container img {
-  /* --- Size It --- */
-
-  /* 
-    Ensures the image doesn’t exceed the container’s width, which is 80 viewport width
-    (vw, or 80% of the browser window’s width) set in .home-container.
-  */
-  max-width: 100%;
-
-  /* 
-    Maintains aspect ratio (aka it keeps the image’s shape normal - not stretched or squished)
-
-    ✨ Most modern browsers automatically apply height: auto to images if 
-    you don’t specify a height. This is called the "intrinsic aspect ratio."
-    We're adding this here for safe measure for older browsers or weird quirks.
-  */
-  height: auto;
-
-  /* --- Space It --- */
-
-  /*
-    Default styling for images is inline-block. We are setting it here to a block element.
-
-    🤔 Why tho?
-      - Ensures the image starts on a new line and takes the full available width (up to max-width).
-      - Works with text-align: center (from .home-container) and margin: auto to center the image,
-        keeping it aligned with the centered text above.
-      - Removes inline-block quirks, like extra spacing below the image from the text baseline.
-      ✨ Explicitly setting this (even if not strictly required) clarifies our intent for centering
-      and is a best practice for predictable layouts, especially in an educational site like eOS Lesson Plans.
-  */
-  display: block;
-
-  /*
-    Space outside the image ⬆️⬇️⬅️➡️
-    Using two values:
-    1rem = top and bottom margins (adds 1 rem/16px above and below for breathing room).
-    auto = left and right margins (splits remaining space to center the image).
-    ✨ This extra space ensures the image doesn’t feel cramped against the paragraph or footer.
-  */
-  margin: 1rem auto;
-
-  /* --- Style It --- */
-
-  /* 
-    💫 Adds a lil curve to the edges of the image
-
-    btw: most CSS devs use px for border-radius because it’s a fixed visual effect.
-  */
-  border-radius: 8px;
-}
-
-/*
   Home Container Touch Styles
   Order of Properties: Size It (Sz)
 
@@ -198,15 +140,6 @@ Index.css
 │   └── Space It
 │       ├── margin-top
 │       └── margin-bottom
-├── .home-container img
-│   ├── Size It
-│   │   ├── max-width
-│   │   └── height
-│   ├── Space It
-│   │   ├── display
-│   │   └── margin
-│   └── Style It
-│       └── border-radius
 ├── Touch Styles
 │   ├── @media
 │       ├── .home-container
