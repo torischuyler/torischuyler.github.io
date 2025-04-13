@@ -141,6 +141,23 @@
   font-weight: 500;
 }
 
+/* 
+  Footer Styling 🐾
+  Order of Properties: Space It (Sp)
+*/
+footer {
+  /* --- Space It --- */
+
+  /* Fixes footer to the bottom of the viewport */
+  position: fixed;
+
+  /*
+    Sets footer 0 pixels from the bottom of the screen (without this property
+    the footer could stick to a random spot like the top of the page)
+  */
+  bottom: 0;
+}
+
 /*
   Home Container Touch Styles
   Order of Properties: Size It (Sz)
@@ -193,6 +210,10 @@ Index.css
 │   └── Style It
 │       ├── color
 │       └── font-weight
+├── footer
+│   └── Space It
+│       ├── position
+│       └── bottom
 ├── Touch Styles
 │   └── @media
 │       └── .home-container
