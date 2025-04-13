@@ -794,14 +794,17 @@ footer {
 
   /* --- Space It --- */
 
-  /* Fixes footer to the bottom of the viewport */
-  position: fixed;
-
   /*
-    Sets footer 0 pixels from the bottom of the screen (without this property
-    the footer could stick to a random spot like the top of the page)
+    Pushes the footer to the bottom of the page in a flex body;
+    margin-top: auto eats up all the available space above it,
+    pinning the footer down and making it stick to the bottom of the page
+
+    For this to work, the following must be set in body: 
+    - display: flex
+    - min-height: 100vh
+    - flex-direction: column
   */
-  bottom: 0;
+  margin-top: auto;
 
   /* Adds a cushion inside the footer. */
   padding: 1.5rem;
@@ -1077,8 +1080,7 @@ Global.css
 │       │   ├── width
 │       │   └── font-size
 │       ├── Space It
-│       │   ├── position
-│       │   ├── bottom
+│       │   ├── margin-top
 │       │   ├── padding
 │       │   └── text-align
 │       └── Style It
