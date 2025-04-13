@@ -101,6 +101,47 @@
 }
 
 /*
+  This is a CTA "Call to Action" for reviewing ASCII blueprint on GitHub.
+  Order of Properties: Size It, Space It (Sz Sp)
+*/
+.cta {
+  /* --- Size It --- */
+
+  /* Makes the CTA stretch across the entire width of the viewport */
+  width: 100%;
+
+  /* --- Space It --- */
+
+  text-align: center;
+
+  /* Pins the CTA to a specific position in the viewport, unaffected by scrolling */
+  position: fixed;
+
+  /* Shifts the CTA up 80px from the viewport bottom to sit above the footer */
+  bottom: 80px;
+
+  /* Ensures the CTA appears above most page content in the stacking order */
+  z-index: 10;
+
+  /* Adds 15px top/bottom padding for text breathing room */
+  padding: 15px 0;
+}
+
+/*
+  CTA links
+  Order of Properties: Style It (St)
+*/
+.cta a {
+  /* --- Style It --- */
+
+  /* Sets the link color to a vibrant orange from global.css */
+  color: var(--princeton-orange);
+
+  /* Makes the link slightly bolder for emphasis */
+  font-weight: 500;
+}
+
+/*
   Home Container Touch Styles
   Order of Properties: Size It (Sz)
 
@@ -128,9 +169,8 @@ Index.css
 │   │   └── max-width
 │   ├── Space It
 │   │   ├── margin
-│   │   └── padding
-│   └── Style It
-│       └── text-align
+│   │   ├── padding
+│   │   └── text-align
 ├── .home-container h1
 │   └── Style It
 │       └── color
@@ -140,9 +180,22 @@ Index.css
 │   └── Space It
 │       ├── margin-top
 │       └── margin-bottom
+├── .cta
+│   ├── Size It
+│   │   └── width
+│   └── Space It
+│       ├── text-align
+│       ├── position
+│       ├── bottom
+│       ├── z-index
+│       └── padding
+├── .cta a
+│   └── Style It
+│       ├── color
+│       └── font-weight
 ├── Touch Styles
-│   ├── @media
-│       ├── .home-container
+│   └── @media
+│       └── .home-container
 │           └── Size It
 │               └── max-width
 */
