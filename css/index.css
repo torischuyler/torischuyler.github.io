@@ -11,6 +11,7 @@
     .cta { ... }
     .cta p { ... }
     .cta a { ... }
+    .cta a:hover { ... }
     .footer { ... }
   
   Touch Styles
@@ -133,7 +134,7 @@
 }
 
 /*
-  CTA paragraph
+  CTA Paragraph
   Order of Properties: Size It, Space It (Sz Sp)
 */
 .cta p {
@@ -146,7 +147,7 @@
 }
 
 /*
-  CTA links
+  CTA Links
   Order of Properties: Style It (St)
 */
 .cta a {
@@ -157,6 +158,14 @@
 
   /* Makes the link slightly bolder for emphasis */
   font-weight: 500;
+}
+
+/* 
+  CTA Hover
+  Order of Properties: Style It (St)
+*/
+.cta a:hover {
+  color: var(--emerald-green);
 }
 
 /* 
@@ -238,6 +247,9 @@ Index.css
 │   └── Style It
 │       ├── color
 │       └── font-weight
+├── .cta a:hover
+│   └── Style It
+│       └── color
 ├── footer
 │   └── Space It
 │       ├── position
