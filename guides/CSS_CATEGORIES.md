@@ -22,6 +22,7 @@ Properties that manage **layout**, **positioning**, or **gaps** around/between e
 - `top`, `right`, `bottom`, `left` (e.g., `10px`)
 - `display` (e.g., `flex`, `grid`)
 - `justify-content`, `align-items` (e.g., `center`, `space-between`)
+- `text-align` (e.g., `center`, `left`)
 
 ## Style
 
