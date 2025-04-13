@@ -8,9 +8,14 @@
     .home-container { ... }
     .home-container h1 { ... }
     .home-container p { ... }
+    .cta { ... }
+    .cta p { ... }
+    .cta a { ... }
+    .footer { ... }
   
   Touch Styles
   .home-container { ... }
+  .cta p { ... }
 */
 
 /*
@@ -118,13 +123,26 @@
   position: fixed;
 
   /* Shifts the CTA up 80px from the viewport bottom to sit above the footer */
-  bottom: 80px;
+  bottom: 40px;
 
   /* Ensures the CTA appears above most page content in the stacking order */
   z-index: 10;
 
   /* Adds 15px top/bottom padding for text breathing room */
   padding: 15px 0;
+}
+
+/*
+  CTA paragraph
+  Order of Properties: Size It, Space It (Sz Sp)
+*/
+.cta p {
+  /* --- Size It --- */
+  max-width: 80vw;
+
+  /* --- Space It --- */
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 /*
@@ -171,10 +189,14 @@ footer {
   .home-container {
     /* --- Size It --- */
 
-    /*
-      max-width: 100vw sets the maximum width to 100% of the viewport width.
-      Increased from 80vw to 100vw to enhance text and image size on smaller screens.
-    */
+    /* max-width: 100vw sets the maximum width to 100% of the viewport width. */
+    max-width: 100vw;
+  }
+
+  .cta p {
+    /* --- Size It --- */
+
+    /* max-width: 100vw sets the maximum width to 100% of the viewport width. */
     max-width: 100vw;
   }
 }
@@ -206,6 +228,12 @@ Index.css
 │       ├── bottom
 │       ├── z-index
 │       └── padding
+├── .cta p
+│   ├── Size It
+│   │   └── max-width
+│   └── Space It
+│       ├── margin
+│       └── padding
 ├── .cta a
 │   └── Style It
 │       ├── color
@@ -216,7 +244,10 @@ Index.css
 │       └── bottom
 ├── Touch Styles
 │   └── @media
-│       └── .home-container
+│       ├── .home-container
+│       │   └── Size It
+│       │       └── max-width
+│       └── .cta p
 │           └── Size It
 │               └── max-width
 */
