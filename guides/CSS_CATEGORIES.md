@@ -23,6 +23,7 @@ Properties that manage **layout**, **positioning**, or **gaps** around/between e
 - `display` (e.g., `flex`, `grid`)
 - `justify-content`, `align-items` (e.g., `center`, `space-between`)
 - `text-align` (e.g., `center`, `left`)
+- `z-index` (e.g., `10`, `100`)
 
 ## Style
 
