@@ -1,5 +1,5 @@
 /*
-  🏡 Index.css - The stylesheet for the home page. This file defines the styles
+  🏡 Index.css - The stylesheet for the homepage. This file defines the styles
   that apply specifically to the home of eOS Lesson Plans.
 */
 
@@ -211,6 +211,8 @@ footer {
 }
 
 /*
+CSS Homepage Blueprint
+
 Index.css
 ├── .home-container
 │   ├── Size It
@@ -254,6 +256,9 @@ Index.css
 │   └── Space It
 │       ├── position
 │       └── bottom
+*/
+
+/*
 ├── Touch Styles
 │   └── @media
 │       ├── .home-container
