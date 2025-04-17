@@ -17,6 +17,8 @@
   
   Touch Styles
   .home-container       { ... }
+  .modal-content h3     { ... }
+  .modal-content code   { ... }
 */
 
 /*
@@ -288,6 +290,21 @@ footer {
     /* max-width: 100vw sets the maximum width to 100% of the viewport width. */
     max-width: 100vw;
   }
+
+  .modal-content h3 {
+    /* --- Size It --- */
+    
+    /* 1.2rem = ~19px (if base is 16px).
+    */
+    font-size: 1.2rem;
+  }
+
+  .modal-content code {
+    /* --- Size It --- */
+  
+    /* 0.75rem = 12px (if base is 16px). */
+    font-size: 0.75rem;
+  }
 }
 
 /*
@@ -364,9 +381,15 @@ Index.css
 */
 
 /*
-├── Touch Styles
-│   └── @media
-│       ├── .home-container
-│       │   └── Size It
-│       │       └── max-width
+Touch Styles
+├── @media
+│   ├── .home-container
+│   │   └── Size It
+│   │       └── max-width
+│   ├── .modal-content h3
+│   │   └── Size It
+│   │       └── font-size
+│   ├── .modal-content code
+│   │   └── Size It
+│   │       └── font-size
 */
