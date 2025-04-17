@@ -23,7 +23,9 @@ Properties that manage **layout**, **positioning**, or **gaps** around/between e
 - `display` (e.g., `flex`, `grid`)
 - `justify-content`, `align-items` (e.g., `center`, `space-between`)
 - `text-align` (e.g., `center`, `left`)
-- `z-index` (e.g., `10`, `100`)
+- `z-index` (e.g., `1000`)
+- `overflow-x`, `overflow-y` (e.g. `auto`, `hidden`)
+- `float` (e.g. `left`, `right`)
 
 ## Style
 
@@ -37,6 +39,7 @@ Properties that define the **visual appearance** or **aesthetics** without affec
 - `font-weight` (e.g., `700`)
 - `text-decoration` (e.g., `underline`)
 - `box-shadow` (e.g., `0 2px 4px rgb(0 0 0 / 10%);`)
+- `white-space` (e.g. `pre`, `no-wrap`)
 
 ## Chaos
 
