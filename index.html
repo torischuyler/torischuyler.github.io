@@ -172,13 +172,16 @@ This setup keeps things simple and standard, so your browser knows exactly where
                 <p>This site hosts lesson plans for students on media and digital literacy,
                 and for developers on computer basics, building the foundation for an educational operating system (eOS).</p>
                 <!-- A paragraph, a block of text. -->
+
+                <p class="button-prompt">Curious about the page's structure?
+
+                    <button class="modal-button" onclick="openModal()">Check out the HTML Blueprint!</button>
+                    <!-- Button to trigger the ASCII blueprint modal -->
+                </p>
             </main>
             <!-- End Main Section ---------------------------------------------------------->
         </div>
         <!-- End of .home-container -------------------------------------------------------->
-
-        <button onclick="openModal()">Show HTML Blueprint</button>
-        <!-- Button to trigger the ASCII blueprint modal -->
 
         <!-- Begin ASCII Blueprint Modal --------------------------------------------------->
         <div id="blueprint-modal" class="modal" aria-label="ASCII Blueprint Code Modal">
@@ -244,7 +247,9 @@ DOCTYPE
         ├── div (home-container)
         │   └── main
         │       ├── h1
-        │       └── p
+        │       ├── p
+        │       └── p (button-prompt)
+        │           └── button (modal-button)
         ├── button (modal-toggle)
         ├── div (blueprint-modal)
         │   └── div (modal-content)
