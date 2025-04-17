@@ -8,6 +8,7 @@
     .home-container     { ... }
     .home-container h1  { ... }
     .home-container p   { ... }
+    .modal-button       { ... }
     .modal              { ... }
     .modal-content      { ... }
     .modal-close        { ... }
@@ -106,6 +107,30 @@
 
   /* Adds space between the image and paragraph */
   margin-bottom: 2rem;
+}
+
+/*
+  Modal Button
+  Order of Properties: Size It, Space It, Style It, Chaos It (Sz Sp St Ch)
+*/
+.modal-button {
+  /* Size It */
+  font-size: 1rem;
+
+  /* Space It */
+  padding: 0.75rem 1rem;
+  
+  /* Style It */
+  font-family: Righteous, system-ui, sans-serif;
+  font-weight: bold;
+  background-color: var(--background-color);
+  color: var(--princeton-orange);
+  border: none;
+  border-radius: 5px;
+  text-decoration: underline;
+  
+  /* Chaos It */
+  cursor: pointer; 
 }
 
 /*
@@ -374,6 +399,21 @@ Index.css
 │       ├── border-radius
 │       ├── white-space
 │       └── font-family
+├── .modal-button
+│   ├── Size It
+│   │   └── font-size
+│   ├── Space It
+│   │   └── padding
+│   ├── Style It
+│   │   ├── font-family
+│   │   ├── font-weight
+│   │   ├── background-color
+│   │   ├── color
+│   │   ├── border
+│   │   ├── border-radius
+│   │   └── text-decoration
+│   └── Chaos It
+│       └── cursor
 ├── footer
 │   └── Space It
 │       ├── position
