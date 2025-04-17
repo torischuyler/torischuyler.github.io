@@ -106,6 +106,9 @@ This setup keeps things simple and standard, so your browser knows exactly where
 
         <script src="js/mobile-nav.js" defer></script>
         <!-- Script for toggling touch navigation ------>
+
+        <script src="js/blueprint-modal.js"></script>
+        <!-- Script for opening and closing blueprint modal ------>
     </head>
     <!-- End Head Section --------------------------------------------------->
 
@@ -174,6 +177,94 @@ This setup keeps things simple and standard, so your browser knows exactly where
         </div>
         <!-- End of .home-container -------------------------------------------------------->
 
+        <button onclick="openModal()">Show Code</button>
+        <!-- Button to trigger the ASCII blueprint modal -->
+
+        <!-- Begin ASCII Blueprint Modal --------------------------------------------------->
+        <div id="blueprint-modal" class="modal" aria-label="ASCII Blueprint Code Modal">
+
+            <!-- Start Inner Content Box For Modal -->
+            <div class="modal-content">
+
+                <span class="modal-close" onclick="closeModal()">×</span>
+                <!-- Close Button For Modal -->
+
+                <h3>HTML Homepage Blueprint</h3>
+
+                <pre><code>
+            DOCTYPE
+            └── html
+                ├── head
+                │   ├── meta (charset)
+                │   ├── meta (viewport)
+                │   ├── link (canonical)
+                │   ├── title
+                │   ├── link (favicon)
+                │   ├── link (apple-touch-icon)
+                │   ├── SEO Group
+                │   │   ├── meta (robots)
+                │   │   ├── meta (description)
+                │   │   ├── meta (keywords)
+                │   │   └── meta (author)
+                │   ├── Open Graph Group
+                │   │   ├── meta (og:title)
+                │   │   ├── meta (og:description)
+                │   │   ├── meta (og:image)
+                │   │   ├── meta (og:url)
+                │   │   └── meta (og:type)
+                │   ├── Preconnect Links
+                │   │   ├── link (googleapis)
+                │   │   └── link (gstatic)
+                │   ├── Stylesheet Links
+                │   │   ├── link (global.css)
+                │   │   ├── link (index.css)
+                │   │   └── link (google fonts)
+                │   ├── script (sunrise-gotham-toggle.js)
+                │   ├── script (mobile-nav.js)
+                │   └── script (blueprint-modal.js)
+                └── body
+                    ├── nav
+                    │   ├── ul (nav-menu)
+                    │   │   ├── li
+                    │   │   │   └── a (Home - active)
+                    │   │   ├── li
+                    │   │   │   └── a (Lesson Plans)
+                    │   │   ├── li
+                    │   │   │   └── a (Who Am I?)
+                    │   │   ├── li
+                    │   │   │   └── a (Who Are You?)
+                    │   │   └── li
+                    │   │       └── a (TIL)
+                    │   ├── div (nav-header)
+                    │   │   ├── div (hamburger)
+                    │   │   └── button (sunrise-gotham-toggle)
+                    │   └── noscript
+                    │       └── div
+                    │           ├── p
+                    ├── div (home-container)
+                    │   └── main
+                    │       ├── h1
+                    │       └── p
+                    ├── button (modal-toggle)
+                    ├── div (blueprint-modal)
+                    │   └── div (modal-content)
+                    │       ├── span (modal-close)
+                    │       ├── h3
+                    │       └── pre
+                    │           └── code
+                    ├── footer
+                    │   └── p
+                    │       ├── span (year)
+                    │       └── span (heart)
+                    └── script (footer.js)
+                </code></pre>
+                <!-- Code snippet display, preserves formatting of ASCII tree -->
+                
+            </div>
+            <!-- End Inner Content Box For Modal -->
+        </div>
+        <!-- End ASCII Blueprint Modal ----------------------------------------------------->
+
         <!-- Begin Footer Section ---------------------------------------------------------->
         <!-- Footer content, like copyright info, contact details, or additional links. -->
         <footer aria-label="Page footer">
@@ -194,65 +285,3 @@ This setup keeps things simple and standard, so your browser knows exactly where
     </body>
     <!-- End Body Section ------------------------------------------------->
 </html>
-
-<!-- 
-HTML Homepage Blueprint
-
-DOCTYPE
-└── html
-    ├── head
-    │   ├── meta (charset)
-    │   ├── meta (viewport)
-    │   ├── link (canonical)
-    │   ├── title
-    │   ├── link (favicon)
-    │   ├── link (apple-touch-icon)
-    │   ├── SEO Group
-    │   │   ├── meta (robots)
-    │   │   ├── meta (description)
-    │   │   ├── meta (keywords)
-    │   │   └── meta (author)
-    │   ├── Open Graph Group
-    │   │   ├── meta (og:title)
-    │   │   ├── meta (og:description)
-    │   │   ├── meta (og:image)
-    │   │   ├── meta (og:url)
-    │   │   └── meta (og:type)
-    │   ├── Preconnect Links
-    │   │   ├── link (googleapis)
-    │   │   └── link (gstatic)
-    │   ├── Stylesheet Links
-    │   │   ├── link (global.css)
-    │   │   ├── link (index.css)
-    │   │   └── link (google fonts)
-    │   ├── script (sunrise-gotham-toggle.js)
-    │   └── script (mobile-nav.js)
-    └── body
-        ├── nav
-        │   ├── ul (nav-menu)
-        │   │   ├── li
-        │   │   │   └── a (Home - active)
-        │   │   ├── li
-        │   │   │   └── a (Lesson Plans)
-        │   │   ├── li
-        │   │   │   └── a (Who Am I?)
-        │   │   ├── li
-        │   │   │   └── a (Who Are You?)
-        │   │   └── li
-        │   │       └── a (TIL)
-        │   ├── div (nav-header)
-        │   │   ├── div (hamburger)
-        │   │   └── button (sunrise-gotham-toggle)
-        │   └── noscript
-        │       └── div
-        │           └── p
-        ├── div (home-container)
-        │   └── main
-        │       ├── h1
-        │       └── p
-        ├── footer
-        │   └── p
-        │       ├── span (year)
-        │       └── span (heart)
-        └── script (footer.js)
--->
