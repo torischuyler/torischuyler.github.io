@@ -7,7 +7,7 @@
 function openModal() {
 
   // Get the modal element by ID
-  const modal = document.getElementById('blueprintModal');
+  const modal = document.getElementById('blueprint-modal');
 
   // Makes the modal visible by setting its display to block
   modal.style.display = 'block';
@@ -17,7 +17,7 @@ function openModal() {
 function closeModal() {
 
   // Get the modal element by ID
-  const modal = document.getElementById('blueprintModal');
+  const modal = document.getElementById('blueprint-modal');
 
   // Hides the modal by setting its display to none
   modal.style.display = 'none';
@@ -27,7 +27,7 @@ function closeModal() {
 window.onclick = function(event) {
 
   // Get the modal element
-  const modal = document.getElementById('blueprintModal');
+  const modal = document.getElementById('blueprint-modal');
 
   // Check if the click target is the modal overlay
   if (event.target === modal) {
