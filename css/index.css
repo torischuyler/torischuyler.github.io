@@ -5,13 +5,18 @@
 
 /*
   Home Styles
-    .home-container { ... }
-    .home-container h1 { ... }
-    .home-container p { ... }
-    .footer { ... }
+    .home-container     { ... }
+    .home-container h1  { ... }
+    .home-container p   { ... }
+    .modal              { ... }
+    .modal-content      { ... }
+    .modal-close        { ... }
+    .modal-content h3   { ... }
+    .modal-content pre  { ... }
+    .footer             { ... }
   
   Touch Styles
-  .home-container { ... }
+  .home-container       { ... }
 */
 
 /*
@@ -101,6 +106,155 @@
   margin-bottom: 2rem;
 }
 
+/*
+  Modal
+  Order of Properties: Size It, Space It, Style It (Sz Sp St)
+*/
+.modal {
+  /* --- Size It --- */
+
+  /* Sets the modal to span the full viewport width so the overlay covers the entire horizontal space. */
+  width: 100%;
+
+  /* Sets the modal to span the full viewport height. so the overlay covers the entire vertical space. */
+  height: 100%;
+
+  /* --- Space It --- */
+
+  /* Hides the modal by default. It’s toggled to visible via JavaScript. */
+  display: none;
+
+  /* Locks the modal in place relative to the viewport. It stays in position even when the page is scrolled. */
+  position: fixed;
+
+  /* Anchors the modal to the top edge of the viewport. Used with position: fixed for full coverage. */
+  top: 0;
+
+  /* Anchors the modal to the left edge of the viewport. Used with position: fixed for full coverage. */
+  left: 0;
+
+  /* Ensures the modal appears above other content. High value prevents other elements from overlapping it. */
+  z-index: 1000;
+
+  /* --- Style It --- */
+
+  /*
+    Adds a semi-transparent black overlay on the homepage when the modal is open.
+    0 red, 0 green, 0 blue = pure black.
+    50% alpha = half see-through for a dimmed background.
+  */
+  background-color: rgb(0 0 0 / 50%);
+}
+
+/*
+  Modal Content
+  Order of Properties: Size It, Space It, Style It (Sz Sp St)
+*/
+.modal-content {
+  /* --- Size It --- */
+
+  /* Sets the content box to 80% of the viewport width. */
+  width: 80%;
+
+  /* Limits the content box width on larger screens. */
+  max-width: 600px;
+
+  /* Limits the content box to 70% of the viewport height. */
+  max-height: 70vh;
+
+  /* --- Space It --- */
+
+  /* 15% top/bottom adds vertical spacing; auto left/right centers it. */
+  margin: 15% auto;
+
+  /* Adds inner spacing on all sides of the content box. */
+  padding: 20px;
+
+  /* Adds a vertical scrollbar if content exceeds max-height. */
+  overflow-y: auto;
+
+  /* --- Style It --- */
+
+  background-color: var(--anti-flash-white);
+
+  /* Rounds the corners of the content box. */
+  border-radius: 5px;
+}
+
+/*
+  Close Button
+  Order of Properties: Size It, Space It, Style It, Chaos It (Sz Sp St Ch)
+*/
+.modal-close {
+  /* --- Size It --- */
+
+  /* Answer to the Ultimate Question of Life, the Universe, and Everything. */
+  font-size: 42px;
+
+  /* --- Space It --- */
+
+  /* Aligns the close button in the top-right corner of the modal. */
+  float: right;
+
+  /* --- Style It --- */
+
+  color: var(--charcoal);
+  font-weight: bold;
+
+  /* --- Chaos It --- */
+
+  /* Sets a custom cursor with an SVG emoji (❎) */
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">❎</text></svg>')
+  32 32, default;
+}
+
+/*
+  Modal Title
+  Order of Properties: Size It (Sz)
+*/
+.modal-content h3 {
+  /* --- Size It --- */
+
+  /* 1.5 × 16px = 24px (at a 16px default root). */
+  font-size: 1.5rem;
+
+  /* --- Style It --- */
+
+  color: var(--charcoal);
+}
+
+/*
+  Modal Code Block
+  Order of Properties: Size It, Space It, Style It (Sp St)
+*/
+.modal-content pre {
+  /* --- Size It --- */
+
+  /* 0.9 × 16px = 14.4px (at a 16px default root). */
+  font-size: 0.9rem;
+
+  /* Adds a horizontal scrollbar for long code lines. */
+  overflow-x: auto;
+
+  /* --- Style It --- */
+
+  color: var(--charcoal);
+  background-color: #F4F4F4;
+  border-radius: 5px;
+
+  /*
+    Pre preserves whitespace and line breaks in code.
+    Ensures code formatting (e.g., indentation) is displayed correctly.
+  */
+  white-space: pre;
+
+  /*
+    font-family: 'Courier New', Courier, monospace sets a monospace font.
+    Standard for code blocks for consistent character spacing.
+  */
+  font-family: 'Courier New', Courier, monospace;
+}
+
 /* 
   Footer Styling 🐾
   Order of Properties: Space It (Sp)
@@ -137,8 +291,6 @@ footer {
 }
 
 /*
-CSS Homepage Blueprint
-
 Index.css
 ├── .home-container
 │   ├── Size It
@@ -156,6 +308,55 @@ Index.css
 │   └── Space It
 │       ├── margin-top
 │       └── margin-bottom
+├── .modal
+│   ├── Size It
+│   │   ├── width
+│   │   └── height
+│   ├── Space It
+│   │   ├── display
+│   │   ├── position
+│   │   ├── top
+│   │   ├── left
+│   │   └── z-index
+│   └── Style It
+│       └── background-color
+├── .modal-content
+│   ├── Size It
+│   │   ├── width
+│   │   ├── max-width
+│   │   └── max-height
+│   ├── Space It
+│   │   ├── margin
+│   │   ├── padding
+│   │   └── overflow-y
+│   └── Style It
+│       ├── background-color
+│       └── border-radius
+├── .modal-close
+│   ├── Size It
+│   │   └── font-size
+│   ├── Space It
+│   │   └── float
+│   ├── Style It
+│   │   ├── color
+│   │   └── font-weight
+│   └── Chaos It
+│       └── cursor
+├── .modal-content h3
+│   ├── Size It
+│   │   └── font-size
+│   └── Style It
+│       └── color
+├── .modal-content pre
+│   ├── Size It
+│   │   ├── font-size
+│   │   └── overflow-x
+│   └── Style It
+│       ├── color
+│       ├── background-color
+│       ├── border-radius
+│       ├── white-space
+│       └── font-family
 ├── footer
 │   └── Space It
 │       ├── position
