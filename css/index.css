@@ -8,6 +8,7 @@
     .home-container     { ... }
     .home-container h1  { ... }
     .home-container p   { ... }
+    .modal-prompt       { ... }
     .modal-button       { ... }
     .modal              { ... }
     .modal-content      { ... }
@@ -107,6 +108,21 @@
 
   /* Adds space between the image and paragraph */
   margin-bottom: 2rem;
+}
+
+/*
+  Modal Prompt
+  Order of Properties: Size It, Space It (Sz Sp)
+*/
+.modal-prompt {
+  /* Size It */
+  width: 100%;
+
+  /* Space It */
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  padding: 10px 0;
 }
 
 /*
@@ -414,6 +430,14 @@ Index.css
 │   │   └── text-decoration
 │   └── Chaos It
 │       └── cursor
+├── .modal-prompt
+│   ├── Size It
+│   │   └── width
+│   └── Space It
+│       ├── position
+│       ├── bottom
+│       ├── left
+│       └── padding
 ├── footer
 │   └── Space It
 │       ├── position
