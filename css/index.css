@@ -8,14 +8,14 @@
     .home-container     { ... }
     .home-container h1  { ... }
     .home-container p   { ... }
-    .modal-prompt       { ... }
+    .html-prompt        { ... }
     .css-prompt         { ... }
     .modal-button       { ... }
     .modal              { ... }
     .modal-content      { ... }
-    .modal-close        { ... }
     .modal-content h3   { ... }
     .modal-content pre  { ... }
+    .modal-close        { ... }
     .footer             { ... }
   
   Touch Styles
@@ -112,10 +112,10 @@
 }
 
 /*
-  Modal Prompt
+  HTML Prompt
   Order of Properties: Size It, Space It (Sz Sp)
 */
-.modal-prompt {
+.html-prompt {
   /* Size It */
   width: 100%;
 
@@ -242,33 +242,6 @@
 }
 
 /*
-  Close Button
-  Order of Properties: Size It, Space It, Style It, Chaos It (Sz Sp St Ch)
-*/
-.modal-close {
-  /* --- Size It --- */
-
-  /* Answer to the Ultimate Question of Life, the Universe, and Everything. */
-  font-size: 42px;
-
-  /* --- Space It --- */
-
-  /* Aligns the close button in the top-right corner of the modal. */
-  float: right;
-
-  /* --- Style It --- */
-
-  color: var(--charcoal);
-  font-weight: bold;
-
-  /* --- Chaos It --- */
-
-  /* Sets a custom cursor with an SVG emoji (❎) */
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">❎</text></svg>')
-  32 32, default;
-}
-
-/*
   Modal Title
   Order of Properties: Size It (Sz)
 */
@@ -315,6 +288,33 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
+/*
+  Close Button
+  Order of Properties: Size It, Space It, Style It, Chaos It (Sz Sp St Ch)
+*/
+.modal-close {
+  /* --- Size It --- */
+
+  /* Answer to the Ultimate Question of Life, the Universe, and Everything. */
+  font-size: 42px;
+
+  /* --- Space It --- */
+
+  /* Aligns the close button in the top-right corner of the modal. */
+  float: right;
+
+  /* --- Style It --- */
+
+  color: var(--charcoal);
+  font-weight: bold;
+
+  /* --- Chaos It --- */
+
+  /* Sets a custom cursor with an SVG emoji (❎) */
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">❎</text></svg>')
+  32 32, default;
+}
+
 /* 
   Footer Styling 🐾
   Order of Properties: Space It (Sp)
@@ -349,7 +349,7 @@ footer {
     max-width: 100vw;
   }
 
-  .modal-prompt,
+  .html-prompt,
   .css-prompt {
     /* Size It */
     font-size: 0.8rem;
