@@ -173,9 +173,9 @@ This setup keeps things simple and standard, so your browser knows exactly where
                 and for developers on computer basics, building the foundation for an educational operating system (eOS).</p>
                 <!-- A paragraph, a block of text. -->
 
-                <p class="modal-prompt">Curious about the page's structure?
+                <p class="modal-prompt">Curious about the page's structure? Check out the
 
-                    <button class="modal-button" onclick="openModal()">Check out the HTML Blueprint!</button>
+                    <button class="modal-button" onclick="openModal('html')">HTML Blueprint</button>
                     <!-- Button to trigger the ASCII blueprint modal -->
                 </p>
             </main>
@@ -183,8 +183,88 @@ This setup keeps things simple and standard, so your browser knows exactly where
         </div>
         <!-- End of .home-container -------------------------------------------------------->
 
-        <!-- Begin ASCII Blueprint Modal --------------------------------------------------->
-        <div id="blueprint-modal" class="modal" aria-label="ASCII Blueprint Code Modal">
+        <!-- Hidden Blueprints for Modal Content -->
+        <div id="blueprints" style="display: none;">
+            <pre id="html-blueprint">
+                <code>
+    DOCTYPE
+    └── html
+        ├── head
+        │   ├── meta (charset)
+        │   ├── meta (viewport)
+        │   ├── link (canonical)
+        │   ├── title
+        │   ├── link (favicon)
+        │   ├── link (apple-touch-icon)
+        │   ├── SEO Group
+        │   │   ├── meta (robots)
+        │   │   ├── meta (description)
+        │   │   ├── meta (keywords)
+        │   │   └── meta (author)
+        │   ├── Open Graph Group
+        │   │   ├── meta (og:title)
+        │   │   ├── meta (og:description)
+        │   │   ├── meta (og:image)
+        │   │   ├── meta (og:url)
+        │   │   └── meta (og:type)
+        │   ├── Preconnect Links
+        │   │   ├── link (googleapis)
+        │   │   └── link (gstatic)
+        │   ├── Stylesheet Links
+        │   │   ├── link (global.css)
+        │   │   ├── link (index.css)
+        │   │   └── link (google fonts)
+        │   ├── script (sunrise-gotham-toggle.js)
+        │   ├── script (mobile-nav.js)
+        │   └── script (blueprint-modal.js)
+        └── body
+            ├── nav
+            │   ├── ul (nav-menu)
+            │   │   ├── li
+            │   │   │   └── a (Home - active)
+            │   │   ├── li
+            │   │   │   └── a (Lesson Plans)
+            │   │   ├── li
+            │   │   │   └── a (Who Am I?)
+            │   │   ├── li
+            │   │   │   └── a (Who Are You?)
+            │   │   └── li
+            │   │       └── a (TIL)
+            │   ├── div (nav-header)
+            │   │   ├── div (hamburger)
+            │   │   └── button (sunrise-gotham-toggle)
+            │   └── noscript
+            │       └── div
+            │           ├── p
+            ├── div (home-container)
+            │   └── main
+            │       ├── h1
+            │       ├── p
+            │       └── p (modal-prompt)
+            │           └── button (modal-button)
+            ├── div (blueprints)
+            │   └── pre (html-blueprint)
+            │       └── code
+            ├── div (blueprint-modal)
+            │   └── div (modal-content)
+            │       ├── span (modal-close)
+            │       ├── h3
+            │       └── pre
+            │           └── code
+            ├── footer
+            │   └── p
+            │       ├── span (year)
+            │       ├── text (eOS Lesson Plans)
+            │       ├── span (heart)
+            │       └── text (For Education)
+            └── script (footer.js)
+                </code>
+            </pre>
+             <!-- Code snippet display, preserves formatting of ASCII tree -->
+        </div>
+
+        <!-- Begin Blueprint Modal ---------------------------------------------------->
+        <div id="blueprint-modal" class="modal" aria-label="Blueprint Modal">
 
             <!-- Start Inner Content Box For Modal -->
             <div class="modal-content">
@@ -192,83 +272,20 @@ This setup keeps things simple and standard, so your browser knows exactly where
                 <span class="modal-close" onclick="closeModal()">×</span>
                 <!-- Close Button For Modal -->
 
-                <h3>Homepage HTML Blueprint</h3>
+                <h3 id="modal-title">Blueprint</h3>
+                <!-- Modal title, updated by blueprint-modal.js to show "Homepage HTML Blueprint" or "Homepage CSS Blueprint" -->
 
-                <pre><code>
-DOCTYPE
-└── html
-    ├── head
-    │   ├── meta (charset)
-    │   ├── meta (viewport)
-    │   ├── link (canonical)
-    │   ├── title
-    │   ├── link (favicon)
-    │   ├── link (apple-touch-icon)
-    │   ├── SEO Group
-    │   │   ├── meta (robots)
-    │   │   ├── meta (description)
-    │   │   ├── meta (keywords)
-    │   │   └── meta (author)
-    │   ├── Open Graph Group
-    │   │   ├── meta (og:title)
-    │   │   ├── meta (og:description)
-    │   │   ├── meta (og:image)
-    │   │   ├── meta (og:url)
-    │   │   └── meta (og:type)
-    │   ├── Preconnect Links
-    │   │   ├── link (googleapis)
-    │   │   └── link (gstatic)
-    │   ├── Stylesheet Links
-    │   │   ├── link (global.css)
-    │   │   ├── link (index.css)
-    │   │   └── link (google fonts)
-    │   ├── script (sunrise-gotham-toggle.js)
-    │   ├── script (mobile-nav.js)
-    │   └── script (blueprint-modal.js)
-    └── body
-        ├── nav
-        │   ├── ul (nav-menu)
-        │   │   ├── li
-        │   │   │   └── a (Home - active)
-        │   │   ├── li
-        │   │   │   └── a (Lesson Plans)
-        │   │   ├── li
-        │   │   │   └── a (Who Am I?)
-        │   │   ├── li
-        │   │   │   └── a (Who Are You?)
-        │   │   └── li
-        │   │       └── a (TIL)
-        │   ├── div (nav-header)
-        │   │   ├── div (hamburger)
-        │   │   └── button (sunrise-gotham-toggle)
-        │   └── noscript
-        │       └── div
-        │           ├── p
-        ├── div (home-container)
-        │   └── main
-        │       ├── h1
-        │       ├── p
-        │       └── p (button-prompt)
-        │           └── button (modal-button)
-        ├── button (modal-toggle)
-        ├── div (blueprint-modal)
-        │   └── div (modal-content)
-        │       ├── span (modal-close)
-        │       ├── h3
-        │       └── pre
-        │           └── code
-        ├── footer
-        │   └── p
-        │       ├── span (year)
-        │       └── span (heart)
-        └── script (footer.js)
-                </code></pre>
-                <!-- Code snippet display, preserves formatting of ASCII tree -->
-                
+                <pre id="modal-content">
+                <!-- Holds the blueprint content, populated by blueprint-modal.js with HTML or CSS blueprint -->
+                    <code>
+
+                    </code>
+                </pre>
+
             </div>
             <!-- End Inner Content Box For Modal -->
         </div>
-        <!-- End ASCII Blueprint Modal ----------------------------------------------------->
+        <!-- End Blueprint Modal ----------------------------------------------------->
 
         <!-- Begin Footer Section ---------------------------------------------------------->
         <!-- Footer content, like copyright info, contact details, or additional links. -->
