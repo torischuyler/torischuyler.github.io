@@ -146,7 +146,8 @@
   text-decoration: underline;
   
   /* Chaos It */
-  cursor: pointer; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 /*
@@ -429,7 +430,8 @@ Index.css
 │   │   ├── border-radius
 │   │   └── text-decoration
 │   └── Chaos It
-│       └── cursor
+│       ├── cursor
+│       └── transition
 ├── .modal-prompt
 │   ├── Size It
 │   │   └── width
