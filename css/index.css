@@ -9,6 +9,7 @@
     .home-container h1  { ... }
     .home-container p   { ... }
     .modal-prompt       { ... }
+    .css-prompt         { ... }
     .modal-button       { ... }
     .modal              { ... }
     .modal-content      { ... }
@@ -120,7 +121,22 @@
 
   /* Space It */
   position: fixed;
-  bottom: 40px;
+  bottom: 60px;
+  left: 0;
+  padding: 10px 0;
+}
+
+/*
+  CSS Prompt
+  Order of Properties: Size It, Space It (Sz Sp)
+*/
+.css-prompt {
+  /* Size It */
+  width: 100%;
+
+  /* Space It */
+  position: fixed;
+  bottom: 35px;
   left: 0;
   padding: 10px 0;
 }
@@ -348,114 +364,3 @@ footer {
     font-size: 0.75rem;
   }
 }
-
-/*
-Index.css
-├── .home-container
-│   ├── Size It
-│   │   └── max-width
-│   ├── Space It
-│   │   ├── margin
-│   │   ├── padding
-│   │   └── text-align
-├── .home-container h1
-│   └── Style It
-│       └── color
-├── .home-container p
-│   ├── Size It
-│   │   └── line-height
-│   └── Space It
-│       ├── margin-top
-│       └── margin-bottom
-├── .modal
-│   ├── Size It
-│   │   ├── width
-│   │   └── height
-│   ├── Space It
-│   │   ├── display
-│   │   ├── position
-│   │   ├── top
-│   │   ├── left
-│   │   └── z-index
-│   └── Style It
-│       └── background-color
-├── .modal-content
-│   ├── Size It
-│   │   ├── width
-│   │   ├── max-width
-│   │   └── max-height
-│   ├── Space It
-│   │   ├── margin
-│   │   ├── padding
-│   │   └── overflow-y
-│   └── Style It
-│       ├── background-color
-│       └── border-radius
-├── .modal-close
-│   ├── Size It
-│   │   └── font-size
-│   ├── Space It
-│   │   └── float
-│   ├── Style It
-│   │   ├── color
-│   │   └── font-weight
-│   └── Chaos It
-│       └── cursor
-├── .modal-content h3
-│   ├── Size It
-│   │   └── font-size
-│   └── Style It
-│       └── color
-├── .modal-content pre
-│   ├── Size It
-│   │   ├── font-size
-│   │   └── overflow-x
-│   └── Style It
-│       ├── color
-│       ├── background-color
-│       ├── border-radius
-│       ├── white-space
-│       └── font-family
-├── .modal-button
-│   ├── Size It
-│   │   └── font-size
-│   ├── Space It
-│   │   └── padding
-│   ├── Style It
-│   │   ├── font-family
-│   │   ├── font-weight
-│   │   ├── background-color
-│   │   ├── color
-│   │   ├── border
-│   │   ├── border-radius
-│   │   └── text-decoration
-│   └── Chaos It
-│       ├── cursor
-│       └── transition
-├── .modal-prompt
-│   ├── Size It
-│   │   └── width
-│   └── Space It
-│       ├── position
-│       ├── bottom
-│       ├── left
-│       └── padding
-├── footer
-│   └── Space It
-│       ├── position
-│       └── bottom
-*/
-
-/*
-Touch Styles
-├── @media
-│   ├── .home-container
-│   │   └── Size It
-│   │       └── max-width
-│   ├── .modal-content h3
-│   │   └── Size It
-│   │       └── font-size
-│   ├── .modal-content code
-│   │   └── Size It
-│   │       └── font-size
-*/

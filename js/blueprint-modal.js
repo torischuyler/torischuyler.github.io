@@ -22,6 +22,7 @@ function openModal(type) {
 
   // Check if we're showing the HTML Blueprint
   if (type === 'html') {
+
     // Get the HTML Blueprint content from the hidden element
     const blueprintContent = document.getElementById('html-blueprint').querySelector('code').textContent;
 
@@ -33,6 +34,21 @@ function openModal(type) {
 
     // Update the modal's aria-label for accessibility
     modal.setAttribute('aria-label', 'HTML Blueprint Modal');
+
+  // Check if we're showing the CSS Blueprint
+  } else if (type === 'css') {
+
+    // Get the CSS Blueprint content from the hidden element
+    const blueprintContent = document.getElementById('css-blueprint').querySelector('code').textContent;
+
+    // Put the CSS Blueprint content into the modal
+    modalContent.textContent = blueprintContent;
+
+    // Set the modal's title to show it's the CSS Blueprint
+    modalTitle.textContent = 'Homepage CSS Blueprint';
+
+    // Update the modal's aria-label for accessibility
+    modal.setAttribute('aria-label', 'CSS Blueprint Modal');
   }
 
   // Makes the modal visible by setting its display to block

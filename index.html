@@ -178,12 +178,15 @@ This setup keeps things simple and standard, so your browser knows exactly where
                     <button class="modal-button" onclick="openModal('html')">HTML Blueprint</button>
                     <!-- Button to trigger the ASCII blueprint modal -->
                 </p>
+                <p class="css-prompt">And for page styling, see the
+                    <button class="modal-button" onclick="openModal('css')">CSS Blueprint</button>
+                </p>
             </main>
             <!-- End Main Section ---------------------------------------------------------->
         </div>
         <!-- End of .home-container -------------------------------------------------------->
 
-        <!-- Hidden Blueprints for Modal Content -->
+        <!-- Begin Hidden Blueprints for Modal Content ----->
         <div id="blueprints" style="display: none;">
             <pre id="html-blueprint">
                 <code>
@@ -260,13 +263,126 @@ This setup keeps things simple and standard, so your browser knows exactly where
             └── script (footer.js)
                 </code>
             </pre>
-             <!-- Code snippet display, preserves formatting of ASCII tree -->
+             <!-- Code snippet display, preserves formatting of HTML tree -->
+
+            <pre id="css-blueprint">
+                <code>
+    Index.css
+    ├── .home-container
+    │   ├── Size It
+    │   │   └── max-width
+    │   ├── Space It
+    │   │   ├── margin
+    │   │   ├── padding
+    │   │   └── text-align
+    ├── .home-container h1
+    │   └── Style It
+    │       └── color
+    ├── .home-container p
+    │   ├── Size It
+    │   │   └── line-height
+    │   └── Space It
+    │       ├── margin-top
+    │       └── margin-bottom
+    ├── .modal
+    │   ├── Size It
+    │   │   ├── width
+    │   │   └── height
+    │   ├── Space It
+    │   │   ├── display
+    │   │   ├── position
+    │   │   ├── top
+    │   │   ├── left
+    │   │   └── z-index
+    │   └── Style It
+    │       └── background-color
+    ├── .modal-content
+    │   ├── Size It
+    │   │   ├── width
+    │   │   ├── max-width
+    │   │   └── max-height
+    │   ├── Space It
+    │   │   ├── margin
+    │   │   ├── padding
+    │   │   └── overflow-y
+    │   └── Style It
+    │       ├── background-color
+    │       └── border-radius
+    ├── .modal-close
+    │   ├── Size It
+    │   │   └── font-size
+    │   ├── Space It
+    │   │   └── float
+    │   ├── Style It
+    │   │   ├── color
+    │   │   └── font-weight
+    │   └── Chaos It
+    │       └── cursor
+    ├── .modal-content h3
+    │   ├── Size It
+    │   │   └── font-size
+    │   └── Style It
+    │       └── color
+    ├── .modal-content pre
+    │   ├── Size It
+    │   │   ├── font-size
+    │   │   └── overflow-x
+    │   └── Style It
+    │       ├── color
+    │       ├── background-color
+    │       ├── border-radius
+    │       ├── white-space
+    │       └── font-family
+    ├── .modal-button
+    │   ├── Size It
+    │   │   └── font-size
+    │   ├── Space It
+    │   │   └── padding
+    │   ├── Style It
+    │   │   ├── font-family
+    │   │   ├── font-weight
+    │   │   ├── background-color
+    │   │   ├── color
+    │   │   ├── border
+    │   │   ├── border-radius
+    │   │   └── text-decoration
+    │   └── Chaos It
+    │       ├── cursor
+    │       └── transition
+    ├── .modal-prompt
+    │   ├── Size It
+    │   │   └── width
+    │   └── Space It
+    │       ├── position
+    │       ├── bottom
+    │       ├── left
+    │       └── padding
+    ├── footer
+    │   └── Space It
+    │       ├── position
+    │       └── bottom
+
+    Touch Styles
+    ├── @media
+    │   ├── .home-container
+    │   │   └── Size It
+    │   │       └── max-width
+    │   ├── .modal-content h3
+    │   │   └── Size It
+    │   │       └── font-size
+    │   ├── .modal-content code
+    │   │   └── Size It
+    │   │       └── font-size   
+                </code>
+            </pre>
+            <!-- Code snippet display, preserves formatting of CSS blueprint -->
         </div>
+        <!-- End Hidden Blueprints for Modal Content ------>
 
         <!-- Begin Blueprint Modal ---------------------------------------------------->
         <div id="blueprint-modal" class="modal" aria-label="Blueprint Modal">
 
-            <!-- Start Inner Content Box For Modal -->
+            <!-- Begin Inner Content Box For Modal -->
             <div class="modal-content">
 
                 <span class="modal-close" onclick="closeModal()">×</span>
