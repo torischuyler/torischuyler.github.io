@@ -163,6 +163,25 @@ document.addEventListener('DOMContentLoaded', () => {
       // Adds the button to the result div, placing it underneath the image
       resultDiv.appendChild(shareButton);
 
+      // Create a button to trigger downloading quiz scores as a CSV file
+      const downloadButton = document.createElement('button');
+
+      // Adds a class to style the CSV download button
+      downloadButton.classList.add('download-scores-btn');
+
+      // Adds text that will be displayed on the CSV download button
+      downloadButton.textContent = 'Download Your Scores';
+
+      // Stick the download button into the result div so it shows up on the page
+      resultDiv.appendChild(downloadButton);
+
+      // Add click event listener to download scores as CSV
+      downloadButton.addEventListener('click', () => {
+
+      // Pass scores to PyScript function (defined in HTML)
+       window.saveScoresToCSV(JSON.stringify(scores));
+      });
+
       // Adds a click event listener to the share button to copy the user's meme result with image and quiz link
       shareButton.addEventListener('click', function() {
         const result = memeLanguage.charAt(0).toUpperCase() + memeLanguage.slice(1);

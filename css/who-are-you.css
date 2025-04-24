@@ -3,45 +3,6 @@
   (aka predicts their location, local time, time zone, and browser) and hosts the Meme Language Quiz.
 */
 
-/*
-  Page Styles
-    nav a { ... }
-    body { ... }
-      body.cursor-mystical { ... }
-      body.cursor-cute { ... }
-      body.cursor-chaos { ... }
-      body.cursor-positive { ... }
-      body.cursor-savage { ... }
-      body.cursor-history { ... }
-      body.cursor-tech { ... }
-      body.cursor-renegade { ... }
-
-    #yin-yang-toggle { ... }
-
-  Who Are You Styles
-    .who-are-you-container { ... }
-    .who-are-you-container h1 { ... }
-    .who-are-you-container h2 { ... }
-    .who-are-you-container ul { ... }
-    .who-are-you-container .quiz-wrapper .question { ... }
-      .who-are-you-container .quiz-wrapper .question .active { ... }
-      .who-are-you-container .quiz-wrapper .question p { ... }
-      .who-are-you-container .quiz-wrapper .question select { ... }
-    .who-are-you-container .quiz-wrapper .next-btn { ... }
-      .who-are-you-container .quiz-wrapper .next-btn:hover { ... }
-    .who-are-you-container .quiz-wrapper .back-btn { ... }
-      .who-are-you-container .quiz-wrapper .back-btn:hover { ... }
-    .who-are-you-container .quiz-wrapper .submit-btn { ... }
-      .who-are-you-container .quiz-wrapper .submit-btn:hover { ... }
-    .who-are-you-container .quiz-wrapper .quiz-result .share-quiz-btn { ... }
-      .who-are-you-container .quiz-wrapper .quiz-result .share-quiz-btn:hover { ... }
-  
-  Mobile Styles
-    #mobile-emoji-pop
-      @keyframes pop-up { ... }
-      #mobile-emoji-pop.active { ... }
-*/
-
 /* 
   Make nav links inherit the body’s emoji cursor
   Order of Properties: Style It (St)
@@ -371,10 +332,11 @@ body.cursor-renegade {
 }
 
 /* 
-  Share Meme Quiz Button
+  Share Meme Quiz Button and Download Scores Button
   Order of Properties: Size It, Space It, Style It (Sz Sp St)
 */
-.who-are-you-container .quiz-wrapper .quiz-result .share-quiz-btn {
+.who-are-you-container .quiz-wrapper .quiz-result .share-quiz-btn,
+.who-are-you-container .quiz-wrapper .quiz-result .download-scores-btn {
   display: block;
 
   /* --- Size It --- */
@@ -393,7 +355,8 @@ body.cursor-renegade {
   cursor: inherit;
 }
 
-.who-are-you-container .quiz-wrapper .quiz-result .share-quiz-btn:hover {
+.who-are-you-container .quiz-wrapper .quiz-result .share-quiz-btn:hover,
+.who-are-you-container .quiz-wrapper .quiz-result .download-scores-btn:hover {
   /* --- Style It --- */
   background-color: var(--secondary-color);
 }
@@ -465,183 +428,3 @@ body.cursor-renegade {
     animation: pop-up 1s ease-out forwards;
   }
 }
-
-/*
-Who-are-you.css
-├── nav a
-│   └── Style It
-│       └── cursor
-├── body
-│   └── Style It
-│       └── cursor
-├── #yin-yang-toggle
-│   └── Style It
-│       └── cursor
-├── .who-are-you-container
-│   ├── Size It
-│   │   └── max-width
-│   ├── Space It
-│   │   ├── margin
-│   │   └── padding
-│   └── Style It
-│       └── text-align
-├── .who-are-you-container h1
-│   └── Style It
-│       └── color
-├── .who-are-you-container h2
-│   └── Style It
-│       └── color
-├── .who-are-you-container ul
-│   └── Style It
-│       └── list-style-type
-├── .who-are-you-container .quiz-wrapper .question
-│   └── Style It
-│       └── display
-├── .who-are-you-container .quiz-wrapper .question.active
-│   └── Style It
-│       └── display
-├── .who-are-you-container .quiz-wrapper .question p
-│   ├── Size It
-│   │   └── font-size
-│   ├── Space It
-│   │   └── margin-bottom
-│   └── Style It
-│       ├── font-family
-│       └── color
-├── .who-are-you-container .quiz-wrapper .question select
-│   ├── Size It
-│   │   ├── font-size
-│   │   ├── overflow-x
-│   │   ├── width
-│   │   └── max-width
-│   ├── Space It
-│   │   ├── margin
-│   │   └── padding
-│   └── Style It
-│       ├── display
-│       ├── font-family
-│       ├── background-color
-│       ├── border
-│       ├── border-radius
-│       ├── cursor
-│       └── text-overflow
-├── body.cursor-mystical
-│   └── Style It
-│       └── cursor
-├── body.cursor-cute
-│   └── Style It
-│       └── cursor
-├── body.cursor-chaos
-│   └── Style It
-│       └── cursor
-├── body.cursor-positive
-│   └── Style It
-│       └── cursor
-├── body.cursor-savage
-│   └── Style It
-│       └── cursor
-├── body.cursor-history
-│   └── Style It
-│       └── cursor
-├── body.cursor-tech
-│   └── Style It
-│       └── cursor
-├── body.cursor-renegade
-│   └── Style It
-│       └── cursor
-├── .who-are-you-container .quiz-wrapper .next-btn
-│   ├── Size It
-│   │   └── font-size
-│   ├── Space It
-│   │   ├── margin
-│   │   └── padding
-│   └── Style It
-│       ├── display
-│       ├── font-family
-│       ├── color
-│       ├── background-color
-│       ├── border
-│       ├── border-radius
-│       └── cursor
-├── .who-are-you-container .quiz-wrapper .next-btn:hover
-│   └── Style It
-│       └── background-color
-├── .who-are-you-container .quiz-wrapper .back-btn
-│   ├── Size It
-│   │   └── font-size
-│   ├── Space It
-│   │   ├── margin
-│   │   └── padding
-│   └── Style It
-│       ├── display
-│       ├── font-family
-│       ├── color
-│       ├── background-color
-│       ├── border
-│       ├── border-radius
-│       └── cursor
-├── .who-are-you-container .quiz-wrapper .back-btn:hover
-│   └── Style It
-│       └── background-color
-├── .who-are-you-container .quiz-wrapper .submit-btn
-│   ├── Size It
-│   │   └── font-size
-│   ├── Space It
-│   │   ├── margin
-│   │   └── padding
-│   └── Style It
-│       ├── display
-│       ├── font-family
-│       ├── color
-│       ├── background-color
-│       ├── border
-│       ├── border-radius
-│       └── cursor
-├── .who-are-you-container .quiz-wrapper .submit-btn:hover
-│   └── Style It
-│       └── background-color
-├── #mobile-emoji-pop
-│   ├── Size It
-│   │   └── font-size
-│   ├── Space It
-│   │   ├── position
-│   │   ├── left
-│   │   ├── top
-│   │   └── transform
-│   └── Style It
-│       ├── display
-│       ├── pointer-events
-│       └── z-index
-├── @keyframes pop-up
-│   ├── 0%
-│   │   ├── transform
-│   │   └── opacity
-│   ├── 50%
-│   │   ├── transform
-│   │   └── opacity
-│   └── 100%
-│       ├── transform
-│       └── opacity
-├── @media (width <= 768px)
-│   ├── #mobile-emoji-pop.active
-│       └── Style It
-│           ├── display
-│           └── animation
-├── .who-are-you-container .quiz-wrapper .quiz-result .share-quiz-btn
-│   ├── Size It
-│   │   └── font-size
-│   ├── Space It
-│   │   ├── margin
-│   │   └── padding
-│   └── Style It
-│       ├── display
-│       ├── font-family
-│       ├── color
-│       ├── background-color
-│       ├── border
-│       ├── border-radius
-│       └── cursor
-├── .who-are-you-container .quiz-wrapper .quiz-result .share-quiz-btn:hover
-│   └── Style It
-│       └── background-color
-*/

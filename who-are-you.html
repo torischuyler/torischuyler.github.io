@@ -90,6 +90,16 @@ This is the "Who Are You?" page, designed to explain to visitors who they are. -
         <!-- Load local stylesheets first for speed and to prevent overrides by third-party CSS (e.g., Google Fonts). -->
         <!-- End Stylesheet Links  --------------------------------------------------->
 
+        <!-- Begin Python  ----------------------------------->
+        <!-- Adding PyScript so visitors can download their meme quiz results client-side. -->
+
+        <link rel="stylesheet" href="https://pyscript.net/releases/2025.3.1/core.css"/>
+        <!-- PyScript CSS for running Python in the browser -->
+
+        <script defer type="module" src="https://pyscript.net/releases/2025.3.1/core.js"></script>
+        <!-- PyScript JS for running Python in the browser -->
+        <!-- End Python  ------------------------------------->
+
         <script src="js/toggles/angel-devil-toggle.js" defer></script>
         <!-- Script for toggling Dark/Light mode - placed last for better page load performance and security.
         'defer' tells the browser to load the script after the HTML is parsed but before
@@ -295,6 +305,9 @@ This is the "Who Are You?" page, designed to explain to visitors who they are. -
                   </div>
                 </div>
                 <!-- End Quiz Wrapper ------------------------------------------------------>
+
+                <py-script src="pyscript/save_scores.py"></py-script>
+                <!-- PyScript to generate CSV -->
             </main>
             <!-- End Main Section ---------------------------------------------------------->
         </div>
@@ -323,102 +336,3 @@ This is the "Who Are You?" page, designed to explain to visitors who they are. -
     </body>
     <!-- End Body Section ------------------------------------------------->
 </html>
-
-<!-- 
-Who Are You Page Blueprint
-
-DOCTYPE
-└── html
-    ├── head
-    │   ├── meta (charset)
-    │   ├── meta (viewport)
-    │   ├── link (canonical)
-    │   ├── title
-    │   ├── link (favicon)
-    │   ├── link (apple-touch-icon)
-    │   ├── SEO Group
-    │   │   ├── meta (robots)
-    │   │   ├── meta (description)
-    │   │   ├── meta (keywords)
-    │   │   └── meta (author)
-    │   ├── Open Graph Group
-    │   │   ├── meta (og:title)
-    │   │   ├── meta (og:description)
-    │   │   ├── meta (og:image)
-    │   │   ├── meta (og:url)
-    │   │   └── meta (og:type)
-    │   ├── Preconnect Links
-    │   │   ├── link (googleapis)
-    │   │   └── link (gstatic)
-    │   ├── Stylesheet Links
-    │   │   ├── link (global.css)
-    │   │   ├── link (who-are-you.css)
-    │   │   └── link (google fonts)
-    │   ├── script (angel-devil-toggle.js)
-    │   ├── script (mobile-nav.js)
-    │   ├── script (location.js)
-    │   ├── script (device-info.js)
-    │   ├── script (time.js)
-    │   ├── script (browser.js)
-    │   └── script (meme-quiz.js)
-    └── body
-        ├── nav
-        │   ├── ul (nav-menu)
-        │   │   ├── li
-        │   │   │   └── a (Home)
-        │   │   ├── li
-        │   │   │   └── a (Lesson Plans)
-        │   │   ├── li
-        │   │   │   └── a (Who Am I?)
-        │   │   ├── li
-        │   │   │   └── a (Who Are You? - active)
-        │   │   └── li
-        │   │       └── a (TIL)
-        │   ├── div (nav-header)
-        │   │   ├── div (hamburger)
-        │   │   └── button (angel-devil-toggle)
-        │   └── noscript
-        │       └── div
-        │           └── p
-        ├── div (who-are-you-container)
-        │   └── main
-        │       ├── h1
-        │       ├── h2
-        │       ├── ul
-        │       │   ├── li (location)
-        │       │   ├── li (device-info)
-        │       │   ├── li (time)
-        │       │   └── li (browser)
-        │       ├── h2
-        │       ├── p
-        │       └── div (quiz-wrapper)
-        │           ├── div (q1)
-        │           │   ├── p
-        │           │   ├── select
-        │           │   └── button (next)
-        │           ├── div (q2)
-        │           │   ├── p
-        │           │   ├── select
-        │           │   ├── button (next)
-        │           │   └── button (back)
-        │           ├── div (q3)
-        │           │   ├── p
-        │           │   ├── select
-        │           │   ├── button (next)
-        │           │   └── button (back)
-        │           ├── div (q4)
-        │           │   ├── p
-        │           │   ├── select
-        │           │   ├── button (next)
-        │           │   └── button (back)
-        │           └── div (q5)
-        │               ├── p
-        │               ├── select
-        │               ├── button (back)
-        │               └── button (submit)
-        ├── footer
-        │   └── p
-        │       └── span
-        ├── script (footer.js)
-        └── div (mobile-emoji-pop)
--->
