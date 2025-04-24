@@ -33,7 +33,8 @@ rules:
         exceptions:  # Same capitalization rules as description
           - acronyms:
               values: [
-                "TXT", "XML", "HTML", "JSON", "JS", "CSS", "JPG", "YAML", "MD"
+                "TXT", "XML", "HTML", "JSON", "JS", "CSS", "JPG", "YAML", "MD",
+                "PY"
               ]
               apply: "uppercase"  # Force uppercase for acronyms
               note: "Acronyms in targets must use uppercase when listed here"
@@ -62,6 +63,7 @@ rules:
       - assets
       - yaml
       - md
+      - py
     targets:
       description: "List of affected items with counts and types"
       format: |
@@ -76,6 +78,7 @@ rules:
         - "1 PNG file"
         - "1 XML file"
         - "1 TXT file"
+        - "1 PY file"
     description:
       tense: active
     examples:
@@ -95,3 +98,4 @@ rules:
       - "content(html): update footer text in 5 HTML files"
       - "seo(xml): add XML sitemap for SEO in 1 XML file"
       - "feat(txt): add robots txt file to specify sitemap URL in 1 TXT file"
+      - "feat(py): add script to save meme quiz scores to CSV in 1 PY file"
