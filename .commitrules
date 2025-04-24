@@ -17,7 +17,7 @@ rules:
         case: lower  # Base case is lowercase
         exceptions:  # Allow capitalization for specific cases
           - acronyms: [
-            "MIT", "PNG", "TXT", "ICO",
+            "CSV", "MIT", "PNG", "TXT", "ICO",
             "TIL", "TOC", "URL", "SEO", "ARIA",
             "README", "RAM", "MMU", "ASCII", "OS", "XML",
             "HTML", "JSON", "JS", "CSS", "JPG", "YAML", "MD"
