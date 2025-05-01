@@ -6,12 +6,22 @@
 
 /*
   Who Am I Styles
-    .who-am-i-container    { ... }
-    .who-am-i-container h1 { ... }
-    .who-am-i-container h2 { ... }
-    .who-am-i-container p  { ... }
-    .who-am-i-container ul { ... }
-    .who-am-i-container li { ... }
+    .who-am-i-container     { ... }
+    .who-am-i-container h1  { ... }
+    .who-am-i-container p   { ... }
+    .who-am-i-container ul  { ... }
+    .who-am-i-container li  { ... }
+    .who-am-i-container h2  { ... }
+    .life-branch            { ... }
+    .who-am-i-container img { ... }
+
+  Touch Styles
+    .who-am-i-container     { ... }
+    .who-am-i-container h1  { ... }
+    .who-am-i-container h2  { ... }
+    .life-branch            { ... }
+    .life-branch-desktop    { ... }
+    .life-branch-mobile     { ... }
 */
 
 /*
@@ -140,76 +150,6 @@
 }
 
 /*
-  Styles for my Headshot 
-  Order of Properties: Size It, Space It, Style It (Sz Sp St)
-*/
-.who-am-i-container img {
-  /* --- Size It --- */
-
-  /* Prevents overflow, keeps it responsive */
-  max-width: 100%;
-
-  /* Maintains aspect ratio when scaled */
-  height: auto;
-
-  /* --- Space It --- */
-
-  /* Makes the image a block element to allow margin centering */
-  display: block;
-
-  /* Centers horizontally with auto margins; adds 1rem top/bottom spacing */
-  margin: 1rem auto;
-
-  /* --- Style It --- */
-
-  /* Adds a subtle border and shadow for visual polish */
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
-}
-
-/* Keyframes for typewriter effect */
-@keyframes typewriter {
-  /* Starts with no width, text "hidden" */
-  from {
-    width: 0;
-  }
-
-  /* Expands to full width, revealing text */
-  to {
-    width: 100%;
-  }
-}
-
-/* Blinking cursor effect */
-@keyframes blink {
-  /* Starts fully visible */
-  0% { opacity: 1; }
-
-  /* Fades to almost off, but softer */
-  50% { opacity: 1; }
-
-  /* Ends fully hidden */
-  100% { opacity: 0; }
-}
-
-/* 
-  Page Subheading
-  Order of Properties: Space It, Style It (Sp St)
-*/
-.who-am-i-container h2 {
-  /* --- Space It --- */
-  margin-top: 1.5rem;
-
-  /* --- Style It --- */
-
-  /*
-    Sets the color property with a CSS variable (--subheader-text-color, from global.css).
-      - Peach in dark mode, switches to poppy red in light mode.
-  */
-  color: var(--subheader-text-color);
-}
-
-/*
   This styles paragraph text (<p> tags) inside the .who-am-i-container.
   Order of Properties: Space it (Sp)
 */
@@ -327,6 +267,23 @@
   }
 }
 
+/* 
+  Page Subheading
+  Order of Properties: Space It, Style It (Sp St)
+*/
+.who-am-i-container h2 {
+  /* --- Space It --- */
+  margin-top: 1.5rem;
+
+  /* --- Style It --- */
+
+  /*
+    Sets the color property with a CSS variable (--subheader-text-color, from global.css).
+      - Peach in dark mode, switches to poppy red in light mode.
+  */
+  color: var(--subheader-text-color);
+}
+
 /*
   My Life Branch Styles 🌳
   Order of Properties: Size It, Space It, Style It (Sz Sp St)
@@ -364,8 +321,62 @@
   display: none;
 }
 
+
 /*
-  Who Am I Container Mobile Styles
+  Styles for my Headshot 
+  Order of Properties: Size It, Space It, Style It (Sz Sp St)
+*/
+.who-am-i-container img {
+  /* --- Size It --- */
+
+  /* Prevents overflow, keeps it responsive */
+  max-width: 100%;
+
+  /* Maintains aspect ratio when scaled */
+  height: auto;
+
+  /* --- Space It --- */
+
+  /* Makes the image a block element to allow margin centering */
+  display: block;
+
+  /* Centers horizontally with auto margins; adds 1rem top/bottom spacing */
+  margin: 1rem auto;
+
+  /* --- Style It --- */
+
+  /* Adds a subtle border and shadow for visual polish */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+}
+
+/* Keyframes for typewriter effect */
+@keyframes typewriter {
+  /* Starts with no width, text "hidden" */
+  from {
+    width: 0;
+  }
+
+  /* Expands to full width, revealing text */
+  to {
+    width: 100%;
+  }
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+  /* Starts fully visible */
+  0% { opacity: 1; }
+
+  /* Fades to almost off, but softer */
+  50% { opacity: 1; }
+
+  /* Ends fully hidden */
+  100% { opacity: 0; }
+}
+
+/*
+  Who Am I Container Touch Styles
 
   📲 The 768px width is widely used because it aligns with the typical screen size
   of tablets in portrait mode, like the iPad (which has a resolution of 768px wide
@@ -381,11 +392,6 @@
     max-width: 100vw;
   }
 
-  .who-am-i-container h2 {
-    /* Center h2 headings on mobile */
-    text-align: center;
-  }
-
   .who-am-i-container h1 {
     /* Tighter blur for a subtler glow */
     text-shadow: 0 0 6px #D4AF37;
@@ -399,22 +405,27 @@
     /* Removes the "|" */
     content: "";
   }
+
+  .who-am-i-container h2 {
+    /* Center h2 headings on mobile */
+    text-align: center;
+  }
 }
 
 /*
-  My Life Branch Mobile Styles 🌳
+  My Life Branch Touch Styles 🌳
 */
 @media (width <= 768px) {
+  .life-branch {
+    font-size: 0.8rem;
+  }
+
   .life-branch-desktop {
     display: none;
   }
 
   .life-branch-mobile {
     display: block;
-  }
-
-  .life-branch {
-    font-size: 0.8rem;
   }
 }
 
@@ -435,19 +446,12 @@ Who-am-i.css
 │   │   └── color
 │   └── Chaos It
 │       ├── animation
-│       │   └── @keyframes typewriter
 │       ├── text-shadow
 │       ├── overflow
 │       ├── white-space
 │       └── .who-am-i-container h1::after
 │           ├── content
 │           └── animation
-│               └── @keyframes blink
-├── .who-am-i-container h2
-│   ├── Space It
-│   │   └── margin-top
-│   └── Style It
-│       └── color
 ├── .who-am-i-container p
 │   └── Space It
 │       └── margin-bottom
@@ -460,21 +464,32 @@ Who-am-i.css
 │   ├── Space It
 │   │   ├── margin-bottom
 │   │   └── padding-left
-│   ├── Style It
-│   │   └── position
-│   ├── .who-am-i-container li:nth-child(1)::before
-│   │   ├── content
-│   │   ├── position
-│   │   └── left
-│   ├── .who-am-i-container li:nth-child(2)::before
-│   │   ├── content
-│   │   ├── position
-│   │   └── left
-│   ├── .who-am-i-container li:nth-child(3)::before
-│   │   ├── content
-│   │   ├── position
-│   │   └── left
-│   └── @supports not (selector(::before))
+│   └── Style It
+│       └── position
+├── .who-am-i-container li:nth-child(1)
+│   └── Style It
+│       ├── content
+│       ├── position
+│       └── left
+├── .who-am-i-container li:nth-child(2)
+│   └── Style It
+│       ├── content
+│       ├── position
+│       └── left
+├── .who-am-i-container li:nth-child(3)
+│   └── Style It
+│       ├── content
+│       ├── position
+│       └── left
+├── @supports not (selector)
+│   └── .who-am-i-container ul
+│       └── Style It
+│           └── list-style-type
+├── .who-am-i-container h2
+│   ├── Space It
+│   │   └── margin-top
+│   └── Style It
+│       └── color
 ├── .life-branch
 │   ├── Size It
 │   │   ├── max-width
@@ -485,25 +500,55 @@ Who-am-i.css
 │       ├── font-family
 │       └── white-space
 ├── .life-branch-desktop
-│   └── display
+│   └── Style It
+│       └── display
 ├── .life-branch-mobile
-│   └── display
-└── Mobile Styles
-    ├── @media
-    │   ├── .who-am-i-container
-    │   │   └── max-width
-    │   ├── .who-am-i-container h2
-    │   │   └── text-align
-    │   └── .who-am-i-container h1
-    │       ├── text-shadow
-    │       ├── overflow
-    │       └── .who-am-i-container h1::after
-    │           └── content
-    └── @media
-        ├── .life-branch-desktop
-        │   └── display
-        ├── .life-branch-mobile
-        │   └── display
-        ├── .life-branch
-        │   └── font-size
+│   └── Style It
+│       └── display
+├── .who-am-i-container img
+│   ├── Size It
+│   │   ├── max-width
+│   │   └── height
+│   ├── Space It
+│   │   ├── display
+│   │   └── margin
+│   └── Style It
+│       ├── border-radius
+│       └── box-shadow
+├── @keyframes typewriter
+│   ├── from
+│   │   └── width
+│   └── to
+│       └── width
+├── @keyframes blink
+│   ├── 0%
+│   │   └── opacity
+│   ├── 50%
+│   │   └── opacity
+│   └── 100%
+│       └── opacity
+├── @media (width <= 768px)
+│   ├── .who-am-i-container
+│   │   └── Size It
+│   │       └── max-width
+│   ├── .who-am-i-container h1
+│   │   ├── Chaos It
+│   │   │   ├── text-shadow
+│   │   │   └── overflow
+│   │   └── .who-am-i-container h1::after
+│   │       └── Style It
+│   │           └── content
+│   └── .who-am-i-container h2
+│       └── Style It
+│           └── text-align
+└── @media (width <= 768px)
+    ├── .life-branch
+    │   └── Size It
+    │       └── font-size
+    ├── .life-branch-desktop
+    │   └── Style It
+    │       └── display
+    └── .life-branch-mobile
+        └── Style It
+            └── display
 */
