@@ -219,8 +219,39 @@ Maine
         ├── Williamsburg
         └── Greenwich Village
 </pre>
-<img src="images/tori-schuyler.jpg" alt="Tori Schuyler smiling.">
 <!-- End Life Branch ------------------------->
+
+<!-- Begin Image Gallery ------------------------->
+<div class="gallery">
+    <!-- Container for the image gallery, groups images and toggle controls. -->
+
+    <input type="radio" name="gallery" id="tori-photo" checked>
+    <!-- Radio button for the first photo, checked by default to show it initially. -->
+
+    <input type="radio" name="gallery" id="tori-anime">
+    <!-- Radio button for the second image (anime version). -->
+
+    <div class="gallery-images">
+    <!-- Container for gallery images, hidden/shown based on radio button selection. -->
+
+        <label for="tori-photo"><img src="images/tori-schuyler.jpg" alt="Tori Schuyler smiling."></label>
+        <!-- Label and image for the first photo, tied to the tori-photo radio button. -->
+        
+        <label for="tori-anime"><img src="images/anime/ghibli-tori.jpg" alt="Anime Tori Schuyler smiling."></label>
+        <!-- Label and image for the second image, tied to the tori-anime radio button. -->
+    </div>
+
+    <div class="gallery-controls">
+    <!-- Container for toggle controls (dots) to switch between images. -->
+
+        <label for="tori-photo" class="dot" aria-label="Show first photo"></label>
+        <!-- Toggle dot for the first photo, linked to the tori-photo radio button. -->
+
+        <label for="tori-anime" class="dot" aria-label="Show second photo"></label>
+        <!-- Toggle dot for the second image, linked to the tori-anime radio button. -->
+    </div>
+</div>
+<!-- End Image Gallery -------------------------->
 
             </main>
             <!-- End Main Section ---------------------------------------------------------->
