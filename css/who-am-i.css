@@ -14,6 +14,7 @@
     .who-am-i-container h2  { ... }
     .life-branch            { ... }
     .who-am-i-container img { ... }
+    .gallery                { ... }
 
   Touch Styles
     .who-am-i-container     { ... }
@@ -373,6 +374,90 @@
 
   /* Ends fully hidden */
   100% { opacity: 0; }
+}
+
+/* Gallery styles */
+.gallery {
+  /* Adds 30 pixels of space above the gallery container to separate it from content above. */
+  margin-top: 30px;
+
+  /* Centers the image toggle dots. */
+  text-align: center;
+}
+
+.gallery input {
+  /* Hides the radio buttons so only the toggle dots are visible. */
+  display: none;
+}
+
+.gallery-images label {
+  /* Hides all image labels by default to show only the selected image. */
+  display: none;
+}
+
+/* 
+  Most modern browsers already apply max-width: 100% and height: auto to <img> elements by default.
+  We are adding them here for clarity, robustness, and future-proofing.
+*/
+.gallery-images label img {
+  /* Scales the image down to fit its container without overflowing. */
+  max-width: 100%;
+
+  /* Keeps the image's height proportional to its width to avoid stretching. */
+  height: auto;
+}
+
+/* Shows the image label when its corresponding radio button is selected. */
+#tori-photo:checked ~ .gallery-images label[for="tori-photo"],
+#tori-anime:checked ~ .gallery-images label[for="tori-anime"] {
+  display: block;
+}
+
+.gallery-controls {
+  /* Adds space above the toggle dots to separate them from the image. */
+  margin-top: 10px;
+}
+
+.gallery-controls .dot {
+  /* Makes the toggle dots sit side by side while allowing width and height styling. */
+  display: inline-block;
+
+  /* Sets the width and height of each toggle dot to 20 pixels for a small, circular shape. 🟢 */
+  width: 20px;
+  height: 20px;
+
+  /* Adds 5 pixels of space on the left and right of each dot for separation. */
+  margin: 0 5px;
+
+  /*
+    Sets the color property with a CSS variable (--tori-header-color, from global.css).
+      - Grogu green in dark mode, switches to ruby red in light mode.
+  */
+  background: var(--tori-header-color);
+
+  /* Rounds the corners to make the dot a perfect circle. */
+  border-radius: 50%;
+
+  /* Shows a pointing hand on hover to indicate the dot is clickable. */
+  cursor: pointer;
+
+  /* Smoothly changes the dot’s background color over 0.3 second. */
+  transition: background 0.3s ease;
+}
+
+/*
+  This changes the area behind the dot toggle when hovered or focused.
+  Sets the color property with a CSS variable (--secondary-color, from global.css).
+    - British racing green in dark mode, switches to emerald green in light mode.
+*/
+.gallery-controls .dot:hover {
+  background: var(--secondary-color);
+}
+
+/* Changes the toggle dot’s background to dark gray when its radio button is selected. */
+#tori-photo:checked ~ .gallery-controls label[for="tori-photo"],
+#tori-anime:checked ~ .gallery-controls label[for="tori-anime"] {
+  background: #333;
 }
 
 /*
