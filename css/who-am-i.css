@@ -315,10 +315,12 @@
 
 /* Show desktop version by default, hide mobile */
 .life-branch-desktop {
+  /* --- Space It --- */
   display: block;
 }
 
 .life-branch-mobile {
+  /* --- Space It --- */
   display: none;
 }
 
@@ -376,8 +378,13 @@
   100% { opacity: 0; }
 }
 
-/* Gallery styles */
+/*
+  Styles the gallery container, which holds the image toggles and images.
+  Order of Properties: Space It (Sp)
+*/
 .gallery {
+  /* --- Space It --- */
+
   /* Adds 30 pixels of space above the gallery container to separate it from content above. */
   margin-top: 30px;
 
@@ -385,21 +392,32 @@
   text-align: center;
 }
 
+/*
+  Hides the radio buttons so only the toggles are visible.
+  Order of Properties: Space It (Sp)
+*/
 .gallery input {
-  /* Hides the radio buttons so only the toggles are visible. */
+  /* --- Space It --- */
   display: none;
 }
 
+/*
+  Hides all image labels by default to show only the selected image.
+  Order of Properties: Space It (Sp)
+*/
 .gallery-images label {
-  /* Hides all image labels by default to show only the selected image. */
+  /* --- Space It --- */
   display: none;
 }
 
 /* 
   Most modern browsers already apply max-width: 100% and height: auto to <img> elements by default.
   We are adding them here for clarity, robustness, and future-proofing.
+  Order of Properties: Size It (Sz)
 */
 .gallery-images label img {
+  /* --- Size It --- */
+
   /* Scales the image down to fit its container without overflowing. */
   max-width: 100%;
 
@@ -407,27 +425,45 @@
   height: auto;
 }
 
-/* Shows the image label when its corresponding radio button is selected. */
+/* 
+  Shows the image label when its corresponding radio button is selected.
+  Order of Properties: Space It (Sp)
+*/
 #tori-photo:checked ~ .gallery-images label[for="tori-photo"],
 #tori-anime:checked ~ .gallery-images label[for="tori-anime"] {
+  /* --- Space It --- */
   display: block;
 }
 
+/*
+  Adds space above the toggles to separate them from the image.
+  Order of Properties: Space It (Sp)
+*/
 .gallery-controls {
-  /* Adds space above the toggles to separate them from the image. */
+  /* --- Space It --- */
   margin-top: 10px;
 }
 
+/*
+  Styles the toggle triangles (Kepler triangles) for gallery controls.
+  Order of Properties: Size It, Space It, Style It, Chaos It (Sz Sp St Ch)
+*/
 .gallery-controls .kepler {
-  /* Makes the toggle sit side by side while allowing width and height styling. */
-  display: inline-block;
+  /* --- Size It --- */
 
   /* Sets the size of the toggle to a 20px x 20px box. */
   width: 30px;
   height: 30px;
 
+  /* --- Space It --- */
+
+  /* Makes the toggle sit side by side while allowing width and height styling. */
+  display: inline-block;
+
   /* Adds 5 pixels of space on the left and right of each toggle for separation. */
   margin: 0 5px;
+
+  /* --- Style It --- */
 
   /* Sets the background color using the existing variable. */
   background: var(--tori-header-color);
@@ -445,6 +481,8 @@
   */
   clip-path: polygon(0% 100%, 78.6% 100%, 0% 0%);
 
+  /* --- Chaos It --- */
+
   /* Shows a pointing hand on hover to indicate the triangle is clickable. */
   cursor: pointer;
 
@@ -456,14 +494,21 @@
   This changes the area behind the toggle when hovered or focused.
   Sets the color property with a CSS variable (--secondary-color, from global.css).
     - British racing green in dark mode, switches to emerald green in light mode.
+  Order of Properties: Style It (St)
 */
 .gallery-controls .kepler:hover {
+  /* --- Style It --- */
+
   background: var(--secondary-color);
 }
 
-/* Changes the toggle triangle’s background to dark gray when its radio button is selected. */
+/* 
+  Changes the toggle triangle’s background to dark gray when its radio button is selected.
+  Order of Properties: Style It (St)
+*/
 #tori-photo:checked ~ .gallery-controls label[for="tori-photo"],
 #tori-anime:checked ~ .gallery-controls label[for="tori-anime"] {
+  /* --- Style It --- */
   background: #333;
 }
 
@@ -499,6 +544,8 @@
   }
 
   .who-am-i-container h2 {
+    /* --- Space It --- */
+
     /* Center h2 headings on mobile */
     text-align: center;
   }
@@ -513,10 +560,12 @@
   }
 
   .life-branch-desktop {
+    /* --- Space It --- */
     display: none;
   }
 
   .life-branch-mobile {
+    /* --- Space It --- */
     display: block;
   }
 }
@@ -592,10 +641,10 @@ Who-am-i.css
 │       ├── font-family
 │       └── white-space
 ├── .life-branch-desktop
-│   └── Style It
+│   └── Space It
 │       └── display
 ├── .life-branch-mobile
-│   └── Style It
+│   └── Space It
 │       └── display
 ├── .who-am-i-container img
 │   ├── Size It
@@ -607,6 +656,45 @@ Who-am-i.css
 │   └── Style It
 │       ├── border-radius
 │       └── box-shadow
+├── .gallery
+│   └── Space It
+│       ├── margin-top
+│       └── text-align
+├── .gallery input
+│   └── Space It
+│       └── display
+├── .gallery-images label
+│   └── Space It
+│       └── display
+├── .gallery-images label img
+│   └── Size It
+│       ├── max-width
+│       └── height
+├── #tori-photo:checked
+│   └── Space It
+│       └── display
+├── .gallery-controls
+│   └── Space It
+│       └── margin-top
+├── .gallery-controls .kepler
+│   ├── Size It
+│   │   ├── width
+│   │   └── height
+│   ├── Space It
+│   │   ├── display
+│   │   └── margin
+│   ├── Style It
+│   │   ├── background
+│   │   └── clip-path
+│   └── Chaos It
+│       ├── cursor
+│       └── transition
+├── .gallery-controls .kepler:hover
+│   └── Style It
+│       └── background
+├── #tori-photo:checked
+│   └── Style It
+│       └── background
 ├── @keyframes typewriter
 │   ├── from
 │   │   └── width
@@ -631,16 +719,16 @@ Who-am-i.css
 │   │       └── Style It
 │   │           └── content
 │   └── .who-am-i-container h2
-│       └── Style It
+│       └── Space It
 │           └── text-align
 └── @media (width <= 768px)
     ├── .life-branch
     │   └── Size It
     │       └── font-size
     ├── .life-branch-desktop
-    │   └── Style It
+    │   └── Space It
     │       └── display
     └── .life-branch-mobile
-        └── Style It
+        └── Space It
             └── display
 */
