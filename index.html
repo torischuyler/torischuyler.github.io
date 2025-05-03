@@ -125,9 +125,9 @@ This setup keeps things simple and standard, so your browser knows exactly where
             <ul class="nav-menu">
                 <li><a href="index.html" class="active" aria-current="page">Home</a></li>
                 <li><a href="curricula.html">Lesson Plans</a></li>
-                <li><a href="who-am-i.html">Who Am I?</a></li>
                 <li><a href="who-are-you.html">Who Are You?</a></li>
                 <li><a href="til.html">TIL</a></li>
+                <li><a href="who-am-i.html">Who Am I?</a></li>
             </ul>
 
             <!-- Begin Nav Header Wrapper: Groups hamburger and toggle------------------>
@@ -170,13 +170,21 @@ This setup keeps things simple and standard, so your browser knows exactly where
                 <!-- Main heading of the page, sets the theme or topic. -->
 
                 <p>
-                    This site hosts kid-friendly lesson plans designed for young learners, focusing on media and digital literacy,
-                    and for aspiring developers exploring computer basics. These resources lay the groundwork for an
-                    educational operating system (eOS).
+                    Welcome to the eOS learning hub 👋 Explore kid-friendly lesson plans for young learners and aspiring developers,
+                    focusing on media, digital literacy, and computer basics—check out the <b>“Lesson Plans”</b> tab in the header. Curious
+                    about yourself? Go to the <b>“Who Are You?”</b> tab for a virtual fortune teller that guesses where, how, and when you're
+                    visiting from and take the meme quiz to discover your meme language. Visit the <b>“TIL” (Today I Learned)</b> tab for random
+                    cool facts and projects, including a work-in-progress page on the golden ratio, fueled by my recent math obsession.
+                    Want to know more about me? Head to the <b>“Who Am I?”</b> tab.
                 </p>
                 <!-- A paragraph, a block of text. -->
 
-                <p class="html-prompt">Curious about the page's structure? See the
+                <p><i>
+                    New programmers! If you're on desktop, you can see how each of the pages on this site was built—right-click anywhere,
+                    select “Inspect,” and explore the HTML code with explanations detailing what each element does.
+                </i></p>
+
+                <p class="html-prompt">Want to glance at an outline of the page's structure? See the
 
                     <button class="modal-button" onclick="openModal('html')">HTML Blueprint</button>
                     <!-- Button to trigger the ASCII blueprint modal -->
@@ -246,6 +254,7 @@ This setup keeps things simple and standard, so your browser knows exactly where
             │   └── main
             │       ├── h1
             │       ├── p
+            │       ├── p   
             │       ├── p (html-prompt)
             │       │   └── button (modal-button)
             │       └── p (css-prompt)
