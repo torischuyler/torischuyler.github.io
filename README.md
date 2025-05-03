@@ -1,4 +1,4 @@
-# eOS Lesson Plans
+# eOS Experiemtns
 
 A collection of kid-friendly lesson plans designed for young learners, focusing on media and digital literacy,
 and for aspiring developers exploring computer basics. These resources lay the groundwork for an educational
