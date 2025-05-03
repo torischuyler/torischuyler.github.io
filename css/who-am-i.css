@@ -381,12 +381,12 @@
   /* Adds 30 pixels of space above the gallery container to separate it from content above. */
   margin-top: 30px;
 
-  /* Centers the image toggle dots. */
+  /* Centers the image toggles. */
   text-align: center;
 }
 
 .gallery input {
-  /* Hides the radio buttons so only the toggle dots are visible. */
+  /* Hides the radio buttons so only the toggles are visible. */
   display: none;
 }
 
@@ -414,47 +414,54 @@
 }
 
 .gallery-controls {
-  /* Adds space above the toggle dots to separate them from the image. */
+  /* Adds space above the toggles to separate them from the image. */
   margin-top: 10px;
 }
 
-.gallery-controls .dot {
-  /* Makes the toggle dots sit side by side while allowing width and height styling. */
+.gallery-controls .kepler {
+  /* Makes the toggle sit side by side while allowing width and height styling. */
   display: inline-block;
 
-  /* Sets the width and height of each toggle dot to 20 pixels for a small, circular shape. 🟢 */
-  width: 20px;
-  height: 20px;
+  /* Sets the size of the toggle to a 20px x 20px box. */
+  width: 30px;
+  height: 30px;
 
-  /* Adds 5 pixels of space on the left and right of each dot for separation. */
+  /* Adds 5 pixels of space on the left and right of each toggle for separation. */
   margin: 0 5px;
 
-  /*
-    Sets the color property with a CSS variable (--tori-header-color, from global.css).
-      - Grogu green in dark mode, switches to ruby red in light mode.
-  */
+  /* Sets the background color using the existing variable. */
   background: var(--tori-header-color);
 
-  /* Rounds the corners to make the dot a perfect circle. */
-  border-radius: 50%;
+/*
+  Defines a Kepler right triangle by clipping the 30px x 30px box to a polygon with three vertices.
+  - (0% 100%): Bottom-left corner, the right angle vertex (x=0, y=30px in CSS’s inverted y-axis).
+  - (78.6% 100%): Bottom-right vertex, 23.58px along the x-axis (78.6% of 30px), forming the base.
+  - (0% 0%): Top-left vertex, top of the height (x=0, y=0px).
+  The base (23.58px) and height (30px) approximate the Kepler ratio 1 : √φ (1 : ~1.272).
+  The base (23.58px) and hypotenuse (38.16px) approximate the Kepler ratio 1 : φ (1 : ~1.618).
+  - Base = 23.58px (1 unit), height = 30px (√φ units), hypotenuse = 38.16px (φ units).
+  - Calculated: height = 30px, base = 30 / √φ ≈ 23.58px, hypotenuse = √(23.58² + 30²) ≈ 38.16px.
+  This yields the Kepler triangle’s side ratio ~1 : 1.272 : 1.618, tied to the golden ratio (φ ≈ 1.61803398874).
+  */
+  clip-path: polygon(0% 100%, 78.6% 100%, 0% 0%);
 
-  /* Shows a pointing hand on hover to indicate the dot is clickable. */
+  /* Shows a pointing hand on hover to indicate the triangle is clickable. */
   cursor: pointer;
 
-  /* Smoothly changes the dot’s background color over 0.3 second. */
+  /* Smoothly changes the triangle’s background color over 0.3 second. */
   transition: background 0.3s ease;
 }
 
 /*
-  This changes the area behind the dot toggle when hovered or focused.
+  This changes the area behind the toggle when hovered or focused.
   Sets the color property with a CSS variable (--secondary-color, from global.css).
     - British racing green in dark mode, switches to emerald green in light mode.
 */
-.gallery-controls .dot:hover {
+.gallery-controls .kepler:hover {
   background: var(--secondary-color);
 }
 
-/* Changes the toggle dot’s background to dark gray when its radio button is selected. */
+/* Changes the toggle triangle’s background to dark gray when its radio button is selected. */
 #tori-photo:checked ~ .gallery-controls label[for="tori-photo"],
 #tori-anime:checked ~ .gallery-controls label[for="tori-anime"] {
   background: #333;
