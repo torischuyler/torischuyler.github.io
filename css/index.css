@@ -379,5 +379,10 @@ footer {
   .css-prompt {
     /* Size It */
     font-size: 0.8rem;
+
+    /* --- Space It --- */
+  
+    /* Hides prompts on initial load to prevent overlap, shown via JS on scroll to bottom. */
+    display: none;
   }
 }
