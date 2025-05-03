@@ -40,6 +40,7 @@ Properties that define the **visual appearance** or **aesthetics** without affec
 - `text-decoration` (e.g., `underline`)
 - `box-shadow` (e.g., `0 2px 4px rgb(0 0 0 / 10%);`)
 - `white-space` (e.g. `pre`, `no-wrap`)
+- clip-path (e.g., `polygon(0% 100%, 78.6% 100%, 0% 0%)` for a triangular shape)
 
 ## Chaos
 
