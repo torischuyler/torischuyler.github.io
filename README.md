@@ -5,7 +5,7 @@ These resources lay the groundwork for a future educational operating system (eO
 
 This repository contains lesson plans for:
 
-- **Young Learners**: Fun, engaging media and digital literacy lessons to help K-12 kids safely and confidently navigate the digital world.
+- **Young Learners**: Fun, engaging digital literacy lessons to help K-12 kids safely and confidently navigate the digital world.
 - **Developers**: Easy-to-understand fundamentals of computer systems, starting with the boot process and kernel.
 
 ## About
