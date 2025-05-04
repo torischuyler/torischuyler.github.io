@@ -99,6 +99,9 @@ the creator of the eOS Experiments website. -->
 
         <script src="js/mobile-nav.js" defer></script>
         <!-- Script for toggling mobile navigation------>
+
+        <script src="js/toggles/kepler-toggle.js" defer></script>
+        <!-- Script for toggling the photo gallery Kepler triangles ------>
     </head>
     <!-- End Head Section --------------------------------------------------->
 
@@ -242,12 +245,16 @@ Maine
     </div>
 
     <div class="gallery-controls">
-    <!-- Container for toggle controls to switch between images. -->
-
-        <label for="tori-photo" class="kepler" aria-label="Show first photo"></label>
+        <!-- Container for toggle controls to switch between images. -->
+    
+        <span class="kepler-container">
+            <label for="tori-photo" class="kepler" aria-label="Show Tori photo" tabindex="0"></label>
+        </span>
         <!-- Toggle Kepler triangle for the first photo, linked to the tori-photo radio button. -->
-
-        <label for="tori-anime" class="kepler" aria-label="Show second photo"></label>
+    
+        <span class="kepler-container">
+            <label for="tori-anime" class="kepler" aria-label="Show Tori anime" tabindex="0"></label>
+        </span>
         <!-- Toggle Kepler triangle for the second image, linked to the tori-anime radio button. -->
     </div>
 </div>
@@ -315,7 +322,8 @@ DOCTYPE
     │   │   ├── link (who-am-i.css)
     │   │   └── link (google fonts)
     │   ├── script (torii-gemini-toggle.js)
-    │   └── script (mobile-nav.js)
+    │   ├── script (mobile-nav.js)
+    │   └── script (kepler-toggle.js)
     └── body
         ├── nav
         │   ├── ul (nav-menu)
@@ -324,11 +332,11 @@ DOCTYPE
         │   │   ├── li
         │   │   │   └── a (Lesson Plans)
         │   │   ├── li
-        │   │   │   └── a (Who Am I? - active)
+        │   │   │   └── a (Who Are You?)
+        │   │   ├── li
+        │   │   │   └── a (TIL)
         │   │   └── li
-        │   │   |   └── a (Who Are You?)
-        │   │   └── li
-        │   │       └── a (TIL)
+        │   │       └── a (Who Am I? - active)
         │   ├── div (nav-header)
         │   │   ├── div (hamburger)
         │   │   └── button (torii-gemini-toggle)
@@ -339,14 +347,29 @@ DOCTYPE
         │   └── main
         │       ├── h1
         │       ├── p
-        │       ├── p
         │       ├── ul
         │       │   ├── li (Learning should be playful)
         │       │   ├── li (Mistakes are just experiments in disguise)
         │       │   └── li (Tech is for everyone)
+        │       ├── h2
+        │       ├── pre
+        │       ├── pre
+        │       ├── div
+        │       │   ├── input (tori-photo)
+        │       │   ├── input (tori-anime)
+        │       │   ├── div
+        │       │   │   ├── label
+        │       │   │   │   └── img
+        │       │   │   └── label
+        │       │   │       └── img
+        │       │   └── div
+        │       │       ├── span (kepler-container)
+        │       │       │   └── label (tori-photo)
+        │       │       └── span (kepler-container)
+        │       │           └── label (tori-anime)
         │       ├── br
-        │       ├── h2 (March 2025 Snapshot of My Life Tree)
-        │       └── pre (Life Tree)
+        │       └── p (signal-contact)
+        │           └── a
         ├── footer
         │   └── p
         │       ├── span (year)
