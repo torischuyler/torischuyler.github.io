@@ -244,7 +244,7 @@
 
 /*
   Modal Title
-  Order of Properties: Size It (Sz)
+  Order of Properties: Size It, Style It (Sz) St
 */
 .modal-content h3 {
   /* --- Size It --- */
@@ -253,9 +253,18 @@
   font-size: 1.5rem;
 
   /* --- Style It --- */
-
   color: var(--charcoal);
 }
+
+/*
+  Modal Paragraph Text
+  Order of Properties: Style It (St)
+*/
+.modal-content p {
+  /* --- Style It --- */
+  color: var(--charcoal);
+}
+
 
 /*
   Modal Code Block
