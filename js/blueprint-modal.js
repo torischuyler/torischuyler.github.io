@@ -20,6 +20,9 @@ function openModal(type) {
   // Get the <code> element in the modal where the blueprint content will go
   const modalContent = document.getElementById('modal-content').querySelector('code');
 
+  // Select the paragraph element to toggle its visibility
+  const paragraph = document.querySelector('#blueprint-modal .modal-content p');
+
   // Check if we're showing the HTML Blueprint
   if (type === 'html') {
 
@@ -31,6 +34,9 @@ function openModal(type) {
 
     // Set the modal's title to show it's the HTML Blueprint
     modalTitle.textContent = 'Homepage HTML Blueprint';
+
+    // Show the paragraph when displaying the HTML blueprint
+    paragraph.style.display = 'block';
 
     // Update the modal's aria-label for accessibility
     modal.setAttribute('aria-label', 'HTML Blueprint Modal');
@@ -49,6 +55,9 @@ function openModal(type) {
 
     // Update the modal's aria-label for accessibility
     modal.setAttribute('aria-label', 'CSS Blueprint Modal');
+
+    // Hide the paragraph when displaying the CSS blueprint
+    paragraph.style.display = 'none';
   }
 
   // Makes the modal visible by setting its display to block
