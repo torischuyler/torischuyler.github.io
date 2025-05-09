@@ -427,4 +427,46 @@ body.cursor-renegade {
     display: block;
     animation: pop-up 1s ease-out forwards;
   }
+
+  /*
+    Adjust container padding
+    Order of Properties: Space It (Sp)
+  */
+  .who-are-you-container {
+    /* --- Space It --- */
+  
+    /*
+      Space inside container ⬆️⬇️➡️⬅️
+      - 2rem for top/bottom to maintain vertical breathing room
+      - Reduced to .1rem for left/right to minimize side padding on mobile
+    */
+    padding: 2rem .1rem;
+  }
+
+/*
+    Style list items on mobile
+    Order of Properties: Space It, Style It (Sp St)
+  */
+  .who-are-you-container ul li,
+  .who-are-you-container p {
+    /* --- Space It --- */
+
+    /*
+      Space inside list items ⬆️⬇️➡️⬅️
+      - 0.5rem for top/bottom to add vertical breathing room
+      - 0 for left/right to avoid adding horizontal padding
+    */
+    padding: 0.5rem 0;
+
+    /*
+      Space between list items
+      - 0.5rem at the bottom to separate items vertically
+    */
+    margin-bottom: 0.5rem;
+
+    /* --- Style It --- */
+
+    /* Center-align text for better presentation on mobile */
+    text-align: center;
+  }
 }
