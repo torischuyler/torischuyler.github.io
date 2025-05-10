@@ -5,8 +5,11 @@
 // Defines a function that takes the raw userAgent string and returns a fun, friendly device name
 function getFriendlyDevice(userAgent) {
   if (userAgent.includes("iPhone")) return "a magical iPhone";
+  if (userAgent.includes("Pixel")) return "a prismatic Pixel";
+  if (userAgent.includes("SM-S921B") || userAgent.includes("SM-X710")) return "a galactic Samsung Galaxy";
   if (userAgent.includes("Android")) return "an enchanted Android";
   if (userAgent.includes("Windows")) return "a mystical Windows";
+  if (userAgent.includes("iPad")) return "an irresistible iPad";
   if (userAgent.includes("Mac")) return "a charmed Mac";
   if (userAgent.includes("Linux")) return "a legendary Linux";
 
