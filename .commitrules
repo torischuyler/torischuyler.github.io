@@ -23,7 +23,7 @@ rules:
             "HTML", "JSON", "JS", "CSS", "JPG", "YAML", "MD"
           ]
           - proper_nouns: [
-            "Signal", "Kepler", "GitHub",
+            "Samsung", "Signal", "Kepler", "GitHub",
             "Jekyll", Fibonacci", "Phi", "Arc", "Brave",
             "Open Graph", Windows", "Apple", "Linux",
             "Android", "Python", "Safari", "JavaScript"
