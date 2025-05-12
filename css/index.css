@@ -16,7 +16,6 @@
     .modal-content h3   { ... }
     .modal-content pre  { ... }
     .modal-close        { ... }
-    .footer             { ... }
   
   Touch Styles
   .home-container       { ... }
@@ -113,36 +112,6 @@
 }
 
 /*
-  HTML Prompt
-  Order of Properties: Size It, Space It (Sz Sp)
-*/
-.html-prompt {
-  /* Size It */
-  width: 100%;
-
-  /* Space It */
-  position: fixed;
-  bottom: 60px;
-  left: 0;
-  padding: 10px 0;
-}
-
-/*
-  CSS Prompt
-  Order of Properties: Size It, Space It (Sz Sp)
-*/
-.css-prompt {
-  /* Size It */
-  width: 100%;
-
-  /* Space It */
-  position: fixed;
-  bottom: 35px;
-  left: 0;
-  padding: 10px 0;
-}
-
-/*
   Modal Button
   Order of Properties: Size It, Space It, Style It, Chaos It (Sz Sp St Ch)
 */
@@ -154,10 +123,10 @@
   padding: 0.2rem;
   
   /* Style It */
-  font-family: Righteous, system-ui, sans-serif;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
   font-weight: bold;
-  background-color: var(--background-color);
-  color: var(--princeton-orange);
+  background-color: var(--primary-color);
+  color: var(--accent-text-color);
   border: none;
   border-radius: 5px;
   text-decoration: underline;
@@ -325,23 +294,6 @@
   32 32, default;
 }
 
-/* 
-  Footer Styling 🐾
-  Order of Properties: Space It (Sp)
-*/
-footer {
-  /* --- Space It --- */
-
-  /* Fixes footer to the bottom of the viewport */
-  position: fixed;
-
-  /*
-    Sets footer 0 pixels from the bottom of the screen (without this property
-    the footer could stick to a random spot like the top of the page)
-  */
-  bottom: 0;
-}
-
 /*
   Home Container Touch Styles
   Order of Properties: Size It, Space It (Sz Sp)
@@ -382,16 +334,5 @@ footer {
   
     /* 0.75rem = 12px (if base is 16px). */
     font-size: 0.75rem;
-  }
-
-  .html-prompt,
-  .css-prompt {
-    /* Size It */
-    font-size: 0.8rem;
-
-    /* --- Space It --- */
-  
-    /* Hides prompts on initial load to prevent overlap, shown via JS on scroll to bottom. */
-    display: none;
   }
 }

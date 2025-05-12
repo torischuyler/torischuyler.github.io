@@ -109,9 +109,6 @@ This setup keeps things simple and standard, so your browser knows exactly where
 
         <script src="js/blueprint-modal.js"></script>
         <!-- Script for opening and closing blueprint modal ------>
-
-        <script src="js/scroll-prompts.js"></script>
-        <!-- Script for showing HTML and CSS prompts when scrolling to the bottom of page ------>
     </head>
     <!-- End Head Section --------------------------------------------------->
 
@@ -174,18 +171,10 @@ This setup keeps things simple and standard, so your browser knows exactly where
 
                 <p>
                     Welcome to eOS Experiments 👋 Explore lesson plans focusing on digital literacy and computer basics—check out the <b>“Lesson Plans”</b> 
-                    tab in the header. Wanna have a lil fun? Go to the <b>“Who Are You?”</b> tab for a virtual fortune teller and take the meme quiz to discover 
+                    tab in the header. Go to the <b>“Who Are You?”</b> tab for a virtual fortune teller and take the meme quiz to discover 
                     your meme language. Visit the <b>“TIL” (Today I Learned)</b> tab for random cool facts and projects.
                 </p>
                 <!-- A paragraph, a block of text. -->
-
-                <p class="html-prompt">Curious about the page's structure? See the
-                    <button class="modal-button" onclick="openModal('html')">HTML Blueprint</button>
-                    <!-- Button to trigger the ASCII blueprint modal -->
-                </p>
-                <p class="css-prompt">For page styling, check out the
-                    <button class="modal-button" onclick="openModal('css')">CSS Blueprint</button>
-                </p>
             </main>
             <!-- End Main Section ---------------------------------------------------------->
         </div>
@@ -224,7 +213,7 @@ This setup keeps things simple and standard, so your browser knows exactly where
         │   │   └── link (google fonts)
         │   ├── script (sunrise-gotham-toggle.js)
         │   ├── script (mobile-nav.js)
-        │   └── script (blueprint-modal.js)
+        │   ├── script (blueprint-modal.js)
         └── body
             ├── nav
             │   ├── ul (nav-menu)
@@ -233,26 +222,21 @@ This setup keeps things simple and standard, so your browser knows exactly where
             │   │   ├── li
             │   │   │   └── a (Lesson Plans)
             │   │   ├── li
-            │   │   │   └── a (Who Am I?)
-            │   │   ├── li
             │   │   │   └── a (Who Are You?)
+            │   │   ├── li
+            │   │   │   └── a (TIL)
             │   │   └── li
-            │   │       └── a (TIL)
+            │   │       └── a (Who Am I?)
             │   ├── div (nav-header)
             │   │   ├── div (hamburger)
             │   │   └── button (sunrise-gotham-toggle)
             │   └── noscript
             │       └── div
-            │           ├── p
+            │           └── p
             ├── div (home-container)
             │   └── main
             │       ├── h1
-            │       ├── p
-            │       ├── p   
-            │       ├── p (html-prompt)
-            │       │   └── button (modal-button)
-            │       └── p (css-prompt)
-            │           └── button (modal-button)
+            │       └── p
             ├── div (blueprints)
             │   ├── pre (html-blueprint)
             │   │   └── code
@@ -262,6 +246,8 @@ This setup keeps things simple and standard, so your browser knows exactly where
             │   └── div (modal-content)
             │       ├── span (modal-close)
             │       ├── h3
+            │       ├── br
+            │       ├── p
             │       └── pre
             │           └── code
             ├── footer
@@ -269,7 +255,10 @@ This setup keeps things simple and standard, so your browser knows exactly where
             │       ├── span (year)
             │       ├── text (eOS Experiments)
             │       ├── span (heart)
-            │       └── text (For Education)
+            │       ├── text (For Education)
+            │       └── span (footer-links)
+            │           ├── button (modal-button - html)
+            │           └── button (modal-button - css)
             └── script (footer.js)
                 </code>
             </pre>
@@ -281,10 +270,10 @@ This setup keeps things simple and standard, so your browser knows exactly where
     ├── .home-container
     │   ├── Size It
     │   │   └── max-width
-    │   ├── Space It
-    │   │   ├── margin
-    │   │   ├── padding
-    │   │   └── text-align
+    │   └── Space It
+    │       ├── margin
+    │       ├── padding
+    │       └── text-align
     ├── .home-container h1
     │   └── Style It
     │       └── color
@@ -294,22 +283,6 @@ This setup keeps things simple and standard, so your browser knows exactly where
     │   └── Space It
     │       ├── margin-top
     │       └── margin-bottom
-    ├── .html-prompt
-    │   ├── Size It
-    │   │   └── width
-    │   └── Space It
-    │       ├── position
-    │       ├── bottom
-    │       ├── left
-    │       └── padding
-    ├── .css-prompt
-    │   ├── Size It
-    │   │   └── width
-    │   └── Space It
-    │       ├── position
-    │       ├── bottom
-    │       ├── left
-    │       ├── padding
     ├── .modal-button
     │   ├── Size It
     │   │   └── font-size
@@ -355,7 +328,10 @@ This setup keeps things simple and standard, so your browser knows exactly where
     │   │   └── font-size
     │   └── Style It
     │       └── color
-    ├── .modal-text
+    ├── .modal-content p
+    │   └── Style It
+    │       └── color
+    ├── .modal-content pre
     │   ├── Size It
     │   │   ├── font-size
     │   │   └── overflow-x
@@ -375,24 +351,14 @@ This setup keeps things simple and standard, so your browser knows exactly where
     │   │   └── font-weight
     │   └── Chaos It
     │       └── cursor
-    ├── footer
-    │   └── Space It
-    │       ├── position
-    │       └── bottom
 
-    Touch Styles
+        Touch Styles
     ├── @media
     │   ├── .home-container
     │   │   ├── Size It
     │   │   │   └── max-width
     │   │   └── Space It
     │   │       └── padding-bottom
-    │   ├── .html-prompt
-    │   │   └── Size It
-    │   │       └── font-size
-    │   ├── .css-prompt
-    │   │   └── Size It
-    │   │       └── font-size
     │   ├── .modal-button
     │   │   └── Size It
     │   │       └── font-size
@@ -447,6 +413,11 @@ This setup keeps things simple and standard, so your browser knows exactly where
                 <span id="year"></span>
                 <!-- span highlights year, which is updated by the script in footer.js -->
                 eOS Experiments <span class="heart">💙</span> For Education
+            <!-- Add blueprint links here -->
+            <span class="footer-links">
+                | <button class="modal-button" onclick="openModal('html')">HTML Blueprint</button>
+                | <button class="modal-button" onclick="openModal('css')">CSS Blueprint</button>
+            </span>
             </p>
         </footer>
         <!-- End Footer Section -------------------------------------------------------->
