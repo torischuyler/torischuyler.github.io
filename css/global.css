@@ -5,16 +5,13 @@
 
   Table of Contents:
     1. Resets        - Wipe browser defaults
-    2. Variables     - Define colors and themes
+    2. Root          - Define colors and themes
     3. Base Styles   - Core layout and typography
-    4. Components    - Nav, footer, toggle, and mobile styles
+    4. Components    - Nav, footer, toggle, and touch styles
     5. Behaviors     - Interactive states
 */
 
-/* 
-  1. Resets
-    * { ... }
-*/
+/* 1. Resets */
 
 /*
   Reset - Removes default browser styles.
@@ -54,14 +51,8 @@
   padding: 0;
 }
 
-/* 
-  2. Variables
-    :root { ... }
-    .light-theme { ... }
-*/
-
 /*
-  Root - a CSS selector targeting the <html> element, the top of your webpage.
+  2. Root - a CSS selector targeting the <html> element, the top of your webpage.
   It holds custom properties (aka variables) like colors, fonts, and spacing,
   making them reusable everywhere. Your site’s toolbox. 🧰
 
@@ -310,12 +301,7 @@
   --tori-header-color: var(--ruby-red);
 }
 
-/* 
-  3. Base Styles
-    body { ... }
-    h1 { ... }
-    h2 { ... }
-*/
+/* 3. Base Styles */
 
 /*
   Body - The main content wrapper. Sets the stage for fonts and layout.
@@ -441,26 +427,7 @@ h2 {
   color: var(--text-color);
 }
 
-/* 
-  4. Components
-    nav { ... }
-      nav a { ... }
-        nav a:hover
-    .nav-menu { ... }
-    #sun-moon-toggle { ... }
-        #sun-moon-toggle:hover
-    #torii-gemini-toggle { ... }
-      #torii-gemini-toggle:hover
-    #yin-yang-toggle { ... }
-      #yin-yang-toggle:hover
-    #sunrise-gotham-toggle { ... }
-      #sunrise-gotham-toggle:hover
-    #angel-devil-toggle { ... }
-     #angel-devil-toggle:hover
-    footer { ... }
-
-    Mobile Styles
-*/
+/* 4. Components */
 
 /* 
   Navigation Control Center 🎮 (aka page navigation bar)
@@ -784,14 +751,6 @@ footer {
   /* Spans the full width of the page. */
   width: 100%;
 
-  /*
-    👽 Outsider art: Defiantly larger footer text bc
-    footer content deserves the same respect as any other content.
-    Convention says make it smaller (0.8rem–1rem), but we’re boosting 
-    it to 1.25rem (20px at 16px root). Making it seen and challenging the norm.
-  */
-  font-size: 1.25rem;
-
   /* --- Space It --- */
 
   /*
@@ -825,11 +784,7 @@ footer {
 }
 
 /*
-  Mobile Styles
-*/
-
-/*
-  Mobile Typography Adjustments
+  Touch Styles - Typography Adjustments
   Scales down h1 on smaller screens for better readability.
   Order of Properties: Size It (Sz)
 
@@ -924,10 +879,7 @@ footer {
   }
 }
 
-/* 
-  5. Behaviors 
-    - Color transitions
-*/
+/* 5. Behaviors */
 
 /* 
   Smooth Theme Transitions
@@ -947,9 +899,46 @@ Global.css
 │       └── Space It
 │           ├── margin
 │           └── padding
-├── Variables
+├── Root
 │   ├── :root (Color Palette - Dark Mode Default)
+│   │   ├── Size It
+│   │   │   └── font-size
+│   │   └── Style It
+│   │       ├── --deep-skyler
+│   │       ├── --british-racing-green
+│   │       ├── --lapis-lazuli
+│   │       ├── --white
+│   │       ├── --muad-dib
+│   │       ├── --hermès-orange
+│   │       ├── --peach
+│   │       ├── --princeton-orange
+│   │       ├── --grogu-green
+│   │       ├── --chefchaouen-blue
+│   │       ├── --emerald-green
+│   │       ├── --anti-flash-white
+│   │       ├── --charcoal
+│   │       ├── --poppy
+│   │       ├── --moonstone
+│   │       ├── --ruby-red
+│   │       ├── --primary-color
+│   │       ├── --secondary-color
+│   │       ├── --background-color
+│   │       ├── --text-color
+│   │       ├── --accent-text-color
+│   │       ├── --header-text-color
+│   │       ├── --subheader-text-color
+│   │       ├── --subheader-three-text-color
+│   │       └── --tori-header-color
 │   └── .light-theme (Light Mode Overrides)
+│       ├── --primary-color
+│       ├── --secondary-color
+│       ├── --background-color
+│       ├── --text-color
+│       ├── --accent-text-color
+│       ├── --header-text-color
+│       ├── --subheader-text-color
+│       ├── --subheader-three-text-color
+│       └── --tori-header-color
 ├── Base Styles
 │   ├── body
 │   │   ├── Size It
@@ -982,8 +971,8 @@ Global.css
 ├── Components
 │   ├── nav
 │   │   ├── Size It
-│   │   │   ├── width
-│   │   │   └── display
+│   │   │   ├── display
+│   │   │   └── width
 │   │   ├── Space It
 │   │   │   ├── padding
 │   │   │   └── justify-content
@@ -1077,8 +1066,7 @@ Global.css
 │   │       └── transform
 │   └── footer
 │       ├── Size It
-│       │   ├── width
-│       │   └── font-size
+│       │   └── width
 │       ├── Space It
 │       │   ├── margin-top
 │       │   ├── padding
@@ -1086,8 +1074,10 @@ Global.css
 │       └── Style It
 │           ├── color
 │           └── background-color
-├── Mobile Styles
-│   ├── @media
+
+
+├── Touch Styles
+│   ├── @media (width <= 768px)
 │   │   ├── h1
 │   │   │   └── Size It
 │   │   │       └── font-size
@@ -1125,5 +1115,7 @@ Global.css
 │   │           └── font-size
 └── Behaviors
     └── body, h1, nav, footer
-        └── transition
+        ├── transition
+        │   ├── background-color
+        │   └── color
 */
