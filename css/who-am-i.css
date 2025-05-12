@@ -430,8 +430,8 @@
   Shows the image label when its corresponding radio button is selected.
   Order of Properties: Space It (Sp)
 */
-#tori-photo:checked ~ .gallery-images label[for="tori-photo"],
-#tori-anime:checked ~ .gallery-images label[for="tori-anime"] {
+#tori-headshot:checked ~ .gallery-images label[for="tori-headshot"],
+#tori-marathon:checked ~ .gallery-images label[for="tori-marathon"] {
   /* --- Space It --- */
   display: block;
 }
@@ -507,8 +507,8 @@
   Changes the toggle triangle’s background to dark gray when its radio button is selected.
   Order of Properties: Style It (St)
 */
-#tori-photo:checked ~ .gallery-controls label[for="tori-photo"],
-#tori-anime:checked ~ .gallery-controls label[for="tori-anime"] {
+#tori-headshot:checked ~ .gallery-controls label[for="tori-headshot"],
+#tori-marathon:checked ~ .gallery-controls label[for="tori-marathon"] {
   /* --- Style It --- */
   background: #333;
 }
@@ -765,7 +765,7 @@ Who-am-i.css
 │   └── Size It
 │       ├── max-width
 │       └── height
-├── #tori-photo:checked
+├── #tori-headshot:checked
 │   └── Space It
 │       └── display
 ├── .gallery-controls
@@ -787,7 +787,7 @@ Who-am-i.css
 ├── .gallery-controls .kepler:hover
 │   └── Style It
 │       └── background
-├── #tori-photo:checked
+├── #tori-headshot:checked
 │   └── Style It
 │       └── background
 ├── .signal-contact

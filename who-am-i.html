@@ -228,34 +228,38 @@ Maine
 <div class="gallery">
     <!-- Container for the image gallery, groups images and toggle controls. -->
 
-    <input type="radio" name="gallery" id="tori-photo" checked aria-label="Select Tori photo">
+    <input type="radio" name="gallery" id="tori-headshot" checked aria-label="Select Tori photo">
     <!-- Radio button for the first photo, checked by default, with aria-label for accessibility. -->
 
-    <input type="radio" name="gallery" id="tori-anime" aria-label="Select Tori anime">
-    <!-- Radio button for the second image (anime version), with aria-label for accessibility. -->
+    <input type="radio" name="gallery" id="tori-marathon" aria-label="Select Tori marathon">
+    <!-- Radio button for the second image (marathon version), with aria-label for accessibility. -->
 
     <div class="gallery-images">
     <!-- Container for gallery images, hidden/shown based on radio button selection. -->
 
-        <label for="tori-photo"><img src="images/tori-schuyler.jpg" alt="Tori Schuyler smiling."></label>
-        <!-- Label and image for the first photo, tied to the tori-photo radio button. -->
+        <label for="tori-headshot"><img src="images/tori/headshot.jpg" alt="Tori Schuyler smiling."></label>
+        <!-- Label and image for the first photo, tied to the tori-headshot radio button. -->
         
-        <label for="tori-anime"><img src="images/anime/ghibli-tori.jpg" alt="Anime Tori Schuyler smiling."></label>
-        <!-- Label and image for the second image, tied to the tori-anime radio button. -->
+        <label for="tori-marathon"><img src="images/tori/nyc-marathon.png" alt="A woman with a blonde ponytail,
+            wearing a white cap and a blue NYC Marathon poncho, stands on the roof of 344 Third Ave, Manhattan Promenade,
+            looking out at the New York City skyline at night. The Empire State Building is brightly lit in the center, 
+            with the Chrysler Building visible in the background among other skyscrapers.">
+        </label>
+        <!-- Label and image for the second image, tied to the tori-marathon radio button. -->
     </div>
 
     <div class="gallery-controls">
         <!-- Container for toggle controls to switch between images. -->
     
         <span class="kepler-container">
-            <label for="tori-photo" class="kepler" aria-label="Show Tori photo" tabindex="0"></label>
+            <label for="tori-headshot" class="kepler" aria-label="Show Tori photo" tabindex="0"></label>
         </span>
-        <!-- Toggle Kepler triangle for the first photo, linked to the tori-photo radio button. -->
+        <!-- Toggle Kepler triangle for the first photo, linked to the tori-headshot radio button. -->
     
         <span class="kepler-container">
-            <label for="tori-anime" class="kepler" aria-label="Show Tori anime" tabindex="0"></label>
+            <label for="tori-marathon" class="kepler" aria-label="Show Tori marathon" tabindex="0"></label>
         </span>
-        <!-- Toggle Kepler triangle for the second image, linked to the tori-anime radio button. -->
+        <!-- Toggle Kepler triangle for the second image, linked to the tori-marathon radio button. -->
     </div>
 </div>
 <!-- End Image Gallery -------------------------->
@@ -355,8 +359,8 @@ DOCTYPE
         │       ├── pre
         │       ├── pre
         │       ├── div
-        │       │   ├── input (tori-photo)
-        │       │   ├── input (tori-anime)
+        │       │   ├── input (tori-headshot)
+        │       │   ├── input (tori-marathon)
         │       │   ├── div
         │       │   │   ├── label
         │       │   │   │   └── img
@@ -364,9 +368,9 @@ DOCTYPE
         │       │   │       └── img
         │       │   └── div
         │       │       ├── span (kepler-container)
-        │       │       │   └── label (tori-photo)
+        │       │       │   └── label (tori-headshot)
         │       │       └── span (kepler-container)
-        │       │           └── label (tori-anime)
+        │       │           └── label (tori-marathon)
         │       ├── br
         │       └── p (signal-contact)
         │           └── a
