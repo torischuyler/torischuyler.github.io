@@ -257,7 +257,9 @@ This setup keeps things simple and standard, so your browser knows exactly where
             │       ├── span (heart)
             │       ├── text (For Education)
             │       └── span (footer-links)
+            │           ├── span (pipe)
             │           ├── button (modal-button - html)
+            │           ├── span (pipe)
             │           └── button (modal-button - css)
             └── script (footer.js)
                 </code>
@@ -351,6 +353,9 @@ This setup keeps things simple and standard, so your browser knows exactly where
     │   │   └── font-weight
     │   └── Chaos It
     │       └── cursor
+    ├── .pipe
+        ├── Space It
+            ├── display
 
         Touch Styles
     ├── @media
@@ -365,6 +370,9 @@ This setup keeps things simple and standard, so your browser knows exactly where
     │   ├── .modal-content code
     │   │   └── Size It
     │   │       └── font-size
+    │   ├── .pipe:first-child
+    │   │   └── Space It
+    │   │       └── display
                 </code>
             </pre>
             <!-- Code snippet display, preserves formatting of CSS blueprint -->
@@ -412,8 +420,8 @@ This setup keeps things simple and standard, so your browser knows exactly where
                 eOS Experiments <span class="heart">💙</span> For Education
             <!-- Add blueprint links here -->
             <span class="footer-links">
-                | <button class="modal-button" onclick="openModal('html')">HTML Blueprint</button>
-                | <button class="modal-button" onclick="openModal('css')">CSS Blueprint</button>
+                <span class="pipe">|</span> <button class="modal-button" onclick="openModal('html')">HTML Blueprint</button>
+                <span class="pipe">|</span> <button class="modal-button" onclick="openModal('css')">CSS Blueprint</button>
             </span>
             </p>
         </footer>

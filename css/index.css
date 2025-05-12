@@ -16,12 +16,14 @@
     .modal-content h3   { ... }
     .modal-content pre  { ... }
     .modal-close        { ... }
+    .pipe               { ... }
   
   Touch Styles
   .home-container       { ... }
   .modal-button         { ... }
   .modal-content h3     { ... }
   .modal-content code   { ... }
+  .pipe                 { ... }
 */
 
 /*
@@ -294,6 +296,12 @@
   32 32, default;
 }
 
+/* Default styling for the pipes (visible on desktop) */
+.pipe {
+  /* --- Space It --- */
+  display: inline;
+}
+
 /*
   Home Container Touch Styles
   Order of Properties: Size It, Space It (Sz Sp)
@@ -329,5 +337,10 @@
   
     /* 0.75rem = 12px (if base is 16px). */
     font-size: 0.75rem;
+  }
+
+  .pipe:first-child {
+    /* --- Space It --- */
+    display: none;
   }
 }
