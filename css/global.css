@@ -264,6 +264,16 @@
   */
   --ruby-red: #C00;
 
+  /* 
+    🟦 HTML & CSS Blueprint Links: True Blue (dark mode) & Blue (light mode)
+    Blueprints got their name and iconic look from a 19th-century chemical process called cyanotype,
+    which used iron compounds to create a deep blue background with white lines. Invented by John Herschel
+    in 1842, this method was revolutionary because it allowed architects and engineers to mass-produce precise,
+    durable copies of technical drawings for the first time, transforming how buildings and machines were designed and built.
+  */
+  --true-blue: #06C;
+  --blue: #00F;
+
   /*
     Theme-Agnostic Variables 🎭
 
@@ -282,6 +292,7 @@
   --subheader-text-color: var(--peach);
   --subheader-three-text-color: var(--princeton-orange);
   --tori-header-color: var(--grogu-green);
+  --blueprint-color: var(--true-blue);
 }
 
 /*
@@ -299,6 +310,7 @@
   --subheader-text-color: var(--poppy);
   --subheader-three-text-color: var(--moonstone);
   --tori-header-color: var(--ruby-red);
+  --blueprint-color: var(--blue);
 }
 
 /* 3. Base Styles */
@@ -929,6 +941,8 @@ Global.css
 │   │       ├── --subheader-text-color
 │   │       ├── --subheader-three-text-color
 │   │       └── --tori-header-color
+│   │       └── --true-blue
+│   │       └── --blue
 │   └── .light-theme (Light Mode Overrides)
 │       ├── --primary-color
 │       ├── --secondary-color
@@ -939,6 +953,7 @@ Global.css
 │       ├── --subheader-text-color
 │       ├── --subheader-three-text-color
 │       └── --tori-header-color
+│       └── --blueprint-color
 ├── Base Styles
 │   ├── body
 │   │   ├── Size It

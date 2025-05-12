@@ -126,7 +126,7 @@
   font-family: 'Space Grotesk', system-ui, sans-serif;
   font-weight: bold;
   background-color: var(--primary-color);
-  color: var(--accent-text-color);
+  color: var(--blueprint-color);
   border: none;
   border-radius: 5px;
   text-decoration: underline;
