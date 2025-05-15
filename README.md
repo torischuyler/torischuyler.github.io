@@ -11,7 +11,3 @@ This repository contains lesson plans for:
 ## About
 
 This project serves as a playful sandbox to explore and showcase programming skills.
-
-## Status
-
-In very early development - think "just getting started" early (👶) as of March 2025.
