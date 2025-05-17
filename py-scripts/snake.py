@@ -22,6 +22,9 @@ score = 0  # Tracks points from eating food
 # Initializes game over state
 game_over = False  # Tracks if the game has ended
 
+# Global variable to store interval ID
+interval_id = None
+
 
 # Generates random food coordinates, avoiding the snake's body
 def place_food():
@@ -137,7 +140,12 @@ def game_loop():
 
 # Starts or restarts the game
 def start_game(event):
-    global snake, direction, score, food, game_over
+    global snake, direction, score, food, game_over, interval_id
+
+    # Clear any existing interval to prevent multiple loops
+    if interval_id is not None:
+        window.clearInterval(interval_id)
+        interval_id = None
 
     # Resets game state
     snake = [(10, 10), (10, 11), (10, 12)]
@@ -148,7 +156,7 @@ def start_game(event):
 
     # Starts the game loop, running every 100ms (10 frames per second)
     game_loop_proxy = create_proxy(game_loop)
-    window.setInterval(game_loop_proxy, 100)
+    interval_id = window.setInterval(game_loop_proxy, 100)
 
     # Renders the initial state
     render()
