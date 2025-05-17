@@ -66,4 +66,7 @@
 
     /* Adds top margin to separate from the canvas, using rem for text spacing */
     margin-top: 1rem;
+
+    /* Adds bottom margin to separate from the "Game Over!" text, using rem for text spacing */
+    margin-bottom: 1rem;
 }
