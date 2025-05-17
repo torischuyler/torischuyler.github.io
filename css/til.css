@@ -3,19 +3,6 @@
 */
 
 /*
-  TIL Styles
-    .til-container { ... }
-    .til-container h1 { ... }
-    .til-container h1 img { ... }
-    .til-container ul { ... }
-    .til-container ul li { ... }
-    .til-container ul li a { ... }
-  
-  TIL Mobile Styles
-    .til-container { ... }
-*/
-
-/*
   The .til-container holds the content for the til page.
   It controls the width and spacing of the content area.
   Order of Properties: Size It, Space It (Sz Sp)
@@ -68,18 +55,16 @@
 */
 .til-container ul {
   /* --- Space It --- */
-  padding-left: 0.8rem;
+  padding-left: 1.5rem;
+  text-align: left;
 
   /* --- Style It --- */
 
   /*
     Remove default bullets, we’re using emojis. If we didn't do this
     we’d end up with both the default and custom bullets.
-
-    No bueno! 🙅‍♀️
   */
   list-style-type: none;
-  text-align: center;
 }
 
 /*
@@ -87,17 +72,16 @@
   Order of Properties: Space It, Style It (Sp St)
 */
 .til-container ul li {
-  display: inline-block;
-
   /* --- Space It --- */
-  margin: 0.8rem 0;
-  padding-left: 1.5rem;
+  display: block;
+  margin: 1rem 0;
+  padding-left: 2rem;
+  position: relative;
 
   /* --- Style It --- */
   font-family: Righteous, system-ui, sans-serif;
   font-size: 24px;
   color: goldenrod;
-  position: relative;
 }
 
 /*
@@ -106,9 +90,8 @@
 */
 .til-container ul li a {
   /* --- Space It --- */
-
   padding: 0.2rem 0.4rem;
-  margin-left: .5rem;
+  margin-left: 0.3rem;
 
   /* --- Style It --- */
   color: goldenrod;
@@ -118,15 +101,27 @@
 
 /*
   Custom bullets using ::before to ensure Safari compatibility.
-  Order of Properties: Style It (Sz St)
+  Order of Properties: Space It, Style It (Sp St)
 */
 .til-container ul li::before {
-  /* --- Style It --- */
-
-  content: '✨';
+  /* --- Space It --- */
   position: absolute;
   left: 0;
+  top: 0;
+
+  /* --- Style It --- */
+  content: '✨';
 }
+
+/*
+  Custom bullet for the second list item (Snake) using ::before.
+  Order of Properties: Style It (St)
+*/
+.til-container ul li:nth-child(2)::before {
+  /* --- Style It --- */
+  content: '🐍';
+}
+
 
 /*
   🧪 Link interaction states
