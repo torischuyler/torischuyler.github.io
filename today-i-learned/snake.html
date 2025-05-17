@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Begin Head Section ------------------------------------------------->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://torischuyler.github.io/eOS/today-i-learned/snake">
+    <title>Snake Game | eOS Experiments</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+
+    <!-- Begin Stylesheet Links  ------------------------->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.3.1/core.css">
+    <!-- Loads the PyScript CSS to style PyScript components and ensure proper rendering -->
+
+    <link rel="stylesheet" href="../css/snake.css">
+    <!-- Loads the custom CSS styles for the Snake game -->
+    <!-- End Stylesheet Links  --------------------------->
+
+    <script type="module" src="https://pyscript.net/releases/2025.3.1/core.js"></script>
+    <!-- Loads the PyScript JavaScript module to enable Python execution in the browser -->
+
+    <script src="../js/snake.js"></script>
+    <!-- Loads the custom JavaScript for canvas initialization and Snake game logic -->
+
+    <script type="py" src="../py-scripts/snake.py"></script>
+    <!-- Loads the Python code for the Snake game logic using PyScript -->
+</head>
+<!-- End Head Section --------------------------------------------------->
+
+<!-- Begin Body Section ------------------------------------------------->
+<body>
+
+    <!-- Begin .game-container ------------------------------------------>
+    <div id="game-container">
+        <div id="score">Score: 0</div>
+        <!-- Displays the player's current score, updated dynamically during the game -->
+
+        <canvas id="game-canvas" width="500" height="500"></canvas>
+        <!-- Defines the canvas where the Snake game will be rendered (500x500 pixels) -->
+
+        <button id="start-button">Start Game</button>
+        <!-- Button to start or restart the Snake game -->
+
+        <div id="gameOver" style="display: none;">Game Over!</div>
+        <!-- Displays 'Game Over' message when the game ends, hidden by default -->
+    </div>
+    <!-- End .game-container -------------------------------------------->
+</body>
+<!-- End Body Section -------------------------------------------------->
+</html>
