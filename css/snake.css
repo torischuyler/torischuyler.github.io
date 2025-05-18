@@ -16,11 +16,12 @@
     /* Arranges children (score, canvas, button, game over) in a vertical column */
     flex-direction: column;
 
-    /* Horizontally centers the container within the page */
+    /* Horizontally and vertically centers children within the container */
     align-items: center;
+    justify-content: center;
 
-    /* Adds top margin to separate from the page edge */
-    margin-top: 20px;
+    /* Ensures the container takes up the full viewport height for vertical centering */
+    min-height: 100vh;
 }
 
 /* Styles for the score display */
@@ -69,4 +70,20 @@
 
     /* Adds bottom margin to separate from the "Game Over!" text, using rem for text spacing */
     margin-bottom: 1rem;
+}
+
+/* Styles for touch devices with screens 768px and under */
+@media (width <= 768px) and (pointer: coarse) {
+    /* Adjusts the canvas to scale down to 90% of the viewport width */
+    #game-canvas {
+        /* Uses viewport width to fit the screen */
+        width: 90vw;
+
+        /* Maintains square aspect ratio */
+        height: 90vw;
+
+        /* Caps the size to avoid overly large canvases */
+        max-width: 400px;
+        max-height: 400px;
+    }
 }
