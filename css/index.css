@@ -45,7 +45,7 @@
     Sets the color property with a CSS variable (--header-text-color, from global.css).
       - Grogu green in dark mode, switches to ruby red in light mode.
   */
-  color: var(--tori-header-color);
+  color: var(--header-color);
 }
 
 /*

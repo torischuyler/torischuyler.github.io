@@ -35,7 +35,7 @@
 */
 .til-container h1 {
   /* --- Style It --- */
-  color: var(--tori-header-color);
+  color: var(--header-color);
 }
 
 /*

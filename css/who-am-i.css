@@ -85,10 +85,10 @@
   /* --- Style It --- */
 
   /*
-    Sets the color property with a CSS variable (--tori-header-color, from global.css).
+    Sets the color property with a CSS variable (--header-color, from global.css).
       - Grogu green in dark mode, switches to ruby red in light mode.
   */
-  color: var(--tori-header-color);
+  color: var(--header-color);
 
   /* --- Chaos It --- */
 
@@ -445,7 +445,7 @@
   /* --- Style It --- */
 
   /* Sets the background color using the existing variable. */
-  background: var(--tori-header-color);
+  background: var(--header-color);
 
 /*
   Defines a Kepler right triangle by clipping the 30px x 30px box to a polygon with three vertices.

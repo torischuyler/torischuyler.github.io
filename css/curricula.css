@@ -55,10 +55,10 @@
   /* --- Style It --- */
 
   /*
-    Sets the color property with a CSS variable (--tori-header-color, from global.css).
+    Sets the color property with a CSS variable (--header-color, from global.css).
       - Grogu green in dark mode, switches to chefchaouen blue in light mode.
   */
-  color: var(--tori-header-color);
+  color: var(--header-color);
 }
 
 /* 

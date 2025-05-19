@@ -196,7 +196,7 @@
   --princeton-orange: #F89317;
 
   /*
-    Tori header text color: Grogu green.
+   Header text color: Grogu green.
   */
   --grogu-green: #9CBB80;
 
@@ -248,16 +248,13 @@
   --moonstone: #63B0CD;
 
   /*
-    Tori header text color: Ruby red.
+    Header text color: Ruby red.
     😎 Fun Context: Dorothy’s ruby slippers in the 1939 "Wizard of Oz" were silver in 
     L. Frank Baum's book, but MGM turned them ruby red to dazzle in Technicolor against 
     the yellow brick road — cinema’s most iconic footwear was born.
 
     "You've always had the power, my dear. You just had to learn it for yourself."
       - Glinda to Dorothy
-
-    👩‍🏫 Fun Teacher Fact: Ms. Schuyler loved learning Ruby (the language) when starting out 
-    as an Associate SDET at StreetEasy — it’s as readable as this #CC0000 is striking for our headers!
 
     We use #C00 here instead of #CC0000 ‘cause they’re the same color -
     linter likes the shorter version, less typing!
@@ -281,7 +278,7 @@
   --header-text-color: var(--hermès-orange);
   --subheader-text-color: var(--peach);
   --subheader-three-text-color: var(--princeton-orange);
-  --tori-header-color: var(--grogu-green);
+  --header-color: var(--grogu-green);
 }
 
 /*
@@ -298,7 +295,7 @@
   --header-text-color: var(--ruby-red);
   --subheader-text-color: var(--poppy);
   --subheader-three-text-color: var(--moonstone);
-  --tori-header-color: var(--ruby-red);
+  --header-color: var(--ruby-red);
 }
 
 /* 3. Base Styles */
