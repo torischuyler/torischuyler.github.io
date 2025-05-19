@@ -7,7 +7,6 @@
   Home Styles
     .home-container     { ... }
     .home-container h1  { ... }
-    .home-container p   { ... }
     .html-prompt        { ... }
     .css-prompt         { ... }
     .modal-button       { ... }
@@ -17,7 +16,7 @@
     .modal-content pre  { ... }
     .modal-close        { ... }
     .pipe               { ... }
-  
+
   Touch Styles
   .home-container       { ... }
   .modal-button         { ... }
@@ -80,37 +79,6 @@
       - Grogu green in dark mode, switches to ruby red in light mode.
   */
   color: var(--tori-header-color);
-}
-
-/*
-  This styles paragraph text (<p> tags) inside the .home-container.
-  Order of Properties: Size It, Space It (Sz Sp)
-*/
-.home-container p {
-  /* --- Size It --- */
-
-  /*
-    line-height: 1.6 sets text line height to 1.6 times the font size.
-    This improves readability by giving lines some breathing room.
-    🧮 Here's the math:
-      - 1.6 × 16px = 25.6px (at a 16px default root).
-    
-    📐 Why is there no unit of measurement here for 1.6 like rem or px?
-
-    Great question! Unitless values are standard for line-height in modern CSS
-    because they adapt better than fixed units.
-
-    🍭 1.6 is in the sweet spot between too cramped (< 1.5) and too spacious (> 2.0).
-  */
-  line-height: 1.6;
-
-  /* --- Space It --- */
-
-  /* Adds space between the header and paragraph */
-  margin-top: 1.5rem;
-
-  /* Adds space between the image and paragraph */
-  margin-bottom: 2rem;
 }
 
 /*
