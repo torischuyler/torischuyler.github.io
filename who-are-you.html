@@ -155,19 +155,6 @@ This is the "Who Are You?" page, designed to explain to visitors who they are. -
                 can identify its purpose, with 'aria-pressed' indicating the current mode. -->
             </div>
             <!-- End Nav Header Wrapper ------------------------------------------------->
-
-            <noscript>
-            <!-- The noscript tag is used to provide alternative content
-             when JavaScript is disabled in the visitor's browser. -->
-
-                <div class="noscript-warning">
-                <!-- This div serves as a container for the warning message. -->
-
-                    <p>JavaScript is disabled on your browser. To experience all features of this site, please enable JavaScript.</p>
-                    <!-- Paragraph tag containing the message that informs visitors
-                    about disabled JavaScript and encourages them to enable it. -->
-                </div>
-            </noscript>
         </nav>
         <!-- End Navigation Section  --------------------------------------------------------->
 
@@ -178,6 +165,16 @@ This is the "Who Are You?" page, designed to explain to visitors who they are. -
             <main aria-label="Main content">
             <!-- 'aria-label' tags this as "Main content" for screen readers since there’s no heading;
             without it, it’d just be "region," leaving visitors unsure of its purpose. -->
+
+              <noscript>
+                  <!-- The noscript tag is used to provide alternative content when JavaScript is disabled in the visitor's browser. -->
+
+                  <div class="noscript-warning">
+                  <!-- This div serves as a container for the warning message. -->
+
+                      <p>JavaScript is disabled on your browser. To experience all features of this site, please enable JavaScript.</p>
+                  </div>
+              </noscript>
 
                 <h1>Who Are You?</h1>
                 <!-- Main heading (<h1>) of the page, sets the theme or topic. -->
