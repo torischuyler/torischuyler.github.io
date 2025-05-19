@@ -11,19 +11,6 @@
 */
 
 /*
-  Curricula Styles
-    .curriculum-container { ... }
-    .curriculum-container h1 { ... }
-    .curriculum-container h2 { ... }
-    .curriculum-container ul { ... }
-    .curriculum-container ul li { ... }
-      .curriculum-container ul li::before { ... }
-      @supports not (selector(::before)) { ... }
-    .curriculum-container a { ... }
-      .curriculum-container ul li a:hover, :focus { ... }
-*/
-
-/*
   Lesson directory pages (Students & Developers)
   The .curriculum-container holds the content for the curricula pages.
   It controls the width and spacing of the content area.
@@ -295,62 +282,3 @@
     max-width: 100vw;
   }
 }
-
-/*
-Curricula.css
-├── .curriculum-container
-│   ├── Size It
-│   │   └── max-width
-│   └── Space It
-│       ├── margin
-│       └── padding
-├── .curriculum-container h1
-│   └── Style It
-│       └── color
-├── .curriculum-container h2
-│   └── Style It
-│       ├── color
-│       └── text-decoration
-├── .curriculum-container ul
-│   └── Space It
-│       ├── padding-left
-│       └── list-style-type
-├── .curriculum-container ul li
-│   ├── Space It
-│   │   ├── margin
-│   │   └── padding-left
-│   ├── Style It
-│   │   └── position
-│   ├── .curriculum-container ul.student-list li::before
-│   │   └── Style It
-│   │       ├── content
-│   │       ├── position
-│   │       └── left
-│   ├── .curriculum-container ul.developer-list li::before
-│   │   └── Style It
-│   │       ├── content
-│   │       ├── position
-│   │       └── left
-│   └── @supports not (selector(::before))
-│       └── .curriculum-container ul
-│           └── Style It
-│               └── list-style-type
-├── .curriculum-container a
-│   ├── Space It
-│   │   ├── padding
-│   │   └── margin-left
-│   ├── Style It
-│   │   ├── color
-│   │   ├── text-decoration
-│   │   └── transition
-│   └── .curriculum-container ul li a:hover, :focus
-│       └── Style It
-│           ├── color
-│           ├── text-decoration
-│           └── background-color
-├── Mobile Styles
-│   ├── @media
-│       ├── .curriculum-container
-│           └── Size It
-│               └── max-width
-*/
