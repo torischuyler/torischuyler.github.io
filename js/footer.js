@@ -24,31 +24,3 @@ function updateFooterYear() {
     console.warn('Element with ID "year" not found in the DOM.');
   }
 }
-
-// Function to update the heart based on theme
-function updateHeart() {
-  const heart = document.querySelector(".heart");
-  const isLightTheme = document.body.classList.contains("light-theme");
-
-  if (!isLightTheme) {
-      // Blue heart for default dark mode
-      heart.textContent = "💙";
-  } else {
-      // Red heart for light mode
-      heart.textContent = "❤️";
-  }
-}
-
-// Run it once on page load
-updateHeart();
-
-/*
-    Watch for theme switches to keep the heart in sync.
-    This MutationObserver acts like a little spy 👀 on the <body> tag. It listens for changes to the 'class' attribute
-    (specifically when 'light-theme' is added or removed by the theme toggle). When that happens, it triggers
-    updateHeart() to swap the heart emoji between 💙 (dark mode) and ❤️ (light mode). It’s here to catch theme
-    changes automatically, so the heart updates even if the toggle script doesn’t directly call this function.
-    Think of it as a safety net ensuring the footer heart stays theme-consistent no matter how the mode switches!
-*/
-const observer = new MutationObserver(updateHeart);
-observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
