@@ -1,43 +1,21 @@
-/*
-  🏡 Index.css - The stylesheet for the homepage. This file defines the styles
-  that apply specifically to the home of eOS Lesson Plans.
+/* 
+  🏡 Index.css - The stylesheet for the homepage. 
+  This file defines the styles that apply specifically to the home of eOS Experiments. 
 */
 
 /*
-  Home Styles
-    .home-container     { ... }
-    .home-container h1  { ... }
-    .html-prompt        { ... }
-    .css-prompt         { ... }
-    .modal-button       { ... }
-    .modal              { ... }
-    .modal-content      { ... }
-    .modal-content h3   { ... }
-    .modal-content pre  { ... }
-    .modal-close        { ... }
-    .pipe               { ... }
-
-  Touch Styles
-  .home-container       { ... }
-  .modal-button         { ... }
-  .modal-content h3     { ... }
-  .modal-content code   { ... }
-  .pipe                 { ... }
-*/
-
-/*
-  The .home-container holds the content for the home page.
-  It controls the width and spacing of the content area.
-  Order of Properties: Size It, Space It (Sz Sp)
+  📄 The .home-container holds the content for the home page.
+  It controls the width and spacing of the content area, with a mobile-first approach.
 */
 .home-container {
   /* --- Size It --- */
 
   /* 
-    max-width: 80vw sets the maximum width to 80% of the viewport width.
-    This limits how wide the container can grow.
+    max-width: 100vw sets the maximum width to 100% of the viewport width.
+    This ensures the container spans the full width on mobile screens, 
+    providing a responsive layout for smaller devices.
   */
-  max-width: 80vw;
+  max-width: 100vw;
 
   /* --- Space It --- */
 
@@ -51,20 +29,9 @@
 
   /*
     Space inside container ⬆️⬇️➡️⬅️
-    Rem = “root em,” based on the <html> font size (usually 16 px by default).
-    So, 1rem = 16px, 2rem = 32px. Simple math! 🧮
-    2rem applies to all sides (top, right, bottom, left).
-
-    Why use rem here? It’s responsive—padding scales with browser font size changes,
-    keeping the nav balanced across different screens and settings.
+    Sets fixed inner spacing for non-text container, per guides/css-guidelines.md.
   */
-  padding: 2rem;
-
-  /*
-    Moves the text to the middle of the container.
-    This changes how the text is positioned horizontally.
-  */
-  text-align: center;
+  padding: 32px;
 }
 
 /*
@@ -82,233 +49,23 @@
 }
 
 /*
-  Modal Button
-  Order of Properties: Size It, Space It, Style It, Chaos It (Sz Sp St Ch)
-*/
-.modal-button {
-  /* Size It */
-  font-size: 1rem;
+  📲 Home Container Tablet/Desktop Styles
 
-  /* Space It */
-  padding: 0.2rem;
-  
-  /* Style It */
-  font-family: 'Space Grotesk', system-ui, sans-serif;
-  font-weight: bold;
-  background-color: var(--primary-color);
-  color: var(--blueprint-color);
-  border: none;
-  border-radius: 5px;
-  text-decoration: underline;
-  
-  /* Chaos It */
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-/*
-  Modal
-  Order of Properties: Size It, Space It, Style It (Sz Sp St)
-*/
-.modal {
-  /* --- Size It --- */
-
-  /* Sets the modal to span the full viewport width so the overlay covers the entire horizontal space. */
-  width: 100%;
-
-  /* Sets the modal to span the full viewport height. so the overlay covers the entire vertical space. */
-  height: 100%;
-
-  /* --- Space It --- */
-
-  /* Hides the modal by default. It’s toggled to visible via JavaScript. */
-  display: none;
-
-  /* Locks the modal in place relative to the viewport. It stays in position even when the page is scrolled. */
-  position: fixed;
-
-  /* Anchors the modal to the top edge of the viewport. Used with position: fixed for full coverage. */
-  top: 0;
-
-  /* Anchors the modal to the left edge of the viewport. Used with position: fixed for full coverage. */
-  left: 0;
-
-  /* Ensures the modal appears above other content. High value prevents other elements from overlapping it. */
-  z-index: 1000;
-
-  /* --- Style It --- */
-
-  /*
-    Adds a semi-transparent black overlay on the homepage when the modal is open.
-    0 red, 0 green, 0 blue = pure black.
-    50% alpha = half see-through for a dimmed background.
-  */
-  background-color: rgb(0 0 0 / 50%);
-}
-
-/*
-  Modal Content
-  Order of Properties: Size It, Space It, Style It (Sz Sp St)
-*/
-.modal-content {
-  /* --- Size It --- */
-
-  /* Sets the content box to 80% of the viewport width. */
-  width: 80%;
-
-  /* Limits the content box width on larger screens. */
-  max-width: 600px;
-
-  /* Limits the content box to 70% of the viewport height. */
-  max-height: 70vh;
-
-  /* --- Space It --- */
-
-  /* 15% top/bottom adds vertical spacing; auto left/right centers it. */
-  margin: 15% auto;
-
-  /* Adds inner spacing on all sides of the content box. */
-  padding: 20px;
-
-  /* Adds a vertical scrollbar if content exceeds max-height. */
-  overflow-y: auto;
-
-  /* --- Style It --- */
-
-  background-color: var(--anti-flash-white);
-
-  /* Rounds the corners of the content box. */
-  border-radius: 5px;
-}
-
-/*
-  Modal Title
-  Order of Properties: Size It, Style It (Sz) St
-*/
-.modal-content h3 {
-  /* --- Size It --- */
-
-  /* 1.5 × 16px = 24px (at a 16px default root). */
-  font-size: 1.5rem;
-
-  /* --- Style It --- */
-  color: var(--charcoal);
-}
-
-/*
-  Modal Paragraph Text
-  Order of Properties: Style It (St)
-*/
-.modal-content p {
-  /* --- Style It --- */
-  color: var(--charcoal);
-}
-
-
-/*
-  Modal Code Block
-  Order of Properties: Size It, Space It, Style It (Sp St)
-*/
-.modal-content pre {
-  /* --- Size It --- */
-
-  /* 0.9 × 16px = 14.4px (at a 16px default root). */
-  font-size: 0.9rem;
-
-  /* Adds a horizontal scrollbar for long code lines. */
-  overflow-x: auto;
-
-  /* --- Style It --- */
-
-  color: var(--charcoal);
-  background-color: #F4F4F4;
-  border-radius: 5px;
-
-  /*
-    Pre preserves whitespace and line breaks in code.
-    Ensures code formatting (e.g., indentation) is displayed correctly.
-  */
-  white-space: pre;
-
-  /*
-    font-family: 'Courier New', Courier, monospace sets a monospace font.
-    Standard for code blocks for consistent character spacing.
-  */
-  font-family: 'Courier New', Courier, monospace;
-}
-
-/*
-  Close Button
-  Order of Properties: Size It, Space It, Style It, Chaos It (Sz Sp St Ch)
-*/
-.modal-close {
-  /* --- Size It --- */
-
-  /* Answer to the Ultimate Question of Life, the Universe, and Everything. */
-  font-size: 42px;
-
-  /* --- Space It --- */
-
-  /* Aligns the close button in the top-right corner of the modal. */
-  float: right;
-
-  /* --- Style It --- */
-
-  color: var(--charcoal);
-  font-weight: bold;
-
-  /* --- Chaos It --- */
-
-  /* Sets a custom cursor with an SVG emoji (❎) */
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">❎</text></svg>')
-  32 32, default;
-}
-
-/* Default styling for the pipes (visible on desktop) */
-.pipe {
-  /* --- Space It --- */
-  display: inline;
-}
-
-/*
-  Home Container Touch Styles
-  Order of Properties: Size It, Space It (Sz Sp)
-
-  📲 The 768px width is widely used because it aligns with the typical screen size
+  The 768px width is widely used because it aligns with the typical screen size
   of tablets in portrait mode, like the iPad (which has a resolution of 768px wide
-  at 1x pixel density). It’s become a convention in responsive design to mark the
-  transition between "mobile" and "tablet" layouts.
+  at 1x pixel density). It’s a common breakpoint in responsive design to shift from
+  "mobile" to "tablet" layouts. Using min-width: 769px ensures these styles start
+  right after the mobile styles (up to 768px), avoiding overlap at exactly 768px.
 */
-@media (width <= 768px) {
+@media (width >= 769px) {
   .home-container {
     /* --- Size It --- */
 
-    /* max-width: 100vw sets the maximum width to 100% of the viewport width. */
-    max-width: 100vw;
-
-    /* --- Space It --- */
-
-    /* Adds space at the bottom to prevent overlap by fixed footer and prompts */
-    padding-bottom: 120px;
-  }
-
-  .modal-content h3 {
-    /* --- Size It --- */
-    
-    /* 1.2rem = ~19px (if base is 16px).
+    /* 
+      max-width: 80vw sets the maximum width to 80% of the viewport width.
+      This prevents the container from growing too wide on larger screens, 
+      enhancing readability by limiting line lengths and maintaining a focused layout.
     */
-    font-size: 1.2rem;
-  }
-
-  .modal-content code {
-    /* --- Size It --- */
-  
-    /* 0.75rem = 12px (if base is 16px). */
-    font-size: 0.75rem;
-  }
-
-  .pipe:first-child {
-    /* --- Space It --- */
-    display: none;
+    max-width: 80vw;
   }
 }

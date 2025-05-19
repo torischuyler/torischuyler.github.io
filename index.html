@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <!-- This is the DOCTYPE declaration. It’s like a signal to browsers that says, “Hey, this is an HTML web page!”
-
-Welcome to the home of eOS Experiments! Every web page needs a name, like “about.html” or “contact.html.” 
-You might think the home page would be called something like “home.html” or “homepage.html” or “home-page.html.” 
-But nope—it’s “index.html”! Why? 
-
-1. Web servers automatically look for “index.html” as the main page — like the front door of a website.
-2. It’s a rule that pretty much all websites follow.
-3. You can visit it just by typing https://torischuyler.github.io/eOS/
-—no filename needed!
-
-This setup keeps things simple and standard, so your browser knows exactly where to start. -->
+ 
+Welcome to the home of eOS Experiments! Every web page needs a name, and the index.html file is used for homepages 
+because it’s a convention rooted in web server defaults. When you visit a website, the server looks for a default file 
+to serve if no specific file is requested (e.g., www.example.com). Historically, index.html became the standard name for 
+this default file because it’s simple, clear, and implies the "index" or starting point of a site. Web servers like 
+Apache and Nginx are preconfigured to look for index.html (or similar files like index.php) in a directory, making it an 
+easy, universal choice. It’s like calling the first chapter of a book “Chapter 1” 
+— it’s just an agreed-upon starting point that everyone understands.
+-->
 
 <html lang="en">
 <!-- Sets the page language to English - helps screen readers, search engines, and spell checkers. -->
 
     <!-- Begin Head Section ------------------------------------------------->
-    <!-- Head contains "behind-the-scenes" stuff that defines how the page works and looks. -->
     <head>
+    <!-- Head contains "behind-the-scenes" stuff that defines how the page works and looks. -->
+
         <meta charset="UTF-8">
         <!-- Character encoding tells browser how to decode the page. -->
 
@@ -28,7 +27,7 @@ This setup keeps things simple and standard, so your browser knows exactly where
         <link rel="canonical" href="https://torischuyler.github.io/eOS/">
         <!-- Canonical URL: Specifies the preferred version of this page for search engines to index, 
         preventing duplicate content issues. -->
-    
+
         <title>Home | eOS Experiments</title>
         <!-- Page title, visible in browser tabs, bookmarks, and search engine results.
         Format: [Page Name] | [Site Name] - this pattern helps with SEO and page navigation. -->
@@ -37,18 +36,16 @@ This setup keeps things simple and standard, so your browser knows exactly where
         <!-- Sets the favicon, the little icon you see in browser tabs and bookmarks. -->
 
         <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-        <!-- Adds Apple touch icon for iOS devices to display favicon -->
+        <!-- Adds Apple touch icon for iOS devices to display favicon. -->
 
         <!-- Begin SEO Elements --------------------------------------------------->
         <!-- SEO Elements: These tags optimize your webpage for search engines,
         influencing how your site is indexed and displayed in search results. -->
 
         <meta name="robots" content="index, follow">
-        <!-- Robots Directive: Allows search engines to index this page and follow its links now that the first 
-        iteration is complete and ready for public viewing. -->
+        <!-- Robots Directive: Allows search engines to index this page and follow its links. -->
 
-        <meta name="description" content="Explore lesson plans on digital literacy and computer basics,
-        designed to feed into the development of an educational operating system (eOS) for teaching computer use.">
+        <meta name="description" content="Explore eOS Experiments.">
         <!-- SEO Description: This tag offers a quick summary for search results,
         improving click-through rates by setting user expectations and boosting relevance. -->
 
@@ -62,13 +59,12 @@ This setup keeps things simple and standard, so your browser knows exactly where
 
         <!-- Begin Open Graph Tags  ------------------------------------------------->
         <!-- Open Graph Tags: These control how this page appears when shared on social media platforms like
-        Facebook, LinkedIn, etc., by providing metadata for rich previews. -->
+        X, Facebook, LinkedIn, etc., by providing metadata for rich previews. -->
 
         <meta property="og:title" content="Home | eOS Experiments">
         <!-- Open Graph Title: Defines the title for social media sharing. -->
 
-        <meta property="og:description" content="Dive into lesson plans on digital and computer literacy that will
-        form the backbone of the future educational OS, eOS. Perfect for students and developers eager to enhance their tech skills.">
+        <meta property="og:description" content="Explore eOS Experiments.">
         <!-- Open Graph Description: Provides a summary when shared on social platforms. -->
 
         <meta property="og:image" content="https://torischuyler.github.io/eOS/images/van-gogh-orca.jpg">
@@ -100,28 +96,24 @@ This setup keeps things simple and standard, so your browser knows exactly where
         <!-- End Stylesheet Links  --------------------------------------------------->
 
         <script src="js/toggles/sunrise-gotham-toggle.js" defer></script>
-        <!-- Script for toggling Light/Dark mode - placed last for better page load performance and security.
-        'defer' tells the browser to load the script after the HTML is parsed but before
-        the DOMContentLoaded event, improving page load times. -->
+        <!-- Script for toggling Light/Dark mode - Scripts are placed last for better page load
+        performance and security. 'defer' tells the browser to load the script after the HTML is
+        parsed but before the DOMContentLoaded event, improving page load times. -->
 
         <script src="js/mobile-nav.js" defer></script>
-        <!-- Script for toggling touch navigation ------>
-
-        <script src="js/blueprint-modal.js"></script>
-        <!-- Script for opening and closing blueprint modal ------>
+        <!-- Script for toggling touch navigation. ------>
     </head>
     <!-- End Head Section --------------------------------------------------->
 
     <!-- Begin Body Section ------------------------------------------------->
-    <!-- Body contains all the visible content of the webpage,
-    like text, images, and buttons - the "on-stage" part where the action happens. -->
     <body>
+    <!-- Body contains all the visible content of the webpage, like text, images, and buttons - the "on-stage" part where the action happens. -->
 
         <!-- Begin Navigation Section  ------------------------------------------------->
-        <!-- Navigation section - like a table of contents for the webpage. ------------>
         <nav aria-label="Page navigation">
+        <!-- Navigation section - like a table of contents for the webpage. -->
 
-            <!-- Navigation menu for desktop and touch -->
+            <!-- Navigation menu for desktop and touch. -->
             <ul class="nav-menu">
                 <li><a href="index.html" class="active" aria-current="page">Home</a></li>
                 <li><a href="curricula.html">Lesson Plans</a></li>
@@ -130,290 +122,60 @@ This setup keeps things simple and standard, so your browser knows exactly where
                 <li><a href="who-am-i.html">Who Am I?</a></li>
             </ul>
 
-            <!-- Begin Nav Header Wrapper: Groups hamburger and toggle------------------>
+            <!-- Begin Nav Header Wrapper: Groups hamburger and toggle ------------------>
             <div class="nav-header">
 
                 <div class="hamburger">☰</div>
                 <!-- Hamburger icon -->
 
-                <button id="sunrise-gotham-toggle" aria-label="Toggle light or dark mode" aria-pressed="false">🌅</button>
-                <!-- Dark/Light mode toggle button. The 'aria-label' attribute enhances accessibility
-                by describing the button for screen readers, ensuring users with visual impairments
-                can identify its purpose, with 'aria-pressed' indicating the current mode. -->
+                <button id="sunrise-gotham-toggle" aria-label="Toggle light or dark mode" aria-pressed="true">🌅</button>
+                <!-- Toggles dark/light mode. Defaults to dark (aria-pressed="true"). aria-label aids screen reader accessibility. -->
             </div>
             <!-- End Nav Header Wrapper ------------------------------------------------->
-
-            <noscript>
-            <!-- The noscript tag is used to provide alternative content
-            when JavaScript is disabled in the visitor's browser. -->
-
-                <div class="noscript-warning">
-                <!-- This div serves as a container for the warning message. -->
-
-                    <p>JavaScript is disabled on your browser. To experience all features of this site, please enable JavaScript.</p>
-                    <!-- Paragraph tag containing the message that informs visitors
-                    about disabled JavaScript and encourages them to enable it. -->
-                </div>
-            </noscript>
         </nav>
-        <!-- End Navigation Section  --------------------------------------------------->
+        <!-- End Navigation Section  ---------------------------------------------------->
 
-        <!-- Wrap all homepage content in .home-container -->
+        <!-- Begin .home-container ---------------------------------->
         <div class="home-container">
+
             <!-- Begin Main Section -------------------------------------------------------->
-            <!-- Main content area - where the primary, unique content of the page lives. -->
             <main aria-label="Main content">
-            <!-- 'aria-label' tags this as "Main content" for screen readers since there’s no heading;
+            <!-- Main content area - where the primary, unique content of the page lives.
+            'aria-label' tags this as "Main content" for screen readers since there’s no heading;
             without it, it’d just be "region," leaving visitors unsure of its purpose. -->
 
                 <h1>eOS Experiments</h1>
                 <!-- Main heading of the page, sets the theme or topic. -->
+
+                <noscript>
+                <!-- The noscript tag is used to provide alternative content when JavaScript is disabled in the visitor's browser. -->
+
+                    <div class="noscript-warning">
+                    <!-- This div serves as a container for the warning message. -->
+
+                        <p>JavaScript is disabled on your browser. To experience all features of this site, please enable JavaScript.</p>
+                        <!-- Paragraph tag containing the message that informs visitors about disabled JavaScript and encourages them to enable it. -->
+                    </div>
+                </noscript>
             </main>
             <!-- End Main Section ---------------------------------------------------------->
         </div>
-        <!-- End of .home-container -------------------------------------------------------->
-
-        <!-- Begin Hidden Blueprints for Modal Content ----->
-        <div id="blueprints" style="display: none;">
-            <pre id="html-blueprint">
-                <code>
-    DOCTYPE
-    └── html
-        ├── head
-        │   ├── meta (charset)
-        │   ├── meta (viewport)
-        │   ├── link (canonical)
-        │   ├── title
-        │   ├── link (favicon)
-        │   ├── link (apple-touch-icon)
-        │   ├── SEO Group
-        │   │   ├── meta (robots)
-        │   │   ├── meta (description)
-        │   │   ├── meta (keywords)
-        │   │   └── meta (author)
-        │   ├── Open Graph Group
-        │   │   ├── meta (og:title)
-        │   │   ├── meta (og:description)
-        │   │   ├── meta (og:image)
-        │   │   ├── meta (og:url)
-        │   │   └── meta (og:type)
-        │   ├── Preconnect Links
-        │   │   ├── link (googleapis)
-        │   │   └── link (gstatic)
-        │   ├── Stylesheet Links
-        │   │   ├── link (global.css)
-        │   │   ├── link (index.css)
-        │   │   └── link (google fonts)
-        │   ├── script (sunrise-gotham-toggle.js)
-        │   ├── script (mobile-nav.js)
-        │   ├── script (blueprint-modal.js)
-        └── body
-            ├── nav
-            │   ├── ul (nav-menu)
-            │   │   ├── li
-            │   │   │   └── a (Home - active)
-            │   │   ├── li
-            │   │   │   └── a (Lesson Plans)
-            │   │   ├── li
-            │   │   │   └── a (Who Are You?)
-            │   │   ├── li
-            │   │   │   └── a (TIL)
-            │   │   └── li
-            │   │       └── a (Who Am I?)
-            │   ├── div (nav-header)
-            │   │   ├── div (hamburger)
-            │   │   └── button (sunrise-gotham-toggle)
-            │   └── noscript
-            │       └── div
-            │           └── p
-            ├── div (home-container)
-            │   └── main
-            │       ├── h1
-            ├── div (blueprints)
-            │   ├── pre (html-blueprint)
-            │   │   └── code
-            │   └── pre (css-blueprint)
-            │       └── code
-            ├── div (blueprint-modal)
-            │   └── div (modal-content)
-            │       ├── span (modal-close)
-            │       ├── h3
-            │       ├── br
-            │       ├── p
-            │       └── pre
-            │           └── code
-            ├── footer
-            │   └── p
-            │       ├── span (year)
-            │       ├── text (eOS Experiments)
-            │       └── span (footer-links)
-            │           ├── span (pipe)
-            │           ├── button (modal-button - html)
-            │           ├── span (pipe)
-            │           └── button (modal-button - css)
-            └── script (footer.js)
-                </code>
-            </pre>
-             <!-- Code snippet display, preserves formatting of HTML tree -->
-
-            <pre id="css-blueprint">
-                <code>
-    Index.css
-    ├── .home-container
-    │   ├── Size It
-    │   │   └── max-width
-    │   └── Space It
-    │       ├── margin
-    │       ├── padding
-    │       └── text-align
-    ├── .home-container h1
-    │   └── Style It
-    │       └── color
-    ├── .modal-button
-    │   ├── Size It
-    │   │   └── font-size
-    │   ├── Space It
-    │   │   └── padding
-    │   ├── Style It
-    │   │   ├── font-family
-    │   │   ├── font-weight
-    │   │   ├── background-color
-    │   │   ├── color
-    │   │   ├── border
-    │   │   ├── border-radius
-    │   │   └── text-decoration
-    │   └── Chaos It
-    │       ├── cursor
-    │       └── transition
-    ├── .modal
-    │   ├── Size It
-    │   │   ├── width
-    │   │   └── height
-    │   ├── Space It
-    │   │   ├── display
-    │   │   ├── position
-    │   │   ├── top
-    │   │   ├── left
-    │   │   └── z-index
-    │   └── Style It
-    │       └── background-color
-    ├── .modal-content
-    │   ├── Size It
-    │   │   ├── width
-    │   │   ├── max-width
-    │   │   └── max-height
-    │   ├── Space It
-    │   │   ├── margin
-    │   │   ├── padding
-    │   │   └── overflow-y
-    │   └── Style It
-    │       ├── background-color
-    │       └── border-radius
-    ├── .modal-content h3
-    │   ├── Size It
-    │   │   └── font-size
-    │   └── Style It
-    │       └── color
-    ├── .modal-content p
-    │   └── Style It
-    │       └── color
-    ├── .modal-content pre
-    │   ├── Size It
-    │   │   ├── font-size
-    │   │   └── overflow-x
-    │   └── Style It
-    │       ├── color
-    │       ├── background-color
-    │       ├── border-radius
-    │       ├── white-space
-    │       └── font-family
-    ├── .modal-close
-    │   ├── Size It
-    │   │   └── font-size
-    │   ├── Space It
-    │   │   └── float
-    │   ├── Style It
-    │   │   ├── color
-    │   │   └── font-weight
-    │   └── Chaos It
-    │       └── cursor
-    ├── .pipe
-        ├── Space It
-            ├── display
-
-        Touch Styles
-    ├── @media
-    │   ├── .home-container
-    │   │   ├── Size It
-    │   │   │   └── max-width
-    │   │   └── Space It
-    │   │       └── padding-bottom
-    │   ├── .modal-content h3
-    │   │   └── Size It
-    │   │       └── font-size
-    │   ├── .modal-content code
-    │   │   └── Size It
-    │   │       └── font-size
-    │   ├── .pipe:first-child
-    │   │   └── Space It
-    │   │       └── display
-                </code>
-            </pre>
-            <!-- Code snippet display, preserves formatting of CSS blueprint -->
-        </div>
-        <!-- End Hidden Blueprints for Modal Content ------>
-
-        <!-- Begin Blueprint Modal ---------------------------------------------------->
-        <div id="blueprint-modal" class="modal" aria-label="Blueprint Modal">
-
-            <!-- Begin Inner Content Box For Modal -->
-            <div class="modal-content">
-
-                <span class="modal-close" onclick="closeModal()">×</span>
-                <!-- Close Button For Modal -->
-
-                <h3 id="modal-title">Blueprint</h3>
-                <!-- Modal title, updated by blueprint-modal.js to show "Homepage HTML Blueprint" or "Homepage CSS Blueprint" -->
-
-                <br>
-                <p>
-                    If you're on desktop, you can see how the page was built. Right-click anywhere, select “Inspect,”
-                    and explore the HTML code with explanations detailing what each element does.
-                </p>
-                <pre id="modal-content">
-                <!-- Holds the blueprint content, populated by blueprint-modal.js with HTML or CSS blueprint -->
-                    <code>
-
-                    </code>
-                </pre>
-
-            </div>
-            <!-- End Inner Content Box For Modal -->
-        </div>
-        <!-- End Blueprint Modal ----------------------------------------------------->
+        <!-- End .home-container -------------------------------------------------------->
 
         <!-- Begin Footer Section ---------------------------------------------------------->
+        <footer>
         <!-- Footer content, like copyright info, contact details, or additional links. -->
-        <footer aria-label="Page footer">
-        <!-- 'aria-label' tags this as "Page footer" for screen readers, adding clarity since there’s no heading;
-        without it, it’s still announced as "footer," but this ensures the purpose is explicit. -->
 
             <p>
                 <span id="year"></span>
                 <!-- span highlights year, which is updated by the script in footer.js -->
                 eOS Experiments
-            <!-- Add blueprint links here -->
-            <span class="footer-links">
-                <span class="pipe">|</span> <button class="modal-button" onclick="openModal('html')">HTML Blueprint</button>
-                <span class="pipe">|</span> <button class="modal-button" onclick="openModal('css')">CSS Blueprint</button>
-            </span>
             </p>
         </footer>
         <!-- End Footer Section -------------------------------------------------------->
 
-        <script src="js/footer.js" defer></script>
-        <!-- Footer script: Automatically updates the copyright year.
-        The 'defer' attribute ensures the script loads after HTML parsing is complete. -->
+        <script src="js/footer.js"></script>
+        <!-- Footer script: Automatically updates the copyright year. -->
     </body>
     <!-- End Body Section ------------------------------------------------->
 </html>
