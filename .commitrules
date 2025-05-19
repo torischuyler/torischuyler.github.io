@@ -1,14 +1,26 @@
 ---
 
-# Usage:
-# This file defines rules for generating commit messages.
-# Add to it as needed for new types of changes or formatting preferences.
+# Usage: This file defines rules for generating commit messages.
 
 rules:
-  commit_message:
+  commit-message:
     format: "{type}({scopes}): {description} in {targets}"
-    case_style: "toricase"  # Naming your custom style here for clarity
-    toricase:  # Define "toricase" explicitly
+    examples:
+      - "feat(yaml): create initial commit message format rules in 1 YAML file"
+      - "refactor(js): update emojis in theme toggle in 1 JS file"
+      - "chore(html): standardize comment line formatting in 3 HTML files"
+      - "teach(css): simplify comment for paragraph styles in 1 CSS file"
+      - "a11y(html): add ARIA-current to active nav link in 1 HTML file"
+      - "seo(html): add site name to page title in 2 HTML files"
+      - "security(html): add <noscript> warning in 1 HTML file"
+      - "fix(html): correct social media preview image urls in 5 HTML files"
+      - "test(html): test functionality of X card tags in 2 HTML files"
+      - "lint(html): escape & as &amp; to satisfy html linter in 1 HTML file"
+      - "delete(html, css): remove styles in 1 HTML file and 1 CSS file"
+      - "style(css): update h1 color and comment in 1 CSS file"
+      - "content(html): update footer text in 5 HTML files"
+    case-style: "quark-case"
+    quark-case:
       type:
         case: lower  # {type} always lowercase, e.g., "feat", "refactor"
       scopes:
@@ -22,22 +34,14 @@ rules:
             "README", "RAM", "MMU", "ASCII", "OS", "XML",
             "HTML", "JSON", "JS", "CSS", "JPG", "YAML", "MD"
           ]
-          - proper_nouns: [
+          - proper-nouns: [
             "Samsung", "Kepler", "GitHub",
             "Jekyll", Fibonacci", "Phi", "Arc", "Brave",
             "Open Graph", Windows", "Apple", "Linux",
             "Android", "Python", "Safari", "JavaScript"
           ]
       targets:
-        case: lower  # Base case is lowercase
-        exceptions:  # Same capitalization rules as description
-          - acronyms:
-              values: [
-                "TXT", "XML", "HTML", "JSON", "JS", "CSS", "JPG", "YAML", "MD",
-                "PY"
-              ]
-              apply: "uppercase"  # Force uppercase for acronyms
-              note: "Acronyms in targets must use uppercase when listed here"
+        case: upper-file-type  # Only the file type (e.g. HTML, JS) is uppercase
     types:
       - feat: "Adds a new feature or functionality"
       - refactor: "Enhances code structure without behavior change"
@@ -47,22 +51,21 @@ rules:
       - seo: "Enhances search engine optimization"
       - security: "Addresses security concerns"
       - fix: "Corrects a bug or issue"
-      - bug: "Notes or flags a bug (not a fix)"
       - test: "For testing functionality in production"
       - lint: "Applies linting or formatting fixes"
       - delete: "Removes code, files, or assets"
       - style: "Modifies visual presentation or UI styles"
       - content: "Modifies page content such as text or media"
     scopes:
-      = txt
-      - xml
       - html
-      - json
       - js
       - css
       - assets
+      - json
       - yaml
       - md
+      - xml
+      - txt
       - py
     targets:
       description: "List of affected items with counts and types"
@@ -74,28 +77,12 @@ rules:
         - "1 HTML file and 1 CSS file"
         - "3 HTML files and 2 CSS files"
         - "1 JPG file"
-        - "1 MD file"
         - "1 PNG file"
+        - "1 JSON file"
+        - "1 YAML file"
+        - "1 MD file"
         - "1 XML file"
         - "1 TXT file"
         - "1 PY file"
     description:
       tense: active
-    examples:
-      - "feat(yaml): create initial commit message format rules in 1 YAML file"
-      - "refactor(js): update emojis in theme toggle in 1 JS file"
-      - "chore(html): standardize comment line formatting in 3 HTML files"
-      - "teach(css): simplify comment for paragraph styles in 1 CSS file"
-      - "a11y(html): add ARIA-current to active nav link in 1 HTML file"
-      - "seo(html): add site name to page title in 2 HTML files"
-      - "security(html): add <noscript> warning in 1 HTML file"
-      - "fix(html): correct social media preview image urls in 5 HTML files"
-      - "bug(html): note issue with twitter:image not working in 1 HTML file"
-      - "test(html): test functionality of X card tags in 2 HTML files"
-      - "lint(html): escape & as &amp; to satisfy html linter in 1 HTML file"
-      - "delete(html, css): remove styles in 1 HTML file and 1 CSS file"
-      - "style(css): update h1 color and comment in 1 CSS file"
-      - "content(html): update footer text in 5 HTML files"
-      - "seo(xml): add XML sitemap for SEO in 1 XML file"
-      - "feat(txt): add robots txt file to specify sitemap URL in 1 TXT file"
-      - "feat(py): add script to save meme quiz scores to CSV in 1 PY file"

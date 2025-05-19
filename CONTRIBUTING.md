@@ -16,7 +16,7 @@ and `guides/css-categories.md`.
 
 5. **Test Your Changes**: If applicable, test your changes to ensure they work as expected.
 
-6. **Commit Your Changes**: Commit your changes with a clear and descriptive commit message that follows the Toricase commit message guidelines 
+6. **Commit Your Changes**: Commit your changes with a clear and descriptive commit message that follows the `quark-case` commit message guidelines
 outlined in the `.commitrules` YAML file in the repository root.
 
 7. **Push to Your Fork**: Push your changes to your forked repository with `git push origin your-branch-name`.
