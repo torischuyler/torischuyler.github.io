@@ -15,7 +15,6 @@
     .life-branch            { ... }
     .who-am-i-container img { ... }
     .gallery                { ... }
-    .signal-contact         { ... }
 
   Touch Styles
     .who-am-i-container     { ... }
@@ -513,87 +512,6 @@
   background: #333;
 }
 
-/* 
-  Signal Contact Details
-  Order of Properties: Size It, Space It (Sz Sp)
-*/
-.signal-contact {
-  /* --- Size It --- */
-
-   /* 18px */
-  font-size: 1.125rem;
-
-  /* --- Space It --- */
-  text-align: center;
-}
-
-/* 
-  💬 Signal Contact Link
-  Order of Properties: Style It (St)
-*/
-.signal-contact a {
-  /* --- Style It --- */
-  color: var(--princeton-orange);
-  font-weight: bold;
-  text-decoration: none;
-
-  /* --- Space It --- */
-
-  /* Makes this link the anchor for the ::after pseudo-element's position, so the underline stays under the link text. */
-  position: relative;
-}
-
-/* 
-  Creates the animated underline for the Signal contact link
-  Order of Properties: Size It, Space It, Style It (Sz Sp St)
-*/
-.signal-contact a::after {
-  /* --- Size It --- */
-
-  /* Start with no width */
-  width: 0;
-
-  /* Thin underline */
-  height: 2px;
-
-  /* --- Space It --- */
-
-  /* Positions the underline relative to the link */
-  position: absolute;
-
-  /* Positions the underline below the text */
-  bottom: -2px;
-
-  /* Starts the underline at the left edge of the link */
-  left: 0;
-
-  /* --- Style It --- */
-
-  /* Creates a pseudo-element (a virtual "box") for the animated underline */
-  content: '';
-  background-color: var(--princeton-orange);
-  transition: width 0.3s ease;
-}
-
-/* 
-  Creates the hover animation for the Signal contact link
-  Order of Properties: Size It (Sz)
-*/
-.signal-contact a:hover::after {
-  /* --- Size It --- */
-
-  /* Makes the underline expand to the full width of the link when hovered */
-  width: 100%;
-}
-
-/* 
-  👆 Signal Contact Clicked Link
-  Order of Properties: Style It (St)
-*/
-.signal-contact a:visited {
-  color: var(--princeton-orange);
-}
-
 /*
   Who Am I Container Touch Styles
 
@@ -790,36 +708,6 @@ Who-am-i.css
 ├── #tori-headshot:checked
 │   └── Style It
 │       └── background
-├── .signal-contact
-│   ├── Size It
-│   │   └── font-size
-│   └── Space It
-│       └── text-align
-├── .signal-contact a
-│   ├── Style It
-│   │   ├── color
-│   │   ├── font-weight
-│   │   └── text-decoration
-│   └── Space It
-│       └── position
-├── .signal-contact a::after
-│   ├── Size It
-│   │   ├── width
-│   │   └── height
-│   ├── Space It
-│   │   ├── position
-│   │   ├── bottom
-│   │   └── left
-│   └── Style It
-│       ├── content
-│       ├── background-color
-│       └── transition
-├── .signal-contact a:hover::after
-│   └── Size It
-│       └── width
-├── .signal-contact a:visited
-│   └── Style It
-│       └── color
 */
 
 /*
