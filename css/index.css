@@ -29,9 +29,10 @@
 
   /*
     Space inside container ⬆️⬇️➡️⬅️
-    Sets fixed inner spacing for non-text container, per guides/css-guidelines.md.
+    Sets scalable inner spacing for the main container using rem, per updated guides/css-guidelines.md.
+    Calculation: 32px ÷ 16px (root font size) = 2rem, ensuring padding scales with text.
   */
-  padding: 32px;
+  padding: 2rem;
 }
 
 /*

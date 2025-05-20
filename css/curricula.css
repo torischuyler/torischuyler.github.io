@@ -26,9 +26,10 @@
 
   /*
     Space inside container ⬆️⬇️➡️⬅️
-    Sets fixed inner spacing for non-text container, per guides/css-guidelines.md.
+    Sets scalable inner spacing for the main container using rem, per updated guides/css-guidelines.md.
+    Calculation: 32px ÷ 16px (root font size) = 2rem, ensuring padding scales with text.
   */
-  padding: 32px;
+  padding: 2rem;
 }
 
 /* Page Heading */
@@ -149,10 +150,10 @@
 .curriculum-container a {
   /* --- Space It --- */
 
-  /* 0.5rem top/bottom, 0.75rem left/right of lesson link */
-  padding: 0.5rem 0.75rem;
+  /* 0.2rem top/bottom, 0.4rem left/right */
+  padding: 0.2rem 0.4rem;
 
-  /* 0.4rem outer left space for lesson link */
+  /* 0.4rem outer left space  */
   margin-left: 0.4rem;
 
   /* --- Style It --- */
