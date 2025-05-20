@@ -10,8 +10,9 @@ on digital literacy for students. -->
 <!-- Sets the page language to English - helps screen readers, search engines, and spell checkers. -->
 
     <!-- Begin Head Section ------------------------------------------------->
-    <!-- Head contains "behind-the-scenes" stuff that defines how the page works and looks. -->
     <head>
+    <!-- Head contains "behind-the-scenes" stuff that defines how the page works and looks. -->
+
         <meta charset="UTF-8">
         <!-- Character encoding tells browser how to decode the page. -->
 
@@ -61,106 +62,104 @@ on digital literacy for students. -->
     </head>
     <!-- End Head Section --------------------------------------------------->
     
-    <!-- Begin Navigation Section  ------------------------------------------>
-    <!-- Navigation section - like a table of contents for the webpage. -->
-    <nav aria-label="Page navigation">
+    <!-- Begin Body Section ------------------------------------------------->
+    <body>
+    <!-- Body contains all the visible content of the webpage, like text, images, and buttons - the "on-stage" part where the action happens. -->
 
-        <!-- Navigation menu for desktop and mobile -->
-        <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="curricula.html" class="active" aria-current="page">Lesson Plans</a></li>
-            <li><a href="who-are-you.html">Who Are You?</a></li>
-            <li><a href="til.html">TIL</a></li>
-            <li><a href="who-am-i.html">Who Am I?</a></li>
-        </ul>
+        <!-- Begin Navigation Section  ------------------------------------------>
+        <nav aria-label="Page navigation">
+        <!-- Navigation section - like a table of contents for the webpage. -->
 
-        <!-- Begin Nav Header Wrapper: Groups hamburger and toggle------------------>
-        <div class="nav-header">
+            <!-- Navigation menu ------------------------>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="curricula.html" class="active" aria-current="page">Lesson Plans</a></li>
+                <li><a href="who-are-you.html">Who Are You?</a></li>
+                <li><a href="til.html">TIL</a></li>
+                <li><a href="who-am-i.html">Who Am I?</a></li>
+            </ul>
 
-            <div class="hamburger">☰</div>
-            <!-- Hamburger icon -->
+            <!-- Begin Nav Header Wrapper: Groups hamburger and toggle ------------------>
+            <div class="nav-header">
 
-            <button id="sun-moon-toggle" aria-label="Toggle light or dark mode" aria-pressed="false">🌞</button>
-            <!-- Dark/Light mode toggle button. The 'aria-label' attribute enhances accessibility
-            by describing the button for screen readers, ensuring users with visual impairments
-            can identify its purpose, with 'aria-pressed' indicating the current mode. -->
+                <div class="hamburger">☰</div>
+                <!-- Hamburger icon -->
+
+                <button id="sun-moon-toggle" aria-label="Toggle light or dark mode" aria-pressed="true">🌞</button>
+                <!-- Toggles dark/light mode. Defaults to dark (aria-pressed="true"). aria-label aids screen reader accessibility. -->
+            </div>
+            <!-- End Nav Header Wrapper ------------------------------------------------->
+        </nav>
+        <!-- End Navigation Section  --------------------------------------------------->
+
+        <!-- Begin .curriculum-container ---------------------->
+        <div class="curriculum-container">
+
+        <!-- Begin Main Section -------------------------------------------------------->
+            <main aria-label="Main content">
+            <!-- Main content area - where the primary, unique content of the page lives.
+            'aria-label' tags this as "Main content" for screen readers since there’s no heading;
+            without it, it’d just be "region," leaving visitors unsure of its purpose. -->
+
+                <noscript>
+                    <!-- The noscript tag is used to provide alternative content when JavaScript is disabled in the visitor's browser. -->
+
+                    <div class="noscript-warning">
+                    <!-- This div serves as a container for the warning message. -->
+
+                        <p>JavaScript is disabled on your browser. To experience all features of this site, please enable JavaScript.</p>
+                    </div>
+                </noscript>
+
+                <h1>Lesson Plans</h1>
+                <!-- Main heading of the page, sets the theme or topic. -->
+
+                <h2>Future Developers</h2>
+                <!-- 'h2' tags act as second level headings to organize key topics,
+                sitting below 'h1' in the heading hierarchy for structure and accessibility. -->
+
+                <p>
+                    Here you'll find lesson plans for computer basics and operating system fundamentals.
+                </p>
+                <br>
+
+                <ul class="developer-list">
+                <!-- Unordered list, aka list of bullet points. -->
+
+                    <li><a href="developer-lessons/bootloader-kernel.html">Lesson 1: Bootloader and Kernel</a></li>
+                    <!-- List item, aka a bullet point. -->
+                </ul>
+                <br>
+                
+                <h2>Students</h2>
+                
+                <p>
+                    Here you'll find lesson plans for digital literacy.
+                </p>
+                <br>
+
+                <ul class="student-list">
+                    <li><a href="student-lessons/news-detectives.html">Lesson 1: News Detectives</a></li>
+                </ul>
+            </main>
+            <!-- End Main Section ---------------------------------------------------------->
         </div>
-        <!-- End Nav Header Wrapper ------------------------------------------------->
-    </nav>
-    <!-- End Navigation Section  --------------------------------------------------->
+        <!-- End .curriculum-container -------------------------------------------------->
 
-    <!-- Wrap all curriculum content in .curriculum-container ---------------------->
-    <div class="curriculum-container">
-    <!-- Begin Main Section -------------------------------------------------------->
-    <!-- Main content area - where the primary, unique content of the page lives. -->
-        <main aria-label="Main content">
-        <!-- 'aria-label' tags this as "Main navigation" for screen readers since there’s no heading;
-        without it, it’d just be "navigation," leaving visitors unsure which nav this is (e.g., main vs. footer). -->
-
-            <noscript>
-                <!-- The noscript tag is used to provide alternative content when JavaScript is disabled in the visitor's browser. -->
-
-                <div class="noscript-warning">
-                <!-- This div serves as a container for the warning message. -->
-
-                    <p>JavaScript is disabled on your browser. To experience all features of this site, please enable JavaScript.</p>
-                </div>
-            </noscript>
-
-            <h1>Lesson Plans</h1>
-            <!-- Main heading of the page, sets the theme or topic. -->
-
-            <h2>Future Developers</h2>
-            <!-- 'h2' tags act as section headings to organize key topics,
-            sitting below 'h1' in the heading hierarchy for structure and accessibility. -->
+        <!-- Begin Footer Section ------------------------------------------------------>
+        <footer>
+        <!-- Footer content, like copyright info, contact details, or additional links. -->
 
             <p>
-                Here you'll find lesson plans focused on computer basics and operating system fundamentals.
+                <span id="year"></span>
+                <!-- span highlights year, which is updated by the script in footer.js -->
+                eOS Experiments
             </p>
-            <br>
+        </footer>
+        <!-- End Footer Section -------------------------------------------------------->
 
-            <ul class="developer-list">
-            <!-- Unordered list, aka list of bullet points. -->
-
-                <li><a href="developer-lessons/bootloader-kernel.html">Lesson 1: Bootloader and Kernel</a></li>
-                <!-- List item, aka a bullet point. -->
-            </ul>
-            <br>
-            
-            <h2>Students</h2>
-            <!-- 'h2' tags act as section headings to organize key topics,
-            sitting below 'h1' in the heading hierarchy for structure and accessibility. -->
-            
-            <p>
-                Here you'll find lesson plans focused digital literacy.
-            </p>
-            <br>
-
-            <ul class="student-list">
-            <!-- Unordered list, aka list of bullet points. -->
-
-                <li><a href="student-lessons/news-detectives.html">Lesson 1: News Detectives</a></li>
-                <!-- List item, aka a bullet point. -->
-            </ul>
-        </main>
-        <!-- End Main Section ---------------------------------------------------------->
-    </div>
-    <!-- End of .curriculum-container -------------------------------------------------->
-
-    <!-- Begin Footer Section ------------------------------------------------------>
-    <!-- Footer content, like copyright info, contact details, or additional links. -->
-    <footer aria-label="Page footer">
-    <!-- 'aria-label' tags this as "Page footer" for screen readers, adding clarity since there’s no heading;
-    without it, it’s still announced as "footer," but this ensures the purpose is explicit. -->
-
-        <p>
-            <span id="year"></span>
-            <!-- span highlights year, which is updated by the script in footer.js -->
-            eOS Experiments
-        </p>
-    </footer>
-    <!-- End Footer Section -------------------------------------------------------->
-
-    <script src="js/footer.js"></script>
-    <!-- Footer script: Automatically updates the copyright year. -->
+        <script src="js/footer.js"></script>
+        <!-- Footer script: Automatically updates the copyright year. -->
+    </body>
+     <!-- End Body Section ------------------------------------------------->
 </html>
