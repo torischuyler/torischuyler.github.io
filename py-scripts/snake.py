@@ -2,8 +2,10 @@
 
 # Imports the random module for generating food coordinates
 import random
+
 # Imports js module to access JavaScript DOM and canvas context
 from js import document, window
+
 # Imports create_proxy to persist Python functions for JavaScript
 from pyodide.ffi import create_proxy
 
@@ -38,6 +40,15 @@ def place_food():
 
 # Initializes the food position
 food = place_food()
+
+
+# Gets the latest swipe direction from JavaScript
+def get_swipe_direction():
+    swipe_direction = window.latestSwipeDirection
+
+    # Clear the swipe direction to avoid repeated inputs
+    window.latestSwipeDirection = None
+    return swipe_direction
 
 
 # Moves the snake in the current direction
@@ -131,10 +142,30 @@ def render():
 
 # Updates the game state and renders
 def game_loop():
+    # Declare global direction to modify the global variable
+    global direction
+
     # Log to confirm game loop is running
     window.console.log('Game loop running')
     if not game_over:
+
+        # Check for swipe input and update direction
+        swipe_direction = get_swipe_direction()
+
+        # Update direction if swipe exists and isn't opposite direction
+        if swipe_direction and not (
+            (swipe_direction == 'up' and direction == 'down') or
+            (swipe_direction == 'down' and direction == 'up') or
+            (swipe_direction == 'left' and direction == 'right') or
+            (swipe_direction == 'right' and direction == 'left')
+        ):
+            # Set snake direction to the new swipe direction
+            direction = swipe_direction
+
+        # Updates snake position based on current direction
         move_snake()
+
+        # Draws snake, food, and score on the canvas
         render()
 
 
