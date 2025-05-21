@@ -1,85 +1,49 @@
 /*
-  Sun Moon Toggle: A light/dark mode switch for the site,
-  symbolizing balance with sun (🌞) and moon (🌙) icons.
-
-  This script:
-  1. Remembers a visitor's theme preference using localStorage.
-  2. Displays a toggle button for visitors to switch themes.
-  3. Saves the visitor's choice for future visits.
+  Sun Moon toggle: A light/dark mode switch with 🌞 for light mode and 🌙 for dark mode.
+  Saves theme preference in localStorage for future visits.
 */
 
-// Function to initialize and manage the theme toggle
+// Utility to handle localStorage operations
+function accessStorage(operation, key, value = null) {
+  if (!window.localStorage) return null;
+  try {
+    return operation === 'get' ? localStorage.getItem(key) : localStorage.setItem(key, value);
+  } catch (e) {
+    console.error(`Failed to ${operation} theme in localStorage:`, e);
+    return null;
+  }
+}
+
+// Initialize Sun-Moon theme toggle
 function initializeThemeToggle() {
-  // Check if localStorage is available to avoid errors in unsupported environments.
-  const isLocalStorageAvailable = typeof window !== 'undefined' && window.localStorage;
-
-  // Declare variable to hold the saved theme, initialized as undefined.
-  let savedTheme;
-
-  // Check if localStorage is available before attempting to retrieve data.
-  if (isLocalStorageAvailable) {
-    // Attempt to get the theme from localStorage.
-    try {
-      savedTheme = localStorage.getItem('theme');
-      // Catch any errors that occur during the retrieval.
-    } catch (e) {
-      // Log the error to console for debugging.
-      console.error('Failed to retrieve theme from localStorage:', e);
-      // Set savedTheme to null if retrieval fails.
-      savedTheme = null;
-    }
-    // If localStorage is not available, set savedTheme to null.
-  } else {
-    savedTheme = null;
+  // Retrieve saved theme and apply if 'light'
+  const savedTheme = accessStorage('get', 'theme');
+  if (savedTheme) {
+    document.body.classList.toggle('light-theme', savedTheme === 'light');
   }
 
-  // Apply light theme by default unless explicitly set to 'dark' in localStorage.
-  if (savedTheme === 'light') {
-    document.body.classList.add('light-theme');
-  }
-
-  // Reference to the theme toggle button in the DOM.
+  // Get toggle button
   const toggle = document.getElementById('sun-moon-toggle');
-
-  // Check if the toggle button exists in the DOM.
   if (!toggle) {
-    // Log an error if the toggle button is not found.
-    console.error('Toggle button not found! Theme functionality will be disabled.');
+    console.error('Sun-Moon toggle button not found.');
     return;
   }
 
-  // Function to update UI based on the current theme.
-  function updateThemeUI(isLightTheme) {
-    // Set button icon to sun if dark (to switch to light), moon if light (to switch to dark).
-    toggle.textContent = isLightTheme ? '🌙' : '🌞';
-    // Update aria-label for screen readers.
-    toggle.setAttribute('aria-label', `Switch to ${isLightTheme ? 'dark' : 'light'} theme`);
+  // Update toggle UI based on theme
+  function updateThemeUI(currentTheme) {
+    toggle.textContent = currentTheme === 'light' ? '🌙' : '🌞';
+    toggle.setAttribute('aria-label', `Switch to ${currentTheme === 'light' ? 'dark' : 'light'} theme`);
   }
 
-  // Set initial UI based on current theme to ensure consistency with actual state.
-  updateThemeUI(document.body.classList.contains('light-theme'));
+  // Set initial UI using saved theme or default to 'dark'
+  updateThemeUI(savedTheme || 'dark');
 
-  // Add click event listener to toggle button.
+  // Toggle theme on click
   toggle.addEventListener('click', () => {
-    // Toggle light theme class on body.
-    const isLightTheme = document.body.classList.toggle('light-theme');
-
-    // Update UI based on new theme state.
-    updateThemeUI(isLightTheme);
-
-    // Check if localStorage is available before attempting to save data.
-    if (isLocalStorageAvailable) {
-      // Attempt to save the theme to localStorage.
-      try {
-        localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
-        // Catch any errors that occur during the saving process.
-      } catch (e) {
-        // Log the error to console for debugging.
-        console.error('Failed to save theme to localStorage:', e);
-      }
-    }
+    const currentTheme = document.body.classList.toggle('light-theme') ? 'light' : 'dark';
+    updateThemeUI(currentTheme);
+    accessStorage('set', 'theme', currentTheme);
   });
 }
 
-// Call the function to initialize the theme toggle when the script runs.
 initializeThemeToggle();
