@@ -16,5 +16,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Updates the HTML element with id "time" to show the visitor's local time and time zone
   document.getElementById("time").textContent =
-      `🔮 The sands of time say you arrived here at ${timeString} from the zone of ${timeZone}`;
+    `🔮 The sands of time say you arrived here at ${timeString} from the zone of ${timeZone}`;
 });

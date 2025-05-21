@@ -23,19 +23,19 @@ function getMysticalBrowser(userAgent) {
 
 // Waits for the HTML document to be fully loaded before running the code
 document.addEventListener("DOMContentLoaded", function() {
-    // Gets the raw user agent string from the browser
-    const userAgent = navigator.userAgent;
+  // Gets the raw user agent string from the browser
+  const userAgent = navigator.userAgent;
 
-    /*
-      Since Arc detection requires CSS variables that may load after DOMContentLoaded,
-      we add a small delay to ensure the variables are available.
-    */
-    setTimeout(() => {
-        // Sets mysticalBrowser to the fun name we get from translating the raw userAgent
-        const mysticalBrowser = getMysticalBrowser(userAgent);
-        // Updates the HTML element with id "browser" to show the browser message with italics
-        document.getElementById("browser").innerHTML =
-            `🔮 The winds of the web carried you here via <i>${mysticalBrowser}</i>`;
-    // 500ms delay to ensure Arc's CSS variables are injected
-    }, 500);
+  /*
+    Since Arc detection requires CSS variables that may load after DOMContentLoaded,
+    we add a small delay to ensure the variables are available.
+  */
+  setTimeout(() => {
+      // Sets mysticalBrowser to the fun name we get from translating the raw userAgent
+      const mysticalBrowser = getMysticalBrowser(userAgent);
+      // Updates the HTML element with id "browser" to show the browser message with italics
+      document.getElementById("browser").innerHTML =
+          `🔮 The winds of the web carried you here via <i>${mysticalBrowser}</i>`;
+  // 500ms delay to ensure Arc's CSS variables are injected
+  }, 500);
 });

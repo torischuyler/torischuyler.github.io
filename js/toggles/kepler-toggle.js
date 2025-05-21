@@ -2,7 +2,7 @@
   📐 Kepler toggles: Handles keyboard interactions for the gallery toggle controls.
   Listens for Enter/Space key presses on .kepler labels,
   triggering the associated radio button to toggle gallery images.
- */
+*/
 
 // Selects all elements with class 'kepler' inside 'gallery-controls' and iterates over them.
 document.querySelectorAll('.gallery-controls .kepler').forEach(label => {
