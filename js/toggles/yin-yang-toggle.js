@@ -52,8 +52,6 @@ function initializeYinYangToggle() {
     toggle.textContent = '☯️';
     // Update aria-label to reflect the action (e.g., "Switch to dark theme")
     toggle.setAttribute('aria-label', `Switch to ${isLightTheme ? 'dark' : 'light'} theme`);
-    // Update aria-pressed to indicate current state (true for light, false for dark)
-    toggle.setAttribute('aria-pressed', isLightTheme ? 'true' : 'false');
   }
 
   // Initialize the button’s UI based on the current theme (light or dark)

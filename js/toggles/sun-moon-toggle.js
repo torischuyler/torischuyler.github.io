@@ -54,8 +54,6 @@ function initializeThemeToggle() {
     toggle.textContent = isLightTheme ? '🌙' : '🌞';
     // Update aria-label for screen readers.
     toggle.setAttribute('aria-label', `Switch to ${isLightTheme ? 'dark' : 'light'} theme`);
-    // Update aria-pressed to reflect the current state (true for light, false for dark).
-    toggle.setAttribute('aria-pressed', isLightTheme ? 'true' : 'false');
   }
 
   // Set initial UI based on current theme to ensure consistency with actual state.

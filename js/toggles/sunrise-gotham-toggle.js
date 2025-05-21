@@ -14,6 +14,7 @@
 
 // Function to initialize and manage the Sunrise-Gotham theme toggle
 function initializeSunriseGothamToggle() {
+
   // Check if localStorage is available to ensure compatibility
   const isLocalStorageAvailable = typeof window !== 'undefined' && window.localStorage;
 
@@ -40,20 +41,20 @@ function initializeSunriseGothamToggle() {
   // Get the toggle button by its ID
   const toggle = document.getElementById('sunrise-gotham-toggle');
 
-  // Check if the toggle button exists
+  // Check if the Sunrise-Gotham toggle button exists; log error and exit if not found
   if (!toggle) {
     console.error('Sunrise-Gotham toggle button not found! Theme functionality disabled.');
     return;
   }
 
-  // Function to update the button’s UI based on the current theme
+  // Defines updateThemeUI function that takes isLightTheme boolean parameter, true for light theme, false for dark theme
   function updateThemeUI(isLightTheme) {
-    // Set icon to Gotham (🌃) for light mode, Sunrise (🌅) for dark mode
+
+    // Sets toggle button text to 🌃 (night) for light theme or 🌅 (sunrise) for dark theme based on isLightTheme
     toggle.textContent = isLightTheme ? '🌃' : '🌅';
-    // Update aria-label for accessibility
+
+    // Updates aria-label to indicate switching to dark theme if light theme is active, or light theme if dark theme is active
     toggle.setAttribute('aria-label', `Switch to ${isLightTheme ? 'dark' : 'light'} theme`);
-    // Update aria-pressed to reflect the current state
-    toggle.setAttribute('aria-pressed', isLightTheme ? 'true' : 'false');
   }
 
   // Set initial UI based on current theme
@@ -61,6 +62,7 @@ function initializeSunriseGothamToggle() {
 
   // Add click event listener to toggle the theme
   toggle.addEventListener('click', () => {
+
     // Toggle the light-theme class and get the new state
     const isLightTheme = document.body.classList.toggle('light-theme');
 

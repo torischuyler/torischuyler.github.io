@@ -56,8 +56,6 @@ function initializeToriiGeminiToggle() {
     toggle.textContent = isLightTheme ? '♊️' : '⛩️';
     // Update aria-label for accessibility
     toggle.setAttribute('aria-label', `Switch to ${isLightTheme ? 'dark' : 'light'} theme`);
-    // Update aria-pressed to reflect the current state
-    toggle.setAttribute('aria-pressed', isLightTheme ? 'true' : 'false');
   }
 
   // Set initial UI based on current theme
