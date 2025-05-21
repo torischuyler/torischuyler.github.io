@@ -1,78 +1,49 @@
 /*
-Angel Devil toggle: A light/dark mode switch for the site,
-the angel (😇) represents light mode and devilish face (😈) for dark mode.
-
-😇 "Lead me not into temptation... Oh, who am I kidding? Follow me, I know a shortcut!" 😈 —Anon
-
-  This script:
-  1. Remembers a visitor's theme preference using localStorage.
-  2. Displays a toggle button for visitors to switch themes.
-  3. Saves the visitor's choice for future visits.
+  Angel Devil toggle: A light/dark mode switch with 😇 for light mode and 😈 for dark mode.
+  Saves theme preference in localStorage for future visits.
 */
 
-// Function to initialize and manage the Angel-Devil theme toggle
-function initializeAngelDevilToggle() {
-// Check if localStorage is available to ensure compatibility
-const isLocalStorageAvailable = typeof window !== 'undefined' && window.localStorage;
-
-// Variable to store the saved theme
-let savedTheme;
-
-// Retrieve saved theme from localStorage if available
-if (isLocalStorageAvailable) {
+// Utility to handle localStorage operations
+function accessStorage(operation, key, value = null) {
+  if (!window.localStorage) return null;
   try {
-    savedTheme = localStorage.getItem('theme');
+    return operation === 'get' ? localStorage.getItem(key) : localStorage.setItem(key, value);
   } catch (e) {
-    console.error('Failed to retrieve theme from localStorage:', e);
-    savedTheme = null;
+    console.error(`Failed to ${operation} theme in localStorage:`, e);
+    return null;
   }
-} else {
-  savedTheme = null;
 }
 
-// Apply light theme if saved as 'light' (dark is default)
-if (savedTheme === 'light') {
-  document.body.classList.add('light-theme');
-}
-
-// Get the toggle button by its ID
-const toggle = document.getElementById('angel-devil-toggle');
-
-// Check if the toggle button exists
-if (!toggle) {
-  console.error('Angel-Devil toggle button not found! Theme functionality disabled.');
-  return;
-}
-
-// Function to update the button’s UI based on the current theme
-function updateThemeUI(isLightTheme) {
-  // Set icon to Devil (😈) for light mode, Angel (😇) for dark mode
-  toggle.textContent = isLightTheme ? '😈' : '😇';
-  // Update aria-label for accessibility
-  toggle.setAttribute('aria-label', `Switch to ${isLightTheme ? 'dark' : 'light'} theme`);
-}
-
-// Set initial UI based on current theme
-updateThemeUI(document.body.classList.contains('light-theme'));
-
-// Add click event listener to toggle the theme
-toggle.addEventListener('click', () => {
-  // Toggle the light-theme class and get the new state
-  const isLightTheme = document.body.classList.toggle('light-theme');
-
-  // Update the UI after toggling
-  updateThemeUI(isLightTheme);
-
-  // Save the new theme preference to localStorage if available
-  if (isLocalStorageAvailable) {
-    try {
-      localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
-    } catch (e) {
-      console.error('Failed to save theme to localStorage:', e);
-    }
+// Initialize Angel-Devil theme toggle
+function initializeAngelDevilToggle() {
+  // Retrieve saved theme and apply if 'light'
+  const savedTheme = accessStorage('get', 'theme');
+  if (savedTheme) {
+    document.body.classList.toggle('light-theme', savedTheme === 'light');
   }
-});
+
+  // Get toggle button
+  const toggle = document.getElementById('angel-devil-toggle');
+  if (!toggle) {
+    console.error('Angel-Devil toggle button not found.');
+    return;
+  }
+
+  // Update toggle UI based on theme
+  function updateThemeUI(currentTheme) {
+    toggle.textContent = currentTheme === 'light' ? '😈' : '😇';
+    toggle.setAttribute('aria-label', `Switch to ${currentTheme === 'light' ? 'dark' : 'light'} theme`);
+  }
+
+  // Set initial UI using saved theme or default to 'dark'
+  updateThemeUI(savedTheme || 'dark');
+
+  // Toggle theme on click
+  toggle.addEventListener('click', () => {
+    const currentTheme = document.body.classList.toggle('light-theme') ? 'light' : 'dark';
+    updateThemeUI(currentTheme);
+    accessStorage('set', 'theme', currentTheme);
+  });
 }
 
-// Initialize the toggle when the script runs
 initializeAngelDevilToggle();

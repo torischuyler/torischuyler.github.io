@@ -1,82 +1,49 @@
 /*
-  Yin Yang Toggle: A light/dark mode switch for the site,
-  symbolizing balance with the ☯️ icon.
-
-  This script:
-  1. Remembers a visitor's theme preference using localStorage.
-  2. Displays a toggle button for visitors to switch themes.
-  3. Saves the visitor's choice for future visits.
+  Yin Yang toggle: A light/dark mode switch with ☯️ for both modes.
+  Saves theme preference in localStorage for future visits.
 */
 
-// Function to initialize and manage the Yin-Yang theme toggle
+// Utility to handle localStorage operations
+function accessStorage(operation, key, value = null) {
+  if (!window.localStorage) return null;
+  try {
+    return operation === 'get' ? localStorage.getItem(key) : localStorage.setItem(key, value);
+  } catch (e) {
+    console.error(`Failed to ${operation} theme in localStorage:`, e);
+    return null;
+  }
+}
+
+// Initialize Yin-Yang theme toggle
 function initializeYinYangToggle() {
-  // Check if localStorage is available to ensure compatibility across environments
-  const isLocalStorageAvailable = typeof window !== 'undefined' && window.localStorage;
-
-  // Declare variable to store the saved theme, initially undefined
-  let savedTheme;
-
-  // If localStorage is available, try to retrieve the saved theme
-  if (isLocalStorageAvailable) {
-    try {
-      // Get the saved theme from localStorage ('light' or 'dark')
-      savedTheme = localStorage.getItem('theme');
-    } catch (e) {
-      // Log any errors if localStorage retrieval fails (e.g., quota exceeded)
-      console.error('Failed to retrieve theme from localStorage:', e);
-      // Set savedTheme to null if retrieval fails
-      savedTheme = null;
-    }
-  } else {
-    // If localStorage isn’t available, default to null (no saved preference)
-    savedTheme = null;
+  // Retrieve saved theme and apply if 'light'
+  const savedTheme = accessStorage('get', 'theme');
+  if (savedTheme) {
+    document.body.classList.toggle('light-theme', savedTheme === 'light');
   }
 
-  // Apply light theme class if explicitly saved as 'light' (dark is default otherwise)
-  if (savedTheme === 'light') {
-    document.body.classList.add('light-theme');
-  }
-
-  // Get the toggle button element from the DOM by its ID
+  // Get toggle button
   const toggle = document.getElementById('yin-yang-toggle');
-
-  // Check if the toggle button exists; if not, log an error and exit
   if (!toggle) {
-    console.error('Yin-Yang toggle button not found! Theme functionality disabled.');
+    console.error('Yin-Yang toggle button not found.');
     return;
   }
 
-  // Function to update the button’s UI based on the current theme
-  function updateThemeUI(isLightTheme) {
-    // Set the button text to the Yin-Yang emoji (☯️) regardless of theme
+  // Update toggle UI based on theme
+  function updateThemeUI(currentTheme) {
     toggle.textContent = '☯️';
-    // Update aria-label to reflect the action (e.g., "Switch to dark theme")
-    toggle.setAttribute('aria-label', `Switch to ${isLightTheme ? 'dark' : 'light'} theme`);
+    toggle.setAttribute('aria-label', `Switch to ${currentTheme === 'light' ? 'dark' : 'light'} theme`);
   }
 
-  // Initialize the button’s UI based on the current theme (light or dark)
-  updateThemeUI(document.body.classList.contains('light-theme'));
+  // Set initial UI using saved theme or default to 'dark'
+  updateThemeUI(savedTheme || 'dark');
 
-  // Add a click event listener to the toggle button
+  // Toggle theme on click
   toggle.addEventListener('click', () => {
-    // Toggle the 'light-theme' class on the body, returning true if added, false if removed
-    const isLightTheme = document.body.classList.toggle('light-theme');
-
-    // Update the button’s UI after the theme changes
-    updateThemeUI(isLightTheme);
-
-    // If localStorage is available, save the new theme preference
-    if (isLocalStorageAvailable) {
-      try {
-        // Store the current theme ('light' or 'dark') in localStorage
-        localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
-      } catch (e) {
-        // Log any errors if saving to localStorage fails
-        console.error('Failed to save theme to localStorage:', e);
-      }
-    }
+    const currentTheme = document.body.classList.toggle('light-theme') ? 'light' : 'dark';
+    updateThemeUI(currentTheme);
+    accessStorage('set', 'theme', currentTheme);
   });
 }
 
-// Run the initialization function when the script loads
 initializeYinYangToggle();
