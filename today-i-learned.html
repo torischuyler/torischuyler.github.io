@@ -5,8 +5,9 @@
 <!-- Sets the page language to English - helps screen readers, search engines, and spell checkers. -->
 
     <!-- Begin Head Section ------------------------------------------------->
-    <!-- Head contains "behind-the-scenes" stuff that defines how the page works and looks. -->
     <head>
+    <!-- Head contains "behind-the-scenes" stuff that defines how the page works and looks. -->
+
         <meta charset="UTF-8">
         <!-- Character encoding tells browser how to decode the page. -->
 
@@ -14,7 +15,7 @@
         <!-- Viewport makes sure the page looks good on all devices by adjusting to screen size.
         It also affects page rendering and responsiveness. -->
 
-        <link rel="canonical" href="https://torischuyler.github.io/eOS/til">
+        <link rel="canonical" href="https://torischuyler.github.io/eOS/today-i-learned">
         <!-- Canonical URL: Specifies the preferred version of this page for search engines to index,
         preventing duplicate content issues. -->
 
@@ -57,15 +58,14 @@
     <!-- End Head Section --------------------------------------------------->
 
     <!-- Begin Body Section ------------------------------------------------->
-    <!-- Body contains all the visible content of the webpage,
-    like text, images, and buttons - the "on-stage" part where the action happens. -->
     <body>
+    <!-- Body contains all the visible content of the webpage, like text, images, and buttons - the "on-stage" part where the action happens. -->
 
         <!-- Begin Navigation Section  ------------------------------------------------->
-        <!-- Navigation section - like a table of contents for the webpage. ------------>
         <nav aria-label="Page navigation">
+        <!-- Navigation section - like a table of contents for the webpage. ------------>
 
-            <!-- Navigation menu for desktop and mobile -->
+            <!-- Navigation menu ------->
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="curricula.html">Lesson Plans</a></li>
@@ -88,23 +88,24 @@
         </nav>
         <!-- End Navigation Section  --------------------------------------------------->
 
-        <!-- Wrap all home page content in .til-container -->
+        <!-- Begin .til-container -->
         <div class="til-container">
+
             <!-- Begin Main Section -------------------------------------------------------->
-            <!-- Main content area - where the primary, unique content of the page lives. -->
             <main aria-label="Main content">
+            <!-- Main content area - where the primary, unique content of the page lives. -->
             <!-- 'aria-label' tags this as "Main content" for screen readers since there’s no heading;
             without it, it’d just be "region," leaving visitors unsure of its purpose. -->
 
-            <noscript>
-                <!-- The noscript tag is used to provide alternative content when JavaScript is disabled in the visitor's browser. -->
+                <noscript>
+                    <!-- The noscript tag is used to provide alternative content when JavaScript is disabled in the visitor's browser. -->
 
-                <div class="noscript-warning">
-                <!-- This div serves as a container for the warning message. -->
+                    <div class="noscript-warning">
+                    <!-- This div serves as a container for the warning message. -->
 
-                    <p>JavaScript is disabled on your browser. To experience all features of this site, please enable JavaScript.</p>
-                </div>
-            </noscript>
+                        <p>JavaScript is disabled on your browser. To experience all features of this site, please enable JavaScript.</p>
+                    </div>
+                </noscript>
 
                 <h1>Today I Learned</h1>
                 <!-- Main heading of the page, sets the theme or topic. -->
@@ -120,7 +121,7 @@
             </main>
             <!-- End Main Section ---------------------------------------------------------->
         </div>
-        <!-- End of .til-container -------------------------------------------------------->
+        <!-- End .til-container -------------------------------------------------------->
 
         <!-- Begin Footer Section ------------------------------------------------------>
         <footer>
