@@ -1,34 +1,21 @@
-/* 📝 TIL.css - The stylesheet for the "Today I Learned" (TIL) page. */
+/* 🧑‍🎓 Today-I-learned.css - Stylesheet for the "Today I Learned" (TIL) page. */
 
 /*
-  The .til-container holds the content for the TIL page.
-  It controls the width and spacing of the content area, with a mobile-first approach.
+  📄 The .til-container holds content for the TIL page.
+  Controls width and spacing with a mobile-first approach.
 */
 .til-container {
   /* --- Size It --- */
 
-  /* 
-    max-width: 100vw sets the maximum width to 100% of the viewport width.
-    This ensures the container spans the full width on mobile screens, 
-    providing a responsive layout for smaller devices.
-  */
+  /* Full viewport width for mobile responsiveness */
   max-width: 100vw;
 
   /* --- Space It --- */
 
-  /*
-    Space outside container ⬆️⬇️⬅️➡️
-    Using two values:
-    0 = top and bottom margins (no space above or below).
-    auto = left and right margins (splits remaining space to center container on desktop).
-  */
+  /* Centers container horizontally */
   margin: 0 auto;
 
-  /*
-    Space inside container ⬆️⬇️➡️⬅️
-    Sets scalable inner spacing for the main container using rem, per updated guides/css-guidelines.md.
-    Calculation: 32px ÷ 16px (root font size) = 2rem, ensuring padding scales with text.
-  */
+  /* Scalable inner spacing (32px ÷ 16px = 2rem) */
   padding: 2rem;
 }
 
@@ -36,36 +23,45 @@
 .til-container h1 {
   /* --- Style It --- */
 
-  /*
-    Sets the color property with a CSS variable (--header-color, from global.css).
-      - Grogu green in dark mode, switches to ruby red in light mode.
-  */
+  /* Grogu green (dark mode) or ruby red (light mode) */
   color: var(--header-color);
 }
 
 /* Unordered List */
 .til-container ul {
   /* --- Space It --- */
+
+  /* Indents list items */
   padding-left: 1.5rem;
+
+  /* Aligns text to left */
   text-align: left;
 }
 
 /* List items (bullet points) */
 .til-container ul li {
+  /* --- Size It --- */
+
+  /* 1.5rem = 24px at 16px root */
+  font-size: 1.5rem;
+
   /* --- Space It --- */
+
+  /* Displays as block for vertical stacking */
   display: block;
+
+  /* Vertical spacing between items */
   margin: 1rem 0;
+
+  /* Anchors ::before bullet positioning */
   position: relative;
 
-  /* 2rem inner left space */
+  /* Inner left spacing for text */
   padding-left: 2rem;
 
   /* --- Style It --- */
   font-family: Righteous, system-ui, sans-serif;
   color: goldenrod;
-
-  /* 1.5 x 16 = 24px */
-  font-size: 1.5rem;
 }
 
 /* Link styling */
@@ -75,7 +71,7 @@
   /* 0.2rem top/bottom, 0.4rem left/right */
   padding: 0.2rem 0.4rem;
 
-  /* 0.3rem outer left space */
+  /* Outer left spacing */
   margin-left: 0.3rem;
 
   /* --- Style It --- */
@@ -84,26 +80,27 @@
   transition: color 0.3s;
 }
 
-/* Custom bullets using ::before to ensure Safari compatibility. */
+/* Custom bullets using ::before for Safari compatibility */
 .til-container ul li::before {
   /* --- Space It --- */
+
+  /* Sets pseudo-element relative to parent <li> */
   position: absolute;
+
+  /* Aligns bullet to left edge */
   left: 0;
 
   /* --- Style It --- */
   content: '✨';
 }
 
-/* Custom bullet for the second list item (Snake) using ::before. */
+/* Custom bullet for second list item (Snake) */
 .til-container ul li:nth-child(2)::before {
   /* --- Style It --- */
   content: '🐍';
 }
 
-/*
-  🧪 Link interaction states
-  These style lesson links when visitors hover or tab to them.
-*/
+/* 🧪 Link interaction states - Styles links on hover or focus. */
 .til-container ul li a:hover,
 .til-container ul li a:focus {
   /* --- Style It --- */
@@ -113,22 +110,14 @@
 }
 
 /*
-  📲 TIL Container Tablet/Desktop Styles
-  The 768px width is widely used because it aligns with the typical screen size
-  of tablets in portrait mode, like the iPad (which has a resolution of 768px wide
-  at 1x pixel density). It’s a common breakpoint in responsive design to shift from
-  "mobile" to "tablet" layouts. Using min-width: 769px ensures these styles start
-  right after the mobile styles (up to 768px), avoiding overlap at exactly 768px.
+  📲 Tablet/Desktop Styles
+  Applies above 768px (tablet portrait width, e.g., iPad).
 */
 @media (width >= 769px) {
   .til-container {
     /* --- Size It --- */
 
-    /* 
-      max-width: 80vw sets the maximum width to 80% of the viewport width.
-      This prevents the container from growing too wide on larger screens, 
-      enhancing readability by limiting line lengths and maintaining a focused layout.
-    */
+    /* Limits width for readability on larger screens */
     max-width: 80vw;
   }
 }

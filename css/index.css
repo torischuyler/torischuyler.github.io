@@ -1,72 +1,44 @@
 /* 
-  🏡 Index.css - The stylesheet for the homepage. 
-  This file defines the styles that apply specifically to the home of eOS Experiments. 
+  🏡 Index.css - Stylesheet for the homepage.
+  Defines styles specific to the home of eOS Experiments.
 */
 
 /*
-  📄 The .home-container holds the content for the home page.
-  It controls the width and spacing of the content area, with a mobile-first approach.
+  📄 The .home-container holds homepage content.
+  Controls width and spacing with a mobile-first approach.
 */
 .home-container {
   /* --- Size It --- */
 
-  /* 
-    max-width: 100vw sets the maximum width to 100% of the viewport width.
-    This ensures the container spans the full width on mobile screens, 
-    providing a responsive layout for smaller devices.
-  */
+  /* Full viewport width for mobile responsiveness */
   max-width: 100vw;
 
   /* --- Space It --- */
 
-  /*
-    Space outside container ⬆️⬇️⬅️➡️
-    Using two values:
-    0 = top and bottom margins (no space above or below).
-    auto = left and right margins (splits remaining space to center container).
-  */
+  /* Centers container horizontally */
   margin: 0 auto;
 
-  /*
-    Space inside container ⬆️⬇️➡️⬅️
-    Sets scalable inner spacing for the main container using rem, per updated guides/css-guidelines.md.
-    Calculation: 32px ÷ 16px (root font size) = 2rem, ensuring padding scales with text.
-  */
+  /* Scalable inner spacing (32px ÷ 16px = 2rem) */
   padding: 2rem;
 }
 
-/*
-  Page Heading
-  Order of Properties: Style It (St)
-*/
+/* Page Heading */
 .home-container h1 {
   /* --- Style It --- */
 
-  /*
-    Sets the color property with a CSS variable (--header-text-color, from global.css).
-      - Grogu green in dark mode, switches to ruby red in light mode.
-  */
+  /* Grogu green (dark mode) or ruby red (light mode) */
   color: var(--header-color);
 }
 
 /*
-  📲 Home Container Tablet/Desktop Styles
-
-  The 768px width is widely used because it aligns with the typical screen size
-  of tablets in portrait mode, like the iPad (which has a resolution of 768px wide
-  at 1x pixel density). It’s a common breakpoint in responsive design to shift from
-  "mobile" to "tablet" layouts. Using min-width: 769px ensures these styles start
-  right after the mobile styles (up to 768px), avoiding overlap at exactly 768px.
+  📲 Tablet/Desktop Styles
+  Applies above 768px (common tablet portrait width, e.g., iPad).
 */
 @media (width >= 769px) {
   .home-container {
     /* --- Size It --- */
 
-    /* 
-      max-width: 80vw sets the maximum width to 80% of the viewport width.
-      This prevents the container from growing too wide on larger screens, 
-      enhancing readability by limiting line lengths and maintaining a focused layout.
-    */
+    /* Limits width for readability on larger screens */
     max-width: 80vw;
   }
 }

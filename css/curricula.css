@@ -1,34 +1,21 @@
-/* 📚 Curricula.css - The stylesheet for the lesson plans directory page. /*
+/* 📚 Curricula.css - Stylesheet for the lesson plans directory page. */
 
 /*
-  The .curriculum-container holds the content for the curricula pages.
-  It controls the width and spacing of the content area, with a mobile-first approach.
+  📄 The .curriculum-container holds content for curricula pages.
+  Controls width and spacing with a mobile-first approach.
 */
 .curriculum-container {
   /* --- Size It --- */
 
-  /* 
-    max-width: 100vw sets the maximum width to 100% of the viewport width.
-    This ensures the container spans the full width on mobile screens, 
-    providing a responsive layout for smaller devices.
-  */
+  /* Full viewport width for mobile responsiveness */
   max-width: 100vw;
 
   /* --- Space It --- */
 
-  /*
-    Space outside container ⬆️⬇️⬅️➡️
-    Using two values:
-    0 = top and bottom margins (no space above or below).
-    auto = left and right margins (splits remaining space to center container on desktop).
-  */
+  /* Centers container horizontally */
   margin: 0 auto;
 
-  /*
-    Space inside container ⬆️⬇️➡️⬅️
-    Sets scalable inner spacing for the main container using rem, per updated guides/css-guidelines.md.
-    Calculation: 32px ÷ 16px (root font size) = 2rem, ensuring padding scales with text.
-  */
+  /* Scalable inner spacing (32px ÷ 16px = 2rem) */
   padding: 2rem;
 }
 
@@ -36,10 +23,7 @@
 .curriculum-container h1 {
   /* --- Style It --- */
 
-  /*
-    Sets the color property with a CSS variable (--header-color, from global.css).
-      - Grogu green in dark mode, switches to ruby red in light mode.
-  */
+  /* Grogu green (dark mode) or ruby red (light mode) */
   color: var(--header-color);
 }
 
@@ -47,105 +31,97 @@
 .curriculum-container h2 {
   /* --- Style It --- */
 
-  /*
-    Sets the color property with a CSS variable (--subheader-text-color, from global.css).
-      - Peach in dark mode, switches to poppy red in light mode.
-  */
+  /* Peach (dark mode) or poppy red (light mode) */
   color: var(--subheader-text-color);
 
-  /*  Underlines the subheading. */
+  /* Underlines subheading */
   text-decoration: underline;
 }
 
 /* 
   📋 Lesson plan list
-  The .curriculum-container ul styles the unordered list (<ul>) inside the curriculum container.
-  This is where lesson links live, formatted as a bulleted list for easy navigation.
+  Styles the unordered list (<ul>) inside the curriculum container for lesson links.
 */
 .curriculum-container ul {
   /* --- Space It --- */
 
-  /*
-    Padding-left adds 0.8rem of space *inside* the list, on the left side only.
-    This pushes the bullets and text rightward, away from the left edge.
-
-    🧮 Here’s the math:
-      - 1rem = the root font size (default is 16px in browsers).
-      - So, 0.8rem = 0.8 × 16px = 12.8px of space.
-      - If the root font size changes (e.g., to 18px), 0.8rem becomes 14.4px.
-  */
+  /* Pushes bullets and text rightward (0.8rem = 12.8px at 16px root) */
   padding-left: 0.8rem;
 
   /* --- Style It --- */
 
-  /* Removes the default bullet points, otherwise we'd end up with both the default bullets (●) and the 📐 🚀 bullets. */
+  /* Removes default bullets for custom emojis */
   list-style-type: none;
 }
 
 /*
   ✅ Lesson plan list items
-  The .curriculum-container ul li styles individual list items (<li>) inside the unordered list (<ul>).
+  Styles individual list items (<li>) inside the unordered list.
 */
 .curriculum-container ul li {
   /* --- Space It --- */
+
+  /* Vertical spacing between list items */
   margin: 0.8rem 0;
 
-  /* Adds space between bullet point's emoji and text. */
+  /* Space between bullet emoji and text */
   padding-left: 1rem;
 
-  /*
-    Sets the <li> as the starting point for the ::before bullet.
-    Without this, the bullet points would move to the page's left edge.
-  */
+  /* Anchors ::before bullet positioning */
   position: relative;
 }
 
 /*
-  Custom bullets using ::before to ensure Safari compatibility.
-  - '🚀' rocket bullets for the student list 
-  - '📐' triangle bullets for the developer list
+  Custom bullets using ::before for Safari compatibility.
+  - '🚀' for student list 
+  - '📐' for developer list
 */
 .curriculum-container ul.student-list li::before {
   /* --- Space It --- */
 
-  /* Sets the pseudo-element to be positioned relative to its parent <li>, which has position: relative */
+  /* Sets pseudo-element relative to parent <li> */
   position: absolute;
 
-  /* Aligns the rocket bullet to the left edge of the <li>, within the padding area */
+  /* Aligns rocket bullet to left edge */
   left: 0;
 
   /* --- Style It --- */
 
-  /* Inserts a rocket emoji as the custom bullet for the student list */
+  /* Rocket emoji for student list */
   content: '🚀';
 }
 
 .curriculum-container ul.developer-list li::before {
   /* --- Space It --- */
+
+  /* Sets pseudo-element relative to parent <li> */
   position: absolute;
+
+  /* Aligns bullet to left edge */
   left: 0;
 
   /* --- Style It --- */
+
+  /* Triangle emoji for developer list */
   content: '📐';
 }
 
 /*
-  😱 Fallback Support:
-  If a browser doesn't support ::before or emoji rendering fails, falls back to the classic disc bullets.
-  This is a safety net as ::before is widely supported.
+  😱 Fallback Support
+  Falls back to disc bullets if ::before or emoji rendering fails.
 */
 @supports not (selector(::before)) {
   .curriculum-container ul {
     /* --- Style It --- */
 
-    /* Classic disc bullet point */
+    /* Classic disc bullet */
     list-style-type: disc;
   }
 }
-  
+
 /*
   🔗 Lesson link styling
-  The .curriculum-container a styles all anchor tags (<a>) inside the .curriculum-container.
+  Styles anchor tags (<a>) inside the curriculum container.
 */
 .curriculum-container a {
   /* --- Space It --- */
@@ -153,70 +129,47 @@
   /* 0.2rem top/bottom, 0.4rem left/right */
   padding: 0.2rem 0.4rem;
 
-  /* 0.4rem outer left space  */
+  /* Outer left spacing */
   margin-left: 0.4rem;
 
   /* --- Style It --- */
 
-  /*
-    Sets the color property with a CSS variable (--text-color, from global.css).
-      - White in dark mode, switches to charcoal in light mode.
-  */
+  /* White (dark mode) or charcoal (light mode) */
   color: var(--text-color);
 
-  /* Remove underlined links for a clean, minimalist look. */
+  /* Removes underlines for minimalist look */
   text-decoration: none;
 
   /* --- Chaos It --- */
 
-  /* Smoothly transitions the link color over 0.3 seconds for a subtle hover effect. */
-   transition: color 0.3s;
+  /* Smooth color transition on hover */
+  transition: color 0.3s;
 }
 
-/*
-  🧪 Link interaction states
-  The .curriculum-container ul li a:hover and :focus - these style lesson links when visitors hover or tab to them.
-*/
+/* 🧪 Link interaction states - Styles lesson links on hover or focus. */
 .curriculum-container ul li a:hover,
 .curriculum-container ul li a:focus {
   /* --- Style It --- */
 
-  /*
-    This changes the color of the link text when hovered or focused.
-    Sets the color property with a CSS variable (--accent-text-color, from global.css).
-      - Muad'Dib in dark mode, switches to white in light mode.
-  */
+  /* Muad'Dib (dark mode) or white (light mode) */
   color: var(--accent-text-color);
 
-  /*
-    This changes the area behind the link text when hovered or focused.
-    Sets the color property with a CSS variable (--secondary-color, from global.css).
-      - British racing green in dark mode, switches to emerald green in light mode.
-  */
+  /* British racing green (dark) or emerald green (light) */
   background-color: var(--secondary-color);
 
-  /* Adds an underline to make links stand out as clickable when hovered or focused. */
+  /* Adds underline for clickability */
   text-decoration: underline;
 }
 
 /*
-  📲 Curriculum Container Tablet/Desktop Styles
-
-  The 768px width is widely used because it aligns with the typical screen size
-  of tablets in portrait mode, like the iPad (which has a resolution of 768px wide
-  at 1x pixel density). It’s a common breakpoint in responsive design to shift from
-  "mobile" to "tablet" layouts. Using min-width: 769px ensures these styles start
-  right after the mobile styles (up to 768px), avoiding overlap at exactly 768px.
+  📲 Tablet/Desktop Styles
+  Applies above 768px (tablet portrait width, e.g., iPad).
 */
 @media (width >= 769px) {
   .curriculum-container {
     /* --- Size It --- */
 
-    /* 
-      max-width: 80vw sets the maximum width to 80% of the viewport width.
-      This prevents the container from growing too wide on larger screens, 
-      enhancing readability by limiting line lengths and maintaining a focused layout.
-    */
+    /* Limits width for readability on larger screens */
     max-width: 80vw;
   }
 }
