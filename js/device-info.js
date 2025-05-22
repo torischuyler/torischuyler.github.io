@@ -1,31 +1,30 @@
 /*
-  📱💻 Device: This script contains a function that fetches device (user agent) data.
+  📱💻 Device: This script fetches device (user agent) data and displays a friendly name.
 */
 
-// Defines a function that takes the raw userAgent string and returns a fun, friendly device name
-function getFriendlyDevice(userAgent) {
-  if (userAgent.includes("iPhone")) return "a magical iPhone";
-  if (userAgent.includes("Pixel")) return "a prismatic Pixel";
-  if (userAgent.includes("SM-S921B") || userAgent.includes("SM-X710")) return "a galactic Samsung Galaxy";
-  if (userAgent.includes("Android")) return "an enchanted Android";
-  if (userAgent.includes("Windows")) return "a mystical Windows";
-  if (userAgent.includes("iPad")) return "an irresistible iPad";
-  if (userAgent.includes("Mac")) return "a charmed Mac";
-  if (userAgent.includes("Linux")) return "a legendary Linux";
+// Maps user agent substrings to friendly device names
+const deviceMap = {
+  iPhone: "a magical iPhone",
+  Pixel: "a prismatic Pixel",
+  "SM-S921B": "a galactic Samsung Galaxy",
+  "SM-X710": "a galactic Samsung Galaxy",
+  Android: "an enchanted Android",
+  Windows: "a mystical Windows",
+  iPad: "an irresistible iPad",
+  Mac: "a charmed Mac",
+  Linux: "a legendary Linux"
+};
 
-  // Fallback: returns a default name if no specific device type matches
-  return "a mysterious gadget";
+// Returns a friendly device name based on the user agent string
+function getFriendlyDevice(userAgent) {
+  return Object.keys(deviceMap).find(key => userAgent.includes(key))
+    ? deviceMap[Object.keys(deviceMap).find(key => userAgent.includes(key))]
+    : "a mysterious gadget";
 }
 
-// Waits for the HTML document to be fully loaded before running the code
-document.addEventListener("DOMContentLoaded", function() {
-
-  // Gets the raw user agent string from the browser
-  const userAgent = navigator.userAgent;
-
-  // Sets friendlyDevice to the fun name we get from translating the raw userAgent
-  const friendlyDevice = getFriendlyDevice(userAgent);
-
-  // Updates the HTML element with id "device-info" to show the friendly device message
-  document.getElementById("device-info").innerHTML = `🔮 Your device whispers: <i>You're on ${friendlyDevice}</i>`;
+// Updates device info on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const friendlyDevice = getFriendlyDevice(navigator.userAgent);
+  document.getElementById("device-info").innerHTML =
+    `🔮 Your device whispers: <i>You're on ${friendlyDevice}</i>`;
 });
