@@ -2,40 +2,28 @@
   🌐 Browser: This script detects and displays the visitor's browser in a mystical way.
 */
 
-// Function to detect if the browser is Arc by checking for Arc-specific CSS variables
+// Function to detect if the browser is Arc using CSS variables
 function detectArc() {
-  const arcVariable = getComputedStyle(document.documentElement).getPropertyValue('--arc-palette-title').trim();
-  return arcVariable !== '';
+  return getComputedStyle(document.documentElement).getPropertyValue('--arc-palette-title').trim() !== '';
 }
 
-// Defines a function that takes the raw userAgent string and uses additional detection methods to return a fun, browser-specific message
+// Returns a fun, browser-specific message based on the userAgent string
 function getMysticalBrowser(userAgent) {
-  // Check for Arc first using the CSS variable method
   if (detectArc()) return "the radiant arcs of Arc";
-  // If not Arc, proceed with user agent checks for other browsers
-  if (userAgent.includes("Edg")) return "the sharp edges of Edge";
-  if (userAgent.includes("Chrome")) return "the gleaming paths of Chrome";
-  if (userAgent.includes("Safari")) return "the wild orchards of Safari (or you're on an iPhone and it's all one big Safari 😂)";
-  if (userAgent.includes("Firefox")) return "the fiery trails of Firefox";
-  // Fallback for unknown browsers
+  if (/Edg/i.test(userAgent)) return "the sharp edges of Edge";
+  if (/Chrome/i.test(userAgent)) return "the gleaming paths of Chrome";
+  if (/Safari/i.test(userAgent)) return "the wild orchards of Safari (or you're on an iPhone and it's all one big Safari 😂)";
+  if (/Firefox/i.test(userAgent)) return "the fiery trails of Firefox";
   return "an unseen web whisperer";
 }
 
-// Waits for the HTML document to be fully loaded before running the code
-document.addEventListener("DOMContentLoaded", function() {
-  // Gets the raw user agent string from the browser
+// Updates the browser display once the DOM and CSS are ready
+document.addEventListener("DOMContentLoaded", () => {
   const userAgent = navigator.userAgent;
-
-  /*
-    Since Arc detection requires CSS variables that may load after DOMContentLoaded,
-    we add a small delay to ensure the variables are available.
-  */
-  setTimeout(() => {
-      // Sets mysticalBrowser to the fun name we get from translating the raw userAgent
-      const mysticalBrowser = getMysticalBrowser(userAgent);
-      // Updates the HTML element with id "browser" to show the browser message with italics
-      document.getElementById("browser").innerHTML =
-          `🔮 The winds of the web carried you here via <i>${mysticalBrowser}</i>`;
-  // 500ms delay to ensure Arc's CSS variables are injected
-  }, 500);
+  // Use requestAnimationFrame to ensure CSS variables are loaded
+  requestAnimationFrame(() => {
+    const mysticalBrowser = getMysticalBrowser(userAgent);
+    document.getElementById("browser").innerHTML =
+      `🔮 The winds of the web carried you here via <i>${mysticalBrowser}</i>`;
+  });
 });
