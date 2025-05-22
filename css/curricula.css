@@ -38,7 +38,7 @@
 
   /*
     Sets the color property with a CSS variable (--header-color, from global.css).
-      - Grogu green in dark mode, switches to chefchaouen blue in light mode.
+      - Grogu green in dark mode, switches to ruby red in light mode.
   */
   color: var(--header-color);
 }

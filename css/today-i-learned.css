@@ -3,7 +3,6 @@
 /*
   The .til-container holds the content for the til page.
   It controls the width and spacing of the content area.
-  Order of Properties: Size It, Space It (Sz Sp)
 */
 .til-container {
   /* --- Size It --- */
@@ -16,79 +15,57 @@
 
   /* --- Space It --- */
 
-  /*
-    Space outside container ⬆️⬇️⬅️➡️
-  */
+  /* Space outside container ⬆️⬇️⬅️➡️ */
   margin: 0 auto;
 
-  /*
-    Space inside container ⬆️⬇️➡️⬅️
-  */
+  /* Space inside container ⬆️⬇️➡️⬅️ */
   padding: 2rem;
 }
 
-/*
-  Page Heading
-  Order of Properties: Style It (St)
-*/
+/* Page Heading */
 .til-container h1 {
   /* --- Style It --- */
+
+  /*
+    Sets the color property with a CSS variable (--header-color, from global.css).
+      - Grogu green in dark mode, switches to ruby red in light mode.
+  */
   color: var(--header-color);
 }
 
-/*
-  The header image.
-  Order of Properties: Style It (St)
-*/
-.til-container h1 img {
-  /* --- Style It --- */
-
-  /* Aligns the til ice cream emoji with the middle of the text */
-  vertical-align: middle;
-}
-
-/* 
-  TIL page unordered list
-  Order of Properties: Space It, Style It (Sp St)
-*/
+/* Unordered List */
 .til-container ul {
   /* --- Space It --- */
   padding-left: 1.5rem;
   text-align: left;
-
-  /* --- Style It --- */
-
-  /*
-    Remove default bullets, we’re using emojis. If we didn't do this
-    we’d end up with both the default and custom bullets.
-  */
-  list-style-type: none;
 }
 
-/*
-  TIL page list items
-  Order of Properties: Space It, Style It (Sp St)
-*/
+/* List items (bullet points) */
 .til-container ul li {
   /* --- Space It --- */
   display: block;
   margin: 1rem 0;
-  padding-left: 2rem;
   position: relative;
+
+  /* 2rem inner left space  */
+  padding-left: 2rem;
 
   /* --- Style It --- */
   font-family: Righteous, system-ui, sans-serif;
-  font-size: 24px;
   color: goldenrod;
+
+  /* 1.5 x 16 = 24px */
+  font-size: 1.5rem;
 }
 
-/*
-  TIL link styling
-  Order of Properties: Space It, Style It (Sp St)
-*/
+/* Link styling */
 .til-container ul li a {
   /* --- Space It --- */
+
+  /* 0.2rem top/bottom, 0.4rem left/right */
   padding: 0.2rem 0.4rem;
+
+  /* 0.3rem outer left space  */
   margin-left: 0.3rem;
 
   /* --- Style It --- */
@@ -97,35 +74,25 @@
   transition: color 0.3s;
 }
 
-/*
-  Custom bullets using ::before to ensure Safari compatibility.
-  Order of Properties: Space It, Style It (Sp St)
-*/
+/* Custom bullets using ::before to ensure Safari compatibility. */
 .til-container ul li::before {
   /* --- Space It --- */
   position: absolute;
   left: 0;
-  top: 0;
 
   /* --- Style It --- */
   content: '✨';
 }
 
-/*
-  Custom bullet for the second list item (Snake) using ::before.
-  Order of Properties: Style It (St)
-*/
+/* Custom bullet for the second list item (Snake) using ::before. */
 .til-container ul li:nth-child(2)::before {
   /* --- Style It --- */
   content: '🐍';
 }
 
-
 /*
   🧪 Link interaction states
-  These style lesson links when visitors hover (usually with mouse or trackpad)
-  or tab to them (usually with keyboard).
-  Order of Properties: Style It (St)
+  These style lesson links when visitors hover or tab to them.
 */
 .til-container ul li a:hover,
 .til-container ul li a:focus {
@@ -135,12 +102,7 @@
   text-decoration: underline;
 }
 
-/* Mobile Styles */
-
-/*
-  TIL Container Mobile Styles
-  Order of Properties: Size It (Sz)
-*/
+/* TIL Container Mobile Styles */
 @media (width <= 768px) {
   .til-container {
     /* --- Size It --- */
