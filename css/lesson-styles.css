@@ -1,327 +1,142 @@
-/*
-  👩‍🏫👨‍🏫 Lesson-styles.css - The stylesheet for lesson plan pages.
-  This file defines the styles that apply specifically
-  to the lesson plan pages of eOS Lesson Plans.
-*/
+/* Lesson-styles.css - Styles for lesson plan pages on eOS Experiments. */
 
-/*
-  Lesson Plan Pages
-  The .lesson-container holds the content for the lesson plan pages.
-  It controls the width and spacing of the content area.
-  Order of Properties: Size it, Space it (Sz Sp)
-*/
+/* Lesson container - Holds lesson plan content, controls width and spacing. */
 .lesson-container {
   /* --- Size It --- */
 
-  /*
-    max-width: 80vw sets the maximum width to 80% of the viewport width.
-    This limits how wide the container can grow.
-  */
-  max-width: 80vw;
+  /* Full width for mobile */
+  max-width: 100vw;
+
+  /* Improves readability */
+  line-height: 1.5;
 
   /* --- Space It --- */
 
-  /*
-    Space outside container ⬆️⬇️⬅️➡️
-    Using two values:
-    0 = top and bottom margins (no space above or below).
-    auto = left and right margins (splits remaining space to center container).
-  */
+  /* 0 top/bottom, auto left/right outer spacing (0 auto at 16px root) - centers the container */
   margin: 0 auto;
 
-  /*
-    line-height: 1.5 sets text line spacing to 1.5 times the font size.
-    This improves readability by giving lines some breathing room.
-    🧮 Here's the math:
-      - 1.5 × 16px = 24px (at a 16px default root).
-    
-    📐 Why is there no unit of measurement here for 1.5 like rem or px?
-
-    Great question! Unitless values are standard for line-height in modern CSS
-    because they adapt better than fixed units.
-
-    🍭 1.5 is in the sweet spot between too cramped (< 1.5) and too spacious (> 2.0).
-  */
-  line-height: 1.5;
+  /* 0 top/bottom, 16px left/right inner spacing (1rem at 16px root) */
+  padding: 0 1rem;
 }
 
-/*
-  📸 Image Styling
-  This styles the space-themed image at the top of the lesson page - a kid-friendly
-  scene of planets and stars (space.jpeg) created with Apple’s Image Playground.
-  It’s got Magic School Bus vibes to kick off the learning adventure 🚀
-  These rules make it responsive, centered, and spaced out for a clean start.
-  Order of Properties: Size it, Space it (Sz Sp)
-*/
+/* Lesson image - responsive and centered. */
 .lesson-container img {
-  /*
-    block makes the image take up its own line, like a standalone element.
-    It’s like giving the spaceship its own parking spot. 🛸
-  */
-  display: block;
-
   /* --- Size It --- */
 
-  /*
-    max-width caps the image width at 100% of its container (the .lesson-container area).
-    So, if the page shrinks (like on a phone), the image shrinks too.
-    It’s like saying, “Stay in your lane, image!” 🚧
-  */
+  /* Scales to container width */
   max-width: 100%;
 
   /* --- Space It --- */
 
-  /*
-    ⬆️ Top margin = 0px. No space above the image.
-    ⬅️➡️ Left and right margins = auto, which splits the leftover
-    space equally on both sides, centering the image horizontally.
-    ⬇️ Bottom margin = 1.25rem. Adds space below the image.
-    (20px ÷ 16px = 1.25rem)
-  */
-  margin: 0 auto 1.25rem;
+  /* Puts image on its own line */
+  display: block;
+
+  /* 0 top, 16px bottom, auto left/right outer spacing (0 auto 1rem at 16px root) - centers, adds bottom space */
+  margin: 0 auto 1rem;
 }
 
-/*
-  Page Heading
-  Order of Properties: Space It, Style It (Sp St)
-*/
+/* Page heading */
 .lesson-container h1 {
+  /* --- Size It --- */
+  font-size: 1.75rem;
+
+  /* --- Space It --- */
+
+  /* 24px top, 0 bottom/left/right outer spacing (1.5rem at 16px root) - top spacing */
+  margin-top: 1.5rem;
+
   /* --- Style It --- */
 
-  /*
-    Adds space below the heading (1.618rem ≈ 26px) using the golden ratio
-    for aesthetic harmony (and bc 6/18 is my bday 😎).
-  */
-  margin-top: 1.618rem;
-
-  /* --- Style It --- */
-
-  /*
-    Sets the color property with a CSS variable (--header-text-color, from global.css).
-      - Hèrmes orange in dark mode, switches to chefchaouen blue in light mode.
-  */
+  /* Orange(dark mode) or ruby red (light mode) */
   color: var(--header-text-color);
 }
 
-/*
-  🧭 Subheadings to navigate the lesson plan
-  Order of Properties: Space It, Style It (Sp St)
-*/
+/* Level 2 Subheadings */
 .lesson-container h2 {
   /* --- Space It --- */
 
-  /* 
-    Adds space below the subheading.
-    🧮 Here's the math:
-      - 0.3rem × 16px = 4.8px
-  */
+  /* 4.8px bottom, 0 top/left/right outer spacing (0.3rem at 16px root) - bottom spacing */
   margin-bottom: 0.3rem;
 
   /* --- Style It --- */
 
-  /*
-    Sets the color property with a CSS variable (--subheader-text-color, from global.css).
-      - Peach in dark mode, switches to poppy red in light mode.
-  */
+  /* Peach (dark mode) or poppy red (light mode) */
   color: var(--subheader-text-color);
 }
 
-/*
-  🏹 Targets Subheadings
-  Order of Properties: Style it (St)
-*/
+/* Underlined subheading text (excludes emoji) */
 .lesson-container h2 span {
   /* --- Style It --- */
-
-  /* Underline only the text, not the emoji */
   text-decoration: underline;
 }
 
-/*
-  🪜 Level 3 subheadings to navigate the lesson steps
-  Order of Properties: Size it, Space it, Style it (Sz Sp St)
-*/
+/* Level 3 Subheadings */
 .lesson-container h3 {
-  /* --- Size It --- */
-
-  /*
-    Sets subheading to 1.25rem (20px at default 16px root font size).
-    Typical h3 range is 1rem–1.25rem (16px–20px).
-  */
-  font-size: 1.25rem;
-
   /* --- Space It --- */
 
-  /*
-    Indents the subheading 1.5rem (24px at 16px root font size) from the left.
-    Creates a visual hierarchy under h2 or main content.
-    🧮 Math: 1.5rem × 16px = 24px; scales with root font size.
-  */
-  padding-left: 1.5rem;
+  /* 20px inner left spacing (1.25rem at 16px root) */
+  padding-left: 1.25rem;
 
   /* --- Style It --- */
-
-  /*
-    If Righteous font isn’t ready to roll,
-    fall back to the system-ui default, then sans-serif as the final catch-all.
-  */
   font-family: Righteous, system-ui, sans-serif;
 
-  /*
-    Sets the color property with a CSS variable (--subheader-three-text-color, from global.css).
-      - Princeton orange in dark mode, switches to moonstone in light mode.
-  */
+  /* Princeton orange (dark mode) or moonstone (light mode) */
   color: var(--subheader-three-text-color);
 }
 
-/*
-  📖 Main Content HQ - the heart of the lesson, .lesson-container main
-  targets the <main> element within the container.
-  Order of Properties: Space it (Sp)
-*/
-.lesson-container main {
-  /* --- Space It --- */
-
-  /*
-    Space inside container ⬆️⬇️➡️⬅️
-    0 = top and bottom padding (no extra height).
-    1.25rem = left and right padding (20px at 16px root font size).
-    Rem = “root em,” based on the <html> font size (usually 16 px by default).
-    🧮 If default font size is 16px: 16 × 1.25 = 20px padding.
-
-    Why use rem here? It’s responsive — padding scales with browser font size changes,
-    keeping the content balanced across different screens and settings.
-  */
-  padding: 0 1.25rem;
-}
-
-/*
-  🎯 Lesson Goals List
-  The .lesson-container ol styles the ordered list (<ol>) inside the lesson container.
-  This is where lesson goals live, formatted as a numbered list for easy navigation.
-  Order of Properties: Size It, Space It (Sz Sp)
-*/
-.lesson-container ol {
-  /* --- Size It --- */
-  font-size: 1.125rem;
-
-  /* --- Space It --- */
-
-  /*
-    Padding-left adds 3.5rem of space *inside* the list, on the left side only.
-    This pushes the bullets and text rightward, away from the left edge.
-
-    🧮 Here’s the math:
-      - 1rem = the root font size (default is 16px in browsers).
-      - So, 3.5rem = 3.5rem × 16px = 56px of space.
-  */
-  padding-left: 3.5rem;
-}
-
-/*
-  📋 Bullet Crew
-  The .lesson-container li styles the list items (<li>) inside the lesson container.
-  These are the bullet points in the lesson plan.
-
-  Order of Properties: Size it, Space it (Sz Sp)
-*/
-.lesson-container li {
-  /* --- Size It --- */
-
-  /*
-    Typical li range for body text is 1rem to 1.25rem (16px - 20px).
-    Sets bullet points to 1.125rem
-    (which is 18px, assuming a 16px default root size).
-
-    🧮 Here’s the math:
-      - 1.125rem × 16px = 18px font size.
-  */
-  font-size: 1.125rem;
-
-  /* --- Space It --- */
-
-  /*
-    Adds 0.75rem below each item for balanced spacing.
-    🧮 Here’s the math:
-      - 0.75rem × 16px = 12px spacing (at a 16px default root).
-  */
-  margin-bottom: 0.75rem;
-}
-
-/*
-  Unordered Lists
-  The .lesson-container ul styles the unordered lists (<ul>) inside the lesson container.
-  This is where lesson duration, age groups, materials needed, lesson steps, and teacher tips
-  are presented as unordered lists for easy navigation.
-  Order of Properties: Space It (Sp)
-*/
+/* Ordered and unordered lists - Lesson goals, steps, and materials. */
+.lesson-container ol,
 .lesson-container ul {
+  /* --- Size It --- */
+  font-size: 1.125rem;
+
   /* --- Space It --- */
 
-  /*
-    Pushes bullets 3.5rem (56px) from the left, same as <ol>.
-  */
+  /* 0 top/bottom/right, 56px left inner spacing (3.5rem at 16px root) - Indents lists */
   padding-left: 3.5rem;
 }
 
-/*
-  🪆 Nested Unordered Lists
-  Targets <ul> inside another <ul> within .lesson-container to style nested lists.
-  Reduces padding from 3.5rem to 1.5rem for a tighter hierarchy without over-indentation.
-  Order of Properties: Space It (Sp)
-*/
+/* Nested unordered lists */
 .lesson-container ul ul {
   /* --- Space It --- */
 
-  /*
-    Sets padding to 1.5rem (24px at 16px root font size).
-    Keeps nested lists readable without pushing them too far right.
-    🧮 Math: 1.5rem × 16px = 24px; scales with root font size.
-  */
+  /* 0 top/bottom/right, 24px left inner spacing (1.5rem at 16px root) - Tighter indentation */
   padding-left: 1.5rem;
 }
 
-/*
-  Paragraph Text
-  This styles paragraph text (<p> tags) inside the .lesson-container.
-  Order of Properties: Size it, Space it (Sz Sp)
-*/
+/* List items */
+.lesson-container li {
+  /* --- Size It --- */
+  font-size: 1.125rem;
+
+  /* --- Space It --- */
+
+  /* 12px bottom, 0 top/left/right outer spacing (0.75rem at 16px root) */
+  margin-bottom: 0.75rem;
+}
+
+/* Paragraph text */
 .lesson-container p {
   /* --- Size It --- */
   font-size: 1.125rem;
 
   /* --- Space It --- */
 
-  /*
-    Indents by 1.7rem (27.2px at 16px root).
-    Why 1.7? I dunno, just liked the look 🤷‍♀️
-  */
-  padding-left: 1.7rem;
-  padding-right: 1.7rem;
+  /* 0 top/bottom, 20px left/right inner spacing (1.25rem at 16px root) */
+  padding: 0 1.25rem;
 }
 
-/*
-  Lesson Container Mobile Styles
-  Order of Properties: Size It (Sz)
-
-  📲 The 768px width is widely used because it aligns with the typical screen size
-  of tablets in portrait mode, like the iPad (which has a resolution of 768px wide
-  at 1x pixel density). It’s become a convention in responsive design to mark the
-  transition between "mobile" and "tablet" layouts.
-*/
-@media (width <= 768px) {
+/* Tablet/Desktop Styles - Applies above 768px (tablet portrait). */
+@media (width >= 769px) {
   .lesson-container {
     /* --- Size It --- */
 
-    /*
-      max-width: 100vw sets the maximum width to 100% of the viewport width.
-      Increased from 80vw to 100vw for mobile to enhance text and image size on smaller screens.
-    */
-    max-width: 100vw;
+    /* Limits width for readability on larger screens */
+    max-width: 80vw;
   }
 
   .lesson-container h1 {
     /* --- Size It --- */
-    font-size: 1.75rem;
+    font-size: 3.5rem;
   }
 }
