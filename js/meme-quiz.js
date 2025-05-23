@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mystical: 'images/meme-results/trigon.jpg',
     cute: 'images/meme-results/lil-twirlip.jpg',
     chaos: 'images/meme-results/subway-rats.jpg',
-    positive: 'images/meme-results/giggleblossom.jpg',
+    positive: 'images/meme-results/giggle-blossom.jpg',
     savage: 'images/meme-results/bone-appetit.jpg',
     history: 'images/meme-results/alexander-hamilton.jpg',
     tech: 'images/meme-results/steve-jobs.jpg',
