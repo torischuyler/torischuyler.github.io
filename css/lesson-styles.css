@@ -31,8 +31,8 @@
   /* Puts image on its own line */
   display: block;
 
-  /* 0 top, 16px bottom, auto left/right outer spacing (0 auto 1rem at 16px root) - centers, adds bottom space */
-  margin: 0 auto 1rem;
+  /* 16px top/bottom, auto left/right outer spacing (1rem auto at 16px root) - centers, adds top/bottom space */
+  margin: 1rem auto;
 }
 
 /* Page heading */
