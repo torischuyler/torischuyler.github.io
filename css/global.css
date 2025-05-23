@@ -147,37 +147,12 @@
   */
   --muad-dib: #C9C2BA;
 
-  /*
-    Header text color: Hermès orange.
-    Pronounced 'air-mez' like Air Bud but mez. 🐕🏀
-
-    😎 Context: The Orange Box: Hermès is famous for its iconic orange packaging,
-    which started as a happy accident. During World War II, wartime shortages forced
-    the company to use the only paper stock available — an orange shade. What began as
-    a necessity turned into a brand signature by the 1950s. Today, that vibrant orange
-    (often described as a warm, poppy-like hue) is synonymous with luxury and instantly recognizable.
-
-    🎨 Color Variations:
-    Different representations of the Hermès orange show how brand colors can vary across mediums:
-    #FF6600 - Traditional digital representation, brightest and most saturated.
-    #F77F00 - Warmer, more muted variation with red undertones.
-    #F37021 - Closest match to physical Hermès packaging, with a "burnt orange" quality.
-
-    ⚠️ Note: Using special characters in CSS variables (like è) isn't recommended as it
-    can cause encoding issues. For production, use: --hermes-orange instead.
-    I am a renegade which is why we are doing it here. 😝
+  /* 
+    Header text color: Pumpkin orange 🎃
+    Fun Fact: Pumpkins are technically berries, specifically a type of pepo, characterized by their thick rind, fleshy
+    interior, and numerous seeds. This surprising botanical classification places them alongside cucumbers and watermelons!
   */
-
-  /* Classic digital version - very bright */
-
-  /* --hermès-orange: #FF6600; */
-
-  /* Warmer, muted variation */
-
-  /* --hermès-orange: #F77F00; */
-
-  /* Most accurate to physical packaging */
-  --hermès-orange: #F37021;
+  --pumpkin-orange: #F37021;
 
   /*
     Subheader text color: Peach 🍑👑
@@ -275,7 +250,7 @@
   --background-color: var(--lapis-lazuli);
   --text-color: var(--white);
   --accent-text-color: var(--muad-dib);
-  --header-text-color: var(--hermès-orange);
+  --header-text-color: var(--pumpkin-orange);
   --subheader-text-color: var(--peach);
   --subheader-three-text-color: var(--princeton-orange);
   --header-color: var(--grogu-green);
