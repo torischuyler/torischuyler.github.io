@@ -126,6 +126,13 @@
   padding: 0 1.25rem;
 }
 
+.centered {
+    /* --- Space It --- */
+
+    /* Horizontally centers the text */
+    text-align: center;
+}
+
 /* Tablet/Desktop Styles - Applies above 768px (tablet portrait). */
 @media (width >= 769px) {
   .lesson-container {
