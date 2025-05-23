@@ -117,41 +117,6 @@
             <main>
             <!-- Main content area - where the primary, unique content of the page lives. -->
 
-                <!-- Begin Introduction Section ------------->
-                <section>
-                    <h2><span>Introduction</span></h2>
-                    <!-- 'h2' tags act as section headings to organize key topics,
-                    sitting below 'h1' in the heading hierarchy for structure and accessibility. -->
-
-                    <details>
-                    <!-- 'details' creates a collapsible section to hide and toggle page content. -->
-
-                        <summary>Tap/Click Me!</summary>
-                        <!-- Defines the clickable text that toggles the visibility of the content below. -->
-
-                        <p>
-                            Hey there! I'm your little orca buddy, Connie, your guide to the magical world of Computerland—
-                            where everything is computer. Why am I an orca? Well, one of the creators of this operating system
-                            started her software development journey in New York City with a team of awesome people and
-                            their pod mascot was an orca.
-                        </p>
-                        <br>
-
-                        <p>
-                            Ever wonder what really happens when you press that power button to turn on your phone or computer? 
-                            Maybe you've got it mapped out, or maybe you're like, “Is it Oompa Loompas?” (Spoiler: it's not Oompa Loompas 😩). 
-                            Stick with me, and we'll uncover the not-so-mysterious magic of the bootloader and the kernel.
-                            Do you dare disturb the computerverse?
-                        </p>
-                        <br>
-
-                        <p>
-                            Oh, and keep an eye out for <strong>History 📜</strong> and <strong>Cool 😎</strong> They'll pop up with fun facts or lil tidbits of computer history.
-                        </p>
-                    </details>
-                </section>
-                <!-- End Introduction Section ------------->
-
                 <!-- Begin Bootloader Section ------------->
                 <section>
                     <h2><span>Bootloader</span></h2>
@@ -177,12 +142,6 @@
                                     <strong>Bootloader 🥾</strong> More<strong> software</strong> takes over.
                                 </li>
                             </ul>
-
-                            <p>
-                                Hey, it's me, Connie, your orca pal from a sec ago! So, you're curious about how computers tick, huh?
-                                Sweet—I'm pumped to nerd out with you. Let's start with the first thing that happens when you power on.
-                            </p>
-
                         </p>
                         <br>
 
@@ -192,8 +151,7 @@
                                 <li>
                                     <strong>Power On:</strong> You press the button. Electricity zaps ⚡️ the CPU (Central Processing Unit—the brain 🧠 of 
                                     your device that runs instructions). Boom! 💥 It's awake and instantly knows to check a special spot in permanent memory—
-                                    like a “Start Here!” sign that's always in the exact same place.  No fumbling around, just straight to business. This initial 
-                                    check kicks off all the next steps in starting up your machine.
+                                    like a “Start Here!” sign that's always in the exact same place. This initial check kicks off all the next steps in starting up your machine.
                                 </li>
                                 <li>
                                     <strong>Built-In Firmware Guides CPU:</strong> As soon as the CPU sees that “Start Here!” sign, a built-in program in your device
@@ -240,15 +198,11 @@
                 <!-- Begin Kernel Section ----------------->
                 <section>
                     <h2><span>Kernel</span></h2>
+
                     <details>
                         <summary>Tap/Click Me!</summary>
                         <p>
-                            Hiya, it's Connie, your orca buddy, back again with the good stuff! So, the bootloader's set the stage,
-                            and now it's time for the kernel ✨ to steal the show.
-                        </p>
-                        <br>
-
-                        <p>
+                            So, the bootloader's set the stage, and now it's time for the kernel ✨ to steal the show.
                             Unlike the bootloader, which just sets up and steps back, the kernel sticks around, keeping everything smooth.
                             Before it can shine, though, the bootloader gives kernel a quick pep talk, “Hey, kernel, I've got you loaded
                             in memory with a sweet map 🗺️ of the place; it's your turn to take the wheel!”
@@ -691,9 +645,9 @@
                                 So, we've made it this far—drivers are loaded, and the kernel's got a two-way convo going with the hardware.
                                 The touchscreen's reporting taps, the storage is stashing memes, and the CPU's cruising with its memory sandboxes
                                 all set up. Things are looking alive, right? But here's the kicker: the kernel's been doing all this heavy lifting
-                                while ridin' solo. It's like a one-orca show so far with Connie swimming alone 🥺. To really wake up Computerland,
-                                the kernel's gotta pass the mic to a <strong>process</strong>—a running instance of a program, like launching a
-                                shell or an app. Enter the first process: the spark 🧨 that lights up everything else. Let's plunge deeper!
+                                while ridin' solo. To really wake up Computerland, the kernel's gotta pass the mic to a <strong>process</strong>—a 
+                                running instance of a program, like launching a shell or an app. Enter the first process: the spark 🧨 that lights 
+                                up everything else. Let's plunge deeper!
                             </p>
                             <br>
 
@@ -703,7 +657,7 @@
                                 At its core, a process is just a program in action. Think of it like a recipe (the program) being cooked (processed) by a chef
                                 (the CPU). The kernel's job is to set up the kitchen, hand over the recipe, and let the chef start cooking some tasty code 🥩
                                 all while keeping an eye out so nothing burns. The first process? Oh, it's extra special—it's the kernel's big debut handoff,
-                                flipping from “I've got this solo” to “Alright, you're up, champ!” Connie's excited to see this kitchen come alive!
+                                flipping from “I've got this solo” to “Alright, you're up, champ!”
                             </p>
                             <br>
 
@@ -762,7 +716,7 @@
                                                         </li>
                                                         <li>
                                                             <strong>What's the first process ID (PID)?</strong> Windows does things its own way—like, “Nah, forget starting at 1, let's kick it off with 4!” 😂
-                                                            (Which, by the way, is your orca pal Connie's fave number 4️⃣ It's the only number in English with the same number of letters as it's value, F-O-U-R)
+                                                            (Which, by the way, 4️⃣ is the only number in English with the same number of letters as it's value, F-O-U-R).
                                                             You might think, “Is it 'cause a window has four sides, some geometry flex?” Nope, not quite—it's more because of a kernel quirk in Windows that loves
                                                             multiples of 4. So Windows reserves PID 4 for its System process, and <code>smss.exe</code> gets a different number each time. But the gist is the same,
                                                             <code>smss.exe</code> is the session maestro, spinning up user sessions and kickstarting the right programs.
@@ -780,7 +734,7 @@
                                                 <strong>[Allocate Memory Spaces ➡️ Set Up CPU Registers ➡️ Create Process Control Block]</strong>
                                                 <br><br>
                                                 The kernel can't just toss the first process at the CPU and say, “Go!” Nope, it's gotta build a cozy little world for it to swim 
-                                                in—Connie's here to show you how! This is where that virtual memory magic (remember it?) comes back. A process needs its own space
+                                                in! This is where that virtual memory magic (remember it?) comes back. A process needs its own space
                                                 and a starting line, or it's just a blob of code floating around. Here's the setup:
                                                 <ul>
                                                     <li>
@@ -920,10 +874,10 @@
                                                             <strong>What're My Abilities? ✨</strong>
                                                             <ul>
                                                                 <li>
-                                                                    <strong>Priority:</strong> High (obv, I'm <code>launchd</code>! 💁‍♀️)
+                                                                    <strong>Priority:</strong> High (obv, I'm <code>launchd</code>!)
                                                                 </li>
                                                                 <li>
-                                                                    <strong>Privileges:</strong> Root (bc I'm a Queen 👑 Man + Woman - King = Queen)
+                                                                    <strong>Privileges:</strong> Root
                                                                 </li>
                                                             </ul>
         
@@ -946,7 +900,7 @@
                                                                     <strong>Started:</strong> 2024-05-01 00:00:01
                                                                 </li>
                                                                 <li>
-                                                                    <strong> Memory Used:</strong> 6.18MB
+                                                                    <strong> Memory Used:</strong> 6.18 MB
                                                                 </li>
                                                             </ul>
                                                         </ul>
@@ -1192,10 +1146,6 @@
                                                 <br><br>
                                                 Wondering what in the heckin is a sempahore? 🚦 In computer science, it's a nifty counter that tracks who's allowed to use something—like an “only X at a time” rule. It controls
                                                 access to a shared resource by multiple threads, keeping things orderly and preventing race conditions.
-                                                <br><br>
-                                                Wondering what in the heckin is a race condition? 🏃‍♀️🏃‍♂️ It's when two or more threads try to grab the same resource at once, risking errors or crashes. Picture you and your
-                                                Uncle Jim at the tailgate before the big game, both thirsty for a refreshing energy drink. You dive into the cooler at the same time—hands brushing, awkward. 😳 
-                                                That's a race condition that could've been avoided if your Aunt Liz (the semaphore) were there, keeping tabs on the drink sitch and handing 'em out one at a time.
                                             </li>
                                             <li>
                                                 <i>Signals:</i> The kernel can send messages (e.g., “Quit now!” via SIGTERM) to nudge processes into action or shut them down cleanly.
@@ -1372,26 +1322,6 @@
                     </details>
                 </section>
                 <!-- End Kernel Section --------------------->
-
-                <!-- Begin Curtain Call Section ------------->
-                <section>
-                    <h2><span>Closure</span></h2>
-                    <details>
-                        <summary>Tap/Click Me!</summary>
-                        <p>
-                            And that's the scoop on bootloaders and kernels! From powering on to keeping the party going, you've just peeked under Computerland's hood.
-                            Ready to dive even deeper? Catch you in the next lesson—stay curious, and just keep swimming 🐬✨
-                        </p>
-                        <br>
-
-                        <img src="../images/constance-schuyler.jpg" alt="A beautiful smiling woman.">
-                        <p class="centered">
-                            (My grandmother Constance “Connie” Schuyler ❤️ 1922 - 1995)
-                        </p>
-                        <br>
-                    </details>
-                </section>
-                <!-- End Curtain Call Section --------------->
             </main>
             <!-- End Main Section ------------------------------------------------>
         </div>
