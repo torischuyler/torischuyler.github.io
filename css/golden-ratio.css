@@ -1,17 +1,12 @@
-/*
-  🌀 Golden-ratio.css - The stylesheet for the Golden Ratio Page
-*/
+/* 🌀 Golden-ratio.css - The stylesheet for the Golden Ratio Page */
 
-/* Gold header color for Golden Ratio Page */
+/* Page Heading */
 .lesson-container.golden-ratio-page h1 {
+   /* --- Style It --- */
   color: goldenrod; 
 }
 
-/* 
-  H2 Subheadings
-  Order of Properties: Size It, Style It (Sz St)
-*/
-
+/* H2 Subheadings */
 .lesson-container.golden-ratio-page h2 {
   /* --- Size It --- */
 
@@ -22,10 +17,7 @@
   color: #FC3;
 }
 
-/* 
-  H3 Subheadings
-  Order of Properties: Size It, Space It, Style It (Sz Sp St)
-*/
+/* H3 Subheadings */
 .lesson-container.golden-ratio-page h3 {
   /* --- Size It --- */
 
@@ -40,10 +32,7 @@
   text-decoration: underline;
 }
 
-/* 
-  H4 Subheadings
-  Order of Properties: Size It, Style It (Sz St)
-*/
+/* H4 Subheadings */
 .lesson-container.golden-ratio-page h4 {
   /* --- Size It --- */
 
@@ -55,40 +44,4 @@
 
   /* --- Style It --- */
   color: gold;
-}
-
-/* 
-  Tidbits on Golden Ratio Page
-  Order of Properties: Size It, Space It (Sp)
-*/
-.tidbit {
-  /* --- Size It --- */
-  font-size: 1.125rem;
-
-  /* --- Space It --- */
-
-  /* Indents toggle from the left; 2.5rem = 40px (assuming 1rem = 16px) */
-  margin-left: 2.5rem;
-}
-
-/*
-  🌻 Sunflower Image
-  Order of Properties: Size It (Sz)
-*/
-.sunflower-image {
-  /* --- Size It --- */
-  width: 500px;
-
-  /* Allows an element's height to auto adjust based on its content. */
-  height: auto;
-}
-
-/*
-  Golden Ratio Page Mobile Styles
-*/
-@media (width <= 768px) {
-  .tidbit {
-    /* --- Space It --- */
-    margin-right: 1.75rem;
-  }
 }
