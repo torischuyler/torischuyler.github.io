@@ -64,6 +64,57 @@ nav a,
   display: block;
 }
 
+/* Mobile emoji pop-up - Animated emoji flash on dropdown selection. */
+#mobile-emoji-pop {
+  /* --- Size It --- */
+
+  /* 12.9375rem = 207px (16px root × 12.9375) */
+  font-size: 12.9375rem;
+
+  /* --- Space It --- */
+  display: none;
+
+  /* Puts the emoji pop-up on top of other page content (e.g. move to front) */
+  z-index: 20;
+
+  /* Centers the emoji pop-up on the screen for a quick flash */
+  position: fixed;
+
+  /* Positions the emoji halfway across the screen from the left */
+  left: 50%;
+
+  /* Positions the emoji halfway across the screen from the top */
+  top: 50%;
+
+  /* --- Chaos It --- */
+
+  /* Prevents pop-up emoji from being tapped/interacted with */
+  pointer-events: none;
+
+  /*
+    Moves emoji to the center of the screen.
+    It's a trick that says, “Shift me left by half my own width and up by half my own height.”
+  */
+  transform: translate(-50%, -50%);
+}
+
+/* Hide page elements except quiz result when quiz-result-only is active */
+body.quiz-result-only .who-are-you-container h1,
+body.quiz-result-only .who-are-you-container h2,
+body.quiz-result-only .who-are-you-container ul,
+body.quiz-result-only .who-are-you-container p,
+body.quiz-result-only .quiz-wrapper .question,
+body.quiz-result-only #mobile-emoji-pop {
+  display: none;
+}
+
+/* Ensure quiz result is centered and visible */
+body.quiz-result-only .quiz-wrapper .quiz-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Quiz question text */
 .who-are-you-container .quiz-wrapper .question p {
   /* --- Size It --- */
@@ -165,40 +216,6 @@ body.cursor-renegade {
   /* --- Space It --- */
   display: block;
   margin: 0 auto;
-}
-
-/* Mobile emoji pop-up - Animated emoji flash on dropdown selection. */
-#mobile-emoji-pop {
-  /* --- Size It --- */
-
-  /* 12.9375rem = 207px (16px root × 12.9375) */
-  font-size: 12.9375rem;
-
-  /* --- Space It --- */
-  display: none;
-
-  /* Puts the emoji pop-up on top of other page content (e.g. move to front) */
-  z-index: 20;
-
-  /* Centers the emoji pop-up on the screen for a quick flash */
-  position: fixed;
-
-  /* Positions the emoji halfway across the screen from the left */
-  left: 50%;
-
-  /* Positions the emoji halfway across the screen from the top */
-  top: 50%;
-
-  /* --- Chaos It --- */
-
-  /* Prevents pop-up emoji from being tapped/interacted with */
-  pointer-events: none;
-
-  /*
-    Moves emoji to the center of the screen.
-    It's a trick that says, “Shift me left by half my own width and up by half my own height.”
-  */
-  transform: translate(-50%, -50%);
 }
 
 /* Makes the emoji pop-up bounce in with size and fade */

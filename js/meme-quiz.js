@@ -80,6 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    // Add class to body to hide other elements
+    document.body.classList.add('quiz-result-only');
+
     // Remove existing result
     const existingResult = document.querySelector('.quiz-result');
     if (existingResult) existingResult.remove();
