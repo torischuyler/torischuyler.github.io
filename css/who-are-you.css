@@ -1,349 +1,143 @@
-/*
-  👋 Who-are-you.css - The stylesheet for the "Who Are You?" page which tells the fortune of visitors
-  (aka predicts their location, local time, time zone, and browser) and hosts the Meme Language Quiz.
-*/
-
-/* 
-  Make nav links inherit the body’s emoji cursor
-  Order of Properties: Style It (St)
- */
- nav a {
-  /* --- Style It --- */
-
-  /* Matches body’s cursor (e.g., 🧙‍♂️) */
-  cursor: inherit;
-}
-
-/* 
-  Page Cursor
-  Order of Properties: Style It (St)
- */
-body {
-  /* --- Style It --- */
-
-  /* Pointer cursor, no frillies (aka no I-beam/insertion point symbol when hovering over nav links)  */
-  cursor: pointer;
-}
-
-/* 
-  Yin-yang toggle button inherits body’s emoji cursor
-  Order of Properties: Style It (St)
-*/
-#yin-yang-toggle {
-  /* --- Style It --- */
-  cursor: inherit;
-}
+/* 📄 Who-are-you.css - Stylesheet for the "Who Are You?" page. */
 
 /*
-  The .who-are-you holds the content for the TIL page.
-  It controls the width and spacing of the content area.
-  Order of Properties: Size It, Space It, Style It (Sz Sp St)
+  📱 Container for "Who Are You?" content
+  Mobile-first with centered content and scalable spacing.
 */
 .who-are-you-container {
   /* --- Size It --- */
 
-  /* 
-    max-width: 80vw sets the maximum width to 80% of the viewport width.
-    This limits how wide the container can grow.
-  */
-  max-width: 80vw;
+  /* Full viewport width for mobile responsiveness */
+  max-width: 100vw;
 
   /* --- Space It --- */
 
-  /*
-    Space outside container ⬆️⬇️⬅️➡️
-  */
+  /* Centers container horizontally */
   margin: 0 auto;
 
-  /*
-    Space inside container ⬆️⬇️➡️⬅️
-  */
+  /* Scalable inner spacing (32px ÷ 16px = 2rem) */
   padding: 2rem;
-
-  /* --- Style It --- */
-  text-align: center;
 }
 
-/*
-  Page Heading
-  Order of Properties: Style It (St)
-*/
+/* Global cursor styling - Applies emoji cursor to body and inherits it for nav and toggle. */
+body {
+  /* --- Chaos It --- */
+  cursor: pointer;
+}
+
+nav a,
+#angel-devil-toggle {
+  /* --- Chaos It --- */
+  cursor: inherit;
+}
+
+/* Page heading */
 .who-are-you-container h1 {
   /* --- Style It --- */
-
-  /*
-    Sets the color property with a CSS variable (--header-text-color, from global.css).
-      - Grogu green in dark mode, switches to ruby red in light mode.
-  */
   color: var(--header-color);
 }
 
-/* 
-  Page Subheading
-  Order of Properties: Style It (St)
-*/
+/* Page subheading */
 .who-are-you-container h2 {
   /* --- Style It --- */
-
-  /*
-    Sets the color property with a CSS variable (--subheader-text-color, from global.css).
-      - Peach in dark mode, switches to poppy red in light mode.
-  */
   color: var(--subheader-text-color);
+  text-decoration: underline;
 }
 
-/*
-  Unordered list
-  Order of Properties: Style It (St)
-*/
+/* Unordered list */
 .who-are-you-container ul {
   /* --- Style It --- */
-
-  /* Removes the default bullet */
   list-style-type: none;
 }
 
-/* Meme Quiz Wrapper */
+/*
+  🎮 Meme quiz wrapper
+  Controls question visibility and styling.
+*/
 .who-are-you-container .quiz-wrapper .question {
-  /* Hide all questions by default */
-  display: none; 
+  /* --- Space It --- */
+  display: none;
 }
 
 .who-are-you-container .quiz-wrapper .question.active {
-  /* Show only the active one */
+  /* --- Space It --- */
   display: block;
 }
 
-/* 
-  Meme Quiz Questions
-  Order of Properties: Size It, Space It, Style It (Sz Sp St)
-*/
+/* Quiz question text */
 .who-are-you-container .quiz-wrapper .question p {
   /* --- Size It --- */
+
+  /* 1.25rem = 20px (16px root × 1.25) */
   font-size: 1.25rem;
 
-  /* --- Space It --- */
-
-  /* Adds some space below the question before the responses */
-  margin-bottom: 1rem;
-
   /* --- Style It --- */
-  font-family: Righteous, system-ui, sans-serif;
   color: var(--header-color);
 }
 
-/* 
-  Meme Quiz Dropdown
-  Order of Properties: Size It, Space It, Style It (Sz Sp St)
-*/
+/* Quiz dropdown */
 .who-are-you-container .quiz-wrapper .question select {
-  display: block;
-
   /* --- Size It --- */
-  font-size: 15px;
+  width: 90%;
+
+  /* 0.875rem = 14px (16px root × 0.875) */
+  font-size: 0.875rem;
+
+  /* --- Space It --- */
+  display: block;
+  margin: 1rem auto;
+  padding: 1rem;
 
   /* Prevents horizontal overflow shift from long response options */
   overflow-x: hidden;
 
-  /* --- Space It --- */
-  margin: 1rem auto;
-  padding: 1rem;
-
-  /*
-    - This sets the element’s width to 90% of its containing element’s width (in this case, the parent of the select element).
-    - It’s a relative measurement, meaning the select will scale proportionally with the size of its container, making it
-    flexible for smaller devices or layouts.
-    
-    🧮 Here's the math:
-    If the container is 1200px wide, the select will be 1080px (90% of 1200px).
-    .90 x 1200 = 1080
-  */
-  width: 90%;
-
-  /*
-    - This sets an upper limit on the element’s width, overriding the width value if it would otherwise exceed 1000px.
-    - It’s an absolute measurement, so it caps the size regardless of the container’s width, preventing the select from growing 
-    too wide on larger screens.
-
-    E.g.
-    If the container is 1200px, the width: 90% would make the select 1080px, but max-width: 1000px kicks in and limits it to 1000px.
-
-  */
-  max-width: 1000px;
-
   /* --- Style It --- */
   font-family: "Space Grotesk", sans-serif;
-  background-color: white;
   border: 2px solid #8B00FF;
   border-radius: 5px;
-  cursor: inherit;
-
-  /* Adds "…" if response is too long and gets cut off (truncated) */
   text-overflow: ellipsis;
+
+  /* --- Chaos It --- */
+  cursor: inherit;
 }
 
-/*
-  Meme Quiz Supersized Desktop Cursor Emojis
-    Custom cursors via data URI SVGs (embedded images, no external files needed!).
-    URI = Uniform Resource Identifier
-    SVG = Scalable Vector Graphics
-    SVG canvas: 64x64px, emoji at x="0" y="48", sized font-size="48".
-    charset=utf-8: Supports emojis like 🧙‍♂️ without breaking.
-    xmlns="http://www.w3.org/2000/svg": Namespace URI (not a URL!) telling the browser "this is SVG, render it right".
-    W3C: Web standards crew. 2000: SVG 1.0 spec. svg: Vector graphics rules.
-    Fallback default: Arrow cursor if the SVG fails (browser quirks, bad syntax, etc.).
-
-    🧮 Here's the hotspot math:
-    32 32 places the hotspot at the center of the 64x64 image (since 64 ÷ 2 = 32).
-    This means clicks register from the middle of the emoji, which is intuitive for users.
-    Without this, the hotspot would default to the top-left corner (0 0), which might feel off for a large cursor.
-*/
-
- body.cursor-mystical {
-  /* Sets a custom cursor with an SVG emoji (🧙‍♂️) */
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🧙‍♂️</text></svg>')
-  32 32, default;
+/* Custom cursor emojis - SVG-based cursors for quiz personality types. */
+body.cursor-mystical {
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🧙‍♂️</text></svg>') 32 32, default;
 }
 
 body.cursor-cute {
-  /* Sets a custom cursor with an SVG emoji (🐾) */
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🐾</text></svg>')
-  32 32, default;
-}
-
-body.cursor-chaos {
-  /* Sets a custom cursor with an SVG emoji (💥) */
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">💥</text></svg>') 
-  32 32, default;
-}
-
-body.cursor-positive {
-  /* Sets a custom cursor with an SVG emoji (🌟) */
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🌟</text></svg>')
-  32 32, default;
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🐾</text></svg>') 32 32, default;
 }
 
 body.cursor-savage {
-  /* Sets a custom cursor with an SVG emoji (💀) */
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">💀</text></svg>')
-  32 32, default;
-}
-
-body.cursor-history {
-  /* Sets a custom cursor with an SVG emoji (📜) */
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">📜</text></svg>')
-  32 32, default;
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">💀</text></svg>') 32 32, default;
 }
 
 body.cursor-tech {
-  /* Sets a custom cursor with an SVG emoji (🤖) */
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🤖</text></svg>')
-  32 32, default;
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🤖</text></svg>') 32 32, default;
 }
 
 body.cursor-renegade {
-  /* Sets a custom cursor with an SVG emoji (🪩) */
-  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🪩</text></svg>')
-  32 32, default;
+  cursor: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><text x="0" y="48" font-size="48">🪩</text></svg>') 32 32, default;
 }
 
-/* 
-  Meme Quiz Next Button
-  Order of Properties: Size It, Space It, Style It (Sz Sp St)
-*/
-.who-are-you-container .quiz-wrapper .next-btn {
-  display: block;
-
-  /* --- Size It --- */
-  font-size: 1.125rem;
-
-  /* --- Space It --- */
-  margin: 1.25rem auto 0;
-  padding: 0.625rem 1.25rem;
-
-  /* --- Style It --- */
-  font-family: Righteous, system-ui, sans-serif;
-  color: white;
-  background-color: #8B00FF;
-  border: none;
-  border-radius: 5px;
-  cursor: inherit;
-}
-
-.who-are-you-container .quiz-wrapper .next-btn:hover {
-  /* --- Style It --- */
-  background-color: var(--secondary-color);
-}
-
-/* 
-  Meme Quiz Back Button
-  Order of Properties: Size It, Space It, Style It (Sz Sp St)
-*/
-.who-are-you-container .quiz-wrapper .back-btn {
-  display: block;
-
-  /* --- Size It --- */
-  font-size: 1.125rem;
-
-  /* --- Space It --- */
-  margin: 1.25rem auto 0;
-  padding: 0.625rem 1.25rem;
-
-  /* --- Style It --- */
-  font-family: Righteous, system-ui, sans-serif;
-  color: white;
-  background-color: #8B00FF;
-  border: none;
-  border-radius: 5px;
-  cursor: inherit;
-}
-
-.who-are-you-container .quiz-wrapper .back-btn:hover {
-  /* --- Style It --- */
-  background-color: var(--secondary-color);
-}
-
-/* 
-  Meme Quiz Submit Button
-  Order of Properties: Size It, Space It, Style It (Sz Sp St)
-*/
-.who-are-you-container .quiz-wrapper .submit-btn {
-  display: block;
-
-  /* --- Size It --- */
-  font-size: 1.125rem;
-
-  /* --- Space It --- */
-  margin: 1.25rem auto 0;
-  padding: 0.625rem 1.25rem;
-
-  /* --- Style It --- */
-  font-family: Righteous, system-ui, sans-serif;
-  color: white;
-  background-color: #8B00FF;
-  border: none;
-  border-radius: 5px;
-  cursor: inherit;
-}
-
-.who-are-you-container .quiz-wrapper .submit-btn:hover {
-  /* --- Style It --- */
-  background-color: var(--secondary-color);
-}
-
-/* 
-  Share Meme Quiz Button and Download Scores Button
-  Order of Properties: Size It, Space It, Style It (Sz Sp St)
-*/
+/* Quiz buttons - Shared styles for next, back, submit, share, and download buttons. */
+.who-are-you-container .quiz-wrapper .next-btn,
+.who-are-you-container .quiz-wrapper .back-btn,
+.who-are-you-container .quiz-wrapper .submit-btn,
 .who-are-you-container .quiz-wrapper .quiz-result .share-quiz-btn,
 .who-are-you-container .quiz-wrapper .quiz-result .download-scores-btn {
-  display: block;
-
   /* --- Size It --- */
+
+  /* 1.125rem = 18px (16px root × 1.125) */
   font-size: 1.125rem;
 
   /* --- Space It --- */
-  margin: 1.25rem auto 0;
+  display: block;
+  margin: 1rem auto 0;
+
+  /* 0.625rem = 10px, 1.25rem = 20px (16px root) */
   padding: 0.625rem 1.25rem;
 
   /* --- Style It --- */
@@ -352,29 +146,32 @@ body.cursor-renegade {
   background-color: #8B00FF;
   border: none;
   border-radius: 5px;
+
+  /* --- Chaos It --- */
   cursor: inherit;
 }
 
+.who-are-you-container .quiz-wrapper .next-btn:hover,
+.who-are-you-container .quiz-wrapper .back-btn:hover,
+.who-are-you-container .quiz-wrapper .submit-btn:hover,
 .who-are-you-container .quiz-wrapper .quiz-result .share-quiz-btn:hover,
 .who-are-you-container .quiz-wrapper .quiz-result .download-scores-btn:hover {
   /* --- Style It --- */
   background-color: var(--secondary-color);
 }
 
-/* Mobile Styles */
-
-/* 
-  Styles the emoji pop-up triggered by dropdown selections on mobile
-  Order of Properties: Size It, Space It, Style It (Sz Sp St)
-*/
+/* Mobile emoji pop-up - Animated emoji flash on dropdown selection. */
 #mobile-emoji-pop {
-  /* Hides the emoji pop-up by default until activated */
+  /* --- Size It --- */
+
+  /* 12.9375rem = 207px (16px root × 12.9375) */
+  font-size: 12.9375rem;
+
+  /* --- Space It --- */
   display: none;
 
-  /* --- Size It --- */
-  font-size: 207px;
-
-  /* --- Space It (Sp) --- */
+  /* Puts the emoji pop-up on top of other page content (e.g. move to front) */
+  z-index: 20;
 
   /* Centers the emoji pop-up on the screen for a quick flash */
   position: fixed;
@@ -385,19 +182,16 @@ body.cursor-renegade {
   /* Positions the emoji halfway across the screen from the top */
   top: 50%;
 
+  /* --- Chaos It --- */
+
+  /* Prevents pop-up emoji from being tapped/interacted with */
+  pointer-events: none;
+
   /*
     Moves emoji to the center of the screen.
     It's a trick that says, “Shift me left by half my own width and up by half my own height.”
   */
   transform: translate(-50%, -50%);
-
-  /* --- Style It (St) --- */
-
-  /* Prevents pop-up emoji from being tapped/interacted with */
-  pointer-events: none;
-
-  /* Puts the emoji pop-up on top of other page content (e.g. move to front) */
-  z-index: 20;
 }
 
 /* Makes the emoji pop-up bounce in with size and fade */
@@ -424,49 +218,23 @@ body.cursor-renegade {
 /* Triggers the emoji pop-up animation on mobile screens */
 @media (width <= 768px) {
   #mobile-emoji-pop.active {
+    /* --- Space It --- */
     display: block;
+
+    /* --- Chaos It --- */
     animation: pop-up 1s ease-out forwards;
   }
-
-  /*
-    Adjust container padding
-    Order of Properties: Space It (Sp)
-  */
-  .who-are-you-container {
-    /* --- Space It --- */
-  
-    /*
-      Space inside container ⬆️⬇️➡️⬅️
-      - 2rem for top/bottom to maintain vertical breathing room
-      - Reduced to .1rem for left/right to minimize side padding on mobile
-    */
-    padding: 2rem .1rem;
-  }
+}
 
 /*
-    Style list items on mobile
-    Order of Properties: Space It, Style It (Sp St)
-  */
-  .who-are-you-container ul li,
-  .who-are-you-container p {
-    /* --- Space It --- */
+  💻 Tablet/Desktop Styles
+  Applies above 768px (tablet portrait width, e.g., iPad).
+*/
+@media (width >= 769px) {
+  .who-are-you-container {
+    /* --- Size It --- */
 
-    /*
-      Space inside list items ⬆️⬇️➡️⬅️
-      - 0.5rem for top/bottom to add vertical breathing room
-      - 0 for left/right to avoid adding horizontal padding
-    */
-    padding: 0.5rem 0;
-
-    /*
-      Space between list items
-      - 0.5rem at the bottom to separate items vertically
-    */
-    margin-bottom: 0.5rem;
-
-    /* --- Style It --- */
-
-    /* Center-align text for better presentation on mobile */
-    text-align: center;
+    /* Limits width for readability on larger screens */
+    max-width: 80vw;
   }
 }
