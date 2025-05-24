@@ -189,8 +189,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (backButton) {
       backButton.addEventListener('click', () => {
-        questions[index + 1].classList.remove('active');
-        questions[index].classList.add('active');
+        if (index > 0) {
+          questions[index].classList.remove('active');
+          questions[index - 1].classList.add('active');
+        }
       });
     }
   });
