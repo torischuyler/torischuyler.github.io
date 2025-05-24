@@ -160,6 +160,13 @@ body.cursor-renegade {
   background-color: var(--secondary-color);
 }
 
+/* Meme quiz result - center on page */
+.who-are-you-container .quiz-wrapper .quiz-result img {
+  /* --- Space It --- */
+  display: block;
+  margin: 0 auto;
+}
+
 /* Mobile emoji pop-up - Animated emoji flash on dropdown selection. */
 #mobile-emoji-pop {
   /* --- Size It --- */
