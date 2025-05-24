@@ -43,6 +43,7 @@ Properties that define the **visual appearance** or **aesthetics** without affec
 - `clip-path` (e.g., `polygon(0% 100%, 78.6% 100%, 0% 0%)` for a triangular shape)
 - `content` (e.g. '')
 - `list-style-type` (e.g., disc, decimal, square)
+- `text-overflow` (e.g., ellipsis, clip)
 
 ## Chaos
 
