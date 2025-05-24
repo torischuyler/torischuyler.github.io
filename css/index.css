@@ -31,8 +31,8 @@
 }
 
 /*
-  📲 Tablet/Desktop Styles
-  Applies above 768px (common tablet portrait width, e.g., iPad).
+  💻 Tablet/Desktop Styles
+  Applies above 768px (tablet portrait width, e.g., iPad).
 */
 @media (width >= 769px) {
   .home-container {
