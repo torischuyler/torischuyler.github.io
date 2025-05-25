@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!-- This is the DOCTYPE declaration. It’s like a signal to browsers that says, “Hey, this is an HTML web page!”
-
-This is the "Who Am I?" page, designed to introduce Tori Schuyler,
-the creator of the eOS Experiments website. -->
+<!-- This is the DOCTYPE declaration. It’s like a signal to browsers that says, “Hey, this is an HTML web page!” -->
 
 <html lang="en">
 <!-- Sets the page language to English - helps screen readers, search engines, and spell checkers. -->
@@ -60,6 +57,9 @@ the creator of the eOS Experiments website. -->
 
         <script src="js/toggles/kepler-toggle.js" defer></script>
         <!-- Script for toggling the photo gallery Kepler triangles ------>
+
+        <script src="js/ascii.js" defer></script>
+        <!-- Script for loading life branch ASCII art ------>
     </head>
     <!-- End Head Section --------------------------------------------------->
 
@@ -93,8 +93,8 @@ the creator of the eOS Experiments website. -->
         </nav>
         <!-- End Navigation Section  --------------------------------------------------------->
 
-        <!-- Wrap all "Who Am I?" content in .who-am-i-container ----------------------->
-        <div class="who-am-i-container" aria-label="About Tori">
+        <!-- Begin .who-am-i-container ----------------------->
+        <div class="who-am-i-container">
 
             <!-- Begin Main Section -------------------------------------------------------->
             <main>
@@ -111,114 +111,66 @@ the creator of the eOS Experiments website. -->
                 </noscript>
 
                 <h1>Who Am I?</h1>
-                <!-- Main heading (<h1>) of the page, sets the theme or topic. -->
 
                 <p>
-                    I'm Tori Schuyler, a software developer who thinks:
+                   Tori Schuyler, experienced in QA + web development. I believe:
                 </p>
-                <!-- A <p> tag creates a paragraph, grouping text into a readable block. -->
 
                 <ul>
-                <!-- An unordered list (<ul>) displays items as bullet points, showing related ideas without a specific order. -->
-
                     <li>Learning should be playful</li>
-                    <!-- List item, aka a bullet point. -->
-
                     <li>Mistakes are just experiments in disguise</li>
-                    <!-- Another list item, aka another bullet point. -->
-
                     <li>Tech is for everyone</li>
-                    <!-- Another list item, aka another bullet point. -->
                 </ul>
 
-<!-- Begin Life Branch ------------------------->
-<h2>March 2025 Snapshot of My Branch 🌳</h2>
+                <!-- Begin Life Branch ------------------------->
+                <h2>2025 Snapshot of My Branch 🌳</h2>
 
-<!-- Desktop version - <pre> content is aligned left to avoid extra whitespace; <pre> preserves all spaces, which would shift the ASCII tree if indented. -->
-<pre class="life-branch life-branch-desktop">
-Maine
-└── Scarborough (Hometown)
-└── Portland (Cheverus High School)
-└── Orono (University of Maine)
-│   └── Chi Omega Sorority (Xi Beta Chapter)
-├── Mississippi
-│   └── Cleveland (Teach For America, Summer Institute)
-├── South Carolina
-│   └── North Charleston (Lambs Elementary School)
-├── New Jersey
-│   └── Princeton (Public Consulting Group, NJ SMART)
-└── New York
-    └── NYC (StreetEasy)
-        ├── Kips Bay
-        ├── Williamsburg
-        └── Greenwich Village
-</pre>
+                <!-- Desktop version -->
+                <pre class="life-branch life-branch-desktop" id="life-branch-desktop"></pre>
 
-<!-- Mobile version with shorter phrases -->
-<pre class="life-branch life-branch-mobile">
-Maine
-└── Scarborough (Hometown)
-└── Portland (Cheverus HS)
-└── Orono (Univ. of Maine)
-│   └── Chi Omega (Xi Beta)
-├── Mississippi
-│   └── Cleveland (TFA, Summer)
-├── South Carolina
-│   └── North Charleston (Lambs)
-├── New Jersey
-│   └── Princeton (PCG, NJ SMART)
-└── New York
-    └── NYC (StreetEasy)
-        ├── Kips Bay
-        ├── Williamsburg
-        └── Greenwich Village
-</pre>
-<!-- End Life Branch ------------------------->
+                <!-- Mobile version -->
+                <pre class="life-branch life-branch-mobile" id="life-branch-mobile"></pre>
+                <!-- End Life Branch ------------------------->
 
-<!-- Begin Image Gallery ------------------------->
-<div class="gallery">
-    <!-- Container for the image gallery, groups images and toggle controls. -->
+                <!-- Begin Image Gallery ------------------------->
+                <div class="gallery">
+                    <!-- Container for the image gallery, groups images and toggle controls. -->
 
-    <input type="radio" name="gallery" id="tori-headshot" checked aria-label="Select Tori photo">
-    <!-- Radio button for the first photo, checked by default, with aria-label for accessibility. -->
+                    <input type="radio" name="gallery" id="tori-headshot" checked>
+                    <!-- Radio button for the first photo, checked by default. -->
 
-    <input type="radio" name="gallery" id="tori-marathon" aria-label="Select Tori marathon">
-    <!-- Radio button for the second image (marathon version), with aria-label for accessibility. -->
+                    <input type="radio" name="gallery" id="tori-marathon">
+                    <!-- Radio button for the second image (marathon version). -->
 
-    <div class="gallery-images">
-    <!-- Container for gallery images, hidden/shown based on radio button selection. -->
+                    <div class="gallery-images">
+                    <!-- Container for gallery images, hidden/shown based on radio button selection. -->
 
-        <label for="tori-headshot"><img src="images/tori/headshot.jpg" alt="Tori Schuyler smiling."></label>
-        <!-- Label and image for the first photo, tied to the tori-headshot radio button. -->
-        
-        <label for="tori-marathon"><img src="images/tori/nyc-marathon.png" alt="A woman with a blonde ponytail,
-            wearing a white cap and a blue NYC Marathon poncho, stands on the roof of 344 Third Ave, Manhattan Promenade,
-            looking out at the New York City skyline at night. The Empire State Building is brightly lit in the center, 
-            with the Chrysler Building visible in the background among other skyscrapers.">
-        </label>
-        <!-- Label and image for the second image, tied to the tori-marathon radio button. -->
-    </div>
+                        <label for="tori-headshot"><img src="images/tori/headshot.jpg"></label>
+                        <!-- Label and image for the first photo, tied to the tori-headshot radio button. -->
+                        
+                        <label for="tori-marathon"><img src="images/tori/nyc-marathon.png"></label>
+                        <!-- Label and image for the second image, tied to the tori-marathon radio button. -->
+                    </div>
 
-    <div class="gallery-controls">
-        <!-- Container for toggle controls to switch between images. -->
-    
-        <span class="kepler-container">
-            <label for="tori-headshot" class="kepler" aria-label="Show Tori photo" tabindex="0"></label>
-        </span>
-        <!-- Toggle Kepler triangle for the first photo, linked to the tori-headshot radio button. -->
-    
-        <span class="kepler-container">
-            <label for="tori-marathon" class="kepler" aria-label="Show Tori marathon" tabindex="0"></label>
-        </span>
-        <!-- Toggle Kepler triangle for the second image, linked to the tori-marathon radio button. -->
-    </div>
-</div>
-<!-- End Image Gallery -------------------------->
-
+                    <div class="gallery-controls">
+                        <!-- Container for toggle controls to switch between images. -->
+                    
+                        <span class="kepler-container">
+                            <label for="tori-headshot" class="kepler" tabindex="0"></label>
+                        </span>
+                        <!-- Toggle Kepler triangle for the first photo, linked to the tori-headshot radio button. -->
+                    
+                        <span class="kepler-container">
+                            <label for="tori-marathon" class="kepler" tabindex="0"></label>
+                        </span>
+                        <!-- Toggle Kepler triangle for the second image, linked to the tori-marathon radio button. -->
+                    </div>
+                </div>
+                <!-- End Image Gallery -------------------------->
             </main>
             <!-- End Main Section ---------------------------------------------------------->
         </div>
-        <!-- End of .who-am-i-container ------------------------------------------------->
+        <!-- End .who-am-i-container ------------------------------------------------->
 
         <!-- Begin Footer Section ------------------------------------------------------>
         <footer>
