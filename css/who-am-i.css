@@ -61,15 +61,12 @@
   animation: typewriter 2s steps(10) forwards;
 }
 
-/* Blinking cursor */
+/* Hide the cursor on mobile */
 .who-am-i-container h1::after {
   /* --- Style It --- */
-  content: "|";
 
-  /* --- Chaos It --- */
-
-  /* Blinks every 1s for 7 cycles, then stops */
-  animation: blink 1s 7 forwards;
+  /* Removes the "|" */
+  content: "";
 }
 
 /* Paragraph text */
@@ -350,5 +347,16 @@
 
   .life-branch-mobile {
     display: none;
+  }
+
+  /* Blinking cursor */
+  .who-am-i-container h1::after {
+    /* --- Style It --- */
+    content: "|";
+
+    /* --- Chaos It --- */
+
+    /* Blinks every 1s for 7 cycles, then stops */
+    animation: blink 1s 7 forwards;
   }
 }
