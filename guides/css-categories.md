@@ -10,6 +10,7 @@ Properties that control the **dimensions** or **scale** of elements or their con
 - `width`, `height` (e.g., `100px`, `50%`)
 - `min-width`, `max-width`, `min-height`, `max-height`
 - `line-height` (e.g., `1.6`, `24px`)
+- `box-sizing` (e.g., `border-box`)
 
 ## Space
 
@@ -41,9 +42,10 @@ Properties that define the **visual appearance** or **aesthetics** without affec
 - `box-shadow` (e.g., `0 2px 4px rgb(0 0 0 / 10%);`)
 - `white-space` (e.g. `pre`, `no-wrap`)
 - `clip-path` (e.g., `polygon(0% 100%, 78.6% 100%, 0% 0%)` for a triangular shape)
-- `content` (e.g. '')
-- `list-style-type` (e.g., disc, decimal, square)
-- `text-overflow` (e.g., ellipsis, clip)
+- `content` (e.g. `''`)
+- `list-style-type` (e.g., `disc, decimal, square`)
+- `text-overflow` (e.g., `ellipsis, clip`)
+- `text-shadow` (e.g., `0 0 6px #FC3`)
 
 ## Chaos
 
