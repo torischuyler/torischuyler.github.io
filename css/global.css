@@ -581,39 +581,6 @@ nav a:hover {
     transform: scale(1.2);
 }
 
-/*
-  Torii Gate/Gemini Toggle ⛩️♊️
-  Order of Properties: Size It, Space It, Style It (Sz Sp St)
-*/
-#torii-gemini-toggle {
-  /* --- Size It --- */
-  font-size: 2em;
-
-  /* --- Space It --- */
-  padding: 0.5rem 1.5rem;
-
-  /* --- Style It --- */
-
-  /* Wipes out any background, so the toggle emoji blends in with the nav bar. */
-  background: none;
-
-  /* Removes the border; uncomment to see the toggle’s padding and margin during design. */
-  border: none;
-
-  /* Turns the cursor into a hand to show it’s clickable; try ‘grab’ or ‘crosshair’ for a twist! */
-  cursor: pointer;
-
-  /* 
-    Sets the speed (0.3 seconds) and transition style (ease, which is a smooth transition)
-    for how the toggle emoji grows when hovering over it.
-  */
-  transition: transform 0.3s ease;
-}
-
-#torii-gemini-toggle:hover {
-  transform: scale(1.2);
-}
-
 /* 
   Yin Yang Toggle ☯️
   Order of Properties: Size It, Space It, Style It (Sz Sp St)
@@ -818,11 +785,6 @@ footer {
   }
 
   #yin-yang-toggle {
-    /* --- Size It --- */
-    font-size: 3rem;
-  }
-
-  #torii-gemini-toggle {
     /* --- Size It --- */
     font-size: 3rem;
   }

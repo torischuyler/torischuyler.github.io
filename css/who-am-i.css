@@ -293,6 +293,35 @@
   background: goldenrod;
 }
 
+/* Torii Gate/Gemini Toggle ⛩️♊️ */
+#torii-gemini-toggle {
+  /* --- Size It --- */
+
+  /* 3em = 3 × 48px = 144px */
+  font-size: 3em;
+
+  /* --- Space It --- */
+  padding: 0.5rem 1.5rem;
+
+  /* --- Style It --- */
+
+  /* Wipes out any background, so the toggle emoji blends in with the nav bar */
+  background: none;
+
+  /* Removes the border; uncomment to see the toggle’s padding and margin during design */
+  border: none;
+
+  /* --- Chaos It --- */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Grows the emoji to 1.2x size scaled evenly from the center */
+#torii-gemini-toggle:hover {
+  /* --- Chaos It --- */
+  transform: scale(1.2);
+}
+
 /* Keyframes for typewriter effect */
 @keyframes typewriter {
   /* Starts with no width, text "hidden" */
@@ -358,5 +387,12 @@
 
     /* Blinks every 1s for 7 cycles, then stops */
     animation: blink 1s 7 forwards;
+  }
+
+    #torii-gemini-toggle {
+    /* --- Size It --- */
+
+    /* 2em = 2 × 32px = 64px */
+    font-size: 2em;
   }
 }
