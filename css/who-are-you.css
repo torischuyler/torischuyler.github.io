@@ -218,6 +218,36 @@ body.cursor-renegade {
   margin: 0 auto;
 }
 
+/* Angel/Devil Toggle 😇😈 */
+#angel-devil-toggle {
+  /* --- Size It --- */
+
+  /* 3em = 3 × 48px = 144px */
+  font-size: 3em;
+
+  /* --- Space It --- */
+  padding: 0.5rem 1.5rem;
+
+  /* --- Style It --- */
+
+  /* Wipes out any background, so the toggle emoji blends in with the nav bar */
+  background: none;
+
+  /* Removes the border; uncomment to see the toggle’s padding and margin during design */
+  border: none;
+
+  /* --- Chaos It --- */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Grows the emoji to 1.2x size scaled evenly from the center */
+#angel-devil-toggle:hover {
+  /* --- Chaos It --- */
+  transform: scale(1.2);
+}
+
+
 /* Makes the emoji pop-up bounce in with size and fade */
 @keyframes pop-up {
   /* Starts the emoji tiny and invisible */
@@ -260,5 +290,12 @@ body.cursor-renegade {
 
     /* Limits width for readability on larger screens */
     max-width: 80vw;
+  }
+
+  #angel-devil-toggle {
+    /* --- Size It --- */
+
+    /* 2em = 2 × 32px = 64px */
+    font-size: 2em;
   }
 }
