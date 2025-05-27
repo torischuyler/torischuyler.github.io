@@ -22,12 +22,6 @@
   padding: 2rem;
 }
 
-/* Page Heading */
-.home-container h1 {
-  /* --- Style It --- */
-  color: var(--header-color);
-}
-
 /* Sunrise/Gotham Toggle 🌅🌃 */
 #sunrise-gotham-toggle {
   /* --- Size It --- */

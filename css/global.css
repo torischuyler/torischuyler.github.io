@@ -117,26 +117,12 @@ body {
   background-color: var(--background-color);
 }
 
-/* 
-  Main Page Heading
-  Order of Properties: Size it, Space it, Style it (Sz Sp St)
- */
+/* Main Page Heading */
  h1 {
   /* --- Size It --- */
 
-  /* 
-    Sets heading to 2.5rem (40px at default 16px root font size).
-    Typical h1 range is 2rem–3.5rem (32px–56px), balancing prominence and readability.
-  */
-
-  /*
-    Sets heading font size to 3.5rem.
-    🧮 Here's the math:
-      - 3.5rem × 16px = 56px (at a 16px default root).
-
-    Standard h1 range is 2rem-4rem (32px–64px).
-  */
-  font-size: 3.5rem;
+  /* 2.5rem = 40px (16px root × 2.5) */
+  font-size: 2.5rem;
 
   /* --- Space It --- */
 
@@ -147,15 +133,8 @@ body {
   margin-bottom: 1.618rem;
 
   /* --- Style It --- */
-
-  /*
-    If Righteous font isn’t ready to roll,
-    fall back to the system-ui default, then sans-serif as the final catch-all.
-  */
   font-family: Righteous, system-ui, sans-serif;
-  color: var(--text-color);
-
-  /* Centers the heading text. */ 
+  color: var(--header-color);
   text-align: center;
 }
 
@@ -405,25 +384,6 @@ footer {
 }
 
 /*
-  Touch Styles - Typography Adjustments
-  Scales down h1 on smaller screens for better readability.
-  Order of Properties: Size It (Sz)
-
-  📲 The 768px width is widely used because it aligns with the typical screen size
-  of tablets in portrait mode, like the iPad (which has a resolution of 768px wide
-  at 1x pixel density). It’s become a convention in responsive design to mark the
-  transition between "mobile" and "tablet" layouts.
-*/
-@media (width <= 768px) {
-  /* --- Size It --- */
-
-  /* Reduces h1 to 2rem (32px) on screens 768px wide or smaller */
-  h1 {
-    font-size: 2rem;
-  }
-}
-
-/*
   🍔 Menu
   Order of Properties: Size It, Space It (Sz Sp)
 */
@@ -497,6 +457,13 @@ body, h1, nav, footer {
   Applies above 768px (tablet portrait width, e.g., iPad).
 */
 @media (width >= 769px) {
+  h1 {
+    /* --- Size It --- */
+
+    /* 3.5rem = 56px (16px root × 3.5) */
+    font-size: 3.5rem;
+  }
+
   #sun-moon-toggle {
     /* --- Size It --- */
 

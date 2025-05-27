@@ -32,7 +32,6 @@
   overflow: hidden;
 
   /* --- Style It --- */
-  color: var(--header-color);
 
   /* 
     Gold glow: 0 0 (no offset), 6px (blur radius), #D4AF37 (muted gold)

@@ -19,12 +19,6 @@
   padding: 2rem;
 }
 
-/* Page Heading */
-.til-container h1 {
-  /* --- Style It --- */
-  color: var(--header-color);
-}
-
 /* Unordered List */
 .til-container ul {
   /* --- Space It --- */

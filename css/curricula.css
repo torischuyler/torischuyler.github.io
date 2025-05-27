@@ -19,12 +19,6 @@
   padding: 2rem;
 }
 
-/* Page Heading */
-.curriculum-container h1 {
-  /* --- Style It --- */
-  color: var(--header-color);
-}
-
 /* Page Subheading */
 .curriculum-container h2 {
   /* --- Style It --- */
