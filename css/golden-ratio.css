@@ -2,7 +2,12 @@
 
 /* Page Heading */
 .lesson-container.golden-ratio-page h1 {
-   /* --- Style It --- */
+  /* --- Size It --- */
+
+  /* 2.5rem = 40px (16px root × 2.5) */
+  font-size: 2.5rem;
+
+  /* --- Style It --- */
   color: goldenrod; 
 }
 
@@ -44,4 +49,17 @@
 
   /* --- Style It --- */
   color: gold;
+}
+
+/*
+  💻 Tablet/Desktop Styles
+  Applies above 768px (tablet portrait width, e.g., iPad).
+*/
+@media (width >= 769px) {
+  .lesson-container.golden-ratio-page h1 {
+    /* --- Size It --- */
+
+    /* 3.5rem = 56px (16px root × 3.5) */
+    font-size: 3.5rem;
+  }
 }
