@@ -157,16 +157,8 @@ h2 {
   color: var(--subheader-color);
 }
 
-/* 4. Components */
-
-/* 
-  Navigation Control Center 🎮 (aka page navigation bar)
-  Order of Properties: Size It, Space It, Style It (Sz Sp St)
-*/
+/* Navigation Bar */
 nav {
-  /* Enables flexbox to control layout of nav items and toggle. */
-  display: flex;
-
   /* --- Size It --- */
 
   /* Spans the full width of the page */
@@ -174,58 +166,33 @@ nav {
 
   /* --- Space It --- */
 
-  /* 
-    Padding affects the space inside the nav bar on the page.
-    Crank it to 5rem, and you’ll see extra space above and below the text.
+  /* Enables flexbox to control layout of nav items and toggle */
+  display: flex;
 
-    Rem? It’s short for “root em.” Basically, it’s tied to the <html> font size
-    (usually 16px by default). So 1rem = 16px, 5rem = 80px. Easy math! 🧮
-    1rem applies to all sides (top, right, bottom, left).
-
-    Why use rem here? It’s responsive—padding scales with browser font size changes,
-    keeping the nav balanced across different screens and settings.
-  */
+  /* Adds spacing inside the nav bar */
   padding: 1rem;
 
   /* Centers the nav items and toggle horizontally within the nav bar */
   justify-content: center;
 
+  /* Centers inline or inline-block content (e.g., link text) within flex items */
+  text-align: center;
+
   /* --- Style It --- */
   color: var(--accent-color);
   background-color: var(--primary-color);
-
-  /* 
-    Centers the nav’s text smack in the middle.
-    Other options? Try ‘left’ to hug the start, or ‘right’ to push it to the end.
-  */  
-  text-align: center;
 }
 
-/*
-  Navigation Links 🔗 (links within the nav bar)
-  Order of Properties: Space it, Style it (Sp St)
-*/
+/* Navigation Bar Links 🔗 */
 nav a {
   /* --- Space It --- */
 
-  /* 
-    Space between nav links ⬅️➡️
-    - margin-left and margin-right set 0.3rem spacing explicitly for left and right,
-      ensuring older browsers keep links nicely spaced side to side.
-    - margin-inline is the modern way, applying 0.3rem to the inline axis (left/right),
-      overriding the above in newer browsers.
-
-    Using all three as a fallback bc some ppl still rock vintage browsers 🤘
-  */
+  /* Adds 0.3rem spacing on left/right for nav links, with margin-inline as modern fallback */
   margin-left: 0.3rem;
   margin-right: 0.3rem;
   margin-inline: 0.3rem;
 
-  /*
-    Space inside links ⬆️⬇️➡️⬅️
-    When a single value is used for padding, it applies
-    uniformly to all sides (top, right, bottom, left).
-   */
+  /* Adds 0.5rem padding on all sides of links */
   padding: 0.5rem;
   
   /* --- Style It --- */
@@ -234,44 +201,78 @@ nav a {
   /* Links are not underlined */
   text-decoration: none;
 
-  /* Rounds link corners, noticeable when hovering links  */
+  /* Rounds link corners, noticeable when hovering links */
   border-radius: 0.3rem;
 
-  /* Smooth hover effect */
+  /* --- Chaos It --- */
+
+  /* Enables smooth background color change on hover */
   transition: background-color 0.3s;
 }
 
 /* Navigation Hover Effect */
 nav a:hover {
+  /* --- Style It --- */
   background-color: var(--secondary-color);
 }
 
-/*
-  🧭 Defines the main navigation list for the site
-  Order of Properties: Space It, Style It (Sp St)
-*/
-.nav-menu {
-  /* Arranges nav items in a horizontal row for desktop. */
-  display: flex;
+/* 🍔 Menu */
+.hamburger {
+  /* --- Size It --- */
+
+  /* 3rem = 48px (16px root × 3) */
+  font-size: 3rem;
 
   /* --- Space It --- */
 
-  /* Adds consistent spacing between nav items on desktop. */
-  gap: 1rem;
+  /* Shows the hamburger icon on mobile screens */
+  display: block;
+}
 
-  /* Vertically centers nav items within the nav bar on desktop. */
-  align-items: center;
+.nav-menu {
+  /* Hides the navigation menu on mobile screens */
+  display: none;
 
   /* --- Style It --- */
 
-  /* Removes the default bullet points from the navigation list. */
+  /* Removes the default bullet points from the navigation list */
   list-style: none;
 }
 
-/* 🍔 Hamburger menu for mobile */
-.hamburger {
-  /* Hides the hamburger icon on desktop screens. */
-  display: none;
+.nav-menu.active {
+  /* --- Space It --- */
+
+  /* Shows the navigation menu as a flex container on mobile */
+  display: flex;
+
+  /* Stacks navigation items vertically when active on mobile */
+  flex-direction: column;
+
+  /* Adds vertical space between nav items */
+  gap: 1rem;
+}
+
+/* Footer Styling 🐾 */
+footer {
+  /* --- Size It --- */
+
+  /* Spans the full width of the page */
+  width: 100%;
+
+  /* --- Space It --- */
+
+  /* Pins footer to bottom (requires body: display: flex, min-height: 100vh, flex-direction: column) */
+  margin-top: auto;
+
+  /* Inner padding */
+  padding: 1.5rem;
+
+  /* Centers the footer text */
+  text-align: center;
+
+  /* --- Style It --- */
+  color: var(--accent-color);
+  background-color: var(--primary-color);
 }
 
 /* Sun/Moon Toggle 🌞🌙 */
@@ -333,108 +334,13 @@ nav a:hover {
 }
 
 /* 
-  Footer Styling 🐾
-  Order of Properties: Size It, Space It, Style It (Sz Sp St)
-*/
-footer {
-  /* --- Size It --- */
-
-  /* Spans the full width of the page. */
-  width: 100%;
-
-  /* --- Space It --- */
-
-  /*
-    Pushes the footer to the bottom of the page in a flex body;
-    margin-top: auto eats up all the available space above it,
-    pinning the footer down and making it stick to the bottom of the page
-
-    For this to work, the following must be set in body: 
-    - display: flex
-    - min-height: 100vh
-    - flex-direction: column
-  */
-  margin-top: auto;
-
-  /* Adds a cushion inside the footer. */
-  padding: 1.5rem;
-
-  /* Centers the footer text. */
-  text-align: center;
-
-  /* --- Style It --- */
-  color: var(--accent-color);
-  background-color: var(--primary-color);
-}
-
-/*
-  🍔 Menu
-  Order of Properties: Size It, Space It (Sz Sp)
-*/
-@media (width <= 768px) {
-  .hamburger {
-    /* Shows the hamburger icon on mobile screens. */
-    display: block;
-    
-    /* --- Size It --- */
-
-    /*
-      Sets hamburger icon size to 3rem/48px
-      (traditional range 1.5rem-2rem/24px-32px from small-phone era);
-      now 2.5rem-3rem/40px-48px for larger screens, 👵👴 aging population,
-      and better visibility.
-
-      🧮 Here's the math:
-        - 3rem × 16px = 48px (at a 16px default root).
-    */
-    font-size: 3rem;
-  }
-
-  .nav-menu {
-    /* Hides the navigation menu on mobile screens by default. */
-    display: none;
-  }
-
-  nav {
-    /* --- Space It --- */
-
-    /* Centers hamburger and toggle together on mobile. */
-    justify-content: center;
-
-    /* Adds space between hamburger and toggle on mobile. */
-    gap: 1rem;
-  }
-
-  .nav-menu.active {
-    /* Shows the navigation menu as a flex container on mobile. */
-    display: flex;
-
-    /* Stacks navigation items vertically when active on mobile. */
-    flex-direction: column;
-
-    /* --- Space It --- */
-
-    /* Adds vertical space between nav items. */
-    gap: 1rem;
-  }
-
-  footer {
-    /* --- Size It --- */
-    font-size: 1rem;
-  }
-}
-
-/* 5. Behaviors */
-
-/* 
   Smooth Theme Transitions
-  Change colors smoothly over 0.3s for body, h1, nav, and footer
-  when toggling the dark/light mode button.
+  Change colors smoothly over 0.3s when toggling the light/dark mode button.
 */
-body, h1, nav, footer {
+body, h1, h2, nav, footer, .hamburger {
+  /* --- Chaos It --- */
   transition: background-color 0.3s, color 0.3s;
 }
-
 
 /*
   💻 Tablet/Desktop Styles
@@ -446,6 +352,25 @@ body, h1, nav, footer {
 
     /* 3.5rem = 56px (16px root × 3.5) */
     font-size: 3.5rem;
+  }
+
+  /* Main Navigation List */
+  .nav-menu {
+    /* --- Space It --- */
+
+    /* Arranges nav items in a horizontal row */
+    display: flex;
+
+    /* Adds consistent spacing between nav items */
+    gap: 1rem;
+
+    /* Vertically centers nav items within the nav bar */
+    align-items: center;
+  }
+
+  /* Hides the hamburger menu on desktop */
+  .hamburger {
+    display: none;
   }
 
   #sun-moon-toggle {
