@@ -138,17 +138,11 @@ body {
   text-align: center;
 }
 
-/* 
-  Page Subheading
-  Order of Properties: Size it, Space it, Style it (Sz Sp St)
-*/
+/* Page Subheading */
 h2 {
   /* --- Size It --- */
 
-  /* 
-    Sets subheading to 1.5rem (24px at default 16px root font size).
-    Typical h2 range is 1.25rem–2rem (20px–32px), keeping it bold but smaller than h1.
-  */
+  /* 1.5rem = 24px (16px root × 1.5) */
   font-size: 1.5rem;
 
   /* --- Space It --- */
@@ -158,19 +152,9 @@ h2 {
   margin-bottom: 1rem;
 
   /* --- Style It --- */
-  
-  /*
-    If Righteous font isn’t ready to roll,
-    fall back to the system-ui default, then sans-serif as the final catch-all.
-  */
   font-family: Righteous, system-ui, sans-serif;
-
-  /* 
-    Sets boldness to 700 (bold) for strong visual hierarchy—thicker than normal (400)
-    but not as heavy as extra-bold (900).
-  */
   font-weight: 700;
-  color: var(--text-color);
+  color: var(--subheader-color);
 }
 
 /* 4. Components */

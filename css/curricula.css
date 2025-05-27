@@ -22,7 +22,6 @@
 /* Page Subheading */
 .curriculum-container h2 {
   /* --- Style It --- */
-  color: var(--subheader-color);
   text-decoration: underline;
 }
 

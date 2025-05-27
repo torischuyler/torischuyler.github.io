@@ -60,9 +60,6 @@
 
   /* 4.8px bottom, 0 top/left/right outer spacing (0.3rem at 16px root) - bottom spacing */
   margin-bottom: 0.3rem;
-
-  /* --- Style It --- */
-  color: var(--subheader-color);
 }
 
 /* Underlined subheading text (excludes emoji) */
