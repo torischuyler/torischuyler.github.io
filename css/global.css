@@ -11,8 +11,6 @@
     5. Behaviors     - Interactive states
 */
 
-/* 1. Resets */
-
 /*
   Reset - Removes default browser styles.
   Sets all elements to start with a clean base for predictable design.
@@ -20,27 +18,19 @@
   Every single thing on the page is an element (like text or buttons).
   Every element has space around it — this is called margin.
   Every element has space inside it — this is called padding.
-
-  Order of Properties: Size it, Space it (Sz Sp)
 */
 * {
   /*
     The little asterisk (*) is a CSS superhero! 🦸‍♀️🦸 It targets EVERYTHING on the page -
-    every tag, every button, every speck of text.
-    Here, we’re using it to wipe out browser defaults and take control.
-    Think of it as clearing the stage before the dancers (your content) perform!
+    here, we’re using it to wipe out browser defaults.
   */
 
   /* --- Size It --- */
 
   /*
-    By default, browsers use content-box, where padding and borders
-    add to an element’s width or height, which can screw up layouts.
-
-    With border-box, the width and height you set include padding and borders,
-    making your life way easier when designing.
-
-    It’s like telling the browser, “No, I decide what fits where.”
+    By default, browsers use content-box, where width and height only include the content, 
+    excluding padding and borders. With border-box, the width and height include content,
+    padding, and borders, making layout calculations more predictable.
   */
   box-sizing: border-box;
 
@@ -52,11 +42,8 @@
 }
 
 /*
-  2. Root - a CSS selector targeting the <html> element, the top of your webpage.
-  It holds custom properties (aka variables) like colors, fonts, and spacing,
-  making them reusable everywhere. Your site’s toolbox. 🧰
-
-  Order of Properties: Size it, Style it (Sz St)
+  Root - a CSS pseudo-class targeting the document's root (the <html> element in HTML).
+  It defines custom properties (variables) like colors and fonts, reusable across the document.
 */
 :root {
   /* --- Size It --- */
@@ -71,206 +58,47 @@
   /* --- Style It --- */
 
   /*
-    Core color palette 🎨 to splash some happy little colors on our canvas.
+    Core Color Palette 🎨
 
-    You'll see below that each color in our palette gets its own little ID — a code that
-    tells the browser what shade to use. This is called a hex code.
-    Think of it as a color’s secret ID 🕵️‍♀️ A 6-digit code starting with # (like #4A90E2)
-    mixes red, green, and blue (RGB) — two digits each: RRGGBB. You want pure black? #000000.
-    Pure white? #FFFFFF. It’s how we talk color to computers.
+    Colors are defined using 6-digit hex codes (#RRGGBB), blending red, green, and blue.
+    Examples: #000000 (black), #FFFFFF (white) (can be shortened to #000 and #FFF).
 
-    🌈 Play with https://coolors.co/ to brainstorm colors for your project.
+    Hex Code Shorthand
+    A 6-digit hex color (#RRGGBB) can be shortened to 3 digits (#RGB) when each pair
+    of red, green, and blue digits is identical (e.g., #FF0000 → #F00, #FFFFFF → #FFF).
+    If pairs differ (e.g., #4A90E2), use the full 6 digits.
+    
+    🌈 Use https://coolors.co/ to explore palettes.
 
-    Dark mode as default 🌑 — why it’s the base:
-
-    Dark mode cuts glare and reduces eye strain 👀, making screens less of a
-    punch to the retinas when you’re staring at code (or memes) for hours.
-    It’s a game changer for some, calming overstimulated senses and boosting focus.
-    Plus, it’s easier on eyes in dim rooms and might save battery on OLED screens.
-    (Think iPhone X or later 📱 — all OLED.)
-
-    This is the core palette, with light mode as the toggleable remix.
+    Dark Mode Default 🌑
+    Reduces eye strain, enhances focus, and saves battery on OLED screens.
+    Light mode can be toggled as an alternative.
   */
 
-  /*
-    Primary color: Deep Skyler is a rich, dark blackish-blue color.
-    😎 Context: The hex code (#0D1B2A) doesn’t have a standard name, so gave it a personal touch -
-    my last name, ‘Schuyler’ (pronounced like ‘Skyler’). The name is a play on:
-      - It's dark, almost-black blue vibe, fitting for a dark mode design.
-      - A nod to the recent LLM DeepSeek, tying it to tech innovation.
-      - No color police here — when a color doesn't have a name, you can just name it!
-
-    ✨ Note: This color offers strong contrast (~10:1 with Muad'Dib #C9C2BA) for
-    accessibility in dark mode, reducing eye strain in low-light environments. It meets
-    WCAG Level AAA standards (7:1 for normal text), ensuring top-tier readability.
-    Pro tip: If you ever need to verify color contrast ratios, AI assistants
-    can help with the complex WCAG calculations.
-    Check your own contrast at https://webaim.org/resources/contrastchecker/.
-  */
-  --deep-skyler: #0D1B2A;
-
-  /*
-    Secondary color: British racing green.
-    😎 Context: A nod to the iconic shade of British motorsport, famously splashed across roaring
-    Bentleys and sleek MGs — like the one my dad drove before he flipped it to red.
-  */
-  --british-racing-green: #004225;
-
-  /*
-    Background and subheader text color: Lapis lazuli — a deep, rich blue color.
-    😎 Fun Fact: Historically, lapis lazuli was ground into a pigment known as ultramarine,
-    used by Renaissance artists for its vibrant blue hue.
-
-    ✨ Note: This color offers sufficient contrast (~7:1 with White #FFFFFF) for
-    accessibility in dark mode, reducing eye strain in low-light environments. It meets
-    WCAG Level AAA standards (7:1 for normal text), ensuring top-tier readability.
-    Pro tip: If you ever need to verify color contrast ratios, AI assistants
-    can help with the complex WCAG calculations.
-    Check your own contrast at https://webaim.org/resources/contrastchecker/.
-  */
-  --lapis-lazuli: #2D5A8E;
-
-  /*
-    Text color: Pure white - a bright, clean text shade.
-    😎 Context: Inspired by fresh snow on the mountains of Maine, it’s the ultimate contrast 
-    against our lapis lazuli and chefchaouen blues.
-
-    We use #FFF here instead of #FFFFFF ‘cause they’re the same color -
-    linter likes the shorter version, less typing!
-  */
-  --white: #FFF;
-
-  /*
-    Contrast text color: Muad'Dib — a warm, earthy gray inspired by the desert mouse of Dune.
-    😎 Context: "The mystery of life isn't a problem to solve, but a reality to experience."
-    — Reverend Mother Gaius Helen Mohiam, Dune by Frank Herbert.
-  */
-  --muad-dib: #C9C2BA;
-
-  /* 
-    Header text color: Pumpkin orange 🎃
-    Fun Fact: Pumpkins are technically berries, specifically a type of pepo, characterized by their thick rind, fleshy
-    interior, and numerous seeds. This surprising botanical classification places them alongside cucumbers and watermelons!
-  */
-  --pumpkin-orange: #F37021;
-
-  /*
-    Subheader text color: Peach 🍑👑
-    😎 Fun fact: Sure, Georgia’s called the Peach State, but here’s the juicy twist -
-    South Carolina is actually the second largest peach producer in the U.S. behind California.
-  */
-  --peach: #FACAA1;
-
-  /*
-    Subheader text color: Princeton orange.
-    😎 Fun teacher facts: In 1989, while at Princeton, Wendy Kopp laid out the vision for
-    Teach For America in her senior thesis. Ms. Schuyler was born one year later and
-    eventually became a teacher through Teach For America! She also lived and worked
-    in Princeton from June 2015 to February 2017.
-  */
-  --princeton-orange: #F89317;
-
-  /*
-   Header text color: Grogu green.
-  */
-  --grogu-green: #9CBB80;
-
-  /* Light Theme Overrides 🌞 */
-
-  /* 
-    Primary and header text color: Chefchaouen blue - a vibrant blue that pops off the page.
-    😎 Context: Inspired by the blue-washed streets of Chefchaouen, Morocco. 
-  */
-  --chefchaouen-blue: #3A80D2;
-
-  /*
-    Secondary color: Emerald green for accents.
-    😎 Context: Inspired by The Wizard of Oz's Emerald City.
-  */
-  --emerald-green: #50C878;
-
-  /* 
-    Background color: Anti-flash white for a soft, clean background on the page.
-    😎 Fun Fact: This color is used on military aircraft to reflect thermal radiation from nuclear explosions. 
-  */
-  --anti-flash-white: #F5F7FA;
-
-  /* 
-    Text color: Charcoal has a dark and muted tone, providing good contrast on light backgrounds for readability.
-    😎 Fun Fact: Charcoal is one of the oldest known art materials. Archaeologists have found charcoal drawings
-    in caves dating back over 30,000 years, like those in Chauvet Cave in France.
-  */
-  --charcoal: #2C3E50;
-
-  /*
-    Subheader text color: Poppy - a bright, warm red with just the right amount of orange undertone.
-    😎 Fun Fact: Poppies close their petals at night and during bad weather, then open them again when 
-    conditions improve! They're like natural weather predictors. Ancient sailors actually used to 
-    watch poppies to help forecast the weather - if the flowers closed up during the day, 
-    they knew a storm might be coming. The flowers' movement is called "nyctinasty" - 
-    it's a response to changes in temperature and humidity.
-  */
-  --poppy: #E23D28;
-
-  /*
-    Subheader text color: Moonstone inspired, a medium-light blue with a slight gray undertone.
-    😎 Fun Context: Moonstone has a unique optical effect called "adularescence" which creates 
-    a floating blue-white glow that moves across the stone when tilted. This ethereal effect, 
-    resembling moonlight through clouds, led Ancient Romans to believe the stones 
-    contained actual captured moonbeams. Moonstone is also one of the three birthstones for June,
-    the month Ms. Schuyler was born in! Pearl and alexandrite are the other two.
-  */
-  --moonstone: #63B0CD;
-
-  /*
-    Header text color: Ruby red.
-    😎 Fun Context: Dorothy’s ruby slippers in the 1939 "Wizard of Oz" were silver in 
-    L. Frank Baum's book, but MGM turned them ruby red to dazzle in Technicolor against 
-    the yellow brick road — cinema’s most iconic footwear was born.
-
-    "You've always had the power, my dear. You just had to learn it for yourself."
-      - Glinda to Dorothy
-
-    We use #C00 here instead of #CC0000 ‘cause they’re the same color -
-    linter likes the shorter version, less typing!
-  */
-  --ruby-red: #C00;
-
-  /*
-    Theme-Agnostic Variables 🎭
-
-    These are the “middlemen” that decide which palette — dark or light — gets used.
-
-    They’re like the director of a play, telling the actors (your styles) which
-    costume (color) to wear based on the scene (theme). Default to dark mode
-    here, and the .light-theme class will swap them to the light palette later.
-  */
-  --primary-color: var(--deep-skyler);
-  --secondary-color: var(--british-racing-green);
-  --background-color: var(--lapis-lazuli);
-  --text-color: var(--white);
-  --accent-text-color: var(--muad-dib);
-  --header-text-color: var(--pumpkin-orange);
-  --subheader-text-color: var(--peach);
-  --subheader-three-text-color: var(--princeton-orange);
-  --header-color: var(--grogu-green);
+  /* 🌑 Dark Theme Agnostic Variables */
+  --primary-color: #0D1B2A;
+  --secondary-color: #004225;
+  --background-color: #2D5A8E;
+  --text-color: #FFF;
+  --accent-text-color: #C9C2BA;
+  --header-color: #9CBB80;
+  --header-text-color:  #F37021;
+  --subheader-text-color: #FACAA1;
+  --subheader-three-text-color: #F89317;
 }
 
-/*
-  🌞 Light Theme Variables
-  These override default colors only in light mode.
-*/
+/* 🌞 Light Theme Agnostic Variables - These override default colors only in light mode. */
 
 .light-theme {
-  --primary-color: var(--chefchaouen-blue);
-  --secondary-color: var(--emerald-green);
-  --background-color: var(--anti-flash-white);
-  --text-color: var(--charcoal);
-  --accent-text-color: var(--white);
-  --header-text-color: var(--ruby-red);
-  --subheader-text-color: var(--poppy);
-  --subheader-three-text-color: var(--moonstone);
-  --header-color: var(--ruby-red);
+  --primary-color: #3A80D2;
+  --secondary-color: #50C878;
+  --background-color: #F5F7FA;
+  --text-color: #2C3E50;
+  --accent-text-color: #FFF;
+  --header-text-color: #C00;
+  --subheader-text-color: #E23D28;
+  --subheader-three-text-color: #63B0CD;
+  --header-color: #C00;
 }
 
 /* 3. Base Styles */
@@ -307,11 +135,7 @@ body {
     Bc who needs normal fonts when you could have cosmic vibes? 🧑‍🚀
   */
   font-family: 'Space Grotesk', system-ui, sans-serif;
-
-  /* Sets text color for all pages using an agnostic variable (white or charcoal, based on dark/light mode). */
   color: var(--text-color);
-
-  /* Sets background color for all pages using an agnostic variable (lapis lazuli or anti-flash-white, based on dark/light mode). */
   background-color: var(--background-color);
 }
 
@@ -351,11 +175,6 @@ body {
     fall back to the system-ui default, then sans-serif as the final catch-all.
   */
   font-family: Righteous, system-ui, sans-serif;
-
-  /* 
-    Sets text color using our theme-agnostic primary hue
-    (white in dark mode, charcoal in light mode).
-  */
   color: var(--text-color);
 
   /* Centers the heading text. */ 
@@ -394,8 +213,6 @@ h2 {
     but not as heavy as extra-bold (900).
   */
   font-weight: 700;
-
-  /* (white in dark mode, charcoal in light mode). */
   color: var(--text-color);
 }
 
@@ -433,11 +250,7 @@ nav {
   justify-content: center;
 
   /* --- Style It --- */
-
-  /* (muad-dib in dark mode, white in light mode). */
   color: var(--accent-text-color);
-
-  /* (deep-skyler in dark mode, chefchaouen-blue in light mode). */
   background-color: var(--primary-color);
 
   /* 
@@ -475,8 +288,6 @@ nav a {
   padding: 0.5rem;
   
   /* --- Style It --- */
-
-  /* (muad-dib in dark mode, white in light mode). */
   color: var(--accent-text-color);
 
   /* Links are not underlined */
@@ -491,7 +302,6 @@ nav a {
 
 /* Navigation Hover Effect */
 nav a:hover {
-  /* (british-racing-green in dark mode, emerald-green in light mode). */
   background-color: var(--secondary-color);
 }
 
@@ -612,14 +422,7 @@ footer {
   text-align: center;
 
   /* --- Style It --- */
-
-  /* Text color uses the accent shade muad-dib in dark, white in light mode). */
   color: var(--accent-text-color);
-
-  /*
-    Background color pulls from our theme-agnostic primary hue
-    (deep-skyler in dark mode, chefchaouen-blue in light mode).
-  */
   background-color: var(--primary-color);
 }
 

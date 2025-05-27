@@ -22,19 +22,13 @@
 /* Page Heading */
 .curriculum-container h1 {
   /* --- Style It --- */
-
-  /* Grogu green (dark mode) or ruby red (light mode) */
   color: var(--header-color);
 }
 
 /* Page Subheading */
 .curriculum-container h2 {
   /* --- Style It --- */
-
-  /* Peach (dark mode) or poppy red (light mode) */
   color: var(--subheader-text-color);
-
-  /* Underlines subheading */
   text-decoration: underline;
 }
 
@@ -133,8 +127,6 @@
   margin-left: 0.4rem;
 
   /* --- Style It --- */
-
-  /* White (dark mode) or charcoal (light mode) */
   color: var(--text-color);
 
   /* Removes underlines for minimalist look */
@@ -150,14 +142,8 @@
 .curriculum-container ul li a:hover,
 .curriculum-container ul li a:focus {
   /* --- Style It --- */
-
-  /* Muad'Dib (dark mode) or white (light mode) */
   color: var(--accent-text-color);
-
-  /* British racing green (dark) or emerald green (light) */
   background-color: var(--secondary-color);
-
-  /* Adds underline for clickability */
   text-decoration: underline;
 }
 

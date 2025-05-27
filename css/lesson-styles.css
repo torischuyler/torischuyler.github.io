@@ -46,8 +46,6 @@
   margin-top: 1.5rem;
 
   /* --- Style It --- */
-
-  /* Orange(dark mode) or ruby red (light mode) */
   color: var(--header-text-color);
 }
 
@@ -59,8 +57,6 @@
   margin-bottom: 0.3rem;
 
   /* --- Style It --- */
-
-  /* Peach (dark mode) or poppy red (light mode) */
   color: var(--subheader-text-color);
 }
 
@@ -79,8 +75,6 @@
 
   /* --- Style It --- */
   font-family: Righteous, system-ui, sans-serif;
-
-  /* Princeton orange (dark mode) or moonstone (light mode) */
   color: var(--subheader-three-text-color);
 }
 

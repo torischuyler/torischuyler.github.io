@@ -22,8 +22,6 @@
 /* Page Heading */
 .til-container h1 {
   /* --- Style It --- */
-
-  /* Grogu green (dark mode) or ruby red (light mode) */
   color: var(--header-color);
 }
 
