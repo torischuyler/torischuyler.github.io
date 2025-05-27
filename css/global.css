@@ -2,13 +2,6 @@
   🌎 Global.css - The central stylesheet for the website.
   This file defines the core styles (like colors, fonts, and layouts)
   that apply across all pages, keeping the design consistent and easy to update.
-
-  Table of Contents:
-    1. Resets        - Wipe browser defaults
-    2. Root          - Define colors and themes
-    3. Base Styles   - Core layout and typography
-    4. Components    - Nav, footer, toggle, and touch styles
-    5. Behaviors     - Interactive states
 */
 
 /*
@@ -97,36 +90,28 @@
   --subheader-color: #E23D28;
 }
 
-/* 3. Base Styles */
-
-/*
-  Body - The main content wrapper. Sets the stage for fonts and layout.
-  Order of Properties: Size It, Style It (Sz St)
+/* 
+  Body - The root element for page content. 
+  Defines base styling (fonts, colors) and layout structure for flexible content arrangement.
 */
 body {
-  /*
-    Flex lets body control its contents (like nav, main, or footer) in a flexible way. 
-    Without this, everything inside body would stack vertically ('block' display).
-  */
-  display: flex;
-
   /* --- Size It --- */
 
-  /*
-    Sets the body box to at least the browser window’s height. 
-    vh stands for “viewport height,” and 100vh means “100% of the window’s height.”
-  */
+  /* Ensures the body is at least as tall as the viewport, allowing it to grow if content overflows. */
   min-height: 100vh;
 
-  /*
-    Flex - Stacks body's contents (like nav, main, footer) top-to-bottom in a flex container. 
-    Unlike block stacking, flex lets them stretch to fill body's height (footer stays down!).
+  /* --- Space It --- */
+
+  /* 
+    Establishes a flex container to stack children (e.g., nav, main, footer) vertically.
+    Enables flexible alignment and stretching, unlike default block stacking.
   */
+  display: flex;
   flex-direction: column;
 
   /* --- Style It --- */
 
-  /* Typography: Font family cascade: Space Grotesk → system-ui → sans-serif. */
+  /* Sets a modern font stack with fallbacks and uses custom variables for theme colors. */
   font-family: 'Space Grotesk', system-ui, sans-serif;
   color: var(--text-color);
   background-color: var(--background-color);
