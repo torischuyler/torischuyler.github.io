@@ -27,6 +27,7 @@ Properties that manage **layout**, **positioning**, or **gaps** around/between e
 - `z-index` (e.g., `1000`)
 - `overflow-x`, `overflow-y` (e.g. `auto`, `hidden`)
 - `float` (e.g. `left`, `right`)
+- `flex-direction` (e.g., `column`)
 
 ## Style
 
