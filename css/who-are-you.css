@@ -40,7 +40,7 @@ nav a,
 /* Page subheading */
 .who-are-you-container h2 {
   /* --- Style It --- */
-  color: var(--subheader-text-color);
+  color: var(--subheader-color);
   text-decoration: underline;
 }
 

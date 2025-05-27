@@ -149,7 +149,7 @@
   margin-top: 2rem;
 
   /* --- Style It --- */
-  color: var(--subheader-text-color);
+  color: var(--subheader-color);
   text-decoration: underline;
 }
 

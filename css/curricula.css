@@ -28,7 +28,7 @@
 /* Page Subheading */
 .curriculum-container h2 {
   /* --- Style It --- */
-  color: var(--subheader-text-color);
+  color: var(--subheader-color);
   text-decoration: underline;
 }
 
@@ -142,7 +142,7 @@
 .curriculum-container ul li a:hover,
 .curriculum-container ul li a:focus {
   /* --- Style It --- */
-  color: var(--accent-text-color);
+  color: var(--accent-color);
   background-color: var(--secondary-color);
   text-decoration: underline;
 }
