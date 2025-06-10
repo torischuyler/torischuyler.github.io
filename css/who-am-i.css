@@ -1,7 +1,7 @@
-/* 👩‍💻 Who-am-i.css - Stylesheet for the "Who Am I?" page */
+/* 👩‍💻 Who-am-i.css - Stylesheet for the "whoami" page */
 
 /*
-  📄 Container for "Who Am I?" content
+  📄 Container for "whoami" content
   Controls width, spacing, and typography with a mobile-first approach
 */
 .who-am-i-container {
@@ -54,7 +54,7 @@
   /*
     Typewriter effect: Text appears character-by-character.
     - 2s duration for a relaxed pace.
-    - steps() mimics the typewriter "jump" per character—assuming ~10 chars in "Who Am I?"
+    - steps() mimics the typewriter "jump" per character—assuming ~10 chars in "whoami"
     - Forwards keeps the text visible after animation ends.
   */
   animation: typewriter 2s steps(10) forwards;
