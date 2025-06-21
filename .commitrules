@@ -35,7 +35,7 @@ rules:
             "HTML", "JSON", "JS", "CSS", "JPG", "YAML", "MD"
           ]
           - proper-nouns: [
-            "Samsung", "Kepler", "GitHub",
+            "Conway", "Samsung", "Kepler", "GitHub",
             "Jekyll", Fibonacci", "Phi", "Arc", "Brave",
             "Open Graph", Windows", "Apple", "Linux",
             "Android", "Python", "Safari", "JavaScript"
