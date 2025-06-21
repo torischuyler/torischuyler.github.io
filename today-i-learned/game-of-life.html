@@ -7,23 +7,29 @@
     <style>
         body {
             display: flex;
+            flex-direction: column; /* Stack items vertically */
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
+            padding: 10px; /* Add some padding */
+            box-sizing: border-box; /* Include padding in height/width calculation */
         }
         canvas {
             border: 1px solid black;
+            max-width: 100%; /* Ensure canvas doesn't overflow its container */
+        }
+        button {
+            margin-top: 15px; /* Add space between canvas and button */
+            padding: 10px 20px;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
-    <div>
-        <canvas id="gameCanvas"></canvas>
-        <br>
-        <button id="startStopButton">Start</button>
-    </div>
+    <canvas id="gameCanvas"></canvas>
+    <button id="startStopButton">Start</button>
     <script src="../js/game-of-life.js"></script>
 </body>
 </html>

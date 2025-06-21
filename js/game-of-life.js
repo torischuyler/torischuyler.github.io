@@ -2,10 +2,23 @@ const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const startStopButton = document.getElementById('startStopButton');
 
-const gridSize = 50;
-const cellSize = 10;
+// --- START: Responsive Sizing Logic ---
+
+// Set the size of each cell in pixels
+const cellSize = 12;
+
+// Calculate how many cells can fit on the screen
+// It takes 90% of the window's width or height (whichever is smaller),
+// and divides by the cell size to get the number of cells.
+const minViewportSize = Math.min(window.innerWidth, window.innerHeight);
+const gridSize = Math.floor((minViewportSize * 0.9) / cellSize);
+
+// Set the canvas dimensions to be a perfect multiple of the cell size
 canvas.width = gridSize * cellSize;
 canvas.height = gridSize * cellSize;
+
+// --- END: Responsive Sizing Logic ---
+
 
 let grid = createGrid();
 let animationId;
@@ -82,7 +95,7 @@ startStopButton.addEventListener('click', () => {
         cancelAnimationFrame(animationId);
         startStopButton.textContent = 'Start';
     } else {
-        requestAnimationFrame(gameLoop); // Use requestAnimationFrame to start the loop smoothly
+        requestAnimationFrame(gameLoop);
         startStopButton.textContent = 'Stop';
     }
     isRunning = !isRunning;
