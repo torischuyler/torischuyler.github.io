@@ -1,3 +1,7 @@
 .vscode/
 node_modules/
 package-lock.json
+phi_digits.db
+python_scripts/backups/
+python_scripts/static/
+python_scripts/error.log
