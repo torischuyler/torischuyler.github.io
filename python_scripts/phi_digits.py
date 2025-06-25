@@ -6,7 +6,6 @@ import json
 import os
 import shutil
 import glob
-from scipy.stats import chisquare
 from datetime import datetime
 
 
@@ -20,8 +19,6 @@ def init_db():
     c = conn.cursor()
     c.execute('''CREATE TABLE IF NOT EXISTS digits
                  (day INTEGER PRIMARY KEY, digits TEXT, date TEXT)''')
-    c.execute('''CREATE TABLE IF NOT EXISTS stats
-                 (day INTEGER PRIMARY KEY, chi_pvalue REAL)''')
     conn.commit()
     conn.close()
 
@@ -54,15 +51,12 @@ def compute_phi_digits(day):
     return digits_str[start_idx:start_idx + 10000]
 
 
-def store_data(day, digits, chi_pvalue):
-    """Store digits and chi-square p-value in the database."""
+def store_data(day, digits):
     conn = sqlite3.connect('phi_digits.db')
     c = conn.cursor()
     date = datetime.now().strftime('%Y-%m-%d')
     c.execute('INSERT INTO digits (day, digits, date) VALUES (?, ?, ?)',
               (day, digits, date))
-    c.execute('INSERT INTO stats (day, chi_pvalue) VALUES (?, ?)',
-              (day, chi_pvalue))
     conn.commit()
     conn.close()
 
@@ -75,14 +69,6 @@ def get_all_digits():
     all_digits = ''.join(row[0] for row in c.fetchall())
     conn.close()
     return all_digits
-
-
-def chi_square_test(digits):
-    """Perform chi-square test on digit distribution."""
-    digit_counts = [digits.count(str(i)) for i in range(10)]
-    expected = len(digits) / 10
-    chi_stat, p_value = chisquare(digit_counts, f_exp=[expected] * 10)
-    return {"chi_stat": chi_stat, "p_value": p_value, "counts": digit_counts}
 
 
 def generate_visualizations(digits, day):
@@ -133,13 +119,10 @@ def main():
 
     try:
         digits = compute_phi_digits(current_day)
-        chi_result = chi_square_test(digits)
-        store_data(current_day, digits, chi_result['p_value'])
+        store_data(current_day, digits)
         backup_db()
         all_digits = get_all_digits()
         generate_visualizations(all_digits, current_day)
-        print(f"Day {current_day}: "
-              f"Chi-Square p-value={chi_result['p_value']:.4f}")
 
         os.makedirs('../assets/digitize-phi/archives', exist_ok=True)
         shutil.copy(f'static/archives/{current_day:03d}_histogram.png',
