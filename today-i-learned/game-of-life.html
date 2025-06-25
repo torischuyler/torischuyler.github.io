@@ -9,23 +9,37 @@
     <style>
         body {
             display: flex;
-            flex-direction: column; /* Stack items vertically */
-            justify-content: center;
+            flex-direction: column;
+            justify-content: flex-start;
             align-items: center;
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
-            padding: 10px; /* Add some padding */
-            box-sizing: border-box; /* Include padding in height/width calculation */
+            padding: 10px;
+            box-sizing: border-box;
         }
         canvas {
             border: 1px solid black;
-            max-width: 100%; /* Ensure canvas doesn't overflow its container */
+            max-width: 100%;
         }
         button {
-            margin-top: 15px; /* Add space between canvas and button */
+            margin-top: 15px;
             padding: 10px 20px;
             font-size: 16px;
+        }
+        .rules {
+            margin-top: 20px;
+            max-width: 600px;
+            text-align: left;
+        }
+        .rules h2 {
+            text-decoration: underline;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .rules ol {
+            margin: 10px 0;
+            padding-left: 20px;
         }
     </style>
 </head>
@@ -33,5 +47,21 @@
     <canvas id="gameCanvas"></canvas>
     <button id="startStopButton">Start</button>
     <script src="../js/game-of-life.js"></script>
+    <div class="rules">
+        <h2>The Rules - Simplified:</h2>
+        <ol>
+            <li><strong>Survival:</strong> A live cell with 2 or 3 live neighbors stays alive.</li>
+            <li><strong>Death:</strong> A live cell with fewer than 2 or more than 3 live neighbors dies.</li>
+            <li><strong>Birth:</strong> A dead cell with exactly 3 live neighbors becomes alive.</li>
+            <li><strong>Stasis:</strong> All other cells remain in their current state.</li>
+        </ol>
+        <h2>The Rules - Classic:</h2>
+        <ol>
+            <li><strong>Underpopulation:</strong> A live cell with fewer than two live neighbors dies.</li>
+            <li><strong>Survival:</strong> A live cell with two or three live neighbors lives on to the next generation.</li>
+            <li><strong>Overpopulation:</strong> A live cell with more than three live neighbors dies.</li>
+            <li><strong>Reproduction:</strong> A dead cell with exactly three live neighbors becomes a live cell.</li>
+        </ol>
+    </div>
 </body>
 </html>
