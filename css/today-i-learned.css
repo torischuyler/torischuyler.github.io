@@ -113,6 +113,12 @@
   text-decoration: underline;
 }
 
+/* Responsive styling for Digitize Phi histograms */
+.digitize-phi-img {
+  max-width: 100%;
+  height: auto;
+}
+
 /*
   💻 Tablet/Desktop Styles
   Applies above 768px (tablet portrait width, e.g., iPad).
