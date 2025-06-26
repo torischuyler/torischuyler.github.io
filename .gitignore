@@ -2,6 +2,5 @@
 node_modules/
 package-lock.json
 phi_digits.db
-python_scripts/backups/
-python_scripts/static/
-python_scripts/error.log
+python_scripts/digitize_phi/backups/
+python_scripts/digitize_phi/error.log
