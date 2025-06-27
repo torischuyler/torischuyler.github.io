@@ -6,19 +6,19 @@ rules:
   commit-message:
     format: "{type}({scopes}): {description} in {targets}"
     examples:
-      - "feat(yaml): create initial commit message format rules in 1 YAML file"
-      - "refactor(js): update emojis in theme toggle in 1 JS file"
-      - "chore(html): standardize comment line formatting in 3 HTML files"
-      - "teach(css): simplify comment for paragraph styles in 1 CSS file"
-      - "a11y(html): add ARIA-current to active nav link in 1 HTML file"
-      - "seo(html): add site name to page title in 2 HTML files"
-      - "security(html): add <noscript> warning in 1 HTML file"
-      - "fix(html): correct social media preview image urls in 5 HTML files"
-      - "test(html): test functionality of X card tags in 2 HTML files"
-      - "lint(html): escape & as &amp; to satisfy html linter in 1 HTML file"
-      - "delete(html, css): remove styles in 1 HTML file and 1 CSS file"
-      - "style(css): update h1 color and comment in 1 CSS file"
-      - "content(html): update footer text in 5 HTML files"
+      - "feat(yaml): Create initial commit message format rules in 1 YAML file"
+      - "refactor(js): Update emojis in theme toggle in 1 JS file"
+      - "chore(html): Standardize comment line formatting in 3 HTML files"
+      - "teach(css): Simplify comment for paragraph styles in 1 CSS file"
+      - "a11y(html): Add ARIA-current to active nav link in 1 HTML file"
+      - "seo(html): Add site name to page title in 2 HTML files"
+      - "security(html): Add <noscript> warning in 1 HTML file"
+      - "fix(html): Correct social media preview image urls in 5 HTML files"
+      - "test(html): Test functionality of X card tags in 2 HTML files"
+      - "lint(html): Escape & as &amp; to satisfy html linter in 1 HTML file"
+      - "delete(html, css): Remove styles in 1 HTML file and 1 CSS file"
+      - "style(css): Update h1 color and comment in 1 CSS file"
+      - "content(html): Update footer text in 5 HTML files"
       - "job(assets): Digitize Phi: Update assets for day 2 in 4 PNG files"
     case-style: "quark-case"
     quark-case:
@@ -27,20 +27,7 @@ rules:
       scopes:
         case: lower  # {scope} always lowercase, e.g., "html", "js"
       description:
-        case: lower  # Base case is lowercase
-        exceptions:  # Allow capitalization for specific cases
-          - acronyms: [
-            "UNIX", "CSV", "MIT", "PNG", "TXT", "ICO",
-            "TIL", "TOC", "URL", "SEO", "ARIA",
-            "README", "RAM", "MMU", "ASCII", "OS", "XML",
-            "HTML", "JSON", "JS", "CSS", "JPG", "YAML", "MD"
-          ]
-          - proper-nouns: [
-            "Conway", "Samsung", "Kepler", "GitHub",
-            "Jekyll", Fibonacci", "Phi", "Arc", "Brave",
-            "Open Graph", Windows", "Apple", "Linux",
-            "Android", "Python", "Safari", "JavaScript"
-          ]
+        case: sentence  # Capitalize first letter, e.g., "Add job to types"
       targets:
         case: upper-file-type  # Only the file type (e.g. HTML, JS) is uppercase
     types:
