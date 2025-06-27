@@ -19,6 +19,7 @@ rules:
       - "delete(html, css): remove styles in 1 HTML file and 1 CSS file"
       - "style(css): update h1 color and comment in 1 CSS file"
       - "content(html): update footer text in 5 HTML files"
+      - "job(assets): Digitize Phi: Update assets for day 2 in 4 PNG files"
     case-style: "quark-case"
     quark-case:
       type:
@@ -56,6 +57,7 @@ rules:
       - delete: "Removes code, files, or assets"
       - style: "Modifies visual presentation or UI styles"
       - content: "Modifies page content such as text or media"
+      - job: "Execution of a scheduled or automated task"
     scopes:
       - html
       - js
