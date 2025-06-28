@@ -53,5 +53,12 @@
     <url>
         <loc>https://torischuyler.github.io/eOS/today-i-learned/digitize-phi</loc>
         <lastmod>2025-06-27</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+
+    <url>
+        <loc>https://torischuyler.github.io/eOS/today-i-learned/digitize-phi/archives/histogram</loc>
+        <lastmod>2025-06-27</lastmod>
+        <changefreq>daily</changefreq>
     </url>
 </urlset>
