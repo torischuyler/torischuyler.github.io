@@ -113,29 +113,6 @@
   text-decoration: underline;
 }
 
-/* Responsive styling for Digitize Phi histograms */
-.digitize-phi-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Histogram Archive Link Styling */
-.histogram-archive-link {
-  /* --- Size It --- */
-  font-size: 1.125rem;
-
-  /* --- Space It --- */
-  display: inline-flex;
-  padding-left: 12px;
-  text-indent: 12px;
-
-  /* --- Style It --- */
-  color: goldenrod;
-  text-decoration: underline;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text x="0" y="22" fill="currentColor" font-size="24">📁</text></svg>') no-repeat left center;
-  background-size: 24px 24px;
-}
-
 /*
   💻 Tablet/Desktop Styles
   Applies above 768px (tablet portrait width, e.g., iPad).
