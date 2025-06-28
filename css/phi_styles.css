@@ -1,37 +1,54 @@
 /* Styles for Digitize Phi project. */
 
 body {
+  /* --- Space It --- */
+  margin: 0;
+  padding: 1em;
+
+  /* --- Style It --- */
   background-color: #fdfdfd;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: #333;
-  margin: 0;
-  padding: 1em;
 }
 
 .container {
+  /* --- Size It --- */
   max-width: 900px;
+
+  /* --- Space It --- */
   margin: 2em auto;
   padding: 1em;
 }
 
-.page-histogram-archive h1, .page-histogram-archive h2 {
+.page-histogram-archive h1,
+.page-histogram-archive h2 {
+  /* --- Space It --- */
   text-align: center;
 }
 
 .page-histogram-archive h1 {
+  /* --- Space It --- */
+  padding-bottom: 0.5em;
+
+  /* --- Style It --- */
   color: #2a2a2a;
   border-bottom: 2px solid #f0f0f0;
-  padding-bottom: 0.5em;
 }
 
 .page-histogram-archive h2 {
+  /* --- Size It --- */
   font-size: 1.1em;
+
+  /* --- Space It --- */
+  margin-top: 0;
+
+  /* --- Style It --- */
   font-weight: 600;
   color: #555;
-  margin-top: 0;
 }
 
 .histogram-archive {
+  /* --- Space It --- */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,30 +56,42 @@ body {
 }
 
 .histogram-entry {
-  border: 1px solid #ddd;
+  /* --- Space It --- */
   padding: 1em;
+
+  /* --- Style It --- */
+  border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #fff;
   box-shadow: 0 2px 5px rgb(0 0 0 / 5%);
 }
 
 img {
+  /* --- Size It --- */
   max-width: 100%;
   height: auto;
+
+  /* --- Space It --- */
   display: block;
 }
 
 .histogram-date {
+  /* --- Size It --- */
   font-size: 0.9em;
-  font-style: italic;
-  color: #6c757d; 
+
+  /* --- Space It --- */
   margin-top: -0.75em;
-  margin-bottom: 1.5em; 
-  text-align: center; 
+  margin-bottom: 1.5em;
+  text-align: center;
+
+  /* --- Style It --- */
+  font-style: italic;
+  color: #6c757d;
 }
 
 /* Responsive styling for Digitize Phi histograms */
 .digitize-phi-img {
+  /* --- Size It --- */
   max-width: 100%;
   height: auto;
 }
