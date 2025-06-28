@@ -3,7 +3,7 @@
 body {
   /* --- Space It --- */
   margin: 0;
-  padding: 1em;
+  padding: 1rem;
 
   /* --- Style It --- */
   background-color: #fdfdfd;
@@ -16,8 +16,8 @@ body {
   max-width: 900px;
 
   /* --- Space It --- */
-  margin: 2em auto;
-  padding: 1em;
+  margin: 32px auto;
+  padding: 1rem;
 }
 
 .page-histogram-archive h1,
@@ -28,7 +28,7 @@ body {
 
 .page-histogram-archive h1 {
   /* --- Space It --- */
-  padding-bottom: 0.5em;
+  padding-bottom: 0.5rem;
 
   /* --- Style It --- */
   color: #2a2a2a;
@@ -37,7 +37,7 @@ body {
 
 .page-histogram-archive h2 {
   /* --- Size It --- */
-  font-size: 1.1em;
+  font-size: 1.1rem;
 
   /* --- Space It --- */
   margin-top: 0;
@@ -52,12 +52,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.5em;
+  gap: 40px;
 }
 
 .histogram-entry {
   /* --- Space It --- */
-  padding: 1em;
+  padding: 16px;
 
   /* --- Style It --- */
   border: 1px solid #ddd;
@@ -77,11 +77,11 @@ img {
 
 .histogram-date {
   /* --- Size It --- */
-  font-size: 0.9em;
+  font-size: 0.9rem;
 
   /* --- Space It --- */
-  margin-top: -0.75em;
-  margin-bottom: 1.5em;
+  margin-top: -0.75rem;
+  margin-bottom: 1.5rem;
   text-align: center;
 
   /* --- Style It --- */
