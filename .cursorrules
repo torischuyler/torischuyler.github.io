@@ -1,0 +1,17 @@
+# Core Security Rules for Static Site (HTML, CSS, JavaScript, Python)
+
+# General Security
+- Use HTTPS for all network requests (e.g., fetch in JavaScript, requests in Python scripts).
+- Future proof: Sanitize all user inputs in JavaScript to prevent XSS attacks.
+- Future proof: Store sensitive data (e.g., API keys) in environment variables, not hardcoded in JavaScript or Python.
+
+# JavaScript-Specific
+- Use `textContent` instead of `innerHTML` for DOM manipulation to avoid XSS.
+- Avoid inline JavaScript in HTML (e.g., <script> or onclick attributes).
+
+# Python-Specific
+- Future proof: Validate and sanitize inputs in Python scripts if processing user data (e.g., use `bleach` for HTML).
+
+# Project-Specific
+- Follow 2-space indentation for JavaScript, 4-space for Python.
+- Future proof: Do not commit sensitive files (e.g., `.env`) to version control.
