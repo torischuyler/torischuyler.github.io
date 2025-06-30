@@ -70,7 +70,7 @@
 
   /* 🌑 Dark Theme Agnostic Variables */
   --primary-color: #0D1B2A;
-  --secondary-color: #004225;
+  --secondary-color: #2A3F54;
   --background-color: #2D5A8E;
   --text-color: #FFF;
   --accent-color: #C9C2BA;
@@ -82,7 +82,7 @@
 
 .light-theme {
   --primary-color: #3A80D2;
-  --secondary-color: #50C878;
+  --secondary-color: #1E5A96; 
   --background-color: #F5F7FA;
   --text-color: #2C3E50;
   --accent-color: #FFF;

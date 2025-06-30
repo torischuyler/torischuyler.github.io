@@ -117,6 +117,14 @@
   content: '🧮'; /* Abacus emoji for "Digitize Phi" */
 }
 
+/* 🧪 Link interaction states - Styles links on hover or focus. */
+.home-container .home-list li a:hover,
+.home-container .home-list li a:focus {
+  /* --- Style It --- */
+  color: goldenrod;
+  text-decoration: underline;
+}
+
 /*
   💻 Tablet/Desktop Styles
   Applies above 768px (tablet portrait width, e.g., iPad).

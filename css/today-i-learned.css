@@ -103,7 +103,6 @@
 .til-container ul li a:focus {
   /* --- Style It --- */
   color: goldenrod;
-  background-color: purple;
   text-decoration: underline;
 }
 
