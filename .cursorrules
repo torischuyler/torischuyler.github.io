@@ -2,6 +2,8 @@
 
 # General Security
 - Use HTTPS for all network requests (e.g., fetch in JavaScript, requests in Python scripts).
+- Use Subresource Integrity (SRI) for all CDN-hosted scripts (e.g., Chart.js, Chart.js plugins) to verify their integrity. Specify versioned URLs and include `integrity` and `crossorigin="anonymous"` attributes. 
+- Future: For dynamic CDN scripts (e.g., Tailwind CSS), consider hosting locally or using versioned URLs if SRI is not feasible.
 - Future proof: Sanitize all user inputs in JavaScript to prevent XSS attacks.
 - Future proof: Store sensitive data (e.g., API keys) in environment variables, not hardcoded in JavaScript or Python.
 
