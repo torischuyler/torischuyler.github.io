@@ -1,7 +1,8 @@
+*.db
+*.sqlite
 .env
 .vscode/
 node_modules/
 package-lock.json
-phi_digits.db
 python/digitize_phi/backups/
 python/digitize_phi/error.log

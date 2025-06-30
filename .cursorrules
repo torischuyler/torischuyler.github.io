@@ -15,3 +15,7 @@
 # Project-Specific
 - Follow 2-space indentation for JavaScript, 4-space for Python.
 - Future proof: Do not commit sensitive files (e.g., `.env`) to version control.
+
+# Database Security
+- Store database files (e.g., `phi_digits.db`) in a private folder (e.g., `python/digitize_phi`) that is not accessible by the web server.
+- Exclude SQLite files from version control by adding `*.sqlite` and `*.db` to `.gitignore`.
