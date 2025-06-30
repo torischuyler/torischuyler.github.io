@@ -18,6 +18,11 @@ for K-12 students to build digital literacy skills. -->
         <!-- Viewport makes sure the page looks good on all devices by adjusting to screen size.
         It also affects page rendering and responsiveness. -->
 
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'
+        https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+        <!-- Content Security Policy: Restricts resource loading to same-origin only, preventing XSS attacks
+        by blocking external scripts, stylesheets, and other resources unless explicitly allowed. -->
+
         <link rel="canonical" href="https://torischuyler.github.io/eOS/lessons/news-detectives">
         <!-- Canonical URL: Specifies the preferred version of this page for search engines to index,
         preventing duplicate content issues. -->

@@ -3,45 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'
+    https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+    <!-- Content Security Policy: Restricts resource loading to same-origin only, preventing XSS attacks
+    by blocking external scripts, stylesheets, and other resources unless explicitly allowed. -->
+
+    <link rel="canonical" href="https://torischuyler.github.io/eOS/today-i-learned/game-of-life">
+    <!-- Canonical URL: Specifies the preferred version of this page for search engines to index,
+    preventing duplicate content issues. -->
+
     <title>Conway's Game of Life</title>
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-        canvas {
-            border: 1px solid black;
-            max-width: 100%;
-        }
-        button {
-            margin-top: 15px;
-            padding: 10px 20px;
-            font-size: 16px;
-        }
-        .rules {
-            margin-top: 20px;
-            max-width: 600px;
-            text-align: left;
-        }
-        .rules h2 {
-            text-decoration: underline;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .rules ol {
-            margin: 10px 0;
-            padding-left: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/game-of-life.css">
 </head>
 <body>
     <canvas id="gameCanvas"></canvas>
