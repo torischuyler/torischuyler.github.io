@@ -2,8 +2,8 @@ import json
 import csv
 import datetime
 from io import StringIO
-from js import document, window, encodeURIComponent
-from pyodide.ffi import create_proxy
+from js import document, window, encodeURIComponent  # type: ignore
+from pyodide.ffi import create_proxy  # type: ignore
 
 
 def save_scores_to_csv(*args, **kwargs):
