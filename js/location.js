@@ -34,5 +34,5 @@ async function getVisitorLocation() {
   }
 }
 
-// Call the function when the page loads
-window.onload = getVisitorLocation;
+// Add event listener for the 'load' event
+window.addEventListener('load', getVisitorLocation);
