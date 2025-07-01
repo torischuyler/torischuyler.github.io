@@ -19,6 +19,13 @@
         <!-- Canonical URL: Specifies the preferred version of this page for search engines to index,
         preventing duplicate content issues. -->
 
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+        connect-src 'self' https://ipapi.co https://cdn.jsdelivr.net;
+        script-src 'self' https://pyscript.net https://cdn.jsdelivr.net 'unsafe-eval';
+        style-src 'self' https://fonts.googleapis.com https://pyscript.net;
+        font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
+        <!-- Content Security Policy: Restricts resource loading to same-origin only, preventing XSS attacks
+
         <title>Who Are You? | eOS Experiments</title>
         <!-- Page title, visible in browser tabs, bookmarks, and search engine results.
         Format: [Page Name] | [Site Name] - this pattern helps with SEO and page navigation. -->
