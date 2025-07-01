@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const browserElement = document.getElementById("browser");
 
     // Create content safely using textContent and DOM manipulation
-    browserElement.textContent = "🔮 The winds of the web carried you here via ";
+    browserElement.textContent = "🔮 The winds of the web carried you here via: ";
 
     const italicElement = document.createElement("i");
     italicElement.textContent = mysticalBrowser;

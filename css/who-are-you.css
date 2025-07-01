@@ -92,7 +92,7 @@ nav a,
 
   /*
     Moves emoji to the center of the screen.
-    It's a trick that says, “Shift me left by half my own width and up by half my own height.”
+    It's a trick that says, "Shift me left by half my own width and up by half my own height."
   */
   transform: translate(-50%, -50%);
 }
@@ -229,10 +229,10 @@ body.cursor-renegade {
 
   /* --- Style It --- */
 
-  /* Wipes out any background, so the toggle emoji blends in with the nav bar */
+  /* Wipes out any background, so the toggle's emoji blends in with the nav bar */
   background: none;
 
-  /* Removes the border; uncomment to see the toggle’s padding and margin during design */
+  /* Removes the border; uncomment to see the toggle's padding and margin during design */
   border: none;
 
   /* --- Chaos It --- */
@@ -297,4 +297,8 @@ body.cursor-renegade {
     /* 2em = 2 × 32px = 64px */
     font-size: 2em;
   }
+}
+
+#time-details {
+  font-style: italic;
 }

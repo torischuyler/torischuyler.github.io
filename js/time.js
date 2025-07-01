@@ -7,6 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const timeString = now.toLocaleTimeString();
   const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-  document.getElementById("time").textContent =
-    `🔮 The sands of time say you arrived at ${timeString} in ${timeZone}`;
+  document.getElementById("time-details").textContent =
+    `${timeString} in ${timeZone}`;
 });
