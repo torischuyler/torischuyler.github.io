@@ -43,6 +43,12 @@ nav a,
   list-style-type: none;
 }
 
+/* Location details styling - only the dynamic part in italics */
+#location-details {
+  /* --- Style It --- */
+  font-style: italic;
+}
+
 /*
   🎮 Meme quiz wrapper
   Controls question visibility and styling.
