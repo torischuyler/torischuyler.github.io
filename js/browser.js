@@ -23,7 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Use requestAnimationFrame to ensure CSS variables are loaded
   requestAnimationFrame(() => {
     const mysticalBrowser = getMysticalBrowser(userAgent);
-    document.getElementById("browser").innerHTML =
-      `🔮 The winds of the web carried you here via <i>${mysticalBrowser}</i>`;
+    const browserElement = document.getElementById("browser");
+
+    // Create content safely using textContent and DOM manipulation
+    browserElement.textContent = "🔮 The winds of the web carried you here via ";
+
+    const italicElement = document.createElement("i");
+    italicElement.textContent = mysticalBrowser;
+    browserElement.appendChild(italicElement);
   });
 });

@@ -25,6 +25,12 @@ function getFriendlyDevice(userAgent) {
 // Updates device info on page load
 document.addEventListener("DOMContentLoaded", () => {
   const friendlyDevice = getFriendlyDevice(navigator.userAgent);
-  document.getElementById("device-info").innerHTML =
-    `🔮 Your device whispers: <i>You're on ${friendlyDevice}</i>`;
+  const deviceElement = document.getElementById("device-info");
+
+  // Create content safely using textContent and DOM manipulation
+  deviceElement.textContent = "🔮 Your device whispers: ";
+
+  const italicElement = document.createElement("i");
+  italicElement.textContent = `You're on ${friendlyDevice}`;
+  deviceElement.appendChild(italicElement);
 });
