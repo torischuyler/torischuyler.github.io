@@ -1,3 +1,5 @@
+/* 🌱 Conway's Game of Life: This script creates a simple grid-based game of life. */
+
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const startStopButton = document.getElementById('startStopButton');
