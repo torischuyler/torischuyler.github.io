@@ -86,14 +86,8 @@
   content: '💫';
 }
 
-/* Custom bullet for second list item (Snake) */
+/* Custom bullet for second list item (Seedling) */
 .til-container ul li:nth-child(2)::before {
-  /* --- Style It --- */
-  content: '🐍';
-}
-
-/* Custom bullet for third list item (Seedling) */
-.til-container ul li:nth-child(3)::before {
   /* --- Style It --- */
   content: '🌱';
 }
