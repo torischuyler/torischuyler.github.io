@@ -86,8 +86,9 @@ def generate_daily_visualizations(daily_digits, day, dest_path):
     # Histogram
     plt.figure(figsize=(10, 6))
     bars = plt.bar(range(10), digit_counts, color='goldenrod')
-    plt.title(f'Digitize Phi: Daily Histogram (Day {day}, '
-              f'Total New Digits: {total_count})')
+    title_text = (f'Digitize Phi: Daily Histogram (Day {day}, '
+                  f'Total New Digits: {total_count})')
+    plt.title(title_text)
     plt.xlabel('Digit')
     plt.ylabel('Frequency')
     plt.xticks(range(10))
@@ -102,18 +103,20 @@ def generate_daily_visualizations(daily_digits, day, dest_path):
     plt.close()
 
     # Artistic representation
-    plt.figure(figsize=(20, 5))
+    plt.figure(figsize=(20, 20))
     if len(daily_digits) == 10000:
         digits_list = [int(d) for d in daily_digits]
         digits_array = np.array(digits_list).reshape(100, 100)
-        plt.imshow(digits_array, cmap='viridis')
+        # Define 10 distinct colors for digits 0-9
+        custom_cmap = plt.get_cmap('tab10')
+        plt.imshow(digits_array, cmap=custom_cmap, interpolation='nearest')
     plt.axis('off')
-    plt.title(f'Digitize Phi: Daily Digit Map '
-              f'(Day {day})')
+    plt.title(f'Digitize Phi: Daily Digit Map (Day {day})')
 
-    # Save the archived and main artistic image directly to the destination
-    plt.savefig(os.path.join(archive_dest_path, f'{day_str}_artistic.png'))
-    plt.savefig(os.path.join(dest_path, 'artistic.png'))
+    # Save the archived and main artistic image
+    artistic_path = os.path.join(archive_dest_path, f'{day_str}_artistic.png')
+    plt.savefig(artistic_path, dpi=200)
+    plt.savefig(os.path.join(dest_path, 'artistic.png'), dpi=200)
     plt.close()
 
     # Save daily digit counts directly to the destination
