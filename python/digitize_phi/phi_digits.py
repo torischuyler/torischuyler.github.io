@@ -111,7 +111,7 @@ def generate_daily_visualizations(daily_digits, day, dest_path):
         custom_cmap = plt.get_cmap('tab10')
         plt.imshow(digits_array, cmap=custom_cmap, interpolation='nearest')
     plt.axis('off')
-    plt.title(f'Digitize Phi: Daily Digit Map (Day {day})')
+    plt.title(f'Digitize Phi: Daily Digit Map (Day {day})', fontsize=40)
 
     # Save the archived and main artistic image
     artistic_path = os.path.join(archive_dest_path, f'{day_str}_artistic.png')
