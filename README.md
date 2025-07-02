@@ -1,5 +1,5 @@
-# eOS Experiments
+# Tori Schuyler
 
 ## About
 
-This project serves as a sandbox to explore and showcase programming skills.
+This project serves as a personal website and sandbox to explore programming.

@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://torischuyler.github.io/eOS/sitemap.xml
+Sitemap: https://torischuyler.github.io/sitemap.xml

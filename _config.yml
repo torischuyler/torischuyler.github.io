@@ -2,7 +2,7 @@
 # This file is _config.yml—see the underscore?
 # It tells Jekyll this isn’t a page, just setup stuff.
 # We’re using it to clean up our URLs by dropping the .html, making them pretty.
-# (e.g. https://torischuyler.github.io/eOS/who-am-i instead of
-# https://torischuyler.github.io/eOS/who-am-i.html)
+# (e.g. https://torischuyler.github.io/who-am-i instead of
+# https://torischuyler.github.io/who-am-i.html)
 # Both will still work, it's just nicer without the .html.
 permalink: /:title
