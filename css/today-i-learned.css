@@ -92,6 +92,12 @@
   content: '🌱';
 }
 
+/* Custom bullet for third list item (Abacus) */
+.til-container ul li:nth-child(3)::before {
+  /* --- Style It --- */
+  content: '🧮';
+}
+
 /* 🧪 Link interaction states - Styles links on hover or focus. */
 .til-container ul li a:hover,
 .til-container ul li a:focus {

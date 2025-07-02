@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // and all scripts (like Chart.js) are loaded before we try to create the chart.
 
   // Updated fetch call to point to the new cumulative data file.
-  fetch('../assets/digitize-phi/cumulative_digit_counts.json')
+  fetch('../../assets/digitize-phi/cumulative_digit_counts.json')
     .then(response => {
       if (!response.ok) {
         // If the server responds with an error (e.g., 404 Not Found), throw an error.
