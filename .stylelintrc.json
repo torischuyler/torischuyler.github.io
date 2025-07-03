@@ -1,8 +1,0 @@
-{
-  "comments": {
-    "file": "Configuration for Stylelint - our CSS linter that keeps styles consistent",
-    "extends": "Uses stylelint-config-standard - a popular preset of CSS rules that most developers follow"
-  },
-  "extends": "stylelint-config-standard",
-  "ignoreFiles": ["venv/**"]
-}
