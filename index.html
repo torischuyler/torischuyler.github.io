@@ -33,7 +33,7 @@ easy, universal choice. It's like calling the first chapter of a book "Chapter 1
         <!-- Canonical URL: Specifies the preferred version of this page for search engines to index, 
         preventing duplicate content issues. -->
 
-        <title>Home | Tori Schuyler</title>
+        <title>whoami | Tori Schuyler</title>
         <!-- Page title, visible in browser tabs, bookmarks, and search engine results.
         Format: [Page Name] | [Site Name] - this pattern helps with SEO and page navigation. -->
 
@@ -50,11 +50,11 @@ easy, universal choice. It's like calling the first chapter of a book "Chapter 1
         <meta name="robots" content="index, follow">
         <!-- Robots Directive: Allows search engines to index this page and follow its links. -->
 
-        <meta name="description" content="Explore Tori Schuyler.">
+        <meta name="description" content="Explore Tori Schuyler's website featuring a unique ASCII tree résumé, the 'Digitize Phi' golden ratio project, interactive experiments, and more. ExploraTORI today!">
         <!-- SEO Description: This tag offers a quick summary for search results,
         improving click-through rates by setting user expectations and boosting relevance. -->
 
-        <meta name="keywords" content="Tori Schuyler, personal portfolio, web development, education">
+        <meta name="keywords" content="Tori Schuyler, personal website, web development, education">
         <!-- SEO Keywords: Although less impactful today due to search engines prioritizing content quality,
         they can still categorize content. Use sparingly to avoid keyword stuffing. -->
 
@@ -69,7 +69,7 @@ easy, universal choice. It's like calling the first chapter of a book "Chapter 1
         <meta property="og:title" content="Home | Tori Schuyler">
         <!-- Open Graph Title: Defines the title for social media sharing. -->
 
-        <meta property="og:description" content="Explore Tori Schuyler.">
+        <meta property="og:description" content="Explore Tori Schuyler's website featuring a unique ASCII tree résumé, the 'Digitize Phi' golden ratio project, interactive experiments, and more. ExploraTORI today!">
         <!-- Open Graph Description: Provides a summary when shared on social platforms. -->
 
         <meta property="og:image" content="https://torischuyler.github.io/assets/van-gogh-orca.jpg">
@@ -100,13 +100,19 @@ easy, universal choice. It's like calling the first chapter of a book "Chapter 1
         <!-- Load local stylesheets first for speed and to prevent overrides by third-party CSS (e.g., Google Fonts). -->
         <!-- End Stylesheet Links  --------------------------------------------------->
 
-        <script src="js/toggles/sunrise-gotham-toggle.js" defer></script>
+        <script src="js/toggles/torii-gemini-toggle.js" defer></script>
         <!-- Script for toggling Light/Dark mode - Scripts are placed last for better page load
         performance and security. 'defer' tells the browser to load the script after the HTML is
         parsed but before the DOMContentLoaded event, improving page load times. -->
 
         <script src="js/mobile-nav.js" defer></script>
         <!-- Script for toggling touch navigation. ------>
+
+        <script src="js/toggles/kepler-toggle.js" defer></script>
+        <!-- Script for toggling the photo gallery Kepler triangles ------>
+
+        <script src="js/ascii.js" defer></script>
+        <!-- Script for loading life branch ASCII art ------>
     </head>
     <!-- End Head Section --------------------------------------------------->
 
@@ -120,10 +126,9 @@ easy, universal choice. It's like calling the first chapter of a book "Chapter 1
 
             <!-- Navigation menu ------------------------>
             <ul class="nav-menu">
-                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                <li><a href="index.html" class="active" aria-current="page">whoami</a></li>
                 <li><a href="who-are-you.html">Who Are You?</a></li>
                 <li><a href="til.html">TIL</a></li>
-                <li><a href="who-am-i.html">whoami</a></li>
             </ul>
 
             <!-- Begin Nav Header Wrapper: Groups hamburger and toggle ------------------>
@@ -132,15 +137,15 @@ easy, universal choice. It's like calling the first chapter of a book "Chapter 1
                 <div class="hamburger">☰</div>
                 <!-- Hamburger icon -->
 
-                <button id="sunrise-gotham-toggle"></button>
+                <button id="torii-gemini-toggle"></button>
                 <!-- Light/dark mode toggle -->
             </div>
             <!-- End Nav Header Wrapper ------------------------------------------------->
         </nav>
         <!-- End Navigation Section  ---------------------------------------------------->
 
-        <!-- Begin .home-container ---------------------------------->
-        <div class="home-container">
+        <!-- Begin .who-am-i-container ----------------------->
+        <div class="who-am-i-container">
 
             <!-- Begin Main Section -------------------------------------------------------->
             <main>
@@ -156,12 +161,67 @@ easy, universal choice. It's like calling the first chapter of a book "Chapter 1
                     </div>
                 </noscript>
 
-                <h1>Tori Schuyler</h1>
-                <!-- Main heading of the page, sets the theme or topic. -->
+                <h1>whoami</h1>
+
+                <p>
+                   Tori Schuyler. Environment variables in my shell:
+                </p>
+
+                <ul>
+                    <li>Learning should be playful</li>
+                    <li>Mistakes are just experiments in disguise</li>
+                    <li>Growth mindset is key to success</li>
+                </ul>
+
+                <!-- Begin Life Branch ------------------------->
+                <h2>2025 Snapshot of My Branch 🌳</h2>
+
+                <!-- Desktop version -->
+                <pre class="life-branch life-branch-desktop" id="life-branch-desktop"></pre>
+
+                <!-- Mobile version -->
+                <pre class="life-branch life-branch-mobile" id="life-branch-mobile"></pre>
+                <!-- End Life Branch ------------------------->
+
+                <!-- Begin Image Gallery ------------------------->
+                <div class="gallery">
+                    <!-- Container for the image gallery, groups images and toggle controls. -->
+
+                    <input type="radio" name="gallery" id="tori-headshot" checked>
+                    <!-- Radio button for the first photo, checked by default. -->
+
+                    <input type="radio" name="gallery" id="tori-marathon">
+                    <!-- Radio button for the second image (marathon version). -->
+
+                    <div class="gallery-images">
+                    <!-- Container for gallery images, hidden/shown based on radio button selection. -->
+
+                        <label for="tori-headshot"><img src="assets/tori/headshot.jpg"></label>
+                        <!-- Label and image for the first photo, tied to the tori-headshot radio button. -->
+                        
+                        <label for="tori-marathon"><img src="assets/tori/nyc-marathon.png"></label>
+                        <!-- Label and image for the second image, tied to the tori-marathon radio button. -->
+                    </div>
+
+                    <div class="gallery-controls">
+                        <!-- Container for toggle controls to switch between images. -->
+                    
+                        <span class="kepler-container">
+                            <label for="tori-headshot" class="kepler" tabindex="0"></label>
+                        </span>
+                        <!-- Toggle Kepler triangle for the first photo, linked to the tori-headshot radio button. -->
+                    
+                        <span class="kepler-container">
+                            <label for="tori-marathon" class="kepler" tabindex="0"></label>
+                        </span>
+                        <!-- Toggle Kepler triangle for the second image, linked to the tori-marathon radio button. -->
+                    </div>
+                </div>
+                <!-- End Image Gallery -------------------------->
             </main>
             <!-- End Main Section ---------------------------------------------------------->
         </div>
-        <!-- End .home-container -------------------------------------------------------->
+        <!-- End .who-am-i-container ------------------------------------------------->
 
         <!-- Begin Footer Section ------------------------------------------------------>
         <footer>
