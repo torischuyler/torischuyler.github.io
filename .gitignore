@@ -1,7 +1,17 @@
+# Node.js dependencies
+node_modules/
+
+# Environment and sensitive files
+.env
+
+# Database files
 *.db
 *.sqlite
-.env
-node_modules/
-package-lock.json
-python/digitize_phi/backups/
+
+# Digitize Phi logs and backups
 python/digitize_phi/error.log
+python/digitize_phi/backups/
+
+# Tool-specific configurations
+.cursorrules
+.stylelintrc.json
