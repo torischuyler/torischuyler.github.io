@@ -275,14 +275,6 @@ footer {
   background-color: var(--primary-color);
 }
 
-.heart::before {
-  content: "💙"; /* Default (dark mode) */
-}
-
-.light-theme .heart::before {
-  content: "❤️"; /* Light mode */
-}
-
 /* Sun/Moon Toggle 🌞🌙 */
 #sun-moon-toggle {
   /* --- Size It --- */
