@@ -1,0 +1,137 @@
+/* 🕹️ toring-test.css - Stylesheet for the Toring Test feature. */
+
+.toring-link {
+  font-size: 3rem;
+  color: #D4AF37;
+  cursor: pointer;
+  text-decoration: underline;
+  font-family: Righteous, sans-serif;
+}
+
+.overlay-base,
+.modal,
+.popup {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0% 0% 0% / 50%);
+  justify-content: center;
+  align-items: center;
+}
+
+.content-base,
+.modal-content,
+.popup-content {
+  background-color: white;
+  color: var(--primary-color);
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Space Grotesk', sans-serif;
+  max-width: 90%;
+}
+
+.modal {
+  display: none;
+  z-index: 1000;
+}
+
+.modal-content {
+  padding: 20px;
+  width: 400px;
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.grid-item {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  cursor: pointer;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.grid-item.selected {
+  pointer-events: none;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.overlay.checkmark,
+.overlay.cross {
+  color: white;
+}
+
+.overlay.checkmark {
+  background-color: rgb(29.8% 68.6% 31.4% / 80%);
+}
+
+.overlay.cross {
+  background-color: rgb(95.7% 26.3% 21.2% / 80%);
+}
+
+.popup {
+  z-index: 1001;
+}
+
+.popup-content {
+  padding: 10px;
+  width: 400px;
+}
+
+.popup-content h2 {
+  color: #4CAF50;
+  margin-bottom: 15px;
+}
+
+.popup-content p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.popup-content button {
+  background-color: #D4AF37;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.popup-content button:hover {
+  background-color: #B8941F;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
