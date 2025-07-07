@@ -2,10 +2,32 @@
 
 .toring-link {
   font-size: 3rem;
-  color: #D4AF37;
+  color: rgb(83.1% 68.6% 21.6%);
   cursor: pointer;
   text-decoration: underline;
   font-family: Righteous, sans-serif;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 10px rgb(83.1% 68.6% 21.6% / 30%);
+  display: inline-block;
+}
+
+.toring-link:hover {
+  color: rgb(100% 84.3% 0%);
+  transform: scale(1.05);
+  text-shadow: 0 0 15px rgb(100% 84.3% 0% / 60%);
+  text-decoration: underline;
+}
+
+.toring-link:focus {
+  outline: 2px solid rgb(83.1% 68.6% 21.6%);
+  outline-offset: 4px;
+  color: rgb(100% 84.3% 0%);
+  text-shadow: 0 0 15px rgb(100% 84.3% 0% / 60%);
+}
+
+.toring-link:active {
+  transform: scale(0.98);
+  color: rgb(72.2% 58.0% 12.2%);
 }
 
 .overlay-base,
@@ -25,7 +47,7 @@
 .content-base,
 .modal-content,
 .popup-content {
-  background-color: white;
+  background-color: rgb(100% 100% 100%);
   color: var(--primary-color);
   border-radius: 10px;
   text-align: center;
@@ -84,7 +106,7 @@
 
 .overlay.checkmark,
 .overlay.cross {
-  color: white;
+  color: rgb(100% 100% 100%);
 }
 
 .overlay.checkmark {
@@ -105,7 +127,7 @@
 }
 
 .popup-content h2 {
-  color: #4CAF50;
+  color: rgb(29.8% 68.6% 31.4%);
   margin-bottom: 15px;
 }
 
@@ -115,8 +137,8 @@
 }
 
 .popup-content button {
-  background-color: #D4AF37;
-  color: white;
+  background-color: rgb(83.1% 68.6% 21.6%);
+  color: rgb(100% 100% 100%);
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -125,7 +147,7 @@
 }
 
 .popup-content button:hover {
-  background-color: #B8941F;
+  background-color: rgb(72.2% 58.0% 12.2%);
 }
 
 .close-btn {
@@ -134,4 +156,39 @@
   right: 10px;
   font-size: 20px;
   cursor: pointer;
+}
+
+/* Mobile-specific enhancements */
+@media (width <= 768px) {
+  .toring-link {
+    font-size: 2.5rem;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    background: linear-gradient(135deg, rgb(83.1% 68.6% 21.6% / 10%) 0%, rgb(100% 84.3% 0% / 10%) 100%);
+    border: 2px solid rgb(83.1% 68.6% 21.6% / 30%);
+    animation: subtle-pulse 3s ease-in-out infinite;
+    min-height: 44px; /* Apple's recommended minimum touch target */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .toring-link:active {
+    transform: scale(0.95);
+    background: linear-gradient(135deg, rgb(83.1% 68.6% 21.6% / 20%) 0%, rgb(100% 84.3% 0% / 20%) 100%);
+    border-color: rgb(83.1% 68.6% 21.6% / 50%);
+  }
+}
+
+@keyframes subtle-pulse {
+  0%, 100% {
+    text-shadow: 0 0 10px rgb(83.1% 68.6% 21.6% / 30%);
+    border-color: rgb(83.1% 68.6% 21.6% / 30%);
+  }
+
+  50% {
+    text-shadow: 0 0 15px rgb(83.1% 68.6% 21.6% / 50%);
+    border-color: rgb(83.1% 68.6% 21.6% / 40%);
+  }
 }
