@@ -13,5 +13,5 @@ python/digitize_phi/error.log
 python/digitize_phi/backups/
 
 # Tool-specific configurations
-.cursorrules
+.cursor/
 .stylelintrc.json
