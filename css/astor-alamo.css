@@ -1,7 +1,17 @@
 body {
-    margin: 0;
+  margin: 0;
 }
 
 canvas {
-    display: block;
+  display: block;
+}
+
+#cube-prompt {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #2F2F2F; /* Match the steel-black cube */
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  pointer-events: none; /* Prevent text from blocking clicks */
 }
