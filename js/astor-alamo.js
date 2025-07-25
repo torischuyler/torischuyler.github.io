@@ -21,17 +21,32 @@ const geometry = new THREE.BoxGeometry(2, 2, 2); // Bigger cube: 2x2x2 units
 const material = new THREE.MeshBasicMaterial({ color: 0x2F2F2F }); // Dark steel-black
 const cube = new THREE.Mesh(geometry, material);
 scene.add(cube); // Add the cube to the scene
+
+const baseGeometry = new THREE.BoxGeometry(3, 0.3, 3); // Width 3, height 0.3, depth 3
+const baseMaterial = new THREE.MeshBasicMaterial({ color: 0x808080 }); // Gray color for the base
+const base = new THREE.Mesh(baseGeometry, baseMaterial);
+base.position.y = -1.1; // Position it just below the cube
+scene.add(base);
+
 let isSpinning = false; // Flag to control if the cube should rotate
 
+let timer = null; // We'll use this later for the timeout
+
 document.addEventListener('click', () => {
-  isSpinning = true; // Start spinning on click or tap
+  isSpinning = !isSpinning;
+  if (isSpinning && !timer) {
+    timer = setTimeout(() => {
+      isSpinning = false;
+      timer = null;
+    }, 42000); // 42 seconds in milliseconds
+  }
 });
+
 
 // Animation loop (makes the cube rotate forever)
 function animate() {
   requestAnimationFrame(animate); // Keeps the loop running smoothly
   if (isSpinning) {
-      cube.rotation.x += 0.01; // Rotate only if isSpinning is true
       cube.rotation.y += 0.01; // Rotate only if isSpinning is true
   }
   renderer.render(scene, camera); // Draw the updated scene
