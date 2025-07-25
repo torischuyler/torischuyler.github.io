@@ -7,12 +7,13 @@ camera.position.z = 5; // Move the camera back so we can see the cube
 
 // Create the renderer (draws everything to the screen)
 const renderer = new THREE.WebGLRenderer();
+renderer.setClearColor(0xF5F5F5); // Soft off-white background
 renderer.setSize(window.innerWidth, window.innerHeight); // Make it full-screen
 document.body.appendChild(renderer.domElement); // Add the drawing area to the page
 
 // Create the cube (a box shape with color)
 const geometry = new THREE.BoxGeometry(2, 2, 2); // Bigger cube: 2x2x2 units
-const material = new THREE.MeshBasicMaterial({ color: 0x228B22 }); // Earthy olive green
+const material = new THREE.MeshBasicMaterial({ color: 0x2F2F2F }); // Dark steel-black
 const cube = new THREE.Mesh(geometry, material);
 scene.add(cube); // Add the cube to the scene
 
