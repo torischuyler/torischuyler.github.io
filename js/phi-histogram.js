@@ -64,7 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
             datalabels: {
               anchor: 'end',
               align: 'top',
-              formatter: (value) => value.toLocaleString() // Also format the data labels.
+              formatter: (value) => value.toLocaleString(), // Also format the data labels.
+              display: function(context) {
+                return window.innerWidth >= 768;
+              }
             }
           }
         },
