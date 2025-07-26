@@ -83,25 +83,25 @@
   left: 0;
 
   /* --- Style It --- */
-  content: '💫';
+  content: '🧊';
 }
 
-/* Custom bullet for second list item (Seedling) */
+/* Custom bullet for second list item */
 .til-container ul li:nth-child(2)::before {
-  /* --- Style It --- */
-  content: '🌱';
-}
-
-/* Custom bullet for third list item (Abacus) */
-.til-container ul li:nth-child(3)::before {
   /* --- Style It --- */
   content: '🧮';
 }
 
-/* Custom bullet for fourth list item (Alamo Cube) */
+/* Custom bullet for third list item */
+.til-container ul li:nth-child(3)::before {
+  /* --- Style It --- */
+  content: '🌱';
+}
+
+/* Custom bullet for fourth list item */
 .til-container ul li:nth-child(4)::before {
   /* --- Style It --- */
-  content: '🧊';
+  content: '💫';
 }
 
 /* 🧪 Link interaction states - Styles links on hover or focus. */
