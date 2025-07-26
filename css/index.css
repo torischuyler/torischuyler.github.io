@@ -227,7 +227,12 @@
 
 /* Shows the image label when its corresponding radio button is selected */
 #tori-headshot:checked ~ .gallery-images label[for="tori-headshot"],
-#tori-marathon:checked ~ .gallery-images label[for="tori-marathon"] {
+#tori-marathon:checked ~ .gallery-images label[for="tori-marathon"],
+#tori-selfie:checked ~ .gallery-images label[for="tori-selfie"],
+#bleachers-91:checked ~ .gallery-images label[for="bleachers-91"],
+#love:checked ~ .gallery-images label[for="love"],
+#torii-gate:checked ~ .gallery-images label[for="torii-gate"],
+#lone-stargazer:checked ~ .gallery-images label[for="lone-stargazer"] {
   display: block;
 }
 
@@ -283,7 +288,12 @@
 
 /* Selected toggle state */
 #tori-headshot:checked ~ .gallery-controls label[for="tori-headshot"],
-#tori-marathon:checked ~ .gallery-controls label[for="tori-marathon"] {
+#tori-marathon:checked ~ .gallery-controls label[for="tori-marathon"],
+#tori-selfie:checked ~ .gallery-controls label[for="tori-selfie"],
+#bleachers-91:checked ~ .gallery-controls label[for="bleachers-91"],
+#love:checked ~ .gallery-controls label[for="love"],
+#torii-gate:checked ~ .gallery-controls label[for="torii-gate"],
+#lone-stargazer:checked ~ .gallery-controls label[for="lone-stargazer"] {
   background: #FC3;
 }
 
