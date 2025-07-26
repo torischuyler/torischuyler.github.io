@@ -73,5 +73,6 @@ rules:
         - "1 XML file"
         - "1 TXT file"
         - "1 PY file"
+        - "1 MP3 file"
     description:
       tense: active
