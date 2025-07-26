@@ -13,7 +13,7 @@ document.body.appendChild(renderer.domElement); // Add the drawing area to the p
 
 const prompt = document.createElement('div');
 prompt.id = 'cube-prompt';
-prompt.innerHTML = 'The black square speaks: <span style="font-style: italic;">"You know you wanna give me a tap...watch me spin into a cube!"</span> 😵‍💫';
+prompt.innerHTML = 'The black square speaks: <span style="font-style: italic;">"You know you wanna give me a tap...watch me spin into a cube 😵‍💫 and hear a medieval melody!" 🏰</span>';
 document.body.appendChild(prompt);
 
 // Create the cube (a box shape with color)
@@ -32,16 +32,27 @@ let isSpinning = false; // Flag to control if the cube should rotate
 
 let timer = null; // We'll use this later for the timeout
 
+const audio = document.getElementById('cubeMusic');
+
 document.addEventListener('click', () => {
   isSpinning = !isSpinning;
   if (isSpinning && !timer) {
     timer = setTimeout(() => {
       isSpinning = false;
       timer = null;
-    }, 42000); // 42 seconds in milliseconds
+      audio.pause(); // Pause audio when spin stops
+    }, 86000); // Changed to 86 seconds
+    audio.play().catch(error => {
+      console.error('Audio playback failed:', error);
+    });
+  } else {
+    if (timer) {
+      clearTimeout(timer);
+      timer = null;
+    }
+    audio.pause(); // Pause audio when manually stopping spin
   }
 });
-
 
 // Animation loop (makes the cube rotate forever)
 function animate() {
