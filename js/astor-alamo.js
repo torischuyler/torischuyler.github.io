@@ -13,7 +13,7 @@ document.body.appendChild(renderer.domElement); // Add the drawing area to the p
 
 const prompt = document.createElement('div');
 prompt.id = 'cube-prompt';
-prompt.innerHTML = 'The black square speaks: <span style="font-style: italic;">"You know you wanna give me a tap...watch me spin into a cube 😵‍💫 and hear a medieval melody!" 🏰</span>';
+prompt.innerHTML = 'The black square speaks: <span style="font-style: italic;">"You know you wanna give me a tap...watch me spin into a cube"</span> 😵‍💫';
 document.body.appendChild(prompt);
 
 // Create the cube (a box shape with color)
