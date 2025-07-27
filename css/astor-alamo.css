@@ -10,8 +10,8 @@ canvas {
   position: absolute;
   top: 20px;
   left: 20px;
-  color: #2F2F2F; /* Match the steel-black cube */
-  font-family: Arial, sans-serif;
+  color: #2F2F2F;
+  font-family: MedievalSharp, sans-serif;
   font-size: 24px;
   pointer-events: none; /* Prevent text from blocking clicks */
 }
@@ -22,7 +22,7 @@ footer {
   left: 0;
   right: 0;
   text-align: center;
-  font-family: Arial, sans-serif;
+  font-family: MedievalSharp, sans-serif;
   font-size: 20px;
   color: #2F2F2F;
 }
