@@ -11,11 +11,6 @@ renderer.setClearColor(0xF5F5F5); // Soft off-white background
 renderer.setSize(window.innerWidth, window.innerHeight); // Make it full-screen
 document.body.appendChild(renderer.domElement); // Add the drawing area to the page
 
-const prompt = document.createElement('div');
-prompt.id = 'cube-prompt';
-prompt.innerHTML = 'The black square speaks: <span style="font-style: italic;">"You know you wanna give me a tap...watch me spin into a cube"</span> 😵‍💫';
-document.body.appendChild(prompt);
-
 // Create the cube (a box shape with color)
 const geometry = new THREE.BoxGeometry(2, 2, 2); // Bigger cube: 2x2x2 units
 const material = new THREE.MeshBasicMaterial({ color: 0x2F2F2F }); // Dark steel-black
