@@ -10,10 +10,18 @@ canvas {
   position: absolute;
   top: 20px;
   left: 20px;
+  text-align: center;
   color: #2F2F2F;
   font-family: MedievalSharp, sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   pointer-events: none; /* Prevent text from blocking clicks */
+}
+
+@media (width <= 768px) {
+  #cube-prompt {
+    top: 10px;
+    font-size: 18px;
+  }
 }
 
 footer {
