@@ -10,7 +10,7 @@ camera.position.y = -1;
 const renderer = new THREE.WebGLRenderer();
 renderer.setClearColor(0xF5F5F5); // Soft off-white background
 renderer.setSize(window.innerWidth, window.innerHeight); // Make it full-screen
-document.body.appendChild(renderer.domElement); // Add the drawing area to the page
+document.getElementById('canvas-container').appendChild(renderer.domElement); // Add the drawing area to the page
 
 // Create the cube (a box shape with color)
 const geometry = new THREE.BoxGeometry(2, 2, 2); // Bigger cube: 2x2x2 units
