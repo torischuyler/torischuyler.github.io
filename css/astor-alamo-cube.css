@@ -8,6 +8,16 @@ body {
   justify-content: flex-start; /* Keep content at the top, adjusting as needed */
 }
 
+.back-to-til {
+  color: purple;
+  text-decoration: underline;
+  display: block;
+  font-family: MedievalSharp, sans-serif;
+  font-size: 1.2em;
+  text-align: center;
+  margin: 20px 0;
+}
+
 h1 {
   font-family: MedievalSharp, sans-serif;
   font-size: 2.5em;

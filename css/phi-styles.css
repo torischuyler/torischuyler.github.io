@@ -20,6 +20,12 @@ body {
   padding: 1rem;
 }
 
+.back-to-til {
+  color: purple;
+  text-decoration: underline;
+  display: block;
+}
+
 .page-histogram-archive h1,
 .page-histogram-archive h2,
 .page-heatmap-archive h1,
