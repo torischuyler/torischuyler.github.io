@@ -21,12 +21,15 @@ body {
 }
 
 .page-histogram-archive h1,
-.page-histogram-archive h2 {
+.page-histogram-archive h2,
+.page-heatmap-archive h1,
+.page-heatmap-archive h2 {
   /* --- Space It --- */
   text-align: center;
 }
 
-.page-histogram-archive h1 {
+.page-histogram-archive h1,
+.page-heatmap-archive h1 {
   /* --- Space It --- */
   padding-bottom: 0.5rem;
 
@@ -35,7 +38,8 @@ body {
   border-bottom: 2px solid #f0f0f0;
 }
 
-.page-histogram-archive h2 {
+.page-histogram-archive h2,
+.page-heatmap-archive h2 {
   /* --- Size It --- */
   font-size: 1.1rem;
 
@@ -47,7 +51,8 @@ body {
   color: #555;
 }
 
-.histogram-archive {
+.histogram-archive,
+.heatmap-archive {
   /* --- Space It --- */
   display: flex;
   flex-direction: column;
@@ -55,7 +60,8 @@ body {
   gap: 40px;
 }
 
-.histogram-entry {
+.histogram-entry,
+.heatmap-entry {
   /* --- Space It --- */
   padding: 16px;
 
@@ -75,7 +81,8 @@ img {
   display: block;
 }
 
-.histogram-date {
+.histogram-date,
+.heatmap-date {
   /* --- Size It --- */
   font-size: 0.9rem;
 
@@ -89,15 +96,15 @@ img {
   color: #6c757d;
 }
 
-/* Responsive styling for Digitize Phi histograms */
+/* Responsive styling for Digitize Phi images */
 .digitize-phi-img {
   /* --- Size It --- */
   max-width: 100%;
   height: auto;
 }
 
-/* Histogram Archive Link Styling */
-.histogram-archive-link {
+/* Archive Link Styling */
+.archive-link {
   /* --- Size It --- */
   font-size: 1.125rem;
 
