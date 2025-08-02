@@ -5,18 +5,6 @@ body {
   min-height: 100vh; /* Ensure body takes at least viewport height */
 }
 
-canvas {
-  display: block;
-  width: 100%;
-  height: 100%; /* Fill the container */
-}
-
-#canvas-container {
-  width: 100%;
-  height: 60vh; /* Reduced to pull content up */
-  flex-grow: 0;
-}
-
 #cube-prompt {
   position: absolute;
   top: 20px;
@@ -28,15 +16,16 @@ canvas {
   pointer-events: none; /* Prevent text from blocking clicks */
 }
 
-footer {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-family: MedievalSharp, sans-serif;
-  font-size: 20px;
-  color: #2F2F2F;
+#canvas-container {
+  width: 100%;
+  height: 60vh; /* Reduced to pull content up */
+  flex-grow: 0;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%; /* Fill the container */
 }
 
 .stats-card {
@@ -71,6 +60,17 @@ footer {
 
 .stats-card dd {
   margin: 0;
+}
+
+footer {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: MedievalSharp, sans-serif;
+  font-size: 20px;
+  color: #2F2F2F;
 }
 
 @media (width <= 768px) {
