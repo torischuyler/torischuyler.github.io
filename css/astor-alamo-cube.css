@@ -53,7 +53,7 @@ canvas {
   border-radius: 8px;
   padding: 15px;
   max-width: 250px;
-  margin: 20px;
+  margin: 60px;
   font-family: MedievalSharp, sans-serif;
   color: #2F2F2F;
   background-color: #8A9A5B;
@@ -102,6 +102,11 @@ footer {
   #cube-prompt {
     top: 10px;
     font-size: 18px;
+    z-index: 10; /* Bring the card to the front */
+  }
+
+  #canvas-container {
+    margin-top: -70px; /* Pull the canvas up closer to the prompt */
   }
 
   .stats-card {
