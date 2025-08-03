@@ -82,6 +82,12 @@ canvas {
   margin: 0;
 }
 
+.stats-card dd:nth-child(4) {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #4B5EAA; /* Muted medieval blue, blends with theme and contrasts with #8A9A5B */
+}
+
 footer {
   position: absolute;
   bottom: 10px;

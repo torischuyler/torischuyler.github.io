@@ -14,8 +14,17 @@ document.getElementById('canvas-container').appendChild(renderer.domElement); //
 
 // Create the cube (a box shape with color)
 const geometry = new THREE.BoxGeometry(2, 2, 2); // Bigger cube: 2x2x2 units
-const material = new THREE.MeshBasicMaterial({ color: 0x2F2F2F }); // Dark steel-black
-const cube = new THREE.Mesh(geometry, material);
+
+// Replace the single material and cube lines with:
+const materials = [
+  new THREE.MeshBasicMaterial({ color: 0x2F2F2F }), // +x (right)
+  new THREE.MeshBasicMaterial({ color: 0x2F2F2F }), // -x (left)
+  new THREE.MeshBasicMaterial({ color: 0x2F2F2F }), // +y (top)
+  new THREE.MeshBasicMaterial({ color: 0x2F2F2F }), // -y (bottom)
+  new THREE.MeshBasicMaterial({ color: 0x2F2F2F }), // +z (front)
+  new THREE.MeshBasicMaterial({ color: 0x2F2F2F }), // -z (back)
+];
+const cube = new THREE.Mesh(geometry, materials);
 scene.add(cube); // Add the cube to the scene
 
 const baseGeometry = new THREE.BoxGeometry(3, 0.3, 3); // Width 3, height 0.3, depth 3
@@ -47,6 +56,49 @@ renderer.domElement.addEventListener('click', () => {
       timer = null;
     }
     audio.pause();
+  }
+});
+
+// Track highlighted face
+let highlightedFace = null;
+
+// Function to find the face most facing the camera
+function getFrontFace() {
+  const cubeWorldMatrix = cube.matrixWorld;
+  const faceNormals = [
+    new THREE.Vector3(1, 0, 0),  // +x
+    new THREE.Vector3(-1, 0, 0), // -x
+    new THREE.Vector3(0, 1, 0),  // +y
+    new THREE.Vector3(0, -1, 0), // -y
+    new THREE.Vector3(0, 0, 1),  // +z
+    new THREE.Vector3(0, 0, -1)  // -z
+  ];
+  const cameraDirection = camera.getWorldDirection(new THREE.Vector3()).negate();
+  let maxDot = -1;
+  let frontFaceIndex = 0;
+  faceNormals.forEach((normal, index) => {
+    const worldNormal = normal.clone().applyMatrix4(cubeWorldMatrix).normalize();
+    const dot = cameraDirection.dot(worldNormal);
+    if (dot > maxDot) {
+      maxDot = dot;
+      frontFaceIndex = index;
+    }
+  });
+  return frontFaceIndex;
+}
+
+// Add click event to "Face Shape: Square" in stats card
+const faceShapeElement = document.querySelector('.stats-card dd:nth-child(4)'); // Targets "Square"
+faceShapeElement.style.cursor = 'pointer'; // Visual feedback
+faceShapeElement.addEventListener('click', () => {
+  if (highlightedFace === null) {
+    // Highlight the front-most face
+    highlightedFace = getFrontFace();
+    materials[highlightedFace].color.setHex(0x8A9A5B); // Stats card color
+  } else {
+    // Revert highlight
+    materials[highlightedFace].color.setHex(0x2F2F2F); // Back to dark steel-black
+    highlightedFace = null;
   }
 });
 
