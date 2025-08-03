@@ -30,14 +30,14 @@ let timer = null; // We'll use this later for the timeout
 
 const audio = document.getElementById('cubeMusic');
 
-document.addEventListener('click', () => {
+renderer.domElement.addEventListener('click', () => {
   isSpinning = !isSpinning;
   if (isSpinning && !timer) {
     timer = setTimeout(() => {
       isSpinning = false;
       timer = null;
-      audio.pause(); // Pause audio when spin stops
-    }, 86000); // Changed to 86 seconds
+      audio.pause();
+    }, 86000);
     audio.play().catch(error => {
       console.error('Audio playback failed:', error);
     });
@@ -46,7 +46,7 @@ document.addEventListener('click', () => {
       clearTimeout(timer);
       timer = null;
     }
-    audio.pause(); // Pause audio when manually stopping spin
+    audio.pause();
   }
 });
 
