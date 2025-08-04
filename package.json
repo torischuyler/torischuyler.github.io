@@ -5,18 +5,19 @@
     "version": "Semantic versioning; Major, Minor, Patch",
     "type": "Specifies how Node.js treats .js files - 'module' for modern ES modules, default is CommonJS",
     "devDependencies": "Tools needed only during development, not in production",
-      "eslint": "Lints JavaScript - catches bugs and enforces coding standards",
-      "stylelint": "Lints CSS/SCSS - spots errors and keeps your styles consistent",
-      "stylelint-config-standard": "Popular preset rules for Stylelint - saves time setting up",
+    "eslint": "Lints JavaScript - catches bugs and enforces coding standards",
+    "stylelint": "Lints CSS/SCSS - spots errors and keeps your styles consistent",
+    "stylelint-config-standard": "Popular preset rules for Stylelint - saves time setting up",
     "scripts": "Custom commands to run tasks via npm",
-      "lint:js": "Runs ESLint on all JavaScript files in the project to check for code quality and consistency",
-      "lint:css": "Runs Stylelint on all CSS files in the project to ensure styles follow defined rules"
+    "lint:js": "Runs ESLint on all JavaScript files in the project to check for code quality and consistency",
+    "lint:css": "Runs Stylelint on all CSS files in the project to ensure styles follow defined rules"
   },
   "name": "torischuyler.github.io",
   "version": "1.0.0",
   "type": "module",
   "devDependencies": {
     "eslint": "^9.20.0",
+    "htmlhint": "^1.6.3",
     "stylelint": "^16.14.1",
     "stylelint-config-standard": "^37.0.0"
   },
