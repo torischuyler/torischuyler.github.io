@@ -6,7 +6,7 @@ import json
 import os
 import shutil
 import glob
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 def init_db():
@@ -50,12 +50,11 @@ def compute_phi_digits(day):
     return phi_str[start_idx:end_idx]
 
 
-def store_data(day, digits):
+def store_data(day, digits, date_str):
     conn = sqlite3.connect('phi_digits.db')
     c = conn.cursor()
-    date = datetime.now().strftime('%Y-%m-%d')
     c.execute('INSERT INTO digits (day, digits, date) VALUES (?, ?, ?)',
-              (day, digits, date))
+              (day, digits, date_str))
     conn.commit()
     conn.close()
 
@@ -149,8 +148,10 @@ def update_cumulative_json(all_digits, dest_path):
 def main():
     """
     Main function with a simplified workflow.
+    Supports backfill mode for past days if --backfill flag is provided.
     Generates files and saves them directly to the 'assets' folder.
     """
+    import sys
     # Define the final destination path once.
     dest_path = '../../assets/digitize-phi'
 
@@ -161,34 +162,69 @@ def main():
     last_day = get_last_day()
     current_day = last_day + 1
 
-    try:
-        # 1. Compute daily digits
-        daily_digits = compute_phi_digits(current_day)
-        if len(daily_digits) != 10000:
-            error_msg = (f"Failed to compute the full 10,000 digits. "
-                         f"Got {len(daily_digits)}.")
-            raise ValueError(error_msg)
+    # Check for backfill mode
+    if len(sys.argv) > 1 and sys.argv[1] == "--backfill":
+        start_date = datetime(2025, 6, 26)  # Start of your project
+        for day in range(1, 40):  # Days 1 to 39
+            try:
+                # Compute daily digits
+                daily_digits = compute_phi_digits(day)
+                if len(daily_digits) != 10000:
+                    error_msg = (f"Failed to compute the full 10,000 digits. "
+                                 f"Got {len(daily_digits)}.")
+                    raise ValueError(error_msg)
 
-        # 2. Store in DB
-        store_data(current_day, daily_digits)
+                # Store in DB with correct historical date
+                date = (start_date + timedelta(days=day-1)).strftime('%Y-%m-%d')
+                store_data(day, daily_digits, date)
 
-        # 3. Backup DB
-        backup_db()
+                # Backup DB
+                backup_db()
 
-        # 4. Generate and save daily assets directly to the destination
-        generate_daily_visualizations(daily_digits, current_day, dest_path)
+                # Generate and save daily assets directly to the destination
+                generate_daily_visualizations(daily_digits, day, dest_path)
 
-        # 5. Generate and save cumulative assets directly to the destination
-        all_digits = get_all_digits()
-        update_cumulative_json(all_digits, dest_path)
+                # Generate and save cumulative assets directly to the destination
+                all_digits = get_all_digits()
+                update_cumulative_json(all_digits, dest_path)
 
-        print(f'Successfully processed Day {current_day}. '
-              f'All assets saved to {os.path.abspath(dest_path)}')
+                print(f'Successfully processed Day {day} for backfill. '
+                      f'All assets saved to {os.path.abspath(dest_path)}')
 
-    except Exception as e:
-        with open('error.log', 'a') as f:
-            f.write(f'Error on day {current_day} at {datetime.now()}: {e}\n')
-        print(f"An error occurred on Day {current_day}. Check error.log.")
+            except Exception as e:
+                with open('error.log', 'a') as f:
+                    f.write(f'Error on day {day} at {datetime.now()}: {e}\n')
+                print(f"An error occurred on Day {day}. Check error.log.")
+    else:
+        try:
+            # Normal run for current day
+            daily_digits = compute_phi_digits(current_day)
+            if len(daily_digits) != 10000:
+                error_msg = (f"Failed to compute the full 10,000 digits. "
+                             f"Got {len(daily_digits)}.")
+                raise ValueError(error_msg)
+
+            # Store in DB with current date
+            date = datetime.now().strftime('%Y-%m-%d')
+            store_data(current_day, daily_digits, date)
+
+            # Backup DB
+            backup_db()
+
+            # Generate and save daily assets directly to the destination
+            generate_daily_visualizations(daily_digits, current_day, dest_path)
+
+            # Generate and save cumulative assets directly to the destination
+            all_digits = get_all_digits()
+            update_cumulative_json(all_digits, dest_path)
+
+            print(f'Successfully processed Day {current_day}. '
+                  f'All assets saved to {os.path.abspath(dest_path)}')
+
+        except Exception as e:
+            with open('error.log', 'a') as f:
+                f.write(f'Error on day {current_day} at {datetime.now()}: {e}\n')
+            print(f"An error occurred on Day {current_day}. Check error.log.")
 
 
 if __name__ == '__main__':

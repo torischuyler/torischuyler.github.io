@@ -14,3 +14,6 @@ python/digitize_phi/backups/
 
 # Tool-specific configurations
 .cursor/
+
+# Virtual environment for Python
+python/venv/
