@@ -175,7 +175,8 @@ def main():
                     raise ValueError(error_msg)
 
                 # Store in DB with correct historical date
-                date = (start_date + timedelta(days=day-1)).strftime('%Y-%m-%d')
+                historical_date = start_date + timedelta(days=day-1)
+                date = historical_date.strftime('%Y-%m-%d')
                 store_data(day, daily_digits, date)
 
                 # Backup DB
@@ -184,7 +185,7 @@ def main():
                 # Generate and save daily assets directly to the destination
                 generate_daily_visualizations(daily_digits, day, dest_path)
 
-                # Generate and save cumulative assets directly to the destination
+                # Generate and save cumulative assets to the destination
                 all_digits = get_all_digits()
                 update_cumulative_json(all_digits, dest_path)
 
@@ -223,7 +224,9 @@ def main():
 
         except Exception as e:
             with open('error.log', 'a') as f:
-                f.write(f'Error on day {current_day} at {datetime.now()}: {e}\n')
+                timestamp = datetime.now()
+                error_msg = f'Error on day {current_day} at {timestamp}: {e}\n'
+                f.write(error_msg)
             print(f"An error occurred on Day {current_day}. Check error.log.")
 
 
