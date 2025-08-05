@@ -90,6 +90,14 @@ canvas {
   animation: none; /* Default state, no animation */
 }
 
+.stats-card dd:nth-child(8) {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #4B5EAA;
+  transition: color 0.3s ease, transform 0.3s ease;
+  animation: none;
+}
+
 .stats-card dd:nth-child(4):hover {
   color: #6B7FCC; /* Slightly brighter blue for hover */
   transform: scale(1.1); /* Subtle scale-up for interactivity */
@@ -99,6 +107,12 @@ canvas {
 @keyframes pulse-glow {
   0%, 100% { text-shadow: 0 0 5px rgb(107 127 204 / 50%); } /* Soft blue glow */
   50% { text-shadow: 0 0 10px rgb(107 127 204 / 80%); } /* Peak glow */
+}
+
+.stats-card dd:nth-child(8):hover {
+  color: #6B7FCC;
+  transform: scale(1.1);
+  animation: pulse-glow 1.5s ease-in-out infinite;
 }
 
 footer {

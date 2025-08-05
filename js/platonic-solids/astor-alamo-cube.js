@@ -27,12 +27,6 @@ const materials = [
 const cube = new THREE.Mesh(geometry, materials);
 scene.add(cube); // Add the cube to the scene
 
-const baseGeometry = new THREE.BoxGeometry(3, 0.3, 3); // Width 3, height 0.3, depth 3
-const baseMaterial = new THREE.MeshBasicMaterial({ color: 0x808080 }); // Gray color for the base
-const base = new THREE.Mesh(baseGeometry, baseMaterial);
-base.position.y = -1.1; // Position it just below the cube
-scene.add(base);
-
 let isSpinning = false; // Flag to control if the cube should rotate
 
 let timer = null; // We'll use this later for the timeout
@@ -102,12 +96,90 @@ faceShapeElement.addEventListener('click', () => {
   }
 });
 
+// Track highlighted edge
+let highlightedEdge = null;
+
+// Create edge materials for highlighting
+const edgeVertices = [
+  // Bottom edges
+  [[1, -1, 1], [-1, -1, 1]],   // 0: bottom front
+  [[1, -1, -1], [1, -1, 1]],   // 1: bottom right
+  [[-1, -1, -1], [1, -1, -1]], // 2: bottom back
+  [[-1, -1, 1], [-1, -1, -1]], // 3: bottom left
+  // Top edges
+  [[1, 1, 1], [-1, 1, 1]],     // 4: top front
+  [[1, 1, -1], [1, 1, 1]],     // 5: top right
+  [[-1, 1, -1], [1, 1, -1]],   // 6: top back
+  [[-1, 1, 1], [-1, 1, -1]],   // 7: top left
+  // Vertical edges
+  [[1, -1, 1], [1, 1, 1]],     // 8: front right
+  [[1, -1, -1], [1, 1, -1]],   // 9: back right
+  [[-1, -1, -1], [-1, 1, -1]], // 10: back left
+  [[-1, -1, 1], [-1, 1, 1]]    // 11: front left
+];
+const edgeMaterials = [];
+const edgeLines = [];
+edgeVertices.forEach(vertices => {
+  const material = new THREE.LineBasicMaterial({ color: 0xFF0000, linewidth: 10 });
+  const geometry = new THREE.BufferGeometry().setFromPoints([
+    new THREE.Vector3(...vertices[0]),
+    new THREE.Vector3(...vertices[1])
+  ]);
+  const line = new THREE.Line(geometry, material);
+  scene.add(line);
+  edgeMaterials.push(material);
+  edgeLines.push(line);
+});
+
+// Function to find the front-most edge
+function getFrontEdge() {
+  const frontFace = getFrontFace();
+  let topEdgeIndex;
+  switch (frontFace) {
+    case 4: // +z front
+      topEdgeIndex = 4; // top front
+      break;
+    case 0: // +x right
+      topEdgeIndex = 5; // top right
+      break;
+    case 5: // -z back
+      topEdgeIndex = 6; // top back
+      break;
+    case 1: // -x left
+      topEdgeIndex = 7; // top left
+      break;
+    case 2: // +y top
+      topEdgeIndex = 4; // Default to top front
+      break;
+    case 3: // -y bottom
+      topEdgeIndex = 4; // Default to top front
+      break;
+    default:
+      topEdgeIndex = 4; // Default to top front
+  }
+  return topEdgeIndex;
+}
+
+// Add click event to "Edge Type: Line" in stats card
+const edgeTypeElement = document.querySelector('.stats-card dd:nth-child(8)');
+edgeTypeElement.style.cursor = 'pointer';
+edgeTypeElement.addEventListener('click', () => {
+  if (highlightedEdge === null) {
+    highlightedEdge = getFrontEdge();
+    edgeMaterials[highlightedEdge].color.setHex(0x00FF00); // Bright green
+  } else {
+    edgeMaterials[highlightedEdge].color.setHex(0xFF0000); // Revert to red
+    highlightedEdge = null;
+  }
+});
+
 // Animation loop (makes the cube rotate forever)
 function animate() {
   requestAnimationFrame(animate); // Keeps the loop running smoothly
   if (isSpinning) {
       cube.rotation.y += 0.01; // Rotate only if isSpinning is true
   }
+  edgeLines.forEach(line => { line.rotation.copy(cube.rotation); }); // Sync edges with cube rotation
   renderer.render(scene, camera); // Draw the updated scene
 }
 animate(); // Start the animation
