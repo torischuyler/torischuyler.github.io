@@ -38,13 +38,18 @@
     </url>
 
     <url>
+        <loc>https://torischuyler.github.io/til/digitize-phi/archives/heatmap</loc>
+        <lastmod>2025-08-09</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+
+    <url>
         <loc>https://torischuyler.github.io/til/platonic-solids</loc>
         <lastmod>2025-08-09</lastmod>
     </url>
 
     <url>
-        <loc>https://torischuyler.github.io/til/digitize-phi/archives/heatmap</loc>
+        <loc>https://torischuyler.github.io/til/platonic-solids/cube.html</loc>
         <lastmod>2025-08-09</lastmod>
-        <changefreq>daily</changefreq>
     </url>
 </urlset>
