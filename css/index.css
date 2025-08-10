@@ -129,7 +129,7 @@
   left: 0;
 
   /* --- Style It --- */
-  content: '🧠';
+  content: '😎';
 }
 
 /* Fallback for unsupported ::before */
@@ -137,6 +137,28 @@
   .who-am-i-container ul {
     list-style-type: disc;
   }
+}
+
+/* Sleeker hyperlink styling for bullet points */
+.who-am-i-container ul a {
+  /* --- Style It --- */
+  color: inherit; /* Matches surrounding text color for a seamless look */
+  text-decoration: underline; /* Adds a subtle underline by default to indicate clickability */
+  text-decoration-color: rgba(212 175 55 / 70%); /* Slightly bolder gold for more distinction */
+  text-underline-offset: 0.2em; /* Slight offset for a modern, spaced look */
+  text-decoration-thickness: 4px; /* Makes the underline a bit thicker for better visibility */
+
+  /* --- Chaos It --- */
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+/* Hover/focus state for hyperlinks */
+.who-am-i-container ul a:hover,
+.who-am-i-container ul a:focus {
+  /* --- Style It --- */
+  color: #D4AF37; /* Muted gold to tie into the site's glow theme */
+  text-decoration-color: #D4AF37; /* Full opacity gold underline on interaction for feedback */
+  text-decoration-thickness: 2px; /* Keeps consistent thickness on hover for a polished feel */
 }
 
 /* Page Subheading */
