@@ -28,6 +28,14 @@ body {
   padding: 1rem;
 }
 
+.back-to-whoami {
+  color: purple;
+  text-decoration: underline;
+  display: block;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
 .back-to-til {
   color: purple;
   text-decoration: underline;
