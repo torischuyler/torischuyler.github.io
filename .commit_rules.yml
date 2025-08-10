@@ -75,5 +75,6 @@ rules:
         - "1 PY file"
         - "1 MP3 file"
         - "1 MOV file"
+        - "1 MP4 file"
     description:
       tense: active
