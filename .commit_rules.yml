@@ -56,6 +56,7 @@ rules:
       - xml
       - txt
       - py
+      - gitignore
     targets:
       description: "List of affected items with counts and types"
       format: |
@@ -75,5 +76,6 @@ rules:
         - "1 PY file"
         - "1 MP3 file"
         - "1 MP4 file"
+        - "1 GITIGNORE file"
     description:
       tense: active
