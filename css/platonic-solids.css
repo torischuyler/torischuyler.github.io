@@ -43,13 +43,13 @@ body {
   text-align: center;
 }
 
-.page-cube h1,
-.page-cube h2 {
+.page-plato h1,
+.page-plato h2 {
   /* --- Space It --- */
   text-align: center;
 }
 
-.page-cube h1 {
+.page-plato h1 {
   /* --- Space It --- */
   padding-bottom: 0.5rem;
 
@@ -60,7 +60,7 @@ body {
   font-weight: 700;
 }
 
-.page-cube h2 {
+.page-plato h2 {
   /* --- Size It --- */
   font-size: 1.25rem;
 
