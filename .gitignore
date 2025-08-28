@@ -16,5 +16,8 @@ python/digitize_phi/backups/
 # Tool-specific configurations
 .cursor/
 
+# macOS Finder metadata files
+.DS_Store
+
 # Virtual environment for Python
 python/venv/
