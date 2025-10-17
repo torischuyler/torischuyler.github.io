@@ -101,7 +101,7 @@ def generate_daily_visualizations(daily_digits, day, dest_path):
     plt.savefig(os.path.join(dest_path, 'histogram.png'))
     plt.close()
 
-    # Artistic representation
+    # Heatmap representation
     plt.figure(figsize=(20, 20))
     if len(daily_digits) == 10000:
         digits_list = [int(d) for d in daily_digits]
@@ -112,10 +112,10 @@ def generate_daily_visualizations(daily_digits, day, dest_path):
     plt.axis('off')
     plt.title(f'Digitize Phi: Daily Digit Map (Day {day})', fontsize=30)
 
-    # Save the archived and main artistic image
-    artistic_path = os.path.join(archive_dest_path, f'{day_str}_artistic.png')
-    plt.savefig(artistic_path, dpi=200)
-    plt.savefig(os.path.join(dest_path, 'artistic.png'), dpi=200)
+    # Save the archived and main heatmap image
+    heatmap_path = os.path.join(archive_dest_path, f'{day_str}_heatmap.png')
+    plt.savefig(heatmap_path, dpi=200)
+    plt.savefig(os.path.join(dest_path, 'heatmap.png'), dpi=200)
     plt.close()
 
     # Save daily digit counts directly to the destination
