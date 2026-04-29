@@ -74,33 +74,27 @@
 
 /* Custom bullets using ::before for Safari compatibility */
 .til-container ul li::before {
-  /* --- Space It --- */
-
   /* Sets pseudo-element relative to parent <li> */
   position: absolute;
 
   /* Aligns bullet to left edge */
   left: 0;
+  content: '🥧';
+}
 
-  /* --- Style It --- */
+.til-container ul li:nth-child(2)::before {
   content: '💠';
 }
 
-/* Custom bullet for second list item */
-.til-container ul li:nth-child(2)::before {
-  /* --- Style It --- */
+.til-container ul li:nth-child(3)::before {
   content: '🧮';
 }
 
-/* Custom bullet for third list item */
-.til-container ul li:nth-child(3)::before {
-  /* --- Style It --- */
+.til-container ul li:nth-child(4)::before {
   content: '🌱';
 }
 
-/* Custom bullet for fourth list item */
-.til-container ul li:nth-child(4)::before {
-  /* --- Style It --- */
+.til-container ul li:nth-child(5)::before {
   content: '💫';
 }
 
