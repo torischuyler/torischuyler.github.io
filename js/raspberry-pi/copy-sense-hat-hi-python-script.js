@@ -12,16 +12,15 @@ sense.show_message(":D", text_colour=(green), scroll_speed=(0.18))
 sense.show_letter("T", text_colour=(blue))
 `;
 
-function copyTrafficScript() {
+const copyBtn = document.getElementById('copyBtnHi');
+
+copyBtn.addEventListener('click', () => {
     navigator.clipboard.writeText(pythonScript).then(() => {
-        const btn = document.querySelector('.copy-btn');
-        const originalText = btn.textContent;
-        btn.textContent = '✅ Copied!';
-        setTimeout(() => btn.textContent = originalText, 2000);
+        const originalText = copyBtn.textContent;
+        copyBtn.textContent = '✅ Copied!';
+        setTimeout(() => copyBtn.textContent = originalText, 2000);
     }).catch(err => {
         console.error('Copy failed', err);
         alert('Failed to copy. Please try again.');
     });
-}
-
-document.getElementById('copyBtn').addEventListener('click', copyTrafficScript);
+});
