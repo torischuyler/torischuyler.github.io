@@ -23,11 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mapping of categories to image filenames
   const categoryImages = {
-    mystical: 'assets/images/meme-results/trigon.jpg',
-    cute: 'assets/images/meme-results/lil-twirlip.jpg',
-    savage: 'assets/images/meme-results/bone-appetit.jpg',
-    tech: 'assets/images/meme-results/steve-jobs.jpg',
-    renegade: 'assets/images/meme-results/retina-goggles.jpg'
+    mystical: '/assets/images/meme-results/trigon.jpg',
+    cute: '/assets/images/meme-results/lil-twirlip.jpg',
+    savage: '/assets/images/meme-results/bone-appetit.jpg',
+    tech: '/assets/images/meme-results/steve-jobs.jpg',
+    renegade: '/assets/images/meme-results/retina-goggles.jpg'
   };
 
   // Emoji mapping for mobile pop-up and desktop cursor
