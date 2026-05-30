@@ -101,10 +101,9 @@ easy, universal choice. It's like calling the first chapter of a book "Chapter 1
         <!-- Load local stylesheets first for speed and to prevent overrides by third-party CSS (e.g., Google Fonts). -->
         <!-- End Stylesheet Links  --------------------------------------------------->
 
+        <script src="js/stay-tuned-modal.js" defer></script>
         <script src="js/toggles/torii-gemini-toggle.js" defer></script>
-        <!-- Script for toggling Light/Dark mode - Scripts are placed last for better page load
-        performance and security. 'defer' tells the browser to load the script after the HTML is
-        parsed but before the DOMContentLoaded event, improving page load times. -->
+        <!-- Personality emoji button (placeholder "Stay tuned" behavior) -->
 
         <script src="js/mobile-nav.js" defer></script>
         <!-- Script for toggling touch navigation. ------>
@@ -141,8 +140,8 @@ easy, universal choice. It's like calling the first chapter of a book "Chapter 1
                 <div class="hamburger">☰</div>
                 <!-- Hamburger icon -->
 
-                <button id="torii-gemini-toggle"></button>
-                <!-- Light/dark mode toggle -->
+                <button id="torii-gemini-toggle" aria-label="Fun button (coming soon)"></button>
+                <!-- Personality button (coming soon) -->
             </div>
             <!-- End Nav Header Wrapper ------------------------------------------------->
         </nav>

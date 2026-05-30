@@ -52,10 +52,9 @@
         <!-- Load local stylesheets first for speed and to prevent overrides by third-party CSS (e.g., Google Fonts). -->
         <!-- End Stylesheet Links  --------------------------------------------------->
 
+        <script src="js/stay-tuned-modal.js" defer></script>
         <script src="js/toggles/yin-yang-toggle.js" defer></script>
-        <!-- Script for toggling Light/Dark mode - placed last for better page load performance and security.
-        'defer' tells the browser to load the script after the HTML is parsed but before
-        the DOMContentLoaded event, improving page load times. -->
+        <!-- Personality emoji button (placeholder "Stay tuned" behavior) -->
 
         <script src="js/mobile-nav.js" defer></script>
         <!-- Script for toggling mobile navigation------>
@@ -83,8 +82,8 @@
                 <div class="hamburger">☰</div>
                 <!-- Hamburger icon -->
 
-                <button id="yin-yang-toggle"></button>
-                <!-- Light/dark mode toggle -->
+                <button id="yin-yang-toggle" aria-label="Fun button (coming soon)"></button>
+                <!-- Personality button (coming soon) -->
 
             </div>
             <!-- End Nav Header Wrapper ------------------------------------------------->

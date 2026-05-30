@@ -1,48 +1,30 @@
 /*
-  Angel Devil toggle: A light/dark mode switch with 😇 for light mode and 😈 for dark mode.
-  Saves theme preference in localStorage for future visits.
+  Angel / Devil personality button (Who Are You? page nav)
+  Placeholder behavior: Shows "Stay tuned" modal, then flips between 😇 and 😈.
 */
 
-// Utility to handle localStorage operations
-function accessStorage(operation, key, value = null) {
-  if (!window.localStorage) return null;
-  try {
-    return operation === 'get' ? localStorage.getItem(key) : localStorage.setItem(key, value);
-  } catch (e) {
-    console.error(`Failed to ${operation} theme in localStorage:`, e);
-    return null;
-  }
-}
-
-// Initialize Angel-Devil theme toggle
 function initializeAngelDevilToggle() {
-  // Retrieve saved theme and apply if 'light'
-  const savedTheme = accessStorage('get', 'theme');
-  if (savedTheme) {
-    document.body.classList.toggle('light-theme', savedTheme === 'light');
-  }
-
-  // Get toggle button
   const toggle = document.getElementById('angel-devil-toggle');
   if (!toggle) {
     console.error('Angel-Devil toggle button not found.');
     return;
   }
 
-  // Update toggle UI based on theme
-  function updateThemeUI(currentTheme) {
-    toggle.textContent = currentTheme === 'light' ? '😈' : '😇';
-    toggle.setAttribute('aria-label', `Switch to ${currentTheme === 'light' ? 'dark' : 'light'} theme`);
-  }
+  // Starting emoji
+  let currentEmoji = '😇';
+  toggle.textContent = currentEmoji;
+  toggle.setAttribute('aria-label', 'Fun button (coming soon)');
 
-  // Set initial UI using saved theme or default to 'dark'
-  updateThemeUI(savedTheme || 'dark');
+  const flipTo = (newEmoji) => {
+    currentEmoji = newEmoji;
+    toggle.textContent = currentEmoji;
+  };
 
-  // Toggle theme on click
   toggle.addEventListener('click', () => {
-    const currentTheme = document.body.classList.toggle('light-theme') ? 'light' : 'dark';
-    updateThemeUI(currentTheme);
-    accessStorage('set', 'theme', currentTheme);
+    window.showStayTunedModal(() => {
+      const next = currentEmoji === '😇' ? '😈' : '😇';
+      flipTo(next);
+    });
   });
 }
 

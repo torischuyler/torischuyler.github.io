@@ -49,11 +49,6 @@
   color:  #F37021;
 }
 
-.light-theme .lesson-container h1 {
-  /* --- Style It --- */
-  color: #C00;
-}
-
 /* Level 2 Subheadings */
 .lesson-container h2 {
   /* --- Space It --- */
@@ -78,11 +73,6 @@
   /* --- Style It --- */
   font-family: Righteous, system-ui, sans-serif;
   color: #F89317;
-}
-
-.light-theme .lesson-container h3 {
-  /* --- Style It --- */
-  color: #63B0CD;
 }
 
 /* Ordered and unordered lists - Lesson goals, steps, and materials. */

@@ -69,10 +69,9 @@
         <!-- PyScript JS for running Python in the browser -->
         <!-- End Python  ------------------------------------->
 
+        <script src="js/stay-tuned-modal.js" defer></script>
         <script src="js/toggles/angel-devil-toggle.js" defer></script>
-        <!-- Script for toggling Dark/Light mode - placed last for better page load performance and security.
-        'defer' tells the browser to load the script after the HTML is parsed but before
-        the DOMContentLoaded event, improving page load times. -->
+        <!-- Personality emoji button (placeholder "Stay tuned" behavior) -->
 
         <script src="js/mobile-nav.js" defer></script>
         <!-- Script for toggling mobile navigation ---------->
@@ -115,8 +114,8 @@
                 <div class="hamburger">☰</div>
                 <!-- Hamburger icon -->
 
-                <button id="angel-devil-toggle"></button>
-                <!-- Light/dark mode toggle -->
+                <button id="angel-devil-toggle" aria-label="Fun button (coming soon)"></button>
+                <!-- Personality button (coming soon) -->
 
             </div>
             <!-- End Nav Header Wrapper ------------------------------------------------->

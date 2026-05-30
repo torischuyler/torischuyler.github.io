@@ -78,18 +78,6 @@
   --subheader-color: #FACAA1;
 }
 
-/* 🌞 Light Theme Agnostic Variables - These override default colors only in light mode. */
-
-.light-theme {
-  --primary-color: #3A80D2;
-  --secondary-color: #1E5A96; 
-  --background-color: #F5F7FA;
-  --text-color: #2C3E50;
-  --accent-color: #FFF;
-  --header-color: #C00;
-  --subheader-color: #E23D28;
-}
-
 /* 
   Body - The root element for page content. 
   Defines base styling (fonts, colors) and layout structure for flexible content arrangement.
@@ -333,13 +321,10 @@ footer {
   transform: scale(1.2);
 }
 
-/* 
-  Smooth Theme Transitions
-  Change colors smoothly over 0.3s when toggling the light/dark mode button.
-*/
+/* Base elements that get hover/active transitions (theme color transitions removed) */
 body, h1, h2, nav, footer, .hamburger {
   /* --- Chaos It --- */
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /*
