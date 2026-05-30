@@ -1,0 +1,205 @@
+/* 
+  🥧 css/raspberry-pi.css
+  Foundation styles for the Raspberry Pi "Today I Learned" section.
+  Works together with global.css. Provides layout, video/copy components,
+  and basic hub page structure. Theme-aware via CSS variables.
+*/
+
+/* ========== Page Container ========== */
+.rpi-container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  line-height: 1.65;
+}
+
+/* ========== Hub Page ========== */
+.rpi-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+.rpi-intro blockquote {
+  font-style: italic;
+  margin: 1rem 0 0;
+  padding: 0 1rem;
+  border-left: 3px solid var(--accent-color);
+  opacity: 0.85;
+}
+
+.rpi-section-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.rpi-lab-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.rpi-lab-list li {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s;
+}
+
+.rpi-lab-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgb(0 0 0 / 15%);
+}
+
+.rpi-lab-list a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.rpi-lab-list a:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+.rpi-lab-list .lab-date {
+  margin-left: auto;
+  font-size: 0.85rem;
+  font-family: system-ui, sans-serif;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+/* ========== Lab Pages (Content Pages) ========== */
+.rpi-lab-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.rpi-lab-header h1 {
+  margin-bottom: 0.5rem;
+}
+
+/* Hardware Checklist */
+.hardware-checklist {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.hardware-checklist h3 {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-family: system-ui, sans-serif;
+  font-weight: 600;
+  color: var(--subheader-color);
+  border-bottom: 1px solid var(--secondary-color);
+  padding-bottom: 0.5rem;
+}
+
+.hardware-checklist ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+
+.hardware-checklist li {
+  margin: 0.35rem 0;
+  font-size: 0.95rem;
+}
+
+/* Improve checkbox visibility across themes */
+.hardware-checklist input[type="checkbox"] {
+  accent-color: var(--accent-color);
+}
+
+/* ========== Video Embeds ========== */
+.video-container {
+  margin: 1.5rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 8px 30px rgb(0 0 0 / 25%);
+  border: 1px solid var(--secondary-color);
+}
+
+.video-container video {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* ========== Copy Script Buttons ========== */
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: system-ui, sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 0.75rem 0;
+}
+
+.copy-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.copy-btn:active {
+  transform: translateY(0);
+}
+
+.copy-btn:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+/* ========== Utility / Legacy Support ========== */
+.rpi-back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.rpi-back-link:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+/* Make sure images in lab pages are reasonable */
+.rpi-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 1rem 0;
+}
+
+/* Responsive tweaks */
+@media (width >= 769px) {
+  .rpi-container {
+    padding: 2rem 1rem 4rem;
+  }
+  
+  .rpi-lab-list {
+    gap: 0.75rem;
+  }
+}

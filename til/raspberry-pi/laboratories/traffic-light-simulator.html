@@ -4,72 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; img-src 'self' data:; media-src 'self' data:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; media-src 'self' data:;">
 
     <link rel="canonical" href="https://torischuyler.github.io/til/raspberry-pi/laboratories/traffic-light-simulator.html">
-    <title>Traffic Light Simulator</title>
+    <title>Traffic Light Simulator | Raspberry Pi | TIL | Tori Schuyler</title>
+
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
-    <link rel="stylesheet" href="../../../css/platonic-solids.css">
+
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Site styles -->
+    <link rel="stylesheet" href="../../../css/global.css">
+    <link rel="stylesheet" href="../../../css/raspberry-pi.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
 </head>
-<body class="page-main">
-    <a href="../">&larr; Back to the Main Raspberry Pi Page</a>
+<body>
+    <!-- Navigation -->
+    <nav aria-label="Page navigation">
+        <ul class="nav-menu">
+            <li><a href="../../../index.html">whoami</a></li>
+            <li><a href="../../../who-are-you.html">Who Are You?</a></li>
+            <li><a href="../../../til.html" class="active" aria-current="page">TIL</a></li>
+        </ul>
 
-    <h1>Traffic Light Simulator</h1>
-
-    <!-- Hardware Checklist -->
-    <div style="margin-bottom: 25px;">
-        <h3 style="margin-bottom: 12px; border-bottom: 2px solid #333; padding-bottom: 4px; display: inline-block;">Hardware I used on Breadboard:</h3>
-        
-        <!-- Buzzer Section -->
-        <div style="margin-bottom: 20px;">
-            <strong><a href="../../../../assets/images/raspberry-pi/buzzer.png" target="_blank" rel="noopener">Active buzzer</a></strong> (1)            
-            <ul style="list-style: none; padding-left: 0; margin: 6px 0 0 0;">
-                <li style="margin-bottom: 4px;">
-                    <input type="checkbox" id="hw-buzzer-wires" style="margin-right: 8px;">
-                    <label for="hw-buzzer-wires"><a href="../../../../assets/images/raspberry-pi/male-to-female-jump-wire.png" target="_blank" rel="noopener">Male to Female jumper wires</a> (2: 1 ground, 1 signal)</label>
-                </li>
-            </ul>
+        <div class="nav-header">
+            <div class="hamburger">☰</div>
+            <button id="yin-yang-toggle" aria-label="Toggle light/dark theme"></button>
         </div>
+    </nav>
 
-        <!-- Button Section -->
-        <div style="margin-bottom: 20px;">
-            <strong><a href="../../../../assets/images/raspberry-pi/button.png" target="_blank" rel="noopener">Button</a></strong> (1)            
-            <ul style="list-style: none; padding-left: 0; margin: 6px 0 0 0;">
-                <li style="margin-bottom: 4px;">
-                    <input type="checkbox" id="hw-button-wires" style="margin-right: 8px;">
-                    <label for="hw-button-wires"><a href="../../../../assets/images/raspberry-pi/male-to-female-jump-wire.png" target="_blank" rel="noopener">Male to Female jumper wires</a> (2: 1 ground, 1 signal)</label>
-                </li>
-            </ul>
-        </div>
+    <div class="rpi-container">
+        <main>
+            <a href="../index.html" class="rpi-back-link">← Back to Raspberry Pi Laboratories</a>
 
-        <!-- LEDs Section -->
-        <div style="margin-bottom: 20px;">
-            <strong><a href="../../../../assets/images/raspberry-pi/led.png" target="_blank" rel="noopener">LEDs</a></strong> (3: red, yellow, green)         
-            <ul style="list-style: none; padding-left: 0; margin: 6px 0 0 0;">
-                <li style="margin-bottom: 4px;">
-                    <input type="checkbox" id="hw-resistors" style="margin-right: 8px;">
-                    <label for="hw-resistors"><a href="../../../../assets/images/raspberry-pi/resistor-220-ohms.png" target="_blank" rel="noopener">Resistors</a> (3: 220 ohms)</label>
-                </li>
-                <li style="margin-bottom: 4px;">
-                    <input type="checkbox" id="hw-led-wires" style="margin-right: 8px;">
-                    <label for="hw-led-wires"><a href="../index.html" target="_blank" rel="noopener">Male to Female jumper wires</a> (4: 1 ground, 3 signal)</label>
-                </li>
-            </ul>
-        </div>
+            <div class="rpi-lab-header">
+                <h1>Traffic Light Simulator</h1>
+            </div>
+
+            <!-- Hardware Checklist -->
+            <div class="hardware-checklist">
+                <h3>Hardware I used on Breadboard</h3>
+                
+                <!-- Buzzer Section -->
+                <div>
+                    <strong><a href="../../../../assets/images/raspberry-pi/buzzer.png" target="_blank" rel="noopener">Active buzzer</a></strong> (1)            
+                    <ul>
+                        <li>
+                            <input type="checkbox" id="hw-buzzer-wires" style="margin-right: 8px;">
+                            <label for="hw-buzzer-wires"><a href="../../../../assets/images/raspberry-pi/male-to-female-jump-wire.png" target="_blank" rel="noopener">Male to Female jumper wires</a> (2: 1 ground, 1 signal)</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Button Section -->
+                <div style="margin-top: 1rem;">
+                    <strong><a href="../../../../assets/images/raspberry-pi/button.png" target="_blank" rel="noopener">Button</a></strong> (1)            
+                    <ul>
+                        <li>
+                            <input type="checkbox" id="hw-button-wires" style="margin-right: 8px;">
+                            <label for="hw-button-wires"><a href="../../../../assets/images/raspberry-pi/male-to-female-jump-wire.png" target="_blank" rel="noopener">Male to Female jumper wires</a> (2: 1 ground, 1 signal)</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- LEDs Section -->
+                <div style="margin-top: 1rem;">
+                    <strong><a href="../../../../assets/images/raspberry-pi/led.png" target="_blank" rel="noopener">LEDs</a></strong> (3: red, yellow, green)         
+                    <ul>
+                        <li>
+                            <input type="checkbox" id="hw-resistors" style="margin-right: 8px;">
+                            <label for="hw-resistors"><a href="../../../../assets/images/raspberry-pi/resistor-220-ohms.png" target="_blank" rel="noopener">Resistors</a> (3: 220 ohms)</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="hw-led-wires" style="margin-right: 8px;">
+                            <label for="hw-led-wires"><a href="../index.html" target="_blank" rel="noopener">Male to Female jumper wires</a> (4: 1 ground, 3 signal)</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <button id="copyBtn" class="copy-btn">
+                📋 Copy Python Script
+            </button>
+
+            <div class="video-container">
+                <video controls autoplay loop playsinline>
+                    <source src="../../../assets/videos/raspberry-pi/pi-traffic-light.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </main>
     </div>
 
-    <button id="copyBtn" class="copy-btn" style="margin-top: 15px;">
-        📋 Copy Python Script
-    </button>
+    <!-- Footer -->
+    <footer>
+        <p><span id="year"></span> 👾 Tori Schuyler</p>
+    </footer>
 
-    <div class="video-container">
-        <video controls autoplay loop playsinline>
-            <source src="../../../assets/videos/raspberry-pi/pi-traffic-light.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-
+    <script src="../../../js/toggles/yin-yang-toggle.js" defer></script>
+    <script src="../../../js/mobile-nav.js" defer></script>
+    <script src="../../../js/footer.js"></script>
     <script src="../../../js/raspberry-pi/copy-python-script.js"></script>
 </body>
 </html>
