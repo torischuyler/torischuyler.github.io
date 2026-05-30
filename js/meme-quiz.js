@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     shareButton.addEventListener('click', () => {
       const result = memeLanguage.charAt(0).toUpperCase() + memeLanguage.slice(1);
       const imageUrl = `https://torischuyler.github.io/${categoryImages[memeLanguage]}`;
-      const quizLink = 'https://torischuyler.github.io/who-are-you.html#meme-quiz';
+      const quizLink = 'https://torischuyler.github.io/who-are-you/#meme-quiz';
       const shareMessage = `My meme language is ${result}! Check out my meme: ${imageUrl} Discover yours here: ${quizLink}`;
       navigator.clipboard.writeText(shareMessage).then(() => {
         alert('Meme result, image, and quiz link copied to clipboard! Share it with your friends!');

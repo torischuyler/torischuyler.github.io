@@ -1,3 +1,8 @@
+---
+permalink: /til/
+redirect_from:
+  - /til.html
+---
 <!DOCTYPE html>
 <!-- This is the DOCTYPE declaration. It’s like a signal to browsers that says, "Hey, this is an HTML web page!"-->
 
@@ -20,7 +25,7 @@
         <!-- Content Security Policy: Restricts resource loading to same-origin only, preventing XSS attacks
         by blocking external scripts, stylesheets, and other resources unless explicitly allowed. -->
 
-        <link rel="canonical" href="https://torischuyler.github.io/til">
+        <link rel="canonical" href="https://torischuyler.github.io/til/">
         <!-- Canonical URL: Specifies the preferred version of this page for search engines to index,
         preventing duplicate content issues. -->
 
@@ -28,10 +33,10 @@
         <!-- Page title, visible in browser tabs, bookmarks, and search engine results.
         Format: [Page Name] | [Site Name] - this pattern helps with SEO and page navigation. -->
 
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
         <!-- Sets the favicon, the little icon you see in browser tabs and bookmarks. -->
 
-        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <!-- Adds Apple touch icon for iOS devices to display favicon -->
 
         <!-- Begin Preconnect Links  ------------------------------------------------->
@@ -46,17 +51,17 @@
         <!-- Begin Stylesheet Links  ------------------------------------------------->
         <!-- Stylesheets define how the browser styles HTML content, improving page appearance. -->
 
-        <link rel="stylesheet" href="css/global.css">
-        <link rel="stylesheet" href="css/til.css">
+        <link rel="stylesheet" href="/css/global.css">
+        <link rel="stylesheet" href="/css/til.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
         <!-- Load local stylesheets first for speed and to prevent overrides by third-party CSS (e.g., Google Fonts). -->
         <!-- End Stylesheet Links  --------------------------------------------------->
 
-        <script src="js/stay-tuned-modal.js" defer></script>
-        <script src="js/toggles/yin-yang-toggle.js" defer></script>
+        <script src="/js/stay-tuned-modal.js" defer></script>
+        <script src="/js/toggles/yin-yang-toggle.js" defer></script>
         <!-- Personality emoji button (placeholder "Stay tuned" behavior) -->
 
-        <script src="js/mobile-nav.js" defer></script>
+        <script src="/js/mobile-nav.js" defer></script>
         <!-- Script for toggling mobile navigation------>
     </head>
     <!-- End Head Section --------------------------------------------------->
@@ -71,9 +76,9 @@
 
             <!-- Navigation menu ------->
             <ul class="nav-menu">
-                <li><a href="index.html">whoami</a></li>
-                <li><a href="who-are-you.html">Who Are You?</a></li>
-                <li><a href="til.html" class="active" aria-current="page">TIL</a></li>
+                <li><a href="/">whoami</a></li>
+                <li><a href="/who-are-you/">Who Are You?</a></li>
+                <li><a href="/til/" class="active" aria-current="page">TIL</a></li>
             </ul>
 
             <!-- Begin Nav Header Wrapper: Groups hamburger and toggle------------------>
@@ -110,11 +115,11 @@
                 <h1>Today I Learned</h1>
 
                 <ul class="til-list">
-                <li><a href="til/raspberry-pi/index.html">Raspberry Pi</a></li>
-                <li><a href="til/platonic-solids/index.html">Platonic Solids</a></li>
-                <li><a href="til/digitize-phi/index.html">Digitize Phi</a></li>
-                <li><a href="til/game-of-life.html">Conway's Game of Life</a></li>
-                <li><a href="til/golden-ratio.html">The Golden Ratio</a></li>
+                <li><a href="/til/raspberry-pi/">Raspberry Pi</a></li>
+                <li><a href="/til/platonic-solids/">Platonic Solids</a></li>
+                <li><a href="/til/digitize-phi/">Digitize Phi</a></li>
+                <li><a href="/til/game-of-life/">Conway's Game of Life</a></li>
+                <li><a href="/til/golden-ratio/">The Golden Ratio</a></li>
                 </ul>
             </main>
             <!-- End Main Section ---------------------------------------------------------->
@@ -132,7 +137,7 @@
             </p>
         </footer>
 
-        <script src="js/footer.js"></script>
+        <script src="/js/footer.js"></script>
         <!-- Footer script: Automatically updates the copyright year. -->
         <!-- End Footer Section ------------------------------------------------------>
     </body>
