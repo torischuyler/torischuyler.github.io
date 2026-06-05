@@ -101,6 +101,60 @@
   border-radius: 6px;
 }
 
+/* ========== Archive Pages ========== */
+.phi-back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.phi-back-link:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+.phi-archive-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.phi-archive-header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.phi-archive-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.phi-archive-entry {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--secondary-color);
+  width: 100%;
+}
+
+.phi-archive-entry h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.phi-archive-date {
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+  text-align: center;
+  font-style: italic;
+  color: var(--text-color);
+  opacity: 0.75;
+}
+
 @media (width >= 769px) {
   .phi-container {
     padding: 2rem 1rem 4rem;
@@ -109,76 +163,8 @@
   .phi-archive-list {
     gap: 0.75rem;
   }
-}
 
-/* ========== Archive Pages (legacy standalone layout) ========== */
-body.page-histogram-archive,
-body.page-heatmap-archive {
-  margin: 0;
-  padding: 1rem;
-  background-color: #fdfdfd;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #333;
-}
-
-.container {
-  max-width: 900px;
-  margin: 32px auto;
-  padding: 1rem;
-}
-
-.page-histogram-archive h1,
-.page-histogram-archive h2,
-.page-heatmap-archive h1,
-.page-heatmap-archive h2 {
-  text-align: center;
-}
-
-.page-histogram-archive h1,
-.page-heatmap-archive h1 {
-  padding-bottom: 0.5rem;
-  color: #2a2a2a;
-  border-bottom: 2px solid #f0f0f0;
-}
-
-.page-histogram-archive h2,
-.page-heatmap-archive h2 {
-  font-size: 1.1rem;
-  margin-top: 0;
-  font-weight: 600;
-  color: #555;
-}
-
-.histogram-archive,
-.heatmap-archive {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-}
-
-.histogram-entry,
-.heatmap-entry {
-  padding: 16px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgb(0 0 0 / 5%);
-}
-
-.page-histogram-archive img,
-.page-heatmap-archive img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.histogram-date,
-.heatmap-date {
-  font-size: 0.9rem;
-  margin-top: -0.75rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  font-style: italic;
-  color: #6c757d;
+  .phi-archive-grid {
+    gap: 1.25rem;
+  }
 }
