@@ -21,3 +21,6 @@ python/digitize_phi/backups/
 
 # Virtual environment for Python
 python/venv/
+
+# Jekyll build output
+_site/

@@ -6,3 +6,12 @@
 # https://torischuyler.github.io/who-am-i.html)
 # Both will still work, it's just nicer without the .html.
 permalink: /:title
+
+# Jekyll scans the whole repo; exclude local dev folders that aren't part of the site.
+exclude:
+  - python
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
