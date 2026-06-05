@@ -4,7 +4,86 @@
   box-sizing: border-box;
 }
 
-body {
+/* ========== Hub Page (with global.css) ========== */
+.plato-container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  line-height: 1.65;
+}
+
+.plato-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+.plato-intro p {
+  margin-bottom: 1rem;
+}
+
+.plato-intro blockquote {
+  font-style: italic;
+  margin: 1rem 0 0;
+  padding: 0 1rem;
+  border-left: 3px solid var(--accent-color);
+  opacity: 0.85;
+}
+
+.plato-section-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.plato-solid-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.plato-solid-list li {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s;
+}
+
+.plato-solid-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgb(0 0 0 / 15%);
+}
+
+.plato-solid-list a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.plato-solid-list a:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+@media (width >= 769px) {
+  .plato-container {
+    padding: 2rem 1rem 4rem;
+  }
+
+  .plato-solid-list {
+    gap: 0.75rem;
+  }
+}
+
+/* ========== Legacy standalone pages (no global.css) ========== */
+body.page-main,
+body.page-plato {
   /* --- Space It --- */
   margin: 0;
   padding: 1rem;

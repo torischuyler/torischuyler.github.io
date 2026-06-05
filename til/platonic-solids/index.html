@@ -9,42 +9,92 @@ redirect_from:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 
-    'self' https://cdn.jsdelivr.net; img-src 'self' data:">
-    <!-- Content Security Policy: Restricts resource loading to same-origin only, preventing XSS attacks
-    by blocking external scripts, stylesheets, and other resources unless explicitly allowed. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:;">
 
     <link rel="canonical" href="https://torischuyler.github.io/til/platonic-solids">
-    <!-- Canonical URL: Specifies the preferred version of this page for search engines to index,
-    preventing duplicate content issues. -->
+    <title>Platonic Solids | TIL | Tori Schuyler</title>
 
-    <title>Platonic Solids</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/platonic-solids.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
 </head>
-<body class="page-main">
+<body>
+    <nav aria-label="Page navigation">
+        <ul class="nav-menu">
+            <li><a href="/">whoami</a></li>
+            <li><a href="/who-are-you">Who Are You?</a></li>
+            <li><a href="/til" class="active" aria-current="page">TIL</a></li>
+        </ul>
 
-    <a href="/til" class="back-to-til">← Back to the Main "Today I Learned" Page</a>
+        <div class="nav-header">
+            <div class="hamburger">☰</div>
+            <button id="yin-yang-toggle" aria-label="Fun button (coming soon)"></button>
+        </div>
+    </nav>
 
-    <h1>Platonic Solids</h1>
-    <p>
-        Examining the five Platonic solids: convex polyhedra with congruent regular polygonal faces, equal edges, and identical vertex arrangements.
-    </p>
+    <div class="plato-container">
+        <main>
+            <h1>Platonic Solids</h1>
 
-    <p>
-        This page serves as a landing page with links out to explore visualizations of each respective solid.
-    </p>
-    <p><i>
-        “The universe cannot be read until we have learnt the language 
-        and become familiar with the characters in which it is written. 
-        It is written in mathematical language, and the letters are triangles, 
-        circles and other geometrical figures, without which means it is humanly 
-        impossible to comprehend a single word.” — Galileo Galilei 
-    </i></p>
-    <p><a href="/til/platonic-solids/tetrahedron" class="platonic-link tetra-link">Tetrahedron</a></p>
-    <p><a href="/til/platonic-solids/cube" class="platonic-link cube-link">Cube</a></p>
-    <p><a href="/til/platonic-solids/octahedron" class="platonic-link octa-link">Octahedron</a></p>
-    <p><a href="/til/platonic-solids/dodecahedron" class="platonic-link dodeca-link">Dodecahedron</a></p>
+            <div class="plato-intro">
+                <p>
+                    Examining the Platonic solids: convex polyhedra with congruent regular polygonal faces,
+                    equal edges, and identical vertex arrangements. This page serves as a landing page with links out to 
+                    explore visualizations of each respective solid.
+                </p>
+                <blockquote>
+                    “The universe cannot be read until we have learnt the language
+                    and become familiar with the characters in which it is written.
+                    It is written in mathematical language, and the letters are triangles,
+                    circles and other geometrical figures, without which means it is humanly
+                    impossible to comprehend a single word.” — Galileo Galilei
+                </blockquote>
+            </div>
+
+            <h2 class="plato-section-title">Solids</h2>
+
+            <ul class="plato-solid-list">
+                <li>
+                    <a href="/til/platonic-solids/tetrahedron">
+                        <span aria-hidden="true">🔥</span>
+                        <span>Tetrahedron</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/til/platonic-solids/cube">
+                        <span aria-hidden="true">🌎</span>
+                        <span>Cube</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/til/platonic-solids/octahedron">
+                        <span aria-hidden="true">🌬️</span>
+                        <span>Octahedron</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/til/platonic-solids/dodecahedron">
+                        <span aria-hidden="true">⭐</span>
+                        <span>Dodecahedron</span>
+                    </a>
+                </li>
+            </ul>
+        </main>
+    </div>
+
+    <footer>
+        <p><span id="year"></span> 👾 Tori Schuyler</p>
+    </footer>
+
+    <script src="/js/stay-tuned-modal.js" defer></script>
+    <script src="/js/toggles/yin-yang-toggle.js" defer></script>
+    <script src="/js/mobile-nav.js" defer></script>
+    <script src="/js/footer.js"></script>
 </body>
 </html>
