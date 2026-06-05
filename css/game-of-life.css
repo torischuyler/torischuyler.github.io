@@ -1,50 +1,98 @@
-/* 🌱 Styles for Conway's Game of Life */
+/* Conway's Game of Life (works with global.css) */
 
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  background-color: #f0f0f0;
-  padding: 10px;
-  box-sizing: border-box;
+.gol-container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  line-height: 1.65;
 }
 
-canvas {
-  border: 1px solid black;
-  max-width: 100%;
-}
-
-button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  font-size: 16px;
-}
-
-.back-to-til {
-  color: purple;
-  text-decoration: underline;
-  display: block;
-  margin: 10px 0;
-  font-size: 1.2em;
+.gol-intro {
   text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  opacity: 0.9;
 }
 
-.rules {
-  margin-top: 20px;
+.gol-board {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  width: 100%;
+  max-width: 520px;
+}
+
+#gol-board canvas,
+.gol-board canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--secondary-color);
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgb(0 0 0 / 25%);
+}
+
+.gol-control-btn {
+  display: block;
+  margin: 0 auto 2rem;
+  padding: 0.6rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: system-ui, sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.gol-control-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.gol-control-btn:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+.gol-rules {
+  background-color: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
   max-width: 600px;
-  text-align: left;
+  margin: 0 auto;
 }
 
-.rules h2 {
-  text-decoration: underline;
-  font-weight: bold;
-  margin-bottom: 10px;
+.gol-rules h2 {
+  text-align: center;
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 
-.rules ol {
-  margin: 10px 0;
-  padding-left: 20px;
+.gol-rules h2:first-child {
+  margin-top: 0;
+}
+
+.gol-rules ol {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: var(--text-color);
+}
+
+.gol-rules li {
+  margin-bottom: 0.5rem;
+}
+
+.gol-rules li:last-child {
+  margin-bottom: 0;
+}
+
+@media (width >= 769px) {
+  .gol-container {
+    padding: 2rem 1rem 4rem;
+  }
 }

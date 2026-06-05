@@ -9,40 +9,78 @@ redirect_from:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'">
-    <!-- Content Security Policy: Restricts resource loading to same-origin only, preventing XSS attacks
-    by blocking external scripts, stylesheets, and other resources unless explicitly allowed. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:;">
 
     <link rel="canonical" href="https://torischuyler.github.io/til/game-of-life">
-    <!-- Canonical URL: Specifies the preferred version of this page for search engines to index,
-    preventing duplicate content issues. -->
+    <title>Conway's Game of Life | TIL | Tori Schuyler</title>
 
-    <title>Conway's Game of Life</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/game-of-life.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
 </head>
 <body>
-    <a href="/til" class="back-to-til">← Back to the Main "Today I Learned" Page</a>
+    <nav aria-label="Page navigation">
+        <ul class="nav-menu">
+            <li><a href="/">whoami</a></li>
+            <li><a href="/who-are-you">Who Are You?</a></li>
+            <li><a href="/til" class="active" aria-current="page">TIL</a></li>
+        </ul>
 
-    <canvas id="gameCanvas"></canvas>
-    <button id="startStopButton">Start</button>
-    <script src="/js/game-of-life.js"></script>
-    <div class="rules">
-        <h2>The Rules - Simplified:</h2>
-        <ol>
-            <li><strong>Survival:</strong> A live cell with 2 or 3 live neighbors stays alive.</li>
-            <li><strong>Death:</strong> A live cell with fewer than 2 or more than 3 live neighbors dies.</li>
-            <li><strong>Birth:</strong> A dead cell with exactly 3 live neighbors becomes alive.</li>
-            <li><strong>Stasis:</strong> All other cells remain in their current state.</li>
-        </ol>
-        <h2>The Rules - Classic:</h2>
-        <ol>
-            <li><strong>Underpopulation:</strong> A live cell with fewer than two live neighbors dies.</li>
-            <li><strong>Survival:</strong> A live cell with two or three live neighbors lives on to the next generation.</li>
-            <li><strong>Overpopulation:</strong> A live cell with more than three live neighbors dies.</li>
-            <li><strong>Reproduction:</strong> A dead cell with exactly three live neighbors becomes a live cell.</li>
-        </ol>
+        <div class="nav-header">
+            <div class="hamburger">☰</div>
+            <button id="yin-yang-toggle" aria-label="Fun button (coming soon)"></button>
+        </div>
+    </nav>
+
+    <div class="gol-container">
+        <main>
+            <h1>Conway's Game of Life</h1>
+
+            <p class="gol-intro">
+                A zero-player cellular automaton on a grid: each generation follows simple neighbor rules,
+                yet complex patterns emerge. Click Start to run the simulation.
+            </p>
+
+            <div class="gol-board" id="gol-board">
+                <canvas id="gameCanvas" aria-label="Game of Life grid"></canvas>
+            </div>
+
+            <button type="button" id="startStopButton" class="gol-control-btn">Start</button>
+
+            <div class="gol-rules">
+                <h2>The Rules — Simplified</h2>
+                <ol>
+                    <li><strong>Survival:</strong> A live cell with 2 or 3 live neighbors stays alive.</li>
+                    <li><strong>Death:</strong> A live cell with fewer than 2 or more than 3 live neighbors dies.</li>
+                    <li><strong>Birth:</strong> A dead cell with exactly 3 live neighbors becomes alive.</li>
+                    <li><strong>Stasis:</strong> All other cells remain in their current state.</li>
+                </ol>
+
+                <h2>The Rules — Classic</h2>
+                <ol>
+                    <li><strong>Underpopulation:</strong> A live cell with fewer than two live neighbors dies.</li>
+                    <li><strong>Survival:</strong> A live cell with two or three live neighbors lives on to the next generation.</li>
+                    <li><strong>Overpopulation:</strong> A live cell with more than three live neighbors dies.</li>
+                    <li><strong>Reproduction:</strong> A dead cell with exactly three live neighbors becomes a live cell.</li>
+                </ol>
+            </div>
+        </main>
     </div>
+
+    <footer>
+        <p><span id="year"></span> 👾 Tori Schuyler</p>
+    </footer>
+
+    <script src="/js/stay-tuned-modal.js" defer></script>
+    <script src="/js/toggles/yin-yang-toggle.js" defer></script>
+    <script src="/js/mobile-nav.js" defer></script>
+    <script src="/js/footer.js"></script>
+    <script src="/js/game-of-life.js" defer></script>
 </body>
 </html>

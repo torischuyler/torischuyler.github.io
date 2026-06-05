@@ -1,65 +1,74 @@
-/* 🌱 Conway's Game of Life: This script creates a simple grid-based game of life. */
+/* Conway's Game of Life: grid-based cellular automaton */
 
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const startStopButton = document.getElementById('startStopButton');
+const board = document.getElementById('gol-board');
 
-// --- START: Responsive Sizing Logic ---
-
-// Set the size of each cell in pixels
 const cellSize = 12;
-
-// Calculate how many cells can fit on the screen
-// It takes 90% of the window's width or height (whichever is smaller),
-// and divides by the cell size to get the number of cells.
-const minViewportSize = Math.min(window.innerWidth, window.innerHeight);
-const gridSize = Math.floor((minViewportSize * 0.9) / cellSize);
-
-// Set the canvas dimensions to be a perfect multiple of the cell size
-canvas.width = gridSize * cellSize;
-canvas.height = gridSize * cellSize;
-
-// --- END: Responsive Sizing Logic ---
-
-
-let grid = createGrid();
+let gridSize = 0;
+let grid = [];
 let animationId;
 let isRunning = false;
 
+function getThemeColors() {
+  const styles = getComputedStyle(document.documentElement);
+  return {
+    alive: styles.getPropertyValue('--header-color').trim() || '#9CBB80',
+    dead: styles.getPropertyValue('--primary-color').trim() || '#0D1B2A',
+    grid: styles.getPropertyValue('--secondary-color').trim() || '#2A3F54',
+  };
+}
+
+function setupCanvas() {
+  const boardWidth = board ? board.clientWidth : Math.min(window.innerWidth * 0.9, 520);
+  const available = Math.min(boardWidth, window.innerHeight * 0.45, 520);
+
+  gridSize = Math.max(10, Math.floor((available * 0.95) / cellSize));
+  canvas.width = gridSize * cellSize;
+  canvas.height = gridSize * cellSize;
+  grid = createGrid();
+  drawGrid();
+}
+
 function createGrid() {
-  let arr = new Array(gridSize);
+  const arr = new Array(gridSize);
   for (let i = 0; i < arr.length; i++) {
     arr[i] = new Array(gridSize);
     for (let j = 0; j < arr[i].length; j++) {
-      arr[i][j] = Math.random() > 0.8 ? 1 : 0; // Randomly populate the grid
+      arr[i][j] = Math.random() > 0.8 ? 1 : 0;
     }
   }
   return arr;
 }
 
 function drawGrid() {
+  const colors = getThemeColors();
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+
   for (let i = 0; i < gridSize; i++) {
     for (let j = 0; j < gridSize; j++) {
       ctx.beginPath();
       ctx.rect(i * cellSize, j * cellSize, cellSize, cellSize);
-      ctx.fillStyle = grid[i][j] ? 'black' : 'white';
+      ctx.fillStyle = grid[i][j] ? colors.alive : colors.dead;
       ctx.fill();
+      ctx.strokeStyle = colors.grid;
+      ctx.lineWidth = 0.5;
       ctx.stroke();
     }
   }
 }
 
 function updateGrid() {
-  let nextGrid = new Array(gridSize);
+  const nextGrid = new Array(gridSize);
   for (let i = 0; i < nextGrid.length; i++) {
     nextGrid[i] = new Array(gridSize).fill(0);
   }
 
   for (let i = 0; i < gridSize; i++) {
     for (let j = 0; j < gridSize; j++) {
-      let neighbors = countNeighbors(grid, i, j);
-      let state = grid[i][j];
+      const neighbors = countNeighbors(grid, i, j);
+      const state = grid[i][j];
 
       if (state === 0 && neighbors === 3) {
         nextGrid[i][j] = 1;
@@ -77,8 +86,8 @@ function countNeighbors(grid, x, y) {
   let sum = 0;
   for (let i = -1; i < 2; i++) {
     for (let j = -1; j < 2; j++) {
-      let col = (x + i + gridSize) % gridSize;
-      let row = (y + j + gridSize) % gridSize;
+      const col = (x + i + gridSize) % gridSize;
+      const row = (y + j + gridSize) % gridSize;
       sum += grid[col][row];
     }
   }
@@ -103,5 +112,17 @@ startStopButton.addEventListener('click', () => {
   isRunning = !isRunning;
 });
 
-// Initial drawing of the grid
-drawGrid();
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    if (isRunning) {
+      cancelAnimationFrame(animationId);
+      isRunning = false;
+      startStopButton.textContent = 'Start';
+    }
+    setupCanvas();
+  }, 200);
+});
+
+setupCanvas();
