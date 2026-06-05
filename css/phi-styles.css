@@ -1,65 +1,156 @@
-/* Styles for Digitize Phi project. */
+/* Styles for Digitize Phi project (works with global.css). */
 
-body {
-  /* --- Space It --- */
+/* ========== Page Container ========== */
+.phi-container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  line-height: 1.65;
+}
+
+/* ========== Hub Page ========== */
+.phi-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+.phi-intro p {
+  margin-bottom: 1rem;
+}
+
+.phi-intro blockquote {
+  font-style: italic;
+  margin: 1rem 0 0;
+  padding: 0 1rem;
+  border-left: 3px solid var(--accent-color);
+  opacity: 0.85;
+}
+
+.phi-section-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.phi-archive-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.phi-archive-list li {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s;
+}
+
+.phi-archive-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgb(0 0 0 / 15%);
+}
+
+.phi-archive-list a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.phi-archive-list a:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+.phi-stat {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--subheader-color);
+  margin-bottom: 2rem;
+}
+
+.phi-chart-section {
+  margin-bottom: 2rem;
+}
+
+.phi-chart-section h2 {
+  text-align: center;
+}
+
+.phi-chart-card {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--secondary-color);
+}
+
+.phi-chart-img,
+.phi-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+
+@media (width >= 769px) {
+  .phi-container {
+    padding: 2rem 1rem 4rem;
+  }
+
+  .phi-archive-list {
+    gap: 0.75rem;
+  }
+}
+
+/* ========== Archive Pages (legacy standalone layout) ========== */
+body.page-histogram-archive,
+body.page-heatmap-archive {
   margin: 0;
   padding: 1rem;
-
-  /* --- Style It --- */
   background-color: #fdfdfd;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: #333;
 }
 
 .container {
-  /* --- Size It --- */
   max-width: 900px;
-
-  /* --- Space It --- */
   margin: 32px auto;
   padding: 1rem;
-}
-
-.back-to-til {
-  color: purple;
-  text-decoration: underline;
-  display: block;
 }
 
 .page-histogram-archive h1,
 .page-histogram-archive h2,
 .page-heatmap-archive h1,
 .page-heatmap-archive h2 {
-  /* --- Space It --- */
   text-align: center;
 }
 
 .page-histogram-archive h1,
 .page-heatmap-archive h1 {
-  /* --- Space It --- */
   padding-bottom: 0.5rem;
-
-  /* --- Style It --- */
   color: #2a2a2a;
   border-bottom: 2px solid #f0f0f0;
 }
 
 .page-histogram-archive h2,
 .page-heatmap-archive h2 {
-  /* --- Size It --- */
   font-size: 1.1rem;
-
-  /* --- Space It --- */
   margin-top: 0;
-
-  /* --- Style It --- */
   font-weight: 600;
   color: #555;
 }
 
 .histogram-archive,
 .heatmap-archive {
-  /* --- Space It --- */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,60 +159,26 @@ body {
 
 .histogram-entry,
 .heatmap-entry {
-  /* --- Space It --- */
   padding: 16px;
-
-  /* --- Style It --- */
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #fff;
   box-shadow: 0 2px 5px rgb(0 0 0 / 5%);
 }
 
-img {
-  /* --- Size It --- */
+.page-histogram-archive img,
+.page-heatmap-archive img {
   max-width: 100%;
   height: auto;
-
-  /* --- Space It --- */
   display: block;
 }
 
 .histogram-date,
 .heatmap-date {
-  /* --- Size It --- */
   font-size: 0.9rem;
-
-  /* --- Space It --- */
   margin-top: -0.75rem;
   margin-bottom: 1.5rem;
   text-align: center;
-
-  /* --- Style It --- */
   font-style: italic;
   color: #6c757d;
-}
-
-/* Responsive styling for Digitize Phi images */
-.digitize-phi-img {
-  /* --- Size It --- */
-  max-width: 100%;
-  height: auto;
-}
-
-/* Archive Link Styling */
-.archive-link {
-  /* --- Size It --- */
-  font-size: 1.125rem;
-
-  /* --- Space It --- */
-  display: inline-flex;
-  padding-left: 12px;
-  text-indent: 12px;
-
-  /* --- Style It --- */
-  color: goldenrod;
-  text-decoration: underline;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text x="0" y="22" fill="currentColor" font-size="24">📁</text></svg>') no-repeat left center;
-  background-size: 24px 24px;
 }

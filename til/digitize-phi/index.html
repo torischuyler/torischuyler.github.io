@@ -9,19 +9,20 @@ redirect_from:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 
-    'self' https://cdn.jsdelivr.net; img-src 'self' data:">
-    <!-- Content Security Policy: Restricts resource loading to same-origin only, preventing XSS attacks
-    by blocking external scripts, stylesheets, and other resources unless explicitly allowed. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://cdn.jsdelivr.net; img-src 'self' data:;">
 
     <link rel="canonical" href="https://torischuyler.github.io/til/digitize-phi">
-    <!-- Canonical URL: Specifies the preferred version of this page for search engines to index,
-    preventing duplicate content issues. -->
+    <title>Digitize Phi | TIL | Tori Schuyler</title>
 
-    <title>Digitize Phi</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/phi-styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
 
     <script
         src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js" defer
@@ -35,32 +36,83 @@ redirect_from:
         crossorigin="anonymous">
     </script>
 
-    <script src="/js/digitize-phi/cumulative-digit-counter.js"></script>
+    <script src="/js/digitize-phi/cumulative-digit-counter.js" defer></script>
 </head>
-<body class="page-main">
+<body>
+    <nav aria-label="Page navigation">
+        <ul class="nav-menu">
+            <li><a href="/">whoami</a></li>
+            <li><a href="/who-are-you">Who Are You?</a></li>
+            <li><a href="/til" class="active" aria-current="page">TIL</a></li>
+        </ul>
 
-    <a href="/til" class="back-to-til">← Back to the Main "Today I Learned" Page</a>
+        <div class="nav-header">
+            <div class="hamburger">☰</div>
+            <button id="yin-yang-toggle" aria-label="Fun button (coming soon)"></button>
+        </div>
+    </nav>
 
-    <h1>Digitize Phi</h1>
-    <p>Exploring the decimal digits of φ (1.6180339887...)</p>
-    <p>
-        Welcome to the Digitize Phi project! This page documents a year-long exploration into the
-        decimal digits of the golden ratio, φ. The project, which began on June 26, 2025, and will
-        conclude on June 26, 2026, reveals 10,000 new decimal digits of φ each day.
-    </p>
-    <p><i>
-        “Geometry has two great treasures: one is the Theorem of Pythagoras; the other, the division 
-        of a line into extreme and mean ratio. The first we may compare to a measure of gold; 
-        the second we may name a precious jewel.” 💎
-        — Johannes Kepler
-    </i></p>
-    <p><a href="/til/digitize-phi/archives/histogram" class="archive-link">Histogram Archive</a></p>
-    <p><a href="/til/digitize-phi/archives/heatmap" class="archive-link">Heatmap Archive</a></p>
-    <br>
-    <p><strong id="cumulative-digits">Loading cumulative digit count...</strong></p>
-    <h2>Daily Histogram</h2>
-    <img src="/assets/digitize-phi/histogram.png" alt="Histogram of φ Digits" class="digitize-phi-img">
-    <h2>Daily Heatmap</h2>
-    <img src="/assets/digitize-phi/heatmap.png" alt="Heatmap of φ Digits" class="digitize-phi-img">
+    <div class="phi-container">
+        <main>
+            <h1>Digitize Phi</h1>
+
+            <div class="phi-intro">
+                <p>Exploring the decimal digits of φ (1.6180339887...)</p>
+                <p>
+                    Welcome to the Digitize Phi project! This page documents a year-long exploration into the
+                    decimal digits of the golden ratio, φ. The project, which began on June 26, 2025, and will
+                    conclude on June 26, 2026, reveals 10,000 new decimal digits of φ each day.
+                </p>
+                <blockquote>
+                    “Geometry has two great treasures: one is the Theorem of Pythagoras; the other, the division
+                    of a line into extreme and mean ratio. The first we may compare to a measure of gold;
+                    the second we may name a precious jewel.” 💎
+                    — Johannes Kepler
+                </blockquote>
+            </div>
+
+            <h2 class="phi-section-title">Archives</h2>
+
+            <ul class="phi-archive-list">
+                <li>
+                    <a href="/til/digitize-phi/archives/histogram">
+                        <span aria-hidden="true">📊</span>
+                        <span>Histogram Archive</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/til/digitize-phi/archives/heatmap">
+                        <span aria-hidden="true">🗺️</span>
+                        <span>Heatmap Archive</span>
+                    </a>
+                </li>
+            </ul>
+
+            <p class="phi-stat" id="cumulative-digits">Loading cumulative digit count...</p>
+
+            <section class="phi-chart-section" aria-labelledby="phi-histogram-heading">
+                <h2 id="phi-histogram-heading">Daily Histogram</h2>
+                <div class="phi-chart-card">
+                    <img src="/assets/digitize-phi/histogram.png" alt="Histogram of φ digits" class="phi-chart-img">
+                </div>
+            </section>
+
+            <section class="phi-chart-section" aria-labelledby="phi-heatmap-heading">
+                <h2 id="phi-heatmap-heading">Daily Heatmap</h2>
+                <div class="phi-chart-card">
+                    <img src="/assets/digitize-phi/heatmap.png" alt="Heatmap of φ digits" class="phi-chart-img">
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p><span id="year"></span> 👾 Tori Schuyler</p>
+    </footer>
+
+    <script src="/js/stay-tuned-modal.js" defer></script>
+    <script src="/js/toggles/yin-yang-toggle.js" defer></script>
+    <script src="/js/mobile-nav.js" defer></script>
+    <script src="/js/footer.js"></script>
 </body>
 </html>

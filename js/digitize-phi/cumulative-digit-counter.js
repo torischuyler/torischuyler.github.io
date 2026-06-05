@@ -12,7 +12,7 @@ const formattedDate = today.toLocaleDateString('en-US', {
 });
 
 // Fetch cumulative digit data and update the display
-fetch('../../../assets/digitize-phi/cumulative_digit_counts.json')
+fetch('/assets/digitize-phi/cumulative_digit_counts.json')
     .then(response => response.json())
     .then(data => {
         const formattedCount = formatNumber(data.total_digits);
