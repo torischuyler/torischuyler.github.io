@@ -1,10 +1,6 @@
-/* Styles for Platonic Solids project. */
+/* Styles for Platonic Solids project (works with global.css). */
 
-* {
-  box-sizing: border-box;
-}
-
-/* ========== Hub Page (with global.css) ========== */
+/* ========== Page Container ========== */
 .plato-container {
   max-width: 860px;
   margin: 0 auto;
@@ -12,6 +8,21 @@
   line-height: 1.65;
 }
 
+.plato-back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.plato-back-link:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+/* ========== Hub Page ========== */
 .plato-intro {
   text-align: center;
   margin-bottom: 2rem;
@@ -71,6 +82,85 @@
   border-radius: 6px;
 }
 
+/* ========== Solid Detail Pages ========== */
+.plato-solid-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.plato-solid-header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.plato-video-archive {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.plato-video-entry {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--secondary-color);
+}
+
+.plato-video-entry h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.plato-video-container {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 8px 30px rgb(0 0 0 / 25%);
+  border: 1px solid var(--secondary-color);
+}
+
+.plato-video-container video {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+.plato-prompt-entry {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--secondary-color);
+}
+
+.plato-prompt-entry h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.plato-prompt-text {
+  margin: 0;
+  text-align: center;
+  font-style: italic;
+  color: var(--text-color);
+  opacity: 0.85;
+}
+
+.plato-prompt-images {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.plato-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+}
+
 @media (width >= 769px) {
   .plato-container {
     padding: 2rem 1rem 4rem;
@@ -79,169 +169,8 @@
   .plato-solid-list {
     gap: 0.75rem;
   }
-}
 
-/* ========== Legacy standalone pages (no global.css) ========== */
-body.page-main,
-body.page-plato {
-  /* --- Space It --- */
-  margin: 0;
-  padding: 1rem;
-
-  /* --- Style It --- */
-  background-color: #fdfdfd;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #333;
-  font-size: 16px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.container {
-  /* --- Size It --- */
-  max-width: 900px;
-
-  /* --- Space It --- */
-  margin: 32px auto;
-  padding: 1rem;
-}
-
-.back-to-whoami {
-  color: purple;
-  text-decoration: underline;
-  display: block;
-  text-align: center;
-  margin-bottom: 0.5rem;
-}
-
-.back-to-til {
-  color: purple;
-  text-decoration: underline;
-  display: block;
-  text-align: center;
-}
-
-.page-plato h1,
-.page-plato h2 {
-  /* --- Space It --- */
-  text-align: center;
-}
-
-.page-plato h1 {
-  /* --- Space It --- */
-  padding-bottom: 0.5rem;
-
-  /* --- Style It --- */
-  color: #2a2a2a;
-  border-bottom: 2px solid #f0f0f0;
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.page-plato h2 {
-  /* --- Size It --- */
-  font-size: 1.25rem;
-
-  /* --- Space It --- */
-  margin-top: 0;
-  margin-bottom: 1rem;
-
-  /* --- Style It --- */
-  font-weight: 600;
-  color: #555;
-}
-
-.video-archive {
-  /* --- Space It --- */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  margin-bottom: 40px;
-}
-
-.video-entry,
-.prompt-entry {
-  /* --- Space It --- */
-  padding: 16px;
-  margin: 0 auto;
-
-  /* --- Style It --- */
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0 4px 10px rgb(0 0 0 / 5%);
-  width: 100%;
-  max-width: 800px;
-}
-
-img {
-  /* --- Size It --- */
-  max-width: 100%;
-  height: auto;
-
-  /* --- Space It --- */
-  display: block;
-}
-
-/* Platonic Link Styling */
-.platonic-link {
-  /* --- Size It --- */
-  font-size: 1.125rem;
-
-  /* --- Space It --- */
-  display: inline-flex;
-  padding-left: 12px;
-  text-indent: 12px;
-
-  /* --- Style It --- */
-  color: goldenrod;
-  text-decoration: underline;
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 24px 24px;
-}
-
-.tetra-link {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text x="0" y="22" fill="currentColor" font-size="24">🔥</text></svg>');
-}
-
-.cube-link {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text x="0" y="22" fill="currentColor" font-size="24">🌎</text></svg>');
-}
-
-.octa-link {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text x="0" y="22" fill="currentColor" font-size="24">🌬️</text></svg>');
-}
-
-.dodeca-link {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text x="0" y="22" fill="currentColor" font-size="24">⭐</text></svg>');
-}
-
-.icosa-link {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text x="0" y="22" fill="currentColor" font-size="24">💧</text></svg>');
-}
-
-/* Styles for videos */
-video {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: 4px;
-}
-
-/* Styles for prompt */
-.prompt-text {
-  /* --- Size It --- */
-  font-size: 1rem;
-
-  /* --- Space It --- */
-  margin: 0;
-  text-align: center;
-
-  /* --- Style It --- */
-  font-style: italic;
-  color: #6c757d;
+  .plato-prompt-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

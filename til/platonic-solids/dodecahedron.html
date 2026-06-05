@@ -9,62 +9,93 @@ redirect_from:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 
-    'self' https://cdn.jsdelivr.net; img-src 'self' data:; media-src 'self'; style-src 'self'">
-
-    <title>Dodecahedron</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; media-src 'self' data:;">
 
     <link rel="canonical" href="https://torischuyler.github.io/til/platonic-solids/dodecahedron">
+    <title>Dodecahedron | Platonic Solids | TIL | Tori Schuyler</title>
+
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/platonic-solids.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
 </head>
-<body class="page-plato">
-    <div class="container">
-        <h1>Dodecahedron</h1>
+<body>
+    <nav aria-label="Page navigation">
+        <ul class="nav-menu">
+            <li><a href="/">whoami</a></li>
+            <li><a href="/who-are-you">Who Are You?</a></li>
+            <li><a href="/til" class="active" aria-current="page">TIL</a></li>
+        </ul>
 
-        <p style="text-align: center;">
-            <a href="/" class="back-to-whoami">&larr; Back to the "whoami" Page</a>
-        </p>
-        <p style="text-align: center;">
-            <a href="/til/platonic-solids" class="back-to-til">&larr; Back to the "Platonic Solids" Page</a>
-        </p>
-
-        <div class="video-archive">
-
-            <div class="video-entry">
-                <h2>Video by Grok Imagine</h2>
-                <video controls>
-                    <source src="/assets/videos/platonic-solids/grok-imagine-dodecahedron.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <div class="video-entry">
-                <h2>Video by Google Veo</h2>
-                <video controls>
-                    <source src="/assets/videos/platonic-solids/google-veo-dodecahedron.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <div class="video-entry">
-                <h2>Video by OpenAI Sora</h2>
-                <video controls>
-                    <source src="/assets/videos/platonic-solids/openai-sora-dodecahedron.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+        <div class="nav-header">
+            <div class="hamburger">☰</div>
+            <button id="yin-yang-toggle" aria-label="Fun button (coming soon)"></button>
         </div>
+    </nav>
 
-        <div class="prompt-entry">
-            <h2>Video Creation Prompt</h2>
-            <p class="prompt-text"> Uploaded images:
-                <img src="/assets/images/dodecahedron-1.jpg" alt="Dodecahedron 1">
-                <br>
-                <img src="/assets/images/dodecahedron-2.jpg" alt="Dodecahedron 2">
-            </p>
-        </div>
+    <div class="plato-container">
+        <main>
+            <a href="/til/platonic-solids" class="plato-back-link">← Back to Platonic Solids</a>
+
+            <div class="plato-solid-header">
+                <h1>Dodecahedron</h1>
+            </div>
+
+            <section class="plato-video-archive" aria-label="Dodecahedron videos">
+                <article class="plato-video-entry">
+                    <h2>Video by Grok Imagine</h2>
+                    <div class="plato-video-container">
+                        <video controls>
+                            <source src="/assets/videos/platonic-solids/grok-imagine-dodecahedron.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </article>
+
+                <article class="plato-video-entry">
+                    <h2>Video by Google Veo</h2>
+                    <div class="plato-video-container">
+                        <video controls>
+                            <source src="/assets/videos/platonic-solids/google-veo-dodecahedron.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </article>
+
+                <article class="plato-video-entry">
+                    <h2>Video by OpenAI Sora</h2>
+                    <div class="plato-video-container">
+                        <video controls>
+                            <source src="/assets/videos/platonic-solids/openai-sora-dodecahedron.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </article>
+            </section>
+
+            <section class="plato-prompt-entry">
+                <h2>Video Creation Prompt</h2>
+                <p class="plato-prompt-text">Uploaded images:</p>
+                <div class="plato-prompt-images">
+                    <img src="/assets/images/dodecahedron-1.jpg" alt="Dodecahedron reference image 1">
+                    <img src="/assets/images/dodecahedron-2.jpg" alt="Dodecahedron reference image 2">
+                </div>
+            </section>
+        </main>
     </div>
+
+    <footer>
+        <p><span id="year"></span> 👾 Tori Schuyler</p>
+    </footer>
+
+    <script src="/js/stay-tuned-modal.js" defer></script>
+    <script src="/js/toggles/yin-yang-toggle.js" defer></script>
+    <script src="/js/mobile-nav.js" defer></script>
+    <script src="/js/footer.js"></script>
 </body>
 </html>
