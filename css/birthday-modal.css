@@ -43,7 +43,7 @@
   font-family: Righteous, system-ui, sans-serif;
   margin: 0 0 0.75rem;
   font-size: 1.3rem;
-  color: var(--header-color, #9CBB80);
+  color: rgb(83.1% 68.6% 21.6%);
   text-align: center;
 }
 
@@ -52,32 +52,18 @@
   padding-left: 1.5rem;
   list-style: upper-roman;
   text-align: left;
+  color: #EDE6D6
 }
 
 .birthday-modal-card li {
   margin-bottom: 0.35rem;
 }
 
-.birthday-modal-card li::marker {
-  color: var(--header-color, #9CBB80);
-}
-
 .birthday-modal-card li:last-child {
   margin-bottom: 0;
 }
 
-.birthday-modal-card li strong {
-  color: rgb(83.1% 68.6% 21.6%);
-}
-
-/* Link sits well below the list */
-.birthday-modal-link {
-  margin: 4rem 0 0;
-  text-align: center;
-}
-
-.birthday-modal-link a {
+/* Only the stat value (the result of each bullet) is gold */
+.birthday-modal-card .birthday-stat-value {
   color: #D4AF37;
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
 }

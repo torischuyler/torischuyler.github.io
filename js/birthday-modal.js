@@ -21,14 +21,14 @@ function showBirthdayStatsModal() {
   card.innerHTML = `
     <h2>Birthday Stats 🎂</h2>
     <ul>
-      <li><strong>Astrological Sign:</strong> Gemini</li>
-      <li><strong>Chinese Zodiac Sign:</strong> Metal Horse</li>
-      <li><strong>Gregorian Day of the Year:</strong> 169, 170 (Leap Year)</li>
-      <li><strong>Generation:</strong> Millennial</li>
-      <li><strong>Month & Day first appears in Phi at decimal digit:</strong> 1</li>
-      <li><strong>Age in Periodic Table Years:</strong> Bromine, Metalloid</li>
-      <li><strong>Age on Neptune:</strong> 👶🏼</li>
-      <li><strong>Age according to a Kindergartener:</strong> Very, very old.</li>
+      <li><strong>Astrological Sign:</strong> <span class="birthday-stat-value">Gemini</span></li>
+      <li><strong>Chinese Zodiac Sign:</strong> <span class="birthday-stat-value">Metal Horse</span></li>
+      <li><strong>Gregorian Day of the Year:</strong> <span class="birthday-stat-value">169, 170 (Leap Year)</span></li>
+      <li><strong>Generation:</strong> <span class="birthday-stat-value">Millennial</span></li>
+      <li><strong>Month & Day first appears in Phi at decimal digit:</strong> <span class="birthday-stat-value">1</span></li>
+      <li><strong>Age in Periodic Table Years:</strong> <span class="birthday-stat-value">Bromine, Metalloid</span></li>
+      <li><strong>Age on Neptune:</strong> <span class="birthday-stat-value">👶🏼</span></li>
+      <li><strong>Age according to a Kindergartener:</strong> <span class="birthday-stat-value">Very, very old.</span></li>
     </ul>
   `;
 
