@@ -1,0 +1,79 @@
+/*
+  Birthday Stats Modal 🎂
+  Styles for the modal opened by the ♊️ button in the homepage nav.
+  Markup is built in /js/birthday-modal.js.
+*/
+
+/* Dark overlay that covers the viewport */
+#birthday-stats-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+  cursor: pointer;
+
+  /* Entrance fade (toggled via the .is-visible class) */
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#birthday-stats-modal.is-visible {
+  opacity: 1;
+}
+
+/* The card holding the stats */
+.birthday-modal-card {
+  background-color: var(--primary-color, #0D1B2A);
+  color: var(--text-color, #fff);
+  border: 1px solid var(--secondary-color, #2A3F54);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  max-width: 480px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  cursor: default;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.birthday-modal-card h2 {
+  font-family: Righteous, system-ui, sans-serif;
+  margin: 0 0 0.75rem;
+  font-size: 1.3rem;
+  color: var(--header-color, #9CBB80);
+  text-align: center;
+}
+
+.birthday-modal-card ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.5rem;
+  list-style: upper-roman;
+  text-align: left;
+}
+
+.birthday-modal-card li {
+  margin-bottom: 0.35rem;
+}
+
+.birthday-modal-card li:last-child {
+  margin-bottom: 0;
+}
+
+.birthday-modal-card li strong {
+  color: var(--header-color, #9CBB80);
+}
+
+/* Link sits well below the list */
+.birthday-modal-link {
+  margin: 4rem 0 0;
+  text-align: center;
+}
+
+.birthday-modal-link a {
+  color: #D4AF37;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
