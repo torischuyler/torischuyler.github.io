@@ -302,3 +302,75 @@ body.cursor-renegade {
 #time-details {
   font-style: italic;
 }
+
+/*
+  🎂 Birthday Stats
+  Text box + submit button for entering a birth date (MMDDYYYY).
+*/
+.who-are-you-container .birthday-stats label {
+  /* --- Space It --- */
+  display: block;
+  margin-bottom: 0.5rem;
+
+  /* --- Style It --- */
+  color: var(--header-color);
+}
+
+.who-are-you-container .birthday-stats input {
+  /* --- Size It --- */
+  width: 90%;
+
+  /* 1rem = 16px (16px root × 1) */
+  font-size: 1rem;
+
+  /* --- Space It --- */
+  display: block;
+  margin: 0 auto 1rem 0;
+  padding: 1rem;
+
+  /* --- Style It --- */
+  font-family: "Space Grotesk", sans-serif;
+  border: 2px solid #8B00FF;
+  border-radius: 5px;
+
+  /* --- Chaos It --- */
+  cursor: inherit;
+}
+
+.who-are-you-container .birthday-stats .birthday-submit-btn {
+  /* --- Size It --- */
+
+  /* 1.125rem = 18px (16px root × 1.125) */
+  font-size: 1.125rem;
+
+  /* --- Space It --- */
+  display: block;
+
+  /* 0.625rem = 10px, 1.25rem = 20px (16px root) */
+  padding: 0.625rem 1.25rem;
+
+  /* --- Style It --- */
+  font-family: Righteous, system-ui, sans-serif;
+  color: white;
+  background-color: #8B00FF;
+  border: none;
+  border-radius: 5px;
+
+  /* --- Chaos It --- */
+  cursor: inherit;
+}
+
+.who-are-you-container .birthday-stats .birthday-submit-btn:hover {
+  /* --- Style It --- */
+  background-color: var(--secondary-color);
+}
+
+.who-are-you-container .birthday-stats .birthday-results {
+  /* --- Space It --- */
+  margin-top: 1rem;
+}
+
+.who-are-you-container .birthday-stats .birthday-results ul {
+  /* --- Style It --- */
+  list-style-type: none;
+}
