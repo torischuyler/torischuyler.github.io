@@ -321,6 +321,18 @@ footer {
   transform: scale(1.2);
 }
 
+/*
+  Temporarily hide all header emoji toggles across the site.
+  Kept in the codebase (HTML/CSS/JS) so they can be re-enabled later
+  by removing this rule.
+*/
+#sun-moon-toggle,
+#yin-yang-toggle,
+#torii-gemini-toggle,
+#angel-devil-toggle {
+  display: none;
+}
+
 /* Base elements that get hover/active transitions (theme color transitions removed) */
 body, h1, h2, nav, footer, .hamburger {
   /* --- Chaos It --- */
