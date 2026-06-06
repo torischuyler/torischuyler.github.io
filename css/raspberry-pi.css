@@ -111,6 +111,7 @@
   margin: 0.5rem 0 0;
 }
 
+/* stylelint-disable-next-line no-descending-specificity -- unrelated component, no real conflict with .rpi-lab-list li:hover */
 .hardware-checklist li {
   margin: 0.35rem 0;
   font-size: 0.95rem;

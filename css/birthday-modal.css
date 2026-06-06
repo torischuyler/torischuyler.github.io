@@ -8,7 +8,7 @@
 #birthday-stats-modal {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgb(0 0 0 / 75%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +33,7 @@
   border-radius: 16px;
   padding: 1.5rem 2rem;
   max-width: 480px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 60px rgb(0 0 0 / 40%);
   cursor: default;
   font-size: 0.95rem;
   line-height: 1.4;
