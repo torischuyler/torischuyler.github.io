@@ -1,7 +1,12 @@
 /*
   Torii / Gemini personality button (homepage nav)
   Placeholder behavior: Shows "Stay tuned" modal, then flips between ⛩️ and ♊️.
+  Torii is hidden for now — only Gemini is shown. Set TORII_HIDDEN to false to restore.
 */
+
+const TORII_EMOJI = '⛩️';
+const GEMINI_EMOJI = '♊️';
+const TORII_HIDDEN = true;
 
 function initializeToriiGeminiToggle() {
   const toggle = document.getElementById('torii-gemini-toggle');
@@ -10,8 +15,7 @@ function initializeToriiGeminiToggle() {
     return;
   }
 
-  // Starting emoji (we can change this later)
-  let currentEmoji = '⛩️';
+  let currentEmoji = TORII_HIDDEN ? GEMINI_EMOJI : TORII_EMOJI;
   toggle.textContent = currentEmoji;
   toggle.setAttribute('aria-label', 'Fun button (coming soon)');
 
@@ -21,9 +25,13 @@ function initializeToriiGeminiToggle() {
   };
 
   toggle.addEventListener('click', () => {
-    // Show the placeholder modal. Flip the emoji after the user closes it.
     window.showStayTunedModal(() => {
-      const next = currentEmoji === '⛩️' ? '♊️' : '⛩️';
+      if (TORII_HIDDEN) {
+        flipTo(GEMINI_EMOJI);
+        return;
+      }
+
+      const next = currentEmoji === TORII_EMOJI ? GEMINI_EMOJI : TORII_EMOJI;
       flipTo(next);
     });
   });
