@@ -70,7 +70,7 @@
 
     <url>
         <loc>https://torischuyler.github.io/til/raspberry-pi</loc>
-        <lastmod>2025-05-30</lastmod>
+        <lastmod>2025-06-16</lastmod>
     </url>
 
     <url>
@@ -91,5 +91,10 @@
     <url>
         <loc>https://torischuyler.github.io/til/raspberry-pi/laboratories/joystick</loc>
         <lastmod>2026-05-30</lastmod>
+    </url>
+    
+    <url>
+        <loc>https://torischuyler.github.io/til/raspberry-pi/laboratories/camera</loc>
+        <lastmod>2026-06-16</lastmod>
     </url>
 </urlset>
