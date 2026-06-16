@@ -186,6 +186,21 @@
   opacity: 1;
 }
 
+/* ========== Code Blocks ========== */
+.rpi-code-block {
+  background-color: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  margin: 1rem 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  color: var(--text-color);
+}
+
 /* Make sure images in lab pages are reasonable */
 .rpi-container img {
   max-width: 100%;
