@@ -1,7 +1,5 @@
 ---
 permalink: /who-are-you
-redirect_from:
-  - /who-are-you.html
 ---
 <!DOCTYPE html>
 <!-- This is the DOCTYPE declaration. It’s like a signal to browsers that says, "Hey, this is an HTML web page!"-->
@@ -95,9 +93,6 @@ redirect_from:
 
         <script src="/js/meme-quiz.js" defer></script>
         <!-- Script for meme quiz --------------------------->
-
-        <script src="/js/birthday-stats.js" defer></script>
-        <!-- Script for birthday stats (astrological sign, etc.) -->
     </head>
     <!-- End Head Section --------------------------------------------------->
 
@@ -257,35 +252,6 @@ redirect_from:
                   </div>
                 </div>
                 <!-- End Quiz Wrapper ------------------------------------------------------>
-
-                <br>
-                <h2>Birthday Stats</h2>
-                <p>
-                  Enter your birth date in MMDDYYYY format to reveal your birthday stats:
-                </p>
-                <br>
-                <!-- Begin Birthday Stats Wrapper ----------------------------------------->
-                <div class="birthday-stats" id="birthday-stats">
-
-                    <label for="birthdate-input">Birth date (MMDDYYYY)</label>
-                    <!-- Label describes the expected input format for screen readers. -->
-
-                    <input
-                        type="text"
-                        id="birthdate-input"
-                        inputmode="numeric"
-                        maxlength="8"
-                        placeholder="MMDDYYYY"
-                        autocomplete="off">
-                    <!-- Text box for the 8-digit birth date. -->
-
-                    <button type="button" class="birthday-submit-btn" id="birthday-submit">Submit</button>
-                    <!-- Button to submit the birth date and reveal stats. -->
-
-                    <div class="birthday-results" id="birthday-results" aria-live="polite"></div>
-                    <!-- Container where results (e.g. astrological sign) are rendered. -->
-                </div>
-                <!-- End Birthday Stats Wrapper ------------------------------------------->
 
                 <py-script src="/py/save_scores.py"></py-script>
                 <!-- PyScript to generate CSV -->
