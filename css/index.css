@@ -132,6 +132,15 @@
   content: '😌';
 }
 
+.who-am-i-container li:nth-child(4)::before {
+  /* --- Space It --- */
+  position: absolute;
+  left: 0;
+
+  /* --- Style It --- */
+  content: '📐';
+}
+
 /* Fallback for unsupported ::before */
 @supports not (selector(::before)) {
   .who-am-i-container ul {
