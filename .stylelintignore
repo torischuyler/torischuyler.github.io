@@ -1,0 +1,5 @@
+# Jekyll build output (generated copies of source CSS)
+_site/
+
+# Third-party CSS from the Python virtual environment (e.g. matplotlib)
+python/venv/
