@@ -47,6 +47,38 @@ permalink: /til/raspberry-pi/laboratories/camera
                 <h1>Camera Module 3</h1>
             </div>
 
+            <h2>Video Capture: Newton's Cradle</h2>
+
+            <pre class="rpi-code-block"><code>rpicam-vid --timeout 0 --rotation 180 --codec libav --libav-audio --output newtons-cradle.mp4
+
+Run Ctrl+C in the terminal when you're ready to stop the recording.</code></pre>
+
+            <div class="video-container">
+                <video controls autoplay loop playsinline>
+                    <source src="/assets/videos/raspberry-pi/newtons-cradle.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <blockquote>
+                “Everything around you that you call life...you can change it, you can influence it. Build your own things that other people can use. <strong>And the minute that you understand that you can poke life and if you push in something will pop out the other side.</strong> You can change it, you can mold it. That's maybe the most important thing. Shake off this erroneous notion that life is just there...embrace it, change it, improve it, make your mark upon it.” — Steve Jobs
+            </blockquote>
+
+            <h3>🪎 Treasure</h3>
+            <p>
+                The original Apple logo was based on Isaac Newton. This design, known as the “Newton Crest,” included a ribbon banner with the company name and a quote from William Wordsworth: <em>“Newton… a mind forever voyaging through strange seas of thought… alone.”</em>
+            </p>
+
+            <h3>The Physics</h3>
+            <div class="rpi-section-copy">
+                <p>
+                    The row of balls represents the world as it is: a system that looks fixed and rule-bound. You reach in, pull one (or more) balls back, and release. The middle balls barely move, yet they transmit your momentum forward with precision. On the far side, an equal number of balls pop out.
+                </p>
+                <p>
+                    In the real world, we could compare those middle balls to economics, culture, institutions. Status quo until you poke at them. Apply deliberate force, and something meaningful, even beautiful, can pop out the other side. And you'll definitely never know unless you try.
+                </p>
+            </div>
+
             <h2>Still Image: Longhorn</h2>
 
             <pre class="rpi-code-block"><code>rpicam-still --output longhorn.png
