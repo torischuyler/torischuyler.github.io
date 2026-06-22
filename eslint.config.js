@@ -18,15 +18,24 @@ import js from '@eslint/js';
     - This lets you reuse it for stuff like test config files with different rules.
 */
 
-// Export a single config object combining recommended JS rules with custom settings for this project.
-export default {
+/*
+  Export an array of config objects. ESLint 9's "flat config" applies each object
+  in order, layering them together.
 
-  // Copies ESLint’s recommended rules into our config, combining them with our custom settings.
-  ...js.configs.recommended,
+  Why an array instead of one object? In flat config, an `ignores` list only acts
+  as a GLOBAL skip-list when it lives in a config object all by itself. If we mix
+  `ignores` into the same object as our rules, ESLint treats it as a per-config
+  filter instead of a true global ignore — and the files still get linted by other
+  config objects (like the recommended rules). So we give global ignores their own
+  dedicated object below.
+*/
+export default [
 
   /*
-    'ignores' tells ESLint which directories or files to skip.
-    We’re skipping node_modules here so it doesn’t mess with external stuff
+    A config object containing ONLY `ignores` — this is how you tell ESLint to
+    globally skip files/directories.
+
+    We skip node_modules so it doesn’t mess with external stuff
     (i.e. we avoid linting external dependencies).
 
     What is meant by external stuff?
@@ -34,8 +43,20 @@ export default {
     There is code that our project needs written by a bunch of really smart devs.
     We just get to import this code in node_modules and stuff just works.
     But it's not code we wrote personally, so we don't need to lint it.
+
+    We also skip python/venv/ — that's our Python virtual environment, which
+    contains third-party packages (like matplotlib) that ship their own bundled
+    JavaScript. Since we didn't write that code, we don't want to lint it either.
   */
-  "ignores": ["node_modules/"],
+  {
+    "ignores": ["node_modules/", "python/venv/"]
+  },
+
+  // The config object combining recommended JS rules with custom settings for this project.
+  {
+
+  // Copies ESLint’s recommended rules into our config, combining them with our custom settings.
+  ...js.configs.recommended,
 
   // 'languageOptions' is an object that defines how ESLint processes your JavaScript, like its version or environment.
   "languageOptions": {
@@ -110,4 +131,5 @@ export default {
     // 'no-trailing-spaces' is a rule that flags trailing whitespace as an error.
     "no-trailing-spaces": "error"
   }
-};
+  }
+];
