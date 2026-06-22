@@ -19,6 +19,14 @@
   padding: 2rem;
 }
 
+.til-category + .til-category {
+  margin-top: 2rem;
+}
+
+.til-category h2 {
+  margin-bottom: 0.5rem;
+}
+
 /* Unordered List */
 .til-container ul {
   /* --- Space It --- */
@@ -79,27 +87,30 @@
 
   /* Aligns bullet to left edge */
   left: 0;
-  content: '🥧';
 }
 
-.til-container ul li:nth-child(2)::before {
+.til-raspberry-pi::before {
   content: '👩🏼‍💻';
 }
 
-.til-container ul li:nth-child(3)::before {
-  content: '💠';
-}
-
-.til-container ul li:nth-child(4)::before {
+.til-digitize-phi::before {
   content: '🧮';
 }
 
-.til-container ul li:nth-child(5)::before {
+.til-platonic-solids::before {
+  content: '💠';
+}
+
+.til-game-of-life::before {
   content: '🌱';
 }
 
-.til-container ul li:nth-child(6)::before {
+.til-golden-ratio::before {
   content: '💫';
+}
+
+.til-pie::before {
+  content: '🥧';
 }
 
 /* 🧪 Link interaction states - Styles links on hover or focus. */
