@@ -93,6 +93,10 @@
   content: '👩🏼‍💻';
 }
 
+.til-3d-printer::before {
+  content: '🖨️';
+}
+
 .til-digitize-phi::before {
   content: '🧮';
 }
