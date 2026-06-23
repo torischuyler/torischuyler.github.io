@@ -1,17 +1,17 @@
-/* Pies page (works with global.css) */
+/* Cooking page (works with global.css) */
 
-.pie-container {
+.cooking-container {
   max-width: 860px;
   margin: 0 auto;
   padding: 1.5rem 1rem 3rem;
   line-height: 1.65;
 }
 
-.pie-container h2 {
+.cooking-container h2 {
   text-align: center;
 }
 
-.pie-slideshow {
+.cooking-slideshow {
   margin: 2rem auto 0;
   max-width: 640px;
 }
@@ -94,7 +94,7 @@
   opacity: 0.75;
 }
 
-.pie-recipe-links {
+.cooking-recipe-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -102,7 +102,7 @@
   margin-top: 1.5rem;
 }
 
-.pie-recipe-link {
+.cooking-recipe-link {
   padding: 0.55rem 1.1rem;
   font-size: 0.95rem;
   font-weight: 600;
@@ -115,18 +115,18 @@
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
-.pie-recipe-link:hover {
+.cooking-recipe-link:hover {
   background-color: var(--accent-color);
   color: var(--primary-color);
   transform: translateY(-1px);
 }
 
-.pie-recipe-link:focus-visible {
+.cooking-recipe-link:focus-visible {
   outline: 2px solid var(--accent-color);
   outline-offset: 3px;
 }
 
-#pie-recipe-modal {
+#cooking-recipe-modal {
   position: fixed;
   inset: 0;
   background-color: rgb(0 0 0 / 75%);
@@ -140,11 +140,11 @@
   transition: opacity 0.2s ease;
 }
 
-#pie-recipe-modal.is-visible {
+#cooking-recipe-modal.is-visible {
   opacity: 1;
 }
 
-.pie-modal-card {
+.cooking-modal-card {
   background-color: var(--primary-color);
   color: var(--text-color);
   border: 1px solid var(--secondary-color);
@@ -160,24 +160,24 @@
   text-align: left;
 }
 
-.pie-modal-card h2 {
+.cooking-modal-card h2 {
   margin: 0 0 1rem;
   font-size: 1.4rem;
   text-align: center;
 }
 
-.pie-modal-card ul,
-.pie-modal-card ol {
+.cooking-modal-card ul,
+.cooking-modal-card ol {
   margin: 0;
   padding-left: 1.5rem;
 }
 
-.pie-modal-card li + li {
+.cooking-modal-card li + li {
   margin-top: 0.65rem;
 }
 
 @media (width >= 769px) {
-  .pie-container {
+  .cooking-container {
     padding: 2rem 1rem 4rem;
   }
 

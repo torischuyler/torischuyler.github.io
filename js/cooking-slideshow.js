@@ -1,4 +1,4 @@
-// js/pie-slideshow.js
+// js/cooking-slideshow.js
 
 document.addEventListener('DOMContentLoaded', () => {
   const images = Array.from(document.querySelectorAll('.slideshow-image'));
@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn = document.querySelector('.slideshow-next');
   const caption = document.getElementById('slideshow-caption');
   const counter = document.getElementById('slideshow-counter');
-  const slideshow = document.querySelector('.pie-slideshow');
+  const slideshow = document.querySelector('.cooking-slideshow');
 
   if (images.length === 0 || !prevBtn || !nextBtn) return;
 
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   nextBtn.addEventListener('click', goToNext);
 
   document.addEventListener('keydown', (e) => {
-    if (document.body.classList.contains('pie-modal-open')) return;
+    if (document.body.classList.contains('cooking-modal-open')) return;
 
     if (e.key === 'ArrowLeft') {
       goToPrev();
