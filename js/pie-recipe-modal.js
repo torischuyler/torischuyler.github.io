@@ -1,6 +1,6 @@
-// js/cooking-recipe-modal.js
+// js/pie-recipe-modal.js
 
-const COOKING_RECIPES = {
+const PIE_RECIPES = {
   ingredients: {
     title: 'Ingredients',
     body: `
@@ -37,25 +37,25 @@ const COOKING_RECIPES = {
   }
 };
 
-function showCookingRecipeModal(recipeKey) {
-  const recipe = COOKING_RECIPES[recipeKey];
-  if (!recipe || document.getElementById('cooking-recipe-modal')) return;
+function showPieRecipeModal(recipeKey) {
+  const recipe = PIE_RECIPES[recipeKey];
+  if (!recipe || document.getElementById('pie-recipe-modal')) return;
 
   const overlay = document.createElement('div');
-  overlay.id = 'cooking-recipe-modal';
+  overlay.id = 'pie-recipe-modal';
   overlay.setAttribute('role', 'dialog');
   overlay.setAttribute('aria-modal', 'true');
   overlay.setAttribute('aria-label', recipe.title);
 
   const card = document.createElement('div');
-  card.className = 'cooking-modal-card';
+  card.className = 'pie-modal-card';
   card.innerHTML = `<h2>${recipe.title}</h2>${recipe.body}`;
 
   card.addEventListener('click', (e) => e.stopPropagation());
 
   const closeModal = () => {
     overlay.classList.remove('is-visible');
-    document.body.classList.remove('cooking-modal-open');
+    document.body.classList.remove('pie-modal-open');
 
     setTimeout(() => {
       if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
@@ -74,7 +74,7 @@ function showCookingRecipeModal(recipeKey) {
 
   overlay.appendChild(card);
   document.body.appendChild(overlay);
-  document.body.classList.add('cooking-modal-open');
+  document.body.classList.add('pie-modal-open');
 
   requestAnimationFrame(() => {
     overlay.classList.add('is-visible');
@@ -82,9 +82,9 @@ function showCookingRecipeModal(recipeKey) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.cooking-recipe-link').forEach((button) => {
+  document.querySelectorAll('.pie-recipe-link').forEach((button) => {
     button.addEventListener('click', () => {
-      showCookingRecipeModal(button.dataset.recipe);
+      showPieRecipeModal(button.dataset.recipe);
     });
   });
 });
