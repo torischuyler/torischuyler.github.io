@@ -12,7 +12,7 @@
 
     <url>
         <loc>https://torischuyler.github.io/til</loc>
-        <lastmod>2026-06-22</lastmod>
+        <lastmod>2026-06-23</lastmod>
     </url>
 
     <url>
@@ -111,5 +111,10 @@
     <url>
         <loc>https://torischuyler.github.io/til/3d-printer/prints/tugboat</loc>
         <lastmod>2026-06-22</lastmod>
+    </url>
+
+    <url>
+        <loc>https://torischuyler.github.io/til/raspberry-pi/laboratories/pico</loc>
+        <lastmod>2026-06-21</lastmod>
     </url>
 </urlset>
