@@ -54,6 +54,43 @@ permalink: /til/3d-printer/prints/tugboat
                 <a href="https://www.youtube.com/watch?v=Pd6tnFklBk4" target="_blank" rel="noopener noreferrer">How to Unbox &amp; Set Up A Bambu Lab A1 Combo 3D Printer</a>.
             </p>
 
+            <!-- Tugboat invention pop quiz -->
+            <div class="tug-quiz">
+                <button type="button" id="tug-quiz-teaser" class="tug-quiz-teaser" aria-expanded="false">
+                    🧠 Quick quiz: Who invented the tugboat?
+                </button>
+
+                <div id="tug-quiz-content" class="tug-quiz-content" hidden>
+                    <p class="tug-quiz-question">Who invented the tugboat?</p>
+
+                    <div id="tug-quiz-options" class="tug-quiz-options">
+                        <button type="button" class="tug-option" data-answer="A">
+                            <img src="/assets/images/3d-printer/tugboat/captain-tug-mcboatface.jpg" alt="Captain Tug McBoatface" loading="lazy">
+                            <span>A) Captain Tug McBoatface</span>
+                        </button>
+                        <button type="button" class="tug-option" data-answer="B">
+                            <img src="/assets/images/3d-printer/tugboat/blackbeard.jpg" alt="Blackbeard" loading="lazy">
+                            <span>B) Blackbeard</span>
+                        </button>
+                        <button type="button" class="tug-option" data-answer="C">
+                            <img src="/assets/images/3d-printer/tugboat/william-symington.png" alt="William Symington" loading="lazy">
+                            <span>C) William Symington</span>
+                        </button>
+                        <button type="button" class="tug-option" data-answer="D">
+                            <img src="/assets/images/3d-printer/tugboat/jonathan-hulls.png" alt="Jonathan Hulls" loading="lazy">
+                            <span>D) Jonathan Hulls</span>
+                        </button>
+                    </div>
+
+                    <div id="tug-quiz-feedback" class="tug-quiz-feedback" hidden></div>
+
+                    <div class="tug-quiz-actions">
+                        <button type="button" id="tug-quiz-try-again" class="tug-quiz-close" hidden>Try again</button>
+                        <button type="button" id="tug-quiz-close" class="tug-quiz-close">Close quiz</button>
+                    </div>
+                </div>
+            </div>
+
             <div class="video-container video-container-portrait">
                 <video controls playsinline>
                     <source src="/assets/videos/3d-printer/tugboat.mp4" type="video/mp4">
@@ -73,6 +110,7 @@ permalink: /til/3d-printer/prints/tugboat
     <script src="/js/stay-tuned-modal.js" defer></script>
     <script src="/js/toggles/yin-yang-toggle.js" defer></script>
     <script src="/js/mobile-nav.js" defer></script>
+    <script src="/js/tugboat-quiz.js" defer></script>
     <script src="/js/footer.js"></script>
 </body>
 </html>

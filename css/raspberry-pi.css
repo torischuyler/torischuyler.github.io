@@ -255,3 +255,195 @@
     gap: 0.75rem;
   }
 }
+
+/* ========== Tugboat Quiz ========== */
+.tug-quiz {
+  margin: 1.25rem 0 1.5rem;
+}
+
+.tug-quiz-teaser {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: system-ui, sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tug-quiz-teaser:hover {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.tug-quiz-teaser:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+.tug-quiz-content {
+  margin-top: 0.9rem;
+  background-color: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 15%);
+}
+
+.tug-quiz-question {
+  margin: 0 0 0.85rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--subheader-color);
+}
+
+.tug-quiz-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+}
+
+.tug-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0.65rem;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-family: system-ui, sans-serif;
+  transition: transform 0.15s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.tug-option img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  border: 1px solid var(--primary-color);
+  background: #000;
+}
+
+.tug-option:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.tug-option:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background-color: #3a506b;
+}
+
+/* After answer states */
+.tug-option.revealed {
+  cursor: default;
+}
+
+.tug-option.revealed:not(.correct) {
+  opacity: 0.55;
+}
+
+.tug-option.selected {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgb(201 194 186 / 25%);
+}
+
+.tug-option.correct {
+  border-color: #7cc98f;
+  background-color: rgb(124 201 143 / 12%);
+  opacity: 1;
+}
+
+.tug-option.incorrect {
+  border-color: #e07a7a;
+  background-color: rgb(224 122 122 / 10%);
+}
+
+.tug-option.selected.correct {
+  box-shadow: 0 0 0 2px rgb(124 201 143 / 40%);
+}
+
+.tug-quiz-feedback {
+  margin-top: 0.9rem;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  font-size: 0.94rem;
+  line-height: 1.55;
+  border: 1px solid var(--secondary-color);
+}
+
+.tug-quiz-feedback.correct {
+  background-color: rgb(124 201 143 / 10%);
+  border-color: #7cc98f;
+}
+
+.tug-quiz-feedback.incorrect {
+  background-color: rgb(224 122 122 / 8%);
+  border-color: #e07a7a;
+}
+
+.tug-quiz-feedback .feedback-header {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+/* stylelint-disable-next-line no-descending-specificity -- unrelated component, no real conflict with .rpi-section-copy p + p */
+.tug-quiz-feedback p {
+  margin: 0.55rem 0 0;
+}
+
+.tug-quiz-feedback p:first-child {
+  margin-top: 0;
+}
+
+.tug-quiz-actions {
+  margin-top: 0.85rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tug-quiz-close {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: system-ui, sans-serif;
+  background: transparent;
+  color: var(--accent-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tug-quiz-close:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+/* Larger screens: two columns for the four options */
+@media (width >= 560px) {
+  .tug-quiz-options {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (width >= 769px) {
+  .tug-option img {
+    width: 64px;
+    height: 64px;
+  }
+}
