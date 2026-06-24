@@ -97,6 +97,10 @@
   content: '🖨️';
 }
 
+.til-launch-notifications::before {
+  content: '🚀';
+}
+
 .til-digitize-phi::before {
   content: '🧮';
 }

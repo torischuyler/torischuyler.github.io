@@ -12,7 +12,7 @@
 
     <url>
         <loc>https://torischuyler.github.io/til</loc>
-        <lastmod>2026-06-23</lastmod>
+        <lastmod>2026-06-24</lastmod>
     </url>
 
     <url>
@@ -116,5 +116,10 @@
     <url>
         <loc>https://torischuyler.github.io/til/raspberry-pi/laboratories/pico</loc>
         <lastmod>2026-06-21</lastmod>
+    </url>
+
+    <url>
+        <loc>https://torischuyler.github.io/til/launch-notifications</loc>
+        <lastmod>2026-06-24</lastmod>
     </url>
 </urlset>
