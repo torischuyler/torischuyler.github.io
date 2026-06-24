@@ -1,0 +1,158 @@
+import requests
+from datetime import datetime
+import pytz
+import time
+import smtplib
+from email.mime.text import MIMEText
+import logging
+from dotenv import load_dotenv
+import os
+import sys
+
+# Load variables from the .env file into the environment
+load_dotenv()
+
+# Setup logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+# The Space Devs "Launch Library 2" API - free, no key required, returns JSON.
+# (The spacex.com/launches page loads its data via JavaScript, so it can't be scraped.)
+API_URL = "https://ll.thespacedevs.com/2.2.0/launch/upcoming/"
+# The free API tier allows 15 requests/hour. Each check is 1 request, so checking
+# every 15 minutes = 4 requests/hour, safely under the limit. Do NOT go below ~4 min.
+CHECK_INTERVAL_SECONDS = 900  # 15 minutes
+USER_AGENT = "ToriPiLaunchAlert/1.0 (Personal educational project; contact if issues)"
+
+# Email settings - FILL THESE IN
+EMAIL_FROM = os.getenv("EMAIL_FROM")
+EMAIL_TO = os.getenv("EMAIL_TO")
+EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
+SMTP_SERVER = "smtp.gmail.com"
+SMTP_PORT = 587
+
+def send_email(subject, body):
+    try:
+        msg = MIMEText(body)
+        msg['Subject'] = subject
+        msg['From'] = EMAIL_FROM
+        msg['To'] = EMAIL_TO
+        
+        with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+            server.starttls()
+            server.login(EMAIL_FROM, EMAIL_PASSWORD)
+            server.send_message(msg)
+        logging.info("Email sent successfully")
+    except Exception as e:
+        logging.error(f"Failed to send email: {e}")
+
+def get_upcoming_launches():
+    try:
+        headers = {"User-Agent": USER_AGENT}
+        params = {"lsp__name": "SpaceX", "limit": 20}  # SpaceX-only, soonest first
+        response = requests.get(API_URL, headers=headers, params=params, timeout=30)
+        response.raise_for_status()
+
+        now = datetime.now(pytz.utc)
+        launches = []
+        for item in response.json().get("results", []):
+            net = item.get("net") 
+            if not net:
+                continue
+            launch_time = datetime.fromisoformat(net.replace("Z", "+00:00"))
+
+            if launch_time > now:
+                rocket = (item.get("rocket") or {}).get("configuration") or {}
+                pad = item.get("pad") or {}
+                location = pad.get("location") or {}
+                mission = (item.get("mission") or {}).get("name") or item.get("name")
+                launches.append({
+                    "id": item.get("id"),  # stable unique ID, used to avoid duplicate alerts
+                    "mission": mission,
+                    "vehicle": rocket.get("name", "Unknown vehicle"),
+                    "site": location.get("name") or pad.get("name", "Unknown site"),
+                    "launch_time": launch_time
+                })
+        return launches
+    except Exception as e:
+        logging.error(f"Failed to fetch/parse launches: {e}")
+        return []
+
+def main():
+    logging.info("Launch alert script started")
+    # Remember which alerts we've already sent so a launch never gets emailed twice.
+    # Keys look like (launch_id, "day") or (launch_id, "hour").
+    # Note: this lives in memory, so restarting the script clears it.
+    sent_alerts = set()
+
+    while True:
+        now = datetime.now(pytz.utc)
+        launches = get_upcoming_launches()
+
+        for launch in launches:
+            launch_id = launch["id"]
+            lt = launch["launch_time"]
+            readable = format_central(lt)
+            seconds_until = (lt - now).total_seconds()
+
+            # ~1 hour before: launch is within the next 60 minutes
+            if 0 < seconds_until <= 3600 and (launch_id, "hour") not in sent_alerts:
+                subject = f"🚨 Launch in ~1 Hour: {launch['mission']}"
+                body = f"Get ready!\n{launch['mission']} ({launch['vehicle']}) from {launch['site']}\nLaunch: {lt}\n{readable}"
+                send_email(subject, body)
+                sent_alerts.add((launch_id, "hour"))
+
+            # ~1 day before: launch is within the next 24 hours (but more than 1 hour away)
+            elif 3600 < seconds_until <= 86400 and (launch_id, "day") not in sent_alerts:
+                subject = f"🚀 Launch Tomorrow: {launch['mission']}"
+                body = f"{launch['mission']} ({launch['vehicle']}) from {launch['site']}\nLaunch: {lt}\n{readable}"
+                send_email(subject, body)
+                sent_alerts.add((launch_id, "day"))
+
+        # Forget alerts for launches that are no longer upcoming, to keep memory bounded.
+        # Only prune on a successful fetch so a transient API error doesn't cause re-sends.
+        if launches:
+            current_ids = {launch["id"] for launch in launches}
+            sent_alerts = {key for key in sent_alerts if key[0] in current_ids}
+
+        time.sleep(CHECK_INTERVAL_SECONDS)
+
+def format_central(launch_time):
+    """Human-readable launch time in US Central time, e.g. 'Thursday June 18, 2026 at 6:18 PM CDT'."""
+    central = launch_time.astimezone(pytz.timezone("America/Chicago"))
+    date_part = central.strftime("%A, %B ") + str(central.day) + central.strftime(", %Y")
+    time_part = central.strftime("%I:%M %p").lstrip("0") + central.strftime(" %Z")
+    return f"{date_part} at {time_part}"
+
+def test_alerts():
+    logging.info("Running manual test for upcoming launches...")
+    launches = get_upcoming_launches()
+    
+    if not launches:
+        logging.info("No upcoming launches found or parsing issue.")
+        return
+    
+    print(f"Found {len(launches)} upcoming launches:")
+    for launch in launches[:5]:  # Show first few
+        print(launch)
+        print(format_central(launch['launch_time']))
+    
+    # Force a test email for the soonest launch (adjust logic if needed)
+    if launches:
+        launch = launches[0]  # or pick the one for tomorrow
+        subject = f"TEST 🚀 Launch Alert: {launch['mission']}"
+        body = (
+            f"Test email for:\n{launch['mission']} ({launch['vehicle']}) from {launch['site']}\n"
+            f"Launch: {launch['launch_time']}\n"
+            f"{format_central(launch['launch_time'])}\n\n"
+            "This is just a test from your script."
+        )
+        send_email(subject, body)
+        print("Test email sent! Check your inbox.")
+
+# Run "python launch_alerts.py test" for a one-off test email,
+# or "python launch_alerts.py" to start the continuous alert loop.
+if __name__ == "__main__":
+    if len(sys.argv) > 1 and sys.argv[1] == "test":
+        test_alerts()
+    else:
+        main()
