@@ -1,4 +1,4 @@
-import requests
+const pythonScript = `import requests
 from datetime import datetime
 import pytz
 import time
@@ -192,3 +192,18 @@ if __name__ == "__main__":
         test_alerts()
     else:
         main()
+`;
+
+function copyLaunchAlertsScript() {
+    navigator.clipboard.writeText(pythonScript).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        const originalText = btn.textContent;
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => btn.textContent = originalText, 2000);
+    }).catch(err => {
+        console.error('Copy failed', err);
+        alert('Failed to copy. Please try again.');
+    });
+}
+
+document.getElementById('copyBtn').addEventListener('click', copyLaunchAlertsScript);

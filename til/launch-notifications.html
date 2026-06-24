@@ -1,0 +1,116 @@
+---
+permalink: /til/launch-notifications
+redirect_from:
+  - /til/launch-notifications.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:;">
+
+    <link rel="canonical" href="https://torischuyler.github.io/til/launch-notifications">
+    <title>Launch Email Notifications | TIL | Tori Schuyler</title>
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/launch-notifications.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <nav aria-label="Page navigation">
+        <ul class="nav-menu">
+            <li><a href="/">whoami</a></li>
+            <li><a href="/who-are-you">Who Are You?</a></li>
+            <li><a href="/til" class="active" aria-current="page">TIL</a></li>
+        </ul>
+
+        <div class="nav-header">
+            <div class="hamburger">☰</div>
+            <button id="yin-yang-toggle" aria-label="Fun button (coming soon)"></button>
+        </div>
+    </nav>
+
+    <div class="launch-container">
+        <main>
+            <header class="launch-header">
+                <h1>Space Launch Notifications</h1>
+                <p class="launch-date">6/24/2026</p>
+            </header>
+
+            <div class="launch-copy">
+                <p>
+                    This is a Python script I run to send myself email notification reminders a day before
+                    and an hour before SpaceX and NASA launches. It pulls upcoming launch data from the
+                    <a href="https://ll.thespacedevs.com/2.2.0/launch/upcoming/" target="_blank" rel="noopener noreferrer">Launch Library 2 API</a>.
+                </p>
+                <p>
+                    That API is built by <a href="https://thespacedevs.com" target="_blank" rel="noopener noreferrer">The Space Devs</a>,
+                    a group of space-enthusiast developers working to make launch information accessible to everyone.
+                    In the future, I plan to add additional launch service providers. Right now, SpaceX by far
+                    does the most. NASA has exciting launches too; their next big one is Artemis III, scheduled for 2027.
+                </p>
+                <p>
+                    For even more accurate, real-time, up-to-date information on SpaceX launches — and where to watch —
+                    check <a href="https://www.spacex.com/launches" target="_blank" rel="noopener noreferrer">SpaceX's launch page</a>.
+                    For NASA's schedule, visit
+                    <a href="https://www.nasa.gov/event-type/launch-schedule/" target="_blank" rel="noopener noreferrer">NASA's launch schedule</a>;
+                    for each event you can see who they've contracted with as the launch provider.
+                </p>
+                <p>
+                    The script runs inside a Python virtual environment on a Mac I keep powered on. A
+                    <strong>launchd</strong> Launch Agent (<code>com.torischuyler.launchalerts</code>) starts it at login,
+                    keeps it alive if it crashes, and wraps it with <code>caffeinate -i</code> so the system does not idle-sleep
+                    while the alert loop is running.
+                </p>
+                <p>
+                    And because why not: here's a throwback to this personalized Magical Journeys &ldquo;Victoria&rdquo; tape
+                    cassette I had as a kid, a song about riding on a space shuttle. Childhood nostalgia unlocked.
+                    <a href="https://www.youtube.com/watch?v=8NrdF9j8Jok&amp;t=418" target="_blank" rel="noopener noreferrer">Skip to 6:58&ndash;10:42</a>
+                    in the video to hear the space shuttle song.
+            </div>
+
+            <h2 class="launch-script-heading">launch_alerts.py</h2>
+
+            <button id="copyBtn" class="copy-btn">
+                📋 Copy Python Script
+            </button>
+
+            <div class="launch-slideshow" aria-label="Space launch photo gallery">
+                <div class="slideshow-frame">
+                    <button type="button" class="slideshow-btn slideshow-prev" aria-label="Previous photo">&#8249;</button>
+
+                    <div class="slideshow-images">
+                        <img src="/assets/images/space/cape-canaveral.png" alt="NASA Kennedy Space Center at Cape Canaveral" class="slideshow-image is-active" data-index="0" data-caption="NASA Kennedy Space Center Cape Canaveral.">
+                        <img src="/assets/images/space/falcon-9.png" alt="Falcon 9 rocket at the Johnson Space Center" class="slideshow-image" data-index="1" hidden data-caption="Falcon 9 rocket at the Johnson Space Center in Houston.">
+                        <img src="/assets/images/space/johnson-space-center.png" alt="NASA worm logo hat at the Johnson Space Center" class="slideshow-image" data-index="2" hidden data-caption="Cool hat :) The font (the NASA &ldquo;worm&rdquo; logo) was deliberately futuristic and almost got killed by internal skepticism. Most notably, they removed the horizontal crossbars on the A's to evoke rocket nose cones and a sense of sleek, uninterrupted motion through space.">
+                    </div>
+
+                    <button type="button" class="slideshow-btn slideshow-next" aria-label="Next photo">&#8250;</button>
+                </div>
+
+                <p class="slideshow-caption" id="launch-slideshow-caption">NASA Kennedy Space Center Cape Canaveral.</p>
+                <p class="slideshow-counter" id="launch-slideshow-counter" aria-live="polite">1 / 3</p>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p><span id="year"></span> 👾 Tori Schuyler</p>
+    </footer>
+
+    <script src="/js/stay-tuned-modal.js" defer></script>
+    <script src="/js/toggles/yin-yang-toggle.js" defer></script>
+    <script src="/js/mobile-nav.js" defer></script>
+    <script src="/js/footer.js"></script>
+    <script src="/js/copy-launch-alerts-python-script.js"></script>
+    <script src="/js/launch-slideshow.js" defer></script>
+</body>
+</html>
