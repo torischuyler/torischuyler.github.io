@@ -13,6 +13,10 @@ node_modules/
 python/digitize_phi/error.log
 python/digitize_phi/backups/
 
+# Launch alerts runtime log and state
+py/launch_alerts.log
+py/sent_alerts.json
+
 # Tool-specific configurations
 .cursor/
 

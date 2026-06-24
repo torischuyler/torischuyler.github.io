@@ -8,6 +8,7 @@ import logging
 from dotenv import load_dotenv
 import os
 import sys
+import json
 
 # Load variables from the .env file into the environment
 load_dotenv()
@@ -22,6 +23,14 @@ API_URL = "https://ll.thespacedevs.com/2.2.0/launch/upcoming/"
 # every 15 minutes = 4 requests/hour, safely under the limit. Do NOT go below ~4 min.
 CHECK_INTERVAL_SECONDS = 900  # 15 minutes
 USER_AGENT = "ToriPiLaunchAlert/1.0 (Personal educational project; contact if issues)"
+
+# Only alert for launches from these providers (matched against the API's
+# launch_service_provider name). Add more here, e.g. "United Launch Alliance".
+PROVIDERS = {"SpaceX", "NASA", "Rocket Lab"}
+
+# File where we remember which alerts were already sent, so a restart/reboot
+# doesn't re-send duplicates. Stored next to this script.
+SENT_ALERTS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sent_alerts.json")
 
 # Email settings - FILL THESE IN
 EMAIL_FROM = os.getenv("EMAIL_FROM")
@@ -48,14 +57,19 @@ def send_email(subject, body):
 def get_upcoming_launches():
     try:
         headers = {"User-Agent": USER_AGENT}
-        params = {"lsp__name": "SpaceX", "limit": 20}  # SpaceX-only, soonest first
+        # Pull the soonest upcoming launches, then filter to our providers below.
+        # One request per check keeps us well under the API's 15/hour limit.
+        params = {"limit": 100}
         response = requests.get(API_URL, headers=headers, params=params, timeout=30)
         response.raise_for_status()
 
         now = datetime.now(pytz.utc)
         launches = []
         for item in response.json().get("results", []):
-            net = item.get("net") 
+            provider = (item.get("launch_service_provider") or {}).get("name")
+            if provider not in PROVIDERS:
+                continue
+            net = item.get("net")
             if not net:
                 continue
             launch_time = datetime.fromisoformat(net.replace("Z", "+00:00"))
@@ -67,6 +81,7 @@ def get_upcoming_launches():
                 mission = (item.get("mission") or {}).get("name") or item.get("name")
                 launches.append({
                     "id": item.get("id"),  # stable unique ID, used to avoid duplicate alerts
+                    "provider": provider,
                     "mission": mission,
                     "vehicle": rocket.get("name", "Unknown vehicle"),
                     "site": location.get("name") or pad.get("name", "Unknown site"),
@@ -77,12 +92,28 @@ def get_upcoming_launches():
         logging.error(f"Failed to fetch/parse launches: {e}")
         return []
 
+def load_sent_alerts():
+    """Load the set of already-sent (launch_id, alert_type) keys from disk."""
+    try:
+        with open(SENT_ALERTS_FILE) as f:
+            return {tuple(pair) for pair in json.load(f)}
+    except (FileNotFoundError, ValueError):
+        return set()
+
+def save_sent_alerts(sent_alerts):
+    """Persist the sent-alerts set so restarts/reboots don't trigger duplicate emails."""
+    try:
+        with open(SENT_ALERTS_FILE, "w") as f:
+            json.dump(sorted(sent_alerts), f)
+    except OSError as e:
+        logging.error(f"Failed to save sent-alerts file: {e}")
+
 def main():
     logging.info("Launch alert script started")
-    # Remember which alerts we've already sent so a launch never gets emailed twice.
-    # Keys look like (launch_id, "day") or (launch_id, "hour").
-    # Note: this lives in memory, so restarting the script clears it.
-    sent_alerts = set()
+    # Which alerts we've already sent, so a launch never gets emailed twice.
+    # Keys look like (launch_id, "day") or (launch_id, "hour"). Loaded from disk
+    # so the memory survives restarts and reboots.
+    sent_alerts = load_sent_alerts()
 
     while True:
         now = datetime.now(pytz.utc)
@@ -100,6 +131,7 @@ def main():
                 body = f"Get ready!\n{launch['mission']} ({launch['vehicle']}) from {launch['site']}\nLaunch: {lt}\n{readable}"
                 send_email(subject, body)
                 sent_alerts.add((launch_id, "hour"))
+                save_sent_alerts(sent_alerts)
 
             # ~1 day before: launch is within the next 24 hours (but more than 1 hour away)
             elif 3600 < seconds_until <= 86400 and (launch_id, "day") not in sent_alerts:
@@ -107,12 +139,16 @@ def main():
                 body = f"{launch['mission']} ({launch['vehicle']}) from {launch['site']}\nLaunch: {lt}\n{readable}"
                 send_email(subject, body)
                 sent_alerts.add((launch_id, "day"))
+                save_sent_alerts(sent_alerts)
 
-        # Forget alerts for launches that are no longer upcoming, to keep memory bounded.
+        # Forget alerts for launches that are no longer upcoming, to keep the file small.
         # Only prune on a successful fetch so a transient API error doesn't cause re-sends.
         if launches:
             current_ids = {launch["id"] for launch in launches}
-            sent_alerts = {key for key in sent_alerts if key[0] in current_ids}
+            pruned = {key for key in sent_alerts if key[0] in current_ids}
+            if pruned != sent_alerts:
+                sent_alerts = pruned
+                save_sent_alerts(sent_alerts)
 
         time.sleep(CHECK_INTERVAL_SECONDS)
 
