@@ -221,6 +221,18 @@
   opacity: 1;
 }
 
+/* Inline content link (matches Space Launch Notifications page links) */
+.rpi-text-link {
+  color: var(--subheader-color);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.rpi-text-link:hover,
+.rpi-text-link:focus {
+  color: var(--accent-color);
+}
+
 /* ========== Code Blocks ========== */
 .rpi-code-block {
   background-color: var(--primary-color);
