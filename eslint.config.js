@@ -44,12 +44,13 @@ export default [
     We just get to import this code in node_modules and stuff just works.
     But it's not code we wrote personally, so we don't need to lint it.
 
-    We also skip python/venv/ — that's our Python virtual environment, which
-    contains third-party packages (like matplotlib) that ship their own bundled
-    JavaScript. Since we didn't write that code, we don't want to lint it either.
+    We also skip our Python virtual environments (.venv/ and python/venv/),
+    which contain third-party packages (like urllib3 and matplotlib) that ship
+    their own bundled JavaScript. Since we didn't write that code, we don't want
+    to lint it either.
   */
   {
-    "ignores": ["node_modules/", "python/venv/"]
+    "ignores": ["node_modules/", ".venv/", "python/venv/"]
   },
 
   // The config object combining recommended JS rules with custom settings for this project.
