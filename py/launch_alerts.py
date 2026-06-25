@@ -24,9 +24,12 @@ API_URL = "https://ll.thespacedevs.com/2.2.0/launch/upcoming/"
 CHECK_INTERVAL_SECONDS = 900  # 15 minutes
 USER_AGENT = "ToriPiLaunchAlert/1.0 (Personal educational project; contact if issues)"
 
-# Only alert for launches from these providers (matched against the API's
-# launch_service_provider name). Add more here, e.g. "United Launch Alliance".
-PROVIDERS = {"SpaceX", "NASA"}
+# Alert when SpaceX is the launch provider, or when NASA is involved anywhere
+# in the launch (as provider or customer in mission/program agencies).
+SPACEX_PROVIDER = "SpaceX"
+NASA_AGENCY_NAMES = {"NASA", "National Aeronautics and Space Administration"}
+SPACEX_LAUNCHES_URL = "https://www.spacex.com/launches"
+NASA_LAUNCH_SCHEDULE_URL = "https://www.nasa.gov/event-type/launch-schedule/"
 
 # File where we remember which alerts were already sent, so a restart/reboot
 # doesn't re-send duplicates. Stored next to this script.
@@ -38,6 +41,53 @@ EMAIL_TO = os.getenv("EMAIL_TO")
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
+
+def agency_is_nasa(agency):
+    if not agency:
+        return False
+    if agency.get("name") in NASA_AGENCY_NAMES:
+        return True
+    if agency.get("abbrev") == "NASA":
+        return True
+    if agency.get("parent") in NASA_AGENCY_NAMES:
+        return True
+    return False
+
+def launch_has_nasa_involvement(item):
+    if agency_is_nasa(item.get("launch_service_provider")):
+        return True
+    mission = item.get("mission") or {}
+    for agency in mission.get("agencies") or []:
+        if agency_is_nasa(agency):
+            return True
+    for program in item.get("program") or []:
+        # ISS lists NASA as one of many partner agencies; skip it so we don't
+        # alert on every Progress/Soyuz/HTV launch to the station.
+        if program.get("name") == "International Space Station":
+            continue
+        for agency in program.get("agencies") or []:
+            if agency_is_nasa(agency):
+                return True
+    return False
+
+def should_alert(item):
+    provider = (item.get("launch_service_provider") or {}).get("name")
+    if provider == SPACEX_PROVIDER:
+        return True
+    return launch_has_nasa_involvement(item)
+
+def build_hour_alert_body(launch):
+    lines = [
+        "Get ready!",
+        f"{launch['mission']} ({launch['vehicle']}) from {launch['site']}",
+        f"Launch: {launch['launch_time']}",
+        format_central(launch["launch_time"]),
+    ]
+    if launch["is_spacex"]:
+        lines.append(f"\nSpaceX launch page: {SPACEX_LAUNCHES_URL}")
+    if launch["is_nasa"]:
+        lines.append(f"NASA launch schedule: {NASA_LAUNCH_SCHEDULE_URL}")
+    return "\n".join(lines)
 
 def send_email(subject, body):
     try:
@@ -66,8 +116,7 @@ def get_upcoming_launches():
         now = datetime.now(pytz.utc)
         launches = []
         for item in response.json().get("results", []):
-            provider = (item.get("launch_service_provider") or {}).get("name")
-            if provider not in PROVIDERS:
+            if not should_alert(item):
                 continue
             net = item.get("net")
             if not net:
@@ -75,6 +124,7 @@ def get_upcoming_launches():
             launch_time = datetime.fromisoformat(net.replace("Z", "+00:00"))
 
             if launch_time > now:
+                provider = (item.get("launch_service_provider") or {}).get("name")
                 rocket = (item.get("rocket") or {}).get("configuration") or {}
                 pad = item.get("pad") or {}
                 location = pad.get("location") or {}
@@ -82,6 +132,8 @@ def get_upcoming_launches():
                 launches.append({
                     "id": item.get("id"),  # stable unique ID, used to avoid duplicate alerts
                     "provider": provider,
+                    "is_spacex": provider == SPACEX_PROVIDER,
+                    "is_nasa": launch_has_nasa_involvement(item),
                     "mission": mission,
                     "vehicle": rocket.get("name", "Unknown vehicle"),
                     "site": location.get("name") or pad.get("name", "Unknown site"),
@@ -128,7 +180,7 @@ def main():
             # ~1 hour before: launch is within the next 60 minutes
             if 0 < seconds_until <= 3600 and (launch_id, "hour") not in sent_alerts:
                 subject = f"🚨 Launch in ~1 Hour: {launch['mission']}"
-                body = f"Get ready!\n{launch['mission']} ({launch['vehicle']}) from {launch['site']}\nLaunch: {lt}\n{readable}"
+                body = build_hour_alert_body(launch)
                 send_email(subject, body)
                 sent_alerts.add((launch_id, "hour"))
                 save_sent_alerts(sent_alerts)
