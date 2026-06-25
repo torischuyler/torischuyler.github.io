@@ -1,0 +1,138 @@
+---
+permalink: /til/3d-printer/prints/fidget-spinner
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; media-src 'self' data:;">
+
+    <link rel="canonical" href="https://torischuyler.github.io/til/3d-printer/prints/fidget-spinner">
+    <title>Fidget Spinner | Bambu Lab A1 | TIL | Tori Schuyler</title>
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Site styles -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/raspberry-pi.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav aria-label="Page navigation">
+        <ul class="nav-menu">
+            <li><a href="/">whoami</a></li>
+            <li><a href="/who-are-you">Who Are You?</a></li>
+            <li><a href="/til" class="active" aria-current="page">TIL</a></li>
+        </ul>
+
+        <div class="nav-header">
+            <div class="hamburger">☰</div>
+            <button id="yin-yang-toggle" aria-label="Fun button (coming soon)"></button>
+        </div>
+    </nav>
+
+    <div class="rpi-container">
+        <main>
+            <a href="/til/3d-printer" class="rpi-back-link">← Back to Bambu Lab A1 with AMS Lite</a>
+
+            <div class="rpi-lab-header">
+                <h1>Fidget Spinner</h1>
+                <h2>First Attempt</h2>
+            </div>
+
+            <p>
+                I found a fidget spinner print on the Bambu Handy app. I like it aesthetically, but the caps didn&rsquo;t fit on exactly 
+                right and the spinning mechanism is minimal, perhaps skill issue lol.
+            </p>
+            <br>
+            <p>
+                For a second attempt, I have a radial ball bearing 608ZZ on the way (typically used for skateboard wheels)
+                and I plan to repurpose it as the center of the fidget spinner.
+            </p>
+
+            <!-- Fidget spinner record quiz -->
+            <div class="tug-quiz">
+                <button type="button" id="fidget-quiz-teaser" class="tug-quiz-teaser" aria-expanded="false">
+                    🧠  Quick quiz: What is the longest duration spinning a fidget spinner on one finger?
+                </button>
+
+                <div id="fidget-quiz-content" class="tug-quiz-content" hidden>
+                    <p class="tug-quiz-question">What is the longest duration spinning a fidget spinner on one finger?</p>
+
+                    <form id="fidget-quiz-form" class="tug-quiz-form" novalidate>
+                        <div class="tug-quiz-fields">
+                            <div class="tug-quiz-field">
+                                <label for="fidget-quiz-minutes">Minutes</label>
+                                <input
+                                    type="number"
+                                    id="fidget-quiz-minutes"
+                                    name="minutes"
+                                    min="1"
+                                    max="60"
+                                    inputmode="numeric"
+                                    required
+                                    aria-describedby="fidget-quiz-minutes-hint"
+                                >
+                                <span id="fidget-quiz-minutes-hint" class="tug-quiz-field-hint">Enter a number between 1 and 60</span>
+                            </div>
+                            <div class="tug-quiz-field">
+                                <label for="fidget-quiz-seconds">Seconds</label>
+                                <input
+                                    type="number"
+                                    id="fidget-quiz-seconds"
+                                    name="seconds"
+                                    min="1"
+                                    max="60"
+                                    inputmode="numeric"
+                                    required
+                                    aria-describedby="fidget-quiz-seconds-hint"
+                                >
+                                <span id="fidget-quiz-seconds-hint" class="tug-quiz-field-hint">Enter a number between 1 and 60</span>
+                            </div>
+                        </div>
+
+                        <p id="fidget-quiz-error" class="tug-quiz-error" hidden></p>
+
+                        <button type="submit" class="tug-quiz-submit">Submit answer</button>
+                    </form>
+
+                    <div id="fidget-quiz-feedback" class="tug-quiz-feedback" hidden></div>
+
+                    <div class="tug-quiz-actions">
+                        <button type="button" id="fidget-quiz-try-again" class="tug-quiz-close" hidden>Try again</button>
+                        <button type="button" id="fidget-quiz-close" class="tug-quiz-close">Close quiz</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-container video-container-portrait">
+                <video controls playsinline>
+                    <source src="/assets/videos/3d-printer/fidget-spinner.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <img class="rpi-centered-img" src="/assets/images/3d-printer/fidget-spinner.png" alt="Finished fidget spinner print">
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><span id="year"></span> 👾 Tori Schuyler</p>
+    </footer>
+
+    <script src="/js/stay-tuned-modal.js" defer></script>
+    <script src="/js/toggles/yin-yang-toggle.js" defer></script>
+    <script src="/js/mobile-nav.js" defer></script>
+    <script src="/js/fidget-spinner-quiz.js" defer></script>
+    <script src="/js/footer.js"></script>
+</body>
+</html>
