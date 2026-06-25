@@ -105,7 +105,7 @@
 
     <url>
         <loc>https://torischuyler.github.io/til/3d-printer</loc>
-        <lastmod>2026-06-22</lastmod>
+        <lastmod>2026-06-24</lastmod>
     </url>
 
     <url>
@@ -120,6 +120,11 @@
 
     <url>
         <loc>https://torischuyler.github.io/til/launch-notifications</loc>
+        <lastmod>2026-06-24</lastmod>
+    </url>
+
+    <url>
+        <loc>https://torischuyler.github.io/til/3d-printer/prints/fidget-spinner</loc>
         <lastmod>2026-06-24</lastmod>
     </url>
 </urlset>
