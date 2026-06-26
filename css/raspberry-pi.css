@@ -312,6 +312,7 @@
   box-shadow: 0 4px 16px rgb(0 0 0 / 15%);
 }
 
+/* stylelint-disable-next-line no-descending-specificity -- unrelated component, no real conflict with .rpi-section-copy p + p */
 .tug-quiz-intro p {
   margin: 0.55rem 0 0;
   font-size: 0.94rem;
