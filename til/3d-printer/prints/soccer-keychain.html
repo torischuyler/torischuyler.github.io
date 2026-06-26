@@ -1,0 +1,115 @@
+---
+permalink: /til/3d-printer/prints/soccer-keychain
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; media-src 'self' data:;">
+
+    <link rel="canonical" href="https://torischuyler.github.io/til/3d-printer/prints/soccer-keychain">
+    <title>Soccer Ball Keychain | Bambu Lab A1 | TIL | Tori Schuyler</title>
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Site styles -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/raspberry-pi.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav aria-label="Page navigation">
+        <ul class="nav-menu">
+            <li><a href="/">whoami</a></li>
+            <li><a href="/who-are-you">Who Are You?</a></li>
+            <li><a href="/til" class="active" aria-current="page">TIL</a></li>
+        </ul>
+
+        <div class="nav-header">
+            <div class="hamburger">☰</div>
+            <button id="yin-yang-toggle" aria-label="Fun button (coming soon)"></button>
+        </div>
+    </nav>
+
+    <div class="rpi-container">
+        <main>
+            <a href="/til/3d-printer" class="rpi-back-link">← Back to Bambu Lab A1 with AMS Lite</a>
+
+            <div class="rpi-lab-header">
+                <h1>Soccer Ball Keychain</h1>
+                <h2>First Dual Color Print</h2>
+            </div>
+
+            <p>
+                Since the 2026 World Cup is underway across the United States, Canada, and Mexico, I decided to do a soccer keychain for my first dual color print. This is the print on MakerWorld:
+                <a href="https://makerworld.com/en/models/1292136-soccer-ball-keychain-with-relief" class="rpi-text-link" target="_blank" rel="noopener noreferrer">Soccer Ball Keychain with Relief</a>.
+            </p>
+
+            <!-- Soccer keychain Pelé number quiz -->
+            <div class="tug-quiz">
+                <button type="button" id="soccer-quiz-teaser" class="tug-quiz-teaser" aria-expanded="false">
+                    🧠 Quick quiz: Did Pelé deliberately choose to wear the number 10?
+                </button>
+
+                <div id="soccer-quiz-content" class="tug-quiz-content" hidden>
+                    <div class="tug-quiz-intro">
+                        <p><strong>Quiz Question:</strong></p>
+                        <p>
+                            In men&rsquo;s soccer, the world&rsquo;s top player on each team often adopts the number 10 jersey. This tradition is often called the &ldquo;Pelé effect&rdquo; tracing back to the Brazilian legend who made the number iconic. (There are exceptions, of course i.e. Cristiano Ronaldo, Harry Kane.)
+                        </p>
+                        <p>
+                            In U.S. women&rsquo;s soccer, a parallel phenomenon exists: elite players frequently choose number 9, due to the &ldquo;Mia Hamm effect.&rdquo;
+                        </p>
+                    </div>
+
+                    <p class="tug-quiz-question">Do you think Pelé deliberately chose to wear the number 10, or was there another reason it became his (and soccer&rsquo;s) most legendary jersey number?</p>
+
+                    <div id="soccer-quiz-options" class="tug-quiz-options">
+                        <button type="button" class="tug-option" data-answer="A">
+                            <span>Yes, he had a profound and deeply purposeful reason for choosing this number.</span>
+                        </button>
+                        <button type="button" class="tug-option" data-answer="B">
+                            <span>No, it was completely random.</span>
+                        </button>
+                    </div>
+
+                    <div id="soccer-quiz-feedback" class="tug-quiz-feedback" hidden></div>
+
+                    <div class="tug-quiz-actions">
+                        <button type="button" id="soccer-quiz-try-again" class="tug-quiz-close" hidden>Try again</button>
+                        <button type="button" id="soccer-quiz-close" class="tug-quiz-close">Close quiz</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-container video-container-portrait">
+                <video controls playsinline>
+                    <source src="/assets/videos/3d-printer/soccer-keychain.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <img class="rpi-centered-img" src="/assets/images/3d-printer/soccer-keychain.png" alt="Finished soccer ball keychain print">
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><span id="year"></span> 👾 Tori Schuyler</p>
+    </footer>
+
+    <script src="/js/stay-tuned-modal.js" defer></script>
+    <script src="/js/toggles/yin-yang-toggle.js" defer></script>
+    <script src="/js/mobile-nav.js" defer></script>
+    <script src="/js/soccer-keychain-quiz.js" defer></script>
+    <script src="/js/footer.js"></script>
+</body>
+</html>

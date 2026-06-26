@@ -312,6 +312,16 @@
   box-shadow: 0 4px 16px rgb(0 0 0 / 15%);
 }
 
+.tug-quiz-intro p {
+  margin: 0.55rem 0 0;
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.tug-quiz-intro p:first-child {
+  margin-top: 0;
+}
+
 .tug-quiz-question {
   margin: 0 0 0.85rem;
   font-weight: 600;
