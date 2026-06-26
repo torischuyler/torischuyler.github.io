@@ -90,6 +90,47 @@ permalink: /til/3d-printer/prints/soccer-keychain
                 </div>
             </div>
 
+            <!-- Soccer keychain panels quiz -->
+            <div class="tug-quiz">
+                <button type="button" id="soccer-panels-quiz-teaser" class="tug-quiz-teaser" aria-expanded="false">
+                    🧠 Quick quiz: How many panels are on a traditional soccer ball?
+                </button>
+
+                <div id="soccer-panels-quiz-content" class="tug-quiz-content" hidden>
+                    <p class="tug-quiz-question">How many panels are on a traditional soccer ball?</p>
+
+                    <form id="soccer-panels-quiz-form" class="tug-quiz-form" novalidate>
+                        <div class="tug-quiz-fields">
+                            <div class="tug-quiz-field">
+                                <label for="soccer-panels-quiz-answer">Number of panels</label>
+                                <input
+                                    type="number"
+                                    id="soccer-panels-quiz-answer"
+                                    name="panels"
+                                    min="10"
+                                    max="40"
+                                    inputmode="numeric"
+                                    required
+                                    aria-describedby="soccer-panels-quiz-hint"
+                                >
+                                <span id="soccer-panels-quiz-hint" class="tug-quiz-field-hint">Guess a number between 10 and 40 (inclusive)</span>
+                            </div>
+                        </div>
+
+                        <p id="soccer-panels-quiz-error" class="tug-quiz-error" hidden></p>
+
+                        <button type="submit" class="tug-quiz-submit">Submit answer</button>
+                    </form>
+
+                    <div id="soccer-panels-quiz-feedback" class="tug-quiz-feedback" hidden></div>
+
+                    <div class="tug-quiz-actions">
+                        <button type="button" id="soccer-panels-quiz-try-again" class="tug-quiz-close" hidden>Try again</button>
+                        <button type="button" id="soccer-panels-quiz-close" class="tug-quiz-close">Close quiz</button>
+                    </div>
+                </div>
+            </div>
+
             <div class="video-container video-container-portrait">
                 <video controls playsinline>
                     <source src="/assets/videos/3d-printer/soccer-keychain.mp4" type="video/mp4">

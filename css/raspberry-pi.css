@@ -436,6 +436,16 @@
   margin-top: 0;
 }
 
+.tug-quiz-feedback ul {
+  margin: 0.55rem 0 0;
+  padding-left: 1.5rem;
+}
+
+/* stylelint-disable-next-line no-descending-specificity -- unrelated component, no real conflict with .rpi-lab-list li:hover */
+.tug-quiz-feedback li + li {
+  margin-top: 0.25rem;
+}
+
 .tug-quiz-actions {
   margin-top: 0.85rem;
   display: flex;
