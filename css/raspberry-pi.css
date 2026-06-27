@@ -272,6 +272,11 @@
   color: var(--accent-color);
 }
 
+/* Peach link, scoped to the first intro link on the Burglar Alarm page. */
+.burglar-alarm-page .rpi-section-copy p a {
+  color: #FFCBA4;
+}
+
 /* ========== Code Blocks ========== */
 .rpi-code-block {
   background-color: var(--primary-color);
