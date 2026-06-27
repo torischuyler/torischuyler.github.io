@@ -89,6 +89,10 @@
   left: 0;
 }
 
+.til-pico::before {
+  content: '👩🏼‍🏭';
+}
+
 .til-raspberry-pi::before {
   content: '👩🏼‍💻';
 }
