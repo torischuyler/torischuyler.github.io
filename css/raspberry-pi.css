@@ -91,18 +91,52 @@
 .hardware-checklist {
   background-color: var(--primary-color);
   border-radius: 10px;
-  padding: 1rem 1.25rem;
+  padding: 0.2rem 1.25rem 1rem;
   margin: 1.5rem 0;
 }
 
 .hardware-checklist h3 {
-  margin: 0 0 1rem;
+  margin: 0 0 0.6rem;
   font-size: 1rem;
   font-family: system-ui, sans-serif;
   font-weight: 600;
   color: var(--subheader-color);
   border-bottom: 1px solid var(--secondary-color);
   padding-bottom: 0.5rem;
+}
+
+.hardware-component {
+  margin-top: 0.5rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--secondary-color);
+}
+
+.hardware-component:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.hardware-component-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--subheader-color);
+}
+
+.hardware-component-parts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity -- unrelated component, no real conflict with .rpi-lab-list li:hover */
+.hardware-component-parts li {
+  margin: 0.4rem 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  opacity: 0.92;
 }
 
 .hardware-checklist ul {
@@ -166,6 +200,8 @@
   max-width: 360px;
   margin-inline: auto;
 }
+
+
 
 /* Centered imagery (e.g. portrait media pages). */
 .rpi-container .rpi-centered-img {

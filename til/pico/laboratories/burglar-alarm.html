@@ -1,0 +1,153 @@
+---
+permalink: /til/pico/laboratories/burglar-alarm
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; media-src 'self' data:;">
+
+    <link rel="canonical" href="https://torischuyler.github.io/til/pico/laboratories/burglar-alarm">
+    <title>Burglar Alarm | Pico | TIL | Tori Schuyler</title>
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Site styles -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/raspberry-pi.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav aria-label="Page navigation">
+        <ul class="nav-menu">
+            <li><a href="/">whoami</a></li>
+            <li><a href="/who-are-you">Who Are You?</a></li>
+            <li><a href="/til" class="active" aria-current="page">TIL</a></li>
+        </ul>
+
+        <div class="nav-header">
+            <div class="hamburger">☰</div>
+            <button id="yin-yang-toggle" aria-label="Fun button (coming soon)"></button>
+        </div>
+    </nav>
+
+    <div class="rpi-container">
+        <main>
+            <a href="/til/pico" class="rpi-back-link">← Back to Pico Laboratories</a>
+
+            <div class="rpi-lab-header">
+                <h1>Burglar Alarm</h1>
+            </div>
+
+            <div class="rpi-section-copy">
+                <p>
+                    I followed chapter 7 of
+                    <a href="https://magazine.raspberrypi.com/books/get-started-micropython-pico-2ed" target="_blank" rel="noopener">Get Started with MicroPython on Raspberry Pi Pico 2nd Edition</a>
+                    to create a burglar alarm.
+                </p>
+            </div>
+
+            <!-- Hardware Checklist -->
+            <div class="hardware-checklist">
+                <h3>Hardware I used on Breadboard</h3>
+
+                <!-- Pico 2W Section -->
+                <div class="hardware-component">
+                    <p class="hardware-component-title">
+                        <a href="/assets/images/pico/pico-2w.png" target="_blank" rel="noopener">Pico 2W</a>
+                    </p>
+                    <ul class="hardware-component-parts">
+                        <li>
+                            <input type="checkbox" id="hw-pico-wires" style="margin-right: 8px;">
+                            <label for="hw-pico-wires"><a href="/assets/images/pico/male-to-male-jumper-wire.png" target="_blank" rel="noopener">Male to Male jumper wires</a> (3 total: 1 for VBUS 5V power, 1 signal pin 1, 1 ground pin (-) on the breadboard; see <a href="https://pip-assets.raspberrypi.com/categories/1088-raspberry-pi-pico-2-w/documents/RP-008305-DS-1-pico-2-w-pinout.pdf" target="_blank" rel="noopener">Pi Pico 2 W Pinout</a>)</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- PIR Sensor Section -->
+                <div class="hardware-component">
+                    <p class="hardware-component-title">
+                        <a href="/assets/images/pico/passive-infrared-sensor.png" target="_blank" rel="noopener">Passive Infrared Sensor</a> (1)
+                    </p>
+                    <ul class="hardware-component-parts">
+                        <li>
+                            <input type="checkbox" id="hw-pir-male-wires" style="margin-right: 8px;">
+                            <label for="hw-pir-male-wires"><a href="/assets/images/pico/male-to-male-jumper-wire.png" target="_blank" rel="noopener">Male to Male jumper wires</a> (2 total: 1 signal pin 28, 1 ground pin (-) on the breadboard; see <a href="https://pip-assets.raspberrypi.com/categories/1088-raspberry-pi-pico-2-w/documents/RP-008305-DS-1-pico-2-w-pinout.pdf" target="_blank" rel="noopener">Pi Pico 2 W Pinout</a>)</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="hw-pir-resistor" style="margin-right: 8px;">
+                            <label for="hw-pir-resistor"><a href="/assets/images/pico/resistor-10k-ohms.png" target="_blank" rel="noopener">Resistor</a> (1: 10k ohms)</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="hw-pir-female-wires" style="margin-right: 8px;">
+                            <label for="hw-pir-female-wires"><a href="/assets/images/raspberry-pi/male-to-female-jump-wire.png" target="_blank" rel="noopener">Male to Female jumper wires</a> (3 total: All three get plugged into the PIR sensor, 1 signal pin (+) on the breadboard, 1 ground pin (-) on the breadboard, one plugged in next to the 10k ohm resistor and pin 28 signal connector on row 36 of the breadboard)</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- LED Section -->
+                <div class="hardware-component">
+                    <p class="hardware-component-title">
+                        <a href="/assets/images/raspberry-pi/led.png" target="_blank" rel="noopener">LED</a> (1) row 36 on breadboard.
+                    </p>
+                    <ul class="hardware-component-parts">
+                        <li>
+                            <input type="checkbox" id="hw-led-resistor" style="margin-right: 8px;">
+                            <label for="hw-led-resistor"><a href="/assets/images/raspberry-pi/resistor-220-ohms.png" target="_blank" rel="noopener">Resistor</a> (1: 220 ohms)</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="hw-led-wires" style="margin-right: 8px;">
+                            <label for="hw-led-wires"><a href="/assets/images/pico/male-to-male-jumper-wire.png" target="_blank" rel="noopener">Male to Male jumper wires</a> (2 total: 1 signal pin 15, 1 ground pin (-) on the breadboard; see <a href="https://pip-assets.raspberrypi.com/categories/1088-raspberry-pi-pico-2-w/documents/RP-008305-DS-1-pico-2-w-pinout.pdf" target="_blank" rel="noopener">Pi Pico 2 W Pinout</a>)</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Active Buzzer Section -->
+                <div class="hardware-component">
+                    <p class="hardware-component-title">
+                        <a href="/assets/images/raspberry-pi/buzzer.png" target="_blank" rel="noopener">Active buzzer</a> (1) row 48 on breadboard.
+                    </p>
+                    <ul class="hardware-component-parts">
+                        <li>
+                            <input type="checkbox" id="hw-buzzer-wires" style="margin-right: 8px;">
+                            <label for="hw-buzzer-wires"><a href="/assets/images/pico/male-to-male-jumper-wire.png" target="_blank" rel="noopener">Male to Male jumper wires</a> (2 total: 1 signal pin 14, 1 ground pin (-) on the breadboard; see <a href="https://pip-assets.raspberrypi.com/categories/1088-raspberry-pi-pico-2-w/documents/RP-008305-DS-1-pico-2-w-pinout.pdf" target="_blank" rel="noopener">Pi Pico 2 W Pinout</a>)</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <button id="copyBtn" class="copy-btn">
+                📋 Copy Python Script
+            </button>
+
+            <div class="video-container video-container-portrait">
+                <video controls autoplay loop playsinline width="360" height="640">
+                    <source src="/assets/videos/pico/burglar-alarm.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <img src="/assets/images/pico/alert.png" class="rpi-centered-img" alt="Burglar alarm terminal output showing ALARM! Motion detected!">
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><span id="year"></span> 👾 Tori Schuyler</p>
+    </footer>
+
+    <script src="/js/stay-tuned-modal.js" defer></script>
+    <script src="/js/toggles/yin-yang-toggle.js" defer></script>
+    <script src="/js/mobile-nav.js" defer></script>
+    <script src="/js/footer.js"></script>
+    <script src="/js/raspberry-pi/copy-burglar-alarm-python-script.js"></script>
+</body>
+</html>
