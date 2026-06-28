@@ -277,6 +277,13 @@
   color: #FFCBA4;
 }
 
+/* Reusable peach-colored inline link. */
+.rpi-peach-link {
+  color: #FFCBA4;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
 /* ========== Code Blocks ========== */
 .rpi-code-block {
   background-color: var(--primary-color);
