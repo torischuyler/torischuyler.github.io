@@ -23,6 +23,21 @@
   color: var(--subheader-color);
 }
 
+.rpi-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+.rpi-intro blockquote {
+  font-style: italic;
+  margin: 1rem 0 0;
+  padding: 0 1rem;
+  border-left: 3px solid var(--accent-color);
+  opacity: 0.85;
+}
+
 .launch-copy p {
   margin: 0;
 }
