@@ -1,0 +1,130 @@
+---
+permalink: /til/pico/laboratories/brighten-led
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; media-src 'self' data:;">
+
+    <link rel="canonical" href="https://torischuyler.github.io/til/pico/laboratories/brighten-led">
+    <title>Potentiometer: Brighten LED | Pico | TIL | Tori Schuyler</title>
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Site styles -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/raspberry-pi.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+</head>
+<body class="brighten-led-page">
+    <!-- Navigation -->
+    <nav aria-label="Page navigation">
+        <ul class="nav-menu">
+            <li><a href="/">whoami</a></li>
+            <li><a href="/who-are-you">Who Are You?</a></li>
+            <li><a href="/til" class="active" aria-current="page">TIL</a></li>
+        </ul>
+
+        <div class="nav-header">
+            <div class="hamburger">☰</div>
+            <button id="yin-yang-toggle" aria-label="Fun button (coming soon)"></button>
+        </div>
+    </nav>
+
+    <div class="rpi-container">
+        <main>
+            <a href="/til/pico" class="rpi-back-link">← Back to Pico Laboratories</a>
+
+            <div class="rpi-lab-header">
+                <h1>Potentiometer: Brighten LED</h1>
+            </div>
+
+            <div class="rpi-section-copy">
+                <p>
+                    I followed chapter 8 of
+                    <a href="https://magazine.raspberrypi.com/books/get-started-micropython-pico-2ed" target="_blank" rel="noopener" class="rpi-peach-link">Get Started with MicroPython on Raspberry Pi Pico 2nd Edition</a>
+                    to brighten an LED light by turning a potentiometer.
+                </p>
+            </div>
+
+            <!-- Hardware Checklist -->
+            <div class="hardware-checklist">
+                <h3>Hardware I used on Breadboard</h3>
+
+                <!-- Pico 2 W Section -->
+                <div class="hardware-component">
+                    <p class="hardware-component-title">
+                        <a href="/assets/images/pico/pico-2w.png" target="_blank" rel="noopener">Pico 2 W</a>
+                    </p>
+                    <ul class="hardware-component-parts">
+                        <li>
+                            <input type="checkbox" id="hw-pico-wires" style="margin-right: 8px;">
+                            <label for="hw-pico-wires"><a href="/assets/images/pico/male-to-male-jumper-wire.png" target="_blank" rel="noopener">Male to Male jumper wires</a> (3 total: 1 for 3V3(OUT) 3V power, 1 signal, 1 ground)</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- LED Section -->
+                <div class="hardware-component">
+                    <p class="hardware-component-title">
+                        <a href="/assets/images/raspberry-pi/led.png" target="_blank" rel="noopener">LED</a>
+                    </p>
+                    <ul class="hardware-component-parts">
+                        <li>
+                            <input type="checkbox" id="hw-led-resistor" style="margin-right: 8px;">
+                            <label for="hw-led-resistor"><a href="/assets/images/raspberry-pi/resistor-220-ohms.png" target="_blank" rel="noopener">Resistor</a> (1: 220 ohms)</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="hw-led-wires" style="margin-right: 8px;">
+                            <label for="hw-led-wires"><a href="/assets/images/pico/male-to-male-jumper-wire.png" target="_blank" rel="noopener">Male to Male jumper wires</a> (2 total: 1 signal, 1 ground)</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Potentiometer Section -->
+                <div class="hardware-component">
+                    <p class="hardware-component-title">
+                        <a href="/assets/images/pico/potentiometer.png" target="_blank" rel="noopener">Potentiometer</a>
+                    </p>
+                    <ul class="hardware-component-parts">
+                        <li>
+                            <input type="checkbox" id="hw-pot-wires" style="margin-right: 8px;">
+                            <label for="hw-pot-wires"><a href="/assets/images/pico/male-to-male-jumper-wire.png" target="_blank" rel="noopener">Male to Male jumper wires</a> (2 total: 1 signal, 1 ground)</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <button id="copyBtn" class="copy-btn">
+                📋 Copy Python Script
+            </button>
+
+            <div class="video-container video-container-portrait">
+                <video controls autoplay loop playsinline width="360" height="640">
+                    <source src="/assets/videos/pico/brighten-led.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><span id="year"></span> 👾 Tori Schuyler</p>
+    </footer>
+
+    <script src="/js/stay-tuned-modal.js" defer></script>
+    <script src="/js/toggles/yin-yang-toggle.js" defer></script>
+    <script src="/js/mobile-nav.js" defer></script>
+    <script src="/js/footer.js"></script>
+    <script src="/js/raspberry-pi/copy-brighten-led-python-script.js"></script>
+</body>
+</html>
