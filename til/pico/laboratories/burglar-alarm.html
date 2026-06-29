@@ -51,13 +51,13 @@ permalink: /til/pico/laboratories/burglar-alarm
                 <p>
                     I followed chapter 7 of
                     <a href="https://magazine.raspberrypi.com/books/get-started-micropython-pico-2ed" target="_blank" rel="noopener">Get Started with MicroPython on Raspberry Pi Pico 2nd Edition</a>
-                    to create a burglar alarm.
+                    to create a burglar alarm. See the <a href="https://pip-assets.raspberrypi.com/categories/1088-raspberry-pi-pico-2-w/documents/RP-008305-DS-1-pico-2-w-pinout.pdf" target="_blank" rel="noopener">Pi Pico 2 W Pinout</a> for diagram.
                 </p>
             </div>
 
             <!-- Hardware Checklist -->
             <div class="hardware-checklist">
-                <h3>Hardware</h3>
+                <h3>Hardware I used on Breadboard</h3>
 
                 <!-- Pico 2 W Section -->
                 <div class="hardware-component">
@@ -67,8 +67,7 @@ permalink: /til/pico/laboratories/burglar-alarm
                     <ul class="hardware-component-parts">
                         <li>
                             <input type="checkbox" id="hw-pico-wires" style="margin-right: 8px;">
-                            <label for="hw-pico-wires"><a href="/assets/images/pico/male-to-male-jumper-wire.png" target="_blank" rel="noopener">Male to Male jumper wires</a> (3 total: 1 for VBUS 5V power, 1 signal pin 1, 1 ground pin (-) on the breadboard; see <a href="https://pip-assets.raspberrypi.com/categories/1088-raspberry-pi-pico-2-w/documents/RP-008305-DS-1-pico-2-w-pinout.pdf" target="_blank" rel="noopener">Pi Pico 2 W Pinout</a>)</label>
-                        </li>
+                            <label for="hw-pico-wires"><a href="/assets/images/pico/male-to-male-jumper-wire.png" target="_blank" rel="noopener">Male to Male jumper wires</a> (3 total: 1 for VBUS 5V power, 1 signal, 1 ground)
                     </ul>
                 </div>
 
@@ -80,7 +79,7 @@ permalink: /til/pico/laboratories/burglar-alarm
                     <ul class="hardware-component-parts">
                         <li>
                             <input type="checkbox" id="hw-pir-male-wires" style="margin-right: 8px;">
-                            <label for="hw-pir-male-wires"><a href="/assets/images/pico/male-to-male-jumper-wire.png" target="_blank" rel="noopener">Male to Male jumper wires</a> (2 total: 1 signal pin 28, 1 ground pin (-) on the breadboard; see <a href="https://pip-assets.raspberrypi.com/categories/1088-raspberry-pi-pico-2-w/documents/RP-008305-DS-1-pico-2-w-pinout.pdf" target="_blank" rel="noopener">Pi Pico 2 W Pinout</a>)</label>
+                            <label for="hw-pir-male-wires"><a href="/assets/images/pico/male-to-male-jumper-wire.png" target="_blank" rel="noopener">Male to Male jumper wires</a> (2 total: 1 signal, 1 ground)</label>
                         </li>
                         <li>
                             <input type="checkbox" id="hw-pir-resistor" style="margin-right: 8px;">
@@ -88,7 +87,7 @@ permalink: /til/pico/laboratories/burglar-alarm
                         </li>
                         <li>
                             <input type="checkbox" id="hw-pir-female-wires" style="margin-right: 8px;">
-                            <label for="hw-pir-female-wires"><a href="/assets/images/raspberry-pi/male-to-female-jump-wire.png" target="_blank" rel="noopener">Male to Female jumper wires</a> (3 total: All three get plugged into the PIR sensor, 1 signal pin (+) on the breadboard, 1 ground pin (-) on the breadboard, one plugged in next to the 10k ohm resistor and pin 28 signal connector on row 36 of the breadboard)</label>
+                            <label for="hw-pir-female-wires"><a href="/assets/images/raspberry-pi/male-to-female-jump-wire.png" target="_blank" rel="noopener">Male to Female jumper wires</a> (3 total: All three get plugged into the PIR sensor, 1 signal, 1 ground, 1 next to the 10k ohm resistor)</label>
                         </li>
                     </ul>
                 </div>
@@ -96,7 +95,7 @@ permalink: /til/pico/laboratories/burglar-alarm
                 <!-- LED Section -->
                 <div class="hardware-component">
                     <p class="hardware-component-title">
-                        <a href="/assets/images/raspberry-pi/led.png" target="_blank" rel="noopener">LED</a> (row 36 on breadboard)
+                        <a href="/assets/images/raspberry-pi/led.png" target="_blank" rel="noopener">LED</a>
                     </p>
                     <ul class="hardware-component-parts">
                         <li>
@@ -105,7 +104,7 @@ permalink: /til/pico/laboratories/burglar-alarm
                         </li>
                         <li>
                             <input type="checkbox" id="hw-led-wires" style="margin-right: 8px;">
-                            <label for="hw-led-wires"><a href="/assets/images/pico/male-to-male-jumper-wire.png" target="_blank" rel="noopener">Male to Male jumper wires</a> (2 total: 1 signal pin 15, 1 ground pin (-) on the breadboard; see <a href="https://pip-assets.raspberrypi.com/categories/1088-raspberry-pi-pico-2-w/documents/RP-008305-DS-1-pico-2-w-pinout.pdf" target="_blank" rel="noopener">Pi Pico 2 W Pinout</a>)</label>
+                            <label for="hw-led-wires"><a href="/assets/images/pico/male-to-male-jumper-wire.png" target="_blank" rel="noopener">Male to Male jumper wires</a> (2 total: 1 signal, 1 ground)</label>
                         </li>
                     </ul>
                 </div>
@@ -113,12 +112,12 @@ permalink: /til/pico/laboratories/burglar-alarm
                 <!-- Active Buzzer Section -->
                 <div class="hardware-component">
                     <p class="hardware-component-title">
-                        <a href="/assets/images/raspberry-pi/buzzer.png" target="_blank" rel="noopener">Active buzzer</a> (row 48 on breadboard)
+                        <a href="/assets/images/raspberry-pi/buzzer.png" target="_blank" rel="noopener">Active buzzer</a>
                     </p>
                     <ul class="hardware-component-parts">
                         <li>
                             <input type="checkbox" id="hw-buzzer-wires" style="margin-right: 8px;">
-                            <label for="hw-buzzer-wires"><a href="/assets/images/pico/male-to-male-jumper-wire.png" target="_blank" rel="noopener">Male to Male jumper wires</a> (2 total: 1 signal pin 14, 1 ground pin (-) on the breadboard; see <a href="https://pip-assets.raspberrypi.com/categories/1088-raspberry-pi-pico-2-w/documents/RP-008305-DS-1-pico-2-w-pinout.pdf" target="_blank" rel="noopener">Pi Pico 2 W Pinout</a>)</label>
+                            <label for="hw-buzzer-wires"><a href="/assets/images/pico/male-to-male-jumper-wire.png" target="_blank" rel="noopener">Male to Male jumper wires</a> (2 total: 1 signal, 1 ground)</label>
                         </li>
                     </ul>
                 </div>
