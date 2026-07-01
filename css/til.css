@@ -89,6 +89,10 @@
   left: 0;
 }
 
+.til-pi-tables::before {
+  content: '🔌';
+}
+
 .til-pico::before {
   content: '🎛️';
 }
