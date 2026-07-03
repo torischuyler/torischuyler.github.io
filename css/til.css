@@ -89,14 +89,6 @@
   left: 0;
 }
 
-.til-pi-tables::before {
-  content: '🔌';
-}
-
-.til-pico::before {
-  content: '🎛️';
-}
-
 .til-raspberry-pi::before {
   content: '👩🏼‍💻';
 }
