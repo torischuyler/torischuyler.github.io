@@ -140,7 +140,7 @@ function initPanelsQuiz() {
       <li><strong>12 black pentagons</strong> (five-sided polygons)</li>
       <li><strong>20 white hexagons</strong> (six-sided polygons)</li>
     </ul>
-    <img class="rpi-centered-img" src="/assets/images/3d-printer/soccer-keychain/soccer-ball-combinatorics.png" alt="Diagram showing the combinatorics of a soccer ball with pentagons and hexagons">
+    <img class="rpi-centered-img" src="/assets/images/3d-printing/soccer-keychain/soccer-ball-combinatorics.png" alt="Diagram showing the combinatorics of a soccer ball with pentagons and hexagons">
     <p>Credit: <a href="https://www.americanscientist.org/article/the-topology-and-combinatorics-of-soccer-balls" class="rpi-text-link" target="_blank" rel="noopener noreferrer">Combinatorics of Soccer Balls</a></p>
   `;
 
