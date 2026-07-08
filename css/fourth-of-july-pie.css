@@ -1,0 +1,105 @@
+/* Fourth of July pie recipe page (works with pie.css) */
+
+.pie-recipe-sections {
+  margin: 2rem auto 0;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.pie-recipe-section + .pie-recipe-section {
+  margin-top: 2rem;
+}
+
+.pie-recipe-section h2 {
+  margin: 0 0 1rem;
+  text-align: left;
+}
+
+.pie-recipe-section ul {
+  margin: 0;
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+.pie-recipe-section li + li {
+  margin-top: 0.5rem;
+}
+
+.pie-recipe-section .pie-recipe-link {
+  margin-top: 1.25rem;
+}
+
+.pie-fireworks-link {
+  padding: 0;
+  margin: 0 0.2rem 0 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: inherit;
+  vertical-align: baseline;
+  transition: transform 0.2s ease;
+}
+
+.pie-fireworks-link:hover {
+  transform: scale(1.15);
+}
+
+.pie-fireworks-link:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.pie-fireworks-big {
+  display: block;
+  margin: 1rem auto 0;
+  font-size: 8rem;
+  line-height: 1;
+}
+
+.pie-fireworks-big:hover {
+  transform: scale(1.1);
+}
+
+.pie-fireworks-show {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10000;
+  overflow: hidden;
+}
+
+.pie-firework-burst {
+  position: absolute;
+}
+
+.pie-firework-particle {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  animation: pie-firework-pop 1.2s ease-out forwards;
+}
+
+@keyframes pie-firework-pop {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(var(--dx), var(--dy)) scale(0.4);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pie-firework-particle {
+    animation-duration: 0.01s;
+  }
+}
