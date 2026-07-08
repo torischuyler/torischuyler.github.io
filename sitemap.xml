@@ -99,7 +99,7 @@
     </url>
 
     <url>
-        <loc>https://torischuyler.github.io/til/pie</loc>
+        <loc>https://torischuyler.github.io/til/pies/recipes/blueberry-pie</loc>
         <lastmod>2026-06-22</lastmod>
     </url>
 
@@ -131,5 +131,10 @@
     <url>
         <loc>https://torischuyler.github.io/til/pico/laboratories/brighten-led</loc>
         <lastmod>2026-07-02</lastmod>
+    </url>
+
+    <url>
+        <loc>https://torischuyler.github.io/til/pies</loc>
+        <lastmod>2026-07-07</lastmod>
     </url>
 </urlset>
