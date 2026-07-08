@@ -212,6 +212,11 @@
   margin: 1rem auto;
 }
 
+.rpi-container .rpi-centered-img-compact {
+  max-height: 480px;
+  width: auto;
+}
+
 /* ========== Copy Script Buttons ========== */
 .copy-btn {
   display: inline-flex;

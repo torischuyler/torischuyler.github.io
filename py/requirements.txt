@@ -1,8 +1,0 @@
-# Dependencies for launch_alerts.py (SpaceX launch email alerts).
-# Install into the project's root .venv with:  pip install -r py/requirements.txt
-# Only third-party packages go here; standard-library imports
-# (datetime, time, smtplib, email, logging) need no install.
-# Note: save_scores.py is NOT covered here - it runs in the browser via Pyodide.
-requests          # HTTP requests to the launch API
-pytz              # Timezone handling
-python-dotenv     # Loads .env values (imported as "dotenv")

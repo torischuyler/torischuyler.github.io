@@ -26,10 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const FEEDBACK_BODY = `
     <p>Ready, set…Goh!</p>
-    <p>James Goh set the record in mid-December 2025 at 30 minutes, 34 seconds. His fidget spinner is made out of tungsten, which is about the same weight as gold. That allows his fidget spinner to store a lot of energy. To make it really efficient, he reduced the weight in the center by using hollow aluminum and a small ball bearing which uses silicon carbide balls which are super hard and very low friction.</p>
-    <p>He mentioned one of the limiting factors of his design is that you have to have decent forearm strength to hold it for so long because it&rsquo;s pretty heavy.</p>
+    <p>James Goh set the record in mid-December 2025 at 30 minutes, 34 seconds.<p>
     <p>Interview with him <a href="https://www.youtube.com/shorts/WwKdH2vo1YM" class="rpi-text-link" target="_blank" rel="noopener noreferrer">here</a>.</p>
-    <p>He talked about being inspired by <em>Inception</em>. The spinning top in <em>Inception</em> serves as a <a href="https://inception.fandom.com/wiki/Totem" class="rpi-text-link" target="_blank" rel="noopener noreferrer">totem</a>, a personal object used to distinguish between reality and dreams.</p>
   `;
 
   function isValidValue(value) {
