@@ -52,9 +52,14 @@ permalink: /til/pidog/tricks/push-ups
                     Your browser does not support the video tag.
                 </video>
                 <figcaption class="rpi-dad-joke">
-                    What do you call a robot dog who never skips arm day? <strong>A <em>paw</em>-erlifter.</strong>
+                    What do you call a robot dog who never skips arm day?
+                    <button id="punchline-btn" class="rpi-punchline-btn" type="button" aria-label="Reveal the punchline">🥊</button>
+                    <span id="punchline" class="rpi-punchline" hidden><strong>A <em>paw</em>-erlifter.</strong></span>
                 </figcaption>
             </figure>
+
+            <!-- Laugh track: CC BY 3.0, "lonemonk" on freesound.org, via Wikimedia Commons -->
+            <audio id="laugh-track" src="/assets/audio/laugh-track.mp3" preload="auto"></audio>
         </main>
     </div>
 
@@ -65,5 +70,6 @@ permalink: /til/pidog/tricks/push-ups
 
     <script src="/js/mobile-nav.js" defer></script>
     <script src="/js/footer.js"></script>
+    <script src="/js/punchline.js" defer></script>
 </body>
 </html>

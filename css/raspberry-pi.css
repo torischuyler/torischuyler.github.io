@@ -236,6 +236,74 @@
   opacity: 0.9;
 }
 
+.rpi-punchline-btn {
+  display: block;
+  margin: 0.75rem auto 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 2.75rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.rpi-punchline-btn:hover {
+  transform: scale(1.25) rotate(-10deg);
+}
+
+.rpi-punchline.revealed {
+  display: inline-block;
+  animation: rpi-punchline-pop 0.35s ease-out;
+}
+
+@keyframes rpi-punchline-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  70% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.rpi-laugh-drop {
+  position: fixed;
+  top: -3rem;
+  z-index: 999;
+  font-weight: 700;
+  font-style: italic;
+  pointer-events: none;
+  user-select: none;
+  animation: rpi-laugh-fall linear forwards;
+}
+
+@keyframes rpi-laugh-fall {
+  0% {
+    opacity: 0;
+    transform: translateY(0) rotate(-12deg);
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(110vh) rotate(12deg);
+  }
+}
+
 /* ========== Copy Script Buttons ========== */
 .copy-btn {
   display: inline-flex;
