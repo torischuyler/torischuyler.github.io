@@ -217,6 +217,25 @@
   width: auto;
 }
 
+/* ========== Media figures & dad-joke captions ========== */
+.rpi-media-figure {
+  margin: 0;
+  text-align: center;
+}
+
+.rpi-media-figure .rpi-centered-img {
+  margin-bottom: 0.5rem;
+}
+
+.rpi-dad-joke {
+  max-width: 360px;
+  margin: 0 auto;
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
 /* ========== Copy Script Buttons ========== */
 .copy-btn {
   display: inline-flex;
