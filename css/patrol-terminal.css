@@ -1,0 +1,391 @@
+/*
+  🕶️ css/patrol-terminal.css
+  Styles for the "Patrol Command Center" on the PiDog patrol page.
+  A fake movie-hacker terminal (CRT glow, scanlines, phosphor green)
+  that intentionally breaks from the site theme for full spy-thriller vibes.
+*/
+
+.pt-section {
+  margin: 2.5rem auto 0;
+  max-width: 720px;
+  text-align: center;
+}
+
+.pt-heading {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 1.1rem;
+  letter-spacing: 0.35em;
+  color: #ffd75f;
+  text-shadow: 0 0 10px rgb(255 215 95 / 55%);
+  margin-bottom: 0.4rem;
+}
+
+.pt-sub {
+  font-size: 0.92rem;
+  opacity: 0.85;
+  margin: 0 0 1.25rem;
+}
+
+/* ========== Terminal Window ========== */
+.pt-terminal {
+  text-align: left;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #050805;
+  border: 1px solid #1f3d1f;
+  box-shadow:
+    0 0 0 1px rgb(0 0 0 / 80%),
+    0 12px 40px rgb(0 0 0 / 55%),
+    0 0 28px rgb(51 255 102 / 10%);
+}
+
+.pt-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.75rem;
+  background: linear-gradient(to bottom, #1a1d1a, #0d0f0d);
+  border-bottom: 1px solid #1f3d1f;
+}
+
+.pt-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.pt-dot-red { background: #ff5f56; }
+.pt-dot-yellow { background: #ffbd2e; }
+.pt-dot-green { background: #27c93f; }
+
+.pt-title {
+  margin-left: 0.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: #7a8a7a;
+  user-select: none;
+}
+
+/* ========== Screen ========== */
+.pt-screen {
+  position: relative;
+  padding: 1rem 1rem 1.25rem;
+  min-height: 340px;
+  max-height: 440px;
+  overflow-y: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #3f6;
+  text-shadow: 0 0 6px rgb(51 255 102 / 45%);
+  background:
+    radial-gradient(ellipse at center, rgb(20 40 20 / 35%) 0%, transparent 75%),
+    #050805;
+}
+
+/* CRT scanlines overlay */
+.pt-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2px,
+    rgb(0 0 0 / 14%) 3px,
+    transparent 4px
+  );
+}
+
+.pt-output {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* Line color variants */
+.pt-line-dim {
+  color: #1e9944;
+  opacity: 0.8;
+}
+
+.pt-line-alert {
+  color: #ff3b3b;
+  text-shadow: 0 0 6px rgb(255 59 59 / 50%);
+}
+
+.pt-line-info {
+  color: #4dc4ff;
+  text-shadow: 0 0 6px rgb(77 196 255 / 45%);
+}
+
+.pt-line-gold {
+  color: #ffd75f;
+  text-shadow: 0 0 6px rgb(255 215 95 / 45%);
+}
+
+.pt-line-user {
+  color: #e8ffe8;
+}
+
+.pt-line-mission {
+  display: block;
+  margin: 0.6rem 0;
+  padding: 0.5rem 0.7rem;
+  border: 1px dashed #3f6;
+  border-radius: 4px;
+  color: #b6ffc9;
+  background: rgb(51 255 102 / 6%);
+}
+
+/* ========== Input Row ========== */
+.pt-input-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.pt-prompt {
+  color: #3f6;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.pt-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e8ffe8;
+  font: inherit;
+  text-shadow: inherit;
+  caret-color: #3f6;
+  padding: 0;
+}
+
+/* ========== Boot Button ========== */
+.pt-boot-btn {
+  display: block;
+  margin: 5rem auto;
+  padding: 0.8rem 1.6rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  color: #3f6;
+  background: transparent;
+  border: 1px solid #3f6;
+  border-radius: 4px;
+  cursor: pointer;
+  text-shadow: 0 0 8px rgb(51 255 102 / 60%);
+  box-shadow: 0 0 14px rgb(51 255 102 / 20%), inset 0 0 14px rgb(51 255 102 / 8%);
+  animation: pt-btn-pulse 2s ease-in-out infinite;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.pt-boot-btn:hover {
+  background: rgb(51 255 102 / 12%);
+  transform: scale(1.03);
+}
+
+.pt-boot-btn:focus-visible {
+  outline: 2px solid #3f6;
+  outline-offset: 3px;
+}
+
+@keyframes pt-btn-pulse {
+  0%, 100% { box-shadow: 0 0 10px rgb(51 255 102 / 15%), inset 0 0 10px rgb(51 255 102 / 6%); }
+  50% { box-shadow: 0 0 22px rgb(51 255 102 / 40%), inset 0 0 18px rgb(51 255 102 / 12%); }
+}
+
+/* Blinking block cursor at end of typed lines */
+.pt-cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1em;
+  margin-left: 2px;
+  background: #3f6;
+  vertical-align: text-bottom;
+  animation: pt-blink 1s steps(1) infinite;
+}
+
+@keyframes pt-blink {
+  50% { opacity: 0; }
+}
+
+/* Screen flicker on boot */
+.pt-screen.pt-flicker {
+  animation: pt-flicker 0.3s linear 2;
+}
+
+@keyframes pt-flicker {
+  0% { opacity: 1; }
+  30% { opacity: 0.35; }
+  60% { opacity: 0.9; }
+  80% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Victory glow when the game is complete */
+.pt-terminal.pt-complete {
+  border-color: #ffd75f;
+  box-shadow:
+    0 0 0 1px rgb(0 0 0 / 80%),
+    0 12px 40px rgb(0 0 0 / 55%),
+    0 0 34px rgb(255 215 95 / 25%);
+}
+
+/* ========== Incoming Transmission Modal ========== */
+.pt-modal {
+  max-width: 26rem;
+  margin: auto;
+  padding: 1.5rem 1.75rem 1.6rem;
+  text-align: center;
+  background: #0a0505;
+  color: #ffdada;
+  border: 2px solid #ff3b3b;
+  border-radius: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  box-shadow: 0 0 45px rgb(255 59 59 / 40%);
+  animation: pt-modal-pulse 1.4s ease-in-out infinite;
+}
+
+/* Flashing red "lights" behind the modal */
+.pt-modal::backdrop {
+  background: rgb(25 0 0 / 60%);
+  animation: pt-backdrop-strobe 1.4s steps(1) infinite;
+}
+
+@keyframes pt-modal-pulse {
+  0%, 100% { box-shadow: 0 0 25px rgb(255 59 59 / 25%); }
+  50% { box-shadow: 0 0 55px rgb(255 59 59 / 55%); }
+}
+
+@keyframes pt-backdrop-strobe {
+  0%, 100% { background: rgb(25 0 0 / 60%); }
+  50% { background: rgb(105 0 0 / 60%); }
+}
+
+.pt-modal-topline {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: #ff3b3b;
+  text-shadow: 0 0 8px rgb(255 59 59 / 70%);
+  animation: pt-blink 1s steps(1) infinite;
+}
+
+.pt-modal-title {
+  margin: 0 0 0.85rem;
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  color: #ffd75f;
+  text-shadow: 0 0 10px rgb(255 215 95 / 50%);
+}
+
+.pt-modal-body {
+  margin: 0 0 1.25rem;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.pt-modal-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+/* display: flex would otherwise override the hidden attribute. */
+.pt-modal-step[hidden] {
+  display: none;
+}
+
+.pt-modal-btn {
+  width: 100%;
+  max-width: 15rem;
+  padding: 0.65rem 1rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.pt-modal-btn:hover {
+  transform: scale(1.03);
+}
+
+.pt-modal-btn-accept {
+  color: #3f6;
+  background: transparent;
+  border: 1px solid #3f6;
+  text-shadow: 0 0 8px rgb(51 255 102 / 60%);
+  box-shadow: 0 0 14px rgb(51 255 102 / 20%);
+}
+
+.pt-modal-btn-accept:hover {
+  background: rgb(51 255 102 / 12%);
+}
+
+.pt-modal-btn-decline {
+  color: #8a6a6a;
+  background: transparent;
+  border: 1px solid #5a3a3a;
+}
+
+.pt-modal-btn-decline:hover {
+  background: rgb(255 59 59 / 8%);
+  color: #c99;
+}
+
+.pt-modal-btn:focus-visible {
+  outline: 2px solid #ffd75f;
+  outline-offset: 3px;
+}
+
+.pt-modal-label {
+  font-size: 0.82rem;
+  letter-spacing: 0.15em;
+  color: #ffd75f;
+}
+
+.pt-modal-input {
+  width: 100%;
+  max-width: 15rem;
+  padding: 0.55rem 0.7rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #e8ffe8;
+  background: #050805;
+  border: 1px solid #3f6;
+  border-radius: 4px;
+  caret-color: #3f6;
+}
+
+.pt-modal-input:focus-visible {
+  outline: 2px solid #3f6;
+  outline-offset: 2px;
+}
+
+/* Calm everything down for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .pt-modal,
+  .pt-modal::backdrop,
+  .pt-modal-topline,
+  .pt-boot-btn {
+    animation: none;
+  }
+}
+
+@media (width <= 480px) {
+  .pt-screen {
+    font-size: 0.74rem;
+    min-height: 300px;
+  }
+}

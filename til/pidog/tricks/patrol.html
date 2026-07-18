@@ -1,0 +1,117 @@
+---
+permalink: /til/pidog/tricks/patrol
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; media-src 'self' data:;">
+
+    <link rel="canonical" href="https://torischuyler.github.io/til/pidog/tricks/patrol">
+    <title>Patrol | PiDog | TIL | Tori Schuyler</title>
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Site styles -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/raspberry-pi.css">
+    <link rel="stylesheet" href="/css/patrol-terminal.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav aria-label="Page navigation">
+        <ul class="nav-menu">
+            <li><a href="/">whoami</a></li>
+            <li><a href="/who-are-you">Who Are You?</a></li>
+            <li><a href="/today-i-learned" class="active" aria-current="page">TIL</a></li>
+        </ul>
+
+        <div class="nav-header">
+            <div class="hamburger">☰</div>
+        </div>
+    </nav>
+
+    <div class="rpi-container">
+        <main>
+            <a href="/til/pidog" class="rpi-back-link">← Back to PiDog</a>
+
+            <div class="rpi-lab-header">
+                <h1>Patrol</h1>
+            </div>
+
+            <figure class="rpi-media-figure">
+                <video class="rpi-centered-img rpi-centered-img-compact" controls autoplay loop muted playsinline aria-label="Slugger the PiDog robot on patrol">
+                    <source src="/assets/videos/pidog/patrol.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </figure>
+
+            <!-- Patrol Command Center: fake-hacker terminal that teaches real Linux commands -->
+            <section class="pt-section" aria-label="Slugger patrol terminal game">
+                <h2 class="pt-heading">— CLASSIFIED —</h2>
+                <p class="pt-sub">
+                    Slugger can't patrol alone. Hack into his onboard computer
+                    and help him secure the yard, agent.
+                </p>
+
+                <div class="pt-terminal" id="pt-terminal">
+                    <div class="pt-titlebar">
+                        <span class="pt-dot pt-dot-red"></span>
+                        <span class="pt-dot pt-dot-yellow"></span>
+                        <span class="pt-dot pt-dot-green"></span>
+                        <span class="pt-title">SLUGGER-OS v1.6.18 — secure uplink</span>
+                    </div>
+                    <div class="pt-screen" id="pt-screen">
+                        <div class="pt-output" id="pt-output" aria-live="polite"></div>
+                        <div class="pt-input-row" id="pt-input-row" hidden>
+                            <label class="pt-prompt" id="pt-prompt" for="pt-input">slugger@patrol:~$</label>
+                            <input id="pt-input" class="pt-input" type="text" maxlength="80"
+                                autocomplete="off" autocapitalize="none" autocorrect="off"
+                                spellcheck="false" aria-label="Type a terminal command">
+                        </div>
+                        <button id="pt-boot-btn" class="pt-boot-btn" type="button">▶ ESTABLISH UPLINK</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Incoming transmission modal (auto-opens shortly after page load) -->
+            <dialog id="pt-modal" class="pt-modal" aria-labelledby="pt-modal-title">
+                <p class="pt-modal-topline">⚠ INCOMING TRANSMISSION ⚠</p>
+                <h2 id="pt-modal-title" class="pt-modal-title">TOP SECRET</h2>
+                <p class="pt-modal-body">
+                    Agent, HQ has flagged you for an urgent classified mission.
+                    Slugger the PiDog needs backup in the field immediately.
+                </p>
+                <div class="pt-modal-step" id="pt-modal-choice">
+                    <button id="pt-accept-btn" class="pt-modal-btn pt-modal-btn-accept" type="button">ACCEPT MISSION</button>
+                    <button id="pt-decline-btn" class="pt-modal-btn pt-modal-btn-decline" type="button">DECLINE</button>
+                </div>
+                <form class="pt-modal-step" id="pt-modal-name" hidden>
+                    <label class="pt-modal-label" for="pt-agent-name">STATE YOUR CODENAME, AGENT:</label>
+                    <input id="pt-agent-name" class="pt-modal-input" type="text" maxlength="20"
+                        autocomplete="off" autocapitalize="characters" spellcheck="false"
+                        placeholder="e.g. GOLDEN EYE">
+                    <button class="pt-modal-btn pt-modal-btn-accept" type="submit">CONFIRM</button>
+                </form>
+            </dialog>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><span id="year"></span> 👾 Tori Schuyler</p>
+    </footer>
+
+    <script src="/js/mobile-nav.js" defer></script>
+    <script src="/js/footer.js"></script>
+    <script src="/js/patrol-terminal.js" defer></script>
+</body>
+</html>
