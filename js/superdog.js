@@ -64,15 +64,15 @@ const ELEMENTS = [
   { z: 48, symbol: 'Cd', name: 'Cadmium', mass: '112.41', cat: 'Transition Metal' },
   { z: 49, symbol: 'In', name: 'Indium', mass: '114.818', cat: 'Post-transition Metal' },
   { z: 50, symbol: 'Sn', name: 'Tin', mass: '118.71', cat: 'Post-transition Metal' },
-  { z: 51, symbol: 'Sb', name: 'Antimony', mass: '121.760', cat: 'Metalloid' },
-  { z: 52, symbol: 'Te', name: 'Tellurium', mass: '127.600', cat: 'Metalloid' },
+  { z: 51, symbol: 'Sb', name: 'Antimony', mass: '121.76', cat: 'Metalloid' },
+  { z: 52, symbol: 'Te', name: 'Tellurium', mass: '127.60', cat: 'Metalloid' },
   { z: 53, symbol: 'I', name: 'Iodine', mass: '126.904', cat: 'Reactive Nonmetal' },
   { z: 54, symbol: 'Xe', name: 'Xenon', mass: '131.293', cat: 'Noble Gas' },
-  { z: 55, symbol: 'Cs', name: 'Cesium', mass: '132.905', cat: 'Alkali Metal' },
-  { z: 56, symbol: 'Ba', name: 'Barium', mass: '137.327', cat: 'Alkaline Earth Metal' },
-  { z: 57, symbol: 'La', name: 'Lanthanum', mass: '138.905', cat: 'Lanthanide' },
-  { z: 58, symbol: 'Ce', name: 'Cerium', mass: '140.116', cat: 'Lanthanide' },
-  { z: 59, symbol: 'Pr', name: 'Praseodymium', mass: '140.908', cat: 'Lanthanide' },
+  { z: 55, symbol: 'Cs', name: 'Cesium', mass: '132.91', cat: 'Alkali Metal' },
+  { z: 56, symbol: 'Ba', name: 'Barium', mass: '137.33', cat: 'Alkaline Earth Metal' },
+  { z: 57, symbol: 'La', name: 'Lanthanum', mass: '138.91', cat: 'Lanthanide' },
+  { z: 58, symbol: 'Ce', name: 'Cerium', mass: '140.12', cat: 'Lanthanide' },
+  { z: 59, symbol: 'Pr', name: 'Praseodymium', mass: '140.91', cat: 'Lanthanide' },
   { z: 60, symbol: 'Nd', name: 'Neodymium', mass: '144.242', cat: 'Lanthanide' },
   { z: 61, symbol: 'Pm', name: 'Promethium', mass: '145.000', cat: 'Lanthanide' },
   { z: 62, symbol: 'Sm', name: 'Samarium', mass: '150.360', cat: 'Lanthanide' },
@@ -605,17 +605,25 @@ const ELEMENT_VIZ = {
       </svg>`,
   },
   31: {
-    caption: 'LEDs',
+    caption: 'Thermometer',
     svg: `
       <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
-        <!-- clock body -->
-        <rect x="6" y="14" width="52" height="38" rx="2" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.5"/>
-        <!-- LED display -->
-        <rect x="10" y="20" width="44" height="26" rx="1" fill="#1a1520"/>
-        <text x="32" y="41" text-anchor="middle" fill="#ff6b6b" font-size="22" font-family="Righteous, monospace" font-weight="700" letter-spacing="1">6:18</text>
-        <!-- alarm bells -->
-        <circle cx="16" cy="14" r="4" fill="#C9C2BA"/>
-        <circle cx="48" cy="14" r="4" fill="#C9C2BA"/>
+        <!-- tube -->
+        <rect x="28" y="6" width="8" height="38" rx="4" fill="#C9C2BA" stroke="#A8B0B8" stroke-width="1.5"/>
+        <!-- glass highlight -->
+        <path d="M30 10v28" stroke="#e8eef4" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+        <!-- scale ticks -->
+        <g stroke="#8A929A" stroke-width="1.2" stroke-linecap="round">
+          <path d="M36 14h5M36 20h4M36 26h5M36 32h4"/>
+        </g>
+        <!-- liquid column -->
+        <rect x="30" y="22" width="4" height="22" rx="2" fill="#c45c4a"/>
+        <!-- bulb -->
+        <circle cx="32" cy="50" r="10" fill="#C9C2BA" stroke="#A8B0B8" stroke-width="1.5"/>
+        <circle cx="32" cy="50" r="6.5" fill="#c45c4a"/>
+        <circle cx="32" cy="50" r="3.5" fill="#ff6b6b" opacity="0.7"/>
+        <!-- soft sheen -->
+        <path d="M28 46c1.5-2 4-3 6-2" stroke="#FACAA1" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
       </svg>`,
   },
   32: {
@@ -867,30 +875,28 @@ const ELEMENT_VIZ = {
       </svg>`,
   },
   43: {
-    caption: 'Radioactive diagnosis',
+    caption: 'Medical tracer',
     svg: `
       <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
-        <!-- x-ray film glow -->
-        <rect x="10" y="6" width="44" height="52" rx="3" fill="#1a2430" stroke="#5a9ec4" stroke-width="1.5"/>
-        <!-- skull -->
-        <circle cx="32" cy="16" r="7" fill="#c5ced8" opacity="0.9"/>
-        <circle cx="29" cy="15" r="1.4" fill="#1a2430"/>
-        <circle cx="35" cy="15" r="1.4" fill="#1a2430"/>
-        <path d="M30 19h4" stroke="#1a2430" stroke-width="1.2" stroke-linecap="round"/>
-        <!-- spine -->
-        <path d="M32 23v20" stroke="#c5ced8" stroke-width="2.5" stroke-linecap="round"/>
-        <!-- ribs -->
-        <path d="M32 26c-6 1-10 3-12 5M32 26c6 1 10 3 12 5" stroke="#c5ced8" stroke-width="1.6" stroke-linecap="round"/>
-        <path d="M32 30c-6 1-10 3-12 5M32 30c6 1 10 3 12 5" stroke="#c5ced8" stroke-width="1.6" stroke-linecap="round"/>
-        <path d="M32 34c-5 1-9 2-11 4M32 34c5 1 9 2 11 4" stroke="#c5ced8" stroke-width="1.6" stroke-linecap="round"/>
-        <!-- pelvis -->
-        <path d="M24 44c3-2 5-3 8-3s5 1 8 3" stroke="#c5ced8" stroke-width="2" stroke-linecap="round"/>
-        <!-- arms -->
-        <path d="M20 28l-6 10M44 28l6 10" stroke="#c5ced8" stroke-width="2" stroke-linecap="round"/>
-        <!-- legs -->
-        <path d="M28 46v10M36 46v10" stroke="#c5ced8" stroke-width="2.2" stroke-linecap="round"/>
-        <!-- soft scan glow -->
-        <ellipse cx="32" cy="34" rx="14" ry="18" fill="#5a9ec4" opacity="0.12"/>
+        <!-- plunger rod -->
+        <rect x="10" y="28" width="14" height="6" rx="1" fill="#A8B0B8" stroke="#8A929A" stroke-width="1.2"/>
+        <!-- plunger thumb rest -->
+        <rect x="4" y="24" width="8" height="14" rx="2" fill="#C9C2BA" stroke="#A8B0B8" stroke-width="1.2"/>
+        <!-- barrel -->
+        <rect x="22" y="22" width="26" height="18" rx="3" fill="#e8eef4" stroke="#A8B0B8" stroke-width="1.5"/>
+        <!-- measurement marks -->
+        <path d="M28 26v10M34 26v10M40 26v10" stroke="#8A929A" stroke-width="1" opacity="0.55"/>
+        <!-- tracer liquid -->
+        <rect x="36" y="25" width="10" height="12" rx="1.5" fill="#9CBB80" opacity="0.75"/>
+        <!-- hub -->
+        <rect x="46" y="27" width="6" height="8" rx="1" fill="#A8B0B8"/>
+        <!-- needle -->
+        <path d="M52 31h10" stroke="#C9C2BA" stroke-width="2" stroke-linecap="round"/>
+        <path d="M60 29l4 2-4 2" fill="#C9C2BA"/>
+        <!-- finger grips -->
+        <path d="M22 20h6v4H22zM22 40h6v4H22z" fill="#8A929A"/>
+        <!-- soft glow (radiotracer) -->
+        <circle cx="41" cy="31" r="8" fill="#9CBB80" opacity="0.15"/>
       </svg>`,
   },
   44: {
@@ -1011,6 +1017,237 @@ const ELEMENT_VIZ = {
         <path d="M24 30h16M24 36h12" stroke="#FACAA1" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
         <!-- side seam highlight -->
         <path d="M18 20v28" stroke="#e8eef4" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
+      </svg>`,
+  },
+  51: {
+    caption: 'Car battery',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- case -->
+        <rect x="8" y="20" width="48" height="34" rx="3" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- cell ridges -->
+        <path d="M20 24v26M32 24v26M44 24v26" stroke="#1a3040" stroke-width="2" opacity="0.7"/>
+        <!-- top ledge -->
+        <rect x="10" y="16" width="44" height="8" rx="2" fill="#A8B0B8" stroke="#8A929A" stroke-width="1.2"/>
+        <!-- negative post -->
+        <rect x="16" y="10" width="10" height="8" rx="1.5" fill="#C9C2BA" stroke="#8A929A" stroke-width="1.2"/>
+        <path d="M18.5 14h5" stroke="#2A3F54" stroke-width="2" stroke-linecap="round"/>
+        <!-- positive post -->
+        <rect x="38" y="10" width="10" height="8" rx="1.5" fill="#c45c4a" stroke="#a04838" stroke-width="1.2"/>
+        <path d="M40.5 14h5M43 11.5v5" stroke="#FACAA1" stroke-width="2" stroke-linecap="round"/>
+        <!-- charge indicator window -->
+        <rect x="26" y="30" width="12" height="8" rx="1" fill="#1a3040"/>
+        <rect x="28" y="32" width="8" height="4" rx="0.5" fill="#9CBB80"/>
+        <!-- carry handle -->
+        <path d="M24 16c0-6 4-10 8-10s8 4 8 10" stroke="#8A929A" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg>`,
+  },
+  52: {
+    caption: 'Solar panel',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- panel frame (tilted) -->
+        <path d="M8 22l40-10 8 34-40 10z" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- cells -->
+        <path d="M14 24l14-3.5 2.5 10.5-14 3.5z" fill="#1a3040"/>
+        <path d="M30 20l14-3.5 2.5 10.5-14 3.5z" fill="#243848"/>
+        <path d="M16.5 34.5l14-3.5 2.5 10.5-14 3.5z" fill="#243848"/>
+        <path d="M32.5 30.5l14-3.5 2.5 10.5-14 3.5z" fill="#1a3040"/>
+        <!-- cell grid lines -->
+        <path d="M22 22l5 21M38 18l5 21M12 30h36M14.5 40h36" stroke="#5a9ec4" stroke-width="0.8" opacity="0.55"/>
+        <!-- sun -->
+        <circle cx="50" cy="14" r="5" fill="#F0C24A"/>
+        <g stroke="#F0C24A" stroke-width="1.5" stroke-linecap="round">
+          <path d="M50 5v3M50 20v3M41 14h3M56 14h3M44 8l2 2M54 18l2 2M54 8l-2 2M44 18l-2 2"/>
+        </g>
+        <!-- ground mount -->
+        <path d="M20 54l8-8M36 50l6 6" stroke="#8A929A" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M14 56h40" stroke="#A8B0B8" stroke-width="2" stroke-linecap="round"/>
+      </svg>`,
+  },
+  53: {
+    caption: 'Disinfectant',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- bottle body -->
+        <path d="M22 22h20v30c0 3-2 5-5 5H27c-3 0-5-2-5-5V22z" fill="#5c3a1e" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- amber liquid -->
+        <path d="M24 30h16v20c0 2-1.5 3.5-3.5 3.5h-9c-2 0-3.5-1.5-3.5-3.5V30z" fill="#c45c4a"/>
+        <path d="M26 34h12" stroke="#FACAA1" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
+        <!-- shoulder / neck -->
+        <path d="M26 22h12v-4H26v4z" fill="#4a2e18"/>
+        <rect x="28" y="12" width="8" height="8" rx="1" fill="#A8B0B8" stroke="#8A929A" stroke-width="1.2"/>
+        <!-- cap -->
+        <rect x="27" y="6" width="10" height="8" rx="2" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.2"/>
+        <!-- cross mark -->
+        <path d="M32 36v10M27 41h10" stroke="#FACAA1" stroke-width="2.2" stroke-linecap="round"/>
+        <!-- droplet -->
+        <path d="M48 28c0 4-3 7-6 7s-6-3-6-7c0-3 3-8 6-10 3 2 6 7 6 10z" fill="#c45c4a" stroke="#a04838" stroke-width="1"/>
+        <path d="M44 30c1-1 2-0.5 2.5 0.5" stroke="#FACAA1" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+      </svg>`,
+  },
+  54: {
+    caption: 'Lighthouse',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- sea -->
+        <path d="M4 52c6-3 12-3 18 0s12 3 18 0 12-3 18 0v8H4v-8z" fill="#5a9ec4" opacity="0.55"/>
+        <!-- rock base -->
+        <path d="M18 50l6-6h16l6 6H18z" fill="#8A929A"/>
+        <!-- tower -->
+        <path d="M24 50L28 22h8l4 28H24z" fill="#C9C2BA" stroke="#A8B0B8" stroke-width="1.2"/>
+        <!-- red stripe -->
+        <path d="M26.5 38h11l0.7 6h-12.4l0.7-6z" fill="#c45c4a"/>
+        <!-- gallery / lantern room -->
+        <rect x="26" y="14" width="12" height="10" rx="1" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.2"/>
+        <rect x="28" y="16" width="8" height="6" rx="0.5" fill="#F0C24A" opacity="0.9"/>
+        <!-- roof -->
+        <path d="M24 14l8-8 8 8H24z" fill="#c45c4a"/>
+        <circle cx="32" cy="8" r="1.5" fill="#FACAA1"/>
+        <!-- light beams -->
+        <path d="M38 19l18-6M38 22l18 2M38 25l16 8" stroke="#F0C24A" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+        <path d="M26 19L8 13M26 22L8 24" stroke="#F0C24A" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
+      </svg>`,
+  },
+  55: {
+    caption: 'Atomic clock',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- clock body -->
+        <circle cx="32" cy="34" r="22" fill="#2A3F54" stroke="#C9C2BA" stroke-width="2"/>
+        <circle cx="32" cy="34" r="17" fill="#1a3040"/>
+        <!-- tick marks -->
+        <g stroke="#A8B0B8" stroke-width="1.5" stroke-linecap="round">
+          <path d="M32 20v3M32 45v3M18 34h3M43 34h3"/>
+          <path d="M22 24l2 2M40 44l2 2M22 44l2-2M40 24l2-2" opacity="0.7"/>
+        </g>
+        <!-- electron orbits -->
+        <ellipse cx="32" cy="34" rx="12" ry="5" stroke="#9CBB80" stroke-width="1.2" transform="rotate(-30 32 34)" opacity="0.55"/>
+        <ellipse cx="32" cy="34" rx="12" ry="5" stroke="#FACAA1" stroke-width="1.2" transform="rotate(50 32 34)" opacity="0.55"/>
+        <!-- digital readout -->
+        <rect x="18" y="28" width="28" height="12" rx="2" fill="#0d1a22"/>
+        <text x="32" y="38" text-anchor="middle" fill="#9CBB80" font-size="10" font-family="Righteous, monospace" font-weight="700" letter-spacing="1">6:18</text>
+        <!-- top lugs -->
+        <rect x="24" y="8" width="6" height="6" rx="1" fill="#A8B0B8"/>
+        <rect x="34" y="8" width="6" height="6" rx="1" fill="#A8B0B8"/>
+        <path d="M27 8V5h10v3" stroke="#8A929A" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg>`,
+  },
+  56: {
+    caption: 'X-ray',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- x-ray film glow -->
+        <rect x="10" y="6" width="44" height="52" rx="3" fill="#1a2430" stroke="#5a9ec4" stroke-width="1.5"/>
+        <!-- skull -->
+        <circle cx="32" cy="16" r="7" fill="#c5ced8" opacity="0.9"/>
+        <circle cx="29" cy="15" r="1.4" fill="#1a2430"/>
+        <circle cx="35" cy="15" r="1.4" fill="#1a2430"/>
+        <path d="M30 19h4" stroke="#1a2430" stroke-width="1.2" stroke-linecap="round"/>
+        <!-- spine -->
+        <path d="M32 23v20" stroke="#c5ced8" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- ribs -->
+        <path d="M32 26c-6 1-10 3-12 5M32 26c6 1 10 3 12 5" stroke="#c5ced8" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M32 30c-6 1-10 3-12 5M32 30c6 1 10 3 12 5" stroke="#c5ced8" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M32 34c-5 1-9 2-11 4M32 34c5 1 9 2 11 4" stroke="#c5ced8" stroke-width="1.6" stroke-linecap="round"/>
+        <!-- pelvis -->
+        <path d="M24 44c3-2 5-3 8-3s5 1 8 3" stroke="#c5ced8" stroke-width="2" stroke-linecap="round"/>
+        <!-- arms -->
+        <path d="M20 28l-6 10M44 28l6 10" stroke="#c5ced8" stroke-width="2" stroke-linecap="round"/>
+        <!-- legs -->
+        <path d="M28 46v10M36 46v10" stroke="#c5ced8" stroke-width="2.2" stroke-linecap="round"/>
+        <!-- soft scan glow -->
+        <ellipse cx="32" cy="34" rx="14" ry="18" fill="#5a9ec4" opacity="0.12"/>
+      </svg>`,
+  },
+  57: {
+    caption: 'Telescope',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- tube -->
+        <path d="M12 40l36-22 4 7-36 22-4-7z" fill="#A8B0B8" stroke="#8A929A" stroke-width="1.5"/>
+        <!-- tube bands -->
+        <path d="M20 36l2.5 4.2M32 29l2.5 4.2M44 22l2.5 4.2" stroke="#C9C2BA" stroke-width="1.5" opacity="0.7"/>
+        <!-- eyepiece -->
+        <path d="M8 42l6-3.5 3 5-6 3.5-3-5z" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.2"/>
+        <!-- objective lens -->
+        <ellipse cx="52" cy="21" rx="5" ry="7" transform="rotate(-30 52 21)" fill="#5a9ec4" stroke="#C9C2BA" stroke-width="1.5"/>
+        <ellipse cx="52" cy="21" rx="2.5" ry="4" transform="rotate(-30 52 21)" fill="#8eb4d4" opacity="0.7"/>
+        <!-- tripod -->
+        <path d="M28 44L18 58M28 44l10 14M28 44v6" stroke="#8A929A" stroke-width="2" stroke-linecap="round"/>
+        <!-- mount joint -->
+        <circle cx="28" cy="44" r="2.5" fill="#C9C2BA"/>
+        <!-- star twinkles -->
+        <path d="M14 14l1 2 2 1-2 1-1 2-1-2-2-1 2-1z" fill="#F0C24A"/>
+        <path d="M38 8l0.8 1.5 1.5 0.8-1.5 0.8L38 12.6l-0.8-1.5-1.5-0.8 1.5-0.8z" fill="#FACAA1"/>
+      </svg>`,
+  },
+  58: {
+    caption: 'Lighter flint',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- lighter body -->
+        <rect x="18" y="22" width="28" height="34" rx="3" fill="#c45c4a" stroke="#a04838" stroke-width="1.5"/>
+        <!-- side highlight -->
+        <path d="M21 26v26" stroke="#FACAA1" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+        <!-- metal top -->
+        <rect x="18" y="16" width="28" height="10" rx="2" fill="#A8B0B8" stroke="#8A929A" stroke-width="1.2"/>
+        <!-- flint wheel -->
+        <circle cx="38" cy="21" r="5" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.5"/>
+        <circle cx="38" cy="21" r="2.5" fill="none" stroke="#8A929A" stroke-width="1"/>
+        <path d="M38 17v8M35 19l6 4M35 23l6-4" stroke="#C9C2BA" stroke-width="1" opacity="0.7"/>
+        <!-- flame -->
+        <path d="M28 16c0-6 3-10 5-12 2 3 4 7 4 12-1 3-3 4-4 4s-4-1-5-4z" fill="#F0C24A"/>
+        <path d="M30 14c0-3 1.5-5 2.5-6 1 1.5 2 3.5 2 6-0.5 1.5-1.5 2-2 2s-2-0.5-2.5-2z" fill="#FACAA1"/>
+        <!-- sparks from flint -->
+        <path d="M44 16l4-4M46 20l5-1M44 24l4 2" stroke="#F0C24A" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>`,
+  },
+  59: {
+    caption: 'Torchworker glasses',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- left lens -->
+        <ellipse cx="20" cy="30" rx="12" ry="10" fill="#5a3d6b" stroke="#C9C2BA" stroke-width="2"/>
+        <ellipse cx="20" cy="30" rx="8" ry="6.5" fill="#7a5490" opacity="0.85"/>
+        <!-- right lens -->
+        <ellipse cx="44" cy="30" rx="12" ry="10" fill="#5a3d6b" stroke="#C9C2BA" stroke-width="2"/>
+        <ellipse cx="44" cy="30" rx="8" ry="6.5" fill="#7a5490" opacity="0.85"/>
+        <!-- bridge -->
+        <path d="M30 28c2-3 6-3 8 0" stroke="#C9C2BA" stroke-width="2" stroke-linecap="round"/>
+        <!-- temples -->
+        <path d="M8 28L2 22M56 28l6-6" stroke="#A8B0B8" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- lens highlights -->
+        <path d="M14 26c2-2 5-3 8-2" stroke="#e8eef4" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
+        <path d="M38 26c2-2 5-3 8-2" stroke="#e8eef4" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
+        <!-- torch glow hint -->
+        <path d="M28 48c2-6 4-8 4-8s2 2 4 8c-2 2-6 2-8 0z" fill="#F0C24A" opacity="0.8"/>
+        <path d="M30 46c1-3 2-4 2-4s1 1 2 4c-1 1-3 1-4 0z" fill="#FACAA1"/>
+      </svg>`,
+  },
+  60: {
+    caption: 'Electric motor',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- housing -->
+        <rect x="10" y="18" width="36" height="28" rx="4" fill="#A8B0B8" stroke="#8A929A" stroke-width="1.5"/>
+        <!-- cooling fins -->
+        <path d="M16 18v28M22 18v28M28 18v28M34 18v28M40 18v28" stroke="#C9C2BA" stroke-width="1.5" opacity="0.55"/>
+        <!-- end bell -->
+        <rect x="42" y="22" width="8" height="20" rx="2" fill="#8A929A"/>
+        <!-- shaft -->
+        <rect x="48" y="28" width="12" height="8" rx="1" fill="#C9C2BA" stroke="#A8B0B8" stroke-width="1.2"/>
+        <!-- neodymium magnet hint (cutaway) -->
+        <rect x="16" y="26" width="10" height="12" rx="1" fill="#c45c4a"/>
+        <rect x="28" y="26" width="10" height="12" rx="1" fill="#2A3F54"/>
+        <!-- N / S marks -->
+        <path d="M19 30h4M21 30v6" stroke="#FACAA1" stroke-width="1.3" stroke-linecap="round"/>
+        <path d="M31 30h4M31 36h4M31 33h4" stroke="#8eb4d4" stroke-width="1.3" stroke-linecap="round"/>
+        <!-- mounting feet -->
+        <path d="M14 46h8M34 46h8" stroke="#8A929A" stroke-width="3" stroke-linecap="round"/>
+        <!-- wire leads -->
+        <path d="M14 24c-4-2-6 2-4 6" stroke="#F0C24A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M14 40c-4 2-6-2-4-6" stroke="#c45c4a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
       </svg>`,
   },
   79: {
