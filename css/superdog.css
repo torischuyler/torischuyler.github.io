@@ -28,6 +28,10 @@
   font-weight: 600;
 }
 
+.sd-intro em {
+  font-style: italic;
+}
+
 /* ===== Periodic table age finder ===== */
 .sd-age-form {
   display: grid;
@@ -116,6 +120,11 @@
     radial-gradient(ellipse 70% 80% at 0% 50%, rgb(156 187 128 / 18%), transparent 55%),
     var(--primary-color);
   border: 1px solid rgb(201 194 186 / 22%);
+}
+
+/* display: grid would otherwise override the hidden attribute. */
+.sd-element-card[hidden] {
+  display: none;
 }
 
 .sd-element-card.sd-is-krypton {

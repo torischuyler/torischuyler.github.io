@@ -1,6 +1,6 @@
 /*
   Superdog page interactions:
-  Periodic-table "element superpower" from age (Superman / Tori = 36, Krypton).
+  Periodic-table "element superpower" from age (Superman = 36, Krypton).
   Sea Dog biscuit dodge is stashed in js/superdog-game.stash.js for later.
 */
 
@@ -351,48 +351,20 @@ function renderElementViz(el) {
   caption.textContent = 'Atom';
 }
 
-// In 2026 (when this page shipped) Tori’s element year was 36 — Krypton.
-// Each calendar year after that, bump +1 so the intro stays current.
-const TORI_BASE_YEAR = 2026;
-const TORI_BASE_AGE = 36;
-
-/** Real year, or override with ?year=2027 to time-travel / QA the dynamic copy. */
+/** Real year, or override with ?year=2027 to time-travel / QA the heading. */
 function currentDisplayYear() {
   const raw = new URLSearchParams(window.location.search).get('year');
   const parsed = Number.parseInt(raw, 10);
-  if (Number.isInteger(parsed) && parsed >= TORI_BASE_YEAR && parsed <= 2100) {
+  if (Number.isInteger(parsed) && parsed >= 2026 && parsed <= 2100) {
     return parsed;
   }
   return new Date().getFullYear();
-}
-
-function toriElementAge(year = currentDisplayYear()) {
-  const age = TORI_BASE_AGE + (year - TORI_BASE_YEAR);
-  return Math.max(1, Math.min(118, age));
 }
 
 function updateHeadingYear() {
   const yearEl = document.getElementById('sd-heading-year');
   if (!yearEl) return;
   yearEl.textContent = String(currentDisplayYear());
-}
-
-function updateToriYearLine() {
-  const line = document.getElementById('sd-tori-year-line');
-  if (!line) return;
-
-  const year = currentDisplayYear();
-  const age = toriElementAge(year);
-
-  // In the base year, leave the HTML copy alone so you can edit it in superdog.html.
-  // Only rewrite the sentence once the calendar year advances past 2026.
-  if (age === TORI_BASE_AGE) return;
-
-  const el = ELEMENTS[age - 1];
-  // e.g. 2027 → Rubidium (37): call out the new element + that 2026 was Krypton
-  line.innerHTML =
-    `In ${year}, my superpower element is ` +
-    `<strong>element ${age} — ${el.name} (${el.symbol})</strong>.`;
 }
 
 function initElementYear() {
@@ -403,8 +375,6 @@ function initElementYear() {
   if (!form || !input || !error || !card) return;
 
   updateHeadingYear();
-  updateToriYearLine();
-  const toriAge = toriElementAge();
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -419,7 +389,7 @@ function initElementYear() {
     const el = ELEMENTS[age - 1];
     error.hidden = true;
     card.hidden = false;
-    card.classList.toggle('sd-is-krypton', age === 36 || age === toriAge);
+    card.classList.toggle('sd-is-krypton', age === 36);
 
     document.getElementById('sd-el-number').textContent = String(el.z);
     document.getElementById('sd-el-symbol').textContent = el.symbol;
@@ -427,12 +397,8 @@ function initElementYear() {
     document.getElementById('sd-el-mass').textContent = el.mass;
 
     let headline = `Age ${age}: ${el.name} is Your Superpower`;
-    if (age === 36 && age === toriAge) {
-      headline = `Age ${age}: ${el.name} is Your Superpower (Superman’s… and Tori’s!)`;
-    } else if (age === 36) {
+    if (age === 36) {
       headline = `Age ${age}: ${el.name} is Your Superpower (Superman’s!)`;
-    } else if (age === toriAge) {
-      headline = `Age ${age}: ${el.name} is Your Superpower (Tori’s right now!)`;
     }
 
     document.getElementById('sd-el-headline').textContent = headline;
