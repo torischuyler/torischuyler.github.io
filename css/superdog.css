@@ -206,8 +206,18 @@
 
 .sd-el-meta {
   margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   font-size: 0.95rem;
   opacity: 0.85;
+}
+
+.sd-el-radioactive-mark {
+  flex: 0 0 auto;
+  width: 0.95rem;
+  height: 0.95rem;
+  display: block;
 }
 
 .sd-el-aside {

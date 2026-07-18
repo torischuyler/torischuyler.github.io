@@ -55,15 +55,15 @@ const ELEMENTS = [
   { z: 39, symbol: 'Y', name: 'Yttrium', mass: '88.906', cat: 'Transition Metal' },
   { z: 40, symbol: 'Zr', name: 'Zirconium', mass: '91.224', cat: 'Transition Metal' },
   { z: 41, symbol: 'Nb', name: 'Niobium', mass: '92.906', cat: 'Transition Metal' },
-  { z: 42, symbol: 'Mo', name: 'Molybdenum', mass: '95.960', cat: 'Transition Metal' },
-  { z: 43, symbol: 'Tc', name: 'Technetium', mass: '98.000', cat: 'Transition Metal' },
-  { z: 44, symbol: 'Ru', name: 'Ruthenium', mass: '101.070', cat: 'Transition Metal' },
-  { z: 45, symbol: 'Rh', name: 'Rhodium', mass: '102.906', cat: 'Transition Metal' },
-  { z: 46, symbol: 'Pd', name: 'Palladium', mass: '106.420', cat: 'Transition Metal' },
-  { z: 47, symbol: 'Ag', name: 'Silver', mass: '107.868', cat: 'Transition Metal' },
-  { z: 48, symbol: 'Cd', name: 'Cadmium', mass: '112.411', cat: 'Transition Metal' },
+  { z: 42, symbol: 'Mo', name: 'Molybdenum', mass: '95.95', cat: 'Transition Metal' },
+  { z: 43, symbol: 'Tc', name: 'Technetium', mass: '98', cat: 'Transition Metal' },
+  { z: 44, symbol: 'Ru', name: 'Ruthenium', mass: '101.07', cat: 'Transition Metal' },
+  { z: 45, symbol: 'Rh', name: 'Rhodium', mass: '102.91', cat: 'Transition Metal' },
+  { z: 46, symbol: 'Pd', name: 'Palladium', mass: '106.42', cat: 'Transition Metal' },
+  { z: 47, symbol: 'Ag', name: 'Silver', mass: '107.87', cat: 'Transition Metal' },
+  { z: 48, symbol: 'Cd', name: 'Cadmium', mass: '112.41', cat: 'Transition Metal' },
   { z: 49, symbol: 'In', name: 'Indium', mass: '114.818', cat: 'Post-transition Metal' },
-  { z: 50, symbol: 'Sn', name: 'Tin', mass: '118.710', cat: 'Post-transition Metal' },
+  { z: 50, symbol: 'Sn', name: 'Tin', mass: '118.71', cat: 'Post-transition Metal' },
   { z: 51, symbol: 'Sb', name: 'Antimony', mass: '121.760', cat: 'Metalloid' },
   { z: 52, symbol: 'Te', name: 'Tellurium', mass: '127.600', cat: 'Metalloid' },
   { z: 53, symbol: 'I', name: 'Iodine', mass: '126.904', cat: 'Reactive Nonmetal' },
@@ -815,6 +815,139 @@ const ELEMENT_VIZ = {
         <path d="M24 28v6" stroke="#8A929A" stroke-width="2"/>
       </svg>`,
   },
+  41: {
+    caption: 'Maglev train',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- elevated guideway -->
+        <rect x="6" y="46" width="52" height="6" rx="2" fill="#8A929A"/>
+        <path d="M10 52v6M32 52v6M54 52v6" stroke="#A8B0B8" stroke-width="3" stroke-linecap="round"/>
+        <!-- magnetic glow in the float gap -->
+        <path d="M12 42h40" stroke="#5a9ec4" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+        <path d="M14 42h36" stroke="#8eb4d4" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+        <!-- train body (sleek airport / monorail shape) -->
+        <path d="M8 28c0-6 4-10 10-10h28c8 0 12 4 14 10l-2 12H10l-2-12z" fill="#C9C2BA" stroke="#A8B0B8" stroke-width="1.5"/>
+        <!-- blue stripe -->
+        <path d="M12 36h42" stroke="#5a9ec4" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- cockpit / nose window -->
+        <path d="M48 20c4 1 8 4 10 8H48V20z" fill="#2A3F54"/>
+        <path d="M50 22c2.5 1 5 3 6.5 5" stroke="#8eb4d4" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+        <!-- passenger windows -->
+        <rect x="14" y="22" width="7" height="8" rx="1" fill="#2A3F54"/>
+        <rect x="24" y="22" width="7" height="8" rx="1" fill="#2A3F54"/>
+        <rect x="34" y="22" width="7" height="8" rx="1" fill="#2A3F54"/>
+        <!-- window highlights -->
+        <path d="M15 24h3M25 24h3M35 24h3" stroke="#8eb4d4" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+        <!-- speed lines -->
+        <path d="M4 24h6M2 30h5M4 36h6" stroke="#FACAA1" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+      </svg>`,
+  },
+  42: {
+    caption: 'Drill',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- body -->
+        <path d="M18 18h22c4 0 6 2 6 6v10c0 4-2 6-6 6H18V18z" fill="#F0C24A" stroke="#d4a83a" stroke-width="1.5"/>
+        <!-- handle / grip -->
+        <path d="M22 40h10v14c0 2-2 4-5 4s-5-2-5-4V40z" fill="#F0C24A" stroke="#d4a83a" stroke-width="1.5"/>
+        <path d="M24 44h6M24 48h6M24 52h6" stroke="#2A3F54" stroke-width="1.3" stroke-linecap="round" opacity="0.45"/>
+        <!-- trigger -->
+        <path d="M32 40v6c2 0 4-2 4-4v-2H32z" fill="#2A3F54"/>
+        <!-- chuck -->
+        <rect x="40" y="24" width="8" height="12" rx="1.5" fill="#A8B0B8" stroke="#8A929A" stroke-width="1.2"/>
+        <path d="M42 26v8M44 26v8M46 26v8" stroke="#8A929A" stroke-width="1" opacity="0.7"/>
+        <!-- bit -->
+        <path d="M48 28h12l-2 2 2 2H48V28z" fill="#C9C2BA" stroke="#8A929A" stroke-width="1"/>
+        <path d="M52 29l2 1-2 1M56 29l2 1-2 1" stroke="#8A929A" stroke-width="1" stroke-linecap="round"/>
+        <!-- battery pack -->
+        <rect x="20" y="14" width="14" height="6" rx="1.5" fill="#2A3F54"/>
+        <rect x="23" y="16" width="4" height="2" rx="0.5" fill="#9CBB80"/>
+        <!-- side vent lines -->
+        <path d="M22 24h10M22 28h10M22 32h8" stroke="#d4a83a" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+      </svg>`,
+  },
+  43: {
+    caption: 'Radioactive diagnosis',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- x-ray film glow -->
+        <rect x="10" y="6" width="44" height="52" rx="3" fill="#1a2430" stroke="#5a9ec4" stroke-width="1.5"/>
+        <!-- skull -->
+        <circle cx="32" cy="16" r="7" fill="#c5ced8" opacity="0.9"/>
+        <circle cx="29" cy="15" r="1.4" fill="#1a2430"/>
+        <circle cx="35" cy="15" r="1.4" fill="#1a2430"/>
+        <path d="M30 19h4" stroke="#1a2430" stroke-width="1.2" stroke-linecap="round"/>
+        <!-- spine -->
+        <path d="M32 23v20" stroke="#c5ced8" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- ribs -->
+        <path d="M32 26c-6 1-10 3-12 5M32 26c6 1 10 3 12 5" stroke="#c5ced8" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M32 30c-6 1-10 3-12 5M32 30c6 1 10 3 12 5" stroke="#c5ced8" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M32 34c-5 1-9 2-11 4M32 34c5 1 9 2 11 4" stroke="#c5ced8" stroke-width="1.6" stroke-linecap="round"/>
+        <!-- pelvis -->
+        <path d="M24 44c3-2 5-3 8-3s5 1 8 3" stroke="#c5ced8" stroke-width="2" stroke-linecap="round"/>
+        <!-- arms -->
+        <path d="M20 28l-6 10M44 28l6 10" stroke="#c5ced8" stroke-width="2" stroke-linecap="round"/>
+        <!-- legs -->
+        <path d="M28 46v10M36 46v10" stroke="#c5ced8" stroke-width="2.2" stroke-linecap="round"/>
+        <!-- soft scan glow -->
+        <ellipse cx="32" cy="34" rx="14" ry="18" fill="#5a9ec4" opacity="0.12"/>
+      </svg>`,
+  },
+  44: {
+    caption: 'Hard drive',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- enclosure -->
+        <rect x="8" y="10" width="48" height="44" rx="3" fill="#A8B0B8" stroke="#8A929A" stroke-width="1.5"/>
+        <!-- inner cavity -->
+        <rect x="12" y="14" width="40" height="36" rx="2" fill="#2A3F54"/>
+        <!-- platter -->
+        <circle cx="30" cy="32" r="14" fill="#C9C2BA" stroke="#8A929A" stroke-width="1.2"/>
+        <circle cx="30" cy="32" r="10" fill="none" stroke="#A8B0B8" stroke-width="1" opacity="0.7"/>
+        <circle cx="30" cy="32" r="5" fill="none" stroke="#A8B0B8" stroke-width="1" opacity="0.55"/>
+        <circle cx="30" cy="32" r="2.2" fill="#8A929A"/>
+        <!-- actuator arm -->
+        <path d="M48 46L34 28" stroke="#C9C2BA" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="48" cy="46" r="3.5" fill="#8A929A"/>
+        <!-- read/write head -->
+        <path d="M34 28l-4-1.5 1 4z" fill="#F0C24A"/>
+        <!-- connector pins -->
+        <path d="M16 50v4M22 50v4M28 50v4M34 50v4" stroke="#8A929A" stroke-width="2" stroke-linecap="round"/>
+      </svg>`,
+  },
+  45: {
+    caption: 'Catalytic converter',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- inlet pipe -->
+        <rect x="4" y="26" width="10" height="12" rx="2" fill="#8A929A"/>
+        <!-- converter body -->
+        <rect x="12" y="18" width="36" height="28" rx="4" fill="#A8B0B8" stroke="#8A929A" stroke-width="1.5"/>
+        <!-- heat shield ridges -->
+        <path d="M18 22v20M26 22v20M34 22v20M42 22v20" stroke="#C9C2BA" stroke-width="1.5" opacity="0.7"/>
+        <!-- honeycomb hint (cutaway) -->
+        <rect x="20" y="28" width="20" height="10" rx="1" fill="#2A3F54"/>
+        <path d="M22 30h4M28 30h4M34 30h4M22 34h4M28 34h4M34 34h4" stroke="#9CBB80" stroke-width="1.3" stroke-linecap="round"/>
+        <!-- outlet pipe -->
+        <rect x="48" y="26" width="12" height="12" rx="2" fill="#8A929A"/>
+        <!-- mounting bracket -->
+        <path d="M16 46h8M40 46h8" stroke="#8A929A" stroke-width="2" stroke-linecap="round"/>
+        <!-- clean exhaust puff -->
+        <path d="M58 24c2-2 4-2 6 0M58 32c2-2 4-2 6 0M58 40c2-2 4-2 6 0" stroke="#8eb4d4" stroke-width="1.5" stroke-linecap="round" opacity="0.75"/>
+      </svg>`,
+  },
+  46: {
+    caption: 'Wedding ring',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- plain band -->
+        <ellipse cx="32" cy="32" rx="18" ry="14" fill="none" stroke="#A8B0B8" stroke-width="7"/>
+        <ellipse cx="32" cy="32" rx="18" ry="14" fill="none" stroke="#C9C2BA" stroke-width="3.5"/>
+        <!-- metal highlight -->
+        <path d="M18 24c4-6 12-9 20-8" stroke="#e8eef4" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+        <path d="M40 42c-4 4-12 6-20 4" stroke="#8A929A" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+      </svg>`,
+  },
   47: {
     caption: 'Mirror',
     svg: `
@@ -823,6 +956,61 @@ const ELEMENT_VIZ = {
         <ellipse cx="32" cy="30" rx="11" ry="13" fill="#e8eef4"/>
         <path d="M24 24c4-6 12-6 14-2" stroke="#FFF" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
         <rect x="29" y="48" width="6" height="6" rx="1" fill="#2A3F54"/>
+      </svg>`,
+  },
+  48: {
+    caption: 'Paint',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- paint tube body -->
+        <path d="M22 18h20v28c0 2-2 4-4 4H26c-2 0-4-2-4-4V18z" fill="#F0C24A" stroke="#d4a83a" stroke-width="1.5"/>
+        <!-- crimped end -->
+        <rect x="20" y="12" width="24" height="8" rx="1" fill="#A8B0B8" stroke="#8A929A" stroke-width="1.2"/>
+        <path d="M24 14h16M24 17h16" stroke="#8A929A" stroke-width="1" opacity="0.6"/>
+        <!-- nozzle -->
+        <rect x="28" y="46" width="8" height="6" rx="1" fill="#C9C2BA"/>
+        <!-- cadmium yellow / orange / red blobs -->
+        <circle cx="18" cy="40" r="6" fill="#F0C24A"/>
+        <circle cx="32" cy="52" r="5.5" fill="#e07a3a"/>
+        <circle cx="48" cy="42" r="6" fill="#e22222"/>
+        <!-- tube label stripe -->
+        <path d="M26 28h12" stroke="#2A3F54" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+      </svg>`,
+  },
+  49: {
+    caption: 'LCDs',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- monitor bezel -->
+        <rect x="8" y="10" width="48" height="34" rx="2" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- screen -->
+        <rect x="12" y="14" width="40" height="26" rx="1" fill="#1a3040"/>
+        <!-- soft LCD glow + UI blocks -->
+        <rect x="16" y="18" width="18" height="10" rx="1" fill="#5a9ec4" opacity="0.85"/>
+        <rect x="36" y="18" width="12" height="4" rx="0.5" fill="#9CBB80" opacity="0.8"/>
+        <rect x="36" y="24" width="12" height="4" rx="0.5" fill="#F0C24A" opacity="0.75"/>
+        <rect x="16" y="30" width="32" height="6" rx="1" fill="#8eb4d4" opacity="0.55"/>
+        <!-- stand -->
+        <path d="M28 44h8l4 8H24l4-8z" fill="#A8B0B8"/>
+        <rect x="20" y="52" width="24" height="4" rx="1" fill="#8A929A"/>
+      </svg>`,
+  },
+  50: {
+    caption: 'Tin can',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- can body -->
+        <rect x="16" y="14" width="32" height="40" rx="3" fill="#C9C2BA" stroke="#A8B0B8" stroke-width="1.5"/>
+        <!-- top rim -->
+        <ellipse cx="32" cy="14" rx="16" ry="5" fill="#A8B0B8" stroke="#8A929A" stroke-width="1.2"/>
+        <ellipse cx="32" cy="14" rx="10" ry="3" fill="#D6DCE2" opacity="0.7"/>
+        <!-- bottom rim -->
+        <ellipse cx="32" cy="54" rx="16" ry="4" fill="#A8B0B8"/>
+        <!-- label -->
+        <rect x="20" y="24" width="24" height="20" rx="1" fill="#c45c4a"/>
+        <path d="M24 30h16M24 36h12" stroke="#FACAA1" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+        <!-- side seam highlight -->
+        <path d="M18 20v28" stroke="#e8eef4" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
       </svg>`,
   },
   79: {
@@ -846,20 +1034,34 @@ function atomFallbackSvg() {
     </svg>`;
 }
 
+/** Elements with no stable isotopes (all naturally radioactive). */
+function isRadioactiveElement(z) {
+  return z === 43 || z === 61 || (z >= 84 && z <= 118);
+}
+
+/** Classic black-on-yellow trefoil (emoji color varies by platform). */
+function radioactiveMarkSvg() {
+  return `
+    <svg class="sd-el-radioactive-mark" viewBox="0 0 16 16" aria-hidden="true">
+      <circle cx="8" cy="8" r="8" fill="#F0C24A"/>
+      <g fill="#1a1a1a" transform="translate(8 8)">
+        <path d="M0 0L0-7.2A7.2 7.2 0 016.24-3.6Z"/>
+        <path d="M0 0L0-7.2A7.2 7.2 0 016.24-3.6Z" transform="rotate(120)"/>
+        <path d="M0 0L0-7.2A7.2 7.2 0 016.24-3.6Z" transform="rotate(240)"/>
+      </g>
+      <circle cx="8" cy="8" r="2.5" fill="#F0C24A"/>
+      <circle cx="8" cy="8" r="1.4" fill="#1a1a1a"/>
+    </svg>`;
+}
+
 function renderElementViz(el) {
   const art = document.getElementById('sd-el-viz-art');
   const caption = document.getElementById('sd-el-viz-caption');
   if (!art || !caption) return;
 
   const viz = ELEMENT_VIZ[el.z];
-  if (viz) {
-    art.innerHTML = viz.svg.trim();
-    caption.textContent = viz.caption;
-    return;
-  }
-
-  art.innerHTML = atomFallbackSvg().trim();
-  caption.textContent = 'Atom';
+  art.innerHTML = (viz ? viz.svg : atomFallbackSvg()).trim();
+  caption.textContent = viz ? viz.caption : 'Atom';
 }
 
 /** Real year, or override with ?year=2027 to time-travel / QA the heading. */
@@ -913,13 +1115,22 @@ function initElementYear() {
     }
 
     document.getElementById('sd-el-headline').textContent = headline;
-    document.getElementById('sd-el-category').textContent = el.cat;
+
+    const category = document.getElementById('sd-el-category');
+    if (isRadioactiveElement(el.z)) {
+      category.innerHTML = `${el.cat} ${radioactiveMarkSvg()}`;
+    } else {
+      category.textContent = el.cat;
+    }
 
     const aside = document.getElementById('sd-el-aside');
     if (aside) {
       if (age === 15) {
         aside.hidden = false;
         aside.textContent = 'Slugger really liked this age 😎';
+      } else if (age === 43) {
+        aside.hidden = false;
+        aside.textContent = 'You now come with a warning label. First radioactive element on the table.';
       } else {
         aside.hidden = true;
         aside.textContent = '';
