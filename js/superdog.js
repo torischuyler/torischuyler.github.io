@@ -94,44 +94,44 @@ const ELEMENTS = [
   { z: 78, symbol: 'Pt', name: 'Platinum', mass: '195.084', cat: 'Transition Metal' },
   { z: 79, symbol: 'Au', name: 'Gold', mass: '196.967', cat: 'Transition Metal' },
   { z: 80, symbol: 'Hg', name: 'Mercury', mass: '200.59', cat: 'Transition Metal' },
-  { z: 81, symbol: 'Tl', name: 'Thallium', mass: '204.383', cat: 'Post-transition Metal' },
-  { z: 82, symbol: 'Pb', name: 'Lead', mass: '207.200', cat: 'Post-transition Metal' },
-  { z: 83, symbol: 'Bi', name: 'Bismuth', mass: '208.980', cat: 'Post-transition Metal' },
-  { z: 84, symbol: 'Po', name: 'Polonium', mass: '209.000', cat: 'Metalloid' },
-  { z: 85, symbol: 'At', name: 'Astatine', mass: '210.000', cat: 'Reactive Nonmetal' },
-  { z: 86, symbol: 'Rn', name: 'Radon', mass: '222.000', cat: 'Noble Gas' },
-  { z: 87, symbol: 'Fr', name: 'Francium', mass: '223.000', cat: 'Alkali Metal' },
-  { z: 88, symbol: 'Ra', name: 'Radium', mass: '226.000', cat: 'Alkaline Earth Metal' },
-  { z: 89, symbol: 'Ac', name: 'Actinium', mass: '227.000', cat: 'Actinide' },
-  { z: 90, symbol: 'Th', name: 'Thorium', mass: '232.038', cat: 'Actinide' },
+  { z: 81, symbol: 'Tl', name: 'Thallium', mass: '204.38', cat: 'Post-transition Metal' },
+  { z: 82, symbol: 'Pb', name: 'Lead', mass: '207.2', cat: 'Post-transition Metal' },
+  { z: 83, symbol: 'Bi', name: 'Bismuth', mass: '208.98', cat: 'Post-transition Metal' },
+  { z: 84, symbol: 'Po', name: 'Polonium', mass: '209', cat: 'Metalloid' },
+  { z: 85, symbol: 'At', name: 'Astatine', mass: '210', cat: 'Reactive Nonmetal' },
+  { z: 86, symbol: 'Rn', name: 'Radon', mass: '222', cat: 'Noble Gas' },
+  { z: 87, symbol: 'Fr', name: 'Francium', mass: '223', cat: 'Alkali Metal' },
+  { z: 88, symbol: 'Ra', name: 'Radium', mass: '226', cat: 'Alkaline Earth Metal' },
+  { z: 89, symbol: 'Ac', name: 'Actinium', mass: '227', cat: 'Actinide' },
+  { z: 90, symbol: 'Th', name: 'Thorium', mass: '232.04', cat: 'Actinide' },
   { z: 91, symbol: 'Pa', name: 'Protactinium', mass: '231.036', cat: 'Actinide' },
   { z: 92, symbol: 'U', name: 'Uranium', mass: '238.029', cat: 'Actinide' },
-  { z: 93, symbol: 'Np', name: 'Neptunium', mass: '237.000', cat: 'Actinide' },
-  { z: 94, symbol: 'Pu', name: 'Plutonium', mass: '244.000', cat: 'Actinide' },
-  { z: 95, symbol: 'Am', name: 'Americium', mass: '243.000', cat: 'Actinide' },
-  { z: 96, symbol: 'Cm', name: 'Curium', mass: '247.000', cat: 'Actinide' },
-  { z: 97, symbol: 'Bk', name: 'Berkelium', mass: '247.000', cat: 'Actinide' },
-  { z: 98, symbol: 'Cf', name: 'Californium', mass: '251.000', cat: 'Actinide' },
-  { z: 99, symbol: 'Es', name: 'Einsteinium', mass: '252.000', cat: 'Actinide' },
-  { z: 100, symbol: 'Fm', name: 'Fermium', mass: '257.000', cat: 'Actinide' },
-  { z: 101, symbol: 'Md', name: 'Mendelevium', mass: '258.000', cat: 'Actinide' },
-  { z: 102, symbol: 'No', name: 'Nobelium', mass: '259.000', cat: 'Actinide' },
-  { z: 103, symbol: 'Lr', name: 'Lawrencium', mass: '266.000', cat: 'Actinide' },
-  { z: 104, symbol: 'Rf', name: 'Rutherfordium', mass: '267.000', cat: 'Transition Metal' },
-  { z: 105, symbol: 'Db', name: 'Dubnium', mass: '268.000', cat: 'Transition Metal' },
-  { z: 106, symbol: 'Sg', name: 'Seaborgium', mass: '269.000', cat: 'Transition Metal' },
-  { z: 107, symbol: 'Bh', name: 'Bohrium', mass: '270.000', cat: 'Transition Metal' },
-  { z: 108, symbol: 'Hs', name: 'Hassium', mass: '269.000', cat: 'Transition Metal' },
-  { z: 109, symbol: 'Mt', name: 'Meitnerium', mass: '278.000', cat: 'Unknown' },
-  { z: 110, symbol: 'Ds', name: 'Darmstadtium', mass: '281.000', cat: 'Unknown' },
-  { z: 111, symbol: 'Rg', name: 'Roentgenium', mass: '282.000', cat: 'Unknown' },
-  { z: 112, symbol: 'Cn', name: 'Copernicium', mass: '285.000', cat: 'Transition Metal' },
-  { z: 113, symbol: 'Nh', name: 'Nihonium', mass: '286.000', cat: 'Unknown' },
-  { z: 114, symbol: 'Fl', name: 'Flerovium', mass: '289.000', cat: 'Unknown' },
-  { z: 115, symbol: 'Mc', name: 'Moscovium', mass: '290.000', cat: 'Unknown' },
-  { z: 116, symbol: 'Lv', name: 'Livermorium', mass: '293.000', cat: 'Unknown' },
-  { z: 117, symbol: 'Ts', name: 'Tennessine', mass: '294.000', cat: 'Unknown' },
-  { z: 118, symbol: 'Og', name: 'Oganesson', mass: '294.000', cat: 'Unknown' },
+  { z: 93, symbol: 'Np', name: 'Neptunium', mass: '237', cat: 'Actinide' },
+  { z: 94, symbol: 'Pu', name: 'Plutonium', mass: '244', cat: 'Actinide' },
+  { z: 95, symbol: 'Am', name: 'Americium', mass: '243', cat: 'Actinide' },
+  { z: 96, symbol: 'Cm', name: 'Curium', mass: '247', cat: 'Actinide' },
+  { z: 97, symbol: 'Bk', name: 'Berkelium', mass: '247', cat: 'Actinide' },
+  { z: 98, symbol: 'Cf', name: 'Californium', mass: '251', cat: 'Actinide' },
+  { z: 99, symbol: 'Es', name: 'Einsteinium', mass: '252', cat: 'Actinide' },
+  { z: 100, symbol: 'Fm', name: 'Fermium', mass: '257', cat: 'Actinide' },
+  { z: 101, symbol: 'Md', name: 'Mendelevium', mass: '258', cat: 'Actinide' },
+  { z: 102, symbol: 'No', name: 'Nobelium', mass: '259', cat: 'Actinide' },
+  { z: 103, symbol: 'Lr', name: 'Lawrencium', mass: '266', cat: 'Actinide' },
+  { z: 104, symbol: 'Rf', name: 'Rutherfordium', mass: '267', cat: 'Transition Metal' },
+  { z: 105, symbol: 'Db', name: 'Dubnium', mass: '268', cat: 'Transition Metal' },
+  { z: 106, symbol: 'Sg', name: 'Seaborgium', mass: '269', cat: 'Transition Metal' },
+  { z: 107, symbol: 'Bh', name: 'Bohrium', mass: '270', cat: 'Transition Metal' },
+  { z: 108, symbol: 'Hs', name: 'Hassium', mass: '269', cat: 'Transition Metal' },
+  { z: 109, symbol: 'Mt', name: 'Meitnerium', mass: '278', cat: 'Unknown' },
+  { z: 110, symbol: 'Ds', name: 'Darmstadtium', mass: '281', cat: 'Unknown' },
+  { z: 111, symbol: 'Rg', name: 'Roentgenium', mass: '282', cat: 'Unknown' },
+  { z: 112, symbol: 'Cn', name: 'Copernicium', mass: '285', cat: 'Transition Metal' },
+  { z: 113, symbol: 'Nh', name: 'Nihonium', mass: '286', cat: 'Unknown' },
+  { z: 114, symbol: 'Fl', name: 'Flerovium', mass: '289', cat: 'Unknown' },
+  { z: 115, symbol: 'Mc', name: 'Moscovium', mass: '290', cat: 'Unknown' },
+  { z: 116, symbol: 'Lv', name: 'Livermorium', mass: '293', cat: 'Unknown' },
+  { z: 117, symbol: 'Ts', name: 'Tennessine', mass: '294', cat: 'Unknown' },
+  { z: 118, symbol: 'Og', name: 'Oganesson', mass: '294', cat: 'Unknown' },
 ];
 
 /*
@@ -1723,6 +1723,259 @@ const ELEMENT_VIZ = {
         <path d="M28 22c2-1 5-1 8 0 1 1 2 2 2 3H28c0-1 0-2 0-3z" fill="#C9C2BA" opacity="0.7"/>
         <!-- filling highlight -->
         <path d="M30 23h4" stroke="#e8eef4" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+      </svg>`,
+  },
+  81: {
+    caption: 'Cardiac scan',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- soft tracer halo -->
+        <ellipse cx="32" cy="34" rx="22" ry="20" fill="#c45c4a" opacity="0.12"/>
+        <!-- heart -->
+        <path d="M32 54C18 44 10 34 10 24c0-7 5-12 11-12 4 0 7 2 9 5 2-3 5-5 9-5 6 0 11 5 11 12 0 10-8 20-18 30z" fill="#c45c4a" stroke="#a04438" stroke-width="1.5"/>
+        <!-- highlight lobe -->
+        <path d="M22 18c-3 0-6 3-6 7 0 2 1 4 2 6" stroke="#e07870" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+        <!-- perfusion hot spot (Tl-201 uptake) -->
+        <ellipse cx="36" cy="30" rx="7" ry="6" fill="#F0C24A" opacity="0.55"/>
+        <ellipse cx="36" cy="30" rx="3.5" ry="3" fill="#FACAA1" opacity="0.85"/>
+        <!-- scan sweep arcs -->
+        <path d="M14 20c6-8 14-12 22-12" stroke="#5a9ec4" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/>
+        <path d="M48 22c4 6 6 14 4 22" stroke="#5a9ec4" stroke-width="1.8" stroke-linecap="round" opacity="0.65"/>
+        <path d="M44 48c-8 6-18 8-28 4" stroke="#5a9ec4" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <!-- scan ticks -->
+        <path d="M16 16l2 3M50 26l-3 2M40 52l-2-3" stroke="#9CBB80" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>`,
+  },
+  82: {
+    caption: 'Weights',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- left plate outer -->
+        <rect x="6" y="18" width="12" height="28" rx="2" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- left plate inner -->
+        <rect x="16" y="22" width="6" height="20" rx="1" fill="#8A929A" stroke="#A8B0B8" stroke-width="1.2"/>
+        <!-- bar -->
+        <rect x="20" y="29" width="24" height="6" rx="1.5" fill="#A8B0B8" stroke="#C9C2BA" stroke-width="1.2"/>
+        <!-- grip knurling -->
+        <path d="M28 29v6M32 29v6M36 29v6" stroke="#8A929A" stroke-width="1.2" opacity="0.8"/>
+        <!-- right plate inner -->
+        <rect x="42" y="22" width="6" height="20" rx="1" fill="#8A929A" stroke="#A8B0B8" stroke-width="1.2"/>
+        <!-- right plate outer -->
+        <rect x="46" y="18" width="12" height="28" rx="2" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- plate highlights -->
+        <path d="M9 22v20" stroke="#A8B0B8" stroke-width="1.2" opacity="0.45"/>
+        <path d="M55 22v20" stroke="#A8B0B8" stroke-width="1.2" opacity="0.45"/>
+      </svg>`,
+  },
+  83: {
+    caption: 'Fire sprinklers',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- ceiling pipe -->
+        <rect x="28" y="4" width="8" height="14" rx="1" fill="#8A929A" stroke="#A8B0B8" stroke-width="1.2"/>
+        <!-- fitting / escutcheon -->
+        <ellipse cx="32" cy="18" rx="10" ry="3" fill="#A8B0B8" stroke="#C9C2BA" stroke-width="1.2"/>
+        <!-- frame arms -->
+        <path d="M22 20c0 10 4 18 10 22" stroke="#C9C2BA" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <path d="M42 20c0 10-4 18-10 22" stroke="#C9C2BA" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <!-- fusible link / glass bulb -->
+        <ellipse cx="32" cy="28" rx="3" ry="6" fill="#c45c4a" stroke="#a04438" stroke-width="1.2"/>
+        <path d="M32 24v6" stroke="#FACAA1" stroke-width="1" opacity="0.7"/>
+        <!-- deflector plate -->
+        <ellipse cx="32" cy="44" rx="12" ry="3" fill="#8A929A" stroke="#C9C2BA" stroke-width="1.5"/>
+        <ellipse cx="32" cy="43" rx="8" ry="1.5" fill="#A8B0B8" opacity="0.7"/>
+        <!-- water spray -->
+        <path d="M20 48l-6 10M26 50l-2 10M32 51v11M38 50l2 10M44 48l6 10" stroke="#5a9ec4" stroke-width="1.8" stroke-linecap="round" opacity="0.85"/>
+        <path d="M23 50l-3 8M29 51l-1 9M35 51l1 9M41 50l3 8" stroke="#5a9ec4" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+      </svg>`,
+  },
+  84: {
+    caption: 'Antistatic brush',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- handle -->
+        <path d="M10 14c0-4 3-6 7-6h6c3 0 5 2 5 5v8H10V14z" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- ferrule / metal band (Po source housing) -->
+        <rect x="10" y="20" width="18" height="8" rx="1.5" fill="#8A929A" stroke="#C9C2BA" stroke-width="1.2"/>
+        <path d="M13 23h12" stroke="#A8B0B8" stroke-width="1" opacity="0.7"/>
+        <!-- brush head -->
+        <path d="M12 28h14l4 8H8l4-8z" fill="#A8B0B8" stroke="#C9C2BA" stroke-width="1.2"/>
+        <!-- bristles -->
+        <g stroke="#C9C2BA" stroke-width="1.6" stroke-linecap="round">
+          <path d="M10 36v18M14 36v20M18 36v20M22 36v20M26 36v18"/>
+        </g>
+        <g stroke="#8A929A" stroke-width="1.2" stroke-linecap="round" opacity="0.8">
+          <path d="M12 36v16M16 36v18M20 36v18M24 36v16"/>
+        </g>
+        <!-- static discharge sparks -->
+        <path d="M34 40l6-4 4 6 6-3" stroke="#F0C24A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M40 28l3 5M48 34l5 2M52 44l4-3" stroke="#FACAA1" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="46" cy="42" r="2" fill="#F0C24A" opacity="0.7"/>
+      </svg>`,
+  },
+  85: {
+    caption: 'Cancer therapy',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- awareness ribbon loop -->
+        <path d="M26 8c-6 0-10 5-10 11 0 8 6 14 16 22 10-8 16-14 16-22 0-6-4-11-10-11-3 0-6 2-6 5 0-3-3-5-6-5z" fill="#c45c4a" stroke="#a04438" stroke-width="1.5"/>
+        <!-- ribbon tails -->
+        <path d="M28 36l-8 20h6l6-14z" fill="#c45c4a" stroke="#a04438" stroke-width="1.2"/>
+        <path d="M36 36l8 20h-6l-6-14z" fill="#a04438" stroke="#8a3830" stroke-width="1.2"/>
+        <!-- highlight on loop -->
+        <path d="M22 14c-2 3-2 7 0 11" stroke="#e07870" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+        <!-- alpha therapy targeting reticle -->
+        <circle cx="48" cy="48" r="10" fill="none" stroke="#5a9ec4" stroke-width="1.5"/>
+        <circle cx="48" cy="48" r="4" fill="none" stroke="#9CBB80" stroke-width="1.5"/>
+        <path d="M48 36v4M48 56v-4M36 48h4M60 48h-4" stroke="#5a9ec4" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- hot spot -->
+        <circle cx="48" cy="48" r="2" fill="#F0C24A"/>
+      </svg>`,
+  },
+  86: {
+    caption: 'Surgical implants',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- soft tissue hint -->
+        <ellipse cx="32" cy="36" rx="22" ry="18" fill="#e89bb0" opacity="0.2"/>
+        <!-- radon seed capsules (brachytherapy) -->
+        <rect x="12" y="20" width="8" height="28" rx="4" fill="#A8B0B8" stroke="#C9C2BA" stroke-width="1.3"/>
+        <rect x="28" y="16" width="8" height="32" rx="4" fill="#8A929A" stroke="#C9C2BA" stroke-width="1.3"/>
+        <rect x="44" y="22" width="8" height="26" rx="4" fill="#A8B0B8" stroke="#C9C2BA" stroke-width="1.3"/>
+        <!-- sealed end caps -->
+        <ellipse cx="16" cy="20" rx="4" ry="2.5" fill="#C9C2BA"/>
+        <ellipse cx="32" cy="16" rx="4" ry="2.5" fill="#C9C2BA"/>
+        <ellipse cx="48" cy="22" rx="4" ry="2.5" fill="#C9C2BA"/>
+        <ellipse cx="16" cy="48" rx="4" ry="2.5" fill="#8A929A"/>
+        <ellipse cx="32" cy="48" rx="4" ry="2.5" fill="#8A929A"/>
+        <ellipse cx="48" cy="48" rx="4" ry="2.5" fill="#8A929A"/>
+        <!-- radioactive glow inside seeds -->
+        <rect x="14" y="26" width="4" height="14" rx="2" fill="#9CBB80" opacity="0.75"/>
+        <rect x="30" y="24" width="4" height="16" rx="2" fill="#F0C24A" opacity="0.8"/>
+        <rect x="46" y="28" width="4" height="12" rx="2" fill="#9CBB80" opacity="0.7"/>
+        <!-- faint emission marks -->
+        <path d="M22 24l4-3M22 32h5M22 40l4 3" stroke="#FACAA1" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+        <path d="M38 20l4-2M38 32h5M38 44l4 2" stroke="#FACAA1" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+      </svg>`,
+  },
+  87: {
+    caption: 'Laser atom trap',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- vacuum chamber hint -->
+        <circle cx="32" cy="32" r="26" fill="#1a3040" stroke="#A8B0B8" stroke-width="1.5" opacity="0.9"/>
+        <circle cx="32" cy="32" r="22" fill="none" stroke="#5a9ec4" stroke-width="1" opacity="0.35"/>
+        <!-- trapped atom cloud -->
+        <circle cx="32" cy="32" r="8" fill="#9CBB80" opacity="0.25"/>
+        <circle cx="32" cy="32" r="4" fill="#9CBB80" opacity="0.55"/>
+        <circle cx="32" cy="32" r="2" fill="#FACAA1"/>
+        <!-- laser beams into the trap -->
+        <path d="M4 32h20" stroke="#c45c4a" stroke-width="2" stroke-linecap="round"/>
+        <path d="M40 32h20" stroke="#c45c4a" stroke-width="2" stroke-linecap="round"/>
+        <path d="M32 4v20" stroke="#5a9ec4" stroke-width="2" stroke-linecap="round"/>
+        <path d="M32 40v20" stroke="#5a9ec4" stroke-width="2" stroke-linecap="round"/>
+        <path d="M10 10l14 14" stroke="#F0C24A" stroke-width="1.8" stroke-linecap="round" opacity="0.85"/>
+        <path d="M54 54L40 40" stroke="#F0C24A" stroke-width="1.8" stroke-linecap="round" opacity="0.85"/>
+        <!-- beam sources -->
+        <rect x="2" y="28" width="6" height="8" rx="1" fill="#8A929A"/>
+        <rect x="56" y="28" width="6" height="8" rx="1" fill="#8A929A"/>
+        <rect x="28" y="2" width="8" height="6" rx="1" fill="#8A929A"/>
+        <rect x="28" y="56" width="8" height="6" rx="1" fill="#8A929A"/>
+      </svg>`,
+  },
+  88: {
+    caption: 'Luminous watch',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- outer radium bloom -->
+        <circle cx="32" cy="32" r="28" fill="#9CBB80" opacity="0.18"/>
+        <circle cx="32" cy="32" r="22" fill="#9CBB80" opacity="0.22"/>
+        <!-- strap left -->
+        <path d="M8 26h10v12H8c-2 0-4-2-4-4v-4c0-2 2-4 4-4z" fill="#2A3F54" stroke="#9CBB80" stroke-width="1.2"/>
+        <path d="M6 30h8M6 34h8" stroke="#9CBB80" stroke-width="1" opacity="0.55"/>
+        <!-- strap right -->
+        <path d="M46 26h10c2 0 4 2 4 4v4c0 2-2 4-4 4H46V26z" fill="#2A3F54" stroke="#9CBB80" stroke-width="1.2"/>
+        <path d="M50 30h8M50 34h8" stroke="#9CBB80" stroke-width="1" opacity="0.55"/>
+        <!-- case -->
+        <circle cx="32" cy="32" r="16" fill="#3d5a40" stroke="#9CBB80" stroke-width="2"/>
+        <!-- dial -->
+        <circle cx="32" cy="32" r="13" fill="#1a2e1c"/>
+        <!-- strong dial glow -->
+        <circle cx="32" cy="32" r="12" fill="#9CBB80" opacity="0.35"/>
+        <circle cx="32" cy="32" r="8" fill="#c5e0a0" opacity="0.25"/>
+        <!-- luminous markers -->
+        <g fill="#c5e0a0">
+          <circle cx="32" cy="22" r="2"/>
+          <circle cx="42" cy="32" r="2"/>
+          <circle cx="32" cy="42" r="2"/>
+          <circle cx="22" cy="32" r="2"/>
+          <circle cx="39" cy="25" r="1.3"/>
+          <circle cx="39" cy="39" r="1.3"/>
+          <circle cx="25" cy="39" r="1.3"/>
+          <circle cx="25" cy="25" r="1.3"/>
+        </g>
+        <!-- glowing hands -->
+        <path d="M32 32L32 22" stroke="#c5e0a0" stroke-width="3" stroke-linecap="round"/>
+        <path d="M32 32L41 37" stroke="#9CBB80" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="32" cy="32" r="2.5" fill="#c5e0a0"/>
+        <!-- crown -->
+        <rect x="47" y="29" width="4" height="6" rx="1" fill="#3d5a40" stroke="#9CBB80" stroke-width="1"/>
+      </svg>`,
+  },
+  89: {
+    caption: 'Radioactive medicine',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- glow around dose -->
+        <ellipse cx="32" cy="34" rx="14" ry="18" fill="#F0C24A" opacity="0.2"/>
+        <!-- plunger thumb rest -->
+        <rect x="24" y="4" width="16" height="6" rx="2" fill="#C9C2BA" stroke="#A8B0B8" stroke-width="1.2"/>
+        <!-- plunger rod -->
+        <rect x="29" y="8" width="6" height="12" rx="1" fill="#A8B0B8" stroke="#8A929A" stroke-width="1"/>
+        <!-- finger flange -->
+        <rect x="18" y="18" width="28" height="5" rx="1.5" fill="#8A929A" stroke="#C9C2BA" stroke-width="1.2"/>
+        <!-- barrel -->
+        <rect x="22" y="22" width="20" height="28" rx="3" fill="#e8eef4" stroke="#A8B0B8" stroke-width="1.5"/>
+        <!-- radioactive dose -->
+        <rect x="24" y="30" width="16" height="18" rx="2" fill="#F0C24A" opacity="0.85"/>
+        <rect x="26" y="32" width="12" height="8" rx="1" fill="#c5e0a0" opacity="0.7"/>
+        <!-- measurement marks -->
+        <path d="M26 26h12M26 30h12M26 34h12" stroke="#8A929A" stroke-width="1" opacity="0.45"/>
+        <!-- tiny trefoil on barrel -->
+        <circle cx="32" cy="27" r="3.2" fill="#F0C24A"/>
+        <circle cx="32" cy="27" r="1" fill="#1a1a1a"/>
+        <path d="M32 27l0-2.2M32 27l1.9 1.1M32 27l-1.9 1.1" stroke="#1a1a1a" stroke-width="1.2" stroke-linecap="round"/>
+        <!-- hub -->
+        <rect x="28" y="48" width="8" height="5" rx="1" fill="#A8B0B8"/>
+        <!-- needle -->
+        <path d="M32 53v9" stroke="#C9C2BA" stroke-width="2" stroke-linecap="round"/>
+        <path d="M30 60l2 3 2-3" fill="#C9C2BA"/>
+      </svg>`,
+  },
+  90: {
+    caption: 'Gas lantern',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- handle -->
+        <path d="M24 8h16" stroke="#8A929A" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M26 8v6M38 8v6" stroke="#A8B0B8" stroke-width="2" stroke-linecap="round"/>
+        <!-- top cap -->
+        <path d="M20 14h24l-2 6H22l-2-6z" fill="#8A929A" stroke="#C9C2BA" stroke-width="1.2"/>
+        <!-- glass globe -->
+        <path d="M18 20c0 2 2 4 4 14h20c2-10 4-12 4-14 0-2-2-4-14-4s-14 2-14 4z" fill="#FACAA1" opacity="0.25"/>
+        <path d="M18 20c0 2 2 4 4 14h20c2-10 4-12 4-14 0-2-2-4-14-4s-14 2-14 4z" fill="none" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- thorium mantle glow -->
+        <ellipse cx="32" cy="28" rx="8" ry="10" fill="#F0C24A" opacity="0.55"/>
+        <ellipse cx="32" cy="28" rx="4" ry="6" fill="#FACAA1" opacity="0.85"/>
+        <!-- mantle mesh hint -->
+        <path d="M28 22c2 4 2 8 0 12M32 20v16M36 22c-2 4-2 8 0 12" stroke="#e0b44e" stroke-width="1" opacity="0.7"/>
+        <!-- base / fuel tank -->
+        <rect x="20" y="34" width="24" height="6" rx="1" fill="#A8B0B8" stroke="#C9C2BA" stroke-width="1.2"/>
+        <path d="M22 40h20v14c0 2-2 4-4 4H26c-2 0-4-2-4-4V40z" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- tank details -->
+        <path d="M26 46h12M26 50h8" stroke="#8A929A" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+        <!-- control knob -->
+        <circle cx="40" cy="48" r="3" fill="#8A929A" stroke="#C9C2BA" stroke-width="1"/>
       </svg>`,
   },
 };
