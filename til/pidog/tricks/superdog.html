@@ -1,0 +1,106 @@
+---
+permalink: /til/pidog/tricks/superdog
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; media-src 'self' data:;">
+
+    <link rel="canonical" href="https://torischuyler.github.io/til/pidog/tricks/superdog">
+    <title>Superdog | PiDog | TIL | Tori Schuyler</title>
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Site styles -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/raspberry-pi.css">
+    <link rel="stylesheet" href="/css/superdog.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav aria-label="Page navigation">
+        <ul class="nav-menu">
+            <li><a href="/">whoami</a></li>
+            <li><a href="/who-are-you">Who Are You?</a></li>
+            <li><a href="/today-i-learned" class="active" aria-current="page">TIL</a></li>
+        </ul>
+
+        <div class="nav-header">
+            <div class="hamburger">☰</div>
+        </div>
+    </nav>
+
+    <div class="rpi-container">
+        <main>
+            <a href="/til/pidog" class="rpi-back-link">← Back to PiDog</a>
+
+            <div class="rpi-lab-header">
+                <h1>Superdog</h1>
+            </div>
+
+            <figure class="rpi-media-figure">
+                <video class="rpi-centered-img rpi-centered-img-compact" controls autoplay loop muted playsinline aria-label="Slugger the PiDog robot doing the Superdog trick">
+                    <source src="/assets/videos/pidog/superdog.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </figure>
+
+            <!-- Part 1: Periodic table birthday year -->
+            <section class="sd-section" aria-labelledby="sd-element-heading">
+                <h2 id="sd-element-heading" class="sd-heading">Your <span id="sd-heading-year">2026</span> Element Superpower</h2>
+                <p class="sd-intro">
+                    The home world of Superdog Slugger is named after <strong>element 36 — Krypton (Kr)</strong> on the periodic table,
+                    a noble gas used in lights and lasers.
+                    <span id="sd-tori-year-line">In 2026, it’s also my element superpower ⚡️</span>
+                    Enter your age to find out <em>yours</em>!
+                </p>
+
+                <form id="sd-age-form" class="sd-age-form">
+                    <label class="sd-age-label" for="sd-age">How old are you?</label>
+                    <div class="sd-age-row">
+                        <input id="sd-age" class="sd-age-input" type="number" min="1" max="118" step="1" inputmode="numeric" placeholder="e.g. 36" required>
+                        <button class="sd-btn" type="submit">Find my element</button>
+                    </div>
+                    <p id="sd-age-error" class="sd-age-error" role="alert" hidden></p>
+                </form>
+
+                <div id="sd-element-card" class="sd-element-card" hidden aria-live="polite">
+                    <div class="sd-element-tile">
+                        <span id="sd-el-number" class="sd-el-number"></span>
+                        <span id="sd-el-symbol" class="sd-el-symbol"></span>
+                        <span id="sd-el-name" class="sd-el-name"></span>
+                        <span id="sd-el-mass" class="sd-el-mass"></span>
+                    </div>
+                    <div class="sd-element-facts">
+                        <p id="sd-el-headline" class="sd-el-headline"></p>
+                        <p id="sd-el-category" class="sd-el-meta"></p>
+                        <a id="sd-el-learn" class="sd-el-learn" href="#" target="_blank" rel="noopener">Learn more</a>
+                    </div>
+                    <div class="sd-element-tile sd-element-viz-tile" aria-hidden="true">
+                        <div id="sd-el-viz-art" class="sd-el-viz-art"></div>
+                        <span id="sd-el-viz-caption" class="sd-el-viz-caption"></span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><span id="year"></span> 👾 Tori Schuyler</p>
+    </footer>
+
+    <script src="/js/mobile-nav.js" defer></script>
+    <script src="/js/footer.js"></script>
+    <script src="/js/superdog.js" defer></script>
+</body>
+</html>

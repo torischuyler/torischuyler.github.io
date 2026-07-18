@@ -1,0 +1,448 @@
+/*
+  Superdog page interactions:
+  Periodic-table "element superpower" from age (Superman / Tori = 36, Krypton).
+  Sea Dog biscuit dodge is stashed in js/superdog-game.stash.js for later.
+*/
+
+document.addEventListener('DOMContentLoaded', () => {
+  initElementYear();
+});
+
+/* =========================================================================
+   Part 1 — Element year
+   ========================================================================= */
+
+/** Compact periodic table data. Ages map 1:1 to atomic number Z. */
+const ELEMENTS = [
+  { z: 1, symbol: 'H', name: 'Hydrogen', mass: '1.008', cat: 'Reactive Nonmetal' },
+  { z: 2, symbol: 'He', name: 'Helium', mass: '4.003', cat: 'Noble Gas' },
+  { z: 3, symbol: 'Li', name: 'Lithium', mass: '6.941', cat: 'Alkali Metal' },
+  { z: 4, symbol: 'Be', name: 'Beryllium', mass: '9.012', cat: 'Alkaline Earth Metal' },
+  { z: 5, symbol: 'B', name: 'Boron', mass: '10.811', cat: 'Metalloid' },
+  { z: 6, symbol: 'C', name: 'Carbon', mass: '12.011', cat: 'Reactive Nonmetal' },
+  { z: 7, symbol: 'N', name: 'Nitrogen', mass: '14.007', cat: 'Reactive Nonmetal' },
+  { z: 8, symbol: 'O', name: 'Oxygen', mass: '15.999', cat: 'Reactive Nonmetal' },
+  { z: 9, symbol: 'F', name: 'Fluorine', mass: '18.998', cat: 'Reactive Nonmetal' },
+  { z: 10, symbol: 'Ne', name: 'Neon', mass: '20.180', cat: 'Noble Gas' },
+  { z: 11, symbol: 'Na', name: 'Sodium', mass: '22.990', cat: 'Alkali Metal' },
+  { z: 12, symbol: 'Mg', name: 'Magnesium', mass: '24.305', cat: 'Alkaline Earth Metal' },
+  { z: 13, symbol: 'Al', name: 'Aluminum', mass: '26.982', cat: 'Post-transition metal' },
+  { z: 14, symbol: 'Si', name: 'Silicon', mass: '28.086', cat: 'Metalloid' },
+  { z: 15, symbol: 'P', name: 'Phosphorus', mass: '30.974', cat: 'Reactive Nonmetal' },
+  { z: 16, symbol: 'S', name: 'Sulfur', mass: '32.065', cat: 'Reactive Nonmetal' },
+  { z: 17, symbol: 'Cl', name: 'Chlorine', mass: '35.453', cat: 'Halogen' },
+  { z: 18, symbol: 'Ar', name: 'Argon', mass: '39.948', cat: 'Noble Gas' },
+  { z: 19, symbol: 'K', name: 'Potassium', mass: '39.098', cat: 'Alkali Metal' },
+  { z: 20, symbol: 'Ca', name: 'Calcium', mass: '40.078', cat: 'Alkaline Earth Metal' },
+  { z: 21, symbol: 'Sc', name: 'Scandium', mass: '44.956', cat: 'Transition metal' },
+  { z: 22, symbol: 'Ti', name: 'Titanium', mass: '47.867', cat: 'Transition metal' },
+  { z: 23, symbol: 'V', name: 'Vanadium', mass: '50.942', cat: 'Transition metal' },
+  { z: 24, symbol: 'Cr', name: 'Chromium', mass: '51.996', cat: 'Transition metal' },
+  { z: 25, symbol: 'Mn', name: 'Manganese', mass: '54.938', cat: 'Transition metal' },
+  { z: 26, symbol: 'Fe', name: 'Iron', mass: '55.845', cat: 'Transition metal' },
+  { z: 27, symbol: 'Co', name: 'Cobalt', mass: '58.933', cat: 'Transition metal' },
+  { z: 28, symbol: 'Ni', name: 'Nickel', mass: '58.693', cat: 'Transition metal' },
+  { z: 29, symbol: 'Cu', name: 'Copper', mass: '63.546', cat: 'Transition metal' },
+  { z: 30, symbol: 'Zn', name: 'Zinc', mass: '65.380', cat: 'Transition metal' },
+  { z: 31, symbol: 'Ga', name: 'Gallium', mass: '69.723', cat: 'Post-transition metal' },
+  { z: 32, symbol: 'Ge', name: 'Germanium', mass: '72.640', cat: 'Metalloid' },
+  { z: 33, symbol: 'As', name: 'Arsenic', mass: '74.922', cat: 'Metalloid' },
+  { z: 34, symbol: 'Se', name: 'Selenium', mass: '78.960', cat: 'Reactive Nonmetal' },
+  { z: 35, symbol: 'Br', name: 'Bromine', mass: '79.904', cat: 'Halogen' },
+  { z: 36, symbol: 'Kr', name: 'Krypton', mass: '83.798', cat: 'Noble Gas' },
+  { z: 37, symbol: 'Rb', name: 'Rubidium', mass: '85.468', cat: 'Alkali Metal' },
+  { z: 38, symbol: 'Sr', name: 'Strontium', mass: '87.620', cat: 'Alkaline Earth Metal' },
+  { z: 39, symbol: 'Y', name: 'Yttrium', mass: '88.906', cat: 'Transition metal' },
+  { z: 40, symbol: 'Zr', name: 'Zirconium', mass: '91.224', cat: 'Transition metal' },
+  { z: 41, symbol: 'Nb', name: 'Niobium', mass: '92.906', cat: 'Transition metal' },
+  { z: 42, symbol: 'Mo', name: 'Molybdenum', mass: '95.960', cat: 'Transition metal' },
+  { z: 43, symbol: 'Tc', name: 'Technetium', mass: '98.000', cat: 'Transition metal' },
+  { z: 44, symbol: 'Ru', name: 'Ruthenium', mass: '101.070', cat: 'Transition metal' },
+  { z: 45, symbol: 'Rh', name: 'Rhodium', mass: '102.906', cat: 'Transition metal' },
+  { z: 46, symbol: 'Pd', name: 'Palladium', mass: '106.420', cat: 'Transition metal' },
+  { z: 47, symbol: 'Ag', name: 'Silver', mass: '107.868', cat: 'Transition metal' },
+  { z: 48, symbol: 'Cd', name: 'Cadmium', mass: '112.411', cat: 'Transition metal' },
+  { z: 49, symbol: 'In', name: 'Indium', mass: '114.818', cat: 'Post-transition metal' },
+  { z: 50, symbol: 'Sn', name: 'Tin', mass: '118.710', cat: 'Post-transition metal' },
+  { z: 51, symbol: 'Sb', name: 'Antimony', mass: '121.760', cat: 'Metalloid' },
+  { z: 52, symbol: 'Te', name: 'Tellurium', mass: '127.600', cat: 'Metalloid' },
+  { z: 53, symbol: 'I', name: 'Iodine', mass: '126.904', cat: 'Halogen' },
+  { z: 54, symbol: 'Xe', name: 'Xenon', mass: '131.293', cat: 'Noble Gas' },
+  { z: 55, symbol: 'Cs', name: 'Cesium', mass: '132.905', cat: 'Alkali Metal' },
+  { z: 56, symbol: 'Ba', name: 'Barium', mass: '137.327', cat: 'Alkaline Earth Metal' },
+  { z: 57, symbol: 'La', name: 'Lanthanum', mass: '138.905', cat: 'Lanthanide' },
+  { z: 58, symbol: 'Ce', name: 'Cerium', mass: '140.116', cat: 'Lanthanide' },
+  { z: 59, symbol: 'Pr', name: 'Praseodymium', mass: '140.908', cat: 'Lanthanide' },
+  { z: 60, symbol: 'Nd', name: 'Neodymium', mass: '144.242', cat: 'Lanthanide' },
+  { z: 61, symbol: 'Pm', name: 'Promethium', mass: '145.000', cat: 'Lanthanide' },
+  { z: 62, symbol: 'Sm', name: 'Samarium', mass: '150.360', cat: 'Lanthanide' },
+  { z: 63, symbol: 'Eu', name: 'Europium', mass: '151.964', cat: 'Lanthanide' },
+  { z: 64, symbol: 'Gd', name: 'Gadolinium', mass: '157.250', cat: 'Lanthanide' },
+  { z: 65, symbol: 'Tb', name: 'Terbium', mass: '158.925', cat: 'Lanthanide' },
+  { z: 66, symbol: 'Dy', name: 'Dysprosium', mass: '162.500', cat: 'Lanthanide' },
+  { z: 67, symbol: 'Ho', name: 'Holmium', mass: '164.930', cat: 'Lanthanide' },
+  { z: 68, symbol: 'Er', name: 'Erbium', mass: '167.259', cat: 'Lanthanide' },
+  { z: 69, symbol: 'Tm', name: 'Thulium', mass: '168.934', cat: 'Lanthanide' },
+  { z: 70, symbol: 'Yb', name: 'Ytterbium', mass: '173.045', cat: 'Lanthanide' },
+  { z: 71, symbol: 'Lu', name: 'Lutetium', mass: '174.967', cat: 'Lanthanide' },
+  { z: 72, symbol: 'Hf', name: 'Hafnium', mass: '178.490', cat: 'Transition metal' },
+  { z: 73, symbol: 'Ta', name: 'Tantalum', mass: '180.948', cat: 'Transition metal' },
+  { z: 74, symbol: 'W', name: 'Tungsten', mass: '183.840', cat: 'Transition metal' },
+  { z: 75, symbol: 'Re', name: 'Rhenium', mass: '186.207', cat: 'Transition metal' },
+  { z: 76, symbol: 'Os', name: 'Osmium', mass: '190.230', cat: 'Transition metal' },
+  { z: 77, symbol: 'Ir', name: 'Iridium', mass: '192.217', cat: 'Transition metal' },
+  { z: 78, symbol: 'Pt', name: 'Platinum', mass: '195.084', cat: 'Transition metal' },
+  { z: 79, symbol: 'Au', name: 'Gold', mass: '196.967', cat: 'Transition metal' },
+  { z: 80, symbol: 'Hg', name: 'Mercury', mass: '200.590', cat: 'Transition metal' },
+  { z: 81, symbol: 'Tl', name: 'Thallium', mass: '204.383', cat: 'Post-transition metal' },
+  { z: 82, symbol: 'Pb', name: 'Lead', mass: '207.200', cat: 'Post-transition metal' },
+  { z: 83, symbol: 'Bi', name: 'Bismuth', mass: '208.980', cat: 'Post-transition metal' },
+  { z: 84, symbol: 'Po', name: 'Polonium', mass: '209.000', cat: 'Metalloid' },
+  { z: 85, symbol: 'At', name: 'Astatine', mass: '210.000', cat: 'Halogen' },
+  { z: 86, symbol: 'Rn', name: 'Radon', mass: '222.000', cat: 'Noble Gas' },
+  { z: 87, symbol: 'Fr', name: 'Francium', mass: '223.000', cat: 'Alkali Metal' },
+  { z: 88, symbol: 'Ra', name: 'Radium', mass: '226.000', cat: 'Alkaline Earth Metal' },
+  { z: 89, symbol: 'Ac', name: 'Actinium', mass: '227.000', cat: 'Actinide' },
+  { z: 90, symbol: 'Th', name: 'Thorium', mass: '232.038', cat: 'Actinide' },
+  { z: 91, symbol: 'Pa', name: 'Protactinium', mass: '231.036', cat: 'Actinide' },
+  { z: 92, symbol: 'U', name: 'Uranium', mass: '238.029', cat: 'Actinide' },
+  { z: 93, symbol: 'Np', name: 'Neptunium', mass: '237.000', cat: 'Actinide' },
+  { z: 94, symbol: 'Pu', name: 'Plutonium', mass: '244.000', cat: 'Actinide' },
+  { z: 95, symbol: 'Am', name: 'Americium', mass: '243.000', cat: 'Actinide' },
+  { z: 96, symbol: 'Cm', name: 'Curium', mass: '247.000', cat: 'Actinide' },
+  { z: 97, symbol: 'Bk', name: 'Berkelium', mass: '247.000', cat: 'Actinide' },
+  { z: 98, symbol: 'Cf', name: 'Californium', mass: '251.000', cat: 'Actinide' },
+  { z: 99, symbol: 'Es', name: 'Einsteinium', mass: '252.000', cat: 'Actinide' },
+  { z: 100, symbol: 'Fm', name: 'Fermium', mass: '257.000', cat: 'Actinide' },
+  { z: 101, symbol: 'Md', name: 'Mendelevium', mass: '258.000', cat: 'Actinide' },
+  { z: 102, symbol: 'No', name: 'Nobelium', mass: '259.000', cat: 'Actinide' },
+  { z: 103, symbol: 'Lr', name: 'Lawrencium', mass: '266.000', cat: 'Actinide' },
+  { z: 104, symbol: 'Rf', name: 'Rutherfordium', mass: '267.000', cat: 'Transition metal' },
+  { z: 105, symbol: 'Db', name: 'Dubnium', mass: '268.000', cat: 'Transition metal' },
+  { z: 106, symbol: 'Sg', name: 'Seaborgium', mass: '269.000', cat: 'Transition metal' },
+  { z: 107, symbol: 'Bh', name: 'Bohrium', mass: '270.000', cat: 'Transition metal' },
+  { z: 108, symbol: 'Hs', name: 'Hassium', mass: '269.000', cat: 'Transition metal' },
+  { z: 109, symbol: 'Mt', name: 'Meitnerium', mass: '278.000', cat: 'Unknown' },
+  { z: 110, symbol: 'Ds', name: 'Darmstadtium', mass: '281.000', cat: 'Unknown' },
+  { z: 111, symbol: 'Rg', name: 'Roentgenium', mass: '282.000', cat: 'Unknown' },
+  { z: 112, symbol: 'Cn', name: 'Copernicium', mass: '285.000', cat: 'Transition metal' },
+  { z: 113, symbol: 'Nh', name: 'Nihonium', mass: '286.000', cat: 'Unknown' },
+  { z: 114, symbol: 'Fl', name: 'Flerovium', mass: '289.000', cat: 'Unknown' },
+  { z: 115, symbol: 'Mc', name: 'Moscovium', mass: '290.000', cat: 'Unknown' },
+  { z: 116, symbol: 'Lv', name: 'Livermorium', mass: '293.000', cat: 'Unknown' },
+  { z: 117, symbol: 'Ts', name: 'Tennessine', mass: '294.000', cat: 'Unknown' },
+  { z: 118, symbol: 'Og', name: 'Oganesson', mass: '294.000', cat: 'Unknown' },
+];
+
+/*
+  “What this element feels like” icons — hand-drawn SVG in the right-hand tile.
+  Batch by tens and spot-check. Missing Z → atom fallback.
+*/
+const ELEMENT_VIZ = {
+  // ----- 1–10 -----
+  1: {
+    caption: 'Sun',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <circle cx="32" cy="32" r="12" fill="#FACAA1"/>
+        <g stroke="#FACAA1" stroke-width="3" stroke-linecap="round">
+          <path d="M32 6v8M32 50v8M6 32h8M50 32h8M14 14l5.5 5.5M44.5 44.5L50 50M50 14l-5.5 5.5M14 50l5.5-5.5"/>
+        </g>
+      </svg>`,
+  },
+  2: {
+    caption: 'Hot air balloon',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M32 8c-11 0-18 9-18 18 0 8 5 14 12 18h12c7-4 12-10 12-18 0-9-7-18-18-18z" fill="#c45c4a" stroke="#C9C2BA" stroke-width="1.5"/>
+        <path d="M20 22c4 2 8 2 12 0s8-2 12 0" stroke="#FACAA1" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+        <path d="M22 32c3 1 7 1 10 0s7-1 10 0" stroke="#FACAA1" stroke-width="1.5" stroke-linecap="round" opacity="0.65"/>
+        <path d="M26 44l-2 6h16l-2-6H26z" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.2"/>
+        <path d="M26 44l2-4M38 44l-2-4" stroke="#C9C2BA" stroke-width="1.2" stroke-linecap="round"/>
+        <rect x="27" y="50" width="10" height="7" rx="1.5" fill="#FACAA1" stroke="#C9C2BA" stroke-width="1.2"/>
+      </svg>`,
+  },
+  3: {
+    caption: 'Battery',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <rect x="14" y="18" width="32" height="28" rx="4" fill="#2A3F54" stroke="#C9C2BA" stroke-width="2"/>
+        <rect x="40" y="26" width="6" height="12" rx="1.5" fill="#C9C2BA"/>
+        <rect x="18" y="23" width="8" height="18" rx="1.5" fill="#9CBB80"/>
+        <rect x="28" y="23" width="8" height="18" rx="1.5" fill="#9CBB80"/>
+      </svg>`,
+  },
+  4: {
+    caption: 'Emerald',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M32 10l14 12v20L32 54 18 42V22L32 10z" fill="#2f6b45" stroke="#9CBB80" stroke-width="1.5"/>
+        <path d="M32 10v44M18 22h28M18 42h28M22 18l20 28M42 18L22 46" stroke="#9CBB80" stroke-width="1" opacity="0.45"/>
+        <path d="M26 20l6-4 6 4v6l-6 3-6-3v-6z" fill="#6fbf7a" opacity="0.55"/>
+      </svg>`,
+  },
+  5: {
+    caption: 'Sports gear',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- tennis racket -->
+        <ellipse cx="26" cy="24" rx="12" ry="14" fill="none" stroke="#9CBB80" stroke-width="2.5"/>
+        <path d="M20 18h12M18 24h16M20 30h12M23 14v20M29 14v20" stroke="#9CBB80" stroke-width="1" opacity="0.45"/>
+        <path d="M26 38v14" stroke="#C9C2BA" stroke-width="3" stroke-linecap="round"/>
+        <path d="M22 44h8" stroke="#FACAA1" stroke-width="2" stroke-linecap="round"/>
+        <!-- ball -->
+        <circle cx="46" cy="42" r="7" fill="#FACAA1" stroke="#C9C2BA" stroke-width="1.5"/>
+        <path d="M42 38c3 2 5 6 2 10M50 38c-3 2-5 6-2 10" stroke="#C9C2BA" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>`,
+  },
+  6: {
+    caption: 'Life',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M30 50V22" stroke="#8a6a3e" stroke-width="3" stroke-linecap="round"/>
+        <path d="M30 36c-8-2-12-8-12-14 6 0 10 4 12 10z" fill="#9CBB80"/>
+        <path d="M30 28c8-2 14-8 14-14-6 1-11 5-14 12z" fill="#7aa060"/>
+        <path d="M30 44c-7 0-11-5-12-10 5 1 9 4 12 8z" fill="#9CBB80" opacity="0.9"/>
+        <circle cx="42" cy="18" r="2" fill="#FACAA1"/>
+      </svg>`,
+  },
+  7: {
+    caption: 'Protein',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- steak -->
+        <ellipse cx="32" cy="34" rx="20" ry="14" fill="#8b3a32" stroke="#C9C2BA" stroke-width="1.5"/>
+        <ellipse cx="30" cy="32" rx="12" ry="8" fill="#c45c4a"/>
+        <ellipse cx="28" cy="31" rx="6" ry="4" fill="#e8a090" opacity="0.85"/>
+        <path d="M18 28c2-6 8-10 14-8" stroke="#FACAA1" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <!-- grill lines -->
+        <path d="M22 30l20 4M20 36l22 3M24 42l18 2" stroke="#2A3F54" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+      </svg>`,
+  },
+  8: {
+    caption: 'Air',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <ellipse cx="22" cy="36" rx="12" ry="8" fill="#c5d8e8"/>
+        <ellipse cx="32" cy="32" rx="14" ry="10" fill="#dce8f2"/>
+        <ellipse cx="44" cy="36" rx="11" ry="8" fill="#c5d8e8"/>
+        <ellipse cx="40" cy="22" rx="10" ry="7" fill="#e8f0f6"/>
+        <ellipse cx="28" cy="24" rx="9" ry="6" fill="#d0e0ee"/>
+      </svg>`,
+  },
+  9: {
+    caption: 'Toothpaste',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <rect x="18" y="14" width="28" height="10" rx="2" fill="#C9C2BA"/>
+        <rect x="20" y="24" width="24" height="26" rx="3" fill="#2A3F54" stroke="#8eb4d4" stroke-width="2"/>
+        <path d="M26 32h12M26 38h12M26 44h8" stroke="#9CBB80" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="42" cy="48" r="3" fill="#FACAA1" opacity="0.8"/>
+      </svg>`,
+  },
+  10: {
+    caption: 'Advertising sign',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <rect x="8" y="20" width="48" height="24" rx="4" fill="#1a1520" stroke="#ff6b6b" stroke-width="2"/>
+        <rect x="11" y="23" width="42" height="18" rx="2" fill="#2a1020" stroke="#ff8a8a" stroke-width="1" opacity="0.95"/>
+        <text x="32" y="36" text-anchor="middle" fill="#ff6b6b" font-size="11" font-family="Righteous, sans-serif" font-weight="700" letter-spacing="1.5">OPEN</text>
+        <path d="M14 16v4M50 16v4M32 14v6" stroke="#ff6b6b" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+      </svg>`,
+  },
+  // ----- 11+ (more batches next) -----
+  11: {
+    caption: 'Salt',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M24 16h16l4 12H20l4-12z" fill="#C9C2BA" stroke="#FACAA1" stroke-width="1.5"/>
+        <rect x="20" y="28" width="24" height="22" rx="3" fill="#2A3F54" stroke="#C9C2BA" stroke-width="2"/>
+        <circle cx="28" cy="38" r="1.6" fill="#FFF"/>
+        <circle cx="36" cy="36" r="1.6" fill="#FFF"/>
+        <circle cx="32" cy="44" r="1.6" fill="#FFF"/>
+        <circle cx="38" cy="42" r="1.2" fill="#FFF"/>
+      </svg>`,
+  },
+  14: {
+    caption: 'Chip',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <rect x="20" y="20" width="24" height="24" rx="3" fill="#1a334d" stroke="#9CBB80" stroke-width="2"/>
+        <rect x="26" y="26" width="12" height="12" rx="1.5" fill="#9CBB80" opacity="0.85"/>
+        <g stroke="#C9C2BA" stroke-width="2" stroke-linecap="round">
+          <path d="M26 16v4M32 16v4M38 16v4M26 44v4M32 44v4M38 44v4M16 26h4M16 32h4M16 38h4M44 26h4M44 32h4M44 38h4"/>
+        </g>
+      </svg>`,
+  },
+  26: {
+    caption: 'Magnet',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M20 18h10v16a6 6 0 0012 0V18h10v16a16 16 0 01-32 0V18z" fill="#C9C2BA"/>
+        <rect x="20" y="18" width="10" height="10" fill="#c45c4a"/>
+        <rect x="34" y="18" width="10" height="10" fill="#2A3F54"/>
+      </svg>`,
+  },
+  29: {
+    caption: 'Wire',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <circle cx="32" cy="32" r="14" stroke="#d4895a" stroke-width="5" fill="none"/>
+        <circle cx="32" cy="32" r="7" stroke="#b86b3c" stroke-width="4" fill="none"/>
+        <path d="M46 32h8" stroke="#d4895a" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="32" cy="32" r="2.5" fill="#FACAA1"/>
+      </svg>`,
+  },
+  36: {
+    caption: 'Glow lamp',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <ellipse cx="32" cy="28" rx="14" ry="16" fill="#FACAA1" opacity="0.35"/>
+        <path d="M22 30c0-8 4.5-14 10-14s10 6 10 14c0 5-2.5 8-5 10h-10c-2.5-2-5-5-5-10z" fill="#FACAA1" stroke="#C9C2BA" stroke-width="1.5"/>
+        <rect x="26" y="40" width="12" height="6" rx="1" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.5"/>
+        <rect x="28" y="46" width="8" height="4" rx="1" fill="#C9C2BA"/>
+        <path d="M28 24c2-3 6-3 8 0" stroke="#FFF" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+      </svg>`,
+  },
+  47: {
+    caption: 'Mirror',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <ellipse cx="32" cy="30" rx="16" ry="18" fill="#c5ced8" stroke="#C9C2BA" stroke-width="2"/>
+        <ellipse cx="32" cy="30" rx="11" ry="13" fill="#e8eef4"/>
+        <path d="M24 24c4-6 12-6 14-2" stroke="#FFF" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+        <rect x="29" y="48" width="6" height="6" rx="1" fill="#2A3F54"/>
+      </svg>`,
+  },
+  79: {
+    caption: 'Gold',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M16 38l8-16h16l8 16H16z" fill="#e0b44e" stroke="#FACAA1" stroke-width="1.5"/>
+        <path d="M16 38h32v8H16z" fill="#c9962e" stroke="#FACAA1" stroke-width="1.5"/>
+        <path d="M24 22l4 16M40 22l-4 16" stroke="#8a6a1e" stroke-width="1" opacity="0.45"/>
+      </svg>`,
+  },
+};
+
+function atomFallbackSvg() {
+  return `
+    <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+      <ellipse cx="32" cy="32" rx="20" ry="8" stroke="#9CBB80" stroke-width="1.5" transform="rotate(0 32 32)"/>
+      <ellipse cx="32" cy="32" rx="20" ry="8" stroke="#FACAA1" stroke-width="1.5" transform="rotate(60 32 32)"/>
+      <ellipse cx="32" cy="32" rx="20" ry="8" stroke="#C9C2BA" stroke-width="1.5" transform="rotate(120 32 32)"/>
+      <circle cx="32" cy="32" r="5" fill="#9CBB80"/>
+    </svg>`;
+}
+
+function renderElementViz(el) {
+  const art = document.getElementById('sd-el-viz-art');
+  const caption = document.getElementById('sd-el-viz-caption');
+  if (!art || !caption) return;
+
+  const viz = ELEMENT_VIZ[el.z];
+  if (viz) {
+    art.innerHTML = viz.svg.trim();
+    caption.textContent = viz.caption;
+    return;
+  }
+
+  art.innerHTML = atomFallbackSvg().trim();
+  caption.textContent = 'Atom';
+}
+
+// In 2026 (when this page shipped) Tori’s element year was 36 — Krypton.
+// Each calendar year after that, bump +1 so the intro stays current.
+const TORI_BASE_YEAR = 2026;
+const TORI_BASE_AGE = 36;
+
+/** Real year, or override with ?year=2027 to time-travel / QA the dynamic copy. */
+function currentDisplayYear() {
+  const raw = new URLSearchParams(window.location.search).get('year');
+  const parsed = Number.parseInt(raw, 10);
+  if (Number.isInteger(parsed) && parsed >= TORI_BASE_YEAR && parsed <= 2100) {
+    return parsed;
+  }
+  return new Date().getFullYear();
+}
+
+function toriElementAge(year = currentDisplayYear()) {
+  const age = TORI_BASE_AGE + (year - TORI_BASE_YEAR);
+  return Math.max(1, Math.min(118, age));
+}
+
+function updateHeadingYear() {
+  const yearEl = document.getElementById('sd-heading-year');
+  if (!yearEl) return;
+  yearEl.textContent = String(currentDisplayYear());
+}
+
+function updateToriYearLine() {
+  const line = document.getElementById('sd-tori-year-line');
+  if (!line) return;
+
+  const year = currentDisplayYear();
+  const age = toriElementAge(year);
+
+  // In the base year, leave the HTML copy alone so you can edit it in superdog.html.
+  // Only rewrite the sentence once the calendar year advances past 2026.
+  if (age === TORI_BASE_AGE) return;
+
+  const el = ELEMENTS[age - 1];
+  // e.g. 2027 → Rubidium (37): call out the new element + that 2026 was Krypton
+  line.innerHTML =
+    `In ${year}, my superpower element is ` +
+    `<strong>element ${age} — ${el.name} (${el.symbol})</strong>.`;
+}
+
+function initElementYear() {
+  const form = document.getElementById('sd-age-form');
+  const input = document.getElementById('sd-age');
+  const error = document.getElementById('sd-age-error');
+  const card = document.getElementById('sd-element-card');
+  if (!form || !input || !error || !card) return;
+
+  updateHeadingYear();
+  updateToriYearLine();
+  const toriAge = toriElementAge();
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const age = Number.parseInt(input.value, 10);
+    if (!Number.isInteger(age) || age < 1 || age > 118) {
+      error.hidden = false;
+      error.textContent = 'Pick a whole number from 1 to 118 (that’s how many elements we have).';
+      card.hidden = true;
+      return;
+    }
+
+    const el = ELEMENTS[age - 1];
+    error.hidden = true;
+    card.hidden = false;
+    card.classList.toggle('sd-is-krypton', age === 36 || age === toriAge);
+
+    document.getElementById('sd-el-number').textContent = String(el.z);
+    document.getElementById('sd-el-symbol').textContent = el.symbol;
+    document.getElementById('sd-el-name').textContent = el.name;
+    document.getElementById('sd-el-mass').textContent = el.mass;
+
+    let headline = `Age ${age}: ${el.name} is Your Superpower`;
+    if (age === 36 && age === toriAge) {
+      headline = `Age ${age}: ${el.name} is Your Superpower (Superman’s… and Tori’s!)`;
+    } else if (age === 36) {
+      headline = `Age ${age}: ${el.name} is Your Superpower (Superman’s!)`;
+    } else if (age === toriAge) {
+      headline = `Age ${age}: ${el.name} is Your Superpower (Tori’s right now!)`;
+    }
+
+    document.getElementById('sd-el-headline').textContent = headline;
+    document.getElementById('sd-el-category').textContent = el.cat;
+
+    const learn = document.getElementById('sd-el-learn');
+    // Simple English Wikipedia — easier read for kids, covers all 118 elements
+    learn.href = `https://simple.wikipedia.org/wiki/${encodeURIComponent(el.name)}`;
+    learn.textContent = `Learn more about ${el.name}`;
+
+    renderElementViz(el);
+  });
+}
