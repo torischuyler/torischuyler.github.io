@@ -1,0 +1,229 @@
+/*
+  Call to the Moon — howl frequency tuner on the PiDog howl page.
+  Night-sky atmosphere, live waveform, and pitch slider.
+*/
+
+.howl-tuner {
+  --howl-moon-glow: 0.35;
+  --howl-moon-scale: 1;
+
+  max-width: 420px;
+  margin: 2rem auto 0;
+  text-align: center;
+}
+
+.howl-tuner-heading {
+  font-size: 1.25rem;
+  margin-bottom: 0.35rem;
+  color: var(--subheader-color);
+}
+
+.howl-tuner-intro {
+  margin: 0 0 1.25rem;
+  font-size: 0.92rem;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+/* Night strip with stars + moon */
+.howl-sky {
+  position: relative;
+  height: 110px;
+  margin: 0 auto 0.75rem;
+  border-radius: 12px;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgb(45 90 142 / 45%), transparent 70%),
+    linear-gradient(180deg, #071018 0%, #0d1b2a 55%, #16324f 100%);
+  overflow: hidden;
+  border: 1px solid rgb(201 194 186 / 18%);
+}
+
+.howl-star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #f5f0e6;
+  opacity: 0.55;
+  animation: howl-twinkle 3.2s ease-in-out infinite;
+}
+
+.howl-star-1 {
+  top: 18%;
+  left: 12%;
+  animation-delay: 0s;
+}
+
+.howl-star-2 {
+  top: 32%;
+  left: 78%;
+  width: 2px;
+  height: 2px;
+  animation-delay: 0.7s;
+}
+
+.howl-star-3 {
+  top: 55%;
+  left: 22%;
+  width: 2px;
+  height: 2px;
+  animation-delay: 1.4s;
+}
+
+.howl-star-4 {
+  top: 22%;
+  left: 58%;
+  animation-delay: 2.1s;
+}
+
+.howl-star-5 {
+  top: 68%;
+  left: 88%;
+  width: 2px;
+  height: 2px;
+  animation-delay: 0.3s;
+}
+
+@keyframes howl-twinkle {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.9; }
+}
+
+.howl-moon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 52px;
+  height: 52px;
+  margin: -26px 0 0 -26px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 30%, #fff8e7 0%, #f0d9a8 42%, #e2c07a 100%);
+  box-shadow:
+    0 0 calc(18px + 40px * var(--howl-moon-glow)) rgb(240 217 168 / calc(0.25 + 0.55 * var(--howl-moon-glow))),
+    0 0 calc(40px + 70px * var(--howl-moon-glow)) rgb(250 202 161 / calc(0.12 + 0.35 * var(--howl-moon-glow)));
+  transform: scale(var(--howl-moon-scale));
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.howl-moon::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 68% 42%, rgb(13 27 42 / 28%) 0 18%, transparent 19%),
+    radial-gradient(circle at 40% 62%, rgb(13 27 42 / 18%) 0 12%, transparent 13%);
+  pointer-events: none;
+}
+
+.howl-wave {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin: 0 auto 1rem;
+  border-radius: 10px;
+  background: rgb(7 16 24 / 65%);
+  border: 1px solid rgb(201 194 186 / 18%);
+}
+
+.howl-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.55rem;
+}
+
+.howl-freq-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.howl-freq-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.howl-freq-readout {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--subheader-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.howl-freq {
+  width: 100%;
+  height: 2rem;
+  margin: 0;
+  cursor: pointer;
+  accent-color: var(--subheader-color);
+}
+
+.howl-freq:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.howl-freq-ends {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  opacity: 0.65;
+  margin-top: -0.25rem;
+}
+
+.howl-status {
+  margin: 0.35rem 0 0;
+  min-height: 1.4em;
+  font-size: 0.88rem;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.howl-status.is-sweet {
+  color: var(--subheader-color);
+  font-style: normal;
+  font-weight: 600;
+  opacity: 1;
+}
+
+.howl-toggle {
+  align-self: center;
+  margin-top: 0.35rem;
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border: 1px solid var(--subheader-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.howl-toggle:hover {
+  background-color: var(--subheader-color);
+  color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.howl-toggle:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.howl-toggle:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+.howl-toggle.is-on {
+  background-color: var(--subheader-color);
+  color: var(--primary-color);
+}
