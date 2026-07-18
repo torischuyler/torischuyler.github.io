@@ -74,16 +74,16 @@ const ELEMENTS = [
   { z: 58, symbol: 'Ce', name: 'Cerium', mass: '140.12', cat: 'Lanthanide' },
   { z: 59, symbol: 'Pr', name: 'Praseodymium', mass: '140.91', cat: 'Lanthanide' },
   { z: 60, symbol: 'Nd', name: 'Neodymium', mass: '144.242', cat: 'Lanthanide' },
-  { z: 61, symbol: 'Pm', name: 'Promethium', mass: '145.000', cat: 'Lanthanide' },
+  { z: 61, symbol: 'Pm', name: 'Promethium', mass: '145', cat: 'Lanthanide' },
   { z: 62, symbol: 'Sm', name: 'Samarium', mass: '150.360', cat: 'Lanthanide' },
-  { z: 63, symbol: 'Eu', name: 'Europium', mass: '151.964', cat: 'Lanthanide' },
-  { z: 64, symbol: 'Gd', name: 'Gadolinium', mass: '157.250', cat: 'Lanthanide' },
-  { z: 65, symbol: 'Tb', name: 'Terbium', mass: '158.925', cat: 'Lanthanide' },
-  { z: 66, symbol: 'Dy', name: 'Dysprosium', mass: '162.500', cat: 'Lanthanide' },
-  { z: 67, symbol: 'Ho', name: 'Holmium', mass: '164.930', cat: 'Lanthanide' },
-  { z: 68, symbol: 'Er', name: 'Erbium', mass: '167.259', cat: 'Lanthanide' },
-  { z: 69, symbol: 'Tm', name: 'Thulium', mass: '168.934', cat: 'Lanthanide' },
-  { z: 70, symbol: 'Yb', name: 'Ytterbium', mass: '173.045', cat: 'Lanthanide' },
+  { z: 63, symbol: 'Eu', name: 'Europium', mass: '151.96', cat: 'Lanthanide' },
+  { z: 64, symbol: 'Gd', name: 'Gadolinium', mass: '157.25', cat: 'Lanthanide' },
+  { z: 65, symbol: 'Tb', name: 'Terbium', mass: '158.93', cat: 'Lanthanide' },
+  { z: 66, symbol: 'Dy', name: 'Dysprosium', mass: '162.50', cat: 'Lanthanide' },
+  { z: 67, symbol: 'Ho', name: 'Holmium', mass: '164.93', cat: 'Lanthanide' },
+  { z: 68, symbol: 'Er', name: 'Erbium', mass: '167.26', cat: 'Lanthanide' },
+  { z: 69, symbol: 'Tm', name: 'Thulium', mass: '168.93', cat: 'Lanthanide' },
+  { z: 70, symbol: 'Yb', name: 'Ytterbium', mass: '173.05', cat: 'Lanthanide' },
   { z: 71, symbol: 'Lu', name: 'Lutetium', mass: '174.967', cat: 'Lanthanide' },
   { z: 72, symbol: 'Hf', name: 'Hafnium', mass: '178.490', cat: 'Transition Metal' },
   { z: 73, symbol: 'Ta', name: 'Tantalum', mass: '180.948', cat: 'Transition Metal' },
@@ -781,24 +781,32 @@ const ELEMENT_VIZ = {
       </svg>`,
   },
   39: {
-    caption: 'Color displays',
+    caption: 'Jet engine',
     svg: `
       <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
-        <!-- TV body -->
-        <rect x="8" y="12" width="48" height="36" rx="3" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.5"/>
-        <!-- screen -->
-        <rect x="12" y="16" width="40" height="28" rx="2" fill="#1a1520"/>
-        <!-- color bars -->
-        <rect x="14" y="18" width="6" height="24" fill="#ff6b6b"/>
-        <rect x="20" y="18" width="6" height="24" fill="#F0C24A"/>
-        <rect x="26" y="18" width="6" height="24" fill="#9CBB80"/>
-        <rect x="32" y="18" width="6" height="24" fill="#5a9ec4"/>
-        <rect x="38" y="18" width="6" height="24" fill="#b07ad4"/>
-        <rect x="44" y="18" width="6" height="24" fill="#c45c4a"/>
-        <!-- stand -->
-        <path d="M26 48h12l4 6H22l4-6z" fill="#A8B0B8"/>
-        <!-- power light -->
-        <circle cx="50" cy="42" r="1.5" fill="#9CBB80"/>
+        <!-- pylon (wing mount) -->
+        <path d="M30 8v14" stroke="#8A929A" stroke-width="3" stroke-linecap="round"/>
+        <path d="M24 8h14" stroke="#A8B0B8" stroke-width="3" stroke-linecap="round"/>
+        <!-- nacelle body -->
+        <path d="M6 28c0-8 8-14 20-14h18c8 0 14 4 14 12v8c0 8-6 12-14 12H26c-12 0-20-6-20-14v-4z" fill="#C9C2BA" stroke="#8A929A" stroke-width="1.5"/>
+        <!-- intake lip -->
+        <ellipse cx="10" cy="32" rx="6" ry="12" fill="#A8B0B8" stroke="#8A929A" stroke-width="1.2"/>
+        <ellipse cx="10" cy="32" rx="3.5" ry="8" fill="#1a3040"/>
+        <!-- fan disc -->
+        <ellipse cx="14" cy="32" rx="2" ry="6" fill="#2A3F54"/>
+        <path d="M13 27l2 5-2 5" stroke="#5a9ec4" stroke-width="1.2" stroke-linecap="round" opacity="0.8"/>
+        <!-- cowling seams -->
+        <path d="M22 16v32M36 18v28" stroke="#A8B0B8" stroke-width="1" opacity="0.7"/>
+        <!-- core / turbine section -->
+        <path d="M40 22h10c3 0 5 2 5 5v10c0 3-2 5-5 5H40V22z" fill="#8A929A"/>
+        <!-- exhaust nozzle -->
+        <path d="M50 24h6c2 0 4 2 4 4v8c0 2-2 4-4 4h-6V24z" fill="#2A3F54"/>
+        <ellipse cx="58" cy="32" rx="2.5" ry="7" fill="#1a2430"/>
+        <!-- exhaust flame -->
+        <path d="M60 28c4 1 6 3 6 4s-2 3-6 4c1-2 1-6 0-8z" fill="#F0C24A"/>
+        <path d="M60 30c3 0.5 4 1.5 4 2s-1 1.5-4 2c0.5-1 0.5-3 0-4z" fill="#FACAA1"/>
+        <!-- heat-shield stripe (yttria coating hint) -->
+        <path d="M42 24h6v16h-6" fill="#FACAA1" opacity="0.35"/>
       </svg>`,
   },
   40: {
@@ -1248,6 +1256,237 @@ const ELEMENT_VIZ = {
         <!-- wire leads -->
         <path d="M14 24c-4-2-6 2-4 6" stroke="#F0C24A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
         <path d="M14 40c-4 2-6-2-4-6" stroke="#c45c4a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      </svg>`,
+  },
+  61: {
+    caption: 'Luminous Dial',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- bezel -->
+        <circle cx="32" cy="32" r="26" fill="#A8B0B8" stroke="#8A929A" stroke-width="2"/>
+        <!-- dial face -->
+        <circle cx="32" cy="32" r="21" fill="#1a2430"/>
+        <!-- soft luminous halo -->
+        <circle cx="32" cy="32" r="18" fill="#9CBB80" opacity="0.12"/>
+        <!-- major ticks (glowing) -->
+        <g stroke="#9CBB80" stroke-width="2.5" stroke-linecap="round">
+          <path d="M32 14v5M32 45v5M14 32h5M45 32h5"/>
+          <path d="M19.3 19.3l3.5 3.5M41.2 41.2l3.5 3.5M19.3 44.7l3.5-3.5M41.2 22.8l3.5-3.5"/>
+        </g>
+        <!-- minor ticks -->
+        <g stroke="#9CBB80" stroke-width="1.3" stroke-linecap="round" opacity="0.55">
+          <path d="M32 17v3M32 44v3M17 32h3M44 32h3"/>
+        </g>
+        <!-- needle -->
+        <path d="M32 32L44 20" stroke="#FACAA1" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="32" cy="32" r="3.5" fill="#C9C2BA" stroke="#A8B0B8" stroke-width="1.2"/>
+        <circle cx="32" cy="32" r="1.5" fill="#2A3F54"/>
+        <!-- luminous numeral dots -->
+        <circle cx="32" cy="20" r="1.8" fill="#c5e0a0"/>
+        <circle cx="44" cy="32" r="1.8" fill="#c5e0a0"/>
+        <circle cx="32" cy="44" r="1.8" fill="#c5e0a0"/>
+        <circle cx="20" cy="32" r="1.8" fill="#c5e0a0"/>
+      </svg>`,
+  },
+  62: {
+    caption: 'Nuclear control rod',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- reactor vessel -->
+        <rect x="10" y="22" width="44" height="34" rx="4" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- core water glow -->
+        <rect x="14" y="28" width="36" height="24" rx="2" fill="#1a3040"/>
+        <rect x="14" y="40" width="36" height="12" rx="1" fill="#5a9ec4" opacity="0.25"/>
+        <!-- drive mechanism top -->
+        <rect x="18" y="8" width="28" height="10" rx="2" fill="#A8B0B8" stroke="#8A929A" stroke-width="1.2"/>
+        <path d="M24 8V5h16v3" stroke="#8A929A" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- control rods (samarium absorbers) -->
+        <rect x="20" y="14" width="5" height="38" rx="1.5" fill="#8A929A"/>
+        <rect x="29.5" y="10" width="5" height="42" rx="1.5" fill="#A8B0B8"/>
+        <rect x="39" y="16" width="5" height="36" rx="1.5" fill="#8A929A"/>
+        <!-- rod tips (inserted deeper) -->
+        <rect x="20" y="48" width="5" height="6" rx="1" fill="#c45c4a"/>
+        <rect x="29.5" y="48" width="5" height="6" rx="1" fill="#c45c4a"/>
+        <rect x="39" y="48" width="5" height="6" rx="1" fill="#c45c4a"/>
+        <!-- vessel rim highlight -->
+        <path d="M14 26h36" stroke="#5a9ec4" stroke-width="1.2" opacity="0.45"/>
+      </svg>`,
+  },
+  63: {
+    caption: 'Color television',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- TV body -->
+        <rect x="8" y="12" width="48" height="36" rx="3" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- screen -->
+        <rect x="12" y="16" width="40" height="28" rx="2" fill="#1a1520"/>
+        <!-- color bars -->
+        <rect x="14" y="18" width="6" height="24" fill="#ff6b6b"/>
+        <rect x="20" y="18" width="6" height="24" fill="#F0C24A"/>
+        <rect x="26" y="18" width="6" height="24" fill="#9CBB80"/>
+        <rect x="32" y="18" width="6" height="24" fill="#5a9ec4"/>
+        <rect x="38" y="18" width="6" height="24" fill="#b07ad4"/>
+        <rect x="44" y="18" width="6" height="24" fill="#c45c4a"/>
+        <!-- stand -->
+        <path d="M26 48h12l4 6H22l4-6z" fill="#A8B0B8"/>
+        <!-- power light -->
+        <circle cx="50" cy="42" r="1.5" fill="#9CBB80"/>
+      </svg>`,
+  },
+  64: {
+    caption: 'MRI diagnosis',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- left hemisphere -->
+        <path d="M30 12c-10 0-18 8-18 18 0 8 4 14 10 18 3 2 6 3 8 3V12z" fill="#e89bb0" stroke="#d4789a" stroke-width="1.2"/>
+        <!-- right hemisphere -->
+        <path d="M34 12c10 0 18 8 18 18 0 8-4 14-10 18-3 2-6 3-8 3V12z" fill="#f0a8bc" stroke="#d4789a" stroke-width="1.2"/>
+        <!-- midline -->
+        <path d="M32 14v34" stroke="#c45c7a" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+        <!-- folds -->
+        <path d="M16 22c4 2 8 2 12 0M15 30c5 2 9 2 13 0M17 38c4 2 8 2 11 0" stroke="#c45c7a" stroke-width="1.5" stroke-linecap="round" opacity="0.65"/>
+        <path d="M36 22c4 2 8 2 12 0M36 30c5 2 9 2 13 0M36 38c4 2 8 2 11 0" stroke="#c45c7a" stroke-width="1.5" stroke-linecap="round" opacity="0.65"/>
+        <!-- cerebellum -->
+        <ellipse cx="32" cy="52" rx="10" ry="5" fill="#e089a4" stroke="#d4789a" stroke-width="1.2"/>
+        <path d="M26 52h12" stroke="#c45c7a" stroke-width="1.2" opacity="0.5"/>
+      </svg>`,
+  },
+  65: {
+    caption: 'Fluorescent light',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- soft glow -->
+        <ellipse cx="32" cy="32" rx="28" ry="14" fill="#c5e0a0" opacity="0.25"/>
+        <!-- tube -->
+        <rect x="6" y="24" width="52" height="16" rx="8" fill="#e8f0d8" stroke="#A8B0B8" stroke-width="1.5"/>
+        <!-- phosphor glow inside -->
+        <rect x="10" y="27" width="44" height="10" rx="5" fill="#9CBB80" opacity="0.85"/>
+        <rect x="12" y="29" width="40" height="4" rx="2" fill="#c5e0a0" opacity="0.9"/>
+        <!-- end caps -->
+        <rect x="2" y="26" width="6" height="12" rx="1.5" fill="#8A929A"/>
+        <rect x="56" y="26" width="6" height="12" rx="1.5" fill="#8A929A"/>
+        <!-- pins -->
+        <path d="M4 38v4M6 38v4M58 38v4M60 38v4" stroke="#A8B0B8" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>`,
+  },
+  66: {
+    caption: 'Wind turbine',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- ground / hill -->
+        <path d="M4 56c10-6 20-6 28 0s18 6 28 0v6H4v-6z" fill="#9CBB80" opacity="0.55"/>
+        <!-- tower -->
+        <path d="M30 28h4l2 30h-8l2-30z" fill="#C9C2BA" stroke="#A8B0B8" stroke-width="1"/>
+        <!-- nacelle -->
+        <rect x="26" y="22" width="14" height="8" rx="2" fill="#A8B0B8" stroke="#8A929A" stroke-width="1.2"/>
+        <!-- hub -->
+        <circle cx="32" cy="26" r="3.5" fill="#2A3F54"/>
+        <!-- blades -->
+        <path d="M32 26L32 6c2 4 3 10 2 16l-2 4z" fill="#e8eef4" stroke="#C9C2BA" stroke-width="1"/>
+        <path d="M32 26L48 36c-5-1-10-3-14-6l-2-4z" fill="#e8eef4" stroke="#C9C2BA" stroke-width="1"/>
+        <path d="M32 26L16 36c5-1 10-3 14-6l2-4z" fill="#D6DCE2" stroke="#C9C2BA" stroke-width="1"/>
+        <!-- hub center -->
+        <circle cx="32" cy="26" r="2" fill="#8A929A"/>
+      </svg>`,
+  },
+  67: {
+    caption: 'Laser surgery',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- eye white -->
+        <ellipse cx="30" cy="32" rx="24" ry="20" fill="#e8eef4" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- iris -->
+        <circle cx="30" cy="32" r="14" fill="#5a9ec4"/>
+        <circle cx="30" cy="32" r="14" fill="none" stroke="#3d7ea8" stroke-width="1"/>
+        <!-- iris rays -->
+        <g stroke="#8eb4d4" stroke-width="1.2" stroke-linecap="round" opacity="0.75">
+          <path d="M30 20v4M30 40v4M18 32h4M38 32h4"/>
+          <path d="M22 24l2.5 2.5M35.5 37.5l2.5 2.5M22 40l2.5-2.5M35.5 26.5l2.5-2.5"/>
+        </g>
+        <!-- pupil -->
+        <circle cx="30" cy="32" r="6" fill="#1a2430"/>
+        <!-- catchlight -->
+        <circle cx="26" cy="28" r="2.5" fill="#e8eef4" opacity="0.9"/>
+        <circle cx="34" cy="36" r="1.2" fill="#e8eef4" opacity="0.45"/>
+        <!-- eyelids hint -->
+        <path d="M8 28c6-10 18-14 28-12" stroke="#FACAA1" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+        <path d="M8 36c6 10 18 14 28 12" stroke="#FACAA1" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
+        <!-- needle / laser probe -->
+        <path d="M58 10L34 30" stroke="#A8B0B8" stroke-width="3" stroke-linecap="round"/>
+        <path d="M58 10L34 30" stroke="#e8eef4" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- needle tip into pupil -->
+        <path d="M34 30L30 32" stroke="#8A929A" stroke-width="2" stroke-linecap="round"/>
+        <!-- hub / handle -->
+        <rect x="54" y="6" width="8" height="8" rx="1.5" fill="#8A929A" transform="rotate(45 58 10)"/>
+      </svg>`,
+  },
+  68: {
+    caption: 'Optical fiber connections',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- spool left flange -->
+        <ellipse cx="18" cy="32" rx="8" ry="18" fill="#A8B0B8" stroke="#8A929A" stroke-width="1.5"/>
+        <ellipse cx="18" cy="32" rx="4" ry="10" fill="#2A3F54"/>
+        <!-- spool core / cable wrap -->
+        <rect x="18" y="18" width="28" height="28" fill="#c45c4a"/>
+        <!-- cable winding lines -->
+        <g stroke="#a04838" stroke-width="1.5" opacity="0.7">
+          <path d="M18 22h28M18 27h28M18 32h28M18 37h28M18 42h28"/>
+        </g>
+        <!-- highlight on cable -->
+        <path d="M22 20h20" stroke="#FACAA1" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
+        <!-- spool right flange -->
+        <ellipse cx="46" cy="32" rx="8" ry="18" fill="#C9C2BA" stroke="#8A929A" stroke-width="1.5"/>
+        <ellipse cx="46" cy="32" rx="4" ry="10" fill="#2A3F54"/>
+        <!-- fiber end trailing off -->
+        <path d="M46 40c6 2 10 6 12 12" stroke="#9CBB80" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <circle cx="58" cy="52" r="2" fill="#c5e0a0"/>
+      </svg>`,
+  },
+  69: {
+    caption: 'Laser surgery',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- chart card -->
+        <rect x="10" y="4" width="44" height="56" rx="2" fill="#e8eef4" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- row 1: big E -->
+        <text x="32" y="20" text-anchor="middle" fill="#2A3F54" font-size="16" font-family="Righteous, Georgia, serif" font-weight="700">E</text>
+        <!-- row 2: F P -->
+        <text x="32" y="30" text-anchor="middle" fill="#2A3F54" font-size="9" font-family="Righteous, Georgia, serif" font-weight="700" letter-spacing="2">F P</text>
+        <!-- red / green duochrome lines -->
+        <rect x="14" y="34" width="36" height="5" fill="#c45c4a"/>
+        <rect x="14" y="39" width="36" height="5" fill="#9CBB80"/>
+        <text x="32" y="38.5" text-anchor="middle" fill="#1a2430" font-size="4.5" font-family="Righteous, Georgia, serif" font-weight="700">T O Z</text>
+        <text x="32" y="43.5" text-anchor="middle" fill="#1a2430" font-size="4.5" font-family="Righteous, Georgia, serif" font-weight="700">L P E D</text>
+        <!-- smaller bottom rows -->
+        <text x="32" y="52" text-anchor="middle" fill="#2A3F54" font-size="4" font-family="Righteous, Georgia, serif" font-weight="700" letter-spacing="1">P E C F D</text>
+        <text x="32" y="57" text-anchor="middle" fill="#2A3F54" font-size="3" font-family="Righteous, Georgia, serif" font-weight="700" letter-spacing="1">E D F C Z P</text>
+      </svg>`,
+  },
+  70: {
+    caption: 'Scientific fiber lasers',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- laser housing -->
+        <rect x="6" y="22" width="36" height="20" rx="3" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- cooling vents -->
+        <path d="M12 26h8M12 30h8M12 34h8M12 38h8" stroke="#5a9ec4" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+        <!-- fiber spool on unit -->
+        <circle cx="34" cy="32" r="7" fill="#A8B0B8" stroke="#8A929A" stroke-width="1.2"/>
+        <circle cx="34" cy="32" r="3.5" fill="#c45c4a"/>
+        <circle cx="34" cy="32" r="1.5" fill="#2A3F54"/>
+        <!-- fiber cable out -->
+        <path d="M40 32c6 0 8-4 10-4" stroke="#9CBB80" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <!-- output head -->
+        <rect x="48" y="24" width="10" height="12" rx="2" fill="#8A929A" stroke="#C9C2BA" stroke-width="1.2"/>
+        <circle cx="53" cy="30" r="3" fill="#1a2430"/>
+        <!-- laser beam -->
+        <path d="M56 30h6" stroke="#5a9ec4" stroke-width="3" stroke-linecap="round"/>
+        <path d="M56 30h6" stroke="#c5e0a0" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- beam glow hit -->
+        <circle cx="62" cy="30" r="2" fill="#FACAA1"/>
+        <!-- status light -->
+        <circle cx="10" cy="28" r="1.5" fill="#9CBB80"/>
       </svg>`,
   },
   79: {
