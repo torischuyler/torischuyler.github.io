@@ -26,11 +26,11 @@ const ELEMENTS = [
   { z: 10, symbol: 'Ne', name: 'Neon', mass: '20.180', cat: 'Noble Gas' },
   { z: 11, symbol: 'Na', name: 'Sodium', mass: '22.990', cat: 'Alkali Metal' },
   { z: 12, symbol: 'Mg', name: 'Magnesium', mass: '24.305', cat: 'Alkaline Earth Metal' },
-  { z: 13, symbol: 'Al', name: 'Aluminum', mass: '26.982', cat: 'Post-transition metal' },
-  { z: 14, symbol: 'Si', name: 'Silicon', mass: '28.086', cat: 'Metalloid' },
+  { z: 13, symbol: 'Al', name: 'Aluminum', mass: '26.982', cat: 'Post-transition Metal' },
+  { z: 14, symbol: 'Si', name: 'Silicon', mass: '28.085', cat: 'Metalloid' },
   { z: 15, symbol: 'P', name: 'Phosphorus', mass: '30.974', cat: 'Reactive Nonmetal' },
-  { z: 16, symbol: 'S', name: 'Sulfur', mass: '32.065', cat: 'Reactive Nonmetal' },
-  { z: 17, symbol: 'Cl', name: 'Chlorine', mass: '35.453', cat: 'Halogen' },
+  { z: 16, symbol: 'S', name: 'Sulfur', mass: '32.06', cat: 'Reactive Nonmetal' },
+  { z: 17, symbol: 'Cl', name: 'Chlorine', mass: '35.45', cat: 'Reactive Nonmetal' },
   { z: 18, symbol: 'Ar', name: 'Argon', mass: '39.948', cat: 'Noble Gas' },
   { z: 19, symbol: 'K', name: 'Potassium', mass: '39.098', cat: 'Alkali Metal' },
   { z: 20, symbol: 'Ca', name: 'Calcium', mass: '40.078', cat: 'Alkaline Earth Metal' },
@@ -44,11 +44,11 @@ const ELEMENTS = [
   { z: 28, symbol: 'Ni', name: 'Nickel', mass: '58.693', cat: 'Transition metal' },
   { z: 29, symbol: 'Cu', name: 'Copper', mass: '63.546', cat: 'Transition metal' },
   { z: 30, symbol: 'Zn', name: 'Zinc', mass: '65.380', cat: 'Transition metal' },
-  { z: 31, symbol: 'Ga', name: 'Gallium', mass: '69.723', cat: 'Post-transition metal' },
+  { z: 31, symbol: 'Ga', name: 'Gallium', mass: '69.723', cat: 'Post-transition Metal' },
   { z: 32, symbol: 'Ge', name: 'Germanium', mass: '72.640', cat: 'Metalloid' },
   { z: 33, symbol: 'As', name: 'Arsenic', mass: '74.922', cat: 'Metalloid' },
   { z: 34, symbol: 'Se', name: 'Selenium', mass: '78.960', cat: 'Reactive Nonmetal' },
-  { z: 35, symbol: 'Br', name: 'Bromine', mass: '79.904', cat: 'Halogen' },
+  { z: 35, symbol: 'Br', name: 'Bromine', mass: '79.904', cat: 'Reactive Nonmetal' },
   { z: 36, symbol: 'Kr', name: 'Krypton', mass: '83.798', cat: 'Noble Gas' },
   { z: 37, symbol: 'Rb', name: 'Rubidium', mass: '85.468', cat: 'Alkali Metal' },
   { z: 38, symbol: 'Sr', name: 'Strontium', mass: '87.620', cat: 'Alkaline Earth Metal' },
@@ -62,11 +62,11 @@ const ELEMENTS = [
   { z: 46, symbol: 'Pd', name: 'Palladium', mass: '106.420', cat: 'Transition metal' },
   { z: 47, symbol: 'Ag', name: 'Silver', mass: '107.868', cat: 'Transition metal' },
   { z: 48, symbol: 'Cd', name: 'Cadmium', mass: '112.411', cat: 'Transition metal' },
-  { z: 49, symbol: 'In', name: 'Indium', mass: '114.818', cat: 'Post-transition metal' },
-  { z: 50, symbol: 'Sn', name: 'Tin', mass: '118.710', cat: 'Post-transition metal' },
+  { z: 49, symbol: 'In', name: 'Indium', mass: '114.818', cat: 'Post-transition Metal' },
+  { z: 50, symbol: 'Sn', name: 'Tin', mass: '118.710', cat: 'Post-transition Metal' },
   { z: 51, symbol: 'Sb', name: 'Antimony', mass: '121.760', cat: 'Metalloid' },
   { z: 52, symbol: 'Te', name: 'Tellurium', mass: '127.600', cat: 'Metalloid' },
-  { z: 53, symbol: 'I', name: 'Iodine', mass: '126.904', cat: 'Halogen' },
+  { z: 53, symbol: 'I', name: 'Iodine', mass: '126.904', cat: 'Reactive Nonmetal' },
   { z: 54, symbol: 'Xe', name: 'Xenon', mass: '131.293', cat: 'Noble Gas' },
   { z: 55, symbol: 'Cs', name: 'Cesium', mass: '132.905', cat: 'Alkali Metal' },
   { z: 56, symbol: 'Ba', name: 'Barium', mass: '137.327', cat: 'Alkaline Earth Metal' },
@@ -94,11 +94,11 @@ const ELEMENTS = [
   { z: 78, symbol: 'Pt', name: 'Platinum', mass: '195.084', cat: 'Transition metal' },
   { z: 79, symbol: 'Au', name: 'Gold', mass: '196.967', cat: 'Transition metal' },
   { z: 80, symbol: 'Hg', name: 'Mercury', mass: '200.590', cat: 'Transition metal' },
-  { z: 81, symbol: 'Tl', name: 'Thallium', mass: '204.383', cat: 'Post-transition metal' },
-  { z: 82, symbol: 'Pb', name: 'Lead', mass: '207.200', cat: 'Post-transition metal' },
-  { z: 83, symbol: 'Bi', name: 'Bismuth', mass: '208.980', cat: 'Post-transition metal' },
+  { z: 81, symbol: 'Tl', name: 'Thallium', mass: '204.383', cat: 'Post-transition Metal' },
+  { z: 82, symbol: 'Pb', name: 'Lead', mass: '207.200', cat: 'Post-transition Metal' },
+  { z: 83, symbol: 'Bi', name: 'Bismuth', mass: '208.980', cat: 'Post-transition Metal' },
   { z: 84, symbol: 'Po', name: 'Polonium', mass: '209.000', cat: 'Metalloid' },
-  { z: 85, symbol: 'At', name: 'Astatine', mass: '210.000', cat: 'Halogen' },
+  { z: 85, symbol: 'At', name: 'Astatine', mass: '210.000', cat: 'Reactive Nonmetal' },
   { z: 86, symbol: 'Rn', name: 'Radon', mass: '222.000', cat: 'Noble Gas' },
   { z: 87, symbol: 'Fr', name: 'Francium', mass: '223.000', cat: 'Alkali Metal' },
   { z: 88, symbol: 'Ra', name: 'Radium', mass: '226.000', cat: 'Alkaline Earth Metal' },
@@ -263,6 +263,42 @@ const ELEMENT_VIZ = {
         <circle cx="38" cy="42" r="1.2" fill="#FFF"/>
       </svg>`,
   },
+  12: {
+    caption: 'Chlorophyll',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- stem -->
+        <path d="M30 50V28" stroke="#6a8f4e" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- left leaf -->
+        <path d="M30 38c-10-2-16-10-16-18 8 0 14 5 16 14z" fill="#7aa060"/>
+        <path d="M22 26c3 4 6 8 8 12" stroke="#9CBB80" stroke-width="1" stroke-linecap="round" opacity="0.55"/>
+        <!-- right leaf -->
+        <path d="M30 32c10-2 16-9 16-16-8 1-13 6-16 14z" fill="#9CBB80"/>
+        <path d="M38 22c-3 4-6 7-8 10" stroke="#6a8f4e" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
+        <!-- small lower leaf -->
+        <path d="M30 44c-8 0-12-5-13-10 6 1 10 4 13 8z" fill="#9CBB80" opacity="0.9"/>
+      </svg>`,
+  },
+  13: {
+    caption: 'Airplane',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- fuselage -->
+        <path d="M10 34c8-2 20-3 28-3h8c4 0 6 1.5 6 3s-2 3-6 3h-8c-8 0-20-1-28-3z" fill="#C9C2BA"/>
+        <!-- nose -->
+        <path d="M52 31c4 1 6 2 6 3s-2 2-6 3v-6z" fill="#FACAA1"/>
+        <!-- main wings -->
+        <path d="M28 32L12 18h6l14 12H28z" fill="#9CBB80"/>
+        <path d="M28 36L12 50h6l14-12H28z" fill="#7aa060"/>
+        <!-- tail fin -->
+        <path d="M14 34l-6-10h4l6 10H14z" fill="#2A3F54"/>
+        <path d="M14 34l-6 8h4l6-8H14z" fill="#2A3F54" opacity="0.85"/>
+        <!-- window dots -->
+        <circle cx="36" cy="34" r="1.3" fill="#2A3F54"/>
+        <circle cx="42" cy="34" r="1.3" fill="#2A3F54"/>
+        <circle cx="48" cy="34" r="1.3" fill="#2A3F54"/>
+      </svg>`,
+  },
   14: {
     caption: 'Chip',
     svg: `
@@ -272,6 +308,101 @@ const ELEMENT_VIZ = {
         <g stroke="#C9C2BA" stroke-width="2" stroke-linecap="round">
           <path d="M26 16v4M32 16v4M38 16v4M26 44v4M32 44v4M38 44v4M16 26h4M16 32h4M16 38h4M44 26h4M44 32h4M44 38h4"/>
         </g>
+      </svg>`,
+  },
+  15: {
+    caption: 'Bone',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <g transform="rotate(-35 32 32)">
+          <rect x="18" y="28" width="28" height="8" rx="3" fill="#E8E0D4"/>
+          <circle cx="16" cy="26" r="6" fill="#E8E0D4"/>
+          <circle cx="16" cy="38" r="6" fill="#E8E0D4"/>
+          <circle cx="48" cy="26" r="6" fill="#E8E0D4"/>
+          <circle cx="48" cy="38" r="6" fill="#E8E0D4"/>
+          <path d="M24 31h16" stroke="#C9C2BA" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+        </g>
+      </svg>`,
+  },
+  16: {
+    caption: 'Eggs',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- skillet -->
+        <ellipse cx="30" cy="36" rx="22" ry="16" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.5"/>
+        <ellipse cx="30" cy="36" rx="18" ry="12" fill="#1a2a3a"/>
+        <path d="M50 32c6 1 10 3 11 6-1 2-5 4-11 5" fill="#C9C2BA"/>
+        <path d="M50 34c5 1 8 2 9 4" stroke="#2A3F54" stroke-width="1.2" stroke-linecap="round"/>
+        <!-- left over-easy egg -->
+        <ellipse cx="22" cy="36" rx="9" ry="7" fill="#FFF8EE"/>
+        <circle cx="22" cy="36" r="4" fill="#F0C24A"/>
+        <circle cx="21" cy="35" r="1.2" fill="#FACAA1" opacity="0.7"/>
+        <!-- right over-easy egg -->
+        <ellipse cx="36" cy="38" rx="8" ry="6.5" fill="#F5EDE0"/>
+        <circle cx="36" cy="38" r="3.6" fill="#E8B84A"/>
+        <circle cx="35" cy="37" r="1" fill="#FACAA1" opacity="0.7"/>
+      </svg>`,
+  },
+  17: {
+    caption: 'Pools',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- pool deck -->
+        <rect x="8" y="18" width="48" height="32" rx="4" fill="#C9C2BA"/>
+        <!-- water -->
+        <rect x="12" y="22" width="40" height="24" rx="3" fill="#5a9ec4"/>
+        <path d="M16 30c3-2 6-2 9 0s6 2 9 0 6-2 9 0" stroke="#8eb4d4" stroke-width="1.5" stroke-linecap="round" opacity="0.85"/>
+        <path d="M16 38c3-2 6-2 9 0s6 2 9 0 6-2 9 0" stroke="#8eb4d4" stroke-width="1.5" stroke-linecap="round" opacity="0.65"/>
+        <!-- ladder -->
+        <path d="M44 18v14M50 18v14M44 22h6M44 27h6" stroke="#2A3F54" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>`,
+  },
+  18: {
+    caption: 'Light bulb',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- glow -->
+        <ellipse cx="32" cy="26" rx="16" ry="18" fill="#FACAA1" opacity="0.25"/>
+        <!-- glass bulb -->
+        <path d="M22 28c0-8 4.5-16 10-16s10 8 10 16c0 5-2 8-4 10h-12c-2-2-4-5-4-10z" fill="#FACAA1" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- filament -->
+        <path d="M28 30c2-3 6-3 8 0M29 34c1.5-2 4.5-2 6 0" stroke="#c45c4a" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M30 38v-6M34 38v-6" stroke="#C9C2BA" stroke-width="1.2" stroke-linecap="round"/>
+        <!-- screw base -->
+        <rect x="26" y="38" width="12" height="5" rx="1" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.2"/>
+        <rect x="27" y="43" width="10" height="3" rx="0.5" fill="#C9C2BA"/>
+        <rect x="28" y="46" width="8" height="3" rx="1" fill="#2A3F54"/>
+      </svg>`,
+  },
+  19: {
+    caption: 'Bananas',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- back banana -->
+        <path d="M38 14c2 0 4 2 4 5 0 12-4 22-10 28-3 3-7 5-10 5-2 0-3-2-2-4 5-3 10-12 12-24 1-4 3-8 6-10z" fill="#E8C84A"/>
+        <path d="M40 16c1 8-1 18-6 26" stroke="#d4a83a" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+        <!-- front banana -->
+        <path d="M28 16c2 0 4 2 4 5 0 13-5 24-12 30-3 3-7 5-10 4-2 0-3-2-2-4 6-3 11-13 14-26 1-4 3-7 6-9z" fill="#F0C24A"/>
+        <path d="M30 18c1 9-2 20-8 28" stroke="#d4a83a" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+        <!-- stems -->
+        <path d="M28 16c2-3 6-4 10-2" stroke="#6a8f4e" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="32" cy="13" r="2" fill="#6a8f4e"/>
+      </svg>`,
+  },
+  20: {
+    caption: 'Milk',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- glass -->
+        <path d="M20 18h24l-3 36H23L20 18z" fill="#c5d8e8" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- milk fill -->
+        <path d="M22 28h20l-2.2 24H24.2L22 28z" fill="#FFF8EE"/>
+        <!-- milk surface -->
+        <ellipse cx="32" cy="28" rx="10" ry="3" fill="#FFF"/>
+        <!-- glass highlight -->
+        <path d="M24 22v26" stroke="#FFF" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
+        <!-- splash drop -->
+        <circle cx="40" cy="14" r="2.5" fill="#FFF8EE"/>
       </svg>`,
   },
   26: {
@@ -403,6 +534,17 @@ function initElementYear() {
 
     document.getElementById('sd-el-headline').textContent = headline;
     document.getElementById('sd-el-category').textContent = el.cat;
+
+    const aside = document.getElementById('sd-el-aside');
+    if (aside) {
+      if (age === 15) {
+        aside.hidden = false;
+        aside.textContent = 'Slugger really liked this age 😎';
+      } else {
+        aside.hidden = true;
+        aside.textContent = '';
+      }
+    }
 
     const learn = document.getElementById('sd-el-learn');
     // Simple English Wikipedia — easier read for kids, covers all 118 elements
