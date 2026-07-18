@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ],
     },
     ball: {
-      emoji: '🎾',
+      emoji: '⚾',
       reactions: [
         'Squeak! Slugger pounces. 🐕',
         'Fetch mode: activated. 🤖',
