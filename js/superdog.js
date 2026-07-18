@@ -104,8 +104,8 @@ const ELEMENTS = [
   { z: 88, symbol: 'Ra', name: 'Radium', mass: '226', cat: 'Alkaline Earth Metal' },
   { z: 89, symbol: 'Ac', name: 'Actinium', mass: '227', cat: 'Actinide' },
   { z: 90, symbol: 'Th', name: 'Thorium', mass: '232.04', cat: 'Actinide' },
-  { z: 91, symbol: 'Pa', name: 'Protactinium', mass: '231.036', cat: 'Actinide' },
-  { z: 92, symbol: 'U', name: 'Uranium', mass: '238.029', cat: 'Actinide' },
+  { z: 91, symbol: 'Pa', name: 'Protactinium', mass: '231.04', cat: 'Actinide' },
+  { z: 92, symbol: 'U', name: 'Uranium', mass: '238.03', cat: 'Actinide' },
   { z: 93, symbol: 'Np', name: 'Neptunium', mass: '237', cat: 'Actinide' },
   { z: 94, symbol: 'Pu', name: 'Plutonium', mass: '244', cat: 'Actinide' },
   { z: 95, symbol: 'Am', name: 'Americium', mass: '243', cat: 'Actinide' },
@@ -122,21 +122,21 @@ const ELEMENTS = [
   { z: 106, symbol: 'Sg', name: 'Seaborgium', mass: '269', cat: 'Transition Metal' },
   { z: 107, symbol: 'Bh', name: 'Bohrium', mass: '270', cat: 'Transition Metal' },
   { z: 108, symbol: 'Hs', name: 'Hassium', mass: '269', cat: 'Transition Metal' },
-  { z: 109, symbol: 'Mt', name: 'Meitnerium', mass: '278', cat: 'Unknown' },
-  { z: 110, symbol: 'Ds', name: 'Darmstadtium', mass: '281', cat: 'Unknown' },
-  { z: 111, symbol: 'Rg', name: 'Roentgenium', mass: '282', cat: 'Unknown' },
-  { z: 112, symbol: 'Cn', name: 'Copernicium', mass: '285', cat: 'Transition Metal' },
-  { z: 113, symbol: 'Nh', name: 'Nihonium', mass: '286', cat: 'Unknown' },
-  { z: 114, symbol: 'Fl', name: 'Flerovium', mass: '289', cat: 'Unknown' },
-  { z: 115, symbol: 'Mc', name: 'Moscovium', mass: '290', cat: 'Unknown' },
-  { z: 116, symbol: 'Lv', name: 'Livermorium', mass: '293', cat: 'Unknown' },
-  { z: 117, symbol: 'Ts', name: 'Tennessine', mass: '294', cat: 'Unknown' },
-  { z: 118, symbol: 'Og', name: 'Oganesson', mass: '294', cat: 'Unknown' },
+  { z: 109, symbol: 'Mt', name: 'Meitnerium', mass: '278', cat: 'Superheavy Element' },
+  { z: 110, symbol: 'Ds', name: 'Darmstadtium', mass: '281', cat: 'Superheavy Element' },
+  { z: 111, symbol: 'Rg', name: 'Roentgenium', mass: '282', cat: 'Superheavy Element' },
+  { z: 112, symbol: 'Cn', name: 'Copernicium', mass: '285', cat: 'Superheavy Element' },
+  { z: 113, symbol: 'Nh', name: 'Nihonium', mass: '286', cat: 'Superheavy Element' },
+  { z: 114, symbol: 'Fl', name: 'Flerovium', mass: '289', cat: 'Superheavy Element' },
+  { z: 115, symbol: 'Mc', name: 'Moscovium', mass: '290', cat: 'Superheavy Element' },
+  { z: 116, symbol: 'Lv', name: 'Livermorium', mass: '293', cat: 'Superheavy Element' },
+  { z: 117, symbol: 'Ts', name: 'Tennessine', mass: '294', cat: 'Superheavy Element' },
+  { z: 118, symbol: 'Og', name: 'Oganesson', mass: '294', cat: 'Superheavy Element' },
 ];
 
 /*
   “What this element feels like” icons — hand-drawn SVG in the right-hand tile.
-  Batch by tens and spot-check. Missing Z → atom fallback.
+  Covered through Z=98. Z≥99 hides the tile (no scenes). Missing Z under 99 → atom fallback.
 */
 const ELEMENT_VIZ = {
   // ----- 1–10 -----
@@ -1394,7 +1394,7 @@ const ELEMENT_VIZ = {
       </svg>`,
   },
   67: {
-    caption: 'Laser surgery',
+    caption: 'LASIK eye surgery',
     svg: `
       <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
         <!-- eye white -->
@@ -1448,7 +1448,7 @@ const ELEMENT_VIZ = {
       </svg>`,
   },
   69: {
-    caption: 'Laser surgery',
+    caption: 'LASIK eye surgery',
     svg: `
       <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
         <!-- chart card -->
@@ -1978,6 +1978,178 @@ const ELEMENT_VIZ = {
         <circle cx="40" cy="48" r="3" fill="#8A929A" stroke="#C9C2BA" stroke-width="1"/>
       </svg>`,
   },
+  91: {
+    caption: 'Radioactive waste',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- ground shadow -->
+        <ellipse cx="32" cy="56" rx="18" ry="4" fill="#1a3040" opacity="0.35"/>
+        <!-- drum body -->
+        <path d="M14 18h36v34c0 2-2 4-4 4H18c-2 0-4-2-4-4V18z" fill="#F0C24A" stroke="#c9a03a" stroke-width="1.5"/>
+        <!-- top rim -->
+        <ellipse cx="32" cy="18" rx="18" ry="6" fill="#FACAA1" stroke="#c9a03a" stroke-width="1.5"/>
+        <!-- lid -->
+        <ellipse cx="32" cy="16" rx="14" ry="4.5" fill="#F0C24A" stroke="#c9a03a" stroke-width="1.2"/>
+        <!-- reinforcing rings -->
+        <path d="M14 28h36M14 40h36" stroke="#c9a03a" stroke-width="2.5" opacity="0.85"/>
+        <!-- trefoil hazard mark -->
+        <circle cx="32" cy="36" r="9" fill="#1a1a1a"/>
+        <circle cx="32" cy="36" r="2.2" fill="#F0C24A"/>
+        <path d="M32 36l0-6.5M32 36l5.6 3.25M32 36l-5.6 3.25" stroke="#F0C24A" stroke-width="3.2" stroke-linecap="round"/>
+        <!-- faint glow -->
+        <ellipse cx="32" cy="36" rx="12" ry="10" fill="#9CBB80" opacity="0.2"/>
+      </svg>`,
+  },
+  92: {
+    caption: 'Nuclear power plant',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- ground -->
+        <path d="M4 52h56" stroke="#8A929A" stroke-width="2" stroke-linecap="round"/>
+        <!-- left cooling tower -->
+        <path d="M8 52c2-14 4-28 10-34 6 6 8 20 10 34H8z" fill="#A8B0B8" stroke="#C9C2BA" stroke-width="1.3"/>
+        <ellipse cx="18" cy="18" rx="6" ry="2.5" fill="#8A929A" stroke="#C9C2BA" stroke-width="1"/>
+        <!-- right cooling tower -->
+        <path d="M28 52c2-14 4-28 10-34 6 6 8 20 10 34H28z" fill="#8A929A" stroke="#C9C2BA" stroke-width="1.3"/>
+        <ellipse cx="38" cy="18" rx="6" ry="2.5" fill="#A8B0B8" stroke="#C9C2BA" stroke-width="1"/>
+        <!-- steam plumes -->
+        <path d="M14 16c-2-6 2-10 4-8 2-4 6-2 5 2 3-2 6 2 3 6" stroke="#C9C2BA" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.75"/>
+        <path d="M34 16c-2-7 3-11 5-8 2-5 7-2 5 3 3-3 7 2 3 7" stroke="#C9C2BA" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.8"/>
+        <!-- reactor building -->
+        <rect x="48" y="34" width="12" height="18" rx="1" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.2"/>
+        <rect x="50" y="38" width="3" height="4" fill="#5a9ec4" opacity="0.7"/>
+        <rect x="55" y="38" width="3" height="4" fill="#5a9ec4" opacity="0.5"/>
+        <!-- containment dome -->
+        <path d="M48 34h12v-2c0-5-3-8-6-8s-6 3-6 8v2z" fill="#A8B0B8" stroke="#C9C2BA" stroke-width="1.2"/>
+      </svg>`,
+  },
+  93: {
+    caption: 'Spacecraft battery',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- RTG cylinder body -->
+        <rect x="20" y="16" width="24" height="36" rx="4" fill="#8A929A" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- cooling fins -->
+        <path d="M12 22h8M12 28h8M12 34h8M12 40h8M12 46h8" stroke="#A8B0B8" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M44 22h8M44 28h8M44 34h8M44 40h8M44 46h8" stroke="#A8B0B8" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- hot core glow (Pu-238 from Np) -->
+        <rect x="26" y="24" width="12" height="20" rx="2" fill="#c45c4a" opacity="0.85"/>
+        <rect x="28" y="28" width="8" height="12" rx="1.5" fill="#F0C24A" opacity="0.9"/>
+        <!-- top cap -->
+        <ellipse cx="32" cy="16" rx="12" ry="4" fill="#A8B0B8" stroke="#C9C2BA" stroke-width="1.2"/>
+        <!-- base -->
+        <ellipse cx="32" cy="52" rx="12" ry="4" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.2"/>
+        <!-- heat shimmer -->
+        <path d="M18 12c2-3 4-3 6 0M28 8c2-3 4-3 6 0M38 12c2-3 4-3 6 0" stroke="#FACAA1" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+      </svg>`,
+  },
+  94: {
+    caption: 'Nuclear weapons',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- missile body -->
+        <path d="M28 8c2-4 6-4 8 0l4 10v28l-8 10-8-10V18l4-10z" fill="#8A929A" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- nose cone -->
+        <path d="M28 8c2-4 6-4 8 0l-4 8-4-8z" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.2"/>
+        <!-- warhead band -->
+        <rect x="26" y="18" width="12" height="6" fill="#c45c4a" stroke="#a04438" stroke-width="1"/>
+        <!-- body rings -->
+        <path d="M26 30h12M26 38h12" stroke="#A8B0B8" stroke-width="1.5" opacity="0.8"/>
+        <!-- fins -->
+        <path d="M26 46l-8 10h8V46z" fill="#A8B0B8" stroke="#C9C2BA" stroke-width="1.2"/>
+        <path d="M38 46l8 10h-8V46z" fill="#A8B0B8" stroke="#C9C2BA" stroke-width="1.2"/>
+        <!-- trefoil mark -->
+        <circle cx="32" cy="34" r="4.5" fill="#F0C24A"/>
+        <circle cx="32" cy="34" r="1.2" fill="#1a1a1a"/>
+        <path d="M32 34l0-2.8M32 34l2.4 1.4M32 34l-2.4 1.4" stroke="#1a1a1a" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>`,
+  },
+  95: {
+    caption: 'Smoke detectors',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- ceiling mount plate -->
+        <ellipse cx="32" cy="14" rx="14" ry="4" fill="#8A929A" stroke="#A8B0B8" stroke-width="1.2"/>
+        <!-- detector body -->
+        <ellipse cx="32" cy="28" rx="22" ry="16" fill="#C9C2BA" stroke="#A8B0B8" stroke-width="1.5"/>
+        <ellipse cx="32" cy="26" rx="18" ry="12" fill="#e8eef4" stroke="#A8B0B8" stroke-width="1.2"/>
+        <!-- vent slots -->
+        <path d="M18 24h6M26 22h12M40 24h6M20 30h8M36 30h8" stroke="#8A929A" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+        <!-- Am-241 chamber hint -->
+        <circle cx="32" cy="28" r="5" fill="#F0C24A" opacity="0.35"/>
+        <circle cx="32" cy="28" r="2.5" fill="#F0C24A"/>
+        <!-- test button -->
+        <circle cx="44" cy="34" r="3" fill="#c45c4a" stroke="#a04438" stroke-width="1"/>
+        <!-- smoke wisps -->
+        <path d="M10 48c2-4 4-4 6 0 2-4 4-4 6 0" stroke="#8A929A" stroke-width="1.5" stroke-linecap="round" opacity="0.65"/>
+        <path d="M42 50c2-5 5-5 7 0 2-4 4-4 6 0" stroke="#8A929A" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+      </svg>`,
+  },
+  96: {
+    caption: 'Mineral analyzers',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- rock sample -->
+        <path d="M8 44l6-10 10-4 12 6 4 12-8 8H14l-6-12z" fill="#8A929A" stroke="#A8B0B8" stroke-width="1.3"/>
+        <path d="M16 42l4-4 6 2M22 48l8 2" stroke="#C9C2BA" stroke-width="1.2" opacity="0.6"/>
+        <!-- analyzer body -->
+        <rect x="34" y="12" width="22" height="28" rx="3" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- screen -->
+        <rect x="38" y="16" width="14" height="10" rx="1.5" fill="#5a9ec4" opacity="0.85"/>
+        <path d="M40 20h10M40 23h6" stroke="#C9C2BA" stroke-width="1" opacity="0.7"/>
+        <!-- Cm source nose / snout -->
+        <path d="M34 32h-8l-4 6h12V32z" fill="#8A929A" stroke="#C9C2BA" stroke-width="1.2"/>
+        <circle cx="24" cy="36" r="3" fill="#F0C24A" opacity="0.8"/>
+        <!-- handle -->
+        <rect x="40" y="40" width="10" height="14" rx="2" fill="#A8B0B8" stroke="#C9C2BA" stroke-width="1.2"/>
+        <!-- beam to rock -->
+        <path d="M22 38l-4 4" stroke="#F0C24A" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+        <circle cx="16" cy="44" r="2" fill="#FACAA1" opacity="0.7"/>
+      </svg>`,
+  },
+  97: {
+    caption: 'Radioactive waste',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- ground shadow -->
+        <ellipse cx="32" cy="56" rx="18" ry="4" fill="#1a3040" opacity="0.35"/>
+        <!-- drum body -->
+        <path d="M14 18h36v34c0 2-2 4-4 4H18c-2 0-4-2-4-4V18z" fill="#F0C24A" stroke="#c9a03a" stroke-width="1.5"/>
+        <!-- top rim -->
+        <ellipse cx="32" cy="18" rx="18" ry="6" fill="#FACAA1" stroke="#c9a03a" stroke-width="1.5"/>
+        <!-- lid -->
+        <ellipse cx="32" cy="16" rx="14" ry="4.5" fill="#F0C24A" stroke="#c9a03a" stroke-width="1.2"/>
+        <!-- reinforcing rings -->
+        <path d="M14 28h36M14 40h36" stroke="#c9a03a" stroke-width="2.5" opacity="0.85"/>
+        <!-- trefoil hazard mark -->
+        <circle cx="32" cy="36" r="9" fill="#1a1a1a"/>
+        <circle cx="32" cy="36" r="2.2" fill="#F0C24A"/>
+        <path d="M32 36l0-6.5M32 36l5.6 3.25M32 36l-5.6 3.25" stroke="#F0C24A" stroke-width="3.2" stroke-linecap="round"/>
+        <!-- faint glow -->
+        <ellipse cx="32" cy="36" rx="12" ry="10" fill="#9CBB80" opacity="0.2"/>
+      </svg>`,
+  },
+  98: {
+    caption: 'Gold prospecting',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- pan bowl -->
+        <ellipse cx="32" cy="40" rx="22" ry="12" fill="#8A929A" stroke="#C9C2BA" stroke-width="1.5"/>
+        <ellipse cx="32" cy="36" rx="18" ry="9" fill="#5a6a48" stroke="#9CBB80" stroke-width="1.2"/>
+        <!-- water / slurry -->
+        <ellipse cx="32" cy="34" rx="14" ry="6" fill="#5a9ec4" opacity="0.45"/>
+        <!-- gold nuggets -->
+        <ellipse cx="26" cy="38" rx="3.5" ry="2.5" fill="#F0C24A" stroke="#c9a03a" stroke-width="1"/>
+        <ellipse cx="34" cy="40" rx="2.5" ry="2" fill="#F0C24A" stroke="#c9a03a" stroke-width="1"/>
+        <ellipse cx="40" cy="37" rx="2" ry="1.5" fill="#FACAA1" stroke="#c9a03a" stroke-width="0.8"/>
+        <!-- Cf neutron probe / scanner -->
+        <rect x="44" y="8" width="12" height="22" rx="2" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.3"/>
+        <circle cx="50" cy="16" r="3.5" fill="#F0C24A" opacity="0.85"/>
+        <path d="M50 30v6" stroke="#A8B0B8" stroke-width="2" stroke-linecap="round"/>
+        <!-- handle of pan -->
+        <path d="M10 36c-4 0-6 2-6 5s2 5 6 5" stroke="#C9C2BA" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      </svg>`,
+  },
 };
 
 function atomFallbackSvg() {
@@ -2011,9 +2183,23 @@ function radioactiveMarkSvg() {
 }
 
 function renderElementViz(el) {
+  const tile = document.querySelector('.sd-element-viz-tile');
   const art = document.getElementById('sd-el-viz-art');
   const caption = document.getElementById('sd-el-viz-caption');
+  const card = document.getElementById('sd-element-card');
   if (!art || !caption) return;
+
+  // No custom scenes for 99–118 — hide the right-hand tile entirely.
+  if (el.z >= 99) {
+    if (tile) tile.hidden = true;
+    if (card) card.classList.add('sd-no-viz');
+    art.innerHTML = '';
+    caption.textContent = '';
+    return;
+  }
+
+  if (tile) tile.hidden = false;
+  if (card) card.classList.remove('sd-no-viz');
 
   const viz = ELEMENT_VIZ[el.z];
   art.innerHTML = (viz ? viz.svg : atomFallbackSvg()).trim();
@@ -2090,6 +2276,9 @@ function initElementYear() {
       } else if (age === 71) {
         aside.hidden = false;
         aside.textContent = 'First picture about the name, not the material — Lutetium comes from Lutetia, the old name for Paris.';
+      } else if (age >= 99) {
+        aside.hidden = false;
+        aside.textContent = 'Not found in nature — only made and used in atomic research.';
       } else {
         aside.hidden = true;
         aside.textContent = '';

@@ -257,6 +257,15 @@
   padding-bottom: 0.9rem;
 }
 
+/* display: grid on .sd-element-tile would otherwise override [hidden]. */
+.sd-element-viz-tile[hidden] {
+  display: none;
+}
+
+.sd-element-card.sd-no-viz {
+  grid-template-columns: auto 1fr;
+}
+
 .sd-el-viz-art {
   display: grid;
   place-items: center;
@@ -288,6 +297,10 @@
     grid-template-columns: auto auto;
     justify-items: center;
     text-align: center;
+  }
+
+  .sd-element-card.sd-no-viz {
+    grid-template-columns: auto;
   }
 
   .sd-element-facts {
