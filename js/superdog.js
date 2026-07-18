@@ -85,15 +85,15 @@ const ELEMENTS = [
   { z: 69, symbol: 'Tm', name: 'Thulium', mass: '168.93', cat: 'Lanthanide' },
   { z: 70, symbol: 'Yb', name: 'Ytterbium', mass: '173.05', cat: 'Lanthanide' },
   { z: 71, symbol: 'Lu', name: 'Lutetium', mass: '174.967', cat: 'Lanthanide' },
-  { z: 72, symbol: 'Hf', name: 'Hafnium', mass: '178.490', cat: 'Transition Metal' },
+  { z: 72, symbol: 'Hf', name: 'Hafnium', mass: '178.49', cat: 'Transition Metal' },
   { z: 73, symbol: 'Ta', name: 'Tantalum', mass: '180.948', cat: 'Transition Metal' },
-  { z: 74, symbol: 'W', name: 'Tungsten', mass: '183.840', cat: 'Transition Metal' },
+  { z: 74, symbol: 'W', name: 'Tungsten', mass: '183.84', cat: 'Transition Metal' },
   { z: 75, symbol: 'Re', name: 'Rhenium', mass: '186.207', cat: 'Transition Metal' },
-  { z: 76, symbol: 'Os', name: 'Osmium', mass: '190.230', cat: 'Transition Metal' },
-  { z: 77, symbol: 'Ir', name: 'Iridium', mass: '192.217', cat: 'Transition Metal' },
+  { z: 76, symbol: 'Os', name: 'Osmium', mass: '190.23', cat: 'Transition Metal' },
+  { z: 77, symbol: 'Ir', name: 'Iridium', mass: '192.22', cat: 'Transition Metal' },
   { z: 78, symbol: 'Pt', name: 'Platinum', mass: '195.084', cat: 'Transition Metal' },
   { z: 79, symbol: 'Au', name: 'Gold', mass: '196.967', cat: 'Transition Metal' },
-  { z: 80, symbol: 'Hg', name: 'Mercury', mass: '200.590', cat: 'Transition Metal' },
+  { z: 80, symbol: 'Hg', name: 'Mercury', mass: '200.59', cat: 'Transition Metal' },
   { z: 81, symbol: 'Tl', name: 'Thallium', mass: '204.383', cat: 'Post-transition Metal' },
   { z: 82, symbol: 'Pb', name: 'Lead', mass: '207.200', cat: 'Post-transition Metal' },
   { z: 83, symbol: 'Bi', name: 'Bismuth', mass: '208.980', cat: 'Post-transition Metal' },
@@ -358,20 +358,24 @@ const ELEMENT_VIZ = {
       </svg>`,
   },
   18: {
-    caption: 'Light bulb',
+    caption: 'Welding torch',
     svg: `
       <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
-        <!-- glow -->
-        <ellipse cx="32" cy="26" rx="16" ry="18" fill="#FACAA1" opacity="0.25"/>
-        <!-- glass bulb -->
-        <path d="M22 28c0-8 4.5-16 10-16s10 8 10 16c0 5-2 8-4 10h-12c-2-2-4-5-4-10z" fill="#FACAA1" stroke="#C9C2BA" stroke-width="1.5"/>
-        <!-- filament -->
-        <path d="M28 30c2-3 6-3 8 0M29 34c1.5-2 4.5-2 6 0" stroke="#c45c4a" stroke-width="1.4" stroke-linecap="round"/>
-        <path d="M30 38v-6M34 38v-6" stroke="#C9C2BA" stroke-width="1.2" stroke-linecap="round"/>
-        <!-- screw base -->
-        <rect x="26" y="38" width="12" height="5" rx="1" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.2"/>
-        <rect x="27" y="43" width="10" height="3" rx="0.5" fill="#C9C2BA"/>
-        <rect x="28" y="46" width="8" height="3" rx="1" fill="#2A3F54"/>
+        <!-- handle -->
+        <rect x="10" y="40" width="14" height="16" rx="3" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.5" transform="rotate(-35 17 48)"/>
+        <!-- shaft -->
+        <path d="M22 42L42 18" stroke="#A8B0B8" stroke-width="6" stroke-linecap="round"/>
+        <path d="M22 42L42 18" stroke="#C9C2BA" stroke-width="3" stroke-linecap="round"/>
+        <!-- nozzle tip -->
+        <circle cx="42" cy="18" r="4" fill="#8A929A" stroke="#C9C2BA" stroke-width="1.2"/>
+        <!-- bright spark / arc -->
+        <circle cx="50" cy="12" r="7" fill="#FACAA1" opacity="0.35"/>
+        <circle cx="50" cy="12" r="3.5" fill="#F0C24A"/>
+        <circle cx="50" cy="12" r="1.8" fill="#fff6d5"/>
+        <g stroke="#F0C24A" stroke-width="2" stroke-linecap="round">
+          <path d="M50 2v5M50 17v5M40 12h5M55 12h5"/>
+          <path d="M43 5l3.5 3.5M53.5 15.5L57 19M57 5l-3.5 3.5M43 19l3.5-3.5"/>
+        </g>
       </svg>`,
   },
   19: {
@@ -1489,13 +1493,236 @@ const ELEMENT_VIZ = {
         <circle cx="10" cy="28" r="1.5" fill="#9CBB80"/>
       </svg>`,
   },
-  79: {
-    caption: 'Gold',
+  71: {
+    caption: 'Eiffel Tower',
     svg: `
       <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
-        <path d="M16 38l8-16h16l8 16H16z" fill="#e0b44e" stroke="#FACAA1" stroke-width="1.5"/>
-        <path d="M16 38h32v8H16z" fill="#c9962e" stroke="#FACAA1" stroke-width="1.5"/>
-        <path d="M24 22l4 16M40 22l-4 16" stroke="#8a6a1e" stroke-width="1" opacity="0.45"/>
+        <!-- ground -->
+        <path d="M6 58h52" stroke="#A8B0B8" stroke-width="2" stroke-linecap="round"/>
+        <!-- main silhouette -->
+        <path d="M12 58l12-26h16l12 26H44L38 40H26L20 58H12z" fill="#8A929A"/>
+        <!-- arch -->
+        <path d="M22 58c3-7 6-10 10-10s7 3 10 10H22z" fill="#1a2430" opacity="0.4"/>
+        <!-- first deck -->
+        <rect x="20" y="30" width="24" height="4" rx="0.5" fill="#C9C2BA"/>
+        <!-- upper body -->
+        <path d="M26 30l4-13h4l4 13H26z" fill="#8A929A"/>
+        <!-- second deck -->
+        <rect x="26" y="15" width="12" height="3" rx="0.5" fill="#C9C2BA"/>
+        <!-- spire -->
+        <path d="M29 15l2.5-11h1L35 15H29z" fill="#A8B0B8"/>
+        <path d="M32 4V1" stroke="#FACAA1" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- lattice -->
+        <path d="M18 50h28M24 42h16" stroke="#C9C2BA" stroke-width="1.2" opacity="0.7"/>
+        <path d="M22 50L42 42M42 50L22 42" stroke="#A8B0B8" stroke-width="1" opacity="0.55"/>
+        <path d="M28 24h8" stroke="#C9C2BA" stroke-width="1" opacity="0.65"/>
+      </svg>`,
+  },
+  72: {
+    caption: 'Nuclear submarine',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- water -->
+        <path d="M4 44c6 4 12 4 18 0s12-4 18 0 12 4 18 0" stroke="#5a9ec4" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+        <path d="M4 50c6 3 12 3 18 0s12-3 18 0 12 3 18 0" stroke="#5a9ec4" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+        <!-- hull -->
+        <ellipse cx="30" cy="36" rx="24" ry="10" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- bow highlight -->
+        <path d="M10 36c2-4 8-7 16-7" stroke="#5a9ec4" stroke-width="1.2" opacity="0.45" stroke-linecap="round"/>
+        <!-- sail / conning tower -->
+        <path d="M26 26h12l2 10H24l2-10z" fill="#8A929A" stroke="#C9C2BA" stroke-width="1.2"/>
+        <!-- sail windows -->
+        <circle cx="30" cy="30" r="1.3" fill="#5a9ec4"/>
+        <circle cx="35" cy="30" r="1.3" fill="#5a9ec4"/>
+        <!-- periscope -->
+        <path d="M36 26V14" stroke="#A8B0B8" stroke-width="2" stroke-linecap="round"/>
+        <path d="M36 14h5" stroke="#A8B0B8" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="42" cy="14" r="2" fill="#9CBB80"/>
+        <!-- stern / prop hub -->
+        <ellipse cx="54" cy="36" rx="3" ry="5" fill="#8A929A"/>
+        <!-- propeller -->
+        <path d="M56 30c4 2 4 4 0 6M56 42c4-2 4-4 0-6" stroke="#C9C2BA" stroke-width="2" stroke-linecap="round"/>
+        <!-- dive planes -->
+        <path d="M22 30l-4-6h6l2 6H22z" fill="#A8B0B8"/>
+        <path d="M22 42l-4 6h6l2-6H22z" fill="#A8B0B8"/>
+      </svg>`,
+  },
+  73: {
+    caption: 'Mobile phone',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- body -->
+        <rect x="18" y="6" width="28" height="52" rx="4" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- screen -->
+        <rect x="21" y="12" width="22" height="36" rx="2" fill="#1a3040"/>
+        <!-- status bar glow -->
+        <rect x="21" y="12" width="22" height="4" fill="#5a9ec4" opacity="0.35"/>
+        <!-- app icons -->
+        <rect x="24" y="20" width="6" height="6" rx="1.2" fill="#9CBB80"/>
+        <rect x="34" y="20" width="6" height="6" rx="1.2" fill="#FACAA1"/>
+        <rect x="24" y="30" width="6" height="6" rx="1.2" fill="#c45c4a"/>
+        <rect x="34" y="30" width="6" height="6" rx="1.2" fill="#5a9ec4"/>
+        <!-- home indicator -->
+        <path d="M28 52h8" stroke="#A8B0B8" stroke-width="2" stroke-linecap="round"/>
+        <!-- speaker / notch -->
+        <path d="M28 9h8" stroke="#8A929A" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>`,
+  },
+  74: {
+    caption: 'Light bulb filament',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- soft glow -->
+        <ellipse cx="32" cy="30" rx="18" ry="16" fill="#FACAA1" opacity="0.2"/>
+        <!-- glass envelope hint -->
+        <path d="M18 34c0-12 6-22 14-22s14 10 14 22c0 6-3 10-6 12H24c-3-2-6-6-6-12z" fill="none" stroke="#C9C2BA" stroke-width="1.5" opacity="0.55"/>
+        <!-- support posts -->
+        <path d="M26 48V28M38 48V28" stroke="#A8B0B8" stroke-width="2" stroke-linecap="round"/>
+        <!-- coiled tungsten filament -->
+        <path d="M26 28c2-4 4-4 6 0s4 4 6 0 4-4 6 0" stroke="#F0C24A" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+        <path d="M26 32c2-4 4-4 6 0s4 4 6 0 4-4 6 0" stroke="#e0b44e" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <path d="M26 36c2-4 4-4 6 0s4 4 6 0 4-4 6 0" stroke="#F0C24A" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+        <!-- stem / base mount -->
+        <rect x="24" y="46" width="16" height="6" rx="1.5" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.2"/>
+        <rect x="27" y="52" width="10" height="4" rx="1" fill="#8A929A"/>
+      </svg>`,
+  },
+  75: {
+    caption: 'Rocket engine',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- fairing / nose -->
+        <path d="M32 4l8 12H24L32 4z" fill="#e8eef4" stroke="#C9C2BA" stroke-width="1.2"/>
+        <!-- white booster body -->
+        <rect x="24" y="16" width="16" height="28" fill="#e8eef4" stroke="#C9C2BA" stroke-width="1.2"/>
+        <!-- SpaceX-style stripe / markings -->
+        <rect x="24" y="30" width="16" height="3" fill="#2A3F54"/>
+        <path d="M28 20h8M28 24h8" stroke="#A8B0B8" stroke-width="1" opacity="0.7"/>
+        <!-- grid fins -->
+        <rect x="16" y="20" width="7" height="8" rx="0.5" fill="#8A929A" stroke="#C9C2BA" stroke-width="1"/>
+        <path d="M17.5 22h4M17.5 24h4M17.5 26h4M19 21.5v5M21 21.5v5" stroke="#2A3F54" stroke-width="0.8"/>
+        <rect x="41" y="20" width="7" height="8" rx="0.5" fill="#8A929A" stroke="#C9C2BA" stroke-width="1"/>
+        <path d="M42.5 22h4M42.5 24h4M42.5 26h4M44 21.5v5M46 21.5v5" stroke="#2A3F54" stroke-width="0.8"/>
+        <!-- engine section -->
+        <path d="M24 44h16l-2 4H26l-2-4z" fill="#2A3F54"/>
+        <!-- engine bells -->
+        <path d="M26 48l-2 4h6l-2-4H26z" fill="#8A929A"/>
+        <path d="M34 48l-2 4h6l-2-4H34z" fill="#8A929A"/>
+        <path d="M30 48l-1.5 3h5l-1.5-3H30z" fill="#A8B0B8"/>
+        <!-- exhaust plume -->
+        <path d="M28 52c-2 4-1 8 4 10 5-2 6-6 4-10H28z" fill="#c45c4a"/>
+        <path d="M30 52c-1 3 0 6 2 8 2-2 3-5 2-8h-4z" fill="#F0C24A"/>
+        <path d="M31 52c0 2 0.5 4 1 5 0.5-1 1-3 1-5h-2z" fill="#FACAA1"/>
+      </svg>`,
+  },
+  76: {
+    caption: 'Pen points',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- paper -->
+        <rect x="8" y="14" width="36" height="44" rx="2" fill="#e8eef4" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- ruled lines -->
+        <path d="M14 26h24M14 34h24M14 42h20" stroke="#A8B0B8" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+        <!-- ink writing -->
+        <path d="M14 50c4-2 8 2 12 0s8-2 12 1" stroke="#2A3F54" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+        <!-- pen body -->
+        <path d="M38 8l18 18" stroke="#c45c4a" stroke-width="5" stroke-linecap="round"/>
+        <path d="M38 8l18 18" stroke="#FACAA1" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- metal nib / pen point -->
+        <path d="M36 28l6-6 4 4-8 10-4-4z" fill="#8A929A" stroke="#C9C2BA" stroke-width="1.2"/>
+        <path d="M38 30l6 6" stroke="#2A3F54" stroke-width="1" stroke-linecap="round"/>
+        <!-- tip touching paper -->
+        <circle cx="36" cy="36" r="1.5" fill="#2A3F54"/>
+      </svg>`,
+  },
+  77: {
+    caption: 'Spark plugs',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- ceramic insulator -->
+        <rect x="26" y="6" width="12" height="22" rx="2" fill="#e8eef4" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- ribs -->
+        <path d="M26 12h12M26 17h12M26 22h12" stroke="#A8B0B8" stroke-width="1.5"/>
+        <!-- hex nut -->
+        <path d="M22 28h20l3 6H19l3-6z" fill="#8A929A" stroke="#C9C2BA" stroke-width="1.2"/>
+        <rect x="22" y="34" width="20" height="6" fill="#A8B0B8" stroke="#C9C2BA" stroke-width="1.2"/>
+        <!-- threaded metal body -->
+        <rect x="26" y="40" width="12" height="12" fill="#2A3F54" stroke="#C9C2BA" stroke-width="1.2"/>
+        <path d="M26 43h12M26 46h12M26 49h12" stroke="#8A929A" stroke-width="1" opacity="0.8"/>
+        <!-- center electrode -->
+        <path d="M32 52v6" stroke="#C9C2BA" stroke-width="2" stroke-linecap="round"/>
+        <!-- ground electrode hook -->
+        <path d="M26 56h6" stroke="#A8B0B8" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- spark -->
+        <circle cx="32" cy="56" r="3" fill="#F0C24A" opacity="0.5"/>
+        <path d="M32 53l1.5 2h-1l1.5 3-2.5-2.5H33L32 53z" fill="#F0C24A"/>
+      </svg>`,
+  },
+  78: {
+    caption: 'Labware',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- Erlenmeyer flask -->
+        <path d="M26 8h12v10l10 28c1 3-1 6-4 6H20c-3 0-5-3-4-6l10-28V8z" fill="#C9C2BA" stroke="#A8B0B8" stroke-width="1.5" opacity="0.9"/>
+        <!-- glass highlight -->
+        <path d="M28 12v8l-8 24" stroke="#e8eef4" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+        <!-- platinum-colored rim -->
+        <rect x="24" y="6" width="16" height="4" rx="1" fill="#A8B0B8" stroke="#8A929A" stroke-width="1"/>
+        <!-- liquid -->
+        <path d="M18 42c1 4 3 6 6 6h16c3 0 5-2 6-6l-2-6H20l-2 6z" fill="#5a9ec4" opacity="0.55"/>
+        <!-- bubbles -->
+        <circle cx="28" cy="44" r="1.5" fill="#e8eef4" opacity="0.8"/>
+        <circle cx="34" cy="46" r="1" fill="#e8eef4" opacity="0.7"/>
+        <!-- small beaker beside -->
+        <path d="M46 28h12v22c0 2-1 3-3 3H49c-2 0-3-1-3-3V28z" fill="#C9C2BA" stroke="#A8B0B8" stroke-width="1.2" opacity="0.85"/>
+        <path d="M46 28h12" stroke="#8A929A" stroke-width="2" stroke-linecap="round"/>
+        <rect x="48" y="36" width="8" height="12" rx="1" fill="#9CBB80" opacity="0.5"/>
+      </svg>`,
+  },
+  79: {
+    caption: 'Jewelry',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- necklace chain -->
+        <path d="M16 8c4 10 10 16 16 16s12-6 16-16" stroke="#e0b44e" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M18 10c3.5 8 8.5 13 14 13s10.5-5 14-13" stroke="#F0C24A" stroke-width="1" fill="none" opacity="0.7"/>
+        <!-- ruby pendant -->
+        <path d="M32 22l5 7-5 7-5-7 5-7z" fill="#c45c4a" stroke="#a04438" stroke-width="1"/>
+        <path d="M32 24l3 5-3 2-3-2 3-5z" fill="#e07870" opacity="0.7"/>
+        <!-- gold ring with green gem -->
+        <circle cx="16" cy="50" r="8" fill="none" stroke="#e0b44e" stroke-width="3.5"/>
+        <circle cx="16" cy="50" r="8" fill="none" stroke="#F0C24A" stroke-width="1.5"/>
+        <!-- gold setting -->
+        <path d="M11 42h10l-2 4H13l-2-4z" fill="#e0b44e"/>
+        <!-- emerald gem -->
+        <path d="M16 34l5 6-5 4-5-4 5-6z" fill="#2f8f4e"/>
+        <path d="M16 36l3 4h-6l3-4z" fill="#5fcf7a"/>
+        <path d="M14 38l2-1 2 1-2 1.5-2-1.5z" fill="#b8f0c4" opacity="0.85"/>
+        <!-- open braided bracelet -->
+        <path d="M30 42c6 2 12 8 16 14" stroke="#e0b44e" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <path d="M32 40c7 3 13 9 16 14" stroke="#F0C24A" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <path d="M28 44c5 1 11 7 15 12" stroke="#c9962e" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.8"/>
+        <!-- braid cross-hatches -->
+        <path d="M34 44l3 2M38 47l3 2M42 50l3 2M46 53l2 2" stroke="#c9962e" stroke-width="1" stroke-linecap="round"/>
+        <path d="M36 43l-2 3M40 46l-2 3M44 49l-2 3M48 52l-2 3" stroke="#F0C24A" stroke-width="1" stroke-linecap="round" opacity="0.75"/>
+        <!-- silver end caps -->
+        <circle cx="29" cy="42" r="2.8" fill="#C9C2BA" stroke="#A8B0B8" stroke-width="1"/>
+        <circle cx="47" cy="57" r="2.8" fill="#C9C2BA" stroke="#A8B0B8" stroke-width="1"/>
+      </svg>`,
+  },
+  80: {
+    caption: 'Dental filling',
+    svg: `
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <!-- tooth -->
+        <path d="M20 14c0-4 4-8 12-8s12 4 12 8c2 4 4 10 4 16 0 8-2 18-4 24-1 3-3 4-5 4s-4-2-5-5c-1 3-3 5-5 5s-4-1-5-4c-2-6-4-16-4-24 0-6 2-12 4-16z" fill="#e8eef4" stroke="#C9C2BA" stroke-width="1.5"/>
+        <!-- tooth shading -->
+        <path d="M28 10c-4 2-6 8-6 16 0 8 1 16 3 22" stroke="#C9C2BA" stroke-width="1.2" opacity="0.45" stroke-linecap="round"/>
+        <!-- amalgam filling (mercury silver) -->
+        <path d="M26 20c2-2 6-3 10-2 3 1 5 3 6 6 0 2-1 4-3 5h-12c-2-1-3-3-3-5 0-2 1-3 2-4z" fill="#8A929A" stroke="#A8B0B8" stroke-width="1"/>
+        <path d="M28 22c2-1 5-1 8 0 1 1 2 2 2 3H28c0-1 0-2 0-3z" fill="#C9C2BA" opacity="0.7"/>
+        <!-- filling highlight -->
+        <path d="M30 23h4" stroke="#e8eef4" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
       </svg>`,
   },
 };
@@ -1607,6 +1834,9 @@ function initElementYear() {
       } else if (age === 43) {
         aside.hidden = false;
         aside.textContent = 'You now come with a warning label. First radioactive element on the table.';
+      } else if (age === 71) {
+        aside.hidden = false;
+        aside.textContent = 'First picture about the name, not the material — Lutetium comes from Lutetia, the old name for Paris.';
       } else {
         aside.hidden = true;
         aside.textContent = '';
