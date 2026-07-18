@@ -217,6 +217,14 @@
   width: auto;
 }
 
+.rpi-container .rpi-centered-img-portrait {
+  max-width: 280px;
+  max-height: 360px;
+  width: auto;
+  border-radius: 10px;
+  margin: 0.25rem auto 1.5rem;
+}
+
 /* ========== Media figures & dad-joke captions ========== */
 .rpi-media-figure {
   margin: 0;
