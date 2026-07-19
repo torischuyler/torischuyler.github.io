@@ -114,59 +114,61 @@
     }
   }
 
-  function clampTooltip(tooltip, frame, x, y) {
-    const rect = frame.getBoundingClientRect();
-    const pad = 8;
-    const tipWidth = tooltip.offsetWidth || 140;
-    const tipHeight = tooltip.offsetHeight || 32;
-    const minX = tipWidth / 2 + pad;
-    const maxX = Math.max(minX, rect.width - tipWidth / 2 - pad);
-    const minY = tipHeight + pad;
-    const maxY = Math.max(minY, rect.height - pad);
-
-    tooltip.style.left = `${Math.min(Math.max(x, minX), maxX)}px`;
-    tooltip.style.top = `${Math.min(Math.max(y, minY), maxY)}px`;
-  }
-
-  function positionTooltip(tooltip, frame, event) {
-    const rect = frame.getBoundingClientRect();
-    clampTooltip(tooltip, frame, event.clientX - rect.left, event.clientY - rect.top);
-  }
-
-  function positionTooltipOnElement(tooltip, frame, el) {
-    const frameRect = frame.getBoundingClientRect();
-    const elRect = el.getBoundingClientRect();
-    clampTooltip(
-      tooltip,
-      frame,
-      elRect.left + elRect.width / 2 - frameRect.left,
-      elRect.top - frameRect.top
+  function isTouchUi() {
+    return (
+      window.matchMedia("(hover: none)").matches ||
+      window.matchMedia("(pointer: coarse)").matches ||
+      window.matchMedia("(width <= 768px)").matches
     );
-  }
-
-  function prefersTouchUi() {
-    return window.matchMedia("(hover: none)").matches;
-  }
-
-  function setStatus(statusEl, message, hint) {
-    statusEl.replaceChildren();
-    const main = document.createElement("span");
-    main.className = "pies-map-status-main";
-    main.textContent = message;
-    statusEl.append(main);
-    if (hint) {
-      const hintEl = document.createElement("span");
-      hintEl.className = "pies-map-status-hint";
-      hintEl.textContent = hint;
-      statusEl.append(hintEl);
-    }
   }
 
   function clearStatus(statusEl) {
     statusEl.replaceChildren();
   }
 
-  function wireState(el, code, entry, tooltip, frame, statusEl, selection) {
+  function setStatusText(statusEl, message) {
+    statusEl.replaceChildren();
+    const main = document.createElement("span");
+    main.className = "pies-map-status-main";
+    main.textContent = message;
+    statusEl.append(main);
+  }
+
+  function placeStatePie(pieBtn, frame, stateEl) {
+    const frameRect = frame.getBoundingClientRect();
+    const stateRect = stateEl.getBoundingClientRect();
+    const touch = isTouchUi();
+    const minSize = touch ? 28 : 42;
+    const scale = touch ? 0.55 : 0.9;
+    const size = Math.max(minSize, Math.min(stateRect.width, stateRect.height) * scale);
+
+    pieBtn.style.left = `${stateRect.left + stateRect.width / 2 - frameRect.left}px`;
+    pieBtn.style.top = `${stateRect.top + stateRect.height / 2 - frameRect.top}px`;
+    pieBtn.style.fontSize = `${size}px`;
+  }
+
+  function hideStatePie(pieBtn) {
+    pieBtn.hidden = true;
+    pieBtn.classList.remove("is-visible");
+    pieBtn.removeAttribute("aria-label");
+    pieBtn.setAttribute("aria-hidden", "true");
+    pieBtn.onclick = null;
+  }
+
+  function showStatePie(pieBtn, frame, stateEl, href, label) {
+    placeStatePie(pieBtn, frame, stateEl);
+    pieBtn.hidden = false;
+    pieBtn.classList.add("is-visible");
+    pieBtn.setAttribute("aria-hidden", "false");
+    pieBtn.setAttribute("aria-label", `Open ${label} pie recipe`);
+    pieBtn.onclick = (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      window.location.href = href;
+    };
+  }
+
+  function wireState(el, code, entry, frame, statusEl, pieBtn, selection) {
     const { produce, designation, year } = entry;
     const name = STATE_NAMES[code] || code.toUpperCase();
     const kind = designationPhrase(designation);
@@ -178,77 +180,53 @@
     el.setAttribute("role", "link");
     el.setAttribute(
       "aria-label",
-      prefersTouchUi()
-        ? `${detail}. Tap once for details, tap again for the ${produce.label} pie recipe.`
-        : `${detail}. Open ${produce.label} pie recipe.`
+      `${detail}. Show details, then activate the pie for the ${produce.label} recipe.`
     );
-
-    const show = (event, { withHint = false } = {}) => {
-      tooltip.textContent = `${name} · ${produce.label}${yearSuffix}`;
-      tooltip.classList.add("is-visible");
-      if (event) {
-        positionTooltip(tooltip, frame, event);
-      } else {
-        positionTooltipOnElement(tooltip, frame, el);
-      }
-      setStatus(statusEl, detail, withHint ? "Tap again for the recipe" : "");
-    };
-
-    const hide = () => {
-      tooltip.classList.remove("is-visible");
-      if (selection.el !== el) clearStatus(statusEl);
-    };
-
-    const clearSelection = () => {
-      if (selection.el) selection.el.classList.remove("is-selected");
-      selection.el = null;
-      clearStatus(statusEl);
-    };
 
     const go = () => {
       window.location.href = produce.href;
     };
 
-    if (!prefersTouchUi()) {
-      el.addEventListener("mouseenter", show);
-      el.addEventListener("mousemove", (event) => positionTooltip(tooltip, frame, event));
-      el.addEventListener("mouseleave", hide);
-    }
-
-    el.addEventListener("focus", () => show());
-    el.addEventListener("blur", () => {
-      if (selection.el !== el) hide();
-    });
-
-    el.addEventListener("click", (event) => {
-      if (!prefersTouchUi()) {
-        go();
-        return;
-      }
-
-      event.preventDefault();
-      event.stopPropagation();
-
-      if (selection.el === el) {
-        go();
-        return;
-      }
-
+    const showDetails = () => {
+      selection.cancelHide();
       if (selection.el) selection.el.classList.remove("is-selected");
       selection.el = el;
       el.classList.add("is-selected");
-      show(null, { withHint: true });
+      setStatusText(statusEl, detail);
+      showStatePie(pieBtn, frame, el, produce.href, produce.label);
+    };
+
+    el.addEventListener("mouseenter", () => {
+      if (!isTouchUi()) showDetails();
+    });
+    el.addEventListener("mouseleave", () => {
+      if (!isTouchUi()) selection.scheduleHide();
+    });
+
+    el.addEventListener("focus", showDetails);
+
+    el.addEventListener("blur", () => {
+      if (!isTouchUi()) selection.scheduleHide();
+    });
+
+    el.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      // Mobile: first tap only reveals text + pie. Desktop: click still opens recipe.
+      if (isTouchUi()) {
+        showDetails();
+        return;
+      }
+      go();
     });
 
     el.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
-        go();
+        if (isTouchUi()) showDetails();
+        else go();
       }
     });
-
-    // Expose clear helper once for outside taps
-    selection.clear = clearSelection;
   }
 
   async function init() {
@@ -257,9 +235,9 @@
 
     const frame = root.querySelector("[data-map-frame]");
     const legendList = root.querySelector("[data-map-legend]");
-    const tooltip = root.querySelector("[data-map-tooltip]");
     const statusEl = root.querySelector("[data-map-status]");
-    if (!frame || !legendList || !tooltip || !statusEl) return;
+    const pieBtn = root.querySelector("[data-map-state-pie]");
+    if (!frame || !legendList || !statusEl || !pieBtn) return;
 
     buildLegend(legendList);
 
@@ -285,19 +263,48 @@
     svg.removeAttribute("width");
     svg.removeAttribute("height");
 
-    const selection = { el: null, clear: null };
+    let hideTimer = null;
+    const selection = {
+      el: null,
+      cancelHide() {
+        if (hideTimer) {
+          clearTimeout(hideTimer);
+          hideTimer = null;
+        }
+      },
+      scheduleHide() {
+        this.cancelHide();
+        hideTimer = setTimeout(() => this.clear(), 160);
+      },
+      clear() {
+        this.cancelHide();
+        if (this.el) this.el.classList.remove("is-selected");
+        this.el = null;
+        clearStatus(statusEl);
+        hideStatePie(pieBtn);
+      },
+    };
+
+    pieBtn.addEventListener("mouseenter", () => selection.cancelHide());
+    pieBtn.addEventListener("mouseleave", () => selection.scheduleHide());
+
     for (const [code, entry] of Object.entries(produceByState)) {
       const nodes = svg.querySelectorAll(`g.state path.${code}, g.state circle.${code}, circle.${code}`);
-      nodes.forEach((el) => wireState(el, code, entry, tooltip, frame, statusEl, selection));
+      nodes.forEach((el) => wireState(el, code, entry, frame, statusEl, pieBtn, selection));
     }
 
-    if (prefersTouchUi()) {
-      document.addEventListener("click", (event) => {
-        if (!selection.el) return;
-        if (selection.el.contains(event.target) || selection.el === event.target) return;
-        if (typeof selection.clear === "function") selection.clear();
-      });
-    }
+    window.addEventListener("resize", () => {
+      if (!selection.el || pieBtn.hidden) return;
+      placeStatePie(pieBtn, frame, selection.el);
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!selection.el || !isTouchUi()) return;
+      if (selection.el === event.target || selection.el.contains(event.target)) return;
+      if (pieBtn === event.target || pieBtn.contains(event.target)) return;
+      if (statusEl.contains(event.target)) return;
+      selection.clear();
+    });
   }
 
   if (document.readyState === "loading") {

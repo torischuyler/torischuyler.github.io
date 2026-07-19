@@ -76,11 +76,6 @@
   outline: none;
 }
 
-/* Kept in the DOM for JS compatibility; status banner carries hover details */
-.pies-map-tooltip {
-  display: none;
-}
-
 .pies-map-legend {
   display: flex;
   flex-direction: column;
@@ -103,7 +98,7 @@
   width: 100%;
   border-bottom: 1px solid rgb(255 255 255 / 12%);
   font-family: Righteous, system-ui, sans-serif;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.02em;
   text-align: center;
@@ -160,7 +155,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.15rem;
+  gap: 0.25rem;
   margin: 0;
   max-width: calc(100% - 1.5rem);
   padding: 0.4rem 0.85rem;
@@ -185,10 +180,41 @@
   visibility: visible;
 }
 
-.pies-map-status-hint {
-  font-size: 0.75rem;
-  font-weight: 400;
-  opacity: 0.75;
+/* Big pie emoji parked over the active state (hover on desktop, tap on mobile) */
+.pies-map-state-pie {
+  position: absolute;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  width: 1em;
+  height: 1em;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font-size: 2.75rem;
+  line-height: 1;
+  cursor: pointer;
+  filter: drop-shadow(0 2px 6px rgb(0 0 0 / 45%));
+  transform: translate(-50%, -50%) scale(0.85);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.12s ease, transform 0.12s ease;
+}
+
+.pies-map-state-pie.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.pies-map-state-pie:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
 }
 
 /* Tablet and phone: compact key above the map with emoji labels */
@@ -245,7 +271,7 @@
 
   .pies-map-legend h3 {
     padding-bottom: 0.3rem;
-    font-size: 0.72rem;
+    font-size: 0.85rem;
     letter-spacing: 0.02em;
   }
 
@@ -279,13 +305,9 @@
   .pies-map-status {
     top: 0.4rem;
     max-width: calc(100% - 0.8rem);
-    padding: 0.3rem 0.55rem;
+    padding: 0.35rem 0.55rem;
     font-size: 0.72rem;
     white-space: normal;
-  }
-
-  .pies-map-status-hint {
-    font-size: 0.65rem;
   }
 
   .pies-map-credit {
