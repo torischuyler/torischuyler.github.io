@@ -23,7 +23,7 @@ permalink: /til/pies
     <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/raspberry-pi.css">
     <link rel="stylesheet" href="/css/state-fruit-map.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
 </head>
 <body>
     <!-- Navigation -->
@@ -48,9 +48,32 @@ permalink: /til/pies
                     <h3>Pie Key</h3>
                     <ul class="pies-map-legend-list" data-map-legend></ul>
                 </aside>
+                <label class="pies-map-picker">
+                    <span class="pies-map-picker-label">Pie picker</span>
+                    <select class="pies-map-picker-select" data-map-state-picker>
+                        <option value="">Choose a state…</option>
+                    </select>
+                </label>
                 <div class="pies-map-frame" data-map-frame>
                     <p class="pies-map-status" data-map-status aria-live="polite"></p>
                     <button type="button" class="pies-map-state-pie" data-map-state-pie hidden aria-hidden="true">🥧</button>
+                    <div class="pies-map-focus" data-map-focus hidden>
+                        <button type="button" class="pies-map-focus-close" data-map-focus-close aria-label="Close state view">✕</button>
+                        <div class="pies-map-focus-canvas">
+                            <svg class="pies-map-focus-svg" data-map-focus-svg role="img" aria-hidden="true"></svg>
+                            <div class="pies-map-focus-overlay">
+                                <div class="pies-map-focus-fact" data-map-focus-fact></div>
+                                <div class="pies-map-focus-pie-wrap" data-map-focus-pie-wrap>
+                                    <span class="pies-map-focus-pie" data-map-focus-pie aria-hidden="true">🥧</span>
+                                    <span class="pies-map-focus-slash" data-map-focus-slash aria-hidden="true"></span>
+                                    <span class="pies-map-focus-slice-cue" aria-hidden="true">Slice me!</span>
+                                </div>
+                                <button type="button" class="pies-map-focus-knife" data-map-focus-knife aria-label="Drag the knife across the pie to open the recipe">
+                                    <span class="pies-map-focus-knife-emoji" aria-hidden="true">🔪</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <p class="pies-map-credit">Map: Wikimedia Commons blank US map</p>
             </section>
