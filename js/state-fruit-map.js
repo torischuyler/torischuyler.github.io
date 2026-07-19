@@ -166,7 +166,7 @@
       } else {
         positionTooltipOnElement(tooltip, frame, el);
       }
-      statusEl.textContent = `${name}: official ${kind} is ${produce.label.toLowerCase()}${yearSuffix}.`;
+      statusEl.textContent = `${name}: official ${kind} is ${produce.label}${yearSuffix}`;
     };
 
     const hide = () => {
