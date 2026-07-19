@@ -126,27 +126,6 @@
     statusEl.replaceChildren();
   }
 
-  function setStatusText(statusEl, message) {
-    statusEl.replaceChildren();
-    const main = document.createElement("span");
-    main.className = "pies-map-status-main";
-    main.textContent = message;
-    statusEl.append(main);
-  }
-
-  function placeStatePie(pieBtn, frame, stateEl) {
-    const frameRect = frame.getBoundingClientRect();
-    const stateRect = stateEl.getBoundingClientRect();
-    const touch = isTouchUi();
-    const minSize = touch ? 28 : 42;
-    const scale = touch ? 0.55 : 0.9;
-    const size = Math.max(minSize, Math.min(stateRect.width, stateRect.height) * scale);
-
-    pieBtn.style.left = `${stateRect.left + stateRect.width / 2 - frameRect.left}px`;
-    pieBtn.style.top = `${stateRect.top + stateRect.height / 2 - frameRect.top}px`;
-    pieBtn.style.fontSize = `${size}px`;
-  }
-
   function hideStatePie(pieBtn) {
     pieBtn.hidden = true;
     pieBtn.classList.remove("is-visible");
@@ -155,26 +134,33 @@
     pieBtn.onclick = null;
   }
 
-  function showStatePie(pieBtn, frame, stateEl, href, label) {
-    placeStatePie(pieBtn, frame, stateEl);
-    pieBtn.hidden = false;
-    pieBtn.classList.add("is-visible");
-    pieBtn.setAttribute("aria-hidden", "false");
-    pieBtn.setAttribute("aria-label", `Open ${label} pie recipe`);
-    pieBtn.onclick = (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      window.location.href = href;
-    };
-  }
-
   /**
    * Per-state mobile focus tweaks. Once a state looks right, leave it alone.
    * zoom/pad = size, offsetX/offsetY = nudge (px), cue* = "Slice me!" placement.
    */
   const FOCUS_TUNING = {
     // Locked
-    me: { pad: 0.12, zoom: 1.28, offsetX: 18, offsetY: 0 },
+    me: {
+      pad: 0.12,
+      zoom: 1.28,
+      offsetX: 18,
+      offsetY: 0,
+      // Desktop-only display type
+      desktopOffsetX: 120,
+      desktopFactNameSize: "4.6rem",
+      desktopFactNameMaxWidth: "24rem",
+      desktopFactDetailSize: "1.55rem",
+      desktopFactDetailMaxWidth: "calc(100% - 2.5rem)",
+      desktopFactDetailDirection: "row",
+      desktopFactDetailGap: "0.4rem",
+      desktopFactLineWidth: "auto",
+      // Size pie from the state box so it covers Maine’s jagged coast like mobile.
+      desktopPieScale: 0.88,
+      desktopCueSize: "0.2em",
+      desktopKnifePieX: 1.02,
+      desktopKnifePieY: -0.02,
+      desktopKnifeSize: "clamp(8.5rem, 15vw, 12rem)",
+    },
     ms: {
       pad: 0.14,
       zoom: 1.1,
@@ -182,6 +168,20 @@
       offsetY: 56,
       knifePieX: 1.02,
       knifePieY: -0.02,
+      // Match Maine desktop type
+      desktopFactNameSize: "4.6rem",
+      desktopFactNameMaxWidth: "24rem",
+      desktopFactDetailSize: "1.55rem",
+      desktopFactDetailMaxWidth: "calc(100% - 2.5rem)",
+      desktopFactDetailDirection: "row",
+      desktopFactDetailGap: "0.4rem",
+      desktopFactLineWidth: "auto",
+      // Size pie from the state box so coverage matches mobile.
+      desktopPieScale: 0.88,
+      desktopCueSize: "0.2em",
+      desktopKnifeSize: "clamp(8.5rem, 15vw, 12rem)",
+      desktopKnifePieX: 0.9,
+      desktopKnifePieY: 0.1,
     },
     nj: {
       pad: 0.06,
@@ -194,6 +194,23 @@
       cueRotate: "-4deg",
       knifePieX: 1.02,
       knifePieY: -0.02,
+      // Match Maine / Mississippi desktop type
+      desktopOffsetX: 120,
+      desktopZoom: 1.05,
+      desktopFactNameSize: "4.6rem",
+      desktopFactNameMaxWidth: "none",
+      desktopFactNameWhiteSpace: "nowrap",
+      desktopFactDetailSize: "1.55rem",
+      desktopFactDetailMaxWidth: "calc(100% - 2.5rem)",
+      desktopFactDetailDirection: "row",
+      desktopFactDetailGap: "0.4rem",
+      desktopFactLineWidth: "auto",
+      // Size pie from the state box so coverage matches mobile.
+      desktopPieScale: 0.95,
+      desktopCueSize: "0.2em",
+      desktopKnifeSize: "clamp(8.5rem, 15vw, 12rem)",
+      desktopKnifePieX: 0.9,
+      desktopKnifePieY: 0.1,
     },
     nc: {
       pad: 0.02,
@@ -208,16 +225,40 @@
       knifePieX: 1.02,
       knifePieY: -0.02,
       knifeOffsetY: 12,
+      // Match other states’ desktop type; keep name on one line.
+      desktopZoom: 1.55,
+      desktopOffsetY: -12,
+      desktopFactNameSize: "4.6rem",
+      desktopFactNameMaxWidth: "none",
+      desktopFactNameWhiteSpace: "nowrap",
+      desktopFactDetailSize: "1.55rem",
+      desktopFactDetailMaxWidth: "calc(100% - 2.5rem)",
+      desktopFactDetailDirection: "row",
+      desktopFactDetailGap: "0.4rem",
+      desktopFactLineWidth: "auto",
+      // Size pie from the state box so coverage matches mobile.
+      desktopPieScale: 0.78,
+      desktopCueSize: "0.2em",
+      desktopKnifeSize: "clamp(8.5rem, 15vw, 12rem)",
+      desktopKnifePieX: 0.9,
+      desktopKnifePieY: 0.1,
     },
   };
 
-  function positionFocusPie(pieWrap, canvas, stateClone) {
+  function positionFocusPie(pieWrap, canvas, stateClone, tuning = {}) {
     const canvasRect = canvas.getBoundingClientRect();
     const stateRect = stateClone.getBoundingClientRect();
     if (!canvasRect.width || !stateRect.width) return;
 
-    pieWrap.style.left = `${stateRect.left + stateRect.width / 2 - canvasRect.left}px`;
-    pieWrap.style.top = `${stateRect.top + stateRect.height / 2 - canvasRect.top}px`;
+    if (tuning.pieScale) {
+      const size = Math.min(stateRect.width, stateRect.height) * tuning.pieScale;
+      pieWrap.style.setProperty("--pie-size", `${Math.round(size)}px`);
+    }
+
+    const ox = tuning.pieOffsetX || 0;
+    const oy = tuning.pieOffsetY || 0;
+    pieWrap.style.left = `${stateRect.left + stateRect.width / 2 - canvasRect.left + ox}px`;
+    pieWrap.style.top = `${stateRect.top + stateRect.height / 2 - canvasRect.top + oy}px`;
   }
 
   function fitFocusSvg(focusSvg, canvas, bbox, tuning) {
@@ -250,12 +291,15 @@
     fitFocusSvg(focusSvg, canvas, bbox, tuning);
     focusSvg.style.marginTop = `${tuning.offsetY || 0}px`;
     focusSvg.style.marginLeft = `${tuning.offsetX || 0}px`;
-    positionFocusPie(pieWrap, canvas, stateClone);
+    positionFocusPie(pieWrap, canvas, stateClone, tuning);
     positionFocusKnife(knife, canvas, pieWrap, tuning);
   }
 
   function positionFocusKnife(knife, canvas, pieWrap, tuning = {}) {
     if (!knife) return;
+
+    if (tuning.knifeSize) knife.style.setProperty("--knife-size", tuning.knifeSize);
+    else knife.style.removeProperty("--knife-size");
 
     if (tuning.knifePieX == null && tuning.knifePieY == null) {
       knife.dataset.parkMode = "css";
@@ -295,10 +339,35 @@
     knife.style.transform = "";
   }
 
-  function applyCueTuning(pieWrap, tuning) {
-    pieWrap.style.setProperty("--cue-x", tuning.cueX || "50%");
-    pieWrap.style.setProperty("--cue-y", tuning.cueY || "50%");
-    pieWrap.style.setProperty("--cue-rotate", tuning.cueRotate || "-8deg");
+  function applyCueTuning(pieWrap, tuning = {}) {
+    const vars = {
+      "--cue-x": tuning.cueX,
+      "--cue-y": tuning.cueY,
+      "--cue-rotate": tuning.cueRotate,
+      "--pie-size": tuning.pieSize,
+      "--cue-size": tuning.cueSize,
+    };
+    for (const [name, value] of Object.entries(vars)) {
+      if (value) pieWrap.style.setProperty(name, value);
+      else pieWrap.style.removeProperty(name);
+    }
+  }
+
+  function applyFactTuning(factEl, tuning = {}) {
+    const vars = {
+      "--fact-name-size": tuning.factNameSize,
+      "--fact-name-max-width": tuning.factNameMaxWidth,
+      "--fact-name-white-space": tuning.factNameWhiteSpace,
+      "--fact-detail-size": tuning.factDetailSize,
+      "--fact-detail-max-width": tuning.factDetailMaxWidth,
+      "--fact-detail-direction": tuning.factDetailDirection,
+      "--fact-detail-gap": tuning.factDetailGap,
+      "--fact-line-width": tuning.factLineWidth,
+    };
+    for (const [name, value] of Object.entries(vars)) {
+      if (value) factEl.style.setProperty(name, value);
+      else factEl.style.removeProperty(name);
+    }
   }
 
   function rectsOverlap(a, b, pad = 12) {
@@ -439,7 +508,42 @@
     factEl.setAttribute("aria-label", fullDetail);
   }
 
-  function openMobileFocus(focus, frame, stateEl, fact, href, label, code, picker) {
+  function getFocusTuning(code) {
+    const base = FOCUS_TUNING[code] || {};
+    if (isTouchUi()) return base;
+    // Mobile offsets were tuned in px for short phones; soften on desktop.
+    return {
+      ...base,
+      zoom: base.desktopZoom ?? base.zoom,
+      offsetX: base.desktopOffsetX ?? base.offsetX ?? 0,
+      offsetY:
+        base.desktopOffsetY != null
+          ? base.desktopOffsetY
+          : Math.round((base.offsetY || 0) * 0.4),
+      knifeOffsetY:
+        base.knifeOffsetY == null
+          ? base.knifeOffsetY
+          : Math.round(base.knifeOffsetY * 0.4),
+      factNameSize: base.desktopFactNameSize,
+      factNameMaxWidth: base.desktopFactNameMaxWidth,
+      factNameWhiteSpace: base.desktopFactNameWhiteSpace,
+      factDetailSize: base.desktopFactDetailSize,
+      factDetailMaxWidth: base.desktopFactDetailMaxWidth,
+      factDetailDirection: base.desktopFactDetailDirection,
+      factDetailGap: base.desktopFactDetailGap,
+      factLineWidth: base.desktopFactLineWidth,
+      pieSize: base.desktopPieSize,
+      pieScale: base.desktopPieScale,
+      pieOffsetX: base.desktopPieOffsetX,
+      pieOffsetY: base.desktopPieOffsetY,
+      cueSize: base.desktopCueSize,
+      knifePieX: base.desktopKnifePieX ?? base.knifePieX,
+      knifePieY: base.desktopKnifePieY ?? base.knifePieY,
+      knifeSize: base.desktopKnifeSize,
+    };
+  }
+
+  function openStateFocus(focus, frame, stateEl, fact, href, label, code, picker) {
     const focusSvg = focus.querySelector("[data-map-focus-svg]");
     const factEl = focus.querySelector("[data-map-focus-fact]");
     const pieWrap = focus.querySelector("[data-map-focus-pie-wrap]");
@@ -447,7 +551,7 @@
     const canvas = focus.querySelector(".pies-map-focus-canvas");
     if (!focusSvg || !factEl || !pieWrap || !knife || !canvas) return;
 
-    const tuning = FOCUS_TUNING[code] || {};
+    const tuning = getFocusTuning(code);
     const bbox = stateEl.getBBox();
     const clone = stateEl.cloneNode(true);
     clone.removeAttribute("tabindex");
@@ -461,6 +565,7 @@
     setFocusFact(factEl, fact.name, fact.lines, fact.full);
     pieWrap.classList.remove("is-sliced");
     applyCueTuning(pieWrap, tuning);
+    applyFactTuning(factEl, tuning);
     knife.classList.remove("is-dragging", "is-over-pie");
     knife.setAttribute(
       "aria-label",
@@ -488,7 +593,7 @@
     });
   }
 
-  function closeMobileFocus(focus, frame, picker) {
+  function closeStateFocus(focus, frame, picker) {
     const focusSvg = focus.querySelector("[data-map-focus-svg]");
     const factEl = focus.querySelector("[data-map-focus-fact]");
     const pieWrap = focus.querySelector("[data-map-focus-pie-wrap]");
@@ -503,14 +608,13 @@
     if (factEl) {
       factEl.replaceChildren();
       factEl.removeAttribute("aria-label");
+      applyFactTuning(factEl, {});
     }
     if (pieWrap) {
       pieWrap.classList.remove("is-sliced");
       pieWrap.style.left = "";
       pieWrap.style.top = "";
-      pieWrap.style.removeProperty("--cue-x");
-      pieWrap.style.removeProperty("--cue-y");
-      pieWrap.style.removeProperty("--cue-rotate");
+      applyCueTuning(pieWrap, {});
     }
     if (knife) {
       delete knife.dataset.parkMode;
@@ -522,6 +626,7 @@
       knife.style.right = "";
       knife.style.bottom = "";
       knife.style.transform = "";
+      knife.style.removeProperty("--knife-size");
       knife.classList.remove("is-dragging", "is-over-pie");
     }
     if (picker) {
@@ -573,29 +678,16 @@
     el.setAttribute("role", "link");
     el.setAttribute(
       "aria-label",
-      `${detail}. Show details, then activate the pie for the ${produce.label} recipe.`
+      `${detail}. Open the pie view, then slice for the ${produce.label} recipe.`
     );
 
-    const go = () => {
-      window.location.href = produce.href;
-    };
-
-    const showDesktop = () => {
-      selection.cancelHide();
-      if (selection.el) selection.el.classList.remove("is-selected");
-      selection.el = el;
-      el.classList.add("is-selected");
-      setStatusText(statusEl, detail);
-      showStatePie(pieBtn, frame, el, produce.href, produce.label);
-    };
-
-    const showMobileFocus = () => {
+    const showFocus = () => {
       if (selection.el) selection.el.classList.remove("is-selected");
       selection.el = el;
       el.classList.add("is-selected");
       clearStatus(statusEl);
       hideStatePie(pieBtn);
-      openMobileFocus(
+      openStateFocus(
         focus,
         frame,
         el,
@@ -616,39 +708,22 @@
       );
     };
 
-    openers[code] = showMobileFocus;
-
-    el.addEventListener("mouseenter", () => {
-      if (!isTouchUi()) showDesktop();
-    });
-    el.addEventListener("mouseleave", () => {
-      if (!isTouchUi()) selection.scheduleHide();
-    });
+    openers[code] = showFocus;
 
     el.addEventListener("focus", () => {
-      if (isTouchUi()) showMobileFocus();
-      else showDesktop();
-    });
-
-    el.addEventListener("blur", () => {
-      if (!isTouchUi()) selection.scheduleHide();
+      if (isTouchUi()) showFocus();
     });
 
     el.addEventListener("click", (event) => {
       event.preventDefault();
       event.stopPropagation();
-      if (isTouchUi()) {
-        showMobileFocus();
-        return;
-      }
-      go();
+      showFocus();
     });
 
     el.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
-        if (isTouchUi()) showMobileFocus();
-        else go();
+        showFocus();
       }
     });
   }
@@ -691,33 +766,19 @@
     svg.removeAttribute("width");
     svg.removeAttribute("height");
 
-    let hideTimer = null;
     const selection = {
       el: null,
-      cancelHide() {
-        if (hideTimer) {
-          clearTimeout(hideTimer);
-          hideTimer = null;
-        }
-      },
-      scheduleHide() {
-        this.cancelHide();
-        hideTimer = setTimeout(() => this.clear(), 160);
-      },
       clear() {
-        this.cancelHide();
         if (this.el) this.el.classList.remove("is-selected");
         this.el = null;
         clearStatus(statusEl);
         hideStatePie(pieBtn);
-        closeMobileFocus(focus, frame, picker);
+        closeStateFocus(focus, frame, picker);
       },
     };
 
     const openers = Object.create(null);
 
-    pieBtn.addEventListener("mouseenter", () => selection.cancelHide());
-    pieBtn.addEventListener("mouseleave", () => selection.scheduleHide());
     focusClose.addEventListener("click", (event) => {
       event.preventDefault();
       event.stopPropagation();
@@ -747,30 +808,24 @@
     }
 
     window.addEventListener("resize", () => {
-      if (!selection.el) return;
-      if (isTouchUi() && focus.classList.contains("is-open")) {
-        const focusSvg = focus.querySelector("[data-map-focus-svg]");
-        const clone = focus.querySelector("[data-map-focus-svg] > *");
-        const pieWrap = focus.querySelector("[data-map-focus-pie-wrap]");
-        const factEl = focus.querySelector("[data-map-focus-fact]");
-        const canvas = focus.querySelector(".pies-map-focus-canvas");
-        const knife = focus.querySelector("[data-map-focus-knife]");
-        if (focusSvg && clone && pieWrap && factEl && canvas && selection.el) {
-          const tuning = FOCUS_TUNING[focus._focusCode] || {};
-          layoutFocusStage(
-            focusSvg,
-            canvas,
-            factEl,
-            clone,
-            pieWrap,
-            knife,
-            selection.el.getBBox(),
-            tuning
-          );
-        }
-        return;
-      }
-      if (!pieBtn.hidden) placeStatePie(pieBtn, frame, selection.el);
+      if (!selection.el || !focus.classList.contains("is-open")) return;
+      const focusSvg = focus.querySelector("[data-map-focus-svg]");
+      const clone = focus.querySelector("[data-map-focus-svg] > *");
+      const pieWrap = focus.querySelector("[data-map-focus-pie-wrap]");
+      const factEl = focus.querySelector("[data-map-focus-fact]");
+      const canvas = focus.querySelector(".pies-map-focus-canvas");
+      const knife = focus.querySelector("[data-map-focus-knife]");
+      if (!focusSvg || !clone || !pieWrap || !factEl || !canvas) return;
+      layoutFocusStage(
+        focusSvg,
+        canvas,
+        factEl,
+        clone,
+        pieWrap,
+        knife,
+        selection.el.getBBox(),
+        getFocusTuning(focus._focusCode)
+      );
     });
   }
 

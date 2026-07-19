@@ -57,6 +57,15 @@
 
 /* Highlighted fruit/berry states — one class per item for easy expansion.
    Must beat `.pies-us-map .state path` specificity. */
+
+/* DC locator ring — outline only so it doesn’t read as a hole in the map */
+.pies-us-map circle.dccircle {
+  fill: none;
+  stroke: #1a2a3a;
+  stroke-width: 1.25;
+  pointer-events: none;
+}
+
 .pies-us-map .state path.fruit-blueberry,
 .pies-us-map .state circle.fruit-blueberry {
   fill: #2f6fd6;
@@ -74,6 +83,34 @@
   stroke-width: 1.75;
   filter: brightness(1.08);
   outline: none;
+}
+
+/* Desktop-only idle pulse so blue states invite a click */
+@media (width > 768px) {
+  .pies-us-map .state path.fruit-blueberry,
+  .pies-us-map .state circle.fruit-blueberry {
+    animation: pies-map-blueberry-pulse 2.6s ease-in-out infinite;
+  }
+
+  .pies-us-map .state path.fruit-blueberry:hover,
+  .pies-us-map .state path.fruit-blueberry:focus,
+  .pies-us-map .state path.fruit-blueberry.is-selected,
+  .pies-us-map .state circle.fruit-blueberry:hover,
+  .pies-us-map .state circle.fruit-blueberry:focus,
+  .pies-us-map .state circle.fruit-blueberry.is-selected {
+    animation: none;
+  }
+}
+
+@keyframes pies-map-blueberry-pulse {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.14);
+  }
 }
 
 .pies-map-legend {
@@ -147,43 +184,251 @@
   text-align: right;
 }
 
-.pies-map-status {
+/* Legacy hover pie / status — replaced by the shared focus view */
+.pies-map-status,
+.pies-map-state-pie {
+  display: none;
+}
+
+.pies-map-picker {
+  width: min(22rem, 100%);
+  margin: 0 auto;
+}
+
+.pies-map-picker-select {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.pies-map-picker-select:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.pies-map-frame.is-focused > .pies-us-map {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.pies-map-focus {
   position: absolute;
-  top: 0.65rem;
-  left: 50%;
-  z-index: 3;
+  inset: 0;
+  z-index: 5;
+  display: none;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding: 0.75rem 1rem 1rem;
+  border-radius: inherit;
+  background-color: var(--primary-color);
+}
+
+.pies-map-focus.is-open {
+  display: flex;
+}
+
+.pies-map-focus-close {
+  align-self: flex-end;
+  margin: 0 0 0.35rem;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 6px;
+  background-color: rgb(255 255 255 / 8%);
+  color: var(--text-color);
+  font-size: 0.95rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.pies-map-focus-canvas {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 22rem;
+  display: grid;
+  place-items: center;
+  overflow: visible;
+}
+
+.pies-map-focus-svg {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: visible;
+}
+
+.pies-map-focus .pies-map-focus-svg path,
+.pies-map-focus .pies-map-focus-svg circle {
+  fill: #2f6fd6;
+  stroke: #e8f0ff;
+  stroke-width: 1.5;
+}
+
+.pies-map-focus-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.pies-map-focus-fact {
+  position: absolute;
+  top: 1.5rem;
+  left: 1rem;
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.25rem;
+  align-items: flex-start;
+  gap: 0.3rem;
   margin: 0;
-  max-width: calc(100% - 1.5rem);
-  padding: 0.4rem 0.85rem;
-  border: 1px solid var(--accent-color);
-  border-radius: 6px;
-  background-color: rgb(13 27 42 / 94%);
+  padding: 0;
+  border: none;
+  background: none;
   color: var(--text-color);
-  font-size: 0.85rem;
-  font-weight: 500;
-  line-height: 1.3;
+  pointer-events: none;
+}
+
+.pies-map-focus-fact-name {
+  max-width: var(--fact-name-max-width, 18rem);
+  font-family: "Luckiest Guy", Righteous, system-ui, sans-serif;
+  font-size: var(--fact-name-size, 2.35rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  white-space: var(--fact-name-white-space, normal);
+  color: var(--subheader-color);
+}
+
+.pies-map-focus-fact-detail {
+  display: flex;
+  flex-flow: var(--fact-detail-direction, column) wrap;
+  align-items: flex-start;
+  gap: var(--fact-detail-gap, 0.05rem);
+  max-width: var(--fact-detail-max-width, 11rem);
+  font-size: var(--fact-detail-size, 0.9rem);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  text-align: left;
+  opacity: 0.85;
+}
+
+.pies-map-focus-fact-line {
+  display: block;
+  width: var(--fact-line-width, 100%);
+}
+
+.pies-map-focus-pie-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  border-radius: 50%;
+  font-size: var(--pie-size, clamp(7rem, 14vw, 10rem));
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 4px 14px rgb(0 0 0 / 50%));
+}
+
+.pies-map-focus-pie {
+  display: grid;
+  place-items: center;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+}
+
+.pies-map-focus-slice-cue {
+  position: absolute;
+  top: var(--cue-y, 52%);
+  left: var(--cue-x, 50%);
+  z-index: 2;
+  box-sizing: border-box;
+  width: 84%;
+  max-width: 84%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  overflow: visible;
+  background: none;
+  color: #111;
+  font-family: "Luckiest Guy", Righteous, system-ui, sans-serif;
+  font-size: var(--cue-size, 0.185em);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1;
   text-align: center;
+  text-transform: uppercase;
   white-space: nowrap;
   pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(-50%);
-  transition: opacity 0.12s ease;
+  transform: translate(-50%, -50%) rotate(var(--cue-rotate, -8deg));
+  text-shadow:
+    0 1px 0 rgb(255 255 255 / 35%),
+    0 0 2px rgb(255 255 255 / 25%);
 }
 
-.pies-map-status:not(:empty) {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Big pie emoji parked over the active state (hover on desktop, tap on mobile) */
-.pies-map-state-pie {
+.pies-map-focus-slash {
   position: absolute;
-  z-index: 4;
+  top: 50%;
+  left: 10%;
+  width: 0;
+  height: 0.08em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, #fff 20%, #facaa1 50%, #fff 80%, transparent);
+  opacity: 0;
+  transform: translateY(-50%) rotate(-28deg);
+  transform-origin: left center;
+  box-shadow: 0 0 8px rgb(255 255 255 / 55%);
+}
+
+.pies-map-focus-pie-wrap.is-sliced .pies-map-focus-slash {
+  animation: pies-map-slice 0.35s ease-out forwards;
+}
+
+.pies-map-focus-pie-wrap.is-sliced .pies-map-focus-pie {
+  animation: pies-map-pie-split 0.35s ease-out forwards;
+}
+
+@keyframes pies-map-slice {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    width: 80%;
+    opacity: 1;
+  }
+}
+
+@keyframes pies-map-pie-split {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(0.08em, 0.04em) rotate(8deg);
+    filter: brightness(1.08);
+  }
+}
+
+.pies-map-focus-knife {
+  position: absolute;
+  inset: 0.35rem 0.2rem auto auto;
+  z-index: 3;
   display: grid;
   place-items: center;
   width: 1em;
@@ -191,38 +436,49 @@
   margin: 0;
   padding: 0;
   border: none;
-  border-radius: 50%;
+  border-radius: 0;
   background: transparent;
   color: inherit;
-  font-size: 2.75rem;
-  line-height: 1;
-  cursor: pointer;
-  filter: drop-shadow(0 2px 6px rgb(0 0 0 / 45%));
-  transform: translate(-50%, -50%) scale(0.85);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.12s ease, transform 0.12s ease;
-}
-
-.pies-map-state-pie.is-visible {
-  opacity: 1;
-  visibility: visible;
+  font-size: var(--knife-size, clamp(6rem, 11vw, 8.5rem));
+  cursor: grab;
   pointer-events: auto;
-  transform: translate(-50%, -50%) scale(1);
+  touch-action: none;
+  user-select: none;
+  filter: drop-shadow(0 4px 14px rgb(0 0 0 / 50%));
 }
 
-.pies-map-state-pie:focus-visible {
+.pies-map-focus-knife.is-dragging {
+  cursor: grabbing;
+  z-index: 6;
+  filter: drop-shadow(0 6px 18px rgb(0 0 0 / 55%));
+}
+
+.pies-map-focus-knife.is-over-pie {
+  filter: drop-shadow(0 0 10px rgb(250 202 161 / 55%));
+}
+
+.pies-map-focus-knife-emoji {
+  font-size: 1em;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.pies-map-focus-knife:focus-visible,
+.pies-map-focus-close:focus-visible {
   outline: 2px solid var(--accent-color);
   outline-offset: 3px;
 }
 
-.pies-map-focus {
-  display: none;
-}
+@media (prefers-reduced-motion: reduce) {
+  .pies-us-map .state path.fruit-blueberry,
+  .pies-us-map .state circle.fruit-blueberry {
+    animation: none;
+  }
 
-.pies-map-picker {
-  display: none;
+  .pies-map-focus-pie-wrap.is-sliced .pies-map-focus-slash,
+  .pies-map-focus-pie-wrap.is-sliced .pies-map-focus-pie {
+    animation: none;
+  }
 }
 
 /* Tablet and phone: compact key above the map with emoji labels */
@@ -278,34 +534,7 @@
   }
 
   .pies-map-picker {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.3rem;
     width: 100%;
-  }
-
-  .pies-map-picker-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    opacity: 0.75;
-  }
-
-  .pies-map-picker-select {
-    width: 100%;
-    padding: 0.55rem 0.7rem;
-    border: 1px solid var(--secondary-color);
-    border-radius: 8px;
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    font-family: inherit;
-    font-size: 0.95rem;
-  }
-
-  .pies-map-picker-select:focus-visible {
-    outline: 2px solid var(--accent-color);
-    outline-offset: 2px;
   }
 
   .pies-map-legend h3 {
@@ -341,273 +570,43 @@
     border-radius: 2px;
   }
 
-  .pies-map-status,
-  .pies-map-state-pie {
-    display: none;
-  }
-
-  .pies-map-frame.is-focused > .pies-us-map {
-    visibility: hidden;
-    pointer-events: none;
-  }
-
   .pies-map-focus {
-    position: absolute;
-    inset: 0;
-    z-index: 5;
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: center;
     padding: 0.55rem 0.55rem 0.7rem;
-    border-radius: inherit;
-    background-color: var(--primary-color);
-  }
-
-  .pies-map-focus.is-open {
-    display: flex;
   }
 
   .pies-map-focus-close {
-    align-self: flex-end;
     margin: 0 0 0.25rem;
     padding: 0.2rem 0.45rem;
-    border: 1px solid rgb(255 255 255 / 20%);
-    border-radius: 6px;
-    background-color: rgb(255 255 255 / 8%);
-    color: var(--text-color);
     font-size: 0.85rem;
-    line-height: 1;
-    cursor: pointer;
   }
 
   .pies-map-focus-canvas {
-    position: relative;
-    flex: 1 1 auto;
     min-height: 16rem;
-    display: grid;
-    place-items: center;
-    overflow: visible;
-  }
-
-  .pies-map-focus-svg {
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
-    overflow: visible;
-  }
-
-  .pies-map-focus .pies-map-focus-svg path,
-  .pies-map-focus .pies-map-focus-svg circle {
-    fill: #2f6fd6;
-    stroke: #e8f0ff;
-    stroke-width: 1.5;
-  }
-
-  .pies-map-focus-overlay {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
   }
 
   .pies-map-focus-fact {
-    position: absolute;
     top: 2.1rem;
     left: 0.55rem;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     gap: 0.25rem;
-    margin: 0;
-    padding: 0;
-    border: none;
-    background: none;
-    color: var(--text-color);
-    pointer-events: none;
   }
 
   .pies-map-focus-fact-name {
     max-width: calc(100vw - 7rem);
-    font-family: "Luckiest Guy", Righteous, system-ui, sans-serif;
     font-size: 1.7rem;
-    font-weight: 400;
-    letter-spacing: 0.04em;
-    line-height: 1.05;
-    text-transform: uppercase;
-    color: var(--subheader-color);
   }
 
   .pies-map-focus-fact-detail {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.05rem;
     max-width: 9rem;
     font-size: 0.74rem;
-    font-weight: 400;
-    line-height: 1.25;
-    letter-spacing: 0.01em;
-    text-align: left;
-    opacity: 0.85;
-  }
-
-  .pies-map-focus-fact-line {
-    display: block;
-    width: 100%;
   }
 
   .pies-map-focus-pie-wrap {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 2;
-    width: 1em;
-    height: 1em;
-    overflow: hidden;
-    border-radius: 50%;
     font-size: clamp(5.5rem, 34vw, 8rem);
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    filter: drop-shadow(0 4px 14px rgb(0 0 0 / 50%));
-  }
-
-  .pies-map-focus-pie {
-    display: grid;
-    place-items: center;
-    width: 1em;
-    height: 1em;
-    line-height: 1;
-  }
-
-  .pies-map-focus-slice-cue {
-    position: absolute;
-    top: var(--cue-y, 52%);
-    left: var(--cue-x, 50%);
-    z-index: 2;
-    box-sizing: border-box;
-    width: 84%;
-    max-width: 84%;
-    margin: 0;
-    padding: 0;
-    border: none;
-    overflow: visible;
-    background: none;
-    color: #111;
-    font-family: "Luckiest Guy", Righteous, system-ui, sans-serif;
-    font-size: 0.185em;
-    font-weight: 400;
-    letter-spacing: 0.01em;
-    line-height: 1;
-    text-align: center;
-    text-transform: uppercase;
-    white-space: nowrap;
-    pointer-events: none;
-    transform: translate(-50%, -50%) rotate(var(--cue-rotate, -8deg));
-    text-shadow:
-      0 1px 0 rgb(255 255 255 / 35%),
-      0 0 2px rgb(255 255 255 / 25%);
-  }
-
-  .pies-map-focus-slash {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    width: 0;
-    height: 0.08em;
-    border-radius: 999px;
-    background: linear-gradient(90deg, transparent, #fff 20%, #facaa1 50%, #fff 80%, transparent);
-    opacity: 0;
-    transform: translateY(-50%) rotate(-28deg);
-    transform-origin: left center;
-    box-shadow: 0 0 8px rgb(255 255 255 / 55%);
-  }
-
-  .pies-map-focus-pie-wrap.is-sliced .pies-map-focus-slash {
-    animation: pies-map-slice 0.35s ease-out forwards;
-  }
-
-  .pies-map-focus-pie-wrap.is-sliced .pies-map-focus-pie {
-    animation: pies-map-pie-split 0.35s ease-out forwards;
-  }
-
-  @keyframes pies-map-slice {
-    0% {
-      width: 0;
-      opacity: 0;
-    }
-
-    20% {
-      opacity: 1;
-    }
-
-    100% {
-      width: 80%;
-      opacity: 1;
-    }
-  }
-
-  @keyframes pies-map-pie-split {
-    0% {
-      transform: translate(0, 0) rotate(0deg);
-    }
-
-    100% {
-      transform: translate(0.08em, 0.04em) rotate(8deg);
-      filter: brightness(1.08);
-    }
   }
 
   .pies-map-focus-knife {
-    position: absolute;
     inset: 0.15rem -0.15rem auto auto;
-    z-index: 3;
-    display: grid;
-    place-items: center;
-    width: 1em;
-    height: 1em;
-    margin: 0;
-    padding: 0;
-    border: none;
-    border-radius: 0;
-    background: transparent;
-    color: inherit;
     font-size: clamp(4.75rem, 30vw, 7rem);
-    cursor: grab;
-    pointer-events: auto;
-    touch-action: none;
-    user-select: none;
-    filter: drop-shadow(0 4px 14px rgb(0 0 0 / 50%));
-  }
-
-  .pies-map-focus-knife.is-dragging {
-    cursor: grabbing;
-    z-index: 6;
-    filter: drop-shadow(0 6px 18px rgb(0 0 0 / 55%));
-  }
-
-  .pies-map-focus-knife.is-over-pie {
-    filter: drop-shadow(0 0 10px rgb(250 202 161 / 55%));
-  }
-
-  .pies-map-focus-knife-emoji {
-    font-size: 1em;
-    line-height: 1;
-    pointer-events: none;
-  }
-
-  .pies-map-focus-knife:focus-visible,
-  .pies-map-focus-close:focus-visible {
-    outline: 2px solid var(--accent-color);
-    outline-offset: 3px;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .pies-map-focus-pie-wrap.is-sliced .pies-map-focus-slash,
-    .pies-map-focus-pie-wrap.is-sliced .pies-map-focus-pie {
-      animation: none;
-    }
   }
 
   .pies-map-credit {
