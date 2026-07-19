@@ -56,42 +56,71 @@ permalink: /til/pidog/tricks/superdog
 
             <!-- Part 1: Periodic table birthday year -->
             <section class="sd-section" aria-labelledby="sd-element-heading">
-                <h2 id="sd-element-heading" class="sd-heading">Your <span id="sd-heading-year">2026</span> Element Superpower</h2>
+                <h2 id="sd-element-heading" class="sd-heading">Element Superpowers</h2>
                 <p class="sd-intro">
                     The home world of Superdog Slugger is named after the periodic table's <strong>element 36 — Krypton (Kr)</strong>,
                     a noble gas used in lights and lasers.
 
                     <br><br>
                     Us humans get a new element superpower every year ✨
-                    <br>
-                    Enter your age to find out <em>your element superpower</em>!
+                    Most people are two ages throughout the year
+                    (unless you were born on January 1st).
+                    Enter your ages below to find out your <em><span id="sd-intro-year">2026</span> Element Superpowers</em>!
                 </p>
 
                 <form id="sd-age-form" class="sd-age-form">
-                    <label class="sd-age-label" for="sd-age">How old are you?</label>
-                    <div class="sd-age-row">
-                        <input id="sd-age" class="sd-age-input" type="number" min="1" max="118" step="1" inputmode="numeric" placeholder="e.g. 36" required>
-                        <button class="sd-btn" type="submit">Find my element</button>
+                    <p class="sd-age-label" id="sd-age-prompt">What two ages will you be during <span id="sd-intro-year">2026</span>?</p>
+                    <div class="sd-age-row" role="group" aria-labelledby="sd-age-prompt">
+                        <label class="sd-age-field">
+                            <span class="sd-age-field-label">Age 1</span>
+                            <input id="sd-age-a" class="sd-age-input" name="age-a" type="number" min="1" max="118" step="1" inputmode="numeric" placeholder="e.g. 35" required>
+                        </label>
+                        <span class="sd-age-and" aria-hidden="true">&amp;</span>
+                        <label class="sd-age-field">
+                            <span class="sd-age-field-label">Age 2</span>
+                            <input id="sd-age-b" class="sd-age-input" name="age-b" type="number" min="1" max="118" step="1" inputmode="numeric" placeholder="e.g. 36" required>
+                        </label>
+                        <button class="sd-btn" type="submit">Find my elements</button>
                     </div>
                     <p id="sd-age-error" class="sd-age-error" role="alert" hidden></p>
                 </form>
 
-                <div id="sd-element-card" class="sd-element-card" hidden aria-live="polite">
-                    <div class="sd-element-tile">
-                        <span id="sd-el-number" class="sd-el-number"></span>
-                        <span id="sd-el-symbol" class="sd-el-symbol"></span>
-                        <span id="sd-el-name" class="sd-el-name"></span>
-                        <span id="sd-el-mass" class="sd-el-mass"></span>
+                <div id="sd-element-results" class="sd-element-results" hidden aria-live="polite">
+                    <div class="sd-element-card" data-sd-card>
+                        <div class="sd-element-tile">
+                            <span class="sd-el-number"></span>
+                            <span class="sd-el-symbol"></span>
+                            <span class="sd-el-name"></span>
+                            <span class="sd-el-mass"></span>
+                        </div>
+                        <div class="sd-element-facts">
+                            <p class="sd-el-headline"></p>
+                            <p class="sd-el-category sd-el-meta"></p>
+                            <p class="sd-el-aside" hidden></p>
+                            <a class="sd-el-learn" href="#" target="_blank" rel="noopener">Learn more</a>
+                        </div>
+                        <div class="sd-element-tile sd-element-viz-tile" aria-hidden="true">
+                            <div class="sd-el-viz-art"></div>
+                            <span class="sd-el-viz-caption"></span>
+                        </div>
                     </div>
-                    <div class="sd-element-facts">
-                        <p id="sd-el-headline" class="sd-el-headline"></p>
-                        <p id="sd-el-category" class="sd-el-meta"></p>
-                        <p id="sd-el-aside" class="sd-el-aside" hidden></p>
-                        <a id="sd-el-learn" class="sd-el-learn" href="#" target="_blank" rel="noopener">Learn more</a>
-                    </div>
-                    <div class="sd-element-tile sd-element-viz-tile" aria-hidden="true">
-                        <div id="sd-el-viz-art" class="sd-el-viz-art"></div>
-                        <span id="sd-el-viz-caption" class="sd-el-viz-caption"></span>
+                    <div class="sd-element-card" data-sd-card hidden>
+                        <div class="sd-element-tile">
+                            <span class="sd-el-number"></span>
+                            <span class="sd-el-symbol"></span>
+                            <span class="sd-el-name"></span>
+                            <span class="sd-el-mass"></span>
+                        </div>
+                        <div class="sd-element-facts">
+                            <p class="sd-el-headline"></p>
+                            <p class="sd-el-category sd-el-meta"></p>
+                            <p class="sd-el-aside" hidden></p>
+                            <a class="sd-el-learn" href="#" target="_blank" rel="noopener">Learn more</a>
+                        </div>
+                        <div class="sd-element-tile sd-element-viz-tile" aria-hidden="true">
+                            <div class="sd-el-viz-art"></div>
+                            <span class="sd-el-viz-caption"></span>
+                        </div>
                     </div>
                 </div>
             </section>

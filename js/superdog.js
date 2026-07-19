@@ -1,6 +1,7 @@
 /*
   Superdog page interactions:
-  Periodic-table "element superpower" from age (Superman = 36, Krypton).
+  Periodic-table "element superpowers" from the two ages you are in a year
+  (Superman = 36, Krypton).
   Sea Dog biscuit dodge is stashed in js/superdog-game.stash.js for later.
 */
 
@@ -2182,28 +2183,81 @@ function radioactiveMarkSvg() {
     </svg>`;
 }
 
-function renderElementViz(el) {
-  const tile = document.querySelector('.sd-element-viz-tile');
-  const art = document.getElementById('sd-el-viz-art');
-  const caption = document.getElementById('sd-el-viz-caption');
-  const card = document.getElementById('sd-element-card');
+function renderElementViz(card, el) {
+  const tile = card.querySelector('.sd-element-viz-tile');
+  const art = card.querySelector('.sd-el-viz-art');
+  const caption = card.querySelector('.sd-el-viz-caption');
   if (!art || !caption) return;
 
   // No custom scenes for 99–118 — hide the right-hand tile entirely.
   if (el.z >= 99) {
     if (tile) tile.hidden = true;
-    if (card) card.classList.add('sd-no-viz');
+    card.classList.add('sd-no-viz');
     art.innerHTML = '';
     caption.textContent = '';
     return;
   }
 
   if (tile) tile.hidden = false;
-  if (card) card.classList.remove('sd-no-viz');
+  card.classList.remove('sd-no-viz');
 
   const viz = ELEMENT_VIZ[el.z];
   art.innerHTML = (viz ? viz.svg : atomFallbackSvg()).trim();
   caption.textContent = viz ? viz.caption : 'Atom';
+}
+
+function parseAge(value) {
+  const age = Number.parseInt(value, 10);
+  if (!Number.isInteger(age) || age < 1 || age > 118) return null;
+  return age;
+}
+
+function fillElementCard(card, age) {
+  const el = ELEMENTS[age - 1];
+  card.hidden = false;
+  card.classList.toggle('sd-is-krypton', age === 36);
+
+  card.querySelector('.sd-el-number').textContent = String(el.z);
+  card.querySelector('.sd-el-symbol').textContent = el.symbol;
+  card.querySelector('.sd-el-name').textContent = el.name;
+  card.querySelector('.sd-el-mass').textContent = el.mass;
+
+  let headline = `Age ${age}: ${el.name} is Your Superpower`;
+  card.querySelector('.sd-el-headline').textContent = headline;
+
+  const category = card.querySelector('.sd-el-category');
+  if (isRadioactiveElement(el.z)) {
+    category.innerHTML = `${el.cat} ${radioactiveMarkSvg()}`;
+  } else {
+    category.textContent = el.cat;
+  }
+
+  const aside = card.querySelector('.sd-el-aside');
+  if (aside) {
+    if (age === 15) {
+      aside.hidden = false;
+      aside.textContent = 'Slugger really liked this age 😎';
+    } else if (age === 43) {
+      aside.hidden = false;
+      aside.textContent = 'You now come with a warning label. First radioactive element on the table.';
+    } else if (age === 71) {
+      aside.hidden = false;
+      aside.textContent = 'First picture about the name, not the material — Lutetium comes from Lutetia, the old name for Paris.';
+    } else if (age >= 99) {
+      aside.hidden = false;
+      aside.textContent = 'Not found in nature — only made and used in atomic research.';
+    } else {
+      aside.hidden = true;
+      aside.textContent = '';
+    }
+  }
+
+  const learn = card.querySelector('.sd-el-learn');
+  // Simple English Wikipedia — easier read for kids, covers all 118 elements
+  learn.href = `https://simple.wikipedia.org/wiki/${encodeURIComponent(el.name)}`;
+  learn.textContent = `Learn more about ${el.name}`;
+
+  renderElementViz(card, el);
 }
 
 /** Real year, or override with ?year=2027 to time-travel / QA the heading. */
@@ -2217,79 +2271,52 @@ function currentDisplayYear() {
 }
 
 function updateHeadingYear() {
-  const yearEl = document.getElementById('sd-heading-year');
-  if (!yearEl) return;
-  yearEl.textContent = String(currentDisplayYear());
+  const year = String(currentDisplayYear());
+  const yearEls = [
+    document.getElementById('sd-heading-year'),
+    document.getElementById('sd-intro-year'),
+  ];
+  for (const yearEl of yearEls) {
+    if (yearEl) yearEl.textContent = year;
+  }
 }
 
 function initElementYear() {
   const form = document.getElementById('sd-age-form');
-  const input = document.getElementById('sd-age');
+  const inputA = document.getElementById('sd-age-a');
+  const inputB = document.getElementById('sd-age-b');
   const error = document.getElementById('sd-age-error');
-  const card = document.getElementById('sd-element-card');
-  if (!form || !input || !error || !card) return;
+  const results = document.getElementById('sd-element-results');
+  if (!form || !inputA || !inputB || !error || !results) return;
+
+  const cards = results.querySelectorAll('[data-sd-card]');
+  if (cards.length < 2) return;
 
   updateHeadingYear();
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    const age = Number.parseInt(input.value, 10);
-    if (!Number.isInteger(age) || age < 1 || age > 118) {
+    const ageA = parseAge(inputA.value);
+    const ageB = parseAge(inputB.value);
+
+    if (ageA === null || ageB === null) {
       error.hidden = false;
-      error.textContent = 'Pick a whole number from 1 to 118 (that’s how many elements we have).';
-      card.hidden = true;
+      error.textContent = 'Pick whole numbers from 1 to 118 for both ages (that’s how many elements we have).';
+      results.hidden = true;
+      cards[0].hidden = true;
+      cards[1].hidden = true;
       return;
     }
 
-    const el = ELEMENTS[age - 1];
     error.hidden = true;
-    card.hidden = false;
-    card.classList.toggle('sd-is-krypton', age === 36);
+    results.hidden = false;
+    fillElementCard(cards[0], ageA);
 
-    document.getElementById('sd-el-number').textContent = String(el.z);
-    document.getElementById('sd-el-symbol').textContent = el.symbol;
-    document.getElementById('sd-el-name').textContent = el.name;
-    document.getElementById('sd-el-mass').textContent = el.mass;
-
-    let headline = `Age ${age}: ${el.name} is Your Superpower`;
-    if (age === 36) {
-      headline = `Age ${age}: ${el.name} is Your Superpower (Superdog’s!)`;
+    if (ageA === ageB) {
+      cards[1].hidden = true;
+      return;
     }
 
-    document.getElementById('sd-el-headline').textContent = headline;
-
-    const category = document.getElementById('sd-el-category');
-    if (isRadioactiveElement(el.z)) {
-      category.innerHTML = `${el.cat} ${radioactiveMarkSvg()}`;
-    } else {
-      category.textContent = el.cat;
-    }
-
-    const aside = document.getElementById('sd-el-aside');
-    if (aside) {
-      if (age === 15) {
-        aside.hidden = false;
-        aside.textContent = 'Slugger really liked this age 😎';
-      } else if (age === 43) {
-        aside.hidden = false;
-        aside.textContent = 'You now come with a warning label. First radioactive element on the table.';
-      } else if (age === 71) {
-        aside.hidden = false;
-        aside.textContent = 'First picture about the name, not the material — Lutetium comes from Lutetia, the old name for Paris.';
-      } else if (age >= 99) {
-        aside.hidden = false;
-        aside.textContent = 'Not found in nature — only made and used in atomic research.';
-      } else {
-        aside.hidden = true;
-        aside.textContent = '';
-      }
-    }
-
-    const learn = document.getElementById('sd-el-learn');
-    // Simple English Wikipedia — easier read for kids, covers all 118 elements
-    learn.href = `https://simple.wikipedia.org/wiki/${encodeURIComponent(el.name)}`;
-    learn.textContent = `Learn more about ${el.name}`;
-
-    renderElementViz(el);
+    fillElementCard(cards[1], ageB);
   });
 }
