@@ -175,12 +175,20 @@
   const FOCUS_TUNING = {
     // Locked
     me: { pad: 0.12, zoom: 1.28, offsetX: 18, offsetY: 0 },
-    ms: { pad: 0.14, zoom: 1.1, offsetX: 0, offsetY: 56 },
+    ms: {
+      pad: 0.14,
+      zoom: 1.1,
+      offsetX: 0,
+      offsetY: 56,
+      knifePieX: 1.02,
+      knifePieY: -0.02,
+    },
     nj: {
       pad: 0.06,
       zoom: 1.55,
       offsetX: 0,
-      offsetY: 56,
+      // Real phones sit lower than desktop emulators; keep this modest.
+      offsetY: 18,
       cueX: "56%",
       cueY: "58%",
       cueRotate: "-4deg",
@@ -191,13 +199,15 @@
       pad: 0.02,
       zoom: 1.95,
       offsetX: 0,
-      offsetY: 56,
+      // Nudge state + pie up a touch; knifeOffsetY holds the knife in place.
+      offsetY: 44,
       cueX: "50%",
       cueY: "52%",
       cueRotate: "-6deg",
       // Park knife on the pie's upper-right so a cut reads across NC.
       knifePieX: 1.02,
       knifePieY: -0.02,
+      knifeOffsetY: 12,
     },
   };
 
@@ -271,8 +281,8 @@
       pieRect.left + pieRect.width * (tuning.knifePieX ?? 1) - canvasRect.left;
     const ay =
       pieRect.top + pieRect.height * (tuning.knifePieY ?? 0) - canvasRect.top;
-    const left = ax - knifeW * 0.35;
-    const top = ay - knifeH * 0.35;
+    const left = ax - knifeW * 0.35 + (tuning.knifeOffsetX || 0);
+    const top = ay - knifeH * 0.35 + (tuning.knifeOffsetY || 0);
 
     knife.dataset.parkMode = "pie";
     knife.dataset.parkLeft = String(left);
@@ -548,7 +558,7 @@
   function setPickerResetLabel(picker, selected) {
     const reset = picker.querySelector('option[value=""]');
     if (!reset) return;
-    reset.textContent = selected ? "US map" : "Choose a state…";
+    reset.textContent = selected ? "USA" : "Choose a state…";
   }
 
   function wireState(el, code, entry, frame, statusEl, pieBtn, focus, picker, selection, openers) {
@@ -593,8 +603,8 @@
           name,
           lines: [
             "Official state",
-            `${designation === "berry" ? "berry" : "fruit"} is`,
-            produce.label,
+            `${designation === "berry" ? "berry" : "fruit"} is the`,
+            `${produce.label.toLowerCase()}.`,
             year ? `(${year})` : "",
           ].filter(Boolean),
           full: detail,
