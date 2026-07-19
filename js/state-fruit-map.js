@@ -144,21 +144,46 @@
     );
   }
 
-  function wireState(el, code, entry, tooltip, frame, statusEl) {
+  function prefersTouchUi() {
+    return window.matchMedia("(hover: none)").matches;
+  }
+
+  function setStatus(statusEl, message, hint) {
+    statusEl.replaceChildren();
+    const main = document.createElement("span");
+    main.className = "pies-map-status-main";
+    main.textContent = message;
+    statusEl.append(main);
+    if (hint) {
+      const hintEl = document.createElement("span");
+      hintEl.className = "pies-map-status-hint";
+      hintEl.textContent = hint;
+      statusEl.append(hintEl);
+    }
+  }
+
+  function clearStatus(statusEl) {
+    statusEl.replaceChildren();
+  }
+
+  function wireState(el, code, entry, tooltip, frame, statusEl, selection) {
     const { produce, designation, year } = entry;
     const name = STATE_NAMES[code] || code.toUpperCase();
     const kind = designationPhrase(designation);
     const yearSuffix = year ? ` (${year})` : "";
+    const detail = `${name}: official ${kind} is ${produce.label}${yearSuffix}`;
 
     el.classList.add(produce.className);
     el.setAttribute("tabindex", "0");
     el.setAttribute("role", "link");
     el.setAttribute(
       "aria-label",
-      `${name}: ${produce.label} became the official ${kind} in ${year}. Open ${produce.label} pie recipe.`
+      prefersTouchUi()
+        ? `${detail}. Tap once for details, tap again for the ${produce.label} pie recipe.`
+        : `${detail}. Open ${produce.label} pie recipe.`
     );
 
-    const show = (event) => {
+    const show = (event, { withHint = false } = {}) => {
       tooltip.textContent = `${name} · ${produce.label}${yearSuffix}`;
       tooltip.classList.add("is-visible");
       if (event) {
@@ -166,30 +191,64 @@
       } else {
         positionTooltipOnElement(tooltip, frame, el);
       }
-      statusEl.textContent = `${name}: official ${kind} is ${produce.label}${yearSuffix}`;
+      setStatus(statusEl, detail, withHint ? "Tap again for the recipe" : "");
     };
 
     const hide = () => {
       tooltip.classList.remove("is-visible");
-      statusEl.textContent = "";
+      if (selection.el !== el) clearStatus(statusEl);
+    };
+
+    const clearSelection = () => {
+      if (selection.el) selection.el.classList.remove("is-selected");
+      selection.el = null;
+      clearStatus(statusEl);
     };
 
     const go = () => {
       window.location.href = produce.href;
     };
 
-    el.addEventListener("mouseenter", show);
-    el.addEventListener("mousemove", (event) => positionTooltip(tooltip, frame, event));
-    el.addEventListener("mouseleave", hide);
+    if (!prefersTouchUi()) {
+      el.addEventListener("mouseenter", show);
+      el.addEventListener("mousemove", (event) => positionTooltip(tooltip, frame, event));
+      el.addEventListener("mouseleave", hide);
+    }
+
     el.addEventListener("focus", () => show());
-    el.addEventListener("blur", hide);
-    el.addEventListener("click", go);
+    el.addEventListener("blur", () => {
+      if (selection.el !== el) hide();
+    });
+
+    el.addEventListener("click", (event) => {
+      if (!prefersTouchUi()) {
+        go();
+        return;
+      }
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      if (selection.el === el) {
+        go();
+        return;
+      }
+
+      if (selection.el) selection.el.classList.remove("is-selected");
+      selection.el = el;
+      el.classList.add("is-selected");
+      show(null, { withHint: true });
+    });
+
     el.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
         go();
       }
     });
+
+    // Expose clear helper once for outside taps
+    selection.clear = clearSelection;
   }
 
   async function init() {
@@ -226,9 +285,18 @@
     svg.removeAttribute("width");
     svg.removeAttribute("height");
 
+    const selection = { el: null, clear: null };
     for (const [code, entry] of Object.entries(produceByState)) {
       const nodes = svg.querySelectorAll(`g.state path.${code}, g.state circle.${code}, circle.${code}`);
-      nodes.forEach((el) => wireState(el, code, entry, tooltip, frame, statusEl));
+      nodes.forEach((el) => wireState(el, code, entry, tooltip, frame, statusEl, selection));
+    }
+
+    if (prefersTouchUi()) {
+      document.addEventListener("click", (event) => {
+        if (!selection.el) return;
+        if (selection.el.contains(event.target) || selection.el === event.target) return;
+        if (typeof selection.clear === "function") selection.clear();
+      });
     }
   }
 

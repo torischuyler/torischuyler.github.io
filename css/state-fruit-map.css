@@ -1,9 +1,13 @@
 /* Interactive state-fruit map on the pies hub */
 
 .pies-map-section {
-  margin: 2.5rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
   /* Let the map outgrow the narrower page column */
   width: min(1120px, calc(100vw - 2rem));
+  margin: 2.5rem 0 2rem;
   margin-left: 50%;
   transform: translateX(-50%);
 }
@@ -61,8 +65,10 @@
 
 .pies-us-map .state path.fruit-blueberry:hover,
 .pies-us-map .state path.fruit-blueberry:focus,
+.pies-us-map .state path.fruit-blueberry.is-selected,
 .pies-us-map .state circle.fruit-blueberry:hover,
-.pies-us-map .state circle.fruit-blueberry:focus {
+.pies-us-map .state circle.fruit-blueberry:focus,
+.pies-us-map .state circle.fruit-blueberry.is-selected {
   fill: #4d8df0;
   stroke: #fff;
   stroke-width: 1.75;
@@ -83,7 +89,7 @@
   width: fit-content;
   min-width: 7.5rem;
   max-width: 100%;
-  margin: 0 auto 0.75rem;
+  margin: 0 auto;
   padding: 0.65rem 1.1rem 0.7rem;
   background-color: var(--primary-color);
   border: 1px solid var(--secondary-color);
@@ -140,7 +146,7 @@
 }
 
 .pies-map-credit {
-  margin: 0.35rem 0 0;
+  margin: 0;
   font-size: 0.72rem;
   opacity: 0.55;
   text-align: right;
@@ -151,6 +157,10 @@
   top: 0.65rem;
   left: 50%;
   z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
   margin: 0;
   max-width: calc(100% - 1.5rem);
   padding: 0.4rem 0.85rem;
@@ -175,13 +185,20 @@
   visibility: visible;
 }
 
-/* Tablet and phone: legend sits below the map with tiny emoji labels */
+.pies-map-status-hint {
+  font-size: 0.75rem;
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+/* Tablet and phone: compact key above the map with emoji labels */
 @media (width <= 768px) {
   .pies-map-section {
     width: 100%;
     max-width: 100%;
     margin-left: 0;
     transform: none;
+    gap: 0.7rem;
   }
 
   .pies-map-frame {
@@ -211,14 +228,16 @@
 
   .pies-us-map .state path.fruit-blueberry:hover,
   .pies-us-map .state path.fruit-blueberry:focus,
+  .pies-us-map .state path.fruit-blueberry.is-selected,
   .pies-us-map .state circle.fruit-blueberry:hover,
-  .pies-us-map .state circle.fruit-blueberry:focus {
+  .pies-us-map .state circle.fruit-blueberry:focus,
+  .pies-us-map .state circle.fruit-blueberry.is-selected {
     stroke-width: 1.85;
   }
 
   .pies-map-legend {
     min-width: 0;
-    margin: 0 auto 0.55rem;
+    margin: 0 auto;
     gap: 0.3rem;
     padding: 0.45rem 0.75rem 0.5rem;
     border-radius: 8px;
@@ -265,8 +284,11 @@
     white-space: normal;
   }
 
+  .pies-map-status-hint {
+    font-size: 0.65rem;
+  }
+
   .pies-map-credit {
-    margin-top: 0.3rem;
     font-size: 0.68rem;
     text-align: right;
   }
