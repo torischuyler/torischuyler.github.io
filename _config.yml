@@ -15,6 +15,3 @@ exclude:
   - Gemfile.lock
   - package.json
   - package-lock.json
-  - til/pidog/tricks/stash
-  - js/superdog-game.stash.js
-  - css/superdog-game.stash.css

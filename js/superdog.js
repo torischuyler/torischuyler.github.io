@@ -2,7 +2,6 @@
   Superdog page interactions:
   Periodic-table "element superpowers" from the two ages you are in a year
   (Superman = 36, Krypton).
-  Sea Dog biscuit dodge is stashed in js/superdog-game.stash.js for later.
 */
 
 document.addEventListener('DOMContentLoaded', () => {
