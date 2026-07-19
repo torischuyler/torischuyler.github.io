@@ -66,6 +66,7 @@
     {
       id: "blueberry",
       label: "Blueberry",
+      emoji: "🫐",
       className: "fruit-blueberry",
       href: "/til/pies/recipes/fourth-of-july-pie.html",
       states: {
@@ -93,25 +94,54 @@
     for (const produce of STATE_PRODUCE) {
       const li = document.createElement("li");
       li.className = "pies-map-legend-item";
+      li.setAttribute("aria-label", produce.label);
 
       const swatch = document.createElement("span");
       swatch.className = `pies-map-swatch ${produce.className}`;
       swatch.setAttribute("aria-hidden", "true");
 
       const text = document.createElement("span");
+      text.className = "pies-map-legend-label";
       text.textContent = produce.label;
 
-      li.append(swatch, text);
+      const emoji = document.createElement("span");
+      emoji.className = "pies-map-legend-emoji";
+      emoji.setAttribute("aria-hidden", "true");
+      emoji.textContent = produce.emoji || produce.label;
+
+      li.append(swatch, text, emoji);
       listEl.append(li);
     }
   }
 
+  function clampTooltip(tooltip, frame, x, y) {
+    const rect = frame.getBoundingClientRect();
+    const pad = 8;
+    const tipWidth = tooltip.offsetWidth || 140;
+    const tipHeight = tooltip.offsetHeight || 32;
+    const minX = tipWidth / 2 + pad;
+    const maxX = Math.max(minX, rect.width - tipWidth / 2 - pad);
+    const minY = tipHeight + pad;
+    const maxY = Math.max(minY, rect.height - pad);
+
+    tooltip.style.left = `${Math.min(Math.max(x, minX), maxX)}px`;
+    tooltip.style.top = `${Math.min(Math.max(y, minY), maxY)}px`;
+  }
+
   function positionTooltip(tooltip, frame, event) {
     const rect = frame.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    tooltip.style.left = `${x}px`;
-    tooltip.style.top = `${y}px`;
+    clampTooltip(tooltip, frame, event.clientX - rect.left, event.clientY - rect.top);
+  }
+
+  function positionTooltipOnElement(tooltip, frame, el) {
+    const frameRect = frame.getBoundingClientRect();
+    const elRect = el.getBoundingClientRect();
+    clampTooltip(
+      tooltip,
+      frame,
+      elRect.left + elRect.width / 2 - frameRect.left,
+      elRect.top - frameRect.top
+    );
   }
 
   function wireState(el, code, entry, tooltip, frame, statusEl) {
@@ -131,7 +161,11 @@
     const show = (event) => {
       tooltip.textContent = `${name} · ${produce.label}${yearSuffix}`;
       tooltip.classList.add("is-visible");
-      if (event) positionTooltip(tooltip, frame, event);
+      if (event) {
+        positionTooltip(tooltip, frame, event);
+      } else {
+        positionTooltipOnElement(tooltip, frame, el);
+      }
       statusEl.textContent = `${name}: official ${kind} is ${produce.label.toLowerCase()}${yearSuffix}.`;
     };
 

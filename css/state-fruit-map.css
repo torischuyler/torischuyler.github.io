@@ -26,6 +26,7 @@
   display: block;
   width: 100%;
   height: auto;
+  max-width: 100%;
 }
 
 .pies-us-map .state path,
@@ -93,44 +94,61 @@
 }
 
 .pies-map-legend {
-  position: absolute;
-  right: 0.85rem;
-  bottom: 0.85rem;
-  z-index: 2;
-  background-color: rgb(13 27 42 / 92%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  width: fit-content;
+  min-width: 7.5rem;
+  max-width: 100%;
+  margin: 0.65rem auto 0;
+  padding: 0.65rem 1.1rem 0.7rem;
+  background-color: var(--primary-color);
   border: 1px solid var(--secondary-color);
   border-radius: 10px;
-  padding: 0.75rem 0.9rem;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 16%);
 }
 
 .pies-map-legend h3 {
-  margin: 0 0 0.55rem;
+  margin: 0;
+  padding-bottom: 0.4rem;
+  width: 100%;
+  border-bottom: 1px solid rgb(255 255 255 / 12%);
   font-family: Righteous, system-ui, sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 400;
+  letter-spacing: 0.02em;
+  text-align: center;
+  text-transform: none;
   color: var(--subheader-color);
 }
 
 .pies-map-legend-list {
   list-style: none;
-  padding: 0;
+  padding: 0.1rem 0 0;
   margin: 0;
-  display: grid;
-  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
 }
 
 .pies-map-legend-item {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
-  font-size: 0.9rem;
-  line-height: 1.3;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  line-height: 1.2;
+}
+
+.pies-map-legend-emoji {
+  display: none;
 }
 
 .pies-map-swatch {
   flex: 0 0 auto;
-  width: 1.05rem;
-  height: 1.05rem;
+  width: 0.85rem;
+  height: 0.85rem;
   border-radius: 3px;
   border: 1px solid rgb(255 255 255 / 35%);
 }
@@ -140,7 +158,7 @@
 }
 
 .pies-map-credit {
-  margin: 0.55rem 0 0;
+  margin: 0.35rem 0 0;
   font-size: 0.72rem;
   opacity: 0.55;
   text-align: right;
@@ -153,16 +171,111 @@
   opacity: 0.8;
 }
 
-@media (max-width: 600px) {
+/* Tablet and phone: legend sits below the map with tiny emoji labels */
+@media (width <= 768px) {
   .pies-map-section {
     width: 100%;
+    max-width: 100%;
     margin-left: 0;
     transform: none;
   }
 
+  .pies-map-frame {
+    padding: 0.35rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgb(0 0 0 / 18%);
+  }
+
+  .pies-us-map .state path,
+  .pies-us-map .state circle {
+    stroke-width: 0.65;
+  }
+
+  .pies-us-map .borders path {
+    stroke-width: 0.65;
+  }
+
+  .pies-us-map .separator1 {
+    stroke-width: 1.25;
+  }
+
+  .pies-us-map .state path.fruit-blueberry,
+  .pies-us-map .state circle.fruit-blueberry {
+    stroke: #e8f0ff;
+    stroke-width: 1.35;
+  }
+
+  .pies-us-map .state path.fruit-blueberry:hover,
+  .pies-us-map .state path.fruit-blueberry:focus,
+  .pies-us-map .state circle.fruit-blueberry:hover,
+  .pies-us-map .state circle.fruit-blueberry:focus {
+    stroke-width: 1.85;
+  }
+
   .pies-map-legend {
-    right: 0.5rem;
-    bottom: 0.5rem;
-    padding: 0.55rem 0.7rem;
+    min-width: 0;
+    margin-top: 0.65rem;
+    gap: 0.3rem;
+    padding: 0.45rem 0.75rem 0.5rem;
+    border-radius: 8px;
+  }
+
+  .pies-map-legend h3 {
+    padding-bottom: 0.3rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+  }
+
+  .pies-map-legend-list {
+    padding-top: 0;
+    gap: 0.28rem;
+  }
+
+  .pies-map-legend-item {
+    gap: 0.35rem;
+    font-size: 0.78rem;
+    line-height: 1;
+  }
+
+  .pies-map-legend-label {
+    display: none;
+  }
+
+  .pies-map-legend-emoji {
+    display: inline;
+    font-size: 0.85rem;
+    line-height: 1;
+  }
+
+  .pies-map-swatch {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 2px;
+  }
+
+  .pies-map-tooltip {
+    white-space: normal;
+    max-width: min(14rem, calc(100% - 1rem));
+    font-size: 0.78rem;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  .pies-map-credit {
+    margin-top: 0.3rem;
+    font-size: 0.68rem;
+    text-align: right;
+  }
+
+  .pies-map-status {
+    font-size: 0.8rem;
+    min-height: 1.1rem;
+  }
+}
+
+/* Touch devices: rely on the status line instead of a floating tooltip */
+@media (width <= 768px) and (hover: none) {
+  .pies-map-tooltip {
+    display: none;
   }
 }
