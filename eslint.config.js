@@ -50,7 +50,7 @@ export default [
     to lint it either.
   */
   {
-    "ignores": ["node_modules/", ".venv/", "python/venv/"]
+    "ignores": ["node_modules/", ".venv/", "python/venv/", "workers/"]
   },
 
   // The config object combining recommended JS rules with custom settings for this project.

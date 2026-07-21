@@ -3,7 +3,11 @@ node_modules/
 
 # Environment and sensitive files
 .env
+.dev.vars
 .VSCodeCounter
+
+# Cloudflare Wrangler
+.wrangler/
 
 # Database files
 *.db
