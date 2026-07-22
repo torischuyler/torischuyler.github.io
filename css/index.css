@@ -38,18 +38,8 @@
   /* Homepage-only whoami color (sitewide h1 stays High drama mint) */
   color: #E8C547;
 
-  /* 
-    Gold glow: 0 0 (no offset), 6px (blur radius), #D4AF37 (muted gold)
-  
-    0 - Horizontal offset (How far the shadow moves left or right from the text).
-    0 - Vertical offset (How far the shadow moves up or down from the text).
-    6px - Blur radius (How blurry or spread out the shadow gets.
-    Bigger number = softer, wider glow; smaller = sharper, tighter edge).
-
-    Glow Control: For shadows/glows, px is common bc you often want 
-    a fixed, predictable effect, not something that shifts.
-  */
-  text-shadow: 0 0 6px #D4AF37;
+  /* No glow on mobile — soft text-shadow reads as blur on small screens */
+  text-shadow: none;
 
   /* Keeps text on one line so it types out like a typewriter */
   white-space: nowrap;
@@ -388,6 +378,8 @@
 @media (width >= 769px) {
   .who-am-i-container h1 {
     /* --- Style It --- */
+
+    /* Gold glow only on larger screens where soft blur reads as glow */
     text-shadow: 0 0 18px #D4AF37;
   }
 
