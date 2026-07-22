@@ -1,0 +1,100 @@
+---
+permalink: /til/pies/recipes/apple-pie
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:;">
+
+    <link rel="canonical" href="https://torischuyler.github.io/til/pies/recipes/apple-pie">
+    <title>Apple Pie | TIL | Tori Schuyler</title>
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/pie.css">
+    <link rel="stylesheet" href="/css/apple-pie.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <nav aria-label="Page navigation">
+        <ul class="nav-menu">
+            <li><a href="/">whoami</a></li>
+            <li><a href="/who-are-you">Who Are You?</a></li>
+            <li><a href="/today-i-learned" class="active" aria-current="page">TIL</a></li>
+        </ul>
+
+        <div class="nav-header">
+            <div class="hamburger">☰</div>
+        </div>
+    </nav>
+
+    <div class="pie-container">
+        <main>
+            <h1>Apple Pie</h1>
+
+            <div class="pie-slideshow" aria-label="Apple pie photo gallery">
+                <div class="slideshow-frame">
+                    <button type="button" class="slideshow-btn slideshow-prev" aria-label="Previous photo">&#8249;</button>
+
+                    <div class="slideshow-images">
+                        <img src="/assets/images/food/apple-pie/apple-custard.jpeg" alt="Apple custard in crust" class="slideshow-image is-active" data-index="0">
+                        <img src="/assets/images/food/apple-pie/apple-custard-crisp.jpeg" alt="Apple custard pie with crisp topping" class="slideshow-image" data-index="1" hidden>
+                    </div>
+
+                    <button type="button" class="slideshow-btn slideshow-next" aria-label="Next photo">&#8250;</button>
+                </div>
+
+                <p class="slideshow-caption" id="slideshow-caption">Apple custard in crust</p>
+                <p class="slideshow-counter" id="slideshow-counter" aria-live="polite">1 / 2</p>
+            </div>
+
+            <div class="pie-recipe-sections">
+                <section class="pie-recipe-section">
+                    <h2>Pie Ingredients</h2>
+                    <ul>
+                        <li>1 Pie Crust</li>
+                        <li>6-8 Apples (sliced)</li>
+                        <li>3/4 C. Sugar</li>
+                        <li>3 Tablespoons Flour</li>
+                        <li>1/2 Teaspoon Salt</li>
+                        <li>1/4 C. Heavy Cream</li>
+                        <li>1 Egg</li>
+                    </ul>
+
+                    <button type="button" class="pie-recipe-link" data-recipe="pie-instructions">Pie Instructions</button>
+                </section>
+
+                <section class="pie-recipe-section">
+                    <h2>Crisp Topping Ingredients</h2>
+                    <ul>
+                        <li>1/2 C. Sugar</li>
+                        <li>1/2 C. Light Brown Sugar</li>
+                        <li>3/4 C. Flour</li>
+                        <li>1/2 C. Butter Softened</li>
+                        <li>Ground Cinnamon</li>
+                    </ul>
+
+                    <button type="button" class="pie-recipe-link" data-recipe="crisp-topping-instructions">Crisp Topping Instructions</button>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p><span id="year"></span> 👾 Tori Schuyler</p>
+    </footer>
+
+    <script src="/js/mobile-nav.js" defer></script>
+    <script src="/js/footer.js"></script>
+    <script src="/js/pie-slideshow.js" defer></script>
+    <script src="/js/apple-pie-recipe-modal.js" defer></script>
+</body>
+</html>
