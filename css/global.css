@@ -78,6 +78,20 @@
   --subheader-color: #F0C9A0;
 }
 
+/*
+  Light page theme — Eagle paper (colors sampled from Hubble M16 / Pillars of Creation).
+  Opt in per page with <body class="light-page">.
+*/
+body.light-page {
+  --primary-color: #E7EBED;
+  --secondary-color: #D5DEE6;
+  --background-color: #F4F7F9;
+  --text-color: #1A2836;
+  --accent-color: #3D5266;
+  --header-color: #1F7A8C;
+  --subheader-color: #C4893A;
+}
+
 /* 
   Body - The root element for page content. 
   Defines base styling (fonts, colors) and layout structure for flexible content arrangement.
@@ -145,20 +159,22 @@ h2 {
   color: var(--subheader-color);
 }
 
-/* Navigation Bar */
+/* Navigation Bar — Hubble M16 / Pillars of Creation band sitewide */
 nav {
   /* --- Size It --- */
 
   /* Spans the full width of the page */
   width: 100%;
+  min-height: 5.75rem;
 
   /* --- Space It --- */
 
   /* Enables flexbox to control layout of nav items and toggle */
   display: flex;
+  align-items: center;
 
   /* Adds spacing inside the nav bar */
-  padding: 1rem;
+  padding: 1.75rem 1.25rem;
 
   /* Centers the nav items and toggle horizontally within the nav bar */
   justify-content: center;
@@ -167,8 +183,14 @@ nav {
   text-align: center;
 
   /* --- Style It --- */
-  color: var(--accent-color);
-  background-color: var(--primary-color);
+  color: #F4F7FA;
+  background-color: #0A1628;
+  background-image:
+    linear-gradient(rgb(10 22 40 / 58%), rgb(10 22 40 / 62%)),
+    url("/assets/images/space/m16-pillars-nav.jpg");
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
 }
 
 /* Navigation Bar Links 🔗 */
@@ -184,7 +206,8 @@ nav a {
   padding: 0.5rem;
   
   /* --- Style It --- */
-  color: var(--accent-color);
+  color: #F4F7FA;
+  text-shadow: 0 1px 3px rgb(0 0 0 / 55%);
 
   /* Links are not underlined */
   text-decoration: none;
@@ -201,7 +224,7 @@ nav a {
 /* Navigation Hover Effect */
 nav a:hover {
   /* --- Style It --- */
-  background-color: var(--secondary-color);
+  background-color: rgb(244 247 250 / 16%);
 }
 
 /* 🍔 Menu */
@@ -215,6 +238,10 @@ nav a:hover {
 
   /* Shows the hamburger icon on mobile screens */
   display: block;
+
+  /* --- Style It --- */
+  color: #F4F7FA;
+  text-shadow: 0 1px 3px rgb(0 0 0 / 55%);
 }
 
 .nav-menu {
@@ -261,6 +288,20 @@ footer {
   /* --- Style It --- */
   color: var(--accent-color);
   background-color: var(--primary-color);
+}
+
+/* Hubble header image credit (injected by footer.js) */
+footer .image-credit {
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  opacity: 0.85;
+}
+
+footer .image-credit a {
+  color: #E8C547;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 
 /* Sun/Moon Toggle 🌞🌙 */
