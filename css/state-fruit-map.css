@@ -72,6 +72,26 @@
   cursor: pointer;
 }
 
+.pies-us-map .state path.fruit-apple,
+.pies-us-map .state circle.fruit-apple {
+  fill: #c23b2e;
+  cursor: pointer;
+}
+
+.pies-map-focus .pies-map-focus-svg path.fruit-blueberry,
+.pies-map-focus .pies-map-focus-svg circle.fruit-blueberry {
+  fill: #2f6fd6;
+  stroke: #e8f0ff;
+  stroke-width: 1.5;
+}
+
+.pies-map-focus .pies-map-focus-svg path.fruit-apple,
+.pies-map-focus .pies-map-focus-svg circle.fruit-apple {
+  fill: #c23b2e;
+  stroke: #ffe8e4;
+  stroke-width: 1.5;
+}
+
 .pies-us-map .state path.fruit-blueberry:hover,
 .pies-us-map .state path.fruit-blueberry:focus,
 .pies-us-map .state path.fruit-blueberry.is-selected,
@@ -85,11 +105,26 @@
   outline: none;
 }
 
-/* Desktop-only idle pulse so blue states invite a click */
+.pies-us-map .state path.fruit-apple:hover,
+.pies-us-map .state path.fruit-apple:focus,
+.pies-us-map .state path.fruit-apple.is-selected,
+.pies-us-map .state circle.fruit-apple:hover,
+.pies-us-map .state circle.fruit-apple:focus,
+.pies-us-map .state circle.fruit-apple.is-selected {
+  fill: #d95a4c;
+  stroke: #fff;
+  stroke-width: 1.75;
+  filter: brightness(1.08);
+  outline: none;
+}
+
+/* Desktop-only idle pulse so produce states invite a click */
 @media (width > 768px) {
   .pies-us-map .state path.fruit-blueberry,
-  .pies-us-map .state circle.fruit-blueberry {
-    animation: pies-map-blueberry-pulse 2.6s ease-in-out infinite;
+  .pies-us-map .state circle.fruit-blueberry,
+  .pies-us-map .state path.fruit-apple,
+  .pies-us-map .state circle.fruit-apple {
+    animation: pies-map-fruit-pulse 2.6s ease-in-out infinite;
   }
 
   .pies-us-map .state path.fruit-blueberry:hover,
@@ -97,12 +132,18 @@
   .pies-us-map .state path.fruit-blueberry.is-selected,
   .pies-us-map .state circle.fruit-blueberry:hover,
   .pies-us-map .state circle.fruit-blueberry:focus,
-  .pies-us-map .state circle.fruit-blueberry.is-selected {
+  .pies-us-map .state circle.fruit-blueberry.is-selected,
+  .pies-us-map .state path.fruit-apple:hover,
+  .pies-us-map .state path.fruit-apple:focus,
+  .pies-us-map .state path.fruit-apple.is-selected,
+  .pies-us-map .state circle.fruit-apple:hover,
+  .pies-us-map .state circle.fruit-apple:focus,
+  .pies-us-map .state circle.fruit-apple.is-selected {
     animation: none;
   }
 }
 
-@keyframes pies-map-blueberry-pulse {
+@keyframes pies-map-fruit-pulse {
   0%,
   100% {
     filter: brightness(1);
@@ -175,6 +216,10 @@
 
 .pies-map-swatch.fruit-blueberry {
   background-color: #2f6fd6;
+}
+
+.pies-map-swatch.fruit-apple {
+  background-color: #c23b2e;
 }
 
 .pies-map-credit {
@@ -255,19 +300,26 @@
   overflow: visible;
 }
 
+/* Clip scaled artboard so it doesn’t spill outside the frame */
+.pies-map-frame.is-focused .pies-map-focus-canvas {
+  overflow: hidden;
+}
+
+.pies-map-focus-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+}
+
 .pies-map-focus-svg {
   width: auto;
   height: auto;
   max-width: 100%;
   max-height: 100%;
   overflow: visible;
-}
-
-.pies-map-focus .pies-map-focus-svg path,
-.pies-map-focus .pies-map-focus-svg circle {
-  fill: #2f6fd6;
-  stroke: #e8f0ff;
-  stroke-width: 1.5;
 }
 
 .pies-map-focus-overlay {
@@ -322,6 +374,7 @@
 .pies-map-focus-fact-line {
   display: block;
   width: var(--fact-line-width, 100%);
+  white-space: var(--fact-line-white-space, normal);
 }
 
 .pies-map-focus-pie-wrap {
@@ -471,7 +524,9 @@
 
 @media (prefers-reduced-motion: reduce) {
   .pies-us-map .state path.fruit-blueberry,
-  .pies-us-map .state circle.fruit-blueberry {
+  .pies-us-map .state circle.fruit-blueberry,
+  .pies-us-map .state path.fruit-apple,
+  .pies-us-map .state circle.fruit-apple {
     animation: none;
   }
 
@@ -483,13 +538,20 @@
 
 /* Tablet and phone: compact key above the map with emoji labels */
 @media (width <= 768px) {
+  /* Touch phones only — narrow desktop keeps the wide breakout below. */
   .pies-map-section {
-    width: 100%;
-    max-width: 100%;
-    margin-left: 0;
-    transform: none;
     gap: 0.7rem;
   }
+
+  @media (pointer: coarse) {
+    .pies-map-section {
+      width: 100%;
+      max-width: 100%;
+      margin-left: 0;
+      transform: none;
+    }
+  }
+
 
   .pies-map-frame {
     padding: 0.35rem;
@@ -516,12 +578,24 @@
     stroke-width: 1.35;
   }
 
+  .pies-us-map .state path.fruit-apple,
+  .pies-us-map .state circle.fruit-apple {
+    stroke: #ffe8e4;
+    stroke-width: 1.35;
+  }
+
   .pies-us-map .state path.fruit-blueberry:hover,
   .pies-us-map .state path.fruit-blueberry:focus,
   .pies-us-map .state path.fruit-blueberry.is-selected,
   .pies-us-map .state circle.fruit-blueberry:hover,
   .pies-us-map .state circle.fruit-blueberry:focus,
-  .pies-us-map .state circle.fruit-blueberry.is-selected {
+  .pies-us-map .state circle.fruit-blueberry.is-selected,
+  .pies-us-map .state path.fruit-apple:hover,
+  .pies-us-map .state path.fruit-apple:focus,
+  .pies-us-map .state path.fruit-apple.is-selected,
+  .pies-us-map .state circle.fruit-apple:hover,
+  .pies-us-map .state circle.fruit-apple:focus,
+  .pies-us-map .state circle.fruit-apple.is-selected {
     stroke-width: 1.85;
   }
 
@@ -590,21 +664,22 @@
     gap: 0.25rem;
   }
 
-  .pies-map-focus-fact-name {
+  /* Real phone layout only — skip when desktop artboard is scaling down. */
+  .pies-map-focus:not(.pies-map-focus-artboard) .pies-map-focus-fact-name {
     max-width: calc(100vw - 7rem);
     font-size: 1.7rem;
   }
 
-  .pies-map-focus-fact-detail {
+  .pies-map-focus:not(.pies-map-focus-artboard) .pies-map-focus-fact-detail {
     max-width: 9rem;
     font-size: 0.74rem;
   }
 
-  .pies-map-focus-pie-wrap {
+  .pies-map-focus:not(.pies-map-focus-artboard) .pies-map-focus-pie-wrap {
     font-size: clamp(5.5rem, 34vw, 8rem);
   }
 
-  .pies-map-focus-knife {
+  .pies-map-focus:not(.pies-map-focus-artboard) .pies-map-focus-knife {
     inset: 0.15rem -0.15rem auto auto;
     font-size: clamp(4.75rem, 30vw, 7rem);
   }
