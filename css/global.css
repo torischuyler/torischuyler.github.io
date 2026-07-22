@@ -68,14 +68,14 @@
     Light mode can be toggled as an alternative.
   */
 
-  /* 🌑 Dark Theme Agnostic Variables */
-  --primary-color: #0D1B2A;
-  --secondary-color: #2A3F54;
-  --background-color: #2D5A8E;
-  --text-color: #FFF;
-  --accent-color: #C9C2BA;
-  --header-color: #9CBB80;
-  --subheader-color: #FACAA1;
+  /* 🌑 Dark Theme Agnostic Variables — Slate dusk */
+  --primary-color: #0A1628;
+  --secondary-color: #1F3347;
+  --background-color: #152536;
+  --text-color: #D7DEE7;
+  --accent-color: #C2CBD4;
+  --header-color: #6FD3A0;
+  --subheader-color: #F0C9A0;
 }
 
 /* 

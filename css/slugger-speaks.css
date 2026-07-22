@@ -70,7 +70,6 @@
   font-family: inherit;
   font-size: 1rem;
   line-height: 1.3;
-  -webkit-appearance: none;
   appearance: none;
 }
 
@@ -79,6 +78,28 @@
   resize: vertical;
   min-height: 5.5rem;
   line-height: 1.45;
+}
+
+.ss-btn {
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color) 28%, transparent);
+  color: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.ss-btn:hover {
+  background: color-mix(in srgb, var(--accent-color) 42%, transparent);
+  transform: translateY(-1px);
+}
+
+.ss-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .ss-name-row .ss-input {
@@ -159,28 +180,6 @@
 .ss-preset:hover {
   border-color: var(--accent-color);
   background: color-mix(in srgb, var(--accent-color) 12%, transparent);
-}
-
-.ss-btn {
-  padding: 0.6rem 1.1rem;
-  border-radius: 8px;
-  border: 1px solid var(--accent-color);
-  background: color-mix(in srgb, var(--accent-color) 28%, transparent);
-  color: inherit;
-  font-size: 0.95rem;
-  font-weight: 600;
-  transition: transform 0.15s ease, background 0.15s ease;
-}
-
-.ss-btn:hover {
-  background: color-mix(in srgb, var(--accent-color) 42%, transparent);
-  transform: translateY(-1px);
-}
-
-.ss-btn:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-  transform: none;
 }
 
 .ss-btn-speak {

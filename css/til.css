@@ -61,7 +61,7 @@
 
   /* --- Style It --- */
   font-family: Righteous, system-ui, sans-serif;
-  color: goldenrod;
+  color: #E8C547;
 }
 
 /* Link styling */
@@ -75,7 +75,7 @@
   margin-left: 0.3rem;
 
   /* --- Style It --- */
-  color: goldenrod;
+  color: #E8C547;
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -129,7 +129,7 @@
 .til-container ul li a:hover,
 .til-container ul li a:focus {
   /* --- Style It --- */
-  color: goldenrod;
+  color: #E8C547;
   text-decoration: underline;
 }
 

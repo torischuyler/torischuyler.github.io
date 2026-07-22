@@ -35,6 +35,9 @@
 
   /* --- Style It --- */
 
+  /* Homepage-only whoami color (sitewide h1 stays High drama mint) */
+  color: #E8C547;
+
   /* 
     Gold glow: 0 0 (no offset), 6px (blur radius), #D4AF37 (muted gold)
   
