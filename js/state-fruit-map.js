@@ -218,9 +218,14 @@
     return isCoarsePointerUi() || window.matchMedia("(width <= 768px)").matches;
   }
 
-  /** Desktop focus artboard + desktop FOCUS_TUNING (even in a narrow browser window). */
+  /**
+   * Always lay out focus on the desktop artboard, then scale to fit.
+   * Phones used to take a separate non-artboard path with per-state mobile
+   * offsets; that drifted badly once desktop compositions were locked.
+   * Coarse-pointer / narrow windows now share the same composition.
+   */
   function useDesktopFocusLayout() {
-    return !isCoarsePointerUi();
+    return true;
   }
 
   function clearStatus(statusEl) {
@@ -338,6 +343,8 @@
       desktopKnifeSize: "clamp(8.5rem, 15vw, 12rem)",
       desktopKnifePieX: 0.9,
       desktopKnifePieY: 0.1,
+      // Mobile: slight down from desktop, then eased back up after card lift.
+      mobileOffsetY: 72,
     },
     nj: {
       pad: 0.06,
@@ -375,6 +382,8 @@
       desktopKnifeSize: "clamp(8.5rem, 15vw, 12rem)",
       desktopKnifePieX: 1.05,
       desktopKnifePieY: -0.06,
+      // Mobile: enlarge pie (state sizing left alone).
+      mobilePieScale: 1.35,
     },
     nc: {
       pad: 0.02,
@@ -413,6 +422,12 @@
       desktopKnifeSize: "clamp(8.5rem, 15vw, 12rem)",
       desktopKnifePieX: 0.9,
       desktopKnifePieY: 0.1,
+      // Mobile: shrink state, enlarge pie, drop the cluster, park knife up/right.
+      mobileZoom: 0.72,
+      mobilePieScale: 0.95,
+      mobileOffsetY: 168,
+      mobileKnifeOffsetX: 18,
+      mobileKnifeOffsetY: -22,
     },
     // Locked (desktop)
     ny: {
@@ -441,6 +456,9 @@
       desktopKnifeSize: "clamp(8.5rem, 15vw, 12rem)",
       desktopKnifePieX: 0.9,
       desktopKnifePieY: 0.1,
+      // Mobile: nudge down a touch; only slightly smaller than desktop zoom.
+      mobileOffsetY: 48,
+      mobileZoom: 1.1,
     },
     // Apple stubs — tune with live QA, then lock
     wa: {
@@ -471,6 +489,12 @@
       desktopKnifeSize: "clamp(9.25rem, 16vw, 13rem)",
       desktopKnifePieX: 0.9,
       desktopKnifePieY: 0.1,
+      // Mobile: state size locked; pie/knife larger; knife up/right.
+      mobileZoom: 0.62,
+      mobilePieScale: 0.78,
+      mobileKnifeSize: "clamp(8rem, 14vw, 11rem)",
+      mobileKnifeOffsetX: 22,
+      mobileKnifeOffsetY: -26,
     },
     vt: {
       pad: 0.08,
@@ -499,6 +523,14 @@
       desktopKnifeSize: "clamp(7.5rem, 13vw, 10.5rem)",
       desktopKnifePieX: 0.9,
       desktopKnifePieY: 0.1,
+      // Mobile: grow state + pie + knife; slide right/down; knife up/right on pie.
+      mobileZoom: 1.05,
+      mobilePieScale: 1.15,
+      mobileKnifeSize: "clamp(9.5rem, 16vw, 12.5rem)",
+      mobileOffsetX: 190,
+      mobileOffsetY: 72,
+      mobileKnifeOffsetX: 20,
+      mobileKnifeOffsetY: -24,
     },
     wv: {
       pad: 0.1,
@@ -529,6 +561,12 @@
       desktopKnifeSize: "clamp(8.5rem, 15vw, 12rem)",
       desktopKnifePieX: 1.05,
       desktopKnifePieY: -0.06,
+      // Mobile: slightly smaller state + pie; keep right; ease back up.
+      mobileZoom: 0.92,
+      mobilePieScale: 0.72,
+      mobileKnifeSize: "clamp(10rem, 17vw, 13.5rem)",
+      mobileOffsetX: 230,
+      mobileOffsetY: 88,
     },
     mn: {
       pad: 0.12,
@@ -559,6 +597,11 @@
       desktopKnifeSize: "clamp(8.5rem, 15vw, 12rem)",
       desktopKnifePieX: 0.9,
       desktopKnifePieY: 0.1,
+      // Mobile: slide state + pie + knife right/down for breathing room by the name.
+      mobileOffsetX: 320,
+      mobileOffsetY: 88,
+      mobilePieScale: 0.78,
+      mobilePieOffsetX: -36,
     },
     // Locked (desktop)
     il: {
@@ -574,6 +617,7 @@
       factDetailMaxWidth: "none",
       factLineWidth: "max-content",
       factLineWhiteSpace: "nowrap",
+      desktopOffsetX: 0,
       desktopOffsetY: -34,
       desktopFactNameSize: "4.6rem",
       desktopFactNameMaxWidth: "24rem",
@@ -588,6 +632,8 @@
       desktopKnifeSize: "clamp(8.5rem, 15vw, 12rem)",
       desktopKnifePieX: 0.9,
       desktopKnifePieY: 0.1,
+      // Mobile: slide state + pie + knife right for breathing room by the name.
+      mobileOffsetX: 210,
     },
     ri: {
       pad: 0.08,
@@ -621,6 +667,10 @@
       desktopKnifeSize: "clamp(6.75rem, 11vw, 9rem)",
       desktopKnifePieX: 1.08,
       desktopKnifePieY: -0.08,
+      // Mobile: shrink state; pie larger; knife a touch larger.
+      mobileZoom: 0.5,
+      mobilePieScale: 0.95,
+      mobileKnifeSize: "clamp(9rem, 15vw, 12rem)",
     },
   };
 
@@ -688,6 +738,15 @@
       canvas.clientHeight / FOCUS_DESIGN.height
     );
     focus._stageScale = scale;
+
+    // Phones are width-limited; leftover vertical space used to center the
+    // artboard and made the name/pie feel low. Bias hard upward so spare sits below.
+    let lift = 0;
+    if (isNarrowFocusUi() && scale < 0.999) {
+      const spare = Math.max(0, canvas.clientHeight - FOCUS_DESIGN.height * scale);
+      lift = spare * 0.9;
+    }
+    stage.style.marginTop = `${-FOCUS_DESIGN.height / 2 - lift}px`;
     stage.style.transform = scale >= 0.999 ? "none" : `scale(${scale})`;
     return scale;
   }
@@ -696,23 +755,31 @@
    * When the artboard is heavily scaled down, grow pie/knife/type a bit so
    * they stay readable and feel as prominent as on a large desktop — pure
    * uniform scale makes them look like dust even when ratios match.
+   *
+   * Narrow phones keep pie/knife closer to uniform scale (so they don’t
+   * dwarf the state) and give type a stronger readability bump.
    */
   function boostOverlayForSmallArtboard(focus, pieWrap, knife, factEl, tuning, scale) {
-    const COMFORT = 0.72;
-    const boost =
-      scale > 0 && scale < COMFORT ? Math.min(1.35, COMFORT / scale) : 1;
-    focus._overlayBoost = boost;
-    if (boost <= 1.001) return;
+    const narrow = window.matchMedia("(width <= 768px)").matches;
+    const COMFORT = narrow ? 0.5 : 0.72;
+    const MAX_CHROME = narrow ? 1.15 : 1.35;
+    const chromeBoost =
+      scale > 0 && scale < COMFORT ? Math.min(MAX_CHROME, COMFORT / scale) : 1;
+    const factBoost = narrow
+      ? Math.min(1.6, Math.max(chromeBoost, 0.48 / Math.max(scale, 0.001)))
+      : chromeBoost;
+    focus._overlayBoost = chromeBoost;
+    if (chromeBoost <= 1.001 && factBoost <= 1.001) return;
 
     const pieSize = pieWrap?.style?.getPropertyValue("--pie-size");
-    if (pieSize?.endsWith("px")) {
+    if (pieSize?.endsWith("px") && chromeBoost > 1.001) {
       pieWrap.style.setProperty(
         "--pie-size",
-        `${Math.round(parseFloat(pieSize) * boost)}px`
+        `${Math.round(parseFloat(pieSize) * chromeBoost)}px`
       );
     }
 
-    if (factEl && tuning) {
+    if (factEl && tuning && factBoost > 1.001) {
       const factBoosts = [
         ["--fact-name-size", tuning.factNameSize],
         ["--fact-detail-size", tuning.factDetailSize],
@@ -721,15 +788,18 @@
       ];
       for (const [prop, base] of factBoosts) {
         if (base && base !== "none") {
-          factEl.style.setProperty(prop, `calc(${base} * ${boost})`);
+          factEl.style.setProperty(prop, `calc(${base} * ${factBoost})`);
         }
       }
     }
 
-    if (knife) {
+    if (knife && chromeBoost > 1.001) {
       const knifePx = parseFloat(getComputedStyle(knife).fontSize);
       if (knifePx) {
-        knife.style.setProperty("--knife-size", `${Math.round(knifePx * boost)}px`);
+        knife.style.setProperty(
+          "--knife-size",
+          `${Math.round(knifePx * chromeBoost)}px`
+        );
       }
     }
   }
@@ -1032,22 +1102,35 @@
     factEl.setAttribute("aria-label", fullDetail);
   }
 
+  function isNarrowFocusUi() {
+    return window.matchMedia("(width <= 768px)").matches;
+  }
+
   function getFocusTuning(code) {
     const base = FOCUS_TUNING[code] || {};
     if (!useDesktopFocusLayout()) return base;
-    // Mobile offsets were tuned in px for short phones; soften on desktop.
+    const narrow = isNarrowFocusUi();
+    // Desktop values are locked; mobile* overrides nudge the same artboard on phones.
     return {
       ...base,
-      zoom: base.desktopZoom ?? base.zoom,
-      offsetX: base.desktopOffsetX ?? base.offsetX ?? 0,
+      zoom: (narrow ? base.mobileZoom : null) ?? base.desktopZoom ?? base.zoom,
+      offsetX:
+        (narrow ? base.mobileOffsetX : null) ??
+        base.desktopOffsetX ??
+        base.offsetX ??
+        0,
       offsetY:
-        base.desktopOffsetY != null
+        (narrow ? base.mobileOffsetY : null) ??
+        (base.desktopOffsetY != null
           ? base.desktopOffsetY
-          : Math.round((base.offsetY || 0) * 0.4),
+          : Math.round((base.offsetY || 0) * 0.4)),
+      knifeOffsetX:
+        (narrow ? base.mobileKnifeOffsetX : null) ?? base.knifeOffsetX,
       knifeOffsetY:
-        base.knifeOffsetY == null
+        (narrow ? base.mobileKnifeOffsetY : null) ??
+        (base.knifeOffsetY == null
           ? base.knifeOffsetY
-          : Math.round(base.knifeOffsetY * 0.4),
+          : Math.round(base.knifeOffsetY * 0.4)),
       factNameSize: base.desktopFactNameSize,
       factNameMaxWidth: base.desktopFactNameMaxWidth,
       factNameWhiteSpace: base.desktopFactNameWhiteSpace,
@@ -1058,13 +1141,17 @@
       factLineWidth: base.desktopFactLineWidth,
       factLineWhiteSpace: base.desktopFactLineWhiteSpace,
       pieSize: base.desktopPieSize,
-      pieScale: base.desktopPieScale,
-      pieOffsetX: base.desktopPieOffsetX,
-      pieOffsetY: base.desktopPieOffsetY,
+      pieScale:
+        (narrow ? base.mobilePieScale : null) ?? base.desktopPieScale,
+      pieOffsetX:
+        (narrow ? base.mobilePieOffsetX : null) ?? base.desktopPieOffsetX,
+      pieOffsetY:
+        (narrow ? base.mobilePieOffsetY : null) ?? base.desktopPieOffsetY,
       cueSize: base.desktopCueSize,
       knifePieX: base.desktopKnifePieX ?? base.knifePieX,
       knifePieY: base.desktopKnifePieY ?? base.knifePieY,
-      knifeSize: base.desktopKnifeSize,
+      knifeSize:
+        (narrow ? base.mobileKnifeSize : null) ?? base.desktopKnifeSize,
     };
   }
 
