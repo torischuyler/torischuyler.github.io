@@ -1,0 +1,328 @@
+/*
+  Slugger Stamp — personal insignia lab on the PiDog paw page.
+  Seal preview, initials / birthday / favorite number, reset + download.
+*/
+
+.slugger-stamp {
+  max-width: 420px;
+  margin: 2rem auto 0;
+  text-align: center;
+}
+
+.slugger-stamp-heading {
+  font-size: 1.25rem;
+  margin-bottom: 0.35rem;
+  color: var(--subheader-color);
+}
+
+.slugger-stamp-intro {
+  margin: 0 0 1.25rem;
+  font-size: 0.92rem;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+.slugger-stamp-canvas {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  aspect-ratio: 1;
+  margin: 0 auto 1.15rem;
+  border-radius: 50%;
+  border: 1px solid rgb(201 194 186 / 28%);
+  background: #f4e8d8;
+  box-shadow: 0 4px 18px rgb(0 0 0 / 8%);
+}
+
+.slugger-stamp-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.45rem;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.slugger-stamp-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-top: 0.35rem;
+}
+
+.slugger-stamp-hint {
+  font-weight: 400;
+  font-size: 0.82rem;
+  opacity: 0.7;
+}
+
+.slugger-stamp-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.65rem 0.75rem;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  background: var(--secondary-color, rgb(255 255 255 / 6%));
+  border: 1px solid var(--subheader-color);
+  border-radius: 8px;
+}
+
+.slugger-stamp-input::placeholder {
+  opacity: 0.45;
+}
+
+.slugger-stamp-input:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+.slugger-stamp-themes {
+  margin: 0 0 0.35rem;
+  padding: 0;
+  border: 0;
+  min-inline-size: 0;
+}
+
+.slugger-stamp-themes .slugger-stamp-label {
+  padding: 0;
+  margin-top: 0;
+}
+
+.slugger-stamp-theme-note {
+  margin: 0.2rem 0 0.55rem;
+  font-size: 0.82rem;
+  opacity: 0.75;
+  line-height: 1.4;
+}
+
+.slugger-stamp-theme-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.slugger-stamp-theme {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0.55rem 0.6rem;
+  border: 1px solid var(--subheader-color);
+  border-radius: 8px;
+  background: var(--secondary-color, rgb(255 255 255 / 6%));
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+}
+
+.slugger-stamp-theme:hover {
+  transform: translateY(-1px);
+}
+
+.slugger-stamp-theme:has(input:checked) {
+  border-color: var(--accent-color, var(--subheader-color));
+  box-shadow: 0 0 0 1px var(--accent-color, var(--subheader-color));
+}
+
+.slugger-stamp-theme:has(input:focus-visible) {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+.slugger-stamp-theme input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.slugger-stamp-theme-swatch {
+  flex: 0 0 auto;
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 50%;
+  border: 1px solid rgb(0 0 0 / 25%);
+}
+
+.slugger-stamp-theme-swatch[data-theme="franklin"] {
+  background: linear-gradient(145deg, #f0d9a0, #c4a06a);
+}
+
+.slugger-stamp-theme-swatch[data-theme="rider"] {
+  background: linear-gradient(145deg, #d4b090, #7a4e32);
+}
+
+.slugger-stamp-theme-swatch[data-theme="loco"] {
+  background: linear-gradient(145deg, #9ec0f0, #2a4e88);
+}
+
+.slugger-stamp-theme-swatch[data-theme="washington"] {
+  background: linear-gradient(145deg, #c8e0e4, #3a7888);
+}
+
+.slugger-stamp-theme-swatch[data-theme="eagle"] {
+  background: linear-gradient(145deg, #f0d878, #c89828);
+}
+
+.slugger-stamp-theme-swatch[data-theme="adriatic"] {
+  background: linear-gradient(145deg, #98c8a0, #2e6a3a);
+}
+
+.slugger-stamp-theme-swatch[data-theme="columbus"] {
+  background: linear-gradient(145deg, #c8b090, #4a68a0 55%, #6a4028);
+}
+
+.slugger-stamp-theme-swatch[data-theme="declaration"] {
+  background: linear-gradient(145deg, #b8d8b0, #6a4890 55%, #2a5838);
+}
+
+.slugger-stamp-theme-swatch[data-theme="flags"] {
+  background: linear-gradient(145deg, #a0b8e8, #c04050 50%, #2a4080);
+}
+
+.slugger-stamp-theme-swatch[data-theme="lincoln"] {
+  background: linear-gradient(145deg, #e8a0a8, #5a1820 55%, #1a1210);
+}
+
+.slugger-stamp-theme-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+  min-width: 0;
+  line-height: 1.15;
+}
+
+.slugger-stamp-theme-cents {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--subheader-color);
+}
+
+.slugger-stamp-theme-name {
+  font-size: 0.78rem;
+  opacity: 0.8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slugger-stamp-theme {
+    transition: none;
+  }
+
+  .slugger-stamp-theme:hover {
+    transform: none;
+  }
+}
+
+.slugger-stamp-birthday {
+  margin: 0.2rem 0 0;
+  padding: 0;
+  border: 0;
+  min-inline-size: 0;
+}
+
+.slugger-stamp-birthday .slugger-stamp-label {
+  padding: 0;
+}
+
+.slugger-stamp-date-row {
+  display: grid;
+  grid-template-columns: 0.9fr 0.9fr 1.2fr;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+}
+
+.slugger-stamp-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.slugger-stamp-field-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  opacity: 0.75;
+}
+
+.slugger-stamp-error {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: #faaca1;
+}
+
+.slugger-stamp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 0.55rem;
+}
+
+.slugger-stamp-btn {
+  padding: 0.6rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border: 1px solid var(--subheader-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.slugger-stamp-btn:hover {
+  background-color: var(--subheader-color);
+  color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.slugger-stamp-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.slugger-stamp-btn:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+.slugger-stamp-btn-secondary {
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.slugger-stamp-lesson {
+  margin: 1.5rem 0 0;
+  padding: 0.7rem 0.8rem;
+  border-left: 3px solid var(--accent-color);
+  font-size: 0.86rem;
+  line-height: 1.45;
+  opacity: 0.9;
+  text-align: left;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slugger-stamp-btn {
+    transition: none;
+  }
+
+  .slugger-stamp-btn:hover,
+  .slugger-stamp-btn:active {
+    transform: none;
+  }
+}

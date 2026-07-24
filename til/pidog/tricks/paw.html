@@ -1,0 +1,237 @@
+---
+permalink: /til/pidog/tricks/paw
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; media-src 'self' data:;">
+
+    <link rel="canonical" href="https://torischuyler.github.io/til/pidog/tricks/paw">
+    <title>Paw | PiDog | TIL | Tori Schuyler</title>
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Site styles -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/raspberry-pi.css">
+    <link rel="stylesheet" href="/css/slugger-stamp.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav aria-label="Page navigation">
+        <ul class="nav-menu">
+            <li><a href="/">whoami</a></li>
+            <li><a href="/who-are-you">Who Are You?</a></li>
+            <li><a href="/today-i-learned" class="active" aria-current="page">TIL</a></li>
+        </ul>
+
+        <div class="nav-header">
+            <div class="hamburger">☰</div>
+        </div>
+    </nav>
+
+    <div class="rpi-container">
+        <main>
+            <a href="/til/pidog" class="rpi-back-link">← Back to PiDog</a>
+
+            <div class="rpi-lab-header">
+                <h1>Paw</h1>
+            </div>
+
+            <p>I hooked up my Pi 4 to the Grok voice agent so Slugger and I can communicate. Watch him handshake, lick a paw, and high five me (kinda 😝 ).</p>
+
+            <figure class="rpi-media-figure">
+                <video class="rpi-centered-img rpi-centered-img-compact" controls autoplay loop muted playsinline aria-label="Slugger the PiDog robot shaking hand, licking paw, and high-fiving">
+                    <source src="/assets/videos/pidog/paw.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </figure>
+
+            <!-- Slugger Stamp: personal insignia from initials, birthday, favorite number -->
+            <section class="slugger-stamp" aria-label="Slugger Stamp insignia maker">
+                <h2 class="slugger-stamp-heading">Slugger Stamp</h2>
+                <p class="slugger-stamp-intro">
+                    This is Slugger’s stamp. It has his birthday signs, favorite number 4 (Pi 4), activation date (July 16, 2026),
+                    and his paw print in the middle. The frame is inspired by the
+                    <a class="rpi-peach-link" href="https://en.wikipedia.org/wiki/1869_Pictorial_Issue" target="_blank" rel="noopener">U.S. pictorial issue</a>
+                    of stamps from the 1800s: the first U.S. stamps printed in two colors, and the first to feature
+                    non-portrait subjects. Slugger rides the 2¢ post rider. Make your own below!
+                </p>
+
+                <canvas
+                    id="slugger-stamp-canvas"
+                    class="slugger-stamp-canvas"
+                    width="640"
+                    height="640"
+                    role="img"
+                    aria-label="Live Slugger Stamp insignia preview"
+                ></canvas>
+
+                <form id="slugger-stamp-form" class="slugger-stamp-controls">
+                    <fieldset class="slugger-stamp-themes">
+                        <legend class="slugger-stamp-label">Frame</legend>
+                        <p class="slugger-stamp-theme-note">Pick a look inspired by the first U.S. pictorial stamps.</p>
+                        <div class="slugger-stamp-theme-row" role="radiogroup" aria-label="1869 stamp frame">
+                            <label class="slugger-stamp-theme">
+                                <input type="radio" name="slugger-stamp-theme" value="franklin" data-theme="franklin">
+                                <span class="slugger-stamp-theme-swatch" data-theme="franklin" aria-hidden="true"></span>
+                                <span class="slugger-stamp-theme-text">
+                                    <span class="slugger-stamp-theme-cents">1¢</span>
+                                    <span class="slugger-stamp-theme-name">Franklin</span>
+                                </span>
+                            </label>
+                            <label class="slugger-stamp-theme">
+                                <input type="radio" name="slugger-stamp-theme" value="rider" data-theme="rider" checked>
+                                <span class="slugger-stamp-theme-swatch" data-theme="rider" aria-hidden="true"></span>
+                                <span class="slugger-stamp-theme-text">
+                                    <span class="slugger-stamp-theme-cents">2¢</span>
+                                    <span class="slugger-stamp-theme-name">Post rider</span>
+                                </span>
+                            </label>
+                            <label class="slugger-stamp-theme">
+                                <input type="radio" name="slugger-stamp-theme" value="loco" data-theme="loco">
+                                <span class="slugger-stamp-theme-swatch" data-theme="loco" aria-hidden="true"></span>
+                                <span class="slugger-stamp-theme-text">
+                                    <span class="slugger-stamp-theme-cents">3¢</span>
+                                    <span class="slugger-stamp-theme-name">Locomotive</span>
+                                </span>
+                            </label>
+                            <label class="slugger-stamp-theme">
+                                <input type="radio" name="slugger-stamp-theme" value="washington" data-theme="washington">
+                                <span class="slugger-stamp-theme-swatch" data-theme="washington" aria-hidden="true"></span>
+                                <span class="slugger-stamp-theme-text">
+                                    <span class="slugger-stamp-theme-cents">6¢</span>
+                                    <span class="slugger-stamp-theme-name">Washington</span>
+                                </span>
+                            </label>
+                            <label class="slugger-stamp-theme">
+                                <input type="radio" name="slugger-stamp-theme" value="eagle" data-theme="eagle">
+                                <span class="slugger-stamp-theme-swatch" data-theme="eagle" aria-hidden="true"></span>
+                                <span class="slugger-stamp-theme-text">
+                                    <span class="slugger-stamp-theme-cents">10¢</span>
+                                    <span class="slugger-stamp-theme-name">Eagle &amp; shield</span>
+                                </span>
+                            </label>
+                            <label class="slugger-stamp-theme">
+                                <input type="radio" name="slugger-stamp-theme" value="adriatic" data-theme="adriatic">
+                                <span class="slugger-stamp-theme-swatch" data-theme="adriatic" aria-hidden="true"></span>
+                                <span class="slugger-stamp-theme-text">
+                                    <span class="slugger-stamp-theme-cents">12¢</span>
+                                    <span class="slugger-stamp-theme-name">S.S. Adriatic</span>
+                                </span>
+                            </label>
+                            <label class="slugger-stamp-theme">
+                                <input type="radio" name="slugger-stamp-theme" value="columbus" data-theme="columbus">
+                                <span class="slugger-stamp-theme-swatch" data-theme="columbus" aria-hidden="true"></span>
+                                <span class="slugger-stamp-theme-text">
+                                    <span class="slugger-stamp-theme-cents">15¢</span>
+                                    <span class="slugger-stamp-theme-name">Columbus</span>
+                                </span>
+                            </label>
+                            <label class="slugger-stamp-theme">
+                                <input type="radio" name="slugger-stamp-theme" value="declaration" data-theme="declaration">
+                                <span class="slugger-stamp-theme-swatch" data-theme="declaration" aria-hidden="true"></span>
+                                <span class="slugger-stamp-theme-text">
+                                    <span class="slugger-stamp-theme-cents">24¢</span>
+                                    <span class="slugger-stamp-theme-name">Declaration</span>
+                                </span>
+                            </label>
+                            <label class="slugger-stamp-theme">
+                                <input type="radio" name="slugger-stamp-theme" value="flags" data-theme="flags">
+                                <span class="slugger-stamp-theme-swatch" data-theme="flags" aria-hidden="true"></span>
+                                <span class="slugger-stamp-theme-text">
+                                    <span class="slugger-stamp-theme-cents">30¢</span>
+                                    <span class="slugger-stamp-theme-name">Eagle &amp; flags</span>
+                                </span>
+                            </label>
+                            <label class="slugger-stamp-theme">
+                                <input type="radio" name="slugger-stamp-theme" value="lincoln" data-theme="lincoln">
+                                <span class="slugger-stamp-theme-swatch" data-theme="lincoln" aria-hidden="true"></span>
+                                <span class="slugger-stamp-theme-text">
+                                    <span class="slugger-stamp-theme-cents">90¢</span>
+                                    <span class="slugger-stamp-theme-name">Lincoln</span>
+                                </span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <label class="slugger-stamp-label" for="slugger-stamp-initials">Initials <span class="slugger-stamp-hint">(leave blank for a paw)</span></label>
+                    <input
+                        id="slugger-stamp-initials"
+                        class="slugger-stamp-input"
+                        type="text"
+                        maxlength="3"
+                        value=""
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="e.g. TS"
+                        aria-describedby="slugger-stamp-initials-hint"
+                    >
+                    <span id="slugger-stamp-initials-hint" class="visually-hidden">Up to three letters. Leave empty to show a paw print like Slugger.</span>
+
+                    <fieldset class="slugger-stamp-birthday">
+                        <legend class="slugger-stamp-label">Birthday</legend>
+                        <div class="slugger-stamp-date-row">
+                            <label class="slugger-stamp-field">
+                                <span class="slugger-stamp-field-label">Month</span>
+                                <input id="slugger-stamp-month" class="slugger-stamp-input" type="number" inputmode="numeric" min="1" max="12" step="1" value="7" required>
+                            </label>
+                            <label class="slugger-stamp-field">
+                                <span class="slugger-stamp-field-label">Day</span>
+                                <input id="slugger-stamp-day" class="slugger-stamp-input" type="number" inputmode="numeric" min="1" max="31" step="1" value="16" required>
+                            </label>
+                            <label class="slugger-stamp-field">
+                                <span class="slugger-stamp-field-label">Year</span>
+                                <input id="slugger-stamp-year" class="slugger-stamp-input" type="number" inputmode="numeric" min="1924" max="2044" step="1" value="2026" required>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <label class="slugger-stamp-label" for="slugger-stamp-number">Favorite number</label>
+                    <input
+                        id="slugger-stamp-number"
+                        class="slugger-stamp-input"
+                        type="number"
+                        inputmode="numeric"
+                        min="0"
+                        max="999"
+                        step="1"
+                        value="4"
+                        required
+                    >
+
+                    <p id="slugger-stamp-error" class="slugger-stamp-error" role="alert" hidden></p>
+
+                    <div class="slugger-stamp-actions">
+                        <button id="slugger-stamp-reset" class="slugger-stamp-btn slugger-stamp-btn-secondary" type="button">Reset to Slugger</button>
+                        <button id="slugger-stamp-download" class="slugger-stamp-btn" type="button">Download PNG</button>
+                    </div>
+
+                    <p class="slugger-stamp-lesson">
+                        ⚠️ Did you know? Most dogs and cats have 18 toes, five on each front paw and four on each hind paw.
+                        The front paws have a “thumb” (dewclaw) for gripping; the back paws usually don’t, because they don’t need one to hold things.
+                    </p>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><span id="year"></span> 👾 Tori Schuyler</p>
+    </footer>
+
+    <script src="/js/mobile-nav.js" defer></script>
+    <script src="/js/footer.js"></script>
+    <script src="/js/slugger-stamp.js" defer></script>
+</body>
+</html>

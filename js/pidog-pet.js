@@ -15,6 +15,15 @@
 
   const TRICKS = [
     {
+      id: 'paw',
+      label: 'Paw',
+      className: 'is-paw',
+      duration: 1400,
+      line: 'Shake! High five!',
+      href: '/til/pidog/tricks/paw.html',
+      labButton: 'See paw trick page',
+    },
+    {
       id: 'speak',
       label: 'Speak',
       className: 'is-speak',

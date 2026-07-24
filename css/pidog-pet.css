@@ -172,6 +172,10 @@
   animation: pidog-pet-speak 1.4s ease-in-out;
 }
 
+.pidog-pet.is-paw .pidog-pet-sprite {
+  animation: pidog-pet-paw 1.4s ease-in-out;
+}
+
 .pidog-pet.is-collapsed {
   gap: 0;
 }
@@ -311,6 +315,23 @@
   }
 }
 
+@keyframes pidog-pet-paw {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  20%,
+  60% {
+    transform: translateY(-10px) rotate(-18deg);
+  }
+
+  40%,
+  80% {
+    transform: translateY(-4px) rotate(-8deg);
+  }
+}
+
 @media (width <= 480px) {
   .pidog-pet {
     right: 0.75rem;
@@ -342,7 +363,8 @@
   .pidog-pet.is-howl .pidog-pet-sprite,
   .pidog-pet.is-sit .pidog-pet-sprite,
   .pidog-pet.is-patrol .pidog-pet-sprite,
-  .pidog-pet.is-speak .pidog-pet-sprite {
+  .pidog-pet.is-speak .pidog-pet-sprite,
+  .pidog-pet.is-paw .pidog-pet-sprite {
     animation: none;
   }
 }
