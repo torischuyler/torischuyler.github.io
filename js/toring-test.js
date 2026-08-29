@@ -313,6 +313,7 @@ function showFinalPopup() {
   popup.className = 'popup';
   popup.innerHTML = `
     <div class="popup-content" role="alertdialog" aria-modal="true" aria-labelledby="finalTitle" aria-describedby="finalMessage">
+      <button type="button" class="close-btn" aria-label="Close">🌊</button>
       <h2 id="finalTitle">Okay, yeah...</h2>
       <p id="finalMessage">You're probably human.</p>
       <p class="disclaimer"><i>Probably.</i></p>
@@ -321,9 +322,14 @@ function showFinalPopup() {
   `;
   document.body.appendChild(popup);
 
-  const closeButton = popup.querySelector('.close-popup-btn');
-  closeButton.focus();
-  closeButton.addEventListener('click', () => {
+  const waveButton = popup.querySelector('.close-btn');
+  const emailButton = popup.querySelector('.close-popup-btn');
+  emailButton.focus();
+  waveButton.addEventListener('click', () => {
+    closePopup();
+    emailLink.focus();
+  });
+  emailButton.addEventListener('click', () => {
     closePopup();
     window.location.href = mailtoHref;
   });
