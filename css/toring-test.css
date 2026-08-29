@@ -1,0 +1,291 @@
+/*
+  Unlike index.css, there's no desktop media query here: the modal
+  is one-size and works on mobile and desktop as-is. The only media
+  query is the reduced-motion override at the bottom.
+*/
+
+/* Shared styles for the modal and the success popup */
+
+.modal,
+.popup {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0% 0% 0% / 50%);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content,
+.popup-content {
+  background-color: var(--background);
+  border: 1px solid rgb(100% 100% 100% / 20%);
+  box-shadow: 0 8px 32px rgb(0% 0% 0% / 35%);
+  color: var(--text);
+  border-radius: 16px;
+  text-align: center;
+  font-family: 'Space Grotesk', sans-serif;
+  width: 400px;
+  max-width: 90%;
+}
+
+/* --- Toring Test modal --- */
+
+/* Hidden on load; JS flips display to flex when the email link is clicked */
+.modal {
+  display: none;
+  z-index: 1000;
+}
+
+.modal-content {
+  padding: 32px 20px 20px;
+  position: relative;
+}
+
+.toring-prompt {
+  font-family: Limelight, system-ui, sans-serif;
+  font-size: 1.6rem;
+  color: var(--heading);
+  margin-bottom: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* Fluid width (capped at 100px) so the grid shrinks instead of
+   overflowing the modal on narrow phone screens */
+.grid-item {
+  width: 100%;
+  max-width: 100px;
+  aspect-ratio: 1;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.grid-item.selected {
+  pointer-events: none;
+}
+
+/* Checkmark / X feedback that JS layers over a selectedimage */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #FFF;
+  border-radius: 5px;
+}
+
+.overlay.checkmark {
+  background-color: rgb(29.8% 68.6% 31.4% / 80%);
+}
+
+.overlay.cross {
+  background-color: rgb(95.7% 26.3% 21.2% / 80%);
+}
+
+/* --- Close button (the waving hand emoji) --- */
+
+.close-btn {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 4px;
+
+  /* so the hand waves instead of spinning */
+  transform-origin: 70% 80%;
+}
+
+.close-btn:hover,
+.close-btn:focus-visible,
+.close-btn.waving {
+  animation: wave 0.45s ease-in-out 2;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(16deg);
+  }
+
+  75% {
+    transform: rotate(-10deg);
+  }
+}
+
+/* --- Success popup --- */
+
+.popup {
+  z-index: 1001;
+}
+
+.popup-content {
+  padding: 10px;
+}
+
+.popup-content h2 {
+  font-family: Limelight, system-ui, sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.popup-content p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.popup-content .disclaimer {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.popup-content button {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 2rem;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.popup-content button:hover,
+.popup-content button:focus-visible {
+  transform: scale(1.3) rotate(-8deg) translateY(-3px);
+}
+
+/* Holds the squiggle + email buttons side by side in the first popup */
+.popup-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* --- Squiggle test (the "real" test) --- */
+
+/* position: relative anchors the absolutely-positioned close button */
+.squiggle-content {
+  position: relative;
+  padding: 32px 20px 20px;
+}
+
+.squiggle-canvas {
+  display: block;
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  background-color: rgb(100% 100% 100% / 10%);
+  cursor: crosshair;
+
+  /* Let a finger draw on the canvas instead of scrolling the page */
+  touch-action: none;
+}
+
+/* min-height reserves the line so the popup doesn't jump on retry */
+.squiggle-status {
+  min-height: 1.4em;
+  margin-top: 12px;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+/* Sassy Tortie appears to judge failed attempts, hidden again on retry */
+.squiggle-cat {
+  display: none;
+  width: 110px;
+  margin: 10px auto 0;
+  border-radius: 10px;
+}
+
+.squiggle-cat.visible {
+  display: block;
+}
+
+/* --- Confetti --- */
+
+.confetti-container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1002;
+}
+
+.confetti {
+  position: absolute;
+  top: -20px;
+  width: 10px;
+  height: 14px;
+  animation: confetti-fall linear forwards;
+}
+
+@keyframes confetti-fall {
+  to {
+    transform: translate(var(--drift, 0), 105vh) rotate(720deg);
+  }
+}
+
+/* --- Accessibility --- */
+
+.grid-item:focus-visible,
+.close-btn:focus-visible,
+.popup-content button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Visually hides content while keeping it available to screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .close-btn:hover,
+  .close-btn:focus-visible,
+  .close-btn.waving {
+    animation: none;
+    transform: scale(1.15);
+  }
+
+  .confetti-container {
+    display: none;
+  }
+}

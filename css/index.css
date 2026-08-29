@@ -1,0 +1,295 @@
+/*
+  Mobile-first: base styles below target mobile;
+  desktop overrides live in the media query
+  at the bottom of the file.
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 18px;
+
+  --text: #FFF;
+  --background: #3D7AB8;
+  --heading: #B3E3E9;
+  --accent: #FFD166;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Lobster Two', system-ui, sans-serif;
+  color: var(--text);
+  background-color: var(--background);
+}
+
+main {
+  max-width: 100vw;
+  line-height: 1.6;
+  font-size: 1.8rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+  overflow: hidden;
+  font-family: Limelight, system-ui, sans-serif;
+  color: var(--heading);
+  text-align: center;
+  white-space: nowrap;
+  animation: typewriter 2s steps(10) forwards, reveal-overflow 0s 2s forwards;
+}
+
+main p {
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* This is chrome, not the whoami copy */
+.noscript-alert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.noscript-alert img {
+  width: 12rem;
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 25%);
+}
+
+/* Overrides main p */
+.noscript-alert p {
+  max-width: 22ch;
+  margin-bottom: 0;
+  font-family: 'Sassy Frass', cursive;
+  font-size: 2.5rem;
+  line-height: 1.35;
+  text-align: center;
+}
+
+/* Centered as a block, but items stay left-aligned so the emoji bullets line up */
+main ul {
+  padding-left: 1rem;
+  list-style-type: none;
+  width: fit-content;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Baseline alignment keeps the emoji on the same line as the text
+   regardless of platform font metrics (desktop vs. mobile emoji fonts) */
+main li {
+  display: flex;
+  align-items: baseline;
+  column-gap: 0.45em;
+  margin-bottom: 0.5rem;
+}
+
+main li::before {
+  flex-shrink: 0;
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+main li:nth-child(1)::before {
+  content: '🎮';
+}
+
+main li:nth-child(2)::before {
+  content: '🔬';
+}
+
+main li:nth-child(3)::before {
+  content: '😌';
+}
+
+@supports not (selector(::before)) {
+  main ul {
+    list-style-type: disc;
+  }
+}
+
+/* Mark the emoji bullets as decorative so screen readers skip them */
+@supports (content: '🎮' / '') {
+  main li:nth-child(1)::before {
+    content: '🎮' / '';
+  }
+
+  main li:nth-child(2)::before {
+    content: '🔬' / '';
+  }
+
+  main li:nth-child(3)::before {
+    content: '😌' / '';
+  }
+}
+
+.profile-photo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 30px auto 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+}
+
+/* Scoped to main so headings elsewhere (e.g. the Toring Test popup)
+   don't inherit the typewriter effect */
+main h2 {
+  font-size: clamp(1.65rem, 9vw, 2.5rem);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  font-family: Limelight, system-ui, sans-serif;
+  font-weight: 400;
+  color: var(--heading);
+  text-align: center;
+  max-width: 100%;
+  white-space: nowrap;
+  animation: typewriter 2s steps(10) forwards, reveal-overflow 0s 2s forwards;
+}
+
+h1::after,
+main h2::after {
+  content: "|";
+  animation: blink 1s 10 forwards;
+}
+
+main h2.typed::after {
+  content: "📍";
+  margin-left: 0.12em;
+  display: inline-block;
+  animation: emoji-pop 0.6s ease-out forwards;
+}
+
+/* Centered as a block; the ASCII itself must stay left-aligned to keep its shape.
+   The translateX nudges it right of center. Mobile uses a smaller nudge; 
+   desktop overrides it in the media query below. */
+.branch {
+  max-width: 100%;
+  font-size: 0.875rem;
+  width: fit-content;
+  margin: 0 auto;
+  transform: translateX(1rem);
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+
+.branch-desktop {
+  display: none;
+}
+
+.branch-mobile {
+  display: block;
+}
+
+footer {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  width: 100%;
+  margin-top: auto;
+  padding: 1.5rem;
+  text-align: center;
+  color: #C9C2BA;
+  background-color: #0D1B2A;
+}
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover,
+footer a:focus {
+  color: var(--accent);
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* Let the cursor/pin sit past the typewriter clipping box once typing is done */
+@keyframes reveal-overflow {
+  to {
+    overflow: visible;
+  }
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+
+  50% { opacity: 1; }
+
+  100% { opacity: 0; }
+}
+
+/* Emoji pops into the cursor slot once the last blink ends */
+@keyframes emoji-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  h1,
+  main h2 {
+    animation: none;
+    width: auto;
+  }
+
+  h1::after,
+  main h2::after {
+    content: "";
+    animation: none;
+  }
+}
+
+/* Desktop overrides */
+@media (width >= 768px) {
+  h1,
+  main h2 {
+    font-size: 4rem;
+  }
+
+  /* Wide enough for the message to settle onto two even lines */
+  .noscript-alert p {
+    max-width: 60rem;
+    text-wrap: balance;
+  }
+
+  .branch {
+    font-size: 1rem;
+    transform: translateX(4rem);
+  }
+
+  .branch-desktop {
+    display: block;
+  }
+
+  .branch-mobile {
+    display: none;
+  }
+}
