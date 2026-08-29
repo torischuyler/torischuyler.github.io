@@ -125,7 +125,8 @@ function showSuccessPopup() {
   const popup = document.createElement('div');
   popup.className = 'popup';
   popup.innerHTML = `
-    <div class="popup-content" role="alertdialog" aria-modal="true" aria-labelledby="popupTitle" aria-describedby="popupMessage">
+    <div class="popup-content success-content" role="alertdialog" aria-modal="true" aria-labelledby="popupTitle" aria-describedby="popupMessage">
+      <button type="button" class="close-btn" aria-label="Close">🌊</button>
       <h2 id="popupTitle">Congratulations...</h2>
       <p id="popupMessage">You're a human!</p>
       <p class="disclaimer"><i>...just kidding, that's not really a valid test. Humans and AI can both do it.</i></p>
@@ -138,9 +139,14 @@ function showSuccessPopup() {
   `;
   document.body.appendChild(popup);
 
+  const waveButton = popup.querySelector('.close-btn');
   const squiggleButton = popup.querySelector('.squiggle-btn');
   const emailButton = popup.querySelector('.close-popup-btn');
   squiggleButton.focus();
+  waveButton.addEventListener('click', () => {
+    closePopup();
+    emailLink.focus();
+  });
   squiggleButton.addEventListener('click', () => {
     closePopup();
     showSquigglePopup();
@@ -209,7 +215,7 @@ function showSquigglePopup() {
   popup.className = 'popup';
   popup.innerHTML = `
     <div class="popup-content squiggle-content" role="dialog" aria-modal="true" aria-labelledby="squiggleTitle" aria-describedby="squiggleHint">
-      <button type="button" class="close-btn" aria-label="Close">👋</button>
+      <button type="button" class="close-btn" aria-label="Close">🌊</button>
       <h2 id="squiggleTitle">The Real Test</h2>
       <p id="squiggleHint">Trace the squiggle in one motion, starting anywhere.</p>
       <canvas class="squiggle-canvas"></canvas>
@@ -290,8 +296,8 @@ function showSquigglePopup() {
       return;
     }
     status.textContent = verdict === 'robot'
-      ? 'Suspiciously smooth. That\'s exactly what a clanker would draw. Try again.'
-      : 'You missed part of the squiggle. Try again.';
+      ? 'Sassy Tortie thinks you\'re suspiciously smooth. That\'s exactly what a clanker would draw. Try again.'
+      : 'Sassy Tortie here to say you missed part of the squiggle. Try again.';
     cat.classList.add('visible');
     // New squiggle each attempt, so there's nothing to memorize and replay
     target = buildSquiggle(width, height);
