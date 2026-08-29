@@ -153,9 +153,10 @@
   padding: 10px;
 }
 
+/* Scales down on narrow phones so "Congratulations..." stays inside the popup */
 .popup-content h2 {
   font-family: Limelight, system-ui, sans-serif;
-  font-size: 2rem;
+  font-size: clamp(1.4rem, 7.5vw, 2rem);
   font-weight: 400;
   color: var(--accent);
   margin-bottom: 15px;
@@ -264,6 +265,15 @@
 .popup-content button:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 2px;
+}
+
+/* Touch devices draw the focus ring when the dialog auto-focuses a button;
+   with no keyboard around to need the indicator, hide it there */
+@media (hover: none) {
+  .close-btn:focus-visible,
+  .popup-content button:focus-visible {
+    outline: none;
+  }
 }
 
 /* Visually hides content while keeping it available to screen readers */
