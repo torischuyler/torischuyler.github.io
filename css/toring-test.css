@@ -43,7 +43,7 @@
 .modal-content {
   /* Top padding clears the absolutely-positioned close button
      so the prompt text starts below it */
-  padding: 52px 20px 20px;
+  padding: 68px 20px 20px;
   position: relative;
 }
 
@@ -107,7 +107,7 @@
   background-color: rgb(95.7% 26.3% 21.2% / 80%);
 }
 
-/* --- Close button (the waving hand emoji) --- */
+/* --- Close button (self-hosted ocean-wave image) --- */
 
 .close-btn {
   position: absolute;
@@ -123,8 +123,14 @@
      spot on every dialog */
   padding: 8px;
 
-  /* so the hand waves instead of spinning */
+  /* so the wave tilts instead of spinning */
   transform-origin: 70% 80%;
+}
+
+.close-btn img {
+  display: block;
+  width: 1.36em;
+  height: 1.36em;
 }
 
 .close-btn:hover,
@@ -197,7 +203,7 @@
 /* Extra top padding keeps the wide "Congratulations..." heading
    from running under the close button */
 .success-content {
-  padding-top: 52px;
+  padding-top: 68px;
 }
 
 /* Holds the squiggle + email buttons side by side in the first popup */
@@ -210,7 +216,7 @@
 /* --- Squiggle test (the "real" test) --- */
 
 .squiggle-content {
-  padding: 32px 20px 20px;
+  padding: 48px 20px 20px;
 }
 
 .squiggle-canvas {

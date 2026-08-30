@@ -7,6 +7,7 @@ const gridItems = document.querySelectorAll('.grid-item');
 const statusRegion = document.getElementById('toringStatus');
 let selectedToriCount = 0;
 let testPassed = false;
+const closeBtnMarkup = '<button type="button" class="close-btn" aria-label="Close"><img src="/assets/images/toring-test/space-wave.png" alt="" width="48" height="48" draggable="false"></button>';
 
 function openModal() {
   modal.style.display = 'flex';
@@ -126,7 +127,7 @@ function showSuccessPopup() {
   popup.className = 'popup';
   popup.innerHTML = `
     <div class="popup-content success-content" role="alertdialog" aria-modal="true" aria-labelledby="popupTitle" aria-describedby="popupMessage">
-      <button type="button" class="close-btn" aria-label="Close">🌊</button>
+      ${closeBtnMarkup}
       <h2 id="popupTitle">Congratulations...</h2>
       <p id="popupMessage">You're a human!</p>
       <p class="disclaimer"><i>...just kidding, that's not really a valid test. Humans and AI can both do it.</i></p>
@@ -215,7 +216,7 @@ function showSquigglePopup() {
   popup.className = 'popup';
   popup.innerHTML = `
     <div class="popup-content squiggle-content" role="dialog" aria-modal="true" aria-labelledby="squiggleTitle" aria-describedby="squiggleHint">
-      <button type="button" class="close-btn" aria-label="Close">🌊</button>
+      ${closeBtnMarkup}
       <h2 id="squiggleTitle">The Real Test</h2>
       <p id="squiggleHint">Trace the squiggle in one motion, starting anywhere.</p>
       <canvas class="squiggle-canvas"></canvas>
@@ -319,7 +320,7 @@ function showFinalPopup() {
   popup.className = 'popup';
   popup.innerHTML = `
     <div class="popup-content" role="alertdialog" aria-modal="true" aria-labelledby="finalTitle" aria-describedby="finalMessage">
-      <button type="button" class="close-btn" aria-label="Close">🌊</button>
+      ${closeBtnMarkup}
       <h2 id="finalTitle">Okay, yeah...</h2>
       <p id="finalMessage">You're probably human.</p>
       <p class="disclaimer"><i>Probably.</i></p>
