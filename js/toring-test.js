@@ -21,6 +21,26 @@ function closeModal() {
   emailLink.focus();
 }
 
+function closeAfterWave(button, close) {
+  const canHover = window.matchMedia('(hover: hover)').matches;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (canHover || reducedMotion) {
+    close();
+    return;
+  }
+  if (button.classList.contains('waving')) return;
+  button.classList.add('waving');
+  let closed = false;
+  const finish = () => {
+    if (closed) return;
+    closed = true;
+    button.classList.remove('waving');
+    close();
+  };
+  button.addEventListener('animationend', finish, { once: true });
+  window.setTimeout(finish, 1200);
+}
+
 emailLink.addEventListener('click', (event) => {
   // Once the test is passed, the link behaves like a normal mailto link
   if (testPassed) return;
@@ -29,23 +49,7 @@ emailLink.addEventListener('click', (event) => {
 });
 
 closeBtn.addEventListener('click', () => {
-  const canHover = window.matchMedia('(hover: hover)').matches;
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // On hover-capable devices the wave already played on hover/focus, and with
-  // reduced motion the animation never fires, so close right away in both cases
-  if (canHover || reducedMotion) {
-    closeModal();
-    return;
-  }
-
-  // On touch devices, play the wave first, then close when it finishes
-  if (closeBtn.classList.contains('waving')) return;
-  closeBtn.classList.add('waving');
-  closeBtn.addEventListener('animationend', () => {
-    closeBtn.classList.remove('waving');
-    closeModal();
-  }, { once: true });
+  closeAfterWave(closeBtn, closeModal);
 });
 
 // Keep keyboard focus inside the modal and let Escape dismiss it
@@ -80,7 +84,7 @@ gridItems.forEach(item => {
         imgSrc.includes('3-toring-test') || imgSrc.includes('4-toring-test') ||
         imgSrc.includes('5-toring-test') || imgSrc.includes('6-toring-test') ||
         imgSrc.includes('7-toring-test')) {
-      overlay.innerHTML = '✔';
+      overlay.textContent = '\u2714\uFE0E';
       overlay.className += ' checkmark';
       selectedToriCount++;
       statusRegion.textContent = `Correct, that's Tori! ${selectedToriCount} of 7 found.`;
@@ -88,7 +92,7 @@ gridItems.forEach(item => {
         setTimeout(showSuccessPopup, 500);
       }
     } else {
-      overlay.innerHTML = '✖';
+      overlay.textContent = '\u2716\uFE0E';
       overlay.className += ' cross';
       statusRegion.textContent = "Nope, that's not Tori.";
     }
@@ -145,8 +149,10 @@ function showSuccessPopup() {
   const emailButton = popup.querySelector('.close-popup-btn');
   squiggleButton.focus();
   waveButton.addEventListener('click', () => {
-    closePopup();
-    emailLink.focus();
+    closeAfterWave(waveButton, () => {
+      closePopup();
+      emailLink.focus();
+    });
   });
   squiggleButton.addEventListener('click', () => {
     closePopup();
@@ -308,8 +314,10 @@ function showSquigglePopup() {
   drawTarget();
   closeButton.focus();
   closeButton.addEventListener('click', () => {
-    closePopup();
-    emailLink.focus();
+    closeAfterWave(closeButton, () => {
+      closePopup();
+      emailLink.focus();
+    });
   });
   trapPopupFocus(popup);
 }
@@ -333,8 +341,10 @@ function showFinalPopup() {
   const emailButton = popup.querySelector('.close-popup-btn');
   emailButton.focus();
   waveButton.addEventListener('click', () => {
-    closePopup();
-    emailLink.focus();
+    closeAfterWave(waveButton, () => {
+      closePopup();
+      emailLink.focus();
+    });
   });
   emailButton.addEventListener('click', () => {
     closePopup();
